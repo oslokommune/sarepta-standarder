@@ -9,7 +9,7 @@ Hvis du ikke har **GitExtension** eller tilsvarende anbefales det at du laster n
 
 --------------
 **Sarepta workflow:**
-![Sarepta workflow](https://git.sarepta.test.ehelse.no/publisert/teknisk-arkiv/raw/master/sarepta-workflow.png)
+![Sarepta workflow](https://git.sarepta.test.ehelse.no/publisert/standarder/raw/master/sarepta-workflow.png)
 
 
 > Blå = **master**-branch i hovedrepository (publisert materiale)<br />
