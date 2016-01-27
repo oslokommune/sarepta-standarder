@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xcal="urn:ietf:params:xml:ns:icalendar-2.0" targetNamespace="urn:ietf:params:xml:ns:icalendar-2.0" elementFormDefault="qualified">
+	<!-- =====================================================================
+       3.7 Calendar Properties
+       ===================================================================== -->
+	<!-- ===================== Properties =================================  -->
+	<xs:include schemaLocation="iCalendar-props.xsd"/>
+	<xs:element name="x-referral-id" type="xcal:XReferralIdPropType" substitutionGroup="xcal:baseProperty"/>
+	<xs:complexType name="XReferralIdPropType" mixed="false">
+		<xs:complexContent>
+			<xs:extension base="xcal:TextPropertyType"/>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>
