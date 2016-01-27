@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>Henvisning</Navn>
+	<Versjon>1.0</Versjon>
+	<Identifikator>HIS 80517:2005</Identifikator>
+	<Utgivelsesdato>2005-07-01</Utgivelsesdato>
+	<Utgiver>Helsedirektoratet</Utgiver>
+	<Status>Til utbredelse</Status>
+	<StatusReferansekatalog>Under utfasing</StatusReferansekatalog>
+	<ErstattetAv>HIS 80517:2014</ErstattetAv>
+	<Maalgruppe>Spesialisthelsetjenesten</Maalgruppe>
+	<Maalgruppe>Kommuner</Maalgruppe>
+	<Maalgruppe>Fastleger</Maalgruppe>
+	<Standardtekster>
+		<Standardtekst>
+			<Beskrivelse>Henvisning. Informasjonsmodell og XML meldingsbeskrivelse (PDF)</Beskrivelse>
+			<Referanse>standardtekst/Henvisning/HIS_80517_2005_Henvisning_v1.0.pdf</Referanse>
+		</Standardtekst>
+		<Standardtekst>
+			<Beskrivelse>Henvisning. Informasjonsmodell og XML meldingsbeskrivelse (DOC)</Beskrivelse>
+			<Referanse>standardtekst/Henvisning/HIS_80517_2005_Henvisning_v1.0.doc</Referanse>
+		</Standardtekst>
+	</Standardtekster>
+	<Skjemaer>
+		<Skjema>
+			<Referanse>skjema/Henvisning/Henvisning-v1.0.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/Henvisning/2005-07-08</Namespace>
+		</Skjema>
+	</Skjemaer>
+	<Felleskomponenter>
+		<Felleskomponent>
+			<Beskrivelse>Felles XML-definisjoner for person, helsepersonell, organisasjon etc </Beskrivelse>
+			<Referanse>skjema/felleskomponenter/felleskomponent1.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Felles datatyper</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Container for Base64-kodet innhold</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
+		</Felleskomponent>
+	</Felleskomponenter>
+	<Modellfiler>
+		<Modell>
+			<Beskrivelse>Rational Rose modellfil</Beskrivelse>
+			<Referanse>informasjonsmodell/Henvisning/Henvisning-v1.0-BUP-revisjon.mdl</Referanse>
+		</Modell>
+	</Modellfiler>
+	<Visningsfiler>
+		<Visningsfil>
+			<Referanse>visningsfil/Henvisning/henvisning2html-v1.0</Referanse>
+		</Visningsfil>
+	</Visningsfiler>
+	<RelaterteFiler>
+		<RelatertFil>
+			<Beskrivelse>Den gode henvisning - Medisinsk-faglig innhold i henvisninger</Beskrivelse>
+			<Referanse>https://ehelse.no/Sider/Medisinsk-faglig-innhold-i-henvisninger-–-«Den-gode-henvisning»---HIS-803222003.aspx</Referanse>
+		</RelatertFil>
+		<RelatertFil>
+			<Beskrivelse>Krav til tjenestebasert adressering</Beskrivelse>
+			<Referanse>https://ehelse.no/Sider/Krav-til-tjenestebasert-adressering-(HIS-11532015.aspx</Referanse>
+		</RelatertFil>
+		<RelatertFil>
+			<Referanse>https://ehelse.no/Sider/Retningslinjer-endring,-kansellering,-tillegg-og-historikk---HISD-11542013.aspx</Referanse>
+		</RelatertFil>
+		<RelatertFil>
+			<Beskrivelse>Datatyper til bruk ved meldingsutveksling</Beskrivelse>
+			<Referanse>https://ehelse.no/Sider/Datatyper-til-bruk-ved-meldingsutveksling-mv-–-HIS-801172002.aspx</Referanse>
+		</RelatertFil>
+	</RelaterteFiler>
+</StandardMetadata>
