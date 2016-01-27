@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>Pleie- og omsorgsmeldinger</Navn>
+	<Versjon>1.5</Versjon>
+	<Identifikator>HIS 80704:2009</Identifikator>
+	<Utgivelsesdato>2014-09-01</Utgivelsesdato>
+	<Utgiver>Helsedirektoratet</Utgiver>
+	<Status>Til utbredelse</Status>
+	<StatusReferansekatalog>Under utfasing</StatusReferansekatalog>
+	<ErstattetAv>HIS80709:2014</ErstattetAv>
+	<Maalgruppe>Spesialisthelsetjenesten</Maalgruppe>
+	<Maalgruppe>Kommuner</Maalgruppe>
+	<Maalgruppe>Fastleger</Maalgruppe>
+	<Standardtekster>
+		<Standardtekst>
+			<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten. Informasjonsmodell og XML meldingsbeskrivelse (DOC)</Beskrivelse>
+			<Referanse>standardtekst/Pleie og omsorgsmeldinger/HIS_80704_2009-Pleie-og-omsorg-melding-1.5.doc</Referanse>
+		</Standardtekst>
+		<Standardtekst>
+			<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten. Informasjonsmodell og XML meldingsbeskrivelse (PDF)</Beskrivelse>
+			<Referanse>standardtekst/Pleie og omsorgsmeldinger/HIS_80704_2009-Pleie-og-omsorg-melding-1.5.pdf</Referanse>
+		</Standardtekst>
+	</Standardtekster>
+	<Skjemaer>
+		<Skjema>
+			<Referanse>skjema/Pleie og omsorgsmeldinger/HelseopplysningerTilLege-v1.5.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/HelseopplysningerTilLege/2009-06-30</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/Pleie og omsorgsmeldinger/HelseopplysningerVedSoknad-v1.5.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/HelseopplysningerVedSoknad/2009-06-30</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/Pleie og omsorgsmeldinger/Innleggelsesrapport-v1.5.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/Innleggelsesrapport/2009-06-30</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/Pleie og omsorgsmeldinger/MedisinskeOpplysninger-v1.5.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/MedisinskeOpplysninger/2009-06-30</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/Pleie og omsorgsmeldinger/OrienteringOmTjenestetilbud-v1.5.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/OrienteringOmTjenestetilbud/2009-06-30</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/Pleie og omsorgsmeldinger/Pasientlogistikk-v1.5.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/Pasientlogistikk/2009-06-30</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Utskrivningsrapport (Skjemaet og rotelementet heter TverrfagligEpikrise)</Beskrivelse>
+			<Referanse>skjema/Pleie og omsorgsmeldinger/TverrfagligEpikrise-v1.5.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/TverrfagligEpikrise/2009-06-30</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/Pleie og omsorgsmeldinger/MeldingFravar-v1.5.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/MeldingFravar/2009-06-30</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Komponenter som gjenbrukes i flere ulike Pleie- og omsorgsmeldinger</Beskrivelse>
+			<Referanse>skjema/Pleie og omsorgsmeldinger/poKomponent-v1.5.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/poKomponent/2009-06-30</Namespace>
+		</Skjema>
+	</Skjemaer>
+	<Felleskomponenter>
+		<Felleskomponent>
+			<Beskrivelse>XML-skjema for Hodemelding</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/MsgHead-v1_2.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Felles XML-definisjoner for person, helsepersonell, organisasjon etc</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/felleskomponent1.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Felles datatyper</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Container for Base64-kodet innhold</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>EPJ-fragmenter for journalnotat</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/EPJ-journalnotat.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>EPJ-fragmenter for cave, allergi mv</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/EPJ-cave.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>EPJ-fragmenter for legemiddel</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/EPJ-legemiddel.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>XML-definisjon av metadata som benyttes i EPJ-komponenter</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/EPJ-meta.xsd</Referanse>
+		</Felleskomponent>
+	</Felleskomponenter>
+	<Modellfiler>
+		<Modell>
+			<Beskrivelse>Rational Rose modellfil</Beskrivelse>
+			<Referanse>informasjonsmodell/Pleie og omsorgsmeldinger/PLO-ELIN-k-modell_v1.5.mdl</Referanse>
+		</Modell>
+	</Modellfiler>
+	<Visningsfiler>
+		<Visningsfil>
+			<Referanse>visningsfil/Pleie og omsorgsmeldinger/PLO-v1.5-2html.xsl</Referanse>
+		</Visningsfil>
+	</Visningsfiler>
+	<RelaterteFiler>
+		<RelatertFil>
+			<Beskrivelse>Standard for hodemelding (HIS 80601:2006)</Beskrivelse>
+			<Referanse>https://ehelse.no/Sider/Standard-for-hodemelding-–-HIS-806012006.aspx</Referanse>
+		</RelatertFil>
+		<RelatertFil>
+			<Beskrivelse>Bruk av pleie- og omsorgsmeldinger i pasientforløp (HIS 80606:2012)</Beskrivelse>
+			<Referanse>https://ehelse.no/Sider/Bruk-av-pleie--og-omsorgsmeldinger-–-HISD-808062012.aspx</Referanse>
+		</RelatertFil>
+		<RelatertFil>
+			<Beskrivelse>Krav til tjenestebasert adressering</Beskrivelse>
+			<Referanse>https://ehelse.no/Sider/Krav-til-tjenestebasert-adressering-(HIS-11532015.aspx</Referanse>
+		</RelatertFil>
+		<RelatertFil>
+			<Referanse>https://ehelse.no/Sider/Retningslinjer-endring,-kansellering,-tillegg-og-historikk---HISD-11542013.aspx</Referanse>
+		</RelatertFil>
+		<RelatertFil>
+			<Beskrivelse>Datatyper til bruk ved meldingsutveksling</Beskrivelse>
+			<Referanse>https://ehelse.no/Sider/Datatyper-til-bruk-ved-meldingsutveksling-mv-–-HIS-801172002.aspx</Referanse>
+		</RelatertFil>
+	</RelaterteFiler>
+</StandardMetadata>
