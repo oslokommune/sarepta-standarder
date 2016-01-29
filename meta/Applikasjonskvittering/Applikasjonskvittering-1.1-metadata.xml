@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>Applikasjonskvittering</Navn>
+	<Versjon>1.1</Versjon>
+	<Identifikator>HIS 80415:2012</Identifikator>
+	<Utgivelsesdato>2012-02-15</Utgivelsesdato>
+	<Utgiver>Helsedirektoratet</Utgiver>
+	<Status>Til utbredelse</Status>
+	<StatusReferansekatalog>Under innfasing</StatusReferansekatalog>
+	<Erstatter>HIS 80415:2004</Erstatter>
+	<Standardtekster>
+		<Standardtekst>
+			<Beskrivelse>Applikasjonskvittering Informasjonsmodell, XML meldingsbeskrivelse og retningslinjer for bruk (PDF)</Beskrivelse>
+			<Referanse>standardtekst/Applikasjonskvittering/HIS_80415_2012_AppRec-v1 1-2014-02-13.pdf</Referanse>
+		</Standardtekst>
+		<Standardtekst>
+			<Beskrivelse>Errata HIS 80415:2012 nr 2. Bruk av applikasjonskvittering i forbindelse med pleie- og omsorgsmeldinger versjon 1.5  (HIS 80704:2009) og dialogmelding versjon 1.0 (HIS 80603:2006) (PDF)</Beskrivelse>
+			<Referanse>standardtekst/Applikasjonskvittering/Errata_HIS_80415_2012_2-apprec.pdf</Referanse>
+		</Standardtekst>
+		<Standardtekst>
+			<Beskrivelse>Applikasjonskvittering Informasjonsmodell, XML meldingsbeskrivelse og retningslinjer for bruk (DOC)</Beskrivelse>
+			<Referanse>standardtekst/Applikasjonskvittering/HIS_80415_2012_AppRec-v1 1-2014-02-13.doc</Referanse>
+		</Standardtekst>
+	</Standardtekster>
+	<Skjemaer>
+		<Skjema>
+			<Referanse>skjema/Applikasjonskvittering/AppRec-v1.1.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/apprec/2012-02-15</Namespace>
+		</Skjema>
+	</Skjemaer>
+	<Felleskomponenter>
+		<Felleskomponent>
+			<Beskrivelse>Felles datatyper</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Container for Base64-kodet innhold</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
+		</Felleskomponent>
+	</Felleskomponenter>
+	<Modellfiler>
+		<Modell>
+			<Beskrivelse>Rational Rose modellfil</Beskrivelse>
+			<Referanse>informasjonsmodell/Applikasjonskvittering/FEILAppMsg-v1.007.mdl</Referanse>
+		</Modell>
+	</Modellfiler>
+	<RelaterteFiler>
+		<RelatertFil>
+			<Beskrivelse>Krav til tjenestebasert adressering</Beskrivelse>
+			<Referanse>https://ehelse.no/Sider/Krav-til-tjenestebasert-adressering-(HIS-11532015.aspx</Referanse>
+		</RelatertFil>
+		<RelatertFil>
+			<Beskrivelse>Datatyper til bruk ved meldingsutveksling</Beskrivelse>
+			<Referanse>https://ehelse.no/Sider/Datatyper-til-bruk-ved-meldingsutveksling-mv-–-HIS-801172002.aspx</Referanse>
+		</RelatertFil>
+	</RelaterteFiler>
+</StandardMetadata>
