@@ -1,3 +1,1 @@
-Litt tekst
-Mer tekst
-ny linje
+En liten fil med lite innhold
