@@ -17,12 +17,12 @@
 						<xs:documentation>Hvilket område standarden tilhører. Definert av referansekatalogen</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="Versjon">
+				<xs:element name="Versjon" type="xs:string">
 					<xs:annotation>
 						<xs:documentation>Standardens versjon</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="Identifikator">
+				<xs:element name="Identifikator" type="xs:string">
 					<xs:annotation>
 						<xs:documentation>Unik identifikator for denne standarden for denne utgiveren</xs:documentation>
 					</xs:annotation>
@@ -70,17 +70,17 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
-				<xs:element name="Erstatter" minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="Erstatter" type="xs:string" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
 						<xs:documentation>Identifikator til den eller de standardene denne erstatter</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="ErstattetAv" minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="ErstattetAv" type="xs:string" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
 						<xs:documentation>Identifikator til den eller de standardene som erstatter denne</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="ProfilAv" minOccurs="0">
+				<xs:element name="ProfilAv" minOccurs="0" type="xs:string">
 					<xs:annotation>
 						<xs:documentation>Identifikator til en standard som denne er en profil av.</xs:documentation>
 					</xs:annotation>
@@ -179,7 +179,7 @@
 			<xs:documentation>Referanse til en lokal eller global fil</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="Beskrivelse" minOccurs="0"/>
+			<xs:element name="Beskrivelse" type="xs:string" minOccurs="0"/>
 			<xs:element name="Referanse" type="xs:anyURI"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -190,7 +190,7 @@
 		<xs:complexContent>
 			<xs:extension base="Filreferanse">
 				<xs:sequence>
-					<xs:element name="Namespace"/>
+					<xs:element name="Namespace" type="xs:string"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
