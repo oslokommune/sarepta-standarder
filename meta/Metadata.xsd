@@ -80,12 +80,12 @@
 						<xs:documentation>Identifikator til den eller de standardene som erstatter denne</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="ProfilAv" minOccurs="0" type="xs:string">
+				<xs:element name="ProfilAv" type="xs:string" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Identifikator til en standard som denne er en profil av.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="Maalgruppe" minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="Maalgruppe" type="xs:string" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
 						<xs:documentation>Målgruppen(e) til standarden. Kilde: Referansekatalogen</xs:documentation>
 					</xs:annotation>
