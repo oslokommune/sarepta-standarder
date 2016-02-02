@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Versjon 1.6 2012-04-01 -->
 <!-- Endret 1. april 2012 (AA)
-- TEST SLETTES sarepta TC F-3.008
 - Endret namespace og targetnamespace til http://www.kith.no/xmlstds/po/Pasientlogistikk/2012-04-01	
 - Endret namespace til http://www.kith.no/xmlstds/po/poKomponent/2012-04-01 og referanse til poKomponent-v1.6.xsd
 -->
