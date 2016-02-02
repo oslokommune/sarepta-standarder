@@ -7,7 +7,7 @@
 - Lagt til attributtet xmlns:kith="http://www.kith.no/xmlstds" i  <schema ...>
 - Lagt til referanse til kith.xsd: 
 		<import namespace="http://www.kith.no/xmlstds" 
-- XXXFjernet lokal representasjon av følgende datatyper: CV, CS, oid, URL. Disse datatypene hentes nå direkte fra kith.xsd. Dette har ingen praktisk betydning for instansmeldinger.
+- Fjernet lokal representasjon av følgende datatyper: CV, CS, oid, URL. Disse datatypene hentes nå direkte fra kith.xsd. Dette har ingen praktisk betydning for instansmeldinger.
 - Endret deafult verdi for MIGversion
 -->
 <!-- File name: AppRec-v1-2004-11-21-->
