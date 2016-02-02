@@ -24,7 +24,7 @@
 	</Standardtekster>
 	<Skjemaer>
 		<Skjema>
-			<Referanse>skjema/Henvisning/Henvisning-v1.0.xsd</Referanse>
+			<Referanse>skjema/Henvisning/FEIL_Henvisning-v1.0.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/Henvisning/2005-07-08</Namespace>
 		</Skjema>
 	</Skjemaer>
