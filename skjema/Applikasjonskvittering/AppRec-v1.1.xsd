@@ -2,7 +2,7 @@
 <!-- File name: AppRec-v1_1.xsd -->
 <!-- Version: "v1.1 2012-02-15" -->
 <!-- Endringer fra versjon 1.0 til versjon 1.1:
-- Endret på rekkefølgen av attributtene i <schema ...>
+- TEST SLETTES Endret på rekkefølgen av attributtene i <schema ...>
 - Endret namespace xmlns:ar og targetNamespace til http://www.kith.no/xmlstds/apprec/2012-02-15
 - Lagt til attributtet xmlns:kith="http://www.kith.no/xmlstds" i  <schema ...>
 - Lagt til referanse til kith.xsd: 
