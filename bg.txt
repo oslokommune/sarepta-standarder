@@ -1,2 +1,4 @@
 liten fil
 endring
+BG2 skriver inn en ny linje
+bgrov legger til ny linje
