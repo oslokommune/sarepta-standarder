@@ -109,8 +109,25 @@
 			<Referanse>http://testserver.kith.no/wizard/</Referanse>
 		</Testfil>
 		<Testfil>
-			<Beskrivelse>Testcases for de ulike pleie- og omsorgsmeldingene (ZIP-filer)</Beskrivelse>
-			<Referanse>test/Pleie og omsorgsmeldinger/*</Referanse>
+			<Referanse>test/Pleie og omsorgsmeldinger/Testcase-mottak-helseopplysninger_til_lege-v1_6.zip</Referanse>
+		</Testfil>
+		<Testfil>
+			<Referanse>test/Pleie og omsorgsmeldinger/Testcase-mottak-helseopplysninger-v1_6.zip</Referanse>
+		</Testfil>
+		<Testfil>
+			<Referanse>test/Pleie og omsorgsmeldinger/Testcase-mottak-innleggelsesrapport-v1_6.zip</Referanse>
+		</Testfil>
+		<Testfil>
+			<Referanse>test/Pleie og omsorgsmeldinger/Testcase-mottak-medisinske_opplysninger-v1_6.zip</Referanse>
+		</Testfil>
+		<Testfil>
+			<Referanse>test/Pleie og omsorgsmeldinger/Testcase-mottak-orientering_om_tjenestetilbud-v1_6.zip</Referanse>
+		</Testfil>
+		<Testfil>
+			<Referanse>test/Pleie og omsorgsmeldinger/Testcase-mottak-pasientlogistikk-v1_6.zip</Referanse>
+		</Testfil>
+		<Testfil>
+			<Referanse>test/Pleie og omsorgsmeldinger/Testcase-mottak-utskrivningsrapport-v1_6.zip</Referanse>
 		</Testfil>
 	</Testmateriell>
 	<Eksempler>
