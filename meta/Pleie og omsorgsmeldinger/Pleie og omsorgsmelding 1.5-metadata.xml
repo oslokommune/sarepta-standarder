@@ -81,15 +81,15 @@
 		</Felleskomponent>
 		<Felleskomponent>
 			<Beskrivelse>EPJ-fragmenter for journalnotat</Beskrivelse>
-			<Referanse>skjema/felleskomponenter/EPJ-journalnotat.xsd</Referanse>
+			<Referanse>skjema/felleskomponenter/EPJ-journalnotat-mv.xsd</Referanse>
 		</Felleskomponent>
 		<Felleskomponent>
 			<Beskrivelse>EPJ-fragmenter for cave, allergi mv</Beskrivelse>
-			<Referanse>skjema/felleskomponenter/EPJ-cave.xsd</Referanse>
+			<Referanse>skjema/felleskomponenter/EPJ-cave-mv.xsd</Referanse>
 		</Felleskomponent>
 		<Felleskomponent>
 			<Beskrivelse>EPJ-fragmenter for legemiddel</Beskrivelse>
-			<Referanse>skjema/felleskomponenter/EPJ-legemiddel.xsd</Referanse>
+			<Referanse>skjema/felleskomponenter/EPJ-legemiddel-mv.xsd</Referanse>
 		</Felleskomponent>
 		<Felleskomponent>
 			<Beskrivelse>XML-definisjon av metadata som benyttes i EPJ-komponenter</Beskrivelse>
