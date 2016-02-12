@@ -17,7 +17,7 @@
 	</Standardtekster>
 	<Skjemaer>
 		<Skjema>
-			<Referanse>skjema/Teststandard/FEILtest.txt</Referanse>
+			<Referanse>skjema/Teststandard/test.txt</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/test/9999-01-01</Namespace>
 		</Skjema>
 	</Skjemaer>
@@ -42,7 +42,7 @@
 		<Testmateriell>
 		<Testfil>
 			<Beskrivelse>En testfil</Beskrivelse>
-			<Referanse>test/Teststandard/test.txt</Referanse>
+			<Referanse>test/Teststandard/FEILtest.txt</Referanse>
 		</Testfil>
 	</Testmateriell>
 	<Eksempler>
