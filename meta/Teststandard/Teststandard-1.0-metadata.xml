@@ -12,7 +12,7 @@
 	<Standardtekster>
 		<Standardtekst>
 			<Beskrivelse>En standardtekst</Beskrivelse>
-			<Referanse>standardtekst/Teststandard/FEILtest.txt</Referanse>
+			<Referanse>standardtekst/Teststandard/test.txt</Referanse>
 		</Standardtekst>
 	</Standardtekster>
 	<Skjemaer>
@@ -24,36 +24,36 @@
 	<Felleskomponenter>
 		<Felleskomponent>
 			<Beskrivelse>Felles datatyper</Beskrivelse>
-			<Referanse>skjema/felleskomponenter/FEILkith.xsd</Referanse>
+			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
 	<Modellfiler>
 		<Modell>
 			<Beskrivelse>En modell</Beskrivelse>
-			<Referanse>informasjonsmodell/Teststandard/FEILtest.txt</Referanse>
+			<Referanse>informasjonsmodell/Teststandard/test.txt</Referanse>
 		</Modell>
 	</Modellfiler>
 	<Visningsfiler>
 		<Visningsfil>
 			<Beskrivelse>En visningsfil</Beskrivelse>
-			<Referanse>visningsfil/Teststandard/FEILtest.txt</Referanse>
+			<Referanse>visningsfil/Teststandard/test.txt</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
 		<Testmateriell>
 		<Testfil>
 			<Beskrivelse>En testfil</Beskrivelse>
-			<Referanse>test/Teststandard/FEILtest.txt</Referanse>
+			<Referanse>test/Teststandard/test.txt</Referanse>
 		</Testfil>
 	</Testmateriell>
 	<Eksempler>
 		<Eksempel>
-			<Referanse>eksempel/Teststandard/FEILtest.txt</Referanse>
+			<Referanse>eksempel/Teststandard/test.txt</Referanse>
 		</Eksempel>
 	</Eksempler>
 	<RelaterteFiler>
 		<RelatertFil>
 			<Beskrivelse>Hodemleding TEST</Beskrivelse>
-			<Referanse>eksempel/Teststandard/FEILtest.txt</Referanse>
+			<Referanse>eksempel/Teststandard/test.txt</Referanse>
 		</RelatertFil>
 	</RelaterteFiler>
 </StandardMetadata>
