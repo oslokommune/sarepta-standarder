@@ -8,4 +8,9 @@
 	<Utgiver>Direktoratet for e-helse</Utgiver>
 	<Status>Til utbredelse</Status>
 	<StatusReferansekatalog>Aktiv</StatusReferansekatalog>
+	<Standardtekster>
+		<Standardtekst>
+			<Referanse>standardtekst/NyTest/NyTestStd.txt</Referanse>
+		</Standardtekst>
+	</Standardtekster>
 </StandardMetadata>
