@@ -34,6 +34,10 @@
 			<Beskrivelse>Container for Base64-kodet innhold</Beskrivelse>
 			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
 		</Felleskomponent>
+			<Felleskomponent>
+				<Beskrivelse>Test av endring i metafil</Beskrivelse>
+				<Referanse>skjema/felleskomponenter/EPJ-cave-mv.xsd</Referanse>
+			</Felleskomponent>
 	</Felleskomponenter>
 	<Modellfiler>
 		<Modell>
