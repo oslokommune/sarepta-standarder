@@ -42,12 +42,12 @@
 		<Testmateriell>
 		<Testfil>
 			<Beskrivelse>En testfil</Beskrivelse>
-			<Referanse>test/Teststandard/Xtest.txt</Referanse>
+			<Referanse>test/Teststandard/test.txt</Referanse>
 		</Testfil>
 	</Testmateriell>
 	<Eksempler>
 		<Eksempel>
-			<Referanse>eksempel/Teststandard/Xtest.txt</Referanse>
+			<Referanse>eksempel/Teststandard/test.txt</Referanse>
 		</Eksempel>
 	</Eksempler>
 	<RelaterteFiler>
