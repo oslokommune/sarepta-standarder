@@ -12,48 +12,48 @@
 	<Standardtekster>
 		<Standardtekst>
 			<Beskrivelse>En standardtekst</Beskrivelse>
-			<Referanse>standardtekst/FEILTeststandard/test.txt</Referanse>
+			<Referanse>standardtekst/Teststandard/test.txt</Referanse>
 		</Standardtekst>
 	</Standardtekster>
 	<Skjemaer>
 		<Skjema>
-			<Referanse>skjema/FEILTeststandard/test.txt</Referanse>
+			<Referanse>skjema/Teststandard/test.txt</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/test/9999-01-01</Namespace>
 		</Skjema>
 	</Skjemaer>
 	<Felleskomponenter>
 		<Felleskomponent>
 			<Beskrivelse>Felles datatyper</Beskrivelse>
-			<Referanse>skjema/FEILfelleskomponenter/kith.xsd</Referanse>
+			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
 	<Modellfiler>
 		<Modell>
 			<Beskrivelse>En modell</Beskrivelse>
-			<Referanse>informasjonsmodell/FEILTeststandard/test.txt</Referanse>
+			<Referanse>informasjonsmodell/Teststandard/test.txt</Referanse>
 		</Modell>
 	</Modellfiler>
 	<Visningsfiler>
 		<Visningsfil>
 			<Beskrivelse>En visningsfil</Beskrivelse>
-			<Referanse>visningsfil/FEILTeststandard/test.txt</Referanse>
+			<Referanse>visningsfil/Teststandard/test.txt</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
 		<Testmateriell>
 		<Testfil>
 			<Beskrivelse>En testfil</Beskrivelse>
-			<Referanse>test/FEILTeststandard/test.txt</Referanse>
+			<Referanse>test/Teststandard/test.txt</Referanse>
 		</Testfil>
 	</Testmateriell>
 	<Eksempler>
 		<Eksempel>
-			<Referanse>eksempel/FEILTeststandard/test.txt</Referanse>
+			<Referanse>eksempel/Teststandard/test.txt</Referanse>
 		</Eksempel>
 	</Eksempler>
 	<RelaterteFiler>
 		<RelatertFil>
 			<Beskrivelse>Hodemleding TEST</Beskrivelse>
-			<Referanse>eksempel/FEILTeststandard/test.txt</Referanse>
+			<Referanse>eksempel/Teststandard/test.txt</Referanse>
 		</RelatertFil>
 	</RelaterteFiler>
 </StandardMetadata>
