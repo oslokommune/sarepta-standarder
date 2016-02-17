@@ -9,8 +9,6 @@
 		<import namespace="http://www.kith.no/xmlstds" 
 - Fjernet lokal representasjon av følgende datatyper: CV, CS, oid, URL. Disse datatypene hentes nå direkte fra kith.xsd. Dette har ingen praktisk betydning for instansmeldinger.
 - Endret deafult verdi for MIGversion
-
-Dette er en kommentar!
 -->
 <!-- File name: AppRec-v1-2004-11-21-->
 <!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by Espen Stranger Seland (private) -->
