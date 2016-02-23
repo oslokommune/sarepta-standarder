@@ -14,10 +14,6 @@
 	<Maalgruppe>Fastleger</Maalgruppe>
 	<Standardtekster>
 		<Standardtekst>
-			<Beskrivelse>Henvisning. Informasjonsmodell og XML meldingsbeskrivelse (DOC)</Beskrivelse>
-			<Referanse>standardtekst/Henvisning/HIS_80517_2014_Henvisning_v1-1-2014-02-13.doc</Referanse>
-		</Standardtekst>
-		<Standardtekst>
 			<Beskrivelse>Henvisning. Informasjonsmodell og XML meldingsbeskrivelse (PDF)</Beskrivelse>
 			<Referanse>standardtekst/Henvisning/HIS_80517_2014_Henvisning_v1-1-2014-02-13.pdf</Referanse>
 		</Standardtekst>
@@ -42,12 +38,6 @@
 			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
-	<Modellfiler>
-		<Modell>
-			<Beskrivelse>Rational Rose modellfil</Beskrivelse>
-			<Referanse>informasjonsmodell/Henvisning/Henvisning-rehab_v1.1.mdl</Referanse>
-		</Modell>
-	</Modellfiler>
 	<Visningsfiler>
 		<Visningsfil>
 			<Referanse>visningsfil/Henvisning/henvisning2html-v1.1.xsl</Referanse>
@@ -55,19 +45,8 @@
 	</Visningsfiler>
 	<RelaterteFiler>
 		<RelatertFil>
-			<Beskrivelse>Den gode henvisning - Medisinsk-faglig innhold i henvisninger</Beskrivelse>
-			<Referanse>https://ehelse.no/Sider/Medisinsk-faglig-innhold-i-henvisninger-–-«Den-gode-henvisning»---HIS-803222003.aspx</Referanse>
-		</RelatertFil>
-		<RelatertFil>
-			<Beskrivelse>Krav til tjenestebasert adressering</Beskrivelse>
-			<Referanse>https://ehelse.no/Sider/Krav-til-tjenestebasert-adressering-(HIS-11532015.aspx</Referanse>
-		</RelatertFil>
-		<RelatertFil>
-		    <Referanse>https://ehelse.no/Sider/Retningslinjer-endring,-kansellering,-tillegg-og-historikk---HISD-11542013.aspx</Referanse>
-		</RelatertFil>
-		<RelatertFil>
-			<Beskrivelse>Datatyper til bruk ved meldingsutveksling</Beskrivelse>
-			<Referanse>https://ehelse.no/Sider/Datatyper-til-bruk-ved-meldingsutveksling-mv-–-HIS-801172002.aspx</Referanse>
+			<Beskrivelse>Referansekatalog-oppføring for Henvisning 1.1 (HIS 80517:2014)</Beskrivelse>
+			<Referanse>https://ehelse.hn.test.nhn.no/Sider/Henvisning--Informasjonsmodell-og-XML-meldingsbeskrivelse-–-HIS-805172014.aspx</Referanse>
 		</RelatertFil>
 	</RelaterteFiler>
 </StandardMetadata>
