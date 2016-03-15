@@ -12,7 +12,7 @@
 -->
 <!-- File name: AppRec-v1-2004-11-21-->
 <!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by Espen Stranger Seland (private) -->
-<!-- Edited by Espen Stranger Seland (KITH) -->
+<!-- Edited by Espen Stranger Seland (ehelse) -->
 <!-- Version 1.0 2004-11-21 -->
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:kith="http://www.kith.no/xmlstds" xmlns:ar="http://www.kith.no/xmlstds/apprec/2012-02-15" targetNamespace="http://www.kith.no/xmlstds/apprec/2012-02-15" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<import namespace="http://www.kith.no/xmlstds" schemaLocation="http://www.kith.no/xmlstds/kith.xsd"/>
