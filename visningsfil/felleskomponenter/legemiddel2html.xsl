@@ -1,27 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:epj3="http://www.kith.no/xmlstds/epj/epj3/2008-02-20" xmlns:epj-t="http://www.kith.no/xmlstds/epj/EPJTilleggsinfo/2008-02-20" exclude-result-prefixes="epj3 epj-t">
+	<!-- Endringslogg
+	- 04.12.15: Innføring av felles kodeverksfil. Småjusteringer på layout.
+	-->
+	<!-- Om
+	- Inngår i Hdirs visningsfiler versjon 2.0
+	- Laget i XMLSpy v2016 (http://www.altova.com) av Jan Sigurd Dragsjø (nhn.no)
+	-->
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-	<!-- Inngår i Hdirs visningsfiler versjon 1.0
-		Laget i XMLSpy v2012 rel2 (http://www.altova.com) av Jan Sigurd Dragsjø (helsedirektoratet.no) -->
+	<!-- Filer som må importeres. Vanligvis gjøres dette i hovedfila som importerer denne komponentfila. Derfor er de kommentert ut.
+	<xsl:import href="funksjoner.xsl"/>
+	<xsl:import href="meldingshode2html.xsl"/>
+	<xsl:import href="kodeverk.xsl"/> -->
+
 	<!-- Variabel for standard antall kolonner i tabellene-->
-	<xsl:variable name="std-col" select="9"/>
+	<xsl:variable name="std-col" select="8"/>
+	<xsl:variable name="std-td" select="100"/>
 	
 	<!-- Visning av innhold i Legemiddelinfo -->
-	<xsl:template match="epj3:Legemiddelinfo">
-		<xsl:variable name="Atc" select="boolean(../child::epj3:Legemiddelinfo//epj3:Atc)"/>
-		<xsl:variable name="Form" select="boolean(../child::epj3:Legemiddelinfo//epj3:Legemiddelform)"/>
-		<xsl:variable name="Styrke" select="boolean(../child::epj3:Legemiddelinfo//epj3:Styrke)"/>
-		<xsl:variable name="BrukT" select="boolean(../child::epj3:Legemiddelinfo//epj3:BruksomradeTekst)"/>
-		<xsl:variable name="Bruk" select="boolean(../child::epj3:Legemiddelinfo//epj3:Bruk)"/>
-		<xsl:variable name="Dos" select="boolean(../child::epj3:Legemiddelinfo//epj3:DosVeiledEnkel)"/>
-		<xsl:variable name="Skal" select="boolean(../child::epj3:Legemiddelinfo//epj3:SkalIkkeTasSammenMedAnnetLegemiddel)"/>
-		<xsl:variable name="Start" select="boolean(../child::epj3:Legemiddelinfo//epj3:DoseringStarttidspunkt)"/>
-		<xsl:variable name="Slutt" select="boolean(../child::epj3:Legemiddelinfo//epj3:DoseringSluttidspunkt)"/>
-		<xsl:variable name="Status" select="boolean(../child::epj3:Legemiddelinfo//epj3:StatusTilForskrivningen)"/>
-		<xsl:variable name="Forskr" select="boolean(../child::epj3:Legemiddelinfo//epj3:Forskriver)"/>
-		<xsl:variable name="Merk" select="boolean(../child::epj3:Legemiddelinfo//epj3:Merknad)"/>
-		<xsl:variable name="Multi" select="boolean(../child::epj3:Legemiddelinfo//epj3:InngaarIMultidose)"/>
-		<xsl:variable name="Viktig" select="boolean(../child::epj3:Legemiddelinfo/@referanseViktigTilleggsinfo)"/>
+	<xsl:template name="Legemiddelinfo">
+		<xsl:variable name="Atc" select="boolean(../child::*[local-name()=&quot;Legemiddelinfo&quot;]//child::*[local-name()=&quot;Atc&quot;])"/>
+		<xsl:variable name="Form" select="boolean(../child::*[local-name()=&quot;Legemiddelinfo&quot;]//child::*[local-name()=&quot;Legemiddelform&quot;])"/>
+		<xsl:variable name="Styrke" select="boolean(../child::*[local-name()=&quot;Legemiddelinfo&quot;]//child::*[local-name()=&quot;Styrke&quot;])"/>
+		<xsl:variable name="BrukT" select="boolean(../child::*[local-name()=&quot;Legemiddelinfo&quot;]//child::*[local-name()=&quot;BruksomradeTekst&quot;])"/>
+		<xsl:variable name="Bruk" select="boolean(../child::*[local-name()=&quot;Legemiddelinfo&quot;]//child::*[local-name()=&quot;Bruk&quot;])"/>
+		<xsl:variable name="Dos" select="boolean(../child::*[local-name()=&quot;Legemiddelinfo&quot;]//child::*[local-name()=&quot;DosVeiledEnkel&quot;])"/>
+		<xsl:variable name="Skal" select="boolean(../child::*[local-name()=&quot;Legemiddelinfo&quot;]//child::*[local-name()=&quot;SkalIkkeTasSammenMedAnnetLegemiddel&quot;])"/>
+		<xsl:variable name="Start" select="boolean(../child::*[local-name()=&quot;Legemiddelinfo&quot;]//child::*[local-name()=&quot;DoseringStarttidspunkt&quot;])"/>
+		<xsl:variable name="Slutt" select="boolean(../child::*[local-name()=&quot;Legemiddelinfo&quot;]//child::*[local-name()=&quot;DoseringSluttidspunkt&quot;])"/>
+		<xsl:variable name="Status" select="boolean(../child::*[local-name()=&quot;Legemiddelinfo&quot;]//child::*[local-name()=&quot;StatusTilForskrivningen&quot;])"/>
+		<xsl:variable name="Forskr" select="boolean(../child::*[local-name()=&quot;Legemiddelinfo&quot;]//child::*[local-name()=&quot;Forskriver&quot;])"/>
+		<xsl:variable name="Merk" select="boolean(../child::*[local-name()=&quot;Legemiddelinfo&quot;]//child::*[local-name()=&quot;Merknad&quot;])"/>
+		<xsl:variable name="Multi" select="boolean(../child::*[local-name()=&quot;Legemiddelinfo&quot;]//child::*[local-name()=&quot;InngaarIMultidose&quot;])"/>
+		<xsl:variable name="Viktig" select="boolean(../child::*[local-name()=&quot;Legemiddelinfo&quot;]/@referanseViktigTilleggsinfo)"/>
 		<!-- Variabler for beregning av colspan i legemiddel-tabellen -->
 		<xsl:variable name="lege-atc-col" select="(($std-col)-2)*number(not($Form or $Styrke or $BrukT or $Bruk or $Dos or $Skal or $Start or $Slutt or $Status or $Forskr or $Merk or $Multi or $Viktig))+1"/>
 		<xsl:variable name="lege-form-col" select="(($std-col)-2-number($Atc))*number(not($Styrke or $BrukT or $Bruk or $Dos or $Skal or $Start or $Slutt or $Status or $Forskr or $Merk or $Multi or $Viktig))+1"/>
@@ -32,7 +43,7 @@
 		<xsl:variable name="lege-merk-col" select="(($std-col)-2-number($Atc)-number($Form or $Styrke)-number($BrukT or $Bruk or $Dos or $Skal)-number($Start or $Slutt)-number($Status)-number($Forskr))*number(not($Viktig))+1"/>
 		<xsl:variable name="lege-viktig-col" select="(($std-col)-1-number($Atc)-number($Form or $Styrke)-number($BrukT or $Bruk or $Dos or $Skal)-number($Start or $Slutt)-number($Status)-number($Forskr)-number($Merk or $Multi))"/>
 		<!-- Visning av legemiddel-tabellen -->
-		<xsl:if test="not(preceding-sibling::epj3:Legemiddelinfo)">
+		<xsl:if test="not(preceding-sibling::*[local-name()=&quot;Legemiddelinfo&quot;])">
 			<!-- Visning av legemiddel-tabellen header-overskrifter -->
 			<tr>
 				<th>Navn og nr.</th>
@@ -67,69 +78,69 @@
 				<div>
 					<b>
 						<xsl:call-template name="line-breaks">
-							<xsl:with-param name="text" select=".//epj3:Navn"/>
+							<xsl:with-param name="text" select=".//child::*[local-name()=&quot;Navn&quot;]"/>
 						</xsl:call-template>
 					</b>
 				</div>
-				<xsl:if test=".//epj3:GeneriskNavn">
+				<xsl:if test=".//child::*[local-name()=&quot;GeneriskNavn&quot;]">
 					<div>
 						<b>Generisk:</b>&#160;
 						<xsl:call-template name="line-breaks">
-							<xsl:with-param name="text" select=".//epj3:GeneriskNavn"/>
+							<xsl:with-param name="text" select=".//child::*[local-name()=&quot;GeneriskNavn&quot;]"/>
 						</xsl:call-template>
 					</div>
 				</xsl:if>
-				<xsl:if test=".//epj3:Nr">
+				<xsl:if test=".//child::*[local-name()=&quot;Nr&quot;]">
 					<div>
 						<b>Varenummer:</b>&#160;
 						<xsl:call-template name="line-breaks">
-							<xsl:with-param name="text" select=".//epj3:Nr"/>
+							<xsl:with-param name="text" select=".//child::*[local-name()=&quot;Nr&quot;]"/>
 						</xsl:call-template>
 					</div>
 				</xsl:if>
 			</td>
 			<xsl:if test="$Atc">
 				<td colspan="{($lege-atc-col)}">
-					<xsl:for-each select=".//epj3:Atc">
-						<xsl:value-of select="@V"/>,&#160;<xsl:value-of select="@DN"/>
+					<xsl:for-each select=".//child::*[local-name()=&quot;Atc&quot;]">
+						<xsl:call-template name="k-dummy"/>&#160;
 					</xsl:for-each>
 				</td>
 			</xsl:if>
 			<xsl:if test="$Form or $Styrke">
 				<td colspan="{($lege-form-col)}">
-					<xsl:for-each select=".//epj3:Legemiddelform">
-						<xsl:value-of select="@DN"/>&#160;
+					<xsl:for-each select=".//child::*[local-name()=&quot;Legemiddelform&quot;]">
+						<xsl:call-template name="k-dummy"/>&#160;
 					</xsl:for-each>
-					<xsl:for-each select=".//epj3:Styrke">
+					<xsl:for-each select=".//child::*[local-name()=&quot;Styrke&quot;]">
 						<xsl:value-of select="@V"/>&#160;<xsl:value-of select="@U"/>&#160;
 					</xsl:for-each>
 				</td>
 			</xsl:if>
 			<xsl:if test="$BrukT or $Bruk or $Dos or $Skal">
 				<td colspan="{($lege-bruk-col)}">
-					<xsl:if test=".//epj3:Bruk or .//epj3:BruksomradeTekst">
+					<xsl:if test=".//child::*[local-name()=&quot;Bruk&quot;] or .//child::*[local-name()=&quot;BruksomradeTekst&quot;]">
 						<b>Bruk:</b>&#160;
-						<xsl:for-each select=".//epj3:Bruk">
+						<xsl:for-each select=".//child::*[local-name()=&quot;Bruk&quot;]">
 							<xsl:call-template name="k-9101"/>&#160;
 						</xsl:for-each>
-						<xsl:for-each select=".//epj3:BruksomradeTekst">
+						<xsl:for-each select=".//child::*[local-name()=&quot;BruksomradeTekst&quot;]">
 							<xsl:call-template name="line-breaks">
 								<xsl:with-param name="text" select="."/>
 							</xsl:call-template>
 						</xsl:for-each>
 					</xsl:if>
-					<xsl:if test=".//epj3:DosVeiledEnkel">
+					<xsl:if test=".//child::*[local-name()=&quot;DosVeiledEnkel&quot;]">
 						<div>
 							<b>Dosering:</b>&#160;
-							<xsl:for-each select=".//epj3:DosVeiledEnkel">
+							<xsl:for-each select=".//child::*[local-name()=&quot;DosVeiledEnkel&quot;]">
 								<xsl:call-template name="line-breaks">
 									<xsl:with-param name="text" select="."/>
 								</xsl:call-template>
 							</xsl:for-each>
 						</div>
 					</xsl:if>
-					<xsl:if test=".//epj3:SkalIkkeTasSammenMedAnnetLegemiddel">
-						<xsl:if test=".//epj3:SkalIkkeTasSammenMedAnnetLegemiddel='true'">
+					<xsl:if test=".//child::*[local-name()=&quot;SkalIkkeTasSammenMedAnnetLegemiddel&quot;]">
+						<xsl:if test=".//child::*[local-name()=&quot;SkalIkkeTasSammenMedAnnetLegemiddel&quot;]='true'">
 							<div>Skal&#160;ikke&#160;tas&#160;sammen med&#160;annet&#160;legemiddel</div>
 						</xsl:if>
 					</xsl:if>
@@ -137,18 +148,18 @@
 			</xsl:if>
 			<xsl:if test="$Start or $Slutt">
 				<td colspan="{($lege-tid-col)}">
-					<xsl:if test=".//epj3:DoseringStarttidspunkt">
+					<xsl:if test=".//child::*[local-name()=&quot;DoseringStarttidspunkt&quot;]">
 						<b>Start:</b>&#160;
-						<xsl:for-each select=".//epj3:DoseringStarttidspunkt">
+						<xsl:for-each select=".//child::*[local-name()=&quot;DoseringStarttidspunkt&quot;]">
 							<xsl:call-template name="skrivUtTS">
 								<xsl:with-param name="oppgittTid" select="@V"/>
 							</xsl:call-template>&#160;
 						</xsl:for-each>
 					</xsl:if>
-					<xsl:if test=".//epj3:DoseringSluttidspunkt">
+					<xsl:if test=".//child::*[local-name()=&quot;DoseringSluttidspunkt&quot;]">
 						<div>
 							<b>Slutt:</b>&#160;
-							<xsl:for-each select=".//epj3:DoseringSluttidspunkt">
+							<xsl:for-each select=".//child::*[local-name()=&quot;DoseringSluttidspunkt&quot;]">
 								<xsl:call-template name="skrivUtTS">
 									<xsl:with-param name="oppgittTid" select="@V"/>
 								</xsl:call-template>&#160;
@@ -159,7 +170,7 @@
 			</xsl:if>
 			<xsl:if test="$Status">
 				<td colspan="{($lege-status-col)}">
-					<xsl:for-each select=".//epj3:StatusTilForskrivningen">
+					<xsl:for-each select=".//child::*[local-name()=&quot;StatusTilForskrivningen&quot;]">
 						<xsl:call-template name="k-9104"/>&#160;
 					</xsl:for-each>
 				</td>
@@ -167,7 +178,7 @@
 			<xsl:if test="$Forskr">
 				<td colspan="{($lege-forskr-col)}">
 					<div class="No-line-content">
-						<xsl:for-each select=".//epj3:Forskriver">
+						<xsl:for-each select=".//child::*[local-name()=&quot;Forskriver&quot;]">
 							<xsl:call-template name="HealthcareProfessional"/>
 						</xsl:for-each>
 					</div>
@@ -175,12 +186,12 @@
 			</xsl:if>
 			<xsl:if test="$Merk or $Multi">
 				<td colspan="{($lege-merk-col)}">
-					<xsl:if test=".//epj3:Merknad">
+					<xsl:if test=".//child::*[local-name()=&quot;Merknad&quot;]">
 						<xsl:call-template name="line-breaks">
-							<xsl:with-param name="text" select=".//epj3:Merknad"/>
+							<xsl:with-param name="text" select=".//child::*[local-name()=&quot;Merknad&quot;]"/>
 						</xsl:call-template>
 					</xsl:if>
-					<xsl:for-each select=".//epj3:InngaarIMultidose">
+					<xsl:for-each select=".//child::*[local-name()=&quot;InngaarIMultidose&quot;]">
 						<div>
 							<xsl:call-template name="k-9103"/>&#160;
 						</div>
@@ -189,26 +200,26 @@
 			</xsl:if>
 			<xsl:if test="$Viktig">
 				<td colspan="{($lege-viktig-col)}">
-					<xsl:if test="@komponentID = //epj-t:tilleggsinfoEPJKomponent//epj-t:linkTilKomponent">
+					<xsl:if test="@komponentID = //child::*[local-name()=&quot;tilleggsinfoEPJKomponent&quot;]//child::*[local-name()=&quot;linkTilKomponent&quot;]">
 						Referert versjon
 					</xsl:if>
 					<xsl:if test="@referanseViktigTilleggsinfo">
 						<xsl:variable name="var" select="./@referanseViktigTilleggsinfo"/>
 						<div class="viktig">
-							<xsl:for-each select="//epj-t:tilleggsinfoEPJKomponent[@komponentID = $var]//epj-t:linktype">
+							<xsl:for-each select="//child::*[local-name()=&quot;tilleggsinfoEPJKomponent&quot;][@komponentID = $var]//child::*[local-name()=&quot;linktype&quot;]">
 								<xsl:call-template name="k-9205"/>&#160;
 							</xsl:for-each>
 						</div>
-						<xsl:if test="//epj-t:tilleggsinfoEPJKomponent[@komponentID = $var]//epj-t:linkstyrke">
+						<xsl:if test="//child::*[local-name()=&quot;tilleggsinfoEPJKomponent&quot;][@komponentID = $var]//child::*[local-name()=&quot;linkstyrke&quot;]">
 							<div>
-								<xsl:for-each select="//epj-t:tilleggsinfoEPJKomponent[@komponentID = $var]//epj-t:linkstyrke">
+								<xsl:for-each select="//child::*[local-name()=&quot;tilleggsinfoEPJKomponent&quot;][@komponentID = $var]//child::*[local-name()=&quot;linkstyrke&quot;]">
 									<xsl:call-template name="k-9206"/>&#160;
 								</xsl:for-each>
 							</div>
 						</xsl:if>
-						<xsl:if test="//epj-t:tilleggsinfoEPJKomponent[@komponentID = $var]//epj-t:merknad">
+						<xsl:if test="//child::*[local-name()=&quot;tilleggsinfoEPJKomponent&quot;][@komponentID = $var]//child::*[local-name()=&quot;merknad&quot;]">
 							<div>
-								<xsl:value-of select="//epj-t:tilleggsinfoEPJKomponent[@komponentID = $var]//epj-t:merknad"/>
+								<xsl:value-of select="//child::*[local-name()=&quot;tilleggsinfoEPJKomponent&quot;][@komponentID = $var]//child::*[local-name()=&quot;merknad&quot;]"/>
 							</div>
 						</xsl:if>
 					</xsl:if>
@@ -218,27 +229,27 @@
 	</xsl:template>
 	
 	<!-- Visning av innhold i Legemidler administrert ved overføring -->
-	<xsl:template match="epj3:LegemidlerAdministrertVedOverforing">
-		<xsl:variable name="Atc" select="boolean(../child::epj3:LegemidlerAdministrertVedOverforing//epj3:Atc)"/>
-		<xsl:variable name="Form" select="boolean(../child::epj3:LegemidlerAdministrertVedOverforing//epj3:Legemiddelform)"/>
-		<xsl:variable name="Styrke" select="boolean(../child::epj3:LegemidlerAdministrertVedOverforing//epj3:Styrke)"/>
-		<xsl:variable name="BrukT" select="boolean(../child::epj3:LegemidlerAdministrertVedOverforing//epj3:BruksomradeTekst)"/>
-		<xsl:variable name="Bruk" select="boolean(../child::epj3:LegemidlerAdministrertVedOverforing//epj3:Bruk)"/>
-		<xsl:variable name="Dos" select="boolean(../child::epj3:LegemidlerAdministrertVedOverforing//epj3:DosVeiledEnkel)"/>
-		<xsl:variable name="Skal" select="boolean(../child::epj3:LegemidlerAdministrertVedOverforing//epj3:SkalIkkeTasSammenMedAnnetLegemiddel)"/>
-		<xsl:variable name="Start" select="boolean(../child::epj3:LegemidlerAdministrertVedOverforing//epj3:DoseringStarttidspunkt)"/>
-		<xsl:variable name="Slutt" select="boolean(../child::epj3:LegemidlerAdministrertVedOverforing//epj3:DoseringSluttidspunkt)"/>
-		<xsl:variable name="Dose" select="boolean(../child::epj3:LegemidlerAdministrertVedOverforing//epj3:AdmEnkeltdose)"/>
-		<xsl:variable name="Kvant" select="boolean(../child::epj3:LegemidlerAdministrertVedOverforing//epj3:Kvantum)"/>
-		<xsl:variable name="Ant" select="boolean(../child::epj3:LegemidlerAdministrertVedOverforing//epj3:AntEnkeltdoser)"/>
-		<xsl:variable name="AStart" select="boolean(../child::epj3:LegemidlerAdministrertVedOverforing//epj3:AdmStart)"/>
-		<xsl:variable name="ASlutt" select="boolean(../child::epj3:LegemidlerAdministrertVedOverforing//epj3:AdmSlutt)"/>
-		<xsl:variable name="AStatus" select="boolean(../child::epj3:LegemidlerAdministrertVedOverforing//epj3:AdmStatus)"/>
-		<xsl:variable name="AAv" select="boolean(../child::epj3:LegemidlerAdministrertVedOverforing//epj3:AdministrertAv)"/>
+	<xsl:template name="LegemidlerAdministrertVedOverforing">
+		<xsl:variable name="Atc" select="boolean(../child::*[local-name()=&quot;LegemidlerAdministrertVedOverforing&quot;]//child::*[local-name()=&quot;Atc&quot;])"/>
+		<xsl:variable name="Form" select="boolean(../child::*[local-name()=&quot;LegemidlerAdministrertVedOverforing&quot;]//child::*[local-name()=&quot;Legemiddelform&quot;])"/>
+		<xsl:variable name="Styrke" select="boolean(../child::*[local-name()=&quot;LegemidlerAdministrertVedOverforing&quot;]//child::*[local-name()=&quot;Styrke&quot;])"/>
+		<xsl:variable name="BrukT" select="boolean(../child::*[local-name()=&quot;LegemidlerAdministrertVedOverforing&quot;]//child::*[local-name()=&quot;BruksomradeTekst&quot;])"/>
+		<xsl:variable name="Bruk" select="boolean(../child::*[local-name()=&quot;LegemidlerAdministrertVedOverforing&quot;]//child::*[local-name()=&quot;Bruk&quot;])"/>
+		<xsl:variable name="Dos" select="boolean(../child::*[local-name()=&quot;LegemidlerAdministrertVedOverforing&quot;]//child::*[local-name()=&quot;DosVeiledEnkel&quot;])"/>
+		<xsl:variable name="Skal" select="boolean(../child::*[local-name()=&quot;LegemidlerAdministrertVedOverforing&quot;]//child::*[local-name()=&quot;SkalIkkeTasSammenMedAnnetLegemiddel&quot;])"/>
+		<xsl:variable name="Start" select="boolean(../child::*[local-name()=&quot;LegemidlerAdministrertVedOverforing&quot;]//child::*[local-name()=&quot;DoseringStarttidspunkt&quot;])"/>
+		<xsl:variable name="Slutt" select="boolean(../child::*[local-name()=&quot;LegemidlerAdministrertVedOverforing&quot;]//child::*[local-name()=&quot;DoseringSluttidspunkt&quot;])"/>
+		<xsl:variable name="Dose" select="boolean(../child::*[local-name()=&quot;LegemidlerAdministrertVedOverforing&quot;]//child::*[local-name()=&quot;AdmEnkeltdose&quot;])"/>
+		<xsl:variable name="Kvant" select="boolean(../child::*[local-name()=&quot;LegemidlerAdministrertVedOverforing&quot;]//child::*[local-name()=&quot;Kvantum&quot;])"/>
+		<xsl:variable name="Ant" select="boolean(../child::*[local-name()=&quot;LegemidlerAdministrertVedOverforing&quot;]//child::*[local-name()=&quot;AntEnkeltdoser&quot;])"/>
+		<xsl:variable name="AStart" select="boolean(../child::*[local-name()=&quot;LegemidlerAdministrertVedOverforing&quot;]//child::*[local-name()=&quot;AdmStart&quot;])"/>
+		<xsl:variable name="ASlutt" select="boolean(../child::*[local-name()=&quot;LegemidlerAdministrertVedOverforing&quot;]//child::*[local-name()=&quot;AdmSlutt&quot;])"/>
+		<xsl:variable name="AStatus" select="boolean(../child::*[local-name()=&quot;LegemidlerAdministrertVedOverforing&quot;]//child::*[local-name()=&quot;AdmStatus&quot;])"/>
+		<xsl:variable name="AAv" select="boolean(../child::*[local-name()=&quot;LegemidlerAdministrertVedOverforing&quot;]//child::*[local-name()=&quot;AdministrertAv&quot;])"/>
 		<!-- Variabler for beregning av colspan i legemiddel-tabellen -->
 		<xsl:variable name="lavo-adm-col" select="(($std-col)-1-number($Atc)-number($Form or $Styrke)-number($BrukT or $Bruk or $Dos or $Skal)-number($Start or $Slutt)-number($Dose or $Kvant or $Ant)-number($AStart or $ASlutt or $AStatus))"/>
 		<!-- Visning av legemiddel-tabellen -->
-		<xsl:if test="not(preceding-sibling::epj3:LegemidlerAdministrertVedOverforing)">
+		<xsl:if test="not(preceding-sibling::*[local-name()=&quot;LegemidlerAdministrertVedOverforing&quot;])">
 			<!-- Visning av legemiddel-tabellen header-overskrifter -->
 			<tr>
 				<th>Navn og nr.</th>
@@ -269,69 +280,69 @@
 					<div>
 						<b>
 							<xsl:call-template name="line-breaks">
-								<xsl:with-param name="text" select=".//epj3:Navn"/>
+								<xsl:with-param name="text" select=".//child::*[local-name()=&quot;Navn&quot;]"/>
 							</xsl:call-template>
 						</b>
 					</div>
-					<xsl:if test=".//epj3:GeneriskNavn">
+					<xsl:if test=".//child::*[local-name()=&quot;GeneriskNavn&quot;]">
 						<div>
 							<b>Generisk:</b>&#160;
 							<xsl:call-template name="line-breaks">
-								<xsl:with-param name="text" select=".//epj3:GeneriskNavn"/>
+								<xsl:with-param name="text" select=".//child::*[local-name()=&quot;GeneriskNavn&quot;]"/>
 							</xsl:call-template>
 						</div>
 					</xsl:if>
-					<xsl:if test=".//epj3:Nr">
+					<xsl:if test=".//child::*[local-name()=&quot;Nr&quot;]">
 						<div>
 							<b>Varenummer:</b>&#160;
 							<xsl:call-template name="line-breaks">
-								<xsl:with-param name="text" select=".//epj3:Nr"/>
+								<xsl:with-param name="text" select=".//child::*[local-name()=&quot;Nr&quot;]"/>
 							</xsl:call-template>
 						</div>
 					</xsl:if>
 				</td>
 				<xsl:if test="$Atc">
 					<td>
-						<xsl:for-each select=".//epj3:Atc">
-							<xsl:value-of select="@V"/>,&#160;<xsl:value-of select="@DN"/>
+						<xsl:for-each select=".//child::*[local-name()=&quot;Atc&quot;]">
+							<xsl:call-template name="k-dummy"/>&#160;
 						</xsl:for-each>
 					</td>
 				</xsl:if>
 				<xsl:if test="$Form or $Styrke">
 					<td>
-						<xsl:for-each select=".//epj3:Legemiddelform">
-							<xsl:value-of select="@DN"/>&#160;
+						<xsl:for-each select=".//child::*[local-name()=&quot;Legemiddelform&quot;]">
+							<xsl:call-template name="k-dummy"/>&#160;
 						</xsl:for-each>
-						<xsl:for-each select=".//epj3:Styrke">
+						<xsl:for-each select=".//child::*[local-name()=&quot;Styrke&quot;]">
 							<xsl:value-of select="@V"/>&#160;<xsl:value-of select="@U"/>&#160;
 						</xsl:for-each>
 					</td>
 				</xsl:if>
 				<xsl:if test="$BrukT or $Bruk or $Dos or $Skal">
 					<td>
-						<xsl:if test=".//epj3:Bruk or .//epj3:BruksomradeTekst">
+						<xsl:if test=".//child::*[local-name()=&quot;Bruk&quot;] or .//child::*[local-name()=&quot;BruksomradeTekst&quot;]">
 							<b>Bruk:</b>&#160;
-							<xsl:for-each select=".//epj3:Bruk">
+							<xsl:for-each select=".//child::*[local-name()=&quot;Bruk&quot;]">
 								<xsl:call-template name="k-9101"/>&#160;
 							</xsl:for-each>
-							<xsl:for-each select=".//epj3:BruksomradeTekst">
+							<xsl:for-each select=".//child::*[local-name()=&quot;BruksomradeTekst&quot;]">
 								<xsl:call-template name="line-breaks">
 									<xsl:with-param name="text" select="."/>
 								</xsl:call-template>
 							</xsl:for-each>
 						</xsl:if>
-						<xsl:if test=".//epj3:DosVeiledEnkel">
+						<xsl:if test=".//child::*[local-name()=&quot;DosVeiledEnkel&quot;]">
 							<div>
 								<b>Dosering:</b>&#160;
-								<xsl:for-each select=".//epj3:DosVeiledEnkel">
+								<xsl:for-each select=".//child::*[local-name()=&quot;DosVeiledEnkel&quot;]">
 									<xsl:call-template name="line-breaks">
 										<xsl:with-param name="text" select="."/>
 									</xsl:call-template>
 								</xsl:for-each>
 							</div>
 						</xsl:if>
-						<xsl:if test=".//epj3:SkalIkkeTasSammenMedAnnetLegemiddel">
-							<xsl:if test=".//epj3:SkalIkkeTasSammenMedAnnetLegemiddel='true'">
+						<xsl:if test=".//child::*[local-name()=&quot;SkalIkkeTasSammenMedAnnetLegemiddel&quot;]">
+							<xsl:if test=".//child::*[local-name()=&quot;SkalIkkeTasSammenMedAnnetLegemiddel&quot;]='true'">
 								<div>Skal&#160;ikke&#160;tas&#160;sammen med&#160;annet&#160;legemiddel</div>
 							</xsl:if>
 						</xsl:if>
@@ -339,18 +350,18 @@
 				</xsl:if>
 				<xsl:if test="$Start or $Slutt">
 					<td>
-						<xsl:if test=".//epj3:DoseringStarttidspunkt">
+						<xsl:if test=".//child::*[local-name()=&quot;DoseringStarttidspunkt&quot;]">
 							<b>Start:</b>&#160;
-							<xsl:for-each select=".//epj3:DoseringStarttidspunkt">
+							<xsl:for-each select=".//child::*[local-name()=&quot;DoseringStarttidspunkt&quot;]">
 								<xsl:call-template name="skrivUtTS">
 									<xsl:with-param name="oppgittTid" select="@V"/>
 								</xsl:call-template>&#160;
 							</xsl:for-each>
 						</xsl:if>
-						<xsl:if test=".//epj3:DoseringSluttidspunkt">
+						<xsl:if test=".//child::*[local-name()=&quot;DoseringSluttidspunkt&quot;]">
 							<div>
 								<b>Slutt:</b>&#160;
-								<xsl:for-each select=".//epj3:DoseringSluttidspunkt">
+								<xsl:for-each select=".//child::*[local-name()=&quot;DoseringSluttidspunkt&quot;]">
 									<xsl:call-template name="skrivUtTS">
 										<xsl:with-param name="oppgittTid" select="@V"/>
 									</xsl:call-template>&#160;
@@ -361,45 +372,45 @@
 				</xsl:if>
 				<xsl:if test="$Dose or $Kvant or $Ant">
 					<td>
-						<xsl:if test=".//epj3:Kvantum">
+						<xsl:if test=".//child::*[local-name()=&quot;Kvantum&quot;]">
 							<xsl:call-template name="line-breaks">
-								<xsl:with-param name="text" select=".//epj3:Kvantum"/>
+								<xsl:with-param name="text" select=".//child::*[local-name()=&quot;Kvantum&quot;]"/>
 							</xsl:call-template>
 							&#160;x&#160;
 						</xsl:if>
-						<xsl:if test=".//epj3:AntEnkeltdoser">
-							<xsl:value-of select=".//epj3:AntEnkeltdoser"/>
+						<xsl:if test=".//child::*[local-name()=&quot;AntEnkeltdoser&quot;]">
+							<xsl:value-of select=".//child::*[local-name()=&quot;AntEnkeltdoser&quot;]"/>
 							&#160;x&#160;
 						</xsl:if>
-						<xsl:if test=".//epj3:AdmEnkeltdose">
-							<xsl:value-of select=".//epj3:AdmEnkeltdose/@V"/>&#160;<xsl:value-of select=".//epj3:AdmEnkeltdose/@U"/>&#160;
+						<xsl:if test=".//child::*[local-name()=&quot;AdmEnkeltdose&quot;]">
+							<xsl:value-of select=".//child::*[local-name()=&quot;AdmEnkeltdose&quot;]/@V"/>&#160;<xsl:value-of select=".//child::*[local-name()=&quot;AdmEnkeltdose&quot;]/@U"/>&#160;
 						</xsl:if>
 					</td>
 				</xsl:if>
 				<xsl:if test="$AStart or $ASlutt or $AStatus">
 					<td>
-						<xsl:if test=".//epj3:AdmStart">
+						<xsl:if test=".//child::*[local-name()=&quot;AdmStart&quot;]">
 							<b>Start:</b>&#160;
-							<xsl:for-each select=".//epj3:AdmStart">
+							<xsl:for-each select=".//child::*[local-name()=&quot;AdmStart&quot;]">
 								<xsl:call-template name="skrivUtTS">
 									<xsl:with-param name="oppgittTid" select="@V"/>
 								</xsl:call-template>&#160;
 							</xsl:for-each>
 						</xsl:if>
-						<xsl:if test=".//epj3:AdmSlutt">
+						<xsl:if test=".//child::*[local-name()=&quot;AdmSlutt&quot;]">
 							<div>
 								<b>Slutt:</b>&#160;
-								<xsl:for-each select=".//epj3:AdmSlutt">
+								<xsl:for-each select=".//child::*[local-name()=&quot;AdmSlutt&quot;]">
 									<xsl:call-template name="skrivUtTS">
 										<xsl:with-param name="oppgittTid" select="@V"/>
 									</xsl:call-template>&#160;
 								</xsl:for-each>
 							</div>
 						</xsl:if>
-						<xsl:if test=".//epj3:AdmStatus">
+						<xsl:if test=".//child::*[local-name()=&quot;AdmStatus&quot;]">
 							<div>
 								<b>Status:</b>&#160;
-								<xsl:for-each select=".//epj3:AdmStatus">
+								<xsl:for-each select=".//child::*[local-name()=&quot;AdmStatus&quot;]">
 									<xsl:call-template name="k-9083"/>
 								</xsl:for-each>
 							</div>
@@ -407,71 +418,22 @@
 					</td>
 				</xsl:if>
 				<td colspan="{($lavo-adm-col)}">
-						<xsl:choose>
-							<xsl:when test=".//epj3:AdministrertAv">
-								<div class="No-line-content">
-									<xsl:for-each select=".//epj3:AdministrertAv">
-										<xsl:call-template name="HealthcareProfessional"/>
-									</xsl:for-each>
-								</div>
-							</xsl:when>
-							<xsl:otherwise>
-								<xsl:if test="local-name(.)=&quot;AdmAvHelsepersonell&quot;">Helsepersonell</xsl:if>
-								<xsl:if test="local-name(.)=&quot;Egenadministrering&quot;">Pasient/pårørende</xsl:if>
-							</xsl:otherwise>
-						</xsl:choose>
+					<xsl:choose>
+						<xsl:when test=".//child::*[local-name()=&quot;AdministrertAv&quot;]">
+							<div class="No-line-content">
+								<xsl:for-each select=".//child::*[local-name()=&quot;AdministrertAv&quot;]">
+									<xsl:call-template name="HealthcareProfessional"/>
+								</xsl:for-each>
+							</div>
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:if test="local-name(.)=&quot;AdmAvHelsepersonell&quot;">Helsepersonell</xsl:if>
+							<xsl:if test="local-name(.)=&quot;Egenadministrering&quot;">Pasient/pårørende</xsl:if>
+						</xsl:otherwise>
+					</xsl:choose>
 				</td>
 			</tr>
 		</xsl:for-each>
-	</xsl:template>
-
-	<!-- Kodeverk -->
-	<xsl:template name="k-9083">
-		<xsl:choose>
-			<xsl:when test="@V='1'">Inntatt&#160;i&#160;sin&#160;helhet</xsl:when>
-			<xsl:when test="@V='2'">Delvis&#160;inntatt</xsl:when>
-			<xsl:when test="@V='3'">Nektet&#160;inntatt</xsl:when>
-			<xsl:when test="@V='4'">Ikke&#160;gitt</xsl:when>
-		</xsl:choose>
-	</xsl:template>
-	<xsl:template name="k-9101">
-		<xsl:choose>
-			<xsl:when test="@V='1'">Fast</xsl:when>
-			<xsl:when test="@V='2'">Kur</xsl:when>
-			<xsl:when test="@V='3'">Ved&#160;behov</xsl:when>
-			<xsl:when test="@V='4'">Vaksine</xsl:when>
-			<xsl:when test="@V='5'">Næringsmiddel/vitaminer</xsl:when>
-		</xsl:choose>
-	</xsl:template>
-	<xsl:template name="k-9103">
-		<xsl:choose>
-			<xsl:when test="@V='1'">Legemiddeldosering&#160;inngår&#160;ikke&#160;i&#160;en&#160;multidose</xsl:when>
-			<xsl:when test="@V='2'">Legemiddeldosering&#160;inngår&#160;i&#160;multidose og&#160;informasjon&#160;er&#160;sendt&#160;til&#160;leverandør</xsl:when>
-		</xsl:choose>
-	</xsl:template>
-	<xsl:template name="k-9104">
-		<xsl:choose>
-			<xsl:when test="@V='1'">Originalforskrivning</xsl:when>
-			<xsl:when test="@V='2'">Seponert</xsl:when>
-			<xsl:when test="@V='3'">Utlevert&#160;legemiddel</xsl:when>
-		</xsl:choose>
-	</xsl:template>
-	<xsl:template name="k-9205">
-		<xsl:choose>
-			<xsl:when test="@V='01'">Erstatter&#160;tidligere&#160;versjon</xsl:when>
-			<xsl:when test="@V='11'">Se&#160;også</xsl:when>
-			<xsl:when test="@V='L1'">Erstatter&#160;referert&#160;forskrivning (doseendring)</xsl:when>
-			<xsl:when test="@V='L2'">Erstatter&#160;referert&#160;forskrivning (annet legemiddel)</xsl:when>
-			<xsl:when test="@V='L3'">Referert&#160;forskrivning&#160;seponeres</xsl:when>
-		</xsl:choose>
-	</xsl:template>
-	<xsl:template name="k-9206">
-		<xsl:choose>
-			<xsl:when test="@V='1'">Tidligere&#160;versjon&#160;uten&#160;relevans for&#160;framtidig&#160;helsehjelp</xsl:when>
-			<xsl:when test="@V='2'">Tilleggsopplysninger&#160;uten&#160;særlig&#160;relevans for&#160;framtidig&#160;helsehjelp</xsl:when>
-			<xsl:when test="@V='5'">Tilleggsopplysninger&#160;som&#160;kan&#160;være&#160;relevante i&#160;forbindelse&#160;framtidig&#160;helsehjelp</xsl:when>
-			<xsl:when test="@V='9'">Tilleggsopplysninger&#160;som&#160;er&#160;helt&#160;nødvendige for&#160;forståelsen&#160;av&#160;dokumentasjonen</xsl:when>
-		</xsl:choose>
 	</xsl:template>
 
 </xsl:stylesheet>

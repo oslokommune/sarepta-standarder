@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Innrapportering av vederlagstrekk
+2010-02-04
+ -->
+<schema xmlns:ivt="http://www.kith.no/xmlstds/nav/innrapporteringtrekk/2010-02-04" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" targetNamespace="http://www.kith.no/xmlstds/nav/innrapporteringtrekk/2010-02-04" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="felleskomponent1.xsd"/>
+	<element name="InnrapporteringTrekk">
+		<complexType>
+			<sequence>
+				<element name="Aksjonskode" type="kith:CS" minOccurs="0">
+					<annotation>
+						<documentation>Ny, endring, kansellering eller opphør</documentation>
+					</annotation>
+				</element>
+				<element ref="ivt:Identifisering"/>
+				<element ref="ivt:Trekk" minOccurs="0"/>
+				<element ref="ivt:Periode"/>
+				<element ref="ivt:Kreditor"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Identifisering">
+		<complexType>
+			<sequence>
+				<element name="KreditorTrekkId" type="string" minOccurs="0"/>
+				<element name="NavTrekkId" type="string" minOccurs="0"/>
+				<element name="DebitorId" type="fk1:Ident"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Trekk">
+		<complexType>
+			<sequence>
+				<element name="KodeTrekktype" type="kith:CS"/>
+				<element name="KodeTrekkAlternativ" type="kith:CS"/>
+				<element name="Sats" type="kith:MO" minOccurs="0"/>
+				<element name="Saldo" type="kith:MO" minOccurs="0"/>
+				<element name="GyldigTomDato" type="date" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Periode">
+		<complexType>
+			<sequence>
+				<element name="PeriodeFomDato" type="date"/>
+				<element name="PeriodeTomDato" type="date" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Kreditor">
+		<complexType>
+			<sequence>
+				<element name="TSSId" type="string" minOccurs="0"/>
+				<element name="OrgNr" type="fk1:Ident" minOccurs="0"/>
+				<element name="Navn" type="string" minOccurs="0"/>
+				<element name="Adresse" type="fk1:Address" minOccurs="0"/>
+				<element name="Ref" type="string" minOccurs="0"/>
+				<element name="Kontonr" type="string" minOccurs="0"/>
+				<element name="KID" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

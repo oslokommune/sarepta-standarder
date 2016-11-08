@@ -97,9 +97,9 @@ body
 
 	.HeaderContent, .No-line-headerContent {
 	width: 47.5%;
-	height: 68px;
-	min-height: 68px;
-	max-height: 68px;
+	height: 82px;
+	min-height: 82px;
+	max-height: 82px;
 	border: solid black 1px;
 	padding: 0.5em;
 	float: left;
@@ -190,7 +190,7 @@ margin-bottom:0.3em
 padding:0.2em;
 font-size: 1.2em;
 line-height:1em;
-margin-bottom:0.3em
+margin-bottom:0.3em;
 }
 
 .Document table {
@@ -208,7 +208,7 @@ border-style:none;
 font-family:Arial;
 font-size:12px;
 text-align: left;
-text-valign: top;
+vertical-align: top;
 width: 100px;
 }
 
@@ -217,7 +217,7 @@ border-top: 1px solid lightgrey;
 font-family:Arial;
 font-size:12px;
 text-align: left;
-text-valign: top;
+vertical-align: top;
 width: 100px;
 padding: 4px 2px 4px 2px;
 }
@@ -227,7 +227,7 @@ border-style:none;
 font-family:Arial;
 font-size:12px;
 text-align: left;
-text-valign: top;
+vertical-align: top;
 width: 100px;
 }
 
@@ -235,6 +235,7 @@ width: 100px;
 background-color: white;
 border-style: none;
 text-align: left;
+vertical-align: top;
 font-size: 12px;
 }
 
@@ -242,6 +243,7 @@ font-size: 12px;
 border-top: 1px solid lightgrey;
 background-color: white;
 text-align: left;
+vertical-align: top;
 font-size: 12px;
 padding: 4px 2px 4px 2px;
 }
@@ -250,6 +252,7 @@ padding: 4px 2px 4px 2px;
 background-color: white;
 border-style: none;
 text-align: left;
+vertical-align: top;
 font-size: 12px;
 }
 
@@ -267,7 +270,7 @@ border-top: 1px solid lightgrey;
 font-family:Arial;
 font-size:1.3em;
 text-align: left;
-text-valign: top;
+vertical-align: top;
 width: 100px;
 padding: 4px 2px 4px 2px;
 }
@@ -277,7 +280,7 @@ border-style:none;
 font-family:Arial;
 font-size:1.3em;
 text-align: left;
-text-valign: top;
+vertical-align: top;
 width: 100px;
 }
 
@@ -291,7 +294,7 @@ border-top: 1px solid lightgrey;
 font-family:Arial;
 font-size:1.2em;
 text-align: left;
-text-valign: top;
+vertical-align: top;
 width: 100px;
 padding: 4px 2px 4px 2px;
 }
@@ -301,7 +304,7 @@ border-style:none;
 font-family:Arial;
 font-size:1.2em;
 text-align: left;
-text-valign: top;
+vertical-align: top;
 width: 100px;
 }
 

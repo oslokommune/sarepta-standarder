@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Eksempel på bruk av hodemeldingen sammen med PLO-standarden -->
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<MsgInfo>
+		<Type V="JOURNALOPPLYSNINGER"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2009-06-05T15:30:47.0Z</GenDate>
+		<MsgId>faa80d40-a1ba-11de-b28a-0002a5d5c51b</MsgId>
+		<Sender>
+			<Organisation>
+				<OrganisationName>Balsam sykehus HF</OrganisationName>
+				<Ident>
+					<Id>883974832</Id>
+					<TypeId V="ENH" DN="Organisasjonsnummeret i Enhetsregister" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Ident>
+					<Id>3469.67926</Id>
+					<TypeId V="HER" DN="Identifikator fra Helsetjenesteenhetsregisteret (HER-id)" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Organisation>
+					<OrganisationName>Pleietjenester</OrganisationName>
+					<Ident>
+						<Id>yyyy</Id>
+						<TypeId V="HER" DN="Identifikator fra Helsetjenesteenhetsregisteret (HER-id)" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</Organisation>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>Stavanger kommune</OrganisationName>
+				<Ident>
+					<Id>964965226</Id>
+					<TypeId V="ENH" DN="Organisasjonsnummeret i Enhetsregister" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Ident>
+					<Id>2338</Id>
+					<TypeId V="HER" DN="Identifikator fra Helsetjenesteenhetsregisteret (HER-id)" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Organisation>
+					<OrganisationName>Sykepleietjeneste, pleie- og omsorg</OrganisationName>
+					<Ident>
+						<Id>50106</Id>
+						<TypeId V="HER" DN="Identifikator fra Helsetjenesteenhetsregisteret (HER-id)" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</Organisation>
+			</Organisation>
+		</Receiver>
+		<OtherReceiver>
+			<RoleReceiver V="COP" DN="Kopimottaker"/>
+			<Organisation>
+				<OrganisationName>Vassenden legekontor</OrganisationName>
+				<Ident>
+					<Id>974793539</Id>
+					<TypeId V="ENH" DN="Organisasjonsnummeret i Enhetsregister" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<HealthcareProfessional>
+					<RoleToPatient DN="Fastlege" V="6" S="2.16.578.1.12.4.1.1.9034"/>
+					<FamilyName>September</FamilyName>
+					<GivenName>August</GivenName>
+					<Ident>
+						<Id>369.767</Id>
+						<TypeId DN="Identifikator fra Helsetjenesteenhetsregisteret (HER-id)" V="HER" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</HealthcareProfessional>
+			</Organisation>
+		</OtherReceiver>
+		<Patient>
+			<FamilyName>Danser</FamilyName>
+			<GivenName>Line</GivenName>
+			<Ident>
+				<Id>13116900216</Id>
+				<TypeId V="FNR" DN="Fødselsnummer" S="2.16.578.1.12.4.1.1.8116"/>
+			</Ident>
+			<Address>
+				<StreetAdr>Numedalsveien 52</StreetAdr>
+				<PostalCode>3602</PostalCode>
+				<City>Kongsberg</City>
+			</Address>
+			<TeleCom>
+				<TeleAddress V="tel:91344477"/>
+			</TeleCom>
+		</Patient>
+	</MsgInfo>
+	<Document>
+		<Consent V="2" DN="Pasientens samtykke er ikke påkrevet i dette tilfellet" S="2.16.578.1.12.4.1.1.9064"/>
+		<RefDoc>
+			<IssueDate V="2009-06-15T15:30:47.0Z"/>
+			<MsgType V="XML" DN="XML-instans"/>
+			<Content>
+				<!--<p8:Journalopplysninger xsi:schemaLocation="http://www.kith.no/xmlstds/po/Sammenfatning/2015-xx-xx Sammenfatning-v2.0.xsd" xmlns:epj1="http://www.kith.no/xmlstds/epj/epj1/2008-02-20" xmlns:epj2="http://www.kith.no/xmlstds/epj/epj2/2008-02-20" xmlns:epj3="http://www.kith.no/xmlstds/epj/epj3/2008-02-20" xmlns:m1="http://www.kith.no/xmlstds/epj/meta/2008-02-20" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:p8="http://www.kith.no/xmlstds/po/MedisinskeOpplysninger/2015-xx-xx" xmlns:po="http://www.kith.no/xmlstds/po/poKomponent/2015-xx-xx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<po:FellesAdministrativeOpplysninger>
+						<po:InformasjonOmForsendelsen>
+							<po:Forsendelsesstatus V="N"/>
+							<po:ForbeholdOmVideresending>true</po:ForbeholdOmVideresending>
+							<po:SvarPaaForesporsel>true</po:SvarPaaForesporsel>
+								<po:Foresporsel>
+								<po:TypeForesp V="token" S="0" DN="String" OT="String"/>
+								<po:Formål V="token" S="0" DN="String" OT="String"/>
+								<po:Hastegrad V="token" DN="String"/>
+								<po:TypeJournalinfo V="token" S="0" DN="String" OT="String"/>
+								<po:Sporsmal>String</po:Sporsmal>
+								<po:Begrunnelse>String</po:Begrunnelse>
+								<po:FraDato>1967-08-13</po:FraDato>
+								<po:TilDato>1967-08-13</po:TilDato>
+								<po:RefDokIdForesp>String</po:RefDokIdForesp>
+							</po:Foresporsel>
+						</po:InformasjonOmForsendelsen>
+						<po:TilleggsopplysningPasient>
+							<po:SivilStatus V="3"/>
+							<po:BorAlene>true</po:BorAlene>
+							<po:Merknad>Har daglig kontakt med nabo i boligblokka</po:Merknad>
+						</po:TilleggsopplysningPasient>
+						<po:ParorendeForesatt>
+							<po:Slektskap V="SO"/>
+							<po:Referanseperson>
+								<fk1:FamilyName>Hansen</fk1:FamilyName>
+								<fk1:GivenName>Per</fk1:GivenName>
+								<fk1:Sex V="1" DN="String"/>
+								<fk1:TeleCom>
+									<fk1:TypeTelecom V="MC" DN="Mobiltelefon"/>
+									<fk1:TeleAddress V="99887722"/>
+								</fk1:TeleCom>
+							</po:Referanseperson>
+							<po:Merknad>Pårørende er pt på arbeid i utlandet. Ventes hjem i september 2015</po:Merknad>
+						</po:ParorendeForesatt>
+						<po:PasientrelatertKontaktperson>
+							<po:StillingRolle>Nabo</po:StillingRolle>
+							<po:Referanseperson>
+								<fk1:FamilyName>Askeladden</fk1:FamilyName>
+								<fk1:GivenName>Pål</fk1:GivenName>
+								<fk1:Sex V="1" DN="String"/>
+								<fk1:TeleCom>
+									<fk1:TypeTelecom V="MC" DN="Mobiltelefon"/>
+									<fk1:TeleAddress V="01234567"/>
+								</fk1:TeleCom>
+							</po:Referanseperson>
+						</po:PasientrelatertKontaktperson>
+						<po:AssistertKommunikasjon>
+							<po:PersonTolkebehov>
+								<fk1:FamilyName>String</fk1:FamilyName>
+								<fk1:MiddleName>String</fk1:MiddleName>
+								<fk1:GivenName>String</fk1:GivenName>
+								<fk1:DateOfBirth>1967-08-13</fk1:DateOfBirth>
+								<fk1:Sex V="token" DN="String"/>
+								<fk1:Nationality V="token" DN="String"/>
+								<fk1:Ident>
+									<fk1:Id>String</fk1:Id>
+									<fk1:TypeId V="token" S="0" DN="String" OT="String"/>
+								</fk1:Ident>
+								<fk1:Address>
+									<fk1:Type V="token" DN="String"/>
+									<fk1:StreetAdr>String</fk1:StreetAdr>
+									<fk1:PostalCode>String</fk1:PostalCode>
+									<fk1:City>String</fk1:City>
+									<fk1:Postbox>String</fk1:Postbox>
+									<fk1:County V="token" DN="String"/>
+									<fk1:Country V="token" DN="String"/>
+								</fk1:Address>
+								<fk1:TeleCom>
+									<fk1:TypeTelecom V="token" DN="String"/>
+									<fk1:TeleAddress V="http://www.altova.com"/>
+								</fk1:TeleCom>
+							</po:PersonTolkebehov>
+							<po:Horselsvikt>true</po:Horselsvikt>
+							<po:Synsvikt>true</po:Synsvikt>
+							<po:BehovTolkSprak V="token" DN="String"/>
+							<po:PreferertTolk>
+								<fk1:FamilyName>String</fk1:FamilyName>
+								<fk1:MiddleName>String</fk1:MiddleName>
+								<fk1:GivenName>String</fk1:GivenName>
+								<fk1:DateOfBirth>1967-08-13</fk1:DateOfBirth>
+								<fk1:Sex V="token" DN="String"/>
+								<fk1:Nationality V="token" DN="String"/>
+								<fk1:Ident>
+									<fk1:Id>String</fk1:Id>
+									<fk1:TypeId V="token" S="0" DN="String" OT="String"/>
+								</fk1:Ident>
+								<fk1:Address>
+									<fk1:Type V="token" DN="String"/>
+									<fk1:StreetAdr>String</fk1:StreetAdr>
+									<fk1:PostalCode>String</fk1:PostalCode>
+									<fk1:City>String</fk1:City>
+									<fk1:Postbox>String</fk1:Postbox>
+									<fk1:County V="token" DN="String"/>
+									<fk1:Country V="token" DN="String"/>
+								</fk1:Address>
+								<fk1:TeleCom>
+									<fk1:TypeTelecom V="token" DN="String"/>
+									<fk1:TeleAddress V="http://www.altova.com"/>
+								</fk1:TeleCom>
+							</po:PreferertTolk>
+							<po:BehovOpphortDato V="2001-12-17T09:30:47Z"/>
+							<po:Merknad>String</po:Merknad>
+						</po:AssistertKommunikasjon>
+					</po:FellesAdministrativeOpplysninger>
+					<po:TypeInnholdIMelding>
+						<po:TypeInnhold V="2" S="1" DN="Grunncase (skal være kodeverk for journalopplysning)"/>
+						<po:Merknad>String</po:Merknad>
+					</po:TypeInnholdIMelding>
+					<po:InfoMedisinskDiagnose>
+						<po:MedisinskDiagnose>
+							<po:Hoveddiagnose>false</po:Hoveddiagnose>
+							<po:Diagnosekode V="A46" S="2.16.578.1.12.4.1.1.7110" DN="Erysipelas"/>
+							<po:DiagnoseBeskrivelse>Venstre legg</po:DiagnoseBeskrivelse>
+						</po:MedisinskDiagnose>
+						<po:MedisinskDiagnose>
+							<po:Hoveddiagnose>false</po:Hoveddiagnose>
+							<po:Diagnosekode V="I50.9" S="2.16.578.1.12.4.1.1.7110" DN="Uspesifisert hjertesvikt"/>
+						</po:MedisinskDiagnose>
+					</po:InfoMedisinskDiagnose>
+					<po:InfoKartleggingFunksjonsniva>
+						<po:Funksjonsbeskrivelse>
+							<po:Funksjonsbeskrivelse>Har hovne ben, gangbesvær og blir tungpusten ved aktivitet. Deltar i matombringning av middag, ordner selv øvrige måltider. Får noe hjelp til personlig hygiene (ukentlig dusj). Glemmer å ta legemidler, husker ikke hvilke ukedag det er og har problemer med å kjenne igjen helsepersonell som kommer. Husker og kjenner igjen egen familie og nabo. Nabo følger pasienten til konsultasjon. Redusert hørsel</po:Funksjonsbeskrivelse>
+						</po:Funksjonsbeskrivelse>
+					</po:InfoKartleggingFunksjonsniva>
+					<epj1:Cave m1:basiskomponenttype="EPJ sak" m1:komponenttype="2.16.578.1.12.4.1.6.14.50001.0" m1:informasjonskategori="Cave/allergier" komponentID="String" referanseViktigTilleggsinfo="String">
+						<epj1:SakshodeCave m1:basiskomponenttype="EPJ dokument" m1:komponenttype="2.16.578.1.12.4.1.6.13.10028.0" m1:informasjonskategori="Cave/allergier" komponentID="String" referanseViktigTilleggsinfo="String">
+							<epj1:StikkordCave>
+								<epj1:CaveStikkord>Digitalisglykosider</epj1:CaveStikkord>
+							</epj1:StikkordCave>
+						</epj1:SakshodeCave>
+						<epj1:Allerginotat m1:basiskomponenttype="EPJ dokument" m1:komponenttype="2.16.578.1.12.4.1.6.13.11036.1" m1:informasjonskategori="Legemidler" komponentID="String" referanseViktigTilleggsinfo="String">
+							<epj1:Allergi>
+								<epj1:HensynVedForskrivning>true</epj1:HensynVedForskrivning>
+								<epj1:HensynMatDrikke>false</epj1:HensynMatDrikke>
+								<epj1:Kontaktallergi>false</epj1:Kontaktallergi>
+								<epj1:PollenInnsektstikk>false</epj1:PollenInnsektstikk>
+								<epj1:AllergiskMot>Digitalisglykosider</epj1:AllergiskMot>
+								<epj1:VirkestoffLegemiddel V="C01A A" S="2.16.578.1.12.4.1.1.9077"/>
+							</epj1:Allergi>
+						</epj1:Allerginotat>
+						<epj1:Allerginotat m1:basiskomponenttype="EPJ dokument" m1:komponenttype="2.16.578.1.12.4.1.6.13.11036.1" m1:informasjonskategori="Legemidler" komponentID="String" referanseViktigTilleggsinfo="String">
+							<epj2:Journaltekst>
+								<epj2:Notat>Får pustevansker og trykk for brystet</epj2:Notat>
+							</epj2:Journaltekst>
+							<epj1:Allergi>
+								<epj1:HensynVedForskrivning>false</epj1:HensynVedForskrivning>
+								<epj1:HensynMatDrikke>false</epj1:HensynMatDrikke>
+								<epj1:Kontaktallergi>false</epj1:Kontaktallergi>
+								<epj1:PollenInnsektstikk>true</epj1:PollenInnsektstikk>
+								<epj1:AllergiskMot>Veps</epj1:AllergiskMot>
+							</epj1:Allergi>
+						</epj1:Allerginotat>
+					</epj1:Cave>
+					<epj2:GenereltJournalnotat m1:basiskomponenttype="EPJ dokument" m1:komponenttype="2.16.578.1.12.4.1.6.13.11009.0" m1:informasjonskategori="Andre notater" komponentID="String" referanseViktigTilleggsinfo="String">
+						<epj2:Journaltekst>
+							<epj2:Overskriftskode V="TS" OT="A01.0 (ICD-10)" S="2.16.578.1.12.4.1.1.9142"/>
+							<epj2:Notat>A01.0 (ICD-10) Tyfoidfeber</epj2:Notat>
+							<epj2:Merknad>Opphold i Afrika</epj2:Merknad>
+						</epj2:Journaltekst>
+					</epj2:GenereltJournalnotat>
+					<epj2:GenereltJournalnotat m1:basiskomponenttype="EPJ dokument" m1:komponenttype="2.16.578.1.12.4.1.6.13.11009.0" m1:informasjonskategori="Andre notater" komponentID="String" referanseViktigTilleggsinfo="String">
+						<epj2:Journaltekst>
+							<epj2:Overskriftskode V="TS" S="2.16.578.1.12.4.1.1.9142"/>
+							<epj2:Notat>A38 (ICD-10) Skarlagensfeber</epj2:Notat>
+						</epj2:Journaltekst>
+					</epj2:GenereltJournalnotat>
+					<epj2:GenereltJournalnotat m1:basiskomponenttype="EPJ dokument" m1:komponenttype="2.16.578.1.12.4.1.6.13.11009.0" m1:informasjonskategori="Andre notater" komponentID="String" referanseViktigTilleggsinfo="String">
+						<epj2:Journaltekst>
+							<epj2:Overskriftskode V="TS" OT="A02.1 (ICD-10) " S="2.16.578.1.12.4.1.1.9142"/>
+							<epj2:Notat> A02.1 (ICD-10) Salmonellasepsis</epj2:Notat>
+						</epj2:Journaltekst>
+					</epj2:GenereltJournalnotat>
+					<epj2:GenereltJournalnotat m1:basiskomponenttype="EPJ dokument" m1:komponenttype="2.16.578.1.12.4.1.6.13.11009.0" m1:informasjonskategori="Andre notater" komponentID="String" referanseViktigTilleggsinfo="String">
+						<epj2:Journaltekst>
+							<epj2:Overskriftskode V="PROB" S="2.16.578.1.12.4.1.1.9142"/>
+							<epj2:Notat>Pasienten har erysipelas i venstre legg, med væskende sår. Pasienten ble oppmerksom på det for 2 dager siden.  Lite påvirket allmenntilstand. Har behov for hjelp til legemiddelbehandling og sårstell, samt observasjon av hvordan tilstanden utvikler seg.</epj2:Notat>
+						</epj2:Journaltekst>
+					</epj2:GenereltJournalnotat>
+					<epj2:GenereltJournalnotat m1:basiskomponenttype="EPJ dokument" m1:komponenttype="2.16.578.1.12.4.1.6.13.11009.0" m1:informasjonskategori="Andre notater" komponentID="String" referanseViktigTilleggsinfo="String">
+						<epj2:Journaltekst>
+							<epj2:Overskriftskode V="FO" S="2.16.578.1.12.4.1.1.9142"/>
+							<epj2:Notat>Starter umiddelbart med antibiotikabehandling. Skal holde benet høyt og i ro. Væskende sår behandles med tørre kompresser, parfymefri fuktighetskrem smøres rundt utslettet for å unngå ytterligere sår og sprekker to ganger daglig.</epj2:Notat>
+						</epj2:Journaltekst>
+					</epj2:GenereltJournalnotat>
+					<po:OpplysningerOmHjelpemidler>
+						<po:StatusHjelpemiddel>
+							<po:Status V="6"/>
+							<po:Hjelpemiddelbeskrivelse>
+								<po:Sekvensnummer>1</po:Sekvensnummer>
+								<po:BetegnelseHjelpemiddel>Rullator</po:BetegnelseHjelpemiddel>
+							</po:Hjelpemiddelbeskrivelse>
+						</po:StatusHjelpemiddel>
+						<po:StatusHjelpemiddel>
+							<po:Status V="6"/>
+							<po:Hjelpemiddelbeskrivelse>
+								<po:Sekvensnummer>2</po:Sekvensnummer>
+								<po:BetegnelseHjelpemiddel>Høreapparat</po:BetegnelseHjelpemiddel>
+							</po:Hjelpemiddelbeskrivelse>
+						</po:StatusHjelpemiddel>
+					</po:OpplysningerOmHjelpemidler>
+					<epj3:Legemiddelhandtering>
+						<epj3:Legemiddelgjennomgang>
+							<epj3:DatoLegemiddelgjennomgang>2015-04-05</epj3:DatoLegemiddelgjennomgang>
+						</epj3:Legemiddelgjennomgang>
+						<epj3:BistandLegemiddelhandtering>
+							<epj3:Legemiddelhandtering V="token" S="0" DN="Utdeling av legemiddel(KODEVERK)" OT="String"/>
+						</epj3:BistandLegemiddelhandtering>
+					</epj3:Legemiddelhandtering>
+				</p8:Journalopplysninger>-->
+				<p9:Sammenfatning xsi:schemaLocation="http://www.kith.no/xmlstds/po/Sammenfatning/2015-xx-xx file:///C:/Users/jowil/Dropbox/Jobb%20helsedir/Dokumenter/PLO%202.0/XML%20Schemas/Sammenfatning-v2.0.xsd" xmlns:epj1="http://www.kith.no/xmlstds/epj/epj1/2008-02-20" xmlns:epj2="http://www.kith.no/xmlstds/epj/epj2/2008-02-20" xmlns:m1="http://www.kith.no/xmlstds/epj/meta/2008-02-20" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:p9="http://www.kith.no/xmlstds/po/Sammenfatning/2015-xx-xx" xmlns:po="http://www.kith.no/xmlstds/po/poKomponent/2015-xx-xx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<po:TypeInnholdIMelding>
+						<po:TypeInnhold V="???" S="0" DN="KODEVERK" OT="String"/>
+					</po:TypeInnholdIMelding>
+					<po:FellesAdministrativeOpplysninger>
+						<po:InformasjonOmForsendelsen>
+							<po:Forsendelsesstatus V="N"/>
+						</po:InformasjonOmForsendelsen>
+						<po:TilleggsopplysningPasient>
+							<po:SivilStatus V="3"/>
+							<po:BorAlene>true</po:BorAlene>
+							<po:Merknad>Har daglig kontakt med nabo i boligblokka</po:Merknad>
+						</po:TilleggsopplysningPasient>
+						<po:ParorendeForesatt>
+							<po:Slektskap V="SO"/>
+							<po:Referanseperson>
+								<fk1:FamilyName>Hansen</fk1:FamilyName>
+								<fk1:GivenName>Per</fk1:GivenName>
+								<fk1:Sex V="1"/>
+								<fk1:TeleCom>
+									<fk1:TypeTelecom V="MC" DN="Mobiltelefon"/>
+									<fk1:TeleAddress V="99887722"/>
+								</fk1:TeleCom>
+							</po:Referanseperson>
+							<po:Merknad>Pårørende er pt på arbeid i utlandet. Ventes hjem i september 2015</po:Merknad>
+						</po:ParorendeForesatt>
+						<po:TilknyttetEnhet>
+							<po:Kontaktenhet>
+								<fk1:OrganisationName>Fastlegekontoret Frisk </fk1:OrganisationName>
+								<fk1:Ident>
+									<fk1:Id>String</fk1:Id>
+									<fk1:TypeId V="token" S="0" DN="String" OT="String"/>
+								</fk1:Ident>
+								<fk1:TeleCom>
+									<fk1:TypeTelecom V="MC" DN="Fasttelefon"/>
+									<fk1:TeleAddress V="77626661"/>
+								</fk1:TeleCom>
+							</po:Kontaktenhet>
+						</po:TilknyttetEnhet>
+						<po:PasientrelatertKontaktperson>
+							<po:StillingRolle>Nabo</po:StillingRolle>
+							<po:Referanseperson>
+								<fk1:FamilyName>Askeladden</fk1:FamilyName>
+								<fk1:GivenName>Pål</fk1:GivenName>
+								<fk1:Sex V="1"/>
+								<fk1:TeleCom>
+									<fk1:TypeTelecom V="MC" DN="Mobiltelefon"/>
+									<fk1:TeleAddress V="01234567"/>
+								</fk1:TeleCom>
+							</po:Referanseperson>
+						</po:PasientrelatertKontaktperson>
+					</po:FellesAdministrativeOpplysninger>
+					<po:InfoMedisinskDiagnose>
+						<po:MedisinskDiagnose>
+							<po:Hoveddiagnose>false</po:Hoveddiagnose>
+							<po:Diagnosekode V="A46" S="2.16.578.1.12.4.1.1.7110" DN="Erysipelas"/>
+							<po:DiagnoseBeskrivelse>Venstre legg</po:DiagnoseBeskrivelse>
+						</po:MedisinskDiagnose>
+						<po:MedisinskDiagnose>
+							<po:Hoveddiagnose>false</po:Hoveddiagnose>
+							<po:Diagnosekode V="I50.9" S="2.16.578.1.12.4.1.1.7110" DN="Uspesifisert hjertesvikt"/>
+						</po:MedisinskDiagnose>
+					</po:InfoMedisinskDiagnose>
+					<epj1:Cave m1:basiskomponenttype="EPJ sak" m1:komponenttype="2.16.578.1.12.4.1.6.14.50001.0" m1:informasjonskategori="Cave/allergier" komponentID="String" referanseViktigTilleggsinfo="String">
+						<epj1:SakshodeCave m1:basiskomponenttype="EPJ dokument" m1:komponenttype="2.16.578.1.12.4.1.6.13.10028.0" m1:informasjonskategori="Cave/allergier" komponentID="String" referanseViktigTilleggsinfo="String">
+							<epj1:StikkordCave>
+								<epj1:CaveStikkord>Digitalisglykosider</epj1:CaveStikkord>
+							</epj1:StikkordCave>
+						</epj1:SakshodeCave>
+						<epj1:Allerginotat m1:basiskomponenttype="EPJ dokument" m1:komponenttype="2.16.578.1.12.4.1.6.13.11036.1" m1:informasjonskategori="Legemidler" komponentID="String" referanseViktigTilleggsinfo="String">
+							<epj1:Allergi>
+								<epj1:HensynVedForskrivning>true</epj1:HensynVedForskrivning>
+								<epj1:HensynMatDrikke>false</epj1:HensynMatDrikke>
+								<epj1:Kontaktallergi>false</epj1:Kontaktallergi>
+								<epj1:PollenInnsektstikk>false</epj1:PollenInnsektstikk>
+								<epj1:AllergiskMot>Digitalisglykosider</epj1:AllergiskMot>
+								<epj1:VirkestoffLegemiddel V="C01A A" S="2.16.578.1.12.4.1.1.9077"/>
+							</epj1:Allergi>
+						</epj1:Allerginotat>
+						<epj1:Allerginotat m1:basiskomponenttype="EPJ dokument" m1:komponenttype="2.16.578.1.12.4.1.6.13.11036.1" m1:informasjonskategori="Legemidler" komponentID="String" referanseViktigTilleggsinfo="String">
+							<epj2:Journaltekst>
+								<epj2:Notat>Får pustevansker og trykk for brystet</epj2:Notat>
+							</epj2:Journaltekst>
+							<epj1:Allergi>
+								<epj1:HensynVedForskrivning>false</epj1:HensynVedForskrivning>
+								<epj1:HensynMatDrikke>false</epj1:HensynMatDrikke>
+								<epj1:Kontaktallergi>false</epj1:Kontaktallergi>
+								<epj1:PollenInnsektstikk>true</epj1:PollenInnsektstikk>
+								<epj1:AllergiskMot>Veps</epj1:AllergiskMot>
+							</epj1:Allergi>
+						</epj1:Allerginotat>
+					</epj1:Cave>
+					<epj2:GenereltJournalnotat m1:basiskomponenttype="EPJ dokument" m1:komponenttype="2.16.578.1.12.4.1.6.13.11009.0" m1:informasjonskategori="Andre notater" komponentID="String" referanseViktigTilleggsinfo="String">
+						<epj2:Journaltekst>
+							<epj2:Overskriftskode V="TS" OT="A01.0 (ICD-10)" S="2.16.578.1.12.4.1.1.9142"/>
+							<epj2:Notat>A01.0 (ICD-10) Tyfoidfeber</epj2:Notat>
+							<epj2:Merknad>Opphold i Afrika</epj2:Merknad>
+						</epj2:Journaltekst>
+					</epj2:GenereltJournalnotat>
+					<epj2:GenereltJournalnotat m1:basiskomponenttype="EPJ dokument" m1:komponenttype="2.16.578.1.12.4.1.6.13.11009.0" m1:informasjonskategori="Andre notater" komponentID="String" referanseViktigTilleggsinfo="String">
+						<epj2:Journaltekst>
+							<epj2:Overskriftskode V="TS" S="2.16.578.1.12.4.1.1.9142"/>
+							<epj2:Notat>A38 (ICD-10) Skarlagensfeber</epj2:Notat>
+						</epj2:Journaltekst>
+					</epj2:GenereltJournalnotat>
+					<epj2:GenereltJournalnotat m1:basiskomponenttype="EPJ dokument" m1:komponenttype="2.16.578.1.12.4.1.6.13.11009.0" m1:informasjonskategori="Andre notater" komponentID="String" referanseViktigTilleggsinfo="String">
+						<epj2:Journaltekst>
+							<epj2:Overskriftskode V="TS" OT="A02.1 (ICD-10) " S="2.16.578.1.12.4.1.1.9142"/>
+							<epj2:Notat> A02.1 (ICD-10) Salmonellasepsis</epj2:Notat>
+						</epj2:Journaltekst>
+					</epj2:GenereltJournalnotat>
+					<epj2:GenereltJournalnotat m1:basiskomponenttype="EPJ dokument" m1:komponenttype="2.16.578.1.12.4.1.6.13.11009.0" m1:informasjonskategori="Andre notater" komponentID="String" referanseViktigTilleggsinfo="String">
+						<epj2:Journaltekst>
+							<epj2:Overskriftskode V="PROB" S="2.16.578.1.12.4.1.1.9142"/>
+							<epj2:Notat>Pasienten har erysipelas i venstre legg, med væskende sår. Pasienten ble oppmerksom på det for 2 dager siden.  Lite påvirket allmenntilstand. Har behov for hjelp til legemiddelbehandling og sårstell, samt observasjon av hvordan tilstanden utvikler seg.</epj2:Notat>
+						</epj2:Journaltekst>
+					</epj2:GenereltJournalnotat>
+					<epj2:GenereltJournalnotat m1:basiskomponenttype="EPJ dokument" m1:komponenttype="2.16.578.1.12.4.1.6.13.11009.0" m1:informasjonskategori="Andre notater" komponentID="String" referanseViktigTilleggsinfo="String">
+						<epj2:Journaltekst>
+							<epj2:Overskriftskode V="FO" S="2.16.578.1.12.4.1.1.9142"/>
+							<epj2:Notat>Starter umiddelbart med antibiotikabehandling. Skal holde benet høyt og i ro. Væskende sår behandles med tørre kompresser, parfymefri fuktighetskrem smøres rundt utslettet for å unngå ytterligere sår og sprekker to ganger daglig.</epj2:Notat>
+						</epj2:Journaltekst>
+					</epj2:GenereltJournalnotat>
+					
+					<po:Legemiddelhandtering>
+						<po:BistandLegemiddelhandtering>
+							<po:HjelpTilLegemiddelhandtering DN="Utdeling av legemidler"/>
+							<po:Merknad>Dette skal være kodeverk</po:Merknad>
+						</po:BistandLegemiddelhandtering>
+						<po:LegemidlerUtdelt></po:LegemidlerUtdelt>
+						<po:AvtaleOmAdmLegemidler>
+							<po:AvtaleAdmLegemidler>false</po:AvtaleAdmLegemidler>
+							<po:AvtaleAdmMultidose>false</po:AvtaleAdmMultidose>
+						</po:AvtaleOmAdmLegemidler>
+						<po:Legemiddelgjennomgang>
+							<po:DatoLegemiddelgjennomgang>2015-05-04</po:DatoLegemiddelgjennomgang>
+						</po:Legemiddelgjennomgang>
+						<po:Reseptinfo></po:Reseptinfo>
+					</po:Legemiddelhandtering>
+					<po:InfoKartleggingFunksjonsniva>
+						<po:Funksjonsbeskrivelse>
+							<po:FunksjonsbeskrivelseTekst>Har hovne ben, gangbesvær og blir tungpusten ved aktivitet. Deltar i matombringning av middag, ordner selv øvrige måltider. Får noe hjelp til personlig hygiene (ukentlig dusj). Glemmer å ta legemidler, husker ikke hvilke ukedag det er og har problemer med å kjenne igjen helsepersonell som kommer. Husker og kjenner igjen egen familie og nabo. Nabo følger pasienten til konsultasjon. Redusert hørsel</po:FunksjonsbeskrivelseTekst>
+						</po:Funksjonsbeskrivelse>
+					</po:InfoKartleggingFunksjonsniva>
+					
+					<po:OpplysningerOmHjelpemidler>
+						<po:StatusHjelpemiddel>
+							<po:Status V="6"/>
+							<po:Hjelpemiddelbeskrivelse>
+								<po:Sekvensnummer>1</po:Sekvensnummer>
+								<po:BetegnelseHjelpemiddel>Rullator</po:BetegnelseHjelpemiddel>
+							</po:Hjelpemiddelbeskrivelse>
+						</po:StatusHjelpemiddel>
+						<po:StatusHjelpemiddel>
+							<po:Status V="6"/>
+							<po:Hjelpemiddelbeskrivelse>
+								<po:Sekvensnummer>2</po:Sekvensnummer>
+								<po:BetegnelseHjelpemiddel>Høreapparat</po:BetegnelseHjelpemiddel>
+							</po:Hjelpemiddelbeskrivelse>
+						</po:StatusHjelpemiddel>
+					</po:OpplysningerOmHjelpemidler>
+				</p9:Sammenfatning>
+			</Content>
+		</RefDoc>
+	</Document>
+	<!--<Document>
+		<DocumentConnection V="H" DN="Hoveddokument"/>
+		<RefDoc>
+			<MsgType V="XML" DN="XML-instans"/>
+			<Content>
+				<ns0:LegemidlerIBruk xmlns:ns0="http://www.kith.no/xmlstds/eresept/m252/2013-10-08">
+					<ns0:EnkeltoppforingLIB>
+						<ns0:Id>ad140cb9-8431-4df2-ba91-e8cb0c91a602</ns0:Id>
+						<ns0:Type V="P" DN="Papirresept"/>
+						<ns0:ReseptId>a33d714e-013b-495e-b5d8-c2d295cc3069</ns0:ReseptId>
+						<ns0:SistEndret>2013-11-04T13:24:40.762+01:00</ns0:SistEndret>
+						<ns0:InngaarIMultidose V="1" DN="Legemiddeldosering inngår ikke i en multidose"/>
+						<ns0:ReseptDokLegemiddelB64>
+							<ReseptDokLegemiddel xmlns="http://www.kith.no/xmlstds/eresept/m1/2010-05-01" xmlns:kith="http://www.kith.no/xmlstds" xmlns:fs="http://www.kith.no/xmlstds/eresept/forskrivning/2010-04-01" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+								<Varegruppekode DN="Legemiddel" V="L"/>
+								<Reiterasjon>0</Reiterasjon>
+								<BytteresRekvirent DN="Nei" V="2"/>
+								<fs:Forskrivning>
+									<fs:DosVeiledEnkel>1 tabl kl 08, 1 tabl kl 14, 2 tabl kl 20 </fs:DosVeiledEnkel>
+									<fs:Bruk DN="Kur" V="1"/>
+									<fs:Dosering/>
+									<fs:Legemiddelpakning>
+										<fs:Atc DN="B01AC06" S="2.16.578.1.12.4.1.1.7180" V="B01AC06"/>
+										<fs:NavnFormStyrke>Apocillin Tablett  660 mg</fs:NavnFormStyrke>
+										<fs:Reseptgruppe DN="C" V="C"/>
+										<fs:Varenr>183386</fs:Varenr>
+										<fs:Ean>7046261833868</fs:Ean>
+										<fs:PakningsinfoResept>
+											<fs:Varenavn>Apocillin Tablett  660 mg</fs:Varenavn>
+											<fs:Pakningsstr>100</fs:Pakningsstr>
+											<fs:EnhetPakning DN="stykk" S="2.16.578.1.12.4.1.1.7452" V="stk"/>
+										</fs:PakningsinfoResept>
+									</fs:Legemiddelpakning>
+								</fs:Forskrivning>
+							</ReseptDokLegemiddel>
+						</ns0:ReseptDokLegemiddelB64>
+						<ns0:Sporsmal>
+							<ns0:Kode DN="Skal varen inkluderes i Legemidler i bruk (LIB)" S="2.16.578.1.12.4.1.1.7495" V="2"/>
+							<ns0:Tidspunkt>2013-11-04T13:24:40.762+01:00</ns0:Tidspunkt>
+							<ns0:Stiller>91354</ns0:Stiller>
+						</ns0:Sporsmal>
+					</ns0:EnkeltoppforingLIB>
+					<ns0:Pakkeinfo>
+						<ns0:Bestillingsfrist>2013-11-18T12:00:00.000+01:00</ns0:Bestillingsfrist>
+						<ns0:ForsteDoseringsdato>2013-11-21+01:00</ns0:ForsteDoseringsdato>
+						<ns0:SisteDoseringsdato>2013-12-04+01:00</ns0:SisteDoseringsdato>
+					</ns0:Pakkeinfo>
+				</ns0:LegemidlerIBruk>
+				<ns0:LegemidlerIBruk xmlns:ns0="http://www.kith.no/xmlstds/eresept/m252/2013-10-08">
+					<ns0:EnkeltoppforingLIB>
+						<ns0:Id>ad140cb9-8431-4df2-ba91-e8cb0c91a602</ns0:Id>
+						<ns0:Type V="P" DN="Papirresept"/>
+						<ns0:ReseptId>a33d714e-013b-495e-b5d8-c2d295cc3069</ns0:ReseptId>
+						<ns0:SistEndret>2013-11-04T13:24:40.762+01:00</ns0:SistEndret>
+						<ns0:DatoOppstart>2015-06-22</ns0:DatoOppstart>
+						<ns0:InngaarIMultidose V="1" DN="Legemiddeldosering inngår ikke i en multidose"/>
+						<ns0:ReseptDokLegemiddelB64>
+							<ReseptDokLegemiddel xmlns="http://www.kith.no/xmlstds/eresept/m1/2010-05-01" xmlns:kith="http://www.kith.no/xmlstds" xmlns:fs="http://www.kith.no/xmlstds/eresept/forskrivning/2010-04-01" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+								<Varegruppekode DN="Legemiddel" V="L"/>
+								<Reiterasjon>0</Reiterasjon>
+								<BytteresRekvirent DN="Nei" V="2"/>
+								<fs:Forskrivning>
+									<fs:DosVeiledEnkel>Tas ved smerter. Max 8 pr døgn</fs:DosVeiledEnkel>
+									<fs:Bruk DN="Behov" V="1"/>
+									<fs:Legemiddelpakning>
+										<fs:Atc DN="B01AC06" S="2.16.578.1.12.4.1.1.7180" V="B01AC06"/>
+										<fs:NavnFormStyrke>Paracetamol  Tablett  500 mg </fs:NavnFormStyrke>
+										<fs:Reseptgruppe DN="C" V="C"/>
+										<fs:Varenr>183386</fs:Varenr>
+										<fs:Ean>7046261833868</fs:Ean>
+										<fs:PakningsinfoResept>
+											<fs:Varenavn>Paracetamol  Tablett  500 mg </fs:Varenavn>
+											<fs:Pakningsstr>100</fs:Pakningsstr>
+											<fs:EnhetPakning DN="stykk" S="2.16.578.1.12.4.1.1.7452" V="stk"/>
+										</fs:PakningsinfoResept>
+									</fs:Legemiddelpakning>
+								</fs:Forskrivning>
+							</ReseptDokLegemiddel>
+						</ns0:ReseptDokLegemiddelB64>
+						<ns0:Sporsmal>
+							<ns0:Kode DN="Skal varen inkluderes i Legemidler i bruk (LIB)" S="2.16.578.1.12.4.1.1.7495" V="2"/>
+							<ns0:Tidspunkt>2013-11-04T13:24:40.762+01:00</ns0:Tidspunkt>
+							<ns0:Stiller>91354</ns0:Stiller>
+						</ns0:Sporsmal>
+					</ns0:EnkeltoppforingLIB>
+					<ns0:Pakkeinfo>
+						<ns0:Bestillingsfrist>2013-11-18T12:00:00.000+01:00</ns0:Bestillingsfrist>
+						<ns0:ForsteDoseringsdato>2013-11-21+01:00</ns0:ForsteDoseringsdato>
+						<ns0:SisteDoseringsdato>2013-12-04+01:00</ns0:SisteDoseringsdato>
+					</ns0:Pakkeinfo>
+				</ns0:LegemidlerIBruk>
+				<ns0:LegemidlerIBruk xmlns:ns0="http://www.kith.no/xmlstds/eresept/m252/2013-10-08">
+					<ns0:EnkeltoppforingLIB>
+						<ns0:Id>ad140cb9-8431-4df2-ba91-e8cb0c91a602</ns0:Id>
+						<ns0:Type V="P" DN="Papirresept"/>
+						<ns0:ReseptId>a33d714e-013b-495e-b5d8-c2d295cc3069</ns0:ReseptId>
+						<ns0:SistEndret>2013-11-04T13:24:40.762+01:00</ns0:SistEndret>
+						<ns0:DatoOppstart>2015-06-22</ns0:DatoOppstart>
+						<ns0:InngaarIMultidose V="1" DN="Legemiddeldosering inngår ikke i en multidose"/>
+						<ns0:ReseptDokLegemiddelB64>
+							<ReseptDokLegemiddel xmlns="http://www.kith.no/xmlstds/eresept/m1/2010-05-01" xmlns:kith="http://www.kith.no/xmlstds" xmlns:fs="http://www.kith.no/xmlstds/eresept/forskrivning/2010-04-01" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+								<Varegruppekode DN="Legemiddel" V="L"/>
+								<Reiterasjon>0</Reiterasjon>
+								<BytteresRekvirent DN="Nei" V="2"/>
+								<fs:Forskrivning>
+									<fs:DosVeiledEnkel>2 tabl kl 08 og 13 </fs:DosVeiledEnkel>
+									<fs:Bruk DN="Fast" V="1"/>
+									<fs:Legemiddelpakning>
+										<fs:Atc DN="B01AC06" S="2.16.578.1.12.4.1.1.7180" V="B01AC06"/>
+										<fs:NavnFormStyrke>Burinex  Tablett  1 mg</fs:NavnFormStyrke>
+										<fs:Reseptgruppe DN="C" V="C"/>
+										<fs:Varenr>183386</fs:Varenr>
+										<fs:Ean>7046261833868</fs:Ean>
+										<fs:PakningsinfoResept>
+											<fs:Varenavn>Burinex  Tablett  1 mg</fs:Varenavn>
+											<fs:Pakningsstr>100</fs:Pakningsstr>
+											<fs:EnhetPakning DN="stykk" S="2.16.578.1.12.4.1.1.7452" V="stk"/>
+										</fs:PakningsinfoResept>
+									</fs:Legemiddelpakning>
+								</fs:Forskrivning>
+							</ReseptDokLegemiddel>
+						</ns0:ReseptDokLegemiddelB64>
+						<ns0:Sporsmal>
+							<ns0:Kode DN="Skal varen inkluderes i Legemidler i bruk (LIB)" S="2.16.578.1.12.4.1.1.7495" V="2"/>
+							<ns0:Tidspunkt>2013-11-04T13:24:40.762+01:00</ns0:Tidspunkt>
+							<ns0:Stiller>91354</ns0:Stiller>
+						</ns0:Sporsmal>
+					</ns0:EnkeltoppforingLIB>
+					<ns0:Pakkeinfo>
+						<ns0:Bestillingsfrist>2013-11-18T12:00:00.000+01:00</ns0:Bestillingsfrist>
+						<ns0:ForsteDoseringsdato>2013-11-21+01:00</ns0:ForsteDoseringsdato>
+						<ns0:SisteDoseringsdato>2013-12-04+01:00</ns0:SisteDoseringsdato>
+					</ns0:Pakkeinfo>
+					<ns0:Merknad>Pasienten har ikke svelgproblemer, men store tabletter må deles</ns0:Merknad>
+				</ns0:LegemidlerIBruk>
+				<ns0:LegemidlerIBruk xmlns:ns0="http://www.kith.no/xmlstds/eresept/m252/2013-10-08">
+					<ns0:EnkeltoppforingLIB>
+						<ns0:Id>ad140cb9-8431-4df2-ba91-e8cb0c91a602</ns0:Id>
+						<ns0:Type V="P" DN="Papirresept"/>
+						<ns0:ReseptId>a33d714e-013b-495e-b5d8-c2d295cc3069</ns0:ReseptId>
+						<ns0:SistEndret>2013-11-04T13:24:40.762+01:00</ns0:SistEndret>
+						<ns0:DatoOppstart>2006-09-25</ns0:DatoOppstart>
+						<ns0:InngaarIMultidose V="1" DN="Legemiddeldosering inngår ikke i en multidose"/>
+						<ns0:ReseptDokLegemiddelB64>
+							<ReseptDokLegemiddel xmlns="http://www.kith.no/xmlstds/eresept/m1/2010-05-01" xmlns:kith="http://www.kith.no/xmlstds" xmlns:fs="http://www.kith.no/xmlstds/eresept/forskrivning/2010-04-01" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+								<Varegruppekode DN="Legemiddel" V="L"/>
+								<Reiterasjon>0</Reiterasjon>
+								<BytteresRekvirent DN="Nei" V="2"/>
+								<fs:Forskrivning>
+									<fs:DosVeiledEnkel>1 tabl kl 20 </fs:DosVeiledEnkel>
+									<fs:Bruk DN="Fast" V="1"/>
+									<fs:Legemiddelpakning>
+										<fs:Atc DN="B01AC06" S="2.16.578.1.12.4.1.1.7180" V="B01AC06"/>
+										<fs:NavnFormStyrke>Lipitor Tablett  40 mg</fs:NavnFormStyrke>
+										<fs:Reseptgruppe DN="C" V="C"/>
+										<fs:Varenr>183386</fs:Varenr>
+										<fs:Ean>7046261833868</fs:Ean>
+										<fs:PakningsinfoResept>
+											<fs:Varenavn>Lipitor Tablett  40 mg</fs:Varenavn>
+											<fs:Pakningsstr>100</fs:Pakningsstr>
+											<fs:EnhetPakning DN="stykk" S="2.16.578.1.12.4.1.1.7452" V="stk"/>
+										</fs:PakningsinfoResept>
+									</fs:Legemiddelpakning>
+								</fs:Forskrivning>
+							</ReseptDokLegemiddel>
+						</ns0:ReseptDokLegemiddelB64>
+						<ns0:Sporsmal>
+							<ns0:Kode DN="Skal varen inkluderes i Legemidler i bruk (LIB)" S="2.16.578.1.12.4.1.1.7495" V="2"/>
+							<ns0:Tidspunkt>2013-11-04T13:24:40.762+01:00</ns0:Tidspunkt>
+							<ns0:Stiller>91354</ns0:Stiller>
+						</ns0:Sporsmal>
+					</ns0:EnkeltoppforingLIB>
+					<ns0:Pakkeinfo>
+						<ns0:Bestillingsfrist>2013-11-18T12:00:00.000+01:00</ns0:Bestillingsfrist>
+						<ns0:ForsteDoseringsdato>2013-11-21+01:00</ns0:ForsteDoseringsdato>
+						<ns0:SisteDoseringsdato>2013-12-04+01:00</ns0:SisteDoseringsdato>
+					</ns0:Pakkeinfo>
+					<ns0:Merknad>Pasienten har ikke svelgproblemer, men store tabletter må deles</ns0:Merknad>
+				</ns0:LegemidlerIBruk>
+				<ns0:LegemidlerIBruk xmlns:ns0="http://www.kith.no/xmlstds/eresept/m252/2013-10-08">
+					<ns0:EnkeltoppforingLIB>
+						<ns0:Id>ad140cb9-8431-4df2-ba91-e8cb0c91a602</ns0:Id>
+						<ns0:Type V="P" DN="Papirresept"/>
+						<ns0:ReseptId>a33d714e-013b-495e-b5d8-c2d295cc3069</ns0:ReseptId>
+						<ns0:SistEndret>2013-11-04T13:24:40.762+01:00</ns0:SistEndret>
+						<ns0:DatoOppstart>2015-05-04</ns0:DatoOppstart>
+						<ns0:InngaarIMultidose V="1" DN="Legemiddeldosering inngår ikke i en multidose"/>
+						<ns0:ReseptDokLegemiddelB64>
+							<ReseptDokLegemiddel xmlns="http://www.kith.no/xmlstds/eresept/m1/2010-05-01" xmlns:kith="http://www.kith.no/xmlstds" xmlns:fs="http://www.kith.no/xmlstds/eresept/forskrivning/2010-04-01" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+								<Varegruppekode DN="Legemiddel" V="L"/>
+								<Reiterasjon>0</Reiterasjon>
+								<BytteresRekvirent DN="Nei" V="2"/>
+								<fs:Forskrivning>
+									<fs:DosVeiledEnkel>2 tabl kl 08</fs:DosVeiledEnkel>
+									<fs:Bruk DN="Fast" V="1"/>
+									<fs:Legemiddelpakning>
+										<fs:Atc DN="B01AC06" S="2.16.578.1.12.4.1.1.7180" V="B01AC06"/>
+										<fs:NavnFormStyrke>Imdur  Tablett  30 mg </fs:NavnFormStyrke>
+										<fs:Reseptgruppe DN="C" V="C"/>
+										<fs:Varenr>183386</fs:Varenr>
+										<fs:Ean>7046261833868</fs:Ean>
+										<fs:PakningsinfoResept>
+											<fs:Varenavn>Imdur  Tablett  30 mg </fs:Varenavn>
+											<fs:Pakningsstr>100</fs:Pakningsstr>
+											<fs:EnhetPakning DN="stykk" S="2.16.578.1.12.4.1.1.7452" V="stk"/>
+										</fs:PakningsinfoResept>
+									</fs:Legemiddelpakning>
+								</fs:Forskrivning>
+							</ReseptDokLegemiddel>
+						</ns0:ReseptDokLegemiddelB64>
+						<ns0:Sporsmal>
+							<ns0:Kode DN="Skal varen inkluderes i Legemidler i bruk (LIB)" S="2.16.578.1.12.4.1.1.7495" V="2"/>
+							<ns0:Tidspunkt>2013-11-04T13:24:40.762+01:00</ns0:Tidspunkt>
+							<ns0:Stiller>91354</ns0:Stiller>
+						</ns0:Sporsmal>
+					</ns0:EnkeltoppforingLIB>
+					<ns0:Pakkeinfo>
+						<ns0:Bestillingsfrist>2013-11-18T12:00:00.000+01:00</ns0:Bestillingsfrist>
+						<ns0:ForsteDoseringsdato>2013-11-21+01:00</ns0:ForsteDoseringsdato>
+						<ns0:SisteDoseringsdato>2013-12-04+01:00</ns0:SisteDoseringsdato>
+					</ns0:Pakkeinfo>
+					<ns0:Merknad>Depottablettene kan deles, men må ikke knuses eller tygges. Skal svelges med et ½ glass væske. </ns0:Merknad>
+				</ns0:LegemidlerIBruk>
+				<ns0:LegemidlerIBruk xmlns:ns0="http://www.kith.no/xmlstds/eresept/m252/2013-10-08">
+					<ns0:EnkeltoppforingLIB>
+						<ns0:Id>ad140cb9-8431-4df2-ba91-e8cb0c91a602</ns0:Id>
+						<ns0:Type V="P" DN="Papirresept"/>
+						<ns0:ReseptId>a33d714e-013b-495e-b5d8-c2d295cc3069</ns0:ReseptId>
+						<ns0:SistEndret>2013-11-04T13:24:40.762+01:00</ns0:SistEndret>
+						<ns0:DatoOppstart>2015-05-04</ns0:DatoOppstart>
+						<ns0:InngaarIMultidose V="1" DN="Legemiddeldosering inngår ikke i en multidose"/>
+						<ns0:ReseptDokLegemiddelB64>
+							<ReseptDokLegemiddel xmlns="http://www.kith.no/xmlstds/eresept/m1/2010-05-01" xmlns:kith="http://www.kith.no/xmlstds" xmlns:fs="http://www.kith.no/xmlstds/eresept/forskrivning/2010-04-01" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+								<Varegruppekode DN="Legemiddel" V="L"/>
+								<Reiterasjon>0</Reiterasjon>
+								<BytteresRekvirent DN="Nei" V="2"/>
+								<fs:Forskrivning>
+									<fs:DosVeiledEnkel>2 tabl kl 08</fs:DosVeiledEnkel>
+									<fs:Bruk DN="Fast" V="1"/>
+									<fs:Legemiddelpakning>
+										<fs:Atc DN="B01AC06" S="2.16.578.1.12.4.1.1.7180" V="B01AC06"/>
+										<fs:NavnFormStyrke>Marevan  Tablett  2.5 mg</fs:NavnFormStyrke>
+										<fs:Reseptgruppe DN="C" V="C"/>
+										<fs:Varenr>183386</fs:Varenr>
+										<fs:Ean>7046261833868</fs:Ean>
+										<fs:PakningsinfoResept>
+											<fs:Varenavn>Marevan  Tablett  2.5 mg</fs:Varenavn>
+											<fs:Pakningsstr>100</fs:Pakningsstr>
+											<fs:EnhetPakning DN="stykk" S="2.16.578.1.12.4.1.1.7452" V="stk"/>
+										</fs:PakningsinfoResept>
+									</fs:Legemiddelpakning>
+								</fs:Forskrivning>
+							</ReseptDokLegemiddel>
+						</ns0:ReseptDokLegemiddelB64>
+						<ns0:Seponering>
+							<ns0:Tidspunkt>2015.06.22</ns0:Tidspunkt>
+							<ns0:Arsak V="A"/>
+						</ns0:Seponering>
+						<ns0:Sporsmal>
+							<ns0:Kode DN="Skal varen inkluderes i Legemidler i bruk (LIB)" S="2.16.578.1.12.4.1.1.7495" V="2"/>
+							<ns0:Tidspunkt>2013-11-04T13:24:40.762+01:00</ns0:Tidspunkt>
+							<ns0:Stiller>91354</ns0:Stiller>
+						</ns0:Sporsmal>
+					</ns0:EnkeltoppforingLIB>
+					<ns0:Pakkeinfo>
+						<ns0:Bestillingsfrist>2013-11-18T12:00:00.000+01:00</ns0:Bestillingsfrist>
+						<ns0:ForsteDoseringsdato>2013-11-21+01:00</ns0:ForsteDoseringsdato>
+						<ns0:SisteDoseringsdato>2013-12-04+01:00</ns0:SisteDoseringsdato>
+					</ns0:Pakkeinfo>
+				</ns0:LegemidlerIBruk>
+			</Content>
+		</RefDoc>
+	</Document>-->
+</MsgHead>

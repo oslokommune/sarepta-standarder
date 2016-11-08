@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:kith="http://www.kith.no/xmlstds" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:po="http://www.kith.no/xmlstds/po/poKomponent/2015-xx-xx" xmlns:p5="http://www.kith.no/xmlstds/po/HelseopplysningerSaksbehandling/2015-xx-xx" xmlns:epj1="http://www.kith.no/xmlstds/epj/epj1/2008-02-20" xmlns:epj2="http://www.kith.no/xmlstds/epj/epj2/2008-02-20" xmlns:epj3="http://www.kith.no/xmlstds/epj/epj3/2008-02-20" targetNamespace="http://www.kith.no/xmlstds/po/HelseopplysningerSaksbehandling/2015-xx-xx" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds/po/poKomponent/2015-xx-xx" schemaLocation="poKomponent-v2.0.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/epj/epj1/2008-02-20" schemaLocation="EPJ-cave-mv.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/epj/epj2/2008-02-20" schemaLocation="EPJ-journalnotat-mv.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/epj/epj3/2008-02-20" schemaLocation="EPJ-legemiddel-mv.xsd"/>
+	<element name="HelseopplysningerSaksbehandling">
+		<complexType>
+			<sequence>
+				<element ref="po:TypeInnholdIMelding"/>
+				<element ref="po:FellesAdministrativeOpplysninger"/>
+				<element ref="po:OpplysningerTilSoknad" minOccurs="0"/>
+				<element ref="po:InfoMedisinskDiagnose" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="epj1:Cave" minOccurs="0"/>
+				<element ref="epj2:GenereltJournalnotat" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:Legemiddelhandtering" minOccurs="0"/>
+				<element ref="po:InfoKartleggingFunksjonsniva" minOccurs="0"/>
+				<element ref="po:OpplysningerOmIndividuellPlan" minOccurs="0"/>
+				<element ref="po:EksisterendeTjeneste" minOccurs="0"/>
+				<element ref="po:InfoAndreViktigeOpplysninger" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

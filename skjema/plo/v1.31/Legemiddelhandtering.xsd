@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--Versjon 1.31 2007-10-16
+  |	Legemiddelhåndtering: Inngår som en del av pleie- og omsorgsmeldingene
+-->
+<!-- Endret 16.oktober 2007 (JSD)
+  |	Endret namespace til http://www.kith.no/xmlstds/po/Legemiddelhandtering/2007-10-16
+  |	poKomponent har blitt revidert og fått nytt namespace http://www.kith.no/xmlstds/po/poKomponent/2007-10-16
+-->
+<!--	Endret 31. mai 2007 (AA)
+  |	Endret namespace til http://www.kith.no/xmlstds/po/Legemiddelhandtering/2007-05-31
+  |	poKomponent har blitt revidert og fått nytt namespace http://www.kith.no/xmlstds/po/poKomponent/2007-05-31
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:kith="http://www.kith.no/xmlstds" xmlns:p5="http://www.kith.no/xmlstds/po/Legemiddelhandtering/2007-10-16" xmlns:po="http://www.kith.no/xmlstds/po/poKomponent/2007-10-16" targetNamespace="http://www.kith.no/xmlstds/po/Legemiddelhandtering/2007-10-16" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds/po/poKomponent/2007-10-16" schemaLocation="poKomponent.xsd"/>
+	<!-- LEVEL 1 -->
+	<!-- Class: Legemiddelhåndtering -->
+	<element name="Legemiddelhandtering">
+		<annotation>
+			<documentation>
+         Denne meldingsanvendelsen benyttes for å utveksle informasjon om legemidler og relevante medisinske opplysninger i tilknytning til administrering av legemidler samt informasjon om hvilke avtaler som er inngått vedrørende administrering av legemidler. Denne meldingstypen benyttes hvis det kun skal overføres opplysninger vedrørende legemiddelhåndtering.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="po:InformasjonOmForsendelsen"/>
+				<element ref="po:TilleggsopplysningPasient" minOccurs="0"/>
+				<element ref="po:ParorendeForesatt" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:KontaktpersonHelsepersonell" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:AnsvarForRapport" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:SendtDokument" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:InfoMedisinskDiagnose" minOccurs="0"/>
+				<element ref="po:InfoCave" minOccurs="0"/>
+				<element ref="po:InfoLegemidlerIBruk" minOccurs="0"/>
+				<element ref="po:InfoSeponertLegemiddel" minOccurs="0"/>
+				<element ref="po:InfoLegemidlerAdministrertVed" minOccurs="0"/>
+				<element ref="po:InfoAvtaleOmLegemiddeladm" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

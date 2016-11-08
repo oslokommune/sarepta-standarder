@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Generated on 11-07-2005  10:34:00 at KITH -->
+<!-- XML-Schema level supported is specified by W3C -->
+<!-- http://www.w3.org/2001/XMLSchema -->
+<schema xmlns:pas="http://www.kith.no/xmlstds/FraPasient/2005-07-11" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kith.no/xmlstds/FraPasient/2005-07-11" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- LEVEL 1 -->
+	<!-- Class: Melding fra pasient -->
+	<element name="MeldingFraPasient">
+		<annotation>
+			<documentation>
+         Inneholder opplysninger som identifiserer dette som en unik melding fra pasient.  Meldingstype har fast verdi:  PATIENT_FROM   Melding fra pasient
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="MsgType" type="pas:CS"/>
+				<element name="MIGversion" type="string"/>
+				<element name="SoftwareName" type="string" minOccurs="0"/>
+				<element name="SoftwareVersion" type="string" minOccurs="0"/>
+				<element name="status" type="pas:CS" minOccurs="0"/>
+				<element name="Priority" type="pas:CS" minOccurs="0"/>
+				<element name="meldingsbekreftelse" type="pas:CS" minOccurs="0"/>
+				<element name="SvarPaForesporsel" type="boolean"/>
+				<element name="Merknad" type="string" minOccurs="0"/>
+				<element name="GenDate" type="dateTime"/>
+				<element name="MsgId" type="string"/>
+				<element ref="pas:HealthcareProfessional" minOccurs="0"/>
+				<element ref="pas:Patient"/>
+				<element ref="pas:FornyelseResept" maxOccurs="unbounded"/>
+				<element ref="pas:VarselForfall" maxOccurs="unbounded"/>
+				<element ref="pas:AnnenHenvendelse" maxOccurs="unbounded"/>
+				<element ref="pas:Timebestilling" maxOccurs="unbounded"/>
+				<element ref="pas:Attestbestilling" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 2 -->
+	<!-- Class: Annen henvendelse -->
+	<element name="AnnenHenvendelse">
+		<annotation>
+			<documentation>
+         Benyttes til generelle spørsmål og svar som ikke dekkes av noen av de spesialiserte typene henvendelser. 
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Bekreftelsesform" type="pas:CS" maxOccurs="unbounded"/>
+				<element name="TypeHenvendelse" type="pas:CV" minOccurs="0"/>
+				<element name="Overskrift" type="string" minOccurs="0"/>
+				<element name="Notat" type="string"/>
+				<element ref="pas:ReferenceDoc" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Fornyelse av resept -->
+	<element name="FornyelseResept">
+		<annotation>
+			<documentation>
+         Benyttes ved behov for fornyelse av en tidligere utstedt resept.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Leveringsform" type="pas:CS"/>
+				<element name="Bekreftelsesform" type="pas:CS" maxOccurs="unbounded"/>
+				<element name="Merknad" type="string" minOccurs="0"/>
+				<element ref="pas:BetegnelseLegemiddel" maxOccurs="unbounded"/>
+				<element ref="pas:Organisation" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Timebestilling -->
+	<element name="Timebestilling">
+		<annotation>
+			<documentation>
+         Denne typen fragment benyttes av pasienten eller en dennes foresatte ved bestilling av time. Dersom henvendelsen f.eks. sendes til et legekontor hvor det finnes flere leger, skal en instans av "Helsepersonell" benyttes til å registrere hvilken lege det ønskes time hos.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Bekreftelsesform" type="pas:CS" maxOccurs="unbounded"/>
+				<element name="Begrunnelse" type="string"/>
+				<element name="OnsketDato" type="date" minOccurs="0"/>
+				<element name="Klokkeslett" type="time" minOccurs="0"/>
+				<element name="SenestKlokken" type="time" minOccurs="0"/>
+				<element name="varighet" type="integer" minOccurs="0"/>
+				<element name="tidspunkt" type="pas:CS" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Attestbestilling -->
+	<element name="Attestbestilling">
+		<annotation>
+			<documentation>
+         Denne typen fragment benyttes dersom pasienten har behov forforlengelse av sykmelding, friskmelding, videreføring av behandlingsrekvisisjon, utstedelse av attesteller lignende. 
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Bekreftelsesform" type="pas:CS" maxOccurs="unbounded"/>
+				<element name="Leveringsform" type="pas:CS"/>
+				<element name="Begrunnelse" type="string"/>
+				<element name="TypeAttest" type="pas:CS"/>
+				<element name="AttestOpplysninger" type="string" minOccurs="0"/>
+				<element name="OnsketDato" type="date" minOccurs="0"/>
+				<element ref="pas:TilleggsopplRekvisisjon" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Pasient -->
+	<element name="Patient">
+		<annotation>
+			<documentation>
+         Informasjon som er knyttet til rollen som pasient.  
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="NationalHealthInsuranceOffice" type="string"/>
+				<element ref="pas:RepresentantPasient" minOccurs="0"/>
+				<element ref="pas:Person"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Varsel om forfall -->
+	<element name="VarselForfall">
+		<annotation>
+			<documentation>
+         Benyttes dersom pasienten ikke har mulighet til å møte til en avtalt konsultasjon, slik at tidspunktet må endres eller konsultasjonen avlyses. (Ved endring angis ønsket ny konsultasjonstid i en instans av Timebestilling).  
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Bekreftelsesform" type="pas:CS" maxOccurs="unbounded"/>
+				<element name="tidspunkt" type="dateTime"/>
+				<element name="Forfallsgrunn" type="string"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 3 -->
+	<!-- Class: Beskrivelse legemiddel -->
+	<element name="BetegnelseLegemiddel">
+		<annotation>
+			<documentation>
+         Denne typen fragment benyttes for å kommunisere opplysninger om legemiddelbruk. Ved mottak av denne typen opplysninger skal de vurderes av lege før de eventuelt legges inn i et dokument av typen "Rapportert legemiddelbruk" eller "Forskrivninger"
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Legemiddelform" type="pas:CS"/>
+				<element name="VarenummerLegemiddel" type="integer" minOccurs="0"/>
+				<element name="BetegnelseLegemiddel" type="string"/>
+				<element name="StyrkeLegemiddel" type="string" minOccurs="0"/>
+				<element name="BruksomradeKode" type="string" minOccurs="0"/>
+				<element name="BruksområdeTekst" type="string" minOccurs="0"/>
+				<element name="Kvantum" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Tilleggsopplysninger rekvisisjon -->
+	<element name="TilleggsopplRekvisisjon">
+		<annotation>
+			<documentation>
+         Benyttes til å gi utfyllende opplysninger vedrørende en rekvisisjon e.l.. Merk at det ved behov kan gis opplysninger om hvem tjenesten rekvireres hos kan angis i en instans av "Virksomhet". 
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Tjenestetype" type="pas:CV" minOccurs="0"/>
+				<element name="BeskrivelseTjeneste" type="string"/>
+				<element name="FraDato" type="date" minOccurs="0"/>
+				<element name="TilDato" type="date" minOccurs="0"/>
+				<element name="AntallEnheter" type="float" minOccurs="0"/>
+				<element name="enhet" type="string" minOccurs="0"/>
+				<element ref="pas:Organisation" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Representant for pasient -->
+	<element name="RepresentantPasient">
+		<annotation>
+			<documentation>
+         Dersom henvendelsen kommer fra en bemyndiget representant for pasienten, f.eks. mor eller far til et barn, skal det her registreres opplysninger om denne.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Slektskap" type="pas:CS"/>
+				<element name="Omsorgsfunksjon" type="pas:CS" minOccurs="0"/>
+				<element name="Merknad" type="string" minOccurs="0"/>
+				<element ref="pas:Person"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Referanse vedlagt dokument -->
+	<element name="ReferenceDoc">
+		<annotation>
+			<documentation>
+         Referanse/peker til det evt. vedlagte dokumentet. Dokumentet kan ligge direkte inkludert i meldingen, som et annet vedlegg i samme sending, eller finnes eksternt. 
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="IdRefDoc" type="string" minOccurs="0"/>
+				<element name="Href" type="pas:url" minOccurs="0"/>
+				<element name="Content" type="anyType" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<complexType name="url">
+		<!-- Type is unknown. Have to be defined manually -->
+	</complexType>
+	<!-- LEVEL 4 -->
+	<!-- Class: Virksomhet -->
+	<element name="Organisation">
+		<annotation>
+			<documentation>
+         Denne klassen benyttes til å beskrive de virksomheter som direkte eller indirekte er involvert i korrespondansen. Identifikasjon av virksomheten (f.eks. Organisasjonsnummer eller HER-id) oppgis i klassen "Identifikator (Ident)".
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="TypeOrganisation" type="pas:CV"/>
+				<element name="NameOrganisation" type="string"/>
+				<element ref="pas:Address" minOccurs="0"/>
+				<element ref="pas:HealthcareProfessional" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="pas:Ident" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="pas:TeleCom" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Person -->
+	<element name="Person">
+		<annotation>
+			<documentation>
+         Inneholder opplysninger om en person.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="FamilyName" type="string"/>
+				<element name="MiddleName" type="string" minOccurs="0"/>
+				<element name="GivenName" type="string" minOccurs="0"/>
+				<element name="BirthDate" type="date" minOccurs="0"/>
+				<element name="Sex" type="pas:CS" minOccurs="0"/>
+				<element name="Nationality" type="pas:CS" minOccurs="0"/>
+				<element ref="pas:Ident" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="pas:TeleCom" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="pas:Address" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Helsepersonell -->
+	<element name="HealthcareProfessional">
+		<annotation>
+			<documentation>
+         For å beskrive egenskaper ved personen som helsepersonell.    Identifikasjon av helsepersonell (f.eks. HPR-nr eller HER-id) oppgis i kalssen "Identifikator (Ident)".
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="KategoriHelsepersonell" type="pas:CS" minOccurs="0"/>
+				<element name="HpRollekode" type="pas:CS" minOccurs="0"/>
+				<element ref="pas:Person"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Adresse -->
+	<element name="Address">
+		<annotation>
+			<documentation>
+         Benyttes til å registrere post- og besøksadresser, f.eks. adressen en attest eller lignende skal sendes til, besøksadressen til et apotek, en fysioterapeut eller lignende.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Type" type="pas:CS" minOccurs="0"/>
+				<element name="County" type="pas:CS" minOccurs="0"/>
+				<element name="Country" type="pas:CS" minOccurs="0"/>
+				<element name="StreetAdr" type="string" minOccurs="0"/>
+				<element name="PostalCode" type="string" minOccurs="0"/>
+				<element name="City" type="string" minOccurs="0"/>
+				<element name="Postbox" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Telekommunikasjon -->
+	<element name="TeleCom">
+		<annotation>
+			<documentation>
+         Inneholder opplysninger om telekommunikasjonsadresse, inklusive kommunikasjonstype. Denne klassen benyttes for å registrere telefonnummer, telefaks, personsøker etc., knyttes opp mot de registrerte adressene.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="TypeTelecom" type="pas:CS" minOccurs="0"/>
+				<element name="TelecomAddress" type="pas:url"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Element url written before    -->
+	<!-- Class: Identifikator -->
+	<element name="Ident">
+		<complexType>
+			<sequence>
+				<element name="Id" type="string"/>
+				<element name="Type" type="pas:CV"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!--Komplekse datatyper-->
+	<complexType name="CV">
+		<attribute name="V" type="token" use="optional"/>
+		<attribute name="S" type="pas:oid" use="optional"/>
+		<attribute name="DN" type="string" use="optional"/>
+		<attribute name="OT" type="string" use="optional"/>
+	</complexType>
+	<simpleType name="oid">
+		<restriction base="token">
+			<pattern value="(\d+\.?)*\d+"/>
+		</restriction>
+	</simpleType>
+	<complexType name="CS">
+		<attribute name="V" type="token" use="optional"/>
+		<attribute name="DN" type="string" use="optional"/>
+	</complexType>
+	<complexType name="URL">
+		<attribute name="V" type="anyURI" use="optional"/>
+	</complexType>
+</schema>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- SvarAttestbestilling: Inngår som en del av pasientkommunikasjonsmeldingene -->
+<!-- Namespace  http://www.kith.no/xmlstds/paskomm/SvarAttestbestilling/2007-12-17 -->
+<schema xmlns:pas="http://www.kith.no/xmlstds/paskomm/SvarAttestbestilling/2007-12-17" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" xmlns:tk="http://www.kith.no/xmlstds/paskomm/TjenesteKomponent/2007-12-17" targetNamespace="http://www.kith.no/xmlstds/paskomm/SvarAttestbestilling/2007-12-17" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds/paskomm/TjenesteKomponent/2007-12-17" schemaLocation="TjenesteKomponent.xsd"/>
+	<!-- LEVEL 1 -->
+	<!-- Class: Svar på attestbestilling topp -->
+	<element name="SvarAttestbestillingTop">
+		<annotation>
+			<documentation>
+Benyttes for å svare på forespørsel fra pasienten vedrørende forforlengelse av sykmelding, friskmelding, videreføring av behandlingsrekvisisjon, utstedelse av attest eller lignende. 
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="tk:Fellesinfo"/>
+				<element ref="tk:SvarAttestbestilling"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

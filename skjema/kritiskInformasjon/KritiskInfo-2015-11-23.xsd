@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:ki="http://www.kith.no/xmlstds/kritiskinfo/2015-11-23" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:md="http://www.kith.no/xmlstds/kritiskinfo/metadata/2015-11-23" xmlns:or="http://www.kith.no/xmlstds/kritiskinfo/overfolsomhetsreaksjoner/2015-11-23" targetNamespace="http://www.kith.no/xmlstds/kritiskinfo/2015-11-23" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="felleskomponent1.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/kritiskinfo/overfolsomhetsreaksjoner/2015-11-23" schemaLocation="KritiskInfoOverfolsomhetsreaksjoner-2015-11-23.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/kritiskinfo/metadata/2015-11-23" schemaLocation="KritiskInfoMetadata-2015-11-23.xsd"/>
+	<element name="KritiskInformasjon">
+		<complexType>
+			<sequence>
+				<element ref="or:Overfolsomhetsreaksjoner" minOccurs="0" maxOccurs="1"/>
+				<element ref="ki:KomplikasjonerAnestesi" minOccurs="0" maxOccurs="1"/>
+				<element ref="ki:KritiskeMedisinskeTilstander" minOccurs="0" maxOccurs="1"/>
+				<element ref="ki:PagaendeBehandlingImplantat" minOccurs="0" maxOccurs="1"/>
+				<element ref="ki:Smitte" minOccurs="0" maxOccurs="1"/>
+				<element ref="ki:EndringBehandlingsrutiner" minOccurs="0" maxOccurs="1"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- ************************************* Komplikasjoner ved anestesi ************************************* -->
+	<complexType name="KomplikasjonerAnestesiBaseType" abstract="true">
+		<sequence>
+			<element ref="md:Metadata" minOccurs="1" maxOccurs="1"/>
+			<element name="Kommentar" type="string" minOccurs="0" maxOccurs="1"/>
+		</sequence>
+	</complexType>
+	<element name="KomplikasjonerAnestesi">
+		<complexType>
+			<sequence>
+				<element name="VerifisertIngenKjente" type="md:VerifisertIngenKjenteType" minOccurs="0" maxOccurs="1"/>
+				<element ref="ki:AnestesiIntubasjonsproblemer" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="ki:AnestesiAnnetProblem" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="AnestesiIntubasjonsproblemer">
+		<complexType>
+			<complexContent>
+				<extension base="ki:KomplikasjonerAnestesiBaseType">
+					<sequence>
+						<choice>
+							<element name="GraderingAnatomiskTilgjengelighetForIntubasjon" type="kith:CV" minOccurs="1" maxOccurs="1"/>
+							<element name="SpesifikasjonAnnet" type="string" minOccurs="0" maxOccurs="1"/>
+						</choice>
+						<element name="KanPasientenVentileresPaMaske" type="kith:CV" minOccurs="1" maxOccurs="1"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="AnestesiAnnetProblem">
+		<complexType>
+			<complexContent>
+				<extension base="ki:KomplikasjonerAnestesiBaseType">
+					<sequence>
+						<element name="SpesifiserProblem" type="string" minOccurs="1" maxOccurs="1"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<!-- ************************************* Pågående behandling og implantat ************************************* -->
+	<complexType name="PagaendeBehandlingImplantatBaseType" abstract="true">
+		<sequence>
+			<element ref="md:Metadata" minOccurs="1" maxOccurs="1"/>
+			<element name="Beskrivelse" type="string" minOccurs="0" maxOccurs="1"/>
+			<element name="Kommentar" type="string" minOccurs="0" maxOccurs="1"/>
+		</sequence>
+	</complexType>
+	<element name="PagaendeBehandlingImplantat">
+		<complexType>
+			<sequence>
+				<element name="VerifisertIngenKjente" type="md:VerifisertIngenKjenteType" minOccurs="0" maxOccurs="1"/>
+				<element ref="ki:PagaendeBehandling" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="ki:Implantat" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="PagaendeBehandling">
+		<complexType>
+			<complexContent>
+				<extension base="ki:PagaendeBehandlingImplantatBaseType">
+					<sequence>
+						<element name="Behandling" type="kith:CV" minOccurs="1" maxOccurs="1"/>
+						<element name="Avslutningsdato" type="date" minOccurs="0" maxOccurs="1"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="Implantat">
+		<complexType>
+			<complexContent>
+				<extension base="ki:PagaendeBehandlingImplantatBaseType">
+					<sequence>
+						<element name="Implantat" type="kith:CV" minOccurs="1" maxOccurs="1"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<!-- ************************************* Smitte ************************************* -->
+	<complexType name="SmitteBaseType" abstract="true">
+		<sequence>
+			<element ref="md:Metadata" minOccurs="1" maxOccurs="1"/>
+		</sequence>
+	</complexType>
+	<element name="Smitte">
+		<complexType>
+			<sequence>
+				<element name="VerifisertIngenKjente" type="md:VerifisertIngenKjenteType" minOccurs="0" maxOccurs="1"/>
+				<element ref="ki:SmitteInfo" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="SmitteInfo">
+		<complexType>
+			<complexContent>
+				<extension base="ki:SmitteBaseType">
+					<sequence>
+						<element name="SmittefarligSykdom" type="kith:CV" minOccurs="1" maxOccurs="1"/>
+						<element name="GyldigTilDato" type="date" minOccurs="0" maxOccurs="1"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<!-- ************************************* Kritiske medisinske tilstander ************************************* -->
+	<complexType name="MedisinskeDiagnoserBaseType" abstract="true">
+		<sequence>
+			<element ref="md:Metadata" minOccurs="1" maxOccurs="1"/>
+			<element name="Diagnosebeskrivelse" type="string" minOccurs="0" maxOccurs="1"/>
+			<choice>
+				<element name="BegrunnelseForRegistreringKodet" type="kith:CV" minOccurs="1" maxOccurs="1"/>
+				<element name="BegrunnelseForRegistreringTekst" type="string" minOccurs="1" maxOccurs="1"/>
+			</choice>
+		</sequence>
+	</complexType>
+	<element name="KritiskeMedisinskeTilstander">
+		<complexType>
+			<sequence>
+				<element name="VerifisertIngenKjente" type="md:VerifisertIngenKjenteType" minOccurs="0" maxOccurs="1"/>
+				<element ref="ki:MedisinskDiagnose" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="ki:MedisinskDiagnoseTekst" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="MedisinskDiagnose">
+		<complexType>
+			<complexContent>
+				<extension base="ki:MedisinskeDiagnoserBaseType">
+					<sequence>
+						<element name="Diagnosekode" type="kith:CV" minOccurs="1" maxOccurs="1"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="MedisinskDiagnoseTekst">
+		<complexType>
+			<complexContent>
+				<extension base="ki:MedisinskeDiagnoserBaseType">
+					<sequence>
+						<element name="Diagnosetekst" type="string" minOccurs="1" maxOccurs="1"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<!-- ************************************* Endring i behandlingsrutine ************************************* -->
+	<complexType name="EndringBehandlingsrutinerBaseType">
+		<sequence>
+			<element ref="md:Metadata" minOccurs="1" maxOccurs="1"/>
+			<element name="Kommentar" type="string" minOccurs="0" maxOccurs="1"/>
+		</sequence>
+	</complexType>
+	<element name="EndringBehandlingsrutiner">
+		<complexType>
+			<sequence>
+				<element name="VerifisertIngenKjente" type="md:VerifisertIngenKjenteType" minOccurs="0" maxOccurs="1"/>
+				<element ref="ki:AnnenProsedyreendring" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="ki:AvgrensningLivsforlengendeBehandling" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="AvgrensningLivsforlengendeBehandling">
+		<complexType>
+			<complexContent>
+				<extension base="ki:EndringBehandlingsrutinerBaseType">
+					<sequence>
+						<element name="GyldigTilDato" type="date" minOccurs="1" maxOccurs="1"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="AnnenProsedyreendring">
+		<complexType>
+			<complexContent>
+				<extension base="ki:EndringBehandlingsrutinerBaseType">
+					<sequence>
+						<element name="Prosedyreendring" type="kith:CV" minOccurs="1" maxOccurs="1"/>
+						<element name="Spesifikasjon" type="string" minOccurs="0" maxOccurs="1"/>
+						<element name="GyldigTilDato" type="date" minOccurs="0" maxOccurs="1"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+</schema>
