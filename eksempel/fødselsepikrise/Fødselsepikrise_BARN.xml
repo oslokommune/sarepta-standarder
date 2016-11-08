@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Eksempel på bruk av hodemeldingen sammen med PLO-standarden -->
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd">
+	<MsgInfo>
+		<Type V="FODSELS_EPIKRISE" DN="Fødselsepikrise"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2012-12-01T15:30:47</GenDate>
+		<MsgId>faa80d40-a1ba-11de-b28a-0002a5d5c51b</MsgId>
+		<Sender>
+			<Organisation>
+				<OrganisationName>HELSEDIREKTORATET AVD EI TRONDHEIM</OrganisationName>
+				<Ident>
+					<Id>973703838</Id>
+					<TypeId V="ENH" DN="Organisasjonsnummeret i Enhetsregister" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Ident>
+					<Id>91093</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Organisation>
+					<OrganisationName>Fødselshjelp og kvinnesykdommer</OrganisationName>
+					<Ident>
+						<Id>91188</Id>
+						<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</Organisation>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>Trondheim kommune</OrganisationName>
+				<Ident>
+					<Id>942110464</Id>
+					<TypeId V="ENH" DN="Organisasjonsnummeret i Enhetsregister" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Ident>
+					<Id>2342</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Organisation>
+					<OrganisationName>Helsestasjons- og skolehelsetjeneste</OrganisationName>
+					<Ident>
+						<Id>85439</Id>
+						<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</Organisation>
+			</Organisation>
+		</Receiver>
+		<OtherReceiver>
+			<RoleReceiver V="COP" DN="Kopimottaker"/>
+			<Organisation>
+				<OrganisationName>Vassenden legekontor</OrganisationName>
+				<Ident>
+					<Id>91097</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<HealthcareProfessional>
+					<RoleToPatient DN="Fastlege" V="6" S="2.16.578.1.12.4.1.1.9034"/>
+					<FamilyName>September</FamilyName>
+					<GivenName>August</GivenName>
+					<Ident>
+						<Id>91104</Id>
+						<TypeId DN="HER-id" V="HER" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</HealthcareProfessional>
+			</Organisation>
+		</OtherReceiver>
+		<Patient>
+			<FamilyName>Danser, pike, Line</FamilyName>
+			<Nationality V="N" DN="Norge"/>
+			<Ident>
+				<Id>13411000251</Id>
+				<TypeId V="HNR" DN="Hjelpenummer" S="2.16.578.1.12.4.1.1.8116"/>
+			</Ident>
+			<Address>
+				<StreetAdr>Numedalsveien 52</StreetAdr>
+				<PostalCode>3602</PostalCode>
+				<City>Kongsberg</City>
+			</Address>
+			<TeleCom>
+				<TeleAddress V="tel:91344477"/>
+			</TeleCom>
+		</Patient>
+	</MsgInfo>
+	<Document>
+		<RefDoc>
+			<IssueDate V="2012-12-01T15:30:47"/>
+			<MsgType V="XML" DN="XML-instans"/>
+			<Content>
+				<p8:TverrfagligEpikrise xmlns:p8="http://www.kith.no/xmlstds/po/TverrfagligEpikrise/2012-04-01" xmlns:epj1="http://www.kith.no/xmlstds/epj/epj1/2008-02-20" xmlns:epj2="http://www.kith.no/xmlstds/epj/epj2/2008-02-20" xmlns:epj3="http://www.kith.no/xmlstds/epj/epj3/2008-02-20" xmlns="http://www.kith.no/xmlstds/po/poKomponent/2012-04-01" xmlns:m1="http://www.kith.no/xmlstds/epj/meta/2008-02-20" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/po/TverrfagligEpikrise/2012-04-01 TverrfagligEpikrise-v1.6.xsd">
+					<InformasjonOmForsendelsen>
+						<Forsendelsesstatus DN="Ny" V="N"/>
+					</InformasjonOmForsendelsen>
+					<ParorendeForesatt>
+						<Slektskap V="BF" DN="Biologisk far"/>
+						<Referanseperson>
+							<fk1:FamilyName>Hansen</fk1:FamilyName>
+							<fk1:GivenName>Ole</fk1:GivenName>
+							<fk1:TeleCom>
+								<fk1:TypeTelecom V="MC" DN="Mobiltelefon"/>
+								<fk1:TeleAddress V="tel:97121212"/>
+							</fk1:TeleCom>
+						</Referanseperson>
+					</ParorendeForesatt>
+					<ParorendeForesatt>
+						<Slektskap V="BM" DN="Biologisk mor"/>
+						<Referanseperson>
+							<fk1:FamilyName>Danser</fk1:FamilyName>
+							<fk1:GivenName>Line</fk1:GivenName>
+							<fk1:TeleCom>
+								<fk1:TypeTelecom V="MC" DN="Mobiltelefon"/>
+								<fk1:TeleAddress V="tel:91344477"/>
+							</fk1:TeleCom>
+						</Referanseperson>
+					</ParorendeForesatt>
+					<TilknyttetEnhet>
+						<Kontaktenhet>
+							<fk1:OrganisationName>Føde, Barsel Øst</fk1:OrganisationName>
+							<fk1:Ident>
+								<fk1:Id>BarselOst</fk1:Id>
+								<fk1:TypeId V="LOK" DN="Lokal identifikator uten nærmere angivelse"/>
+							</fk1:Ident>
+							<fk1:TeleCom>
+								<fk1:TeleAddress V="tel:72578500"/>
+							</fk1:TeleCom>
+						</Kontaktenhet>
+					</TilknyttetEnhet>
+					<KontaktpersonHelsepersonell>
+						<Kontaktperson>
+							<fk1:RoleToPatient DN="Pasientansvarlig lege" V="1" S="2.16.578.1.12.4.1.1.9034"/>
+							<fk1:FamilyName>Lin</fk1:FamilyName>
+							<fk1:GivenName>Rita</fk1:GivenName>
+							<fk1:Ident>
+								<fk1:Id>258521</fk1:Id>
+								<fk1:TypeId V="HPR" DN="HPR-nummer" S="2.16.578.1.12.4.1.1.8116"/>
+							</fk1:Ident>
+						</Kontaktperson>
+					</KontaktpersonHelsepersonell>
+					<KontaktpersonHelsepersonell>
+						<Kontaktperson>
+							<fk1:TypeHealthcareProfessional DN="Jordmor" V="JO"/>
+							<fk1:FamilyName>Moder</fk1:FamilyName>
+							<fk1:GivenName>Jordnær</fk1:GivenName>
+							<fk1:Ident>
+								<fk1:Id>998877</fk1:Id>
+								<fk1:TypeId V="HPR" DN="HPR-nummer" S="2.16.578.1.12.4.1.1.8116"/>
+							</fk1:Ident>
+						</Kontaktperson>
+					</KontaktpersonHelsepersonell>
+					<TypeInnholdIMelding>
+						<TypeInnhold DN="Fødselsepikrise" V="12" S="2.16.578.1.12.4.1.1.9139"/>
+					</TypeInnholdIMelding>
+					<OpplysningOpphold>
+						<TidsfestetHendelse>
+							<Hendelsekode V="1" DN="Pasient innlagt" S="2.16.578.1.12.4.1.1.9121"/>
+							<TidspunktForHendelse V="2012-11-29T06:37:00"/>
+							<Anslag>false</Anslag>
+							<Merknad>Tidspunkt for fødsel</Merknad>
+						</TidsfestetHendelse>
+					</OpplysningOpphold>
+					<OpplysningOpphold>
+						<TidsfestetHendelse>
+							<Hendelsekode V="2" DN="Pasient utskrevet" S="2.16.578.1.12.4.1.1.9121"/>
+							<BeskrivelseAvHendelse>Utskrevet til hjemmet sammen med barnet</BeskrivelseAvHendelse>
+							<TidspunktForHendelse V="2012-12-01"/>
+							<Anslag>false</Anslag>
+						</TidsfestetHendelse>
+					</OpplysningOpphold>
+					<InfoMedisinskDiagnose>
+						<MedisinskDiagnose>
+							<Hoveddiagnose>true</Hoveddiagnose>
+							<Diagnosekode V="P59.9" DN="Uspesifisert gulsott hos nyfødt" S="2.16.578.1.12.4.1.1.7110"/>
+						</MedisinskDiagnose>
+						<MedisinskDiagnose>
+							<Hoveddiagnose>false</Hoveddiagnose>
+							<Diagnosekode V="P39.1" DN="Manuell Konjunktivitt og tåresekkbetennelse hos nyfødt" S="2.16.578.1.12.4.1.1.7110"/>
+						</MedisinskDiagnose>
+						<MedisinskDiagnose>
+							<Hoveddiagnose>false</Hoveddiagnose>
+							<Diagnosekode V="P39.4" DN="Hudinfeksjon hos nyfødt" S="2.16.578.1.12.4.1.1.7110"/>
+						</MedisinskDiagnose>
+						<MedisinskDiagnose>
+							<Hoveddiagnose>false</Hoveddiagnose>
+							<Diagnosekode V="Z38.0" DN="Enkeltfødsel på sykehus" S="2.16.578.1.12.4.1.1.7110"/>
+						</MedisinskDiagnose>
+						<MedisinskDiagnose>
+							<Hoveddiagnose>false</Hoveddiagnose>
+							<Diagnosekode V="QXGX20" DN="Lysbehandling av nyfødte" S="2.16.578.1.12.4.1.1.7220"/>
+						</MedisinskDiagnose>
+					</InfoMedisinskDiagnose>
+					<MedisinskfagligeOpplysninger>
+						<epj2:GenereltJournalnotat m1:informasjonskategori="Andre notater" komponentID="3fcbb950-1da8-11dd-bd0b-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.11009.0" m1:basiskomponenttype="EPJ dokument">
+							<!--<epj2:Journaltekst>
+								<epj2:Overskriftskode V="FO" DN="Forløp og behandling" S="2.16.578.1.12.4.1.1.9142"/>
+								<epj2:Notat>Fototerapi med god effekt. Både barn og mor har blodgruppe 0 rhesus negativ, DAT test negativ. Konjunktivitt, og rød hud rundt navlen. Oppvekst av gruppe B streptokokker.</epj2:Notat>
+							</epj2:Journaltekst>-->
+							<epj2:Journaltekst>
+								<epj2:Overskriftskode V="FA" DN="Familie/sosialt" S="2.16.578.1.12.4.1.1.9142"/>
+								<epj2:Notat>Mor har en hørselshemming, ikke medfødt. Bor barnets foreldre sammen: Ja</epj2:Notat>
+							</epj2:Journaltekst>
+							<epj2:Journaltekst>
+								<epj2:Overskriftskode V="OP" DN="Planer for videre oppfølging" S="2.16.578.1.12.4.1.1.9142"/>
+								<epj2:Notat>Har fått kontrolltime på sykehuset 26.11.09 for oppfølgning av gulsot</epj2:Notat>
+							</epj2:Journaltekst>
+						</epj2:GenereltJournalnotat>
+					</MedisinskfagligeOpplysninger>
+				</p8:TverrfagligEpikrise>
+			</Content>
+		</RefDoc>
+	</Document>
+	<Document>
+		<RefDoc>
+			<IssueDate V="2012-12-01T15:30:47"/>
+			<MsgType V="XML" DN="XML-instans"/>
+			<Content>
+				<MedisinskeOpplysningerFodselOgBarsel xmlns="http://www.kith.no/xmlstds/FodselBarsel/2012-11-21" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/FodselBarsel/2012-11-21 FodselBarsel-v1.3.xsd">
+					<HelseundersokelseAvKvinneOgBarn>
+						<NotatHelseundersokelse>
+							<OpplysningerOmFodselen>
+								<Fodselsstart DN="Spontan" V="1" S="2.16.578.1.12.4.1.1.8526"/>
+								<ForlosendeInngrep DN="Ingen" V="01" S="2.16.578.1.12.4.1.1.8527"/>
+								<Pluralitet DN="Enkeltfødsel" V="1" S="2.16.578.1.12.4.1.1.8528"/>
+								<Svangerskapslengde>Uke 39.2</Svangerskapslengde>
+							</OpplysningerOmFodselen>
+							<BarnetsLeieVedFodselstidspunktet>
+								<Leie DN="Normal bakhode" V="1" S="2.16.578.1.12.4.1.1.8531"/>
+							</BarnetsLeieVedFodselstidspunktet>
+							<EpisiotomiRifter>
+								<Episiotomi DN="Nei" V="2" S="2.16.578.1.12.4.1.1.1101"/>
+							</EpisiotomiRifter>
+							<BarselforlopMor>
+								<Amming V="1" DN="Fullamming" S="2.16.578.1.12.4.1.1.8524"/>
+								<Utreise>
+									<Utreisedato V="2012-12-01"/>
+									<MorOgBarnSkrevetUtSammen DN="Ja" V="1" S="2.16.578.1.12.4.1.1.1101"/>
+									<UtskrevetTil V="1" DN="Vanlig bosted, arbeidssted m.v." S="2.16.578.1.12.4.1.1.8408"/>
+								</Utreise>
+							</BarselforlopMor>
+							<Barnet>
+								<BarselforlopBarn>
+									<LavesteVektUnderOpphold>3240</LavesteVektUnderOpphold>
+									<LavesteVektDato V="2012-11-30"/>
+									<Ernaering DN="Morsmelk" V="1" S="2.16.578.1.12.4.1.1.8523"/>
+								</BarselforlopBarn>
+								<Barneundersokelse>
+									<Fodselstidspunkt V="2012-11-29T06:37:00"/>
+									<Levestatus V="1" DN="Født levende" S="2.16.578.1.12.4.1.1.8522"/>
+									<Kjonn DN="Kvinne" V="2" S="2.16.578.1.12.4.1.1.3101"/>
+									<ApgarScore>9</ApgarScore>
+									<ApgarScore>10</ApgarScore>
+									<FodselsVekt>3350</FodselsVekt>
+									<FodselsLengde>51</FodselsLengde>
+									<FodselsHodeomkrets>35</FodselsHodeomkrets>
+									<HorselsscreeningNormaleFunn DN="Ja" V="1" S="2.16.578.1.12.4.1.1.1101"/>
+									<NyfodtscreeningMedfodtStoffskiftesykdommer DN="Ja" V="1" S="2.16.578.1.12.4.1.1.1101"/>
+									<UkomplisertForlopEtterFodselen DN="Nei" V="2" S="2.16.578.1.12.4.1.1.1101"/>
+									<Merknader>Gulsot etter fødselen, høyeste bilirubinverdi 21.11.09: 329. Fototerapi med god effekt. Både barn og mor har blodgruppe 0 rhesus negativ, DAT test negativ. Konjunktivitt, og rød hud rundt navlen. Oppvekst av gruppe B streptokokker.</Merknader>
+								</Barneundersokelse>
+							</Barnet>
+						</NotatHelseundersokelse>
+						<OpplysningerFraTidligereSvangerskap>
+							<TidligereSvangerskap>
+								<LevendeFodteBarn>1</LevendeFodteBarn>
+							</TidligereSvangerskap>
+						</OpplysningerFraTidligereSvangerskap>
+					</HelseundersokelseAvKvinneOgBarn>
+				</MedisinskeOpplysningerFodselOgBarsel>
+			</Content>
+		</RefDoc>
+	</Document>
+</MsgHead>

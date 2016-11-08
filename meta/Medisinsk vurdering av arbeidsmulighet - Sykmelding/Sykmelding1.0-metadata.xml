@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>Medisinsk vurdering av arbeidsmulighet/sykmelding</Navn>
+	<Versjon>1.0</Versjon>
+	<Identifikator>HIS 80803:2013</Identifikator>
+	<Utgivelsesdato>2013-03-04</Utgivelsesdato>
+	<Utgiver>Helsedirektoratet</Utgiver>
+	<Status>Utgått</Status>
+	<StatusReferansekatalog>Under utfasing</StatusReferansekatalog>
+	<Standardtekster>
+		<Standardtekst>
+			<Beskrivelse>•Vurdering av arbeidsmulighet / sykmelding. Informasjonsmodell og XML meldingsbeskrivelse (PDF)</Beskrivelse>
+			<Referanse>standardtekst/NAVSykmelding/HIS_80803_2013-NAV-Sykmelding-2013-03-08.pdf</Referanse>
+		</Standardtekst>
+	</Standardtekster>
+	<Skjemaer>
+		<Skjema>
+			<Referanse>skjema/NAVSykmelding/NAV-Sykmelding-2011-03-04.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/sykmelding/2011-03-04</Namespace>
+		</Skjema>
+	</Skjemaer>
+	<Felleskomponenter>
+		<Felleskomponent>
+			<Beskrivelse>XML-skjema for Hodemelding</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/MsgHead-v1_2.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Felles XML-definisjoner for person, helsepersonell, organisasjon etc</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/felleskomponent1.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Felles datatyper</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
+		</Felleskomponent>
+	</Felleskomponenter>
+	<Eksempler>
+		<Eksempel>
+			<Referanse>eksempel/NAVSykmelding/Eks1-Forstegangs_sykmelding_fra_lege.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/NAVSykmelding/Eks2-Forstegangs_sykmelding_fra_HF.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/NAVSykmelding/Eks3-Forstegangs_sykmelding_fra_tannlege.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/NAVSykmelding/Eks4-Paafolgende_vurdering.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/NAVSykmelding/Eks5-Med_friskmeldingsplan_og_veiledning.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/NAVSykmelding/Eks6-Med_oppfolgningsplan.xml</Referanse>
+		</Eksempel>
+	</Eksempler>
+	<RelaterteFiler>
+		<RelatertFil>
+			<Beskrivelse>Referansekatalog-oppføring for Medisinsk vurdering av arbeidsmulighet/sykmelding (HIS 80803:2013)</Beskrivelse>
+			<Referanse>https://ehelse.no/Sider/Vurdering-av-arbeidsmulighet--sykmelding--Informasjonsmodell-og-XML-meldingsbeskrivelse-–-HIS-808032013.aspx</Referanse>
+		</RelatertFil>
+	</RelaterteFiler>
+</StandardMetadata>

@@ -1,5 +1,5 @@
-Sarepta - Teknisk arkiv!
-===================
+﻿Sarepta - Teknisk arkiv!
+=========================
 
 
 Innledning 

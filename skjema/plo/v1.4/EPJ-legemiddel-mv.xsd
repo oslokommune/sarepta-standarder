@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Versjon 1.0 2008-02-20
+EPJ1-legemiddel-mv.xsd inneholder XML-definisjon av følgende EPJ-komponenter:
+EPJ sak Legemidler, OID 14.50302.0., XML-element <Legemidler>
+EPJ dokument Legemiddelinfo , OID 13.10301.0, XML-element <Legemiddelinfo>
+EPJ dokument Legemidler administrert ved overføring, OID 13.10302.0, XML-element <LegemidlerAdministrertVedOverforing> 
+EPJ fragment ForenkletForskrivning, XML-element <ForenkletForskrivning>
+EPJ fragment Forskrivningsinfo, XML-element <Forskrivningsinfo>
+EPJ fragment Adm. av helsepersonell, XML-element <AdmAvHelsepersonell>
+EPJ fragment Egenadministrering, XML-element <Egenadministrering>
+EPJ fragment Administrert legemiddel, XML-element <AdministrertLegemiddel>
+EPJ fragment Utlevert legemiddel, XML-element <UtlevertLegemiddel>
+-->
+<!--	Endret 20. mars 2009 (MA)
+  | Endret kardinalitet på legemiddelform fra 1 til 0..1 under Forskrivningsinfo
+-->
+<!--	Endret 11. mars 2009 (MA)
+  | Endret kardinalitet på choice fra 1 til 1..* under LegemidlerAdministrertVedOverforing
+-->
+<!--	Endret 12 november 2008 (AA)
+		Endret kardinalitet på elementet InngaarIMultidose fra 1 til 0..1
+		Endret kardinalitet på elementet SkalIkkeTasSammenMedAnnetLegemiddel fra 1 til 0..1
+-->
+<!--	Endret 12. mars 2008 (MA)
+  | Fjernet referanse til attributeGroup meta2
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:kith="http://www.kith.no/xmlstds" xmlns:epj1="http://www.kith.no/xmlstds/epj/epj1/2008-02-20" xmlns:epj2="http://www.kith.no/xmlstds/epj/epj2/2008-02-20" xmlns:epj3="http://www.kith.no/xmlstds/epj/epj3/2008-02-20" xmlns:m1="http://www.kith.no/xmlstds/epj/meta/2008-02-20" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" targetNamespace="http://www.kith.no/xmlstds/epj/epj3/2008-02-20" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/epj/epj2/2008-02-20" schemaLocation="EPJ-journalnotat-mv.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="felleskomponent1.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/epj/meta/2008-02-20" schemaLocation="EPJ-meta.xsd"/>
+	<element name="Legemidler">
+		<annotation>
+			<documentation>
+         EPJ sak, ID 14.150302.0
+         Denne saken skal inneholde opplysninger om legemiddler som pasienten bruker eller har brukt. 
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="epj3:Legemiddelinfo" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="epj3:LegemidlerAdministrertVedOverforing" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+			<attribute ref="m1:basiskomponenttype" use="required" fixed="EPJ sak"/>
+			<attribute ref="m1:komponenttype" use="required" fixed="2.16.578.1.12.4.1.6.14.50302.0"/>
+			<attribute ref="m1:informasjonskategori"/>
+			<attributeGroup ref="m1:meta1"/>
+		</complexType>
+	</element>
+	<element name="Legemiddelinfo">
+		<annotation>
+			<documentation>
+			EPJ dokument, OID 13.10301.0 
+         Inneholder informasjon om hvilke legemidler som er forskrevet, seponert mv.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="epj3:ForenkletForskrivning"/>
+			</sequence>
+			<attribute ref="m1:basiskomponenttype" use="required" fixed="EPJ dokument"/>
+			<attribute ref="m1:komponenttype" use="required" fixed="2.16.578.1.12.4.1.6.13.10301.0"/>
+			<attribute ref="m1:informasjonskategori"/>
+			<attributeGroup ref="m1:meta1"/>
+		</complexType>
+	</element>
+	<!-- Class: Legemidler administrert ved overføring -->
+	<element name="LegemidlerAdministrertVedOverforing">
+		<annotation>
+			<documentation>
+         EPJ dokument OID 13.10302.0
+Inneholder opplysninger om hvilke legemidler som har vært administrert ved overføring eller utskrivning. Innholdet omfatter både personellets direkte administrering, for eksempel ved injeksjon, og den indirekte ved utdeling av legemidler til pasienten som enkeltdose eller i større mengde.
+      </documentation>
+		</annotation>
+		<complexType>
+			<choice maxOccurs="unbounded">
+				<element ref="epj3:AdmAvHelsepersonell" maxOccurs="unbounded"/>
+				<element ref="epj3:Egenadministrering" maxOccurs="unbounded"/>
+			</choice>
+			<attribute ref="m1:basiskomponenttype" use="required" fixed="EPJ dokument"/>
+			<attribute ref="m1:komponenttype" use="required" fixed="2.16.578.1.12.4.1.6.13.10302.0"/>
+			<attribute ref="m1:informasjonskategori"/>
+			<attributeGroup ref="m1:meta1"/>
+		</complexType>
+	</element>
+	<!-- Class: Forenklet forskrivning -->
+	<element name="ForenkletForskrivning">
+		<annotation>
+			<documentation>
+         Denne klassen skal benyttes sammen med forskrivning av enkeltpreparat når strukturert dosering ikke benyttes. Klassen inneholder informasjon som er relevant for forskrivningen.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="StatusTilForskrivningen" type="kith:CS" minOccurs="0"/>
+				<element name="InngaarIMultidose" type="kith:CS" minOccurs="0"/>
+				<element name="ReseptId" type="string" minOccurs="0"/>
+				<element name="Merknad" type="string" minOccurs="0"/>
+				<element name="Forskriver" type="fk1:HealthcareProfessional" minOccurs="0"/>
+				<element ref="epj3:Forskrivningsinfo"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Forskrivningsinfo -->
+	<element name="Forskrivningsinfo">
+		<annotation>
+			<documentation>
+         Denne typen fragment benyttes for å kommunisere opplysninger om legemiddelbruk. Ved mottak av denne typen opplysninger skal de vurderes av lege før de eventuelt legges inn i et dokument av typen "Rapportert legemiddelbruk" eller "Forskrivninger" eller "Legemiddelinfo".
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="BruksomradeTekst" type="string" minOccurs="0"/>
+				<element name="DosVeiledEnkel" type="string" minOccurs="0"/>
+				<element name="Nr" type="string" minOccurs="0"/>
+				<element name="Navn" type="string"/>
+				<element name="GeneriskNavn" type="string" minOccurs="0"/>
+				<element name="Atc" type="kith:CS" minOccurs="0"/>
+				<element name="Legemiddelform" type="kith:CS" minOccurs="0"/>
+				<element name="Styrke" type="kith:PQ" minOccurs="0"/>
+				<element name="Bruk" type="kith:CS" minOccurs="0"/>
+				<element name="DoseringStarttidspunkt" type="kith:TS" minOccurs="0"/>
+				<element name="DoseringSluttidspunkt" type="kith:TS" minOccurs="0"/>
+				<element name="SkalIkkeTasSammenMedAnnetLegemiddel" type="boolean" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Adm. av helsepersonell -->
+	<element name="AdmAvHelsepersonell">
+		<annotation>
+			<documentation>
+         Brukes for å angi personellets administrering av en enkeltdose til en pasient.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="AdmEnkeltdose" type="kith:PQ" minOccurs="0"/>
+				<element name="AdmStart" type="kith:TS"/>
+				<element name="AdmSlutt" type="kith:TS" minOccurs="0"/>
+				<element name="AdministrertAv" type="fk1:HealthcareProfessional" minOccurs="0"/>
+				<element name="AdmStatus" type="kith:CS" minOccurs="0"/>
+				<element ref="epj3:AdministrertLegemiddel" minOccurs="0"/>
+				<element ref="epj3:Forskrivningsinfo" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Egenadministrering -->
+	<element name="Egenadministrering">
+		<annotation>
+			<documentation>
+         Dette fragmentet er en spesialisering av Legemiddeladministrering. Fragmentet brukes for å angi personellets utlevering av en eller flere delmengder av en samlet dose legemiddel til pasienten (eller pasientens pårørende) som selv skal forestå å administrere legemidlet.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="AdmEnkeltdose" type="kith:PQ" minOccurs="0"/>
+				<element name="AdmStart" type="kith:TS"/>
+				<element name="AdmSlutt" type="kith:TS" minOccurs="0"/>
+				<element name="AdministrertAv" type="fk1:HealthcareProfessional" minOccurs="0"/>
+				<element ref="epj3:UtlevertLegemiddel" maxOccurs="unbounded"/>
+				<element ref="epj3:Forskrivningsinfo" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Administrert Legemiddel -->
+	<element name="AdministrertLegemiddel">
+		<annotation>
+			<documentation>
+         Benyttes for å angi kvantum til legemiddel som ble administrert
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Kvantum" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Utlevert legemiddel -->
+	<element name="UtlevertLegemiddel">
+		<annotation>
+			<documentation>
+         Brukes for å angi personellets utlevering av en eller flere delmengder av en samlet dose legemiddel til pasienten (eller pasientens pårørende) som selv skal forestå å administrere legemidlet.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="AntEnkeltdoser" type="integer"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

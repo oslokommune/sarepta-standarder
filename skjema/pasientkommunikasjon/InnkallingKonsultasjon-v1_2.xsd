@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- InnkallingKonsultasjon: Inngår som en del av pasientkommunikasjonsmeldingene -->
+<!-- Namespace  http://www.kith.no/xmlstds/paskomm/SvarAttestbestilling/2007-12-17 -->
+<schema xmlns:pas="http://www.kith.no/xmlstds/paskomm/InnkallingKonsultasjon/2007-12-17" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" xmlns:tk="http://www.kith.no/xmlstds/paskomm/TjenesteKomponent/2007-12-17" targetNamespace="http://www.kith.no/xmlstds/paskomm/InnkallingKonsultasjon/2007-12-17" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds/paskomm/TjenesteKomponent/2007-12-17" schemaLocation="TjenesteKomponent.xsd"/>
+	<!-- LEVEL 1 -->
+	<!-- Class: Innkalling til konsultasjon mv topp -->
+	<element name="InnkallingKonsultasjonTop">
+		<annotation>
+			<documentation>
+Benyttes for å gi opplysninger om en konsultasjon som pasienten er kalt inn til, f.eks. en bekreftelse på en timebestilling.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="tk:Fellesinfo"/>
+				<element ref="tk:InnkallingKonsultasjon"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

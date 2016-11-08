@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M5.2 Kvittering på tilbakekalling av resept
+2013-12-01
+-->
+<schema xmlns:m52="http://www.kith.no/xmlstds/eresept/m52/2013-12-01" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" targetNamespace="http://www.kith.no/xmlstds/eresept/m52/2013-12-01" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<element name="KvitteringTilbakekalling">
+		<annotation>
+			<documentation>Kvittering på tilbakekalling av resept.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="ReseptId" type="string">
+					<annotation>
+						<documentation>Angir hvilken resept kvitteringen gjelder. </documentation>
+					</annotation>
+				</element>
+				<element name="Status" type="kith:CV">
+					<annotation>
+						<documentation>Angir hvilken resept kvitteringen gjelder. </documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

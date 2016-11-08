@@ -7,6 +7,8 @@ Inngår i Hdirs visningsfiler versjon 1
 
 29-08-2013: versjon for eResept v2.5
 -->
+<!-- Endringslogg:
+	-	2014-10-21: Endret visning av Atc-kode slik at kon V-attributtet vises -->
 
 	<xsl:import href="funksjoner.xsl"/>
 	
@@ -24,12 +26,7 @@ Inngår i Hdirs visningsfiler versjon 1
 							</xsl:if>
 							<xsl:for-each select="ki:Atc">
 								<div>
-									<b>Atc:</b>&#160;
-									<xsl:choose>
-										<xsl:when test="@OT"><xsl:value-of select="@OT"/></xsl:when>
-										<xsl:when test="@DN"><xsl:value-of select="@DN"/></xsl:when>
-										<xsl:otherwise><xsl:value-of select="@V"/></xsl:otherwise>
-									</xsl:choose>
+									<b>Atc:</b>&#160;<xsl:value-of select="@V"/>
 								</div>
 							</xsl:for-each>
 							<xsl:if test="ki:Hjelpestoffreaksjon">
@@ -62,9 +59,12 @@ Inngår i Hdirs visningsfiler versjon 1
 							<div>
 								<b>Reaksjon:</b>&#160;
 								<xsl:choose>
-									<xsl:when test="@OT"><xsl:value-of select="@OT"/></xsl:when>
-									<xsl:when test="@DN"><xsl:value-of select="@DN"/></xsl:when>
-									<xsl:otherwise><xsl:call-template name="k-7497"/></xsl:otherwise>
+									<xsl:when test="@DN">
+										<xsl:value-of select="@DN"/>
+									</xsl:when>
+									<xsl:otherwise>
+										<xsl:call-template name="k-7497"/>
+									</xsl:otherwise>
 								</xsl:choose>
 							</div>
 						</xsl:for-each>
@@ -72,9 +72,12 @@ Inngår i Hdirs visningsfiler versjon 1
 							<div>
 								<b>Kilde:</b>&#160;
 								<xsl:choose>
-									<xsl:when test="@OT"><xsl:value-of select="@OT"/></xsl:when>
-									<xsl:when test="@DN"><xsl:value-of select="@DN"/></xsl:when>
-									<xsl:otherwise><xsl:call-template name="k-7498"/></xsl:otherwise>
+									<xsl:when test="@DN">
+										<xsl:value-of select="@DN"/>
+									</xsl:when>
+									<xsl:otherwise>
+										<xsl:call-template name="k-7498"/>
+									</xsl:otherwise>
 								</xsl:choose>
 							</div>
 						</xsl:for-each>

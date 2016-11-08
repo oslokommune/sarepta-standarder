@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns:egen="http://www.kith.no/xmlstds/egenerklæring/2012-05-12" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kith.no/xmlstds/egenerklæring/2012-05-12" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<element name="Egenerklaering">
+		<annotation>
+			<documentation>Egenerklæringsskjema </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Meldingstype" type="string"/>
+				<element name="SendingEllerMottak" type="egen:Rolle"/>
+				<element name="Krav" type="egen:Krav" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<complexType name="Krav">
+		<annotation>
+			<documentation>Innholdet for et spørsmål i egenerklæringen.</documentation>
+		</annotation>
+		<sequence>
+			<element name="KravFormulering" type="string"/>
+			<element name="ForklaringKITH" type="string" minOccurs="0"/>
+			<element name="Hjelpetekst" type="string" minOccurs="0"/>
+			<element name="ReferanseTilDok" type="string" minOccurs="0"/>
+			<element name="ReferanseTilCase" type="string" minOccurs="0"/>
+			<element name="MaaFyllesUt" type="boolean"/>
+		</sequence>
+	</complexType>
+	<simpleType name="Rolle">
+		<restriction base="string">
+			<enumeration value="Sending"/>
+			<enumeration value="Mottak"/>
+		</restriction>
+	</simpleType>
+	<complexType name="InkludertSvar">
+		<annotation>
+			<documentation>Tillater flere underelementer i Krav-elementet (ved hjelp av xsi:type="egen:InkludertSvar")</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="egen:Krav">
+				<sequence>
+					<element name="svar" type="boolean"/>
+					<element name="kommentar"/>
+					<element name="meldinger" minOccurs="0">
+						<complexType>
+							<sequence>
+								<element name="melding" maxOccurs="unbounded">
+									<complexType>
+										<sequence>
+											<element name="uuid" type="string" />
+											<element name="appRec" type="string" />
+										</sequence>
+									</complexType>
+								</element>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="bilder" minOccurs="0">
+						<complexType>
+							<sequence>
+								<element name="bilde" type="string" maxOccurs="unbounded"/>
+							</sequence>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+</schema>

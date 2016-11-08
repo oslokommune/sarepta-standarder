@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:po="http://www.kith.no/xmlstds/po/poKomponent/2015-xx-xx" xmlns:p1="http://www.kith.no/xmlstds/po/Pasientlogistikk/2015-xx-xx" targetNamespace="http://www.kith.no/xmlstds/po/Pasientlogistikk/2015-xx-xx" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds/po/poKomponent/2015-xx-xx" schemaLocation="poKomponent-v2.0.xsd"/>
+	<!--LEVEL 1-->
+	<element name="Pasientlogistikk">
+		<annotation>
+			<documentation>Comment describing your root element</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="po:FellesAdministrativeOpplysninger"/>
+				<choice>
+					<element ref="p1:OrienteringOmDod"/>
+					<element ref="p1:MeldingInnlagtPasient"/>
+					<element ref="p1:MeldingOmUtskrevetPasient"/>
+					<element ref="p1:MeldingUtskrivningsklarPasient"/>
+					<element ref="p1:AvmeldingUtskrivningsklarPasient"/>
+					<element ref="p1:TilbakemeldingUtskrivningsklarPasient"/>
+				</choice>
+			</sequence>
+		</complexType>
+	</element>
+	<!--LEVEL 2-->
+	<element name="OrienteringOmDod">
+		<complexType>
+			<sequence>
+				<element ref="po:TidsfestetHendelse"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!--CLASS: Orientering om dødsfall-->
+	<element name="MeldingOmUtskrevetPasient">
+		<complexType>
+			<sequence>
+				<element ref="po:UtskrevetTil"/>
+				<element ref="po:TidsfestetHendelse"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="MeldingUtskrivningsklarPasient">
+		<complexType>
+			<sequence>
+				<element ref="po:TidsfestetHendelse" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="AvmeldingUtskrivningsklarPasient">
+		<complexType>
+			<sequence>
+				<element ref="po:TidsfestetHendelse" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="MeldingInnlagtPasient">
+		<complexType>
+			<sequence>
+				<element ref="po:TidsfestetHendelse"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="TilbakemeldingUtskrivningsklarPasient">
+		<complexType>
+			<sequence>
+				<element ref="po:TidsfestetHendelse" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>Fastlegeliste (oversikt over fastlegens listeinnbyggere)</Navn>
+	<Versjon>1.0</Versjon>
+	<Identifikator>HIS 1023:2010</Identifikator>
+	<Utgivelsesdato>2010-02-01</Utgivelsesdato>
+	<Utgiver>Helsedirektoratet</Utgiver>
+	<Status>Til utbredelse</Status>
+	<StatusReferansekatalog>Aktiv</StatusReferansekatalog>
+	<Standardtekster>
+		<Standardtekst>
+			<Beskrivelse>Pasientliste. Informasjonsmodell og XML meldingsbeskrivelse (PDF)</Beskrivelse>
+			<Referanse>standardtekst/HELFOPasientliste/HIS_1023_2010_NAV-Pasientliste 2010-02-01.pdf</Referanse>
+		</Standardtekst>
+	</Standardtekster>
+	<Skjemaer>
+		<Skjema>
+			<Referanse>skjema/HELFOPasientliste/NAV-Pasientliste-2010-02-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/nav/pasientliste/2010-02-01</Namespace>
+		</Skjema>
+	</Skjemaer>
+	<Felleskomponenter>
+		<Felleskomponent>
+			<Beskrivelse>XML-skjema for Hodemelding</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/MsgHead-v1_2.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Felles XML-definisjoner for person, helsepersonell, organisasjon etc</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/felleskomponent1.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Felles datatyper</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
+		</Felleskomponent>
+	</Felleskomponenter>
+	<RelaterteFiler>
+		<RelatertFil>
+			<Beskrivelse>Referansekatalog-oppføring for Fastlegeliste (oversikt over fastlegens listeinnbyggere) (HIS 1022:2010)</Beskrivelse>
+			<Referanse>https://ehelse.no/Sider/Pasientliste--Informasjonsmodell-og-XML-meldingsbeskrivelse-%e2%80%93-HIS-10232010.aspx</Referanse>
+		</RelatertFil>
+	</RelaterteFiler>
+</StandardMetadata>

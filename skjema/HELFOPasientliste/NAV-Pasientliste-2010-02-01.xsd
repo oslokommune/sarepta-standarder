@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+NAV Pasientliste
+Versjon 1.0
+2010-02-01
+-->
+<xs:schema xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.kith.no/xmlstds/nav/pasientliste/2010-02-01" targetNamespace="http://www.kith.no/xmlstds/nav/pasientliste/2010-02-01" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.kith.no/xmlstds" schemaLocation="kith.xsd"/>
+	<xs:import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="felleskomponent1.xsd"/>
+	<xs:element name="PasientlisteForesporsel">
+		<xs:annotation>
+			<xs:documentation>En Pasintlisteforesporsel  kan inneholde en av 4 forskjellige forspørsler</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="HentPasientliste" type="PasientlisteParamType">
+					<xs:annotation>
+						<xs:documentation>Forespørsel om umidelbar tilsending av en pasientliste. Denne meldingen kan benyttes dersom man ønsker en oppdatert liste umidelbart etter start av abonnement.  Forespøselen svarer med en Apprec som betyr at forepørsel mottatt og Pasientlisten sendes snarest.  Pasientlisten sendes asynkront som en Pasientliste melding </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="StartAbonnement" type="PasientlisteParamType">
+					<xs:annotation>
+						<xs:documentation>Forespørelsen benyttes til å starte et abonnement på elektronisk utsending av fastlegens pasientliste.  Listen sendes ut månedlig. Forepørselen svarer med en PasientListeAbonnentStatus  </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="StoppAbonnement" type="PasientlisteParamType">
+					<xs:annotation>
+						<xs:documentation>Forespørselen benyttes for å stoppe månedlig utsending av elektronisk pasientliste. Forepørselen svarer med en PasientListeAbonnentStatus </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="HentAbonnementStatus" type="PasientlisteParamType">
+					<xs:annotation>
+						<xs:documentation>Forespørselen benyttes for å hente status på abonnementet. Forepørselen svarer med en PasientListeAbonnentStatus </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Pasientliste">
+		<xs:annotation>
+			<xs:documentation>Pasientliste sendes ut månedlig til alle fastleger som abonnerer på tjeneste. Kan også sendes ut umidelbart etter en HentPasientliste forespørsel </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ListeType" type="kith:CS">
+					<xs:annotation>
+						<xs:documentation>LE = Liste med lege, LU = Liste uten lege (LU er ikke i bruk ennå, men definert for senere bruk). Default er LE</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="GjelderManed" type="xs:nonNegativeInteger">
+					<xs:annotation>
+						<xs:documentation>Hvilken måned listen gjelder for 1- 12</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ListeFOMDato" type="xs:date">
+					<xs:annotation>
+						<xs:documentation>FOM dato listen gjelder for.  Dette er den første i måneden.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ListeTOMDato" type="xs:date">
+					<xs:annotation>
+						<xs:documentation>TOM dato listen gjelder for. Den siste i måneden.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="FnrLege" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Fødselsnummer til fastlegen</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ListeNr" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Listenr for liste uten lege (for senere bruk)</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="LegeNavn" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Legens navn</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Kommune" type="kith:CS">
+					<xs:annotation>
+						<xs:documentation>Kommunen hvor legen har fastlegeavtale.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Antall" type="xs:nonNegativeInteger">
+					<xs:annotation>
+						<xs:documentation>Antall pasienter i listen</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Format" type="kith:CS">
+					<xs:annotation>
+						<xs:documentation>Beskriver på hvilket format Pasientlisten returneres. Verdiene er PI =PasientInformasjon = Strukturert XML, eller  DI = Diskettformat = flatfilformat med tegnsett MSDOS codepage 865  </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:choice>
+					<xs:element name="Diskettformat" type="xs:base64Binary" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Enten diskettformat eller</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Pasienter" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Strukturert liste med Pasienter.</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="Pasient" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Pasient">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="PasientFOMDato" type="xs:date"/>
+				<xs:element name="PasientTOMDato" type="xs:date" minOccurs="0"/>
+				<xs:element name="Endringskode" type="kith:CS" minOccurs="0"/>
+				<xs:element name="Avgangsarsak" type="kith:CS" minOccurs="0"/>
+				<xs:element name="NAVkontor" type="xs:string"/>
+				<xs:element name="FnrHovedperson" type="xs:string" minOccurs="0"/>
+				<xs:element name="Person" type="fk1:Person"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PasientlisteAbonnementStatus">
+		<xs:annotation>
+			<xs:documentation>Status på PasientListe Abionnement</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Status" type="AbonnementStatusType"/>
+				<xs:element name="Format" type="kith:CS" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Beskriver på hvilket format Pasientlisten returneres. Verdiene er PI =PasientInformasjon = Strukturert XML, eller  DI = Diskettformat = flatfilformat med tegnsett MSDOS codepage 865  </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Kanal" type="kith:CS" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Kanal = Distribusjonsform
+EL = Elektronisk 
+DI = Diskett
+LI = Papirliste
+</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="PasientlisteParamType">
+		<xs:annotation>
+			<xs:documentation>En gjenbrukbar klasse som benyttets til forespørselparameter </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="FnrLege" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Legens fødselsnummer sammen med kommunenr identifiserer en fastlegeliste</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="KommuneNr" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Identifiserer i hvilken kommune legen er fastlege</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Format" type="kith:CS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Format kan være enten filformat eller strukturert XML format. PI =PasientInformasjon = Strukturert XML, eller  DI = Diskettformat = flatfilformat med tegnsett MSDOS codepage 865  </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Felleskomponent TOKT -->
+	<xs:complexType name="AbonnementStatusType">
+		<xs:sequence>
+			<xs:element name="Statuskode" type="kith:CS">
+				<xs:annotation>
+					<xs:documentation>Abonnementstatus har en av følgende verdier: Aktiv, Inaktiv, Ingen data</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SistEndret" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Tidspunkt når abonnementet  er oppretett eller sist endret </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SluttDato" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Dersom abonnementet er inaktivt sier sluttdato når abonnementet er avsluttet.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

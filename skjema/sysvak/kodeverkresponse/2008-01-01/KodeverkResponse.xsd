@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SYSVAK - KodeverkResponse versjon 1.0 - 2008.01.01 -->
+<xs:schema xmlns="http://www.kith.no/xmlstds/sysvak/kodeverkresponse/2008-01-01" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sysvak="http://www.kith.no/xmlstds/sysvak" xmlns:kith="http://www.kith.no/xmlstds" targetNamespace="http://www.kith.no/xmlstds/sysvak/kodeverkresponse/2008-01-01" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.kith.no/xmlstds" schemaLocation="../../../felleskomponenter/kith.xsd"/>
+	<xs:import namespace="http://www.kith.no/xmlstds/sysvak" schemaLocation="../../CommonTypes.xsd"/>
+	<xs:element name="KodeverkResponse">
+		<xs:annotation>
+			<xs:documentation>Meldingstypen definerer en svarmelding for en kodeverkforespørsel.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Behandlingsresultat" type="sysvak:Behandlingsresultat"/>
+				<xs:element name="Fylke" type="kith:CS" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Kommune" type="kith:CS" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Bydel" type="kith:CS" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Poststed" type="kith:CS" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Kjonn" type="kith:CS" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="PersonTypeId" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="VaksinandDokumentasjonTypeId" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="HelseenhetTypeId" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="VaksinasjonDokumentasjonTypeId" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Vaksine" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Preparat" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="ArsakTilManglendeVaksinering" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Varighet" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

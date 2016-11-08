@@ -1,0 +1,18 @@
+Dette er en samling av alle XML-schema som vedlikeholdes av Direktoratet for e-helse.
+Også skjema til utgåtte standarder ligger her, som et historisk arkiv.
+
+I tillegg er det lagt ved en OASIS XML katalog som mapper alle namespace til riktig skjema-fil.
+
+For å benytte denne i XML-spy må du gjøre følgende:
+1. Klon GIT-repositoryet med denne katalogen til en mappe lokalt - f.eks: "c:\repository"
+
+2. Rediger filen CustomCatalog.xml under katalogen H:\My Documents\Altova\XMLSpy2016.
+	Legg inn: <nextCatalog catalog="C:/repository/standarder/skjema/ehelseCatalog.xml"/>
+	EVT modifiser slik at den peker riktig.
+	Hvis fila CustomCatalog.xml finnes, kan CustomCatalog i standarder/skjema kopieres og redigeres.
+
+3. Go! Du skal nå kunne åpne og validere xml-filer uten at skjema ligger i samme katalog som filen du jobber med.
+
+4. Ved endringer: Opprett en branch i git (GitExt Browse, meny Commands -> Create branch). Legg inn nye schema i schema-mappen, og oppdater referanse til disse i katalog'filen. Commit m. GitExt browse, og push til sentralt repository. Lag merge request på branch i GitLab (https://git.sarepta.ehelse.no) når endringene er ferdigstilt.
+Se brukerveiledning på git.sarepta.ehelse.no.
+

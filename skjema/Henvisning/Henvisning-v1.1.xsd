@@ -42,7 +42,7 @@
 	<element name="Message">
 		<annotation>
 			<documentation>
-         En melding bestående av en henvisning.  Hver henvisning kan angi en ny pasient. 
+         En melding bestående av en henvisning.  Hver henvisning kan angi en ny pasient.
       </documentation>
 		</annotation>
 		<complexType>
