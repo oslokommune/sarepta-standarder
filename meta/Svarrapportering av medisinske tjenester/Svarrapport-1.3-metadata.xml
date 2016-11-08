@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>Svarrapportering av medisinske tjenester</Navn>
+	<Versjon>1.3</Versjon>
+	<Identifikator>HIS 80822:2008</Identifikator>
+	<Utgivelsesdato>2008-12-01</Utgivelsesdato>
+	<Utgiver>Helsedirektoratet</Utgiver>
+	<Status>Til utbredelse</Status>
+	<StatusReferansekatalog>Aktiv</StatusReferansekatalog>
+	<Standardtekster>
+		<Standardtekst>
+			<Beskrivelse>Svarrapportering av medisinske tjenester. XML meldingsbeskrivelse. Inkluderer errata nr. 1 (PDF)</Beskrivelse>
+			<Referanse>standardtekst/svarrapport/HIS_80822_2008-svarraport_v1.3.pdf</Referanse>
+		</Standardtekst>
+		<Standardtekst>
+			<Beskrivelse>Errata HIS 80822:2008 nr 1: Svarrapportering av medisinske tjenester v1.3: Retting av feil i eksempel for GenDate i standarden</Beskrivelse>
+			<Referanse>standardtekst/svarrapport/Errata-svarrapport_v1.3_nr1.pdf</Referanse>
+		</Standardtekst>
+	</Standardtekster>
+	<Skjemaer>
+		<Skjema>
+			<Referanse>skjema/svarrapport/svar-v13.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/labsvar/2008-12-01</Namespace>
+		</Skjema>
+	</Skjemaer>
+	<Felleskomponenter>
+		<Felleskomponent>
+			<Beskrivelse>Felles datatyper</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Container for Base64-kodet innhold</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
+		</Felleskomponent>
+	</Felleskomponenter>
+	<Visningsfiler>
+		<Visningsfil>
+			<Referanse>visningsfil/svarrapport/v1.3/svarrapport-v1_3-2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Felleskomponent for alle visningsfiler: KITH-visning.css</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/KITH-visning.css</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: base64decoder.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/base64decoder.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: base64-konverterer.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/base64-konverterer.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler:cave2html.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/cave2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler:datamap.xml</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/datamap.xml</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: EPJ-cave2html.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/EPJ-cave2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: EPJ-journalnotat2html.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/EPJ-journalnotat2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: EPJ-legemiddel2html.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/EPJ-legemiddel2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: funksjoner.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/funksjoner.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: journalnotat2html.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/journalnotat2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: kodeverk.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/kodeverk.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: kodeverk2template.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/kodeverk2template.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: kritiskInfo2html-v2.5.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/kritiskInfo2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: legemiddel2html.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/legemiddel2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: meldingshode2html.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/meldingshode2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: poKomponent2html.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/poKomponent2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler (Fra SourceForge): date-time.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/SourceForge/date-time.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler (Fra SourceForge): stdlib.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/SourceForge/stdlib.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler (Fra SourceForge): string.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
+		</Visningsfil>
+	</Visningsfiler>
+	<Testmateriell>
+		<Testfil>
+			<Beskrivelse>Syntaks-sjekk av XML-meldinger (XML-validering)</Beskrivelse>
+			<Referanse>https://validator.test.nhn.no/validering/index.cgi</Referanse>
+		</Testfil>
+	</Testmateriell>
+	<RelaterteFiler>
+		<RelatertFil>
+			<Beskrivelse>Referansekatalog-oppføring for Svarrapport 1.3 (HIS 80822:2008)</Beskrivelse>
+			<Referanse>https://ehelse.no/Sider/Svarrapportering-av-medisinske-tjenester--Informasjonsmodell-og-XML-meldingsbeskrivelse-–-HIS-808222008.aspx</Referanse>
+		</RelatertFil>
+	</RelaterteFiler>
+</StandardMetadata>

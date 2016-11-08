@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- eResept M10 Versjon 1.6 2007-09-01 -->
+<!-- Endret siden eResept M10 Versjon 1.5 2007-06-01 rev 1 -->
+<!-- Mottaker/Etternavn 1..1 -> 0..1 -->
+<!-- Nytt element Utleveringsrapport/Annulering 1..1 boolean -->
+<!-- Forskrivning og Mottaker 1..1 -> 0..1 -->
+<!-- RefKode 0..* -> 0..1 -->
+<!-- Nytt element AnsattId 1..1 string -->
+<!-- - - - - - - - - - - - - - - - -->
+<!-- Endret siden versjon 1.4 2007-04-16 -->
+<!-- Ny klasse Virkestoff, erstatter Styrke og Virkestoff -->
+<!-- Vare/Gruppe 0..1 -> 1..1 -->
+<!-- Vare/Betegnelse+Navn 1..1 -> 0..1 -->
+<!-- Intervensjon/Ident rettet navn til KonfLege -->
+<!-- LegemiddelUtenMT/Mengde PQ -> string -->
+<!-- Intervensjon 0..1 -> 0..* -->
+<!-- Endret siden versjon 2007-03-30-06 versjon 1.3 -->
+<!-- Elementet EkspedisjonKansellert slettet -->
+<!-- ProdGruppe 1..1 -> 0..1 -->
+<!-- Nytt element: Kansellering 0..1 CS (kodeverk 7411) -->
+<!-- Endret siden versjon 2006-10-06 versjon 1.1 rev 2 -->
+<!-- Vareklassen er oppdatert for å samsvare med M1 -->
+<!-- EndretOrdinasjon  og Arsakkode fjernet og erstattet med Intervensjon fra M18 -->
+<!-- Endret siden versjon 1.0: -->
+<!-- Attributtet "Uteskpedert" -> "Avsluttet" -->
+<!-- "Endringstype": CV -> CS -->
+<!-- Legemiddelblanding/Bestanddel 1..1 -> 1..* -->
+<!-- Mengde string -> PQ -->
+<schema xmlns:m10="http://www.kith.no/xmlstds/eresept/m10/2007-09-01" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:kith="http://www.kith.no/xmlstds" targetNamespace="http://www.kith.no/xmlstds/eresept/m10/2007-09-01" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="../felles/felleskomponent1.xsd"/>
+	<element name="Utleveringsrapport">
+		<complexType>
+			<sequence>
+				<element name="ReseptId" type="string">
+					<annotation>
+						<documentation>Identifiserer resepten denne ordinasjonen tilhører.</documentation>
+					</annotation>
+				</element>
+				<element name="Utleveringsdato" type="date">
+					<annotation>
+						<documentation>Dato da varen ble utlevert</documentation>
+					</annotation>
+				</element>
+				<element name="Utsalgspris" type="kith:MO" minOccurs="0">
+					<annotation>
+						<documentation>Utsalgspris for legemiddel uten MT.</documentation>
+					</annotation>
+				</element>
+				<element name="EgenandelBetaltHittil" type="kith:MO">
+					<annotation>
+						<documentation>Akkumulert egenandel i perioden. </documentation>
+					</annotation>
+				</element>
+				<element name="EgenandelStartDato" type="date" minOccurs="0">
+					<annotation>
+						<documentation>Datoen da egenandelsperioden starter. </documentation>
+					</annotation>
+				</element>
+				<element name="Avsluttet" type="kith:CS" minOccurs="0">
+					<annotation>
+						<documentation>Angir om resepten er avsluttet og skal markered som ferdig ekspedert i reseptbanken. </documentation>
+					</annotation>
+				</element>
+				<element name="SignaturFarmasoyt" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Farmasøyts signatur. HPR-nummer, alternativt lokal ID. </documentation>
+					</annotation>
+				</element>
+				<element name="ByttereservasjonKunde" type="boolean" minOccurs="0">
+					<annotation>
+						<documentation>Kunden har reservert seg mot generisk bytte. </documentation>
+					</annotation>
+				</element>
+				<element ref="m10:Intervensjon" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="m10:Forskrivning" minOccurs="0"/>
+				<element ref="m10:Mottaker" minOccurs="0"/>
+				<element name="Kansellering" type="kith:CS" minOccurs="0">
+					<annotation>
+						<documentation>Kode for hvorfor utleverer ikke gikk videre med ekspedering. </documentation>
+					</annotation>
+				</element>
+				<element name="Annulering" type="boolean">
+					<annotation>
+						<documentation>Kode for om uttlevering er annulert</documentation>
+					</annotation>
+				</element>
+				<element name="AnsattId" type="string">
+					<annotation>
+						<documentation>Opplysning som gjør det mulig i ettertid å identifisere hvem som forespurte den aktuelle informasjonen </documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Intervensjon">
+		<annotation>
+			<documentation>Dersom det er avvik mellom resepten og det som er utlevert skal årsaken til dette fremgå av intervensjonskoden.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Kode" type="kith:CV" minOccurs="0">
+					<annotation>
+						<documentation>Dokumenterer intervensjonen (endring av resept) - det er utlevert noe annet enn det som er forskrevet. Gjelder ikke generisk bytte.</documentation>
+					</annotation>
+				</element>
+				<element name="EndringsType" type="kith:CS" minOccurs="0">
+					<annotation>
+						<documentation>Hva slags endring har vært gjort - vare, dosering, refusjonshjemmel.</documentation>
+					</annotation>
+				</element>
+				<element name="KonfKunde" type="boolean" minOccurs="0">
+					<annotation>
+						<documentation>Oppgis hvis utleverer bare har konferert med kunde.</documentation>
+					</annotation>
+				</element>
+				<element name="KonfLege" type="fk1:Ident" minOccurs="0">
+					<annotation>
+						<documentation>Angir HPR-nummer til den legen som er konsultert</documentation>
+					</annotation>
+				</element>
+				<element ref="m10:Forskrivning"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Mottaker">
+		<annotation>
+			<documentation>Beskriver mottaker av en ekspedisjon. </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="MottakerSignatur" type="base64Binary" minOccurs="0">
+					<annotation>
+						<documentation>Mottakers signatur fra elektronisk signaturblokk. </documentation>
+					</annotation>
+				</element>
+				<element name="Legitimasjon" type="kith:CV">
+					<annotation>
+						<documentation>Hvilken legitimasjon som er vist.</documentation>
+					</annotation>
+				</element>
+				<element name="Fornavn" type="string" minOccurs="0"/>
+				<element name="Etternavn" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!--Felles objekt: Forskrivning-->
+	<element name="Forskrivning">
+		<complexType>
+			<sequence>
+				<element name="Reiterasjon" type="int" default="0">
+					<annotation>
+						<documentation>Antall ganger forskrivningen kan gjentas uten ny forskrivning. Standardverdi = 0. </documentation>
+					</annotation>
+				</element>
+				<element name="RefHjemmel" type="kith:CV" minOccurs="0">
+					<annotation>
+						<documentation>Rekvirent setter refusjonshjemmel for refusjon og refererer til blåreseptforskriften. </documentation>
+					</annotation>
+				</element>
+				<element name="RefKode" type="kith:CV" minOccurs="0">
+					<annotation>
+						<documentation>Diagnose i klartekst og Diagnosekode i henhold til gjeldende kodeverk. </documentation>
+					</annotation>
+				</element>
+				<element name="Merknad" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Påføres av rekvirent som en beskjed til utleverer</documentation>
+					</annotation>
+				</element>
+				<element name="Bruksomrade" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Kan benytters dersom det ikke finnes noen kode som passer for det aktuelle bruksområdet eller for å angi ytterligere opplysninger relatert til bruken av legemidlet.</documentation>
+					</annotation>
+				</element>
+				<element name="DosVeiledEnkel" type="string">
+					<annotation>
+						<documentation>Forenklet doseingsveiledning til bruk av utleverer. </documentation>
+					</annotation>
+				</element>
+				<element name="AntallPakninger" type="int">
+					<annotation>
+						<documentation>Antall pakninger av forskrevet enkeltpreparat</documentation>
+					</annotation>
+				</element>
+				<element ref="m10:Dosering" minOccurs="0" maxOccurs="unbounded"/>
+				<choice>
+					<element ref="m10:Vare"/>
+					<element ref="m10:Legemiddelblanding"/>
+					<element ref="m10:LegemiddelUtenMt"/>
+				</choice>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Vare">
+		<complexType>
+			<complexContent>
+				<extension base="m10:Vare"/>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="Legemiddelblanding">
+		<complexType>
+			<sequence>
+				<element name="TilbOppl" type="string">
+					<annotation>
+						<documentation>Eventuelle opplysninger om hvordan blandingen av de beatandeler som inngår i blandingen skal foretas.</documentation>
+					</annotation>
+				</element>
+				<element name="Bestanddel" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Denne klassen benyttes til å beskrive de enkelte bestanddeler som inngår i en legemiddelblanding.</documentation>
+					</annotation>
+					<complexType>
+						<complexContent>
+							<extension base="m10:Vare">
+								<sequence>
+									<element name="Mengde" type="kith:PQ">
+										<annotation>
+											<documentation>Antall måleenheter og målenhet av angitt legemiddeltype som skal inngå i blandingen.</documentation>
+										</annotation>
+									</element>
+								</sequence>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="LegemiddelUtenMt">
+		<complexType>
+			<complexContent>
+				<extension base="m10:Vare">
+					<sequence>
+						<element name="Begrunnelse" type="string">
+							<annotation>
+								<documentation>Begrunnelse for søknad om godkjenningsfritak.</documentation>
+							</annotation>
+						</element>
+						<element name="Negativliste" type="kith:CS">
+							<annotation>
+								<documentation>Angir om virkestoffet finnes på negativlisten fra SLV</documentation>
+							</annotation>
+						</element>
+						<element name="PositivINegativliste" type="kith:CS" minOccurs="0">
+							<annotation>
+								<documentation>Angir om foreskrevet legemiddel er positiv/forhåndsgodkjent innenfor negativlisten. </documentation>
+							</annotation>
+						</element>
+						<element name="MTanerkjenteLand" type="kith:CS">
+							<annotation>
+								<documentation>Settes av legen hvis preparatet har markedsføringstillatelse i anerkjent land</documentation>
+							</annotation>
+						</element>
+						<element name="Produsent" type="string">
+							<annotation>
+								<documentation>Navn på produsent av varen</documentation>
+							</annotation>
+						</element>
+						<element name="MTland" type="kith:CS" minOccurs="0">
+							<annotation>
+								<documentation>Land med der varen har markedsføringstillatelse. </documentation>
+							</annotation>
+						</element>
+						<element name="Mengde" type="string">
+							<annotation>
+								<documentation>Den totale mengde legen ønsker å forskrive av legemidlet</documentation>
+							</annotation>
+						</element>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="Dosering">
+		<annotation>
+			<documentation>Kompleks datastruktur relevant for multidose og rekvirering på sykehus. </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Kort" type="string" minOccurs="0"/>
+				<element name="Tidspunkt" type="string" minOccurs="0"/>
+				<element name="Dato" type="date" minOccurs="0"/>
+				<element name="Uke" type="string" minOccurs="0"/>
+				<element name="Maned" type="string" minOccurs="0"/>
+				<element name="Intervall" type="int" minOccurs="0"/>
+				<element name="Merknad" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Brukes til spesielle merknader rekvirent har til pakkesentralen.</documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<complexType name="Vare">
+		<sequence>
+			<element name="Gruppe" type="kith:CS">
+				<annotation>
+					<documentation>Attributtet oppstår i FEST og overføres til resepten direkte fra FEST</documentation>
+				</annotation>
+			</element>
+			<element name="ProdGruppe" type="kith:CS" minOccurs="0">
+				<annotation>
+					<documentation>Hentes fra FEST.</documentation>
+				</annotation>
+			</element>
+			<element name="Nr" type="string" minOccurs="0">
+				<annotation>
+					<documentation>Varenummer.</documentation>
+				</annotation>
+			</element>
+			<element name="Betegnelse" type="string" minOccurs="0">
+				<annotation>
+					<documentation>Forkortelse av varenavn, styrke og legemiddelform som er tilpasset brukerbehovet.</documentation>
+				</annotation>
+			</element>
+			<element name="Navn" type="string" minOccurs="0">
+				<annotation>
+					<documentation>Navn på vare/salgsnavn.</documentation>
+				</annotation>
+			</element>
+			<element name="Pakningsstr" type="string" minOccurs="0">
+				<annotation>
+					<documentation>Pakningsstørrelse/minste salgsenhet til sluttbruker. </documentation>
+				</annotation>
+			</element>
+			<element name="EnhetPakning" type="string" minOccurs="0">
+				<annotation>
+					<documentation>stk/ml/g/mg etc</documentation>
+				</annotation>
+			</element>
+			<element name="Pakningstype" type="string" minOccurs="0">
+				<annotation>
+					<documentation>Eks: "Blister, endose", "Ferdigfylt sprøyte", "Ampulle" etc.</documentation>
+				</annotation>
+			</element>
+			<element name="Atc" type="kith:CS" minOccurs="0">
+				<annotation>
+					<documentation>Anatomical Therapeutical Chemical-kode. </documentation>
+				</annotation>
+			</element>
+			<element name="Legemiddelform" type="kith:CS" minOccurs="0">
+				<annotation>
+					<documentation>Kode som angir hvilken form legemidlet er på</documentation>
+				</annotation>
+			</element>
+			<element name="Virkestoff" minOccurs="0" maxOccurs="unbounded">
+				<complexType>
+					<sequence>
+						<element name="Navn" type="string">
+							<annotation>
+								<documentation>Navn på virkestoffet. </documentation>
+							</annotation>
+						</element>
+						<element name="Styrke" type="kith:PQ" minOccurs="0">
+							<annotation>
+								<documentation>Angivelse av legemidles styrke og målenhet. </documentation>
+							</annotation>
+						</element>
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+</schema>

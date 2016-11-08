@@ -1,0 +1,3990 @@
+
+(object Petal
+    version    	50
+    _written   	"Rose 8.3.0407.2800"
+    charSet    	0)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"3E5650470321"
+    enforceClosureAutoLoad 	FALSE
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	FALSE
+	snapToGrid 	FALSE
+	gridX      	6
+	gridY      	6
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	3
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"3E5650470336"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"3E56504F0175"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"3E5650470335"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"3E565047033F"
+	logical_models 	(list unit_reference_list
+	    (object Class "Dialogmelding"
+		attributes 	(list Attribute_Set
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ShortName"
+			value      	(value Text "Dialogmelding"))
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Level"
+			value      	"1")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Status"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Use"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Example"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Comment"
+			value      	""))
+		quid       	"43FC771702ED"
+		documentation 	
+|En instans kan inneholde en eller flere forespørsler, svar på forespørsler, notat eller avviksmeldinger. 
+|Ved svar på en forespørel skal alltid forespørselen sendes ved svaret.
+|En instans vil alltid kun dekke en av anvendelsene. En instans vil for eksempel ikke kunne inneholde en forespørsl og et notat om en pasient.
+		
+		stereotype 	"top"
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "sakstype kodet"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"SakstypeKodet")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"O")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	""))
+			quid       	"4444D0020342"
+			documentation 	
+|Sakstype kodet kan brukes til å angi den medisinsk faglig problemstillingen for henvendelsen. Aktuelle kodeverk kan for eksempel være ICPC-2 eller ICF.
+|
+|Uttrykket "sakstype" er på ingen måte ment å skulle videreføres i de EPJ systemer som bruker denne meldingsstandarden. Der bør en benytte termer som brukerne er fortrolige med, og da fortrinnsvis veldokumenterte termer som er hentet fra
+|definisjonskataloger eller andre autoritative kilder.
+			
+			type       	"CV"
+			exportControl 	"Public")
+		    (object ClassAttribute "sakstype"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"O")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"Sakstype"))
+			quid       	"4444D02C0395"
+			documentation 	
+|Sakstype kan brukes til å angi den medisinsk faglig problemstillingen for henvendelsen. Dette feltet kan brukes til en tekstlig utdyping av koden som er valgt i feltet "sakstype kodet".
+			
+			type       	"string"
+			exportControl 	"Public"))
+		module     	"Component View::Dialogmelding"
+		quidu      	"3FCDCAEC0167")
+	    (object Class "Forespørsel"
+		attributes 	(list Attribute_Set
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ShortName"
+			value      	(value Text "Foresporsel"))
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Status"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Level"
+			value      	"2")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Use"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Example"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Comment"
+			value      	""))
+		quid       	"43FC774B03D9"
+		documentation 	
+|Inneholder en eller flere forespørsler.
+|Når forespørselen gjelder helseinformasjon må "formål med forespørselen" eller "beskrivelse av formål" være angitt. 
+		
+		superclasses 	(list inheritance_relationship_list
+		    (object Inheritance_Relationship
+			quid       	"4444D46B0234"
+			supplier   	"Logical View::Notat_a"
+			quidu      	"4444D1CC0209"))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "type forespørsel"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"9065 Type forespørsel vedr. EPJ-overføring")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"TypeForesp")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"M")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	(value Text 
+|Kodeverk: xxxx Type uspesifisert forespørsel
+|5 Fritekst
+				))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	""))
+			quid       	"4406F6520336"
+			documentation 	
+|Kode som angir hva forespørselen gjelder. Flere kodeverk kan benyttes for å angi hva forespørselen gjelder.
+|Nye koder vil bli publisert på www.volven.no.
+			
+			type       	"CV"
+			exportControl 	"Public")
+		    (object ClassAttribute "spørsmål"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "Sporsmal"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"O")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	""))
+			quid       	"4406F92B02EF"
+			documentation 	
+|Ved behov kan spørmålet formuleres i fri tekst.
+|Når type forespørsel inneholder informasjon om at spørsmålet er formulert i fritekst må dette dataelementet ha innhold (gjelder kodeverdi 5=Fritekst i begge de forelsåtte kodeverkene).
+			
+			type       	"string"
+			exportControl 	"Public")
+		    (object ClassAttribute "formål med forespørsel"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	(value Text "0..1"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"Formal")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	(value Text "O"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"9068 Formål med forespørsel om informasjon fra EPJ")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	""))
+			quid       	"4407FA5D0208"
+			documentation 	
+|Dette dataelementet må ha innhold når foresprøselen gjelder helseinformasjon siden en hver forespørsel vedrørene helseinformasjon må ha et formål. Formålet angis grovt med en kode og skal detaljeres i attributtet "beskrivelse av formål".
+			
+			type       	"CV"
+			exportControl 	"Public")
+		    (object ClassAttribute "beskrivelse av formål"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "Begrunnelse"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	(value Text "0..1"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	""))
+			quid       	"453CCF0100A6"
+			documentation 	"Kort utdypning av formålet med forespørselen"
+			type       	"string"
+			exportControl 	"Public")
+		    (object ClassAttribute "hastegrad"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	(value Text "9067 Hastegrad for å  svare på forespørsel"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"Hastegrad")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"O")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	""))
+			quid       	"4407FC2000C6"
+			documentation 	
+|Kode som angir avsenderens vurdering av hvor mye det haster med å få
+|svar på forespørselen.
+			
+			type       	"CS"
+			exportControl 	"Public")
+		    (object ClassAttribute "informasjon fra dato"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"FraDato")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"O")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	(value Text "Fra dato 2003-01-15."))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	""))
+			quid       	"4407FD32000C"
+			documentation 	
+|Dersom det ønskes informasjon innenfor et bestemt tidsrom, kan første dato i dette tidsrommet angis her. 
+|Dersom bare "Informasjon fra dato" er angitt (og "Informasjon til dato" ikke er angitt) betyr det at en etterspør informasjon som finnes fra angitt dato og frem til i dag.
+			
+			type       	"date"
+			exportControl 	"Public")
+		    (object ClassAttribute "informasjon til dato"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"TilDato")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"O")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	(value Text ""))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	""))
+			quid       	"4407FD4F0003"
+			documentation 	
+|Dersom det ønskes informasjon innenfor et bestemt tidsrom, kan siste dato i dette tidsrommet angis her.
+|Dersom bare "Informasjon til dato" er angitt (og "Informasjon fra dato" ikke er angitt) betyr det at en etterspør all informasjon som er eldre enn den angitte datoen.
+			
+			type       	"date"
+			exportControl 	"Public")
+		    (object ClassAttribute "type journalinformasjon"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"TypeJournalinfo")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"9066 Kategori journalinformasjon – FLO")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	(value Text "0..1"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"O")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	""))
+			quid       	"44082F3F03B3"
+			documentation 	"Dersom forespørselen gjelder en bestemt kategori informasjon fra EPJ, kan kode for denne angis her."
+			type       	"CV"
+			exportControl 	"Public")
+		    (object ClassAttribute "meldingsintern id"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "DokIdForesp"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Origin"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"O")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	""))
+			quid       	"4408048103E7"
+			documentation 	"Benyttes kun for å opprettholde interne referanser i selve meldingen."
+			type       	"string"
+			exportControl 	"Public"))
+		module     	"Component View::Dialogmelding"
+		quidu      	"3FCDCAEC0167")
+	    (object Class "Notat"
+		attributes 	(list Attribute_Set
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ShortName"
+			value      	(value Text "Notat"))
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Level"
+			value      	"3")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Status"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Use"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Example"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Comment"
+			value      	""))
+		quid       	"43FC7759023E"
+		documentation 	
+|Notat kan inneholde opplysninger om svar på en forespørsel, notat (om pasient) eller informasjon om avvik. Dersom Notat er et svar på forespørsel skal alltid forespørselen sendes sammen med svaret. Dette for å kunne lett se hvilken forespørsel det svares på. 
+|MERK: Notat skal ikke benyttes som erstatning for å overføre strukturerte opplysninger der det er utarbeidet spesifikke XML-meldinger.
+		
+		superclasses 	(list inheritance_relationship_list
+		    (object Inheritance_Relationship
+			quid       	"4444D465007F"
+			supplier   	"Logical View::Notat_a"
+			quidu      	"4444D1CC0209"))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "tema kodet"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "TemaKodet"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"M")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"9069 Svarkategori, overføring av EPJ-informasjon")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	(value Text 
+|Kodeverk: 7321 Tema for notat
+|1 Notat om pasient
+|2 Melding om avvik
+|3 Opplysningen er
+|9 Uspesifisert notat
+|
+|Kodeverk: 8117 Avvik ved mottak av elektronisk melding 
+				))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	(value Text 
+|Dette dataelementet vil bli benyttet litt forskjellig avhengig av bruken.
+|Hvis dette er et svar på en forespørsel vedrørende overføring av EPJ-opplysninger skal kodeverk 9069 Svarkategori, overføring av EPJ-informasjon benyttes for å angi en grov gruppering av svaret. 
+|Hvis dette er et notat som kun inneholder fritekst skal kodeverk 7321 Tema for notat benyttes. 
+|Hvis dette er en avviksmelding og det finnes en kode for avviket skal kodeverk 8117 Avvik ved mottak av elektronisk melding benyttes.
+|Nye kodeverk kan opprettes ved behov. Nye koder i eksisterende kodeverk kan også opprettes.
+|Endringer og nye kodeverdier vil bli publisert på www.volven.no og www.kith.no. 
+				))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	""))
+			quid       	"4406FAE601CA"
+			documentation 	"Kodet opplysning for å gruppere innholdet. Koden kan være hele innholdet i noen sammenhenger. Uttdyping av notatet/svaret kan enten gjøres i fritekst eller ved at aktuelle dokumenter inkluderes i meldingen eller legges ved i meldingskonvolutten."
+			type       	"CV"
+			exportControl 	"Public")
+		    (object ClassAttribute "tema beskrivelse"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "Tema"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"O")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	""))
+			quid       	"4444D6B701FE"
+			documentation 	
+|Felt for eventuell tekstlig beskrivelse av feltet "tema kodet".
+			
+			type       	"string"
+			exportControl 	"Public")
+		    (object ClassAttribute "notatinnhold"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "TekstNotatInnhold"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"M")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	""))
+			quid       	"450FE2370100"
+			documentation 	
+|Felt for det tekstlige innholdet i notatet.
+|Enkel formatering iht lovlige Xhtml-koder kan benyttes.
+|MERK: Dette dataelementet er påkrevd hvis det er et notat (MsgHead/MsgInfo/Type/@V=DIALOG-NOTAT i Hodemeldingen)
+			
+			type       	"anyType"
+			exportControl 	"Public")
+		    (object ClassAttribute "merknad til notat"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"Merknad")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"O")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	""))
+			quid       	"4406FB390030"
+			documentation 	"Merknad til notat brukes dersom det finnes annen viktig informasjon som ikke direkte er relatert til innholdet i notatet. "
+			type       	"string"
+			exportControl 	"Public")
+		    (object ClassAttribute "meldingsintern id"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "DokIdNotat"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"O")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	""))
+			quid       	"440804BE01F0"
+			documentation 	
+|Benyttes kun for å opprettholde interne referanser i selve meldingen.
+|
+			
+			type       	"string"
+			exportControl 	"Public")
+		    (object ClassAttribute "dato for notat"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"DatoNotat")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"O")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	""))
+			quid       	"44D9DC1D0001"
+			documentation 	"Dato for notatet."
+			type       	"date"
+			exportControl 	"Public"))
+		module     	"Component View::Dialogmelding"
+		quidu      	"3FCDCAEC0167")
+	    (object Class "Notat_a"
+		attributes 	(list Attribute_Set
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ShortName"
+			value      	"Notat_a")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Comment"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Level"
+			value      	"2")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Use"
+			value      	""))
+		quid       	"4444D1CC0209"
+		documentation 	"Abstrakt klasse som spesialiseres til Forespørsel og Notat. "
+		module     	"Component View::Dialogmelding"
+		quidu      	"3FCDCAEC0167"
+		abstract   	TRUE)
+	    (object Class "Rolle relatert til notatet"
+		attributes 	(list Attribute_Set
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Comment"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ShortName"
+			value      	"RollerRelatertNotat")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Level"
+			value      	"4")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Status"
+			value      	""))
+		quid       	"4536C34C02A5"
+		documentation 	"Inneholder opplysninger om hvilke roller relaterte personer har i tilknytning til notatet og innholdet. "
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "rolle til notat"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"RolleNotat")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	(value Text 
+|"rolle til notat" eller "rolle i forhold til pasient" må ha innhold.
+				))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"9057 Roller relatert til produksjon av notat"))
+			quid       	"4536C3980370"
+			documentation 	"Rollen som denne personen har i forhold til det aktuelle notatet."
+			type       	"CV"
+			exportControl 	"Public")
+		    (object ClassAttribute "rolle i forhold til pasient"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"RoleToPatient")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	(value Text 
+|"rolle til notat" eller "rolle i forhold til pasient" må ha innhold.
+				))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"9034 Helsepersons roller i forhold til pasient")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Origin"
+				value      	"HealthcareProfessional i Hodemeldingen"))
+			quid       	"45373CF703D9"
+			documentation 	
+|Personens rolle i forhold til en pasient.
+|Følgende kodeverk vil kunne benyttes:
+|
+|Kodeverk 9034: Helsepersons rolle til pasient
+|
+|Kodeverk 8422: Omsorgsrolle
+|
+|
+|
+			
+			type       	"CV"
+			exportControl 	"Public"))
+		module     	"Component View::Dialogmelding"
+		quidu      	"3FCDCAEC0167")
+	    (object Class "Person_a"
+		attributes 	(list Attribute_Set
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ShortName"
+			value      	"Person_a")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Status"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Use"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Example"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Comment"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Codes"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Level"
+			value      	"5"))
+		quid       	"45373AE20370"
+		documentation 	
+|Abstrakt klasse. Inneholder opplysninger om en person.
+|MERK: fødslesdato og kjønn vil ikke bli benyttet i denne meldingen, men er tatt med for å være kompatibel med hodemeldingen.
+		
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "etternavn"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"DDL"
+				name       	"ColumnType"
+				value      	"varchar")
+			    (object Attribute
+				tool       	"DDL"
+				name       	"Length"
+				value      	"10")
+			    (object Attribute
+				tool       	"DDL"
+				name       	"NullsOK"
+				value      	FALSE)
+			    (object Attribute
+				tool       	"DDL"
+				name       	"PrimaryKey"
+				value      	FALSE)
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "FamilyName"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Origin"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	(value Text ""))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	(value Text "< FamilyName>Nordmann</FamilyName>"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Level"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"NullsOK"
+				value      	FALSE)
+			    (object Attribute
+				tool       	"KITH"
+				name       	"PrimaryKey"
+				value      	FALSE)
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"O"))
+			quid       	"45373AE20371"
+			documentation 	"For å angi personens etternavn."
+			type       	"string"
+			exportControl 	"Public")
+		    (object ClassAttribute "mellomnavn"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"DDL"
+				name       	"ColumnType"
+				value      	"varchar")
+			    (object Attribute
+				tool       	"DDL"
+				name       	"Length"
+				value      	"70")
+			    (object Attribute
+				tool       	"DDL"
+				name       	"NullsOK"
+				value      	FALSE)
+			    (object Attribute
+				tool       	"DDL"
+				name       	"PrimaryKey"
+				value      	FALSE)
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "MiddleName"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Origin"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	(value Text ""))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Level"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"NullsOK"
+				value      	FALSE)
+			    (object Attribute
+				tool       	"KITH"
+				name       	"PrimaryKey"
+				value      	FALSE)
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"O"))
+			quid       	"45373AE20372"
+			documentation 	"For å angi personens mellomnavn, dvs. navn som personen vanligvis ikke benytter sammen med fornavnet, og som heller ikke inngår som en del av etternavnet."
+			type       	"string"
+			exportControl 	"Public")
+		    (object ClassAttribute "fornavn"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "GivenName"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Origin"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	(value Text ""))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	(value Text "<GivenName>Ola</GivenName>"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Level"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"NullsOK"
+				value      	TRUE)
+			    (object Attribute
+				tool       	"KITH"
+				name       	"PrimaryKey"
+				value      	FALSE)
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"O"))
+			quid       	"45373AE20373"
+			documentation 	"For å angi personens fornavn."
+			type       	"string"
+			exportControl 	"Public")
+		    (object ClassAttribute "fødselsdato"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "DateOfBirth"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	(value Text "Hvis fødselsdato benyttes, bør også kjønn (Sex) fylles ut."))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Origin"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	(value Text ""))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Level"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"NullsOK"
+				value      	TRUE)
+			    (object Attribute
+				tool       	"KITH"
+				name       	"PrimaryKey"
+				value      	FALSE)
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"O"))
+			quid       	"45373AE20374"
+			documentation 	
+|Personens fødselsdato. Fødselsdato oppgis ikke hvis fødselsnummer oppgis.
+|MERK: Dette dataelementet benyttes ikke i dialogmeldingen.
+			
+			type       	"date"
+			exportControl 	"Public")
+		    (object ClassAttribute "kjønn"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "Sex"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	(value Text ""))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	(value Text "MERK: Dette dataelementet benyttes ikke i dialogmeldingen."))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"NullsOK"
+				value      	TRUE)
+			    (object Attribute
+				tool       	"KITH"
+				name       	"PrimaryKey"
+				value      	FALSE)
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"O")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"3101 Kjønn"))
+			quid       	"45373AE20375"
+			documentation 	"Sosialt kjønn. Benyttes vanligvis ikke hvis fødselsnummer oppgis."
+			type       	"CS"
+			exportControl 	"Public")
+		    (object ClassAttribute "nasjonalitet"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "Nationality"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	(value Text "Landskode i henhold til ISO3166"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	(value Text ""))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Origin"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	(value Text ""))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"9043 Landkoder")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Level"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"NullsOK"
+				value      	TRUE)
+			    (object Attribute
+				tool       	"KITH"
+				name       	"PrimaryKey"
+				value      	FALSE)
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"O"))
+			quid       	"45373AE20376"
+			documentation 	"Personens nasjonalitet. Skal kun brukes hvis pasientens nasjonalitet ikke er norsk (NO)."
+			type       	"CS"
+			exportControl 	"Public")
+		    (object ClassAttribute "id"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"Ident")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..*")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"O")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"8116 ID-type for personer")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	"Felleskomponent som inneholder opplysninger om ID og Type ID.")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	(value Text 
+|<Ident>
+|   <Id>15076500565</Id>
+|   <TypeId V="FNR" DN="Fødslesnummer" S="2.16.578.1.12.4.1.1.8116"/>
+|</Ident>
+				)))
+			quid       	"45373AE20377"
+			documentation 	"Identifikasjon som personen er eller har vært kjent under. Vanligvis benyttes fødselsnummer eller D-nummer for personer."
+			type       	"SET<Ident>"
+			exportControl 	"Public")
+		    (object ClassAttribute "adresse"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"Address")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"O"))
+			quid       	"45373AE20378"
+			documentation 	"Felleskomponent som inneholder adresseopplysninger."
+			type       	"Address"
+			exportControl 	"Public")
+		    (object ClassAttribute "telekommunikasjon)"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"TeleCom")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..*")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"O")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	""))
+			quid       	"45373AE20379"
+			documentation 	"Felleskomponent som inneholder opplysninger om telekommunikasjonsadresse og type (privat, arbeid etc)."
+			type       	"SET<TeleCom>"
+			exportControl 	"Public"))
+		module     	"Component View::v1.0"
+		module     	"Component View::Dialogmelding"
+		quidu      	"3FCDCAEC0167"
+		abstract   	TRUE
+		persistence 	"Persistent"
+		concurrency 	"Synchronous"
+		cardinality 	(value Cardinality "1..1"))
+	    (object Class "Helsepersonell"
+		attributes 	(list Attribute_Set
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ShortName"
+			value      	"HealthcareProfessional")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Status"
+			value      	(value Text "M"))
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Use"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Example"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Comment"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Codes"
+			value      	"")
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"Instancing"
+			value      	("InstancingSet" 221))
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Level"
+			value      	"5"))
+		quid       	"45373CD00053"
+		documentation 	"For å beskrive egenskaper ved personen som helsepersonell."
+		superclasses 	(list inheritance_relationship_list
+		    (object Inheritance_Relationship
+			quid       	"4537452003DB"
+			supplier   	"Logical View::Person_a"
+			quidu      	"45373AE20370"))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "kategori helsepersonell"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "TypeHealthcareProfessional"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Origin"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	(value Text ""))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"9060 Kategori helsepersonell")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Level"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"NullsOK"
+				value      	TRUE)
+			    (object Attribute
+				tool       	"KITH"
+				name       	"PrimaryKey"
+				value      	FALSE)
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"O"))
+			quid       	"45373CD00055"
+			documentation 	"Kode som angir kategori helsepersonell i henhold til helsepersonellregisterets inndeling."
+			type       	"CS"
+			exportControl 	"Public")
+		    (object ClassAttribute "rolle i forhold til pasient"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "RoleToPatient"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	(value Text ""))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Origin"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"9034 Helsepersons roller i forhold til pasient")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Level"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"NullsOK"
+				value      	TRUE)
+			    (object Attribute
+				tool       	"KITH"
+				name       	"PrimaryKey"
+				value      	FALSE)
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Cardinality"
+				value      	"0..1")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"RequirementCode"
+				value      	"O"))
+			quid       	"45373CD00056"
+			documentation 	"Helsepersonellets rolle i forhold til en pasient."
+			type       	"CV"
+			exportControl 	"Public"))
+		module     	"Component View::v1.0"
+		module     	"Component View::Dialogmelding"
+		quidu      	"3FCDCAEC0167")
+	    (object Class "Person"
+		attributes 	(list Attribute_Set
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ShortName"
+			value      	"Person")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Example"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Status"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Use"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Level"
+			value      	"5"))
+		quid       	"45373CD9012C"
+		superclasses 	(list inheritance_relationship_list
+		    (object Inheritance_Relationship
+			quid       	"4537451C02D0"
+			supplier   	"Logical View::Person_a"
+			quidu      	"45373AE20370"))
+		module     	"Component View::v1.0"
+		module     	"Component View::Dialogmelding"
+		quidu      	"3FCDCAEC0167")
+	    (object Association "$UNNAMED$0"
+		quid       	"4444D27D00A3"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$1"
+			quid       	"4444D27D039C"
+			supplier   	"Logical View::Notat_a"
+			quidu      	"4444D1CC0209"
+			client_cardinality 	(value cardinality "0..*")
+			Containment 	"By Value"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$2"
+			quid       	"4444D27D039E"
+			supplier   	"Logical View::Dialogmelding"
+			quidu      	"43FC771702ED"
+			Containment 	"By Value"
+			is_navigable 	TRUE
+			is_aggregate 	TRUE)))
+	    (object Association "$UNNAMED$3"
+		quid       	"446C75F103DF"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$4"
+			quid       	"446C75F20385"
+			supplier   	"Logical View::Forespørsel"
+			quidu      	"43FC774B03D9"
+			client_cardinality 	(value cardinality "0..1")
+			Containment 	"By Value"
+			is_navigable 	TRUE)
+		    (object Role "Ved svar på forespørsel"
+			quid       	"446C75F20387"
+			label      	"Ved svar på forespørsel"
+			supplier   	"Logical View::Notat"
+			quidu      	"43FC7759023E"
+			is_navigable 	TRUE
+			is_aggregate 	TRUE)))
+	    (object Association "$UNNAMED$5"
+		quid       	"450FE1D5014A"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$6"
+			quid       	"450FE1D601B7"
+			supplier   	"Logical View::Rolle relatert til notatet"
+			quidu      	"4536C34C02A5"
+			client_cardinality 	(value cardinality "0..*")
+			Containment 	"By Value"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$7"
+			quid       	"450FE1D601C1"
+			supplier   	"Logical View::Notat_a"
+			quidu      	"4444D1CC0209"
+			client_cardinality 	(value cardinality "1")
+			is_navigable 	TRUE
+			is_aggregate 	TRUE)))
+	    (object Association "$UNNAMED$8"
+		quid       	"4536C68F02A5"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$9"
+			quid       	"4536C6910209"
+			supplier   	"Logical View::Person_a"
+			quidu      	"45373AE20370"
+			client_cardinality 	(value cardinality "1")
+			Containment 	"By Value"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$10"
+			quid       	"4536C6910219"
+			supplier   	"Logical View::Rolle relatert til notatet"
+			quidu      	"4536C34C02A5"
+			is_navigable 	TRUE
+			is_aggregate 	TRUE)))
+	    (object Class_Category "Felleskomponenter"
+		quid       	"44E05DA40170"
+		exportControl 	"Public"
+		logical_models 	(list unit_reference_list
+		    (object Class "Adresse (Address)"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "Address"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	"Alle UML-attributter er frivillige, men klassen skal inneholde minimum en opplysning.")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Level"
+				value      	""))
+			quid       	"44E05DD702AC"
+			documentation 	"Adresseopplysninger."
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "type adresse (Type)"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Type"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text ""))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	(value Text "Kodeverdiene er basert på kodeverk fra HL7."))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	(value Text "3401 Adressetype"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|<TypeAddress V="H" DN="Bostedsadresse"/>
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"NullsOK"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"KITH"
+					name       	"PrimaryKey"
+					value      	FALSE)
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"0..1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"RequirementCode"
+					value      	"O"))
+				quid       	"44E05DD702AD"
+				documentation 	"Kode for type adresse."
+				type       	"CS"
+				exportControl 	"Public")
+			    (object ClassAttribute "gateadresse (StreetAdr)"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "StreetAdr"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text ""))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text "<StreetAdr>Gangveien 1</StreetAdr>"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"NullsOK"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"KITH"
+					name       	"PrimaryKey"
+					value      	FALSE)
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"0..1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"RequirementCode"
+					value      	"O"))
+				quid       	"44E05DD702AE"
+				documentation 	"Gateadresse."
+				type       	"string"
+				exportControl 	"Public")
+			    (object ClassAttribute "postnummer (PostalCode)"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "PostalCode"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text ""))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text "<PostalCode>2165</PostalCode>"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"NullsOK"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"KITH"
+					name       	"PrimaryKey"
+					value      	FALSE)
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"0..1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"RequirementCode"
+					value      	"O"))
+				quid       	"44E05DD702AF"
+				documentation 	"Postnummer"
+				type       	"string"
+				exportControl 	"Public")
+			    (object ClassAttribute "poststed (City)"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "City"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text ""))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text "<City>Hvam</City>"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"NullsOK"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"KITH"
+					name       	"PrimaryKey"
+					value      	FALSE)
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"0..1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"RequirementCode"
+					value      	"O"))
+				quid       	"44E05DD702B0"
+				documentation 	"Poststed"
+				type       	"string"
+				exportControl 	"Public")
+			    (object ClassAttribute "postboks (Postbox)"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Postbox"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text "O"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"0..1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"RequirementCode"
+					value      	"O")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	"< Postbox >Postboks 183</ Postbox >")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	""))
+				quid       	"44E05DD702B1"
+				documentation 	"Postboks"
+				type       	"string"
+				exportControl 	"Public")
+			    (object ClassAttribute "fylke/kommune (County)"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "County"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text ""))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"Liste finnes på http://www.ssb.no/kommuner/")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|<County V="0236" DN="Nes" />
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"NullsOK"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"KITH"
+					name       	"PrimaryKey"
+					value      	FALSE)
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"0..1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"RequirementCode"
+					value      	"O")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"3402 Kommunenummer"))
+				quid       	"44E05DD702B2"
+				documentation 	"Kommunenummer angis med fire siffer, i henhold til SSB sin inndeling. De to første sifrene angir fylke, de to siste sifrene er kommunens nummer innenfor fylket."
+				type       	"CS"
+				exportControl 	"Public")
+			    (object ClassAttribute "land (Country)"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Country"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text ""))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|<Country V="SE" DN="Sverige" />
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"NullsOK"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"KITH"
+					name       	"PrimaryKey"
+					value      	FALSE)
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"0..1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"RequirementCode"
+					value      	"O")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"9043 Landkoder"))
+				quid       	"44E05DD702B3"
+				documentation 	
+|Kode for land i henhold til ISO 3166.
+|Benyttes vanligvis kun for adresser i utlandet.
+				
+				type       	"CS"
+				exportControl 	"Public")))
+		    (object Class "Telekommunikasjon (TeleCom)"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"TeleCom")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	""))
+			quid       	"44E05DD702B6"
+			documentation 	"Inneholder opplysninger om telekommunikasjonsadresse, inklusive kommunikasjonstype. Denne klassen benyttes for å registrere telefonnummer, telefaks, personsøker etc., knyttes opp mot de registrerte adressene."
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "type telekomadresse (TypeTelecom)"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"NullsOK"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"KITH"
+					name       	"PrimaryKey"
+					value      	FALSE)
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"0..1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"RequirementCode"
+					value      	"O")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"TypeTelecom")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	(value Text "Opplysninger om Prefiks til url angir om det er telefon, e-post, fax etc."))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"3401 Adressetype")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	""))
+				quid       	"44E05DD702B7"
+				documentation 	"Type telkommunikasjonsadresse, knyttet til tilhørignheten. "
+				type       	"CS"
+				exportControl 	"Public")
+			    (object ClassAttribute "telekomadresse (TeleAddress)"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "TeleAddress"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text ""))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|<TeleAddress V="tel:12345678"/>
+|<TeleAddress V="fax:12345679" />
+|<TeleAddress V="mailto:foo.bar@example.com" />
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	(value Text ""))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"NullsOK"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"KITH"
+					name       	"PrimaryKey"
+					value      	FALSE)
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"RequirementCode"
+					value      	"M")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"Type angis i prefiks til url, se eksempler.")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	""))
+				quid       	"44E05DD702B8"
+				documentation 	"Telekommunikasjonsadressen, inkludert type (e-post, faks, telefon)."
+				type       	"URL"
+				exportControl 	"Public")))
+		    (object Class "Identifikator (Ident)"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"Ident")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Level"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	""))
+			quid       	"44E05DD702BA"
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "id (Id)"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"NullsOK"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"KITH"
+					name       	"PrimaryKey"
+					value      	FALSE)
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"RequirementCode"
+					value      	"M")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"Id")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	""))
+				quid       	"44E05DD702BB"
+				documentation 	"Identifikator"
+				type       	"string"
+				exportControl 	"Public")
+			    (object ClassAttribute "type Id (TypeId)"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"NullsOK"
+					value      	TRUE)
+				    (object Attribute
+					tool       	"KITH"
+					name       	"PrimaryKey"
+					value      	FALSE)
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"RequirementCode"
+					value      	"M")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "TypeId"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	(value Text 
+|Følgende kodeverk kan benyttes:
+|9051 ID-typer for organisatoriske enheter
+|8116 ID-type for personer
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"44E05DD702BC"
+				documentation 	"Kode for type Id"
+				type       	"CV"
+				exportControl 	"Public"))))
+		logical_presentations 	(list unit_reference_list
+		    (object ClassDiagram "Felleskomponenter"
+			quid       	"44E05DCB001B"
+			title      	"Felleskomponenter"
+			zoom       	100
+			max_height 	28350
+			max_width  	21600
+			origin_x   	0
+			origin_y   	0
+			items      	(list diagram_item_list
+			    (object ClassView "Class" "Logical View::Felleskomponenter::Adresse (Address)" @1
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(396, 552)
+				font       	(object Font
+				    size       	10
+				    face       	"Times New Roman"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@1
+				    location   	(117, 358)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	558
+				    justify    	0
+				    label      	"Adresse (Address)")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"44E05DD702AC"
+				width      	576
+				height     	410
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::Felleskomponenter::Telekommunikasjon (TeleCom)" @2
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(462, 924)
+				font       	(object Font
+				    size       	10
+				    face       	"Times New Roman"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@2
+				    location   	(122, 848)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	680
+				    justify    	0
+				    label      	"Telekommunikasjon (TeleCom)")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"44E05DD702B6"
+				width      	698
+				height     	174
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::Felleskomponenter::Identifikator (Ident)" @3
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				location   	(306, 168)
+				font       	(object Font
+				    size       	10
+				    face       	"Times New Roman"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@3
+				    location   	(114, 92)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	384
+				    justify    	0
+				    label      	"Identifikator (Ident)")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"44E05DD702BA"
+				width      	402
+				height     	174
+				autoResize 	TRUE))))))
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Dialogmelding"
+		quid       	"43FC770A0259"
+		title      	"Dialogmelding"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	37
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object ClassView "Class" "Logical View::Forespørsel" @4
+			ShowCompartmentStereotypes 	TRUE
+			SuppressOperation 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1407, 1142)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@4
+			    location   	(1151, 886)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	512
+			    justify    	0
+			    label      	"Forespørsel")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"43FC774B03D9"
+			compartment 	(object Compartment
+			    Parent_View 	@4
+			    location   	(1151, 947)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	16777215
+			    anchor     	2
+			    nlines     	9
+			    max_width  	509)
+			width      	530
+			height     	536
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::Notat" @5
+			ShowCompartmentStereotypes 	TRUE
+			SuppressOperation 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(323, 1123)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@5
+			    location   	(100, 942)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	446
+			    justify    	0
+			    label      	"Notat")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"43FC7759023E"
+			compartment 	(object Compartment
+			    Parent_View 	@5
+			    location   	(100, 1003)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	16777215
+			    anchor     	2
+			    nlines     	6
+			    max_width  	453)
+			width      	464
+			height     	386
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$3" @6
+			location   	(848, 1172)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			quidu      	"446C75F103DF"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$4" @7
+				Parent_View 	@6
+				location   	(111, -313)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @8
+				    Parent_View 	@7
+				    location   	(979, 1127)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    hidden     	TRUE
+				    anchor     	1
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	516
+				    justify    	0
+				    label      	""
+				    pctDist    	0.450450
+				    height     	46
+				    orientation 	0)
+				stereotype 	TRUE
+				quidu      	"446C75F20385"
+				client     	@6
+				supplier   	@4
+				vertices   	(list Points
+				    (848, 1172)
+				    (1142, 1172))
+				line_style 	3
+				origin_attachment 	(848, 1172)
+				terminal_attachment 	(1142, 1172)
+				label      	(object SegLabel @9
+				    Parent_View 	@7
+				    location   	(1097, 1216)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"0..1"
+				    pctDist    	0.846591
+				    height     	44
+				    orientation 	1))
+			    (object RoleView "Ved svar på forespørsel" @10
+				Parent_View 	@6
+				location   	(111, -313)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @11
+				    Parent_View 	@10
+				    location   	(800, 1113)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	1
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	516
+				    justify    	0
+				    label      	"+Ved svar på forespørsel"
+				    pctDist    	0.166078
+				    height     	60
+				    orientation 	1)
+				stereotype 	TRUE
+				quidu      	"446C75F20387"
+				client     	@6
+				supplier   	@5
+				vertices   	(list Points
+				    (848, 1172)
+				    (555, 1172))
+				line_style 	3
+				origin_attachment 	(848, 1172)
+				terminal_attachment 	(555, 1172))))
+		    (object ClassView "Class" "Logical View::Dialogmelding" @12
+			ShowCompartmentStereotypes 	TRUE
+			SuppressOperation 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1066, 177)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@12
+			    location   	(879, 118)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	374
+			    justify    	0
+			    label      	"Dialogmelding")
+			stereotype 	(object ItemLabel
+			    Parent_View 	@12
+			    location   	(879, 68)
+			    fill_color 	13434879
+			    anchor     	10
+			    nlines     	1
+			    max_width  	374
+			    justify    	0
+			    label      	"<<top>>")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"43FC771702ED"
+			compartment 	(object Compartment
+			    Parent_View 	@12
+			    location   	(879, 179)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	16777215
+			    anchor     	2
+			    nlines     	2
+			    max_width  	381)
+			width      	392
+			height     	242
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::Notat_a" @13
+			SuppressOperation 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1063, 513)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@13
+			    location   	(977, 461)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	172
+			    justify    	0
+			    label      	"Notat_a")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"4444D1CC0209"
+			width      	190
+			height     	128
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$0" @14
+			location   	(1058, 373)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			quidu      	"4444D27D00A3"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$1" @15
+				Parent_View 	@14
+				location   	(-200, 1)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				quidu      	"4444D27D039C"
+				client     	@14
+				supplier   	@13
+				vertices   	(list Points
+				    (1058, 373)
+				    (1058, 448))
+				line_style 	3
+				origin_attachment 	(1058, 373)
+				terminal_attachment 	(1058, 448)
+				label      	(object SegLabel @16
+				    Parent_View 	@15
+				    location   	(1112, 428)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	150
+				    justify    	0
+				    label      	"0..*"
+				    pctDist    	0.735055
+				    height     	54
+				    orientation 	0))
+			    (object RoleView "$UNNAMED$2" @17
+				Parent_View 	@14
+				location   	(-200, 1)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				quidu      	"4444D27D039E"
+				client     	@14
+				supplier   	@12
+				vertices   	(list Points
+				    (1058, 373)
+				    (1058, 298))
+				line_style 	3
+				origin_attachment 	(1058, 373)
+				terminal_attachment 	(1058, 298))))
+		    (object InheritTreeView "" @18
+			location   	(1063, 756)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			fill_color 	13434879
+			supplier   	@13
+			vertices   	(list Points
+			    (1063, 756)
+			    (1063, 577)))
+		    (object InheritView "" @19
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			quidu      	"4444D46B0234"
+			client     	@4
+			supplier   	@13
+			vertices   	(list Points
+			    (1409, 874)
+			    (1409, 756))
+			line_style 	3
+			origin_attachment 	(1409, 874)
+			terminal_attachment 	(1409, 756)
+			drawSupplier 	@18)
+		    (object InheritView "" @20
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			quidu      	"4444D465007F"
+			client     	@5
+			supplier   	@13
+			vertices   	(list Points
+			    (396, 929)
+			    (396, 756))
+			line_style 	3
+			origin_attachment 	(396, 929)
+			terminal_attachment 	(396, 756)
+			drawSupplier 	@18)
+		    (object ClassView "Class" "Logical View::Person_a" @21
+			SuppressOperation 	TRUE
+			IncludeAttribute 	TRUE
+			location   	(2227, 1177)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@21
+			    location   	(1882, 921)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	690
+			    justify    	0
+			    label      	"Person_a")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"45373AE20370"
+			compartment 	(object Compartment
+			    Parent_View 	@21
+			    location   	(1882, 982)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	16777215
+			    anchor     	2
+			    nlines     	9
+			    max_width  	696)
+			width      	708
+			height     	536
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::Rolle relatert til notatet" @22
+			ShowCompartmentStereotypes 	TRUE
+			SuppressOperation 	TRUE
+			IncludeAttribute 	TRUE
+			location   	(2204, 510)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@22
+			    location   	(1948, 429)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	512
+			    justify    	0
+			    label      	"Rolle relatert til notatet")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"4536C34C02A5"
+			compartment 	(object Compartment
+			    Parent_View 	@22
+			    location   	(1948, 490)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	2
+			    max_width  	518)
+			width      	530
+			height     	186
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$5" @23
+			location   	(1548, 518)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			quidu      	"450FE1D5014A"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$6" @24
+				Parent_View 	@23
+				location   	(704, -617)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				quidu      	"450FE1D601B7"
+				client     	@23
+				supplier   	@22
+				vertices   	(list Points
+				    (1548, 518)
+				    (1939, 518))
+				line_style 	3
+				origin_attachment 	(1548, 518)
+				terminal_attachment 	(1939, 518)
+				label      	(object SegLabel @25
+				    Parent_View 	@24
+				    location   	(1851, 466)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	125
+				    justify    	0
+				    label      	"0..*"
+				    pctDist    	0.777027
+				    height     	53
+				    orientation 	0))
+			    (object RoleView "$UNNAMED$7" @26
+				Parent_View 	@23
+				location   	(704, -617)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				quidu      	"450FE1D601C1"
+				client     	@23
+				supplier   	@13
+				vertices   	(list Points
+				    (1548, 518)
+				    (1158, 518))
+				line_style 	3
+				origin_attachment 	(1548, 518)
+				terminal_attachment 	(1158, 518)
+				label      	(object SegLabel @27
+				    Parent_View 	@26
+				    location   	(1278, 474)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"1"
+				    pctDist    	0.693548
+				    height     	45
+				    orientation 	1))))
+		    (object AssociationViewNew "$UNNAMED$8" @28
+			location   	(2176, 756)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			quidu      	"4536C68F02A5"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$9" @29
+				Parent_View 	@28
+				location   	(-203, 275)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				quidu      	"4536C6910209"
+				client     	@28
+				supplier   	@21
+				vertices   	(list Points
+				    (2176, 756)
+				    (2176, 909))
+				line_style 	3
+				origin_attachment 	(2176, 756)
+				terminal_attachment 	(2176, 909)
+				label      	(object SegLabel @30
+				    Parent_View 	@29
+				    location   	(2209, 865)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"1"
+				    pctDist    	0.710280
+				    height     	33
+				    orientation 	0))
+			    (object RoleView "$UNNAMED$10" @31
+				Parent_View 	@28
+				location   	(-203, 275)
+				stereotype 	TRUE
+				quidu      	"4536C6910219"
+				client     	@28
+				supplier   	@22
+				vertices   	(list Points
+				    (2176, 756)
+				    (2176, 603))
+				line_style 	3
+				origin_attachment 	(2176, 756)
+				terminal_attachment 	(2176, 603))))
+		    (object ClassView "Class" "Logical View::Helsepersonell" @32
+			SuppressOperation 	TRUE
+			IncludeAttribute 	TRUE
+			location   	(1801, 1754)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@32
+			    location   	(1545, 1673)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	512
+			    justify    	0
+			    label      	"Helsepersonell")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"45373CD00053"
+			compartment 	(object Compartment
+			    Parent_View 	@32
+			    location   	(1545, 1734)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	16777215
+			    anchor     	2
+			    nlines     	2
+			    max_width  	518)
+			width      	530
+			height     	186
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::Person" @33
+			ShowCompartmentStereotypes 	TRUE
+			SuppressOperation 	TRUE
+			IncludeAttribute 	TRUE
+			location   	(2380, 1722)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@33
+			    location   	(2295, 1671)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	170
+			    justify    	0
+			    label      	"Person")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"45373CD9012C"
+			width      	188
+			height     	126
+			autoResize 	TRUE)
+		    (object NoteView @34
+			location   	(2709, 990)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@34
+			    location   	(2452, 837)
+			    fill_color 	13434879
+			    nlines     	6
+			    max_width  	478
+			    label      	"MERK: fødslesnummer og kjønn benyttes ikke i denne medlingen. Data- elementene er med pga. kompatibilitet med hodemeldingen.")
+			fill_color 	8454143
+			width      	538
+			height     	318)
+		    (object NoteView @35
+			location   	(1217, 1596)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@35
+			    location   	(826, 1487)
+			    fill_color 	13434879
+			    nlines     	4
+			    max_width  	746
+			    label      	
+|MERK: "rolle i forhold til pasient" oppgis i klassen "Rolle relatert til notat" i denne meldingen. Dataelementet er med her pga. kompatibilitet med hodemeldingen.
+			    )
+			fill_color 	8454143
+			width      	806
+			height     	231)
+		    (object InheritTreeView "" @36
+			location   	(2227, 1546)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			fill_color 	13434879
+			supplier   	@21
+			vertices   	(list Points
+			    (2227, 1546)
+			    (2227, 1445)))
+		    (object InheritView "" @37
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			quidu      	"4537452003DB"
+			client     	@32
+			supplier   	@21
+			vertices   	(list Points
+			    (1896, 1660)
+			    (1896, 1546))
+			line_style 	3
+			origin_attachment 	(1896, 1660)
+			terminal_attachment 	(1896, 1546)
+			drawSupplier 	@36)
+		    (object InheritView "" @38
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			quidu      	"4537451C02D0"
+			client     	@33
+			supplier   	@21
+			vertices   	(list Points
+			    (2355, 1658)
+			    (2355, 1546))
+			line_style 	3
+			origin_attachment 	(2355, 1658)
+			terminal_attachment 	(2355, 1546)
+			drawSupplier 	@36)))
+	    (object ClassDiagram "Main"
+		quid       	"3E56504F019C"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	2361
+		items      	(list diagram_item_list
+		    (object NoteView @39
+			location   	(1581, 1284)
+			font       	(object Font
+			    size       	12
+			    face       	"Times New Roman"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@39
+			    location   	(1053, 1056)
+			    nlines     	9
+			    max_width  	1021
+			    label      	
+|For å bedre oversikten er det i en del tilfeller benyttet abstakte komponenter (saker, dokumenter og fragmenter) i modellene. Disse gjennkjennes ved kursiv skrift og blå farge.
+|De abstrekte komponentene finnes ikke direkte igjen i beskrivelsene av de enkelte komponenttyper, deres innhold arves til alle spesialiseringene og finnes igjen under beskrivelsen av disse..
+			    )
+			line_color 	4194368
+			fill_color 	16777215
+			width      	1081
+			height     	468)
+		    (object NoteView @40
+			location   	(1572, 1914)
+			font       	(object Font
+			    size       	12
+			    face       	"Times New Roman"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@40
+			    location   	(1053, 1808)
+			    nlines     	3
+			    max_width  	1002
+			    label      	"I denne standarden refereres det til en rekke komponenter som er beskrevet i andre standarder. Disse er vist i grøn farge i figurene")
+			line_color 	4194368
+			fill_color 	16777215
+			width      	1062
+			height     	225)))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"3E565047033F"
+	physical_models 	(list unit_reference_list
+	    (object module "Dialogmelding" "NotAModuleType" "NotAModulePart"
+		quid       	"3FCDCAEC0167"
+		stereotype 	""
+		language   	""
+		class      	"Logical View::Dialogmelding"
+		quidu      	"43FC771702ED"
+		class      	"Logical View::Notat"
+		quidu      	"43FC7759023E"
+		class      	"Logical View::Notat_a"
+		quidu      	"4444D1CC0209"
+		class      	"Logical View::Forespørsel"
+		quidu      	"43FC774B03D9"
+		class      	"Logical View::Helsepersonell"
+		quidu      	"45373CD00053"
+		class      	"Logical View::Person"
+		quidu      	"45373CD9012C"
+		class      	"Logical View::Person_a"
+		quidu      	"45373AE20370"
+		class      	"Logical View::Rolle relatert til notatet"
+		quidu      	"4536C34C02A5"))
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"3E56504F0174"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list)))
+	category   	"Logical View"
+	quidu      	"42661BA003B3")
+    process_structure 	(object Processes
+	quid       	"3E5650470340"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"3E5650470349"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	attributes 	(list Attribute_Set
+	    (object Attribute
+		tool       	"DDL"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"DDL"
+		name       	"default__Project"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"DDL"
+			name       	"Directory"
+			value      	"AUTO GENERATE")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"DataBase"
+			value      	("DataBaseSet" 800))
+		    (object Attribute
+			tool       	"DDL"
+			name       	"DataBaseSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"DDL"
+				name       	"ANSI"
+				value      	800)
+			    (object Attribute
+				tool       	"DDL"
+				name       	"Oracle"
+				value      	801)
+			    (object Attribute
+				tool       	"DDL"
+				name       	"SQLServer"
+				value      	802)
+			    (object Attribute
+				tool       	"DDL"
+				name       	"Sybase"
+				value      	803)
+			    (object Attribute
+				tool       	"DDL"
+				name       	"Watcom"
+				value      	804)))
+		    (object Attribute
+			tool       	"DDL"
+			name       	"PrimaryKeyColumnName"
+			value      	"Id")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"PrimaryKeyColumnType"
+			value      	"NUMBER(5)")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"ViewName"
+			value      	"V_")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"TableName"
+			value      	"T_")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"InheritSuffix"
+			value      	"_V")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"DropClause"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"BaseViews"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"DDLScriptFilename"
+			value      	"DDL1.SQL")))
+	    (object Attribute
+		tool       	"Rose Model Integrator"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Web Publisher"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"COM"
+		name       	"propertyId"
+		value      	"783606378")
+	    (object Attribute
+		tool       	"COM"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"COM"
+			name       	"TypeKinds"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"COM"
+				name       	"enum"
+				value      	100)
+			    (object Attribute
+				tool       	"COM"
+				name       	"record"
+				value      	101)
+			    (object Attribute
+				tool       	"COM"
+				name       	"module"
+				value      	102)
+			    (object Attribute
+				tool       	"COM"
+				name       	"interface"
+				value      	103)
+			    (object Attribute
+				tool       	"COM"
+				name       	"dispinterface"
+				value      	104)
+			    (object Attribute
+				tool       	"COM"
+				name       	"coclass"
+				value      	105)
+			    (object Attribute
+				tool       	"COM"
+				name       	"alias"
+				value      	106)
+			    (object Attribute
+				tool       	"COM"
+				name       	"union"
+				value      	107)
+			    (object Attribute
+				tool       	"COM"
+				name       	"max"
+				value      	108)
+			    (object Attribute
+				tool       	"COM"
+				name       	"(none)"
+				value      	109)))
+		    (object Attribute
+			tool       	"COM"
+			name       	"Generate"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"COM"
+			name       	"kind"
+			value      	("TypeKinds" 109))
+		    (object Attribute
+			tool       	"COM"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"version"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"helpstring"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"helpcontext"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"attributes"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"dllname"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"alias"
+			value      	"")))
+	    (object Attribute
+		tool       	"COM"
+		name       	"default__Operation"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"COM"
+			name       	"Generate"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"COM"
+			name       	"id"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"helpstring"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"attributes"
+			value      	"")))
+	    (object Attribute
+		tool       	"COM"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"COM"
+			name       	"Generate"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"COM"
+			name       	"id"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"helpstring"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"attributes"
+			value      	"")))
+	    (object Attribute
+		tool       	"COM"
+		name       	"default__Module-Spec"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"COM"
+			name       	"Generate"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"COM"
+			name       	"filename"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"library"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"version"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"helpstring"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"helpfile"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"helpcontext"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"lcid"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"attributes"
+			value      	"")))
+	    (object Attribute
+		tool       	"COM"
+		name       	"default__Param"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"COM"
+			name       	"attributes"
+			value      	"")))
+	    (object Attribute
+		tool       	"COM"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Version Control"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"VisualStudio"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"KITH"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ShortName"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Status"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Use"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Example"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Comment"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Codes"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Level"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ID"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"OrigOrg"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Author"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"PrevVersion"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ValidFrom"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"RequirementCode"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Ordinal"
+			value      	0)))
+	    (object Attribute
+		tool       	"KITH"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ShortName"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Origin"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Status"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Use"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Example"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Comment"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Codes"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ID"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"OrigOrg"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Author"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"PrevVersion"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ValidFrom"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"NullsOK"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH"
+			name       	"PrimaryKey"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Cardinality"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"RequirementCode"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ComponentType"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Ordinal"
+			value      	0)))
+	    (object Attribute
+		tool       	"KITH-EHR"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"RestrictsHL7Class"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"MayContain"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"OnlyOneFolder"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"AllowedUnderRoot"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"View"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"FolderHeadingArch"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"NumberOfFolders"
+			value      	"")))
+	    (object Attribute
+		tool       	"KITH-EHR"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"RestrictsHL7Attr"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"MinLength"
+			value      	0)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"MaxLength"
+			value      	0)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"MinIntValue"
+			value      	0)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"MaxIntValue"
+			value      	0)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"MinRealValue"
+			value      	0.000000)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"MaxRealValue"
+			value      	0.000000)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"Precision"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"OmitDate"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"UseCodingSystem"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"FixedCodingSystem"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"CodeMandatory"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"OrigTextAllowed"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"ValueNegAllowed"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"ExtensionMandatory"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"AllowedRoots"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"FixedRoot"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"ValidTimeAllowed"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"AllowedUnits "
+			value      	"")
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"FixedUnits"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"AllowedEncoding "
+			value      	"")
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"FixedEncoding "
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"AllowedCharset"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"FixedCharset "
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"TextContent"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"CompressAllowed "
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"AllowCompressType"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"AllowIntCheckAlgor "
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH-EHR"
+			name       	"AllowRefContent "
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Visual Basic"
+		name       	"propertyId"
+		value      	"783606378")
+	    (object Attribute
+		tool       	"Visual Basic"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"UpdateCode"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"UpdateModel"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"InstancingSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Visual Basic"
+				name       	"Private"
+				value      	221)
+			    (object Attribute
+				tool       	"Visual Basic"
+				name       	"PublicNotCreatable"
+				value      	213)
+			    (object Attribute
+				tool       	"Visual Basic"
+				name       	"SingleUse"
+				value      	214)
+			    (object Attribute
+				tool       	"Visual Basic"
+				name       	"GlobalSingleUse"
+				value      	215)
+			    (object Attribute
+				tool       	"Visual Basic"
+				name       	"MultiUse"
+				value      	219)
+			    (object Attribute
+				tool       	"Visual Basic"
+				name       	"GlobalMultiUse"
+				value      	220)))
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"BaseSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Visual Basic"
+				name       	"(none)"
+				value      	222)
+			    (object Attribute
+				tool       	"Visual Basic"
+				name       	"0"
+				value      	223)
+			    (object Attribute
+				tool       	"Visual Basic"
+				name       	"1"
+				value      	224)))
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"OptionBase"
+			value      	("BaseSet" 222))
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"OptionExplicit"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"OptionCompare"
+			value      	("CompareSet" 202))
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"Instancing"
+			value      	("InstancingSet" 219))
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"CompareSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Visual Basic"
+				name       	"(none)"
+				value      	202)
+			    (object Attribute
+				tool       	"Visual Basic"
+				name       	"Binary"
+				value      	203)
+			    (object Attribute
+				tool       	"Visual Basic"
+				name       	"Text"
+				value      	204)))))
+	    (object Attribute
+		tool       	"Visual Basic"
+		name       	"default__Operation"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"LibraryName"
+			value      	"")
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"AliasName"
+			value      	"")
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"IsStatic"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"ProcedureID"
+			value      	"")
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"ReplaceExistingBody"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"DefaultBody"
+			value      	(value Text ""))))
+	    (object Attribute
+		tool       	"Visual Basic"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"New"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"WithEvents"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"ProcedureID"
+			value      	"")
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"PropertyName"
+			value      	"")
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"Subscript"
+			value      	"")))
+	    (object Attribute
+		tool       	"Visual Basic"
+		name       	"default__Role"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"UpdateCode"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"New"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"WithEvents"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"FullName"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"ProcedureID"
+			value      	"")
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"PropertyName"
+			value      	"")
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"Subscript"
+			value      	"")))
+	    (object Attribute
+		tool       	"Visual Basic"
+		name       	"default__Inherit"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"ImplementsDelegation"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"FullName"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Visual Basic"
+		name       	"default__Param"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"ByVal"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"ByRef"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"Optional"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"ParamArray"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Visual Basic"
+		name       	"default__Module-Spec"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"ProjectFile"
+			value      	"")
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"UpdateCode"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"UpdateModel"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"ImportReferences"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"QuickImport"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Visual Basic"
+			name       	"ImportBinary"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Visual Basic"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"framework"
+		name       	"HiddenTool"
+		value      	FALSE))
+	quid       	"3E5650470341"))

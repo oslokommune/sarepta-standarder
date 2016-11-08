@@ -1,0 +1,379 @@
+<!-- File name: Henvisning-v2.0.xsd -->
+<!-- Versjon 2.0 2014-03-06 -->
+<!-- Endringer fra versjon 1.1 til versjon 2.0: - Endret namespace xmlns:ref og targetNamespace til http://www.kith.no/xmlstds/henvisning/2014-04-30 - Tatt i bruk Hodemelding - Fjernet toppklassen Message - endret navn på ServRec til Henvisning for å synliggjøre endringene. Fjernet mange klasser og elementer som ligger i Hodemelding - Nytt element Vurdering med underelementer knyttet til viderehenvisning - Fjernet HCP-strukturen - Gjenbrukt flere klasser fra poKomponent som erstatter tidligere klasser i henvisning -->
+<!-- File name: Henvisning-v1.1.xsd -->
+<!-- Versjon 1.1 2012-02-15 -->
+<!-- Endringer fra versjon 1.0 til versjon 1.1: - Endret tegnsett til UTF-8 - Endret namespace xmlns:ref og targetNamespace til http://www.kith.no/xmlstds/henvisning/2012-02-15 - Lagt til namespace xmlns:po="http://www.kith.no/xmlstds/po/poKomponent/2009-06-30" - Lagt til namespace xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" - Endret kardinalitet fra 1..* til 0..* for <Diagnosis> under <ServReq> - Endret kardinalitet fra 0..1 til 1 for <ReqServ> under <ServReq> - Endret kardinalitet fra 0..1 til 1 for <Priority> under < ReqServ> - Endret XML-strukturen RefDoc til å være kompatibel med Hodemelding og andre XML-meldinger - Nytt element <element name="ComMethod" type="kith:CS" minOccurs="0"/> under <Requester> og <ServProvider> - Fjernet PartyIdByRequester og PartyIdByServProv under HCP for å være kompatibel med informasjon i Hodemelding og øvrige basismeldinger) - Følgende endringer gjelder deler som foreløpig kun omfatter henvisning til BUP: - Endret XML-strukturen <NeedTranslator> til den gjenbrukbare XML-struktur <AssistertKommunikasjon> fra poKomponent.no - Endret XML-strukturen <PatRelperson> til den gjenbrukbare XML-struktur <ParorendeForesatt> fra poKomponent.no og ny XML-struktur <ContactPerson> - Fjernet XML-strukturen <CareSituation> pga endringer i BUP henvisningsskjema. Opplysninger om foreldreansvar dekkes som kodet opplysning i klassen <Comment> under <ServReq> - Fjernet XML-strukturen <Relation> - Fjernet XML-strukturene <Booking>, <Appointment> og <SubOrg> da disse ikke er i bruk - Endret XML-strukturen <PatRelInst> (både datatyper og XML-elementer) - Endret datatypen ST til string for elementet <Merknad> under <Consent> - Endret datatypen TS til date for elementet <ConsentDate> under <Consent> - Nytt element <GivenBy> under <Consent> -->
+<!-- Skjema dekker opplysninger i "Henvisning" -->
+<!-- Skjema dekker dagens papirblankett for henvisning til BUP (Barne- og ungdomspsykiatri), per juli 2005 -->
+<!-- Skjema er kompatibelt med Henvisning-v0.91.xsd og med namespace http://www.kith.no/xmlstds/henvisning/2003-10-13 -->
+<!-- Endringer mellom v0.91 og v1.0 er dokumentert i KITH R17/05 -->
+<!-- -->
+<!-- File name: Henvisning-v1.0.xsd -->
+<!-- Version: "v1.0 2005-07-08" -->
+<!-- Endringer 20.05.2010 - Flyttet annotation til ServReq innenfor Element - La til annotation til SubOrg -->
+<schema xmlns:ref="http://www.kith.no/xmlstds/henvisning/2014-04-30" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:po="http://www.kith.no/xmlstds/po/poKomponent/2012-04-01" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" targetNamespace="http://www.kith.no/xmlstds/henvisning/2014-04-30" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/po/poKomponent/2012-04-01" schemaLocation="poKomponent-v1.6.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="felleskomponent1.xsd"/>
+	<!-- Class: Henvisning -->
+	<element name="Henvisning">
+		<annotation>
+			<documentation>
+ Henvisning av en pasient til undersøkelse/behandling hos spesialist eller annen helsetjenesteenhet. 
+</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="ServType" type="kith:CS"/>
+				<element name="IssueDate" type="kith:TS"/>
+				<element name="PaymentCat" type="kith:CS" minOccurs="0"/>
+				<element name="ReqComment" type="kith:ST" minOccurs="0"/>
+				<element name="DocumentId" type="kith:ST"/>
+				<element name="BasisForHealthServices" type="kith:CS" minOccurs="0"/>
+				<element ref="po:TilleggsopplysningPasient" minOccurs="0"/>
+				<element ref="po:ParorendeForesatt" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:TilknyttetEnhet" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:KontaktpersonHelsepersonell" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:AnsvarForRapport" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:SendtDokument" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:TypeInnholdIMelding"/>
+				<element ref="po:InfoAssistertKommunikasjon" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:KontaktpersonHelsepersonell" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="ref:PasientrelatertKontaktperson" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="ref:PatientPrecaution" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="ref:InfItem" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="ref:ReasonAsText" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="ref:Diagnosis" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="ref:ReqServ"/>
+				<element ref="ref:Comment" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="ref:VurderingAvHenvisning" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Vurdering av henvisning -->
+	<element name="VurderingAvHenvisning">
+		<annotation>
+			<documentation>
+ Opplysninger som skal overføres mellom enheter ved henvisning mellom helseforetak.
+Denne klassen grupperer  opplysningene sammen. 
+</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ref:DatoMottakOgVurdering" maxOccurs="unbounded"/>
+				<element ref="ref:Opplysninger" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Dato -->
+	<element name="DatoMottakOgVurdering">
+		<annotation>
+			<documentation>
+ Spesifikasjon av aktuelle datoer. 
+</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="TypeDato" type="kith:CV"/>
+				<element name="Dato" type="date"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Opplysninger -->
+	<element name="Opplysninger">
+		<annotation>
+			<documentation>
+ Opplysninger knyttet til vurdering og oppfølging av henvisning i forløp. 
+</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="FrittSykehusvalg" type="boolean" minOccurs="0"/>
+				<element name="VentetidSluttkode" type="kith:CV" minOccurs="0"/>
+				<element name="Omsorgsniva" type="kith:CV" minOccurs="0"/>
+				<element name="ForlopsId" type="string"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Rekvirert tjeneste -->
+	<element name="ReqServ">
+		<annotation>
+			<documentation>
+ Opplysninger om rekvirert eller ønsket tjeneste. 
+</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="ServType" type="kith:CS"/>
+				<element name="Purpose" type="kith:CS" minOccurs="0"/>
+				<element name="ReqDate" type="kith:TS" minOccurs="0"/>
+				<element name="Priority" type="kith:CS"/>
+				<element name="Comment" type="kith:ST" minOccurs="0"/>
+				<element ref="ref:Service" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Henvisningsdiagnose -->
+	<element name="Diagnosis">
+		<annotation>
+			<documentation>
+ Begrunnelse for henvisningen i form av en tilstandsangivelse (henvisningsdiagnose). Hvis flere sidestilte diagnoskoder oppgis, skal første forekomst alltid oppfattes som hovedtilstand. 
+</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Concept" type="kith:CV"/>
+				<element ref="ref:Modifier" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Begrunnelse for henvisningen -->
+	<element name="ReasonAsText">
+		<annotation>
+			<documentation>
+ Begrunnelse for henvisningen som fri tekst. En forekomst av klassen for hver type opplysning. 
+</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Heading" type="kith:CS" minOccurs="0"/>
+				<element name="TextResultValue" type="kith:ST" minOccurs="0"/>
+				<element name="TextCode" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Kommentar til henvisning -->
+	<element name="Comment">
+		<annotation>
+			<documentation>
+ </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Heading" type="kith:CS"/>
+				<element name="TextResultValue" type="kith:ST"/>
+				<element name="CodedComment" type="kith:CV" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Tjeneste -->
+	<element name="Service">
+		<annotation>
+			<documentation>
+ Spesifikasjon om utført, planlagt eller rekvirert tjeneste. 
+</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="ServId" type="kith:CV" minOccurs="0"/>
+				<element name="MedSpeciality" type="kith:CV" minOccurs="0"/>
+				<element name="AdmCat" type="kith:CS" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Advarsel til tjenesteyter -->
+	<element name="PatientPrecaution">
+		<annotation>
+			<documentation>
+ Pasientopplysninger av betydning for tjenesteyters håndtering av pasienten. 
+</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Precaution" type="kith:ST"/>
+				<element name="StartDateTime" type="kith:TS" minOccurs="0"/>
+				<element name="EndDateTime" type="kith:TS" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="PasientrelatertKontaktperson">
+		<annotation>
+			<documentation>
+ Benyttes til å registrere forskjellige kontaktpersoner som ikke er helsepersonell eller pårørende, men som kan være relevante i forbindelse med pasientbehandling  
+</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Referanseperson" type="fk1:Person"/>
+				<element name="StillingRolle" type="string"/>
+				<element name="Arbeidssted" type="string" minOccurs="0"/>
+				<element name="Merknad" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Klinisk opplysning -->
+	<element name="InfItem">
+		<annotation>
+			<documentation>
+ Opplysninger om en enkelt klinisk opplysning som for eksempel sykehistorie, symptom, funn, diagnose, undersøkelsesresultat, medikamentell behandling eller operasjon. 
+</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<choice>
+					<element ref="ref:ResultItem"/>
+					<element ref="ref:Medication"/>
+					<element ref="ref:Observation"/>
+				</choice>
+				<element name="Type" type="kith:CS"/>
+				<element name="StartDateTime" type="kith:TS" minOccurs="0"/>
+				<element name="EndDateTime" type="kith:TS" minOccurs="0"/>
+				<element name="OrgDate" type="kith:TS" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Moderator -->
+	<element name="Modifier">
+		<annotation>
+			<documentation>
+ Modifikator til en tilstand/prosedyre. 
+</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Name" type="kith:CS"/>
+				<element name="Value" type="kith:CV" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Medikamentell behandling -->
+	<element name="Medication">
+		<annotation>
+			<documentation>
+ Spesifikasjon av tidligere, planlagt eller pågående medikamentell behandling. 
+</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="DrugId" type="kith:CV"/>
+				<element name="Comment" type="kith:ST" minOccurs="0"/>
+				<element name="Status" type="kith:CS"/>
+				<element name="IntendedDuration" type="kith:PQ" minOccurs="0"/>
+				<element name="QuantitySupplied" type="kith:PQ" minOccurs="0"/>
+				<element name="UnitDose" type="kith:PQ" minOccurs="0"/>
+				<element name="DosageText" type="kith:ST" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Annen klinisk opplysning -->
+	<element name="Observation">
+		<annotation>
+			<documentation>
+ Beskrivelse av klinisk opplysning bortsett fra medikamentell behandling og undersøkelsesresultat som er beskrevet strukturert. 
+</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Description" type="kith:ST" minOccurs="0"/>
+				<element name="Comment" type="kith:ST" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Undersøkelsesresultat -->
+	<element name="ResultItem">
+		<annotation>
+			<documentation>
+ Opplysninger om resultatet av en undersøkelse. 
+</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<choice>
+					<element ref="ref:TextResult"/>
+					<element ref="ref:Interval"/>
+					<element ref="ref:DateResult"/>
+					<element ref="ref:NumResult"/>
+				</choice>
+				<element name="ServType" type="kith:CS" minOccurs="0"/>
+				<element name="InvDate" type="kith:TS" minOccurs="0"/>
+				<element name="Comment" type="kith:ST" minOccurs="0"/>
+				<element name="DevResultInd" type="kith:CS" minOccurs="0"/>
+				<element ref="ref:ClinInv"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Numerisk resultat -->
+	<element name="NumResult">
+		<annotation>
+			<documentation>
+ Undersøkelsesresultat i form av en numerisk verdi. 
+</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="ArithmeticComp" type="kith:CS" minOccurs="0"/>
+				<element name="NumResultValue" type="kith:PQ"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Tekstlig resultat -->
+	<element name="TextResult">
+		<annotation>
+			<documentation>
+ Undersøkelsesresultat angitt som et tekstlig svar. 
+</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ref:Result" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Usikkerhetsintervall -->
+	<element name="Interval">
+		<annotation>
+			<documentation>
+ Undersøkelsesresultat angitt som et usikkerhetsintervall. 
+</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Low" type="kith:PQ" minOccurs="0"/>
+				<element name="High" type="kith:PQ" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Datoresultat -->
+	<element name="DateResult">
+		<annotation>
+			<documentation>
+ Undersøkelsesresultat uttrykt som en dato, for eksempel forventet dato for nedkomst. 
+</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="DateResultValue" type="kith:TS"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Klinisk undersøkelse -->
+	<element name="ClinInv">
+		<annotation>
+			<documentation>
+ Spesifikasjon av en klinisk undersøkelse som resulterer i et undersøkelsesresultat. 
+</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Id" type="kith:CV"/>
+				<element name="Spec" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Resultat -->
+	<element name="Result">
+		<annotation>
+			<documentation>
+ Tekstlig resultat. 
+</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Heading" type="kith:CS" minOccurs="0"/>
+				<element name="TextResultValue" type="kith:ST" minOccurs="0"/>
+				<element name="TextCode" type="kith:CV" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

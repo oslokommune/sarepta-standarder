@@ -11,21 +11,17 @@
 	<Erstatter>HIS 80415:2004</Erstatter>
 	<Standardtekster>
 		<Standardtekst>
-			<Beskrivelse>Applikasjonskvittering Informasjonsmodell, XML meldingsbeskrivelse og retningslinjer for bruk (PDF)</Beskrivelse>
-			<Referanse>standardtekst/Applikasjonskvittering/HIS_80415_2012_AppRec-v1 1-2014-02-13.pdf</Referanse>
+			<Beskrivelse>Applikasjonskvittering Informasjonsmodell, XML meldingsbeskrivelse og retningslinjer for bruk inklusive errata nr 3 (PDF)</Beskrivelse>
+			<Referanse>standardtekst/applikasjonskvittering/HIS_80415_2012_AppRec-v1 1-2014-02-13.pdf</Referanse>
 		</Standardtekst>
 		<Standardtekst>
-			<Beskrivelse>Errata HIS 80415:2012 nr 2. Bruk av applikasjonskvittering i forbindelse med pleie- og omsorgsmeldinger versjon 1.5  (HIS 80704:2009) og dialogmelding versjon 1.0 (HIS 80603:2006) (PDF)</Beskrivelse>
-			<Referanse>standardtekst/Applikasjonskvittering/Errata_HIS_80415_2012_2-apprec.pdf</Referanse>
-		</Standardtekst>
-		<Standardtekst>
-			<Beskrivelse>Applikasjonskvittering Informasjonsmodell, XML meldingsbeskrivelse og retningslinjer for bruk (DOC)</Beskrivelse>
-			<Referanse>standardtekst/Applikasjonskvittering/HIS_80415_2012_AppRec-v1 1-2014-02-13.doc</Referanse>
+			<Beskrivelse>Errata HIS 80415:2012 nr 3. Applikasjonskvittering 1.1: Retting av feil på datatyper for GenDate og IssueDate i standarden. Inkluderer også errata nr 2 (PDF)</Beskrivelse>
+			<Referanse>standardtekst/applikasjonskvittering/Errata_HIS_80415_2012_3-apprec.pdf</Referanse>
 		</Standardtekst>
 	</Standardtekster>
 	<Skjemaer>
 		<Skjema>
-			<Referanse>skjema/Applikasjonskvittering/AppRec-v1.1.xsd</Referanse>
+			<Referanse>skjema/applikasjonskvittering/AppRec-v1.1.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/apprec/2012-02-15</Namespace>
 		</Skjema>
 	</Skjemaer>
@@ -39,20 +35,24 @@
 			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
-	<Modellfiler>
-		<Modell>
-			<Beskrivelse>Rational Rose modellfil</Beskrivelse>
-			<Referanse>informasjonsmodell/Applikasjonskvittering/AppMsg-v1.007.mdl</Referanse>
-		</Modell>
-	</Modellfiler>
+	<Testmateriell>
+		<Testfil>
+			<Beskrivelse>Testcase for riktig implementasjon og bruk av applikasjonskvittering (XLSX)</Beskrivelse>
+			<Referanse>test/applikasjonskvittering/TestcaseApplikasjonskvittering.xlsx</Referanse>
+		</Testfil>
+		<Testfil>
+			<Beskrivelse>Syntaks-sjekk av XML-meldinger (XML-validering)</Beskrivelse>
+			<Referanse>https://validator.test.nhn.no/validering/index.cgi</Referanse>
+		</Testfil>
+	</Testmateriell>
 	<RelaterteFiler>
 		<RelatertFil>
-			<Beskrivelse>Krav til tjenestebasert adressering</Beskrivelse>
-			<Referanse>https://ehelse.no/Sider/Krav-til-tjenestebasert-adressering-(HIS-11532015.aspx</Referanse>
+			<Beskrivelse>Veiledning til riktig bruk av applikasjonskvittering (HISD 1168:2016) (PDF)</Beskrivelse>
+			<Referanse>relaterteFiler/applikasjonskvittering/HISD_1168_2016-Veiledning til riktig bruk av Applikasjonskvittering.pdf</Referanse>
 		</RelatertFil>
 		<RelatertFil>
-			<Beskrivelse>Datatyper til bruk ved meldingsutveksling</Beskrivelse>
-			<Referanse>https://ehelse.no/Sider/Datatyper-til-bruk-ved-meldingsutveksling-mv-–-HIS-801172002.aspx</Referanse>
+			<Beskrivelse>Referansekatalog-oppføring for Applikasjonskvittering 1.1 (HIS 80415:2012)</Beskrivelse>
+			<Referanse>https://ehelse.no/standarder-kodeverk-og-referansekatalog/standarder-og-referansekatalog/applikasjonskvittering-v11-his-804152012</Referanse>
 		</RelatertFil>
 	</RelaterteFiler>
 </StandardMetadata>

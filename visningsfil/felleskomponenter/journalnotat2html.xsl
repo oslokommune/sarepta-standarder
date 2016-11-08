@@ -1,84 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:epj1="http://www.kith.no/xmlstds/epj/epj1/2008-02-20" xmlns:epj2="http://www.kith.no/xmlstds/epj/epj2/2008-02-20" exclude-result-prefixes="epj1 epj2">
+	<!-- Endringslogg
+	- 04.12.15: Innføring av felles kodeverksfil. Småjusteringer på layout.
+	-->
+	<!-- Om
+	- Inngår i Hdirs visningsfiler versjon 2.0
+	- Laget i XMLSpy v2016 (http://www.altova.com) av Jan Sigurd Dragsjø (nhn.no)
+	-->
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-	<!-- Inngår i Hdirs visningsfiler versjon 1.0
-		Laget i XMLSpy v2012 rel2 (http://www.altova.com) av Jan Sigurd Dragsjø (helsedirektoratet.no) -->
+	<!-- Filer som må importeres. Vanligvis gjøres dette i hovedfila som importerer denne komponentfila. Derfor er de kommentert ut.
+	<xsl:import href="funksjoner.xsl"/> 
+	<xsl:import href="kodeverk.xsl"/> -->
+
 	<!-- Variabel for standard antall kolonner i tabellene-->
 	<xsl:variable name="std-col" select="8"/>
+	<xsl:variable name="std-td" select="100"/>
+	
+	
+	<!-- Visning av innhold i Notater -->
+	<xsl:template name="Notater">
+		<xsl:for-each select="child::*[local-name()=&quot;GenereltJournalnotat&quot;]">
+			<xsl:call-template name="GenereltJournalnotat"/>
+		</xsl:for-each>
+	</xsl:template>
 	<!-- Visning av innhold i Generelt journalnotat -->
-	<xsl:template match="epj2:GenereltJournalnotat">
-		<xsl:for-each select="epj2:Journaltekst">
+	<xsl:template name="GenereltJournalnotat">
+		<xsl:for-each select="child::*[local-name()=&quot;Journaltekst&quot;]">
 			<tr>
-				<xsl:apply-templates select="." mode="utenRad"><xsl:with-param name="antKolonner" select="0"/></xsl:apply-templates>
+				<xsl:call-template name="Journaltekst"><xsl:with-param name="antKolonner" select="0"/></xsl:call-template>
 			</tr>
 		</xsl:for-each>
 	</xsl:template>
 	<!-- Visning av innhold i Journaltekst -->
-	<xsl:template match="epj2:Journaltekst" mode="utenRad">
+	<xsl:template name="Journaltekst">
 		<xsl:param name="antKolonner"/>
-		<xsl:if test="epj2:Overskriftskode">
+		<xsl:if test="child::*[local-name()=&quot;Overskriftskode&quot;]">
 			<th>
-				<xsl:for-each select="epj2:Overskriftskode">
+				<xsl:for-each select="child::*[local-name()=&quot;Overskriftskode&quot;]">
 					<xsl:choose>
-						<xsl:when test="contains(@S, '9141')">
-							<xsl:call-template name="k-9141"/>
-						</xsl:when>
-						<xsl:when test="contains(@S, '9142')">
-							<xsl:call-template name="k-9142"/>
-						</xsl:when>
-						<xsl:when test="@DN">
-							<xsl:value-of select="@DN"/>
-						</xsl:when>
-						<xsl:when test="@OT">
-							<xsl:value-of select="@OT"/>
-						</xsl:when>
-						<xsl:otherwise>
-							<xsl:value-of select="@V"/>
-						</xsl:otherwise>
+						<xsl:when test="contains(@S, '9141')"><xsl:call-template name="k-9141"/>&#160;</xsl:when>
+						<xsl:when test="contains(@S, '9142')"><xsl:call-template name="k-9142"/>&#160;</xsl:when>
+						<xsl:otherwise><xsl:call-template name="k-dummy"/></xsl:otherwise>
 					</xsl:choose>&#160;
 				</xsl:for-each>
 			</th>
 		</xsl:if>
-		<td colspan="{(($std-col)-number($antKolonner)-count(epj2:Overskriftskode)-1)*number(not(epj2:Merknad))+1}">
+		<td width="{((($std-col)-number($antKolonner)-count(child::*[local-name()=&quot;Overskriftskode&quot;])-1)*number(not(child::*[local-name()=&quot;Merknad&quot;]))+1)*$std-td}px" colspan="{(($std-col)-number($antKolonner)-count(child::*[local-name()=&quot;Overskriftskode&quot;])-1)*number(not(child::*[local-name()=&quot;Merknad&quot;]))+1}">
 			<xsl:call-template name="line-breaks">
-				<xsl:with-param name="text" select="epj2:Notat"/>
+				<xsl:with-param name="text" select="child::*[local-name()=&quot;Notat&quot;]"/>
 			</xsl:call-template><br/>
 		</td>
-		<xsl:if test="epj2:Merknad">
+		<xsl:if test="child::*[local-name()=&quot;Merknad&quot;]">
 			<th>Merknad</th>
-			<td colspan="{(($std-col)-($antKolonner)-count(epj2:Overskriftskode)-2)}">
+			<td width="{(($std-col)-($antKolonner)-count(child::*[local-name()=&quot;Overskriftskode&quot;])-2)*$std-td}px" colspan="{($std-col)-($antKolonner)-count(child::*[local-name()=&quot;Overskriftskode&quot;])-2}">
 				<xsl:call-template name="line-breaks">
-					<xsl:with-param name="text" select="epj2:Merknad"/>
+					<xsl:with-param name="text" select="child::*[local-name()=&quot;Merknad&quot;]"/>
 				</xsl:call-template><br/>
 			</td>
 		</xsl:if>
 	</xsl:template>
-	<!-- Kodeverk -->
-	<xsl:template name="k-9141">
-		<xsl:choose>
-			<xsl:when test="@V='1'">Innkomststatus</xsl:when>
-			<xsl:when test="@V='7'">Sykepleiediagnose</xsl:when>
-			<xsl:when test="@V='8'">Sykepleiesammenfatning</xsl:when>
-			<xsl:when test="@V='12'">Status&#160;ved&#160;utskrivning</xsl:when>
-			<xsl:when test="@V='13'">Pasientens&#160;egne&#160;vurderinger</xsl:when>
-			<xsl:when test="@V='14'">Praktiske&#160;opplysninger</xsl:when>
-			<xsl:when test="@V='88'">Annet</xsl:when>
-		</xsl:choose>
-	</xsl:template>
-	<xsl:template name="k-9142">
-		<xsl:choose>
-			<xsl:when test="@V='PROB'">Aktuell&#160;problemstilling</xsl:when>
-			<xsl:when test="@V='FO'">Forløp&#160;og&#160;behandling</xsl:when>
-			<xsl:when test="@V='FU'">Funn&#160;og&#160;undersøkelsesresultat</xsl:when>
-			<xsl:when test="@V='FA'">Familie/sosialt</xsl:when>
-			<xsl:when test="@V='SYKM'">Sykmelding</xsl:when>
-			<xsl:when test="@V='VU'">Vurdering</xsl:when>
-			<xsl:when test="@V='UTRED'">Forventet/ønsket undersøkelser/behandling</xsl:when>
-			<xsl:when test="@V='HJ'">Funksjonsnivå/hjelpetiltak</xsl:when>
-			<xsl:when test="@V='IP'">Informasjon&#160;til pasient/pårørende</xsl:when>
-			<xsl:when test="@V='TS'">Tidligere&#160;sykdommer</xsl:when>
-			<xsl:when test="@V='OP'">Planer&#160;for videre&#160;oppfølging</xsl:when>
-			<xsl:when test="@V='AAI'">Årsak&#160;til innleggelse</xsl:when>
-		</xsl:choose>
-	</xsl:template>
+	
 </xsl:stylesheet>

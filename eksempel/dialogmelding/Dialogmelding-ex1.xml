@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Eksempel på svar på en forespørsel med bruk av dialogmeldingen  -->
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd">
+	<MsgInfo>
+		<Type V="DIALOG_SVAR" DN="Svar på forespørsel"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2006-10-21T09:30:47</GenDate>
+		<MsgId>4c661458-c412-4c14-baae-7b096f64f6e7</MsgId>
+		<ConversationRef>
+			<RefToParent>8c661668-c412-4c14-b12e-7b096f64f6e7</RefToParent>
+			<RefToConversation>8c661668-c412-4c14-bl2e-7b096f64f6e7</RefToConversation>
+		</ConversationRef>
+		<Sender>
+			<Organisation>
+				<OrganisationName>Kattskinnet legesenter</OrganisationName>
+				<Ident>
+					<Id>971318864</Id>
+					<TypeId V="ENH" DN="Organisasjonsnummeret i Enhetsregister" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<HealthcareProfessional>
+					<FamilyName>September</FamilyName>
+					<GivenName>August</GivenName>
+					<Ident>
+						<Id>369.767</Id>
+						<TypeId DN="Identifikator fra Helsetjenesteenhetsregisteret (HER-id)" V="HER" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</HealthcareProfessional>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>Vassenden legekontor</OrganisationName>
+				<Ident>
+					<Id>974793539</Id>
+					<TypeId V="ENH" DN="Organisasjonsnummeret i Enhetsregister" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<HealthcareProfessional>
+					<RoleToPatient DN="Fastlege" V="6" S="2.16.578.1.12.4.1.1.9034"/>
+					<FamilyName>Lin</FamilyName>
+					<GivenName>Rita</GivenName>
+					<Ident>
+						<Id>258.521</Id>
+						<TypeId DN="Identifikator fra Helsetjenesteenhetsregisteret (HER-id)" V="HER" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</HealthcareProfessional>
+			</Organisation>
+		</Receiver>
+		<Patient>
+			<FamilyName>Danser</FamilyName>
+			<GivenName>Line</GivenName>
+			<Ident>
+				<Id>13116900216</Id>
+				<TypeId V="FNR" DN="Fødselsnummer" S="2.16.578.1.12.4.1.1.8116"/>
+			</Ident>
+		</Patient>
+	</MsgInfo>
+	<Document>
+		<Consent V="1" DN="Ja" S="2.16.578.1.12.4.1.1.3109"/>
+		<RefDoc>
+			<IssueDate V="2006-10-21T09:30:47"/>
+			<MsgType V="XML" DN="XML-instans"/>
+			<Content>
+				<Dialogmelding xmlns="http://www.kith.no/xmlstds/dialog/2006-10-11" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/dialog/2006-10-11 dialogmelding.xsd">
+					<Notat>
+						<TemaKodet DN="Svar på forespørsel" V="5" S="2.16.578.1.12.4.1.1.9069"/>
+						<TekstNotatInnhold>Pasienten har hatt to konsultasjoner i den aktuelle perioden med følgende prøveresultater: xxxxxxxxxxxxx. Det gjøres oppmerksom på at pasienten også var til behandling hos andre leger i den perioden hvor det etterspørres informasjon.</TekstNotatInnhold>
+						<Merknad></Merknad>
+						<Foresporsel>
+							<TypeForesp DN="Annen henvendelse" V="99" S="2.16.578.1.12.4.1.1.9152"/>
+							<Sporsmal>Line Danse, fødselsnummer 13116900216 er pasient hos meg, og i forbindelse med en utredning ønsker jeg å få en oversikt over prøveresultater på xxx våren 2007</Sporsmal>
+							</Foresporsel>
+					</Notat>
+				</Dialogmelding>
+			</Content>
+		</RefDoc>
+	</Document>
+</MsgHead>

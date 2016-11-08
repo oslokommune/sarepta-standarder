@@ -1,0 +1,2 @@
+Standard for pasientkommunikasjon ble utviklet som et delprosjekt i ELIN-prosjektet, men ble aldri tatt i bruk.
+Publiseres ikke eksternt, men ligger her som historisk dokumentasjon.

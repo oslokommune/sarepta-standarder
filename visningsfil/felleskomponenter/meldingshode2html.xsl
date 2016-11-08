@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" exclude-result-prefixes="mh">
+	<!-- Endringslogg
+	- 19.11.15: Småjusteringer ift. kodeverkskall.
+	- 01.01.13: Oppdatert versjon av hodemelding2html for å håndtere ulike css-stiler.
+	-->
+	<!-- Om
+	- Inngår i Hdirs visningsfiler versjon 2.0
+	- Laget i XMLSpy v2016 (http://www.altova.com) av Jan Sigurd Dragsjø (nhn.no)
+	-->
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:base="http://www.kith.no/xmlstds/base64container" exclude-result-prefixes="mh base">
 	
-	<!-- Inngår i Hdirs visningsfiler versjon 1.0. Laget i XMLSpy v2012 rel2 (http://www.altova.com) av Jan Sigurd Dragsjø (helsedirektoratet.no) -->
+	<!-- Filer som må importeres. Vanligvis gjøres dette i hovedfila som importerer denne komponentfila. Derfor er de kommentert ut.
+	<xsl:import href="funksjoner.xsl"/> -->
+	
 	<!-- Layout av topp -->
 	<xsl:template name="Topp">
 		<div class="No-line-top">
@@ -79,6 +89,7 @@
 			<h2>Dokumentinformasjon</h2>
 			<table>
 				<tbody>
+					<!-- EgetBunnTillegg er en template alle som importerer denne må ha. Den muliggjør spesifikke komponenter i bunnen av visningen -->
 					<xsl:call-template name="EgetBunnTillegg"/>
 					<tr>
 						<th>Melding&#160;opprettet</th>
@@ -96,29 +107,43 @@
 	</xsl:template>
 	<!-- Avsender -->
 	<xsl:template match="mh:Sender">
-		<xsl:apply-templates select="mh:Organisation"/>
+		<xsl:for-each select="mh:Organisation">
+			<xsl:call-template name="Organisation"/>
+		</xsl:for-each>
 	</xsl:template>
 	<!-- Mottaker -->
 	<xsl:template match="mh:Receiver">
-		<xsl:apply-templates select="mh:Organisation"/>
+		<xsl:for-each select="mh:Organisation">
+			<xsl:call-template name="Organisation"/>
+		</xsl:for-each>
 	</xsl:template>
 	<!-- Kopimottaker -->
 	<xsl:template match="mh:OtherReceiver">
-		<xsl:apply-templates select="mh:Organisation"/>
-		<xsl:apply-templates select="mh:Patient"/>
-		<xsl:apply-templates select="mh:Person"/>
-		<xsl:apply-templates select="mh:HealthcareProfessional"/>
+		<xsl:for-each select="mh:Organisation">
+			<xsl:call-template name="Organisation"/>
+		</xsl:for-each>
+		<xsl:for-each select="mh:Patient">
+			<xsl:call-template name="Patient"/>
+		</xsl:for-each>
+		<xsl:for-each select="mh:Person">
+			<xsl:call-template name="Person"/>
+		</xsl:for-each>
+		<xsl:for-each select="mh:HealthcareProfessional">
+			<xsl:call-template name="HealthcareProfessional"/>
+		</xsl:for-each>
 	</xsl:template>
 	<!-- Organisasjon -->
 	<xsl:template match="mh:Organisation" name="Organisation">
 		<xsl:if test="not(mh:Organisation//mh:HealthcareProfessional)">
-			<xsl:apply-templates select="mh:HealthcareProfessional"/>
+			<xsl:for-each select="mh:HealthcareProfessional">
+				<xsl:call-template name="HealthcareProfessional"/>
+			</xsl:for-each>
 		</xsl:if>
 		<!-- Bruker axis her for bruk både i fk1: og mh: namespace -->
 		<xsl:choose>
 			<xsl:when test="local-name(..)!=&quot;Organisation&quot;">
 				<div>
-					<xsl:value-of select="child::*[local-name()=&quot;OrganisationName&quot;]"/>
+					<xsl:value-of select="child::*[local-name()=&quot;OrganisationName&quot;]"/>&#160;
 				</div>
 			</xsl:when>
 			<xsl:otherwise>
@@ -174,33 +199,15 @@
 	<!-- Helsepersonell -->
 	<xsl:template match="mh:HealthcareProfessional" name="HealthcareProfessional">
 		<div>
-			<xsl:if test="child::*[local-name()=&quot;TypeHealthcareProfessional&quot;]">
-				<xsl:choose>
-					<xsl:when test="child::*[local-name()=&quot;TypeHealthcareProfessional&quot;]/@DN">
-						<xsl:value-of select="child::*[local-name()=&quot;TypeHealthcareProfessional&quot;]/@DN"/>
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:for-each select="child::*[local-name()=&quot;TypeHealthcareProfessional&quot;]">
-							<xsl:call-template name="k-9060"/>
-						</xsl:for-each>
-					</xsl:otherwise>
-				</xsl:choose>&#160;
-			</xsl:if>
+			<xsl:for-each select="child::*[local-name()=&quot;TypeHealthcareProfessional&quot;]">
+				<xsl:call-template name="k-9060"/>&#160;
+			</xsl:for-each>
 			<xsl:if test="child::*[local-name()=&quot;TypeHealthcareProfessional&quot;] and child::*[local-name()=&quot;RoleToPatient&quot;]">
 				og&#160;
 			</xsl:if>
-			<xsl:if test="child::*[local-name()=&quot;RoleToPatient&quot;]">
-				<xsl:choose>
-					<xsl:when test="child::*[local-name()=&quot;RoleToPatient&quot;]/@DN">
-						<xsl:value-of select="child::*[local-name()=&quot;RoleToPatient&quot;]/@DN"/>
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:for-each select="child::*[local-name()=&quot;RoleToPatient&quot;]">
-							<xsl:call-template name="k-9034"/>
-						</xsl:for-each>
-					</xsl:otherwise>
-				</xsl:choose>&#160;
-			</xsl:if>
+			<xsl:for-each select="child::*[local-name()=&quot;RoleToPatient&quot;]">
+				<xsl:call-template name="k-9034"/>&#160;
+			</xsl:for-each>
 			<xsl:if test="child::*[local-name()=&quot;GivenName&quot;]">
 				<xsl:value-of select="child::*[local-name()=&quot;GivenName&quot;]"/>&#160;
 			</xsl:if>
@@ -222,16 +229,9 @@
 			<b>
 				<xsl:choose>
 					<xsl:when test="child::*[local-name()=&quot;Type&quot;]">
-						<xsl:choose>
-							<xsl:when test="child::*[local-name()=&quot;Type&quot;]/@DN">
-								<xsl:value-of select="child::*[local-name()=&quot;Type&quot;]/@DN"/>
-							</xsl:when>
-							<xsl:otherwise>
-								<xsl:for-each select="child::*[local-name()=&quot;Type&quot;]">
-									<xsl:call-template name="k-3401"/>
-								</xsl:for-each>
-							</xsl:otherwise>
-						</xsl:choose>:&#160;
+						<xsl:for-each select="child::*[local-name()=&quot;Type&quot;]">
+							<xsl:call-template name="k-3401"/>:&#160;
+						</xsl:for-each>
 					</xsl:when>
 					<xsl:otherwise>Adresse:&#160;</xsl:otherwise>
 				</xsl:choose>
@@ -303,86 +303,141 @@
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
-		
-	<!-- Kodeverk -->
-	<xsl:template name="k-3401">
-		<xsl:choose>
-			<xsl:when test="@V='H'">Bostedsadresse</xsl:when>
-			<xsl:when test="@V='HP'">Folkeregisteradresse</xsl:when>
-			<xsl:when test="@V='HV'">Ferieadresse</xsl:when>
-			<xsl:when test="@V='INV'">Faktureringsadresse</xsl:when>
-			<xsl:when test="@V='PST'">Postadresse</xsl:when>
-			<xsl:when test="@V='RES'">Besøksadresse</xsl:when>
-			<xsl:when test="@V='TMP'">Midlertidig adresse</xsl:when>
-			<xsl:when test="@V='WP'">Arbeidsadresse</xsl:when>
-			<xsl:when test="@V='BAD'">Ubrukelig&#160;adresse</xsl:when>
-		</xsl:choose>
+		<!-- Visning av vedllegg -->
+	<xsl:template match="mh:RefDoc">
+		<xsl:param name="std-col"/>
+		<xsl:param name="std-td"/>
+		<xsl:if test="mh:MsgType or mh:Id or mh:IssueDate or mh:MimeType or mh:Compression">
+			<tr>
+				<xsl:if test="mh:MsgType">
+					<th>Type</th>
+					<td width="{((($std-col)-2)*number(not(mh:Id | mh:IssueDate | mh:MimeType | mh:Compression))+1)*$std-td}px" colspan="{(($std-col)-2)*number(not(mh:Id | mh:IssueDate | mh:MimeType | mh:Compression))+1}">
+						<xsl:for-each select="mh:MsgType">
+							<xsl:call-template name="k-8114"/>
+						</xsl:for-each>
+					</td>
+				</xsl:if>
+				<xsl:if test="mh:Id">
+					<th>Id</th>
+					<td width="{((($std-col)-2-count(mh:MsgType)*2)*number(not(mh:IssueDate | mh:MimeType | mh:Compression))+1)*$std-td}px" colspan="{(($std-col)-2-count(mh:MsgType)*2)*number(not(mh:IssueDate | mh:MimeType | mh:Compression))+1}">
+						<xsl:value-of select="mh:Id"/>
+					</td>
+				</xsl:if>
+				<xsl:if test="mh:IssueDate">
+					<th>Utstedt-dato</th>
+					<td width="{((($std-col)-2-count(mh:MsgType | mh:Id)*2)*number(not(mh:MimeType | mh:Compression))+1)*$std-td}px" colspan="{(($std-col)-2-count(mh:MsgType | mh:Id)*2)*number(not(mh:MimeType | mh:Compression))+1}">
+						<xsl:call-template name="skrivUtTS">
+							<xsl:with-param name="oppgittTid" select="mh:IssueDate/@V"/>
+						</xsl:call-template>
+					</td>
+				</xsl:if>
+				<xsl:if test="mh:MimeType">
+					<th>Mimetype</th>
+					<td width="{((($std-col)-2-count(mh:MsgType | mh:Id | mh:IssueDate)*2)*number(not(mh:Compression))+1)*$std-td}px" colspan="{(($std-col)-2-count(mh:MsgType | mh:Id | mh:IssueDate)*2)*number(not(mh:Compression))+1}">
+						<xsl:value-of select="mh:MimeType"/>
+					</td>
+				</xsl:if>
+				<xsl:if test="mh:Compression">
+					<th>Komprimering</th>
+					<td colspan="{($std-col)-1-count(mh:MsgType | mh:Id | mh:IssueDate | mh:MimeType)*2}">
+						<xsl:for-each select="mh:Compression">
+							<xsl:call-template name="k-1204"/>
+						</xsl:for-each>
+					</td>
+				</xsl:if>
+			</tr>
+		</xsl:if>
+		<xsl:if test="mh:Description">
+			<tr>
+				<th>Beskrivelse</th>
+				<td colspan="{($std-col)-1}">
+					<xsl:call-template name="line-breaks">
+						<xsl:with-param name="text" select="mh:Description"/>
+					</xsl:call-template>
+				</td>
+			</tr>
+		</xsl:if>
+		<xsl:if test="mh:Content or mh:FileReference">
+			<xsl:choose>
+				<xsl:when test="contains(mh:MimeType,'image')">
+					<tr>
+						<th>Bilde</th>
+						<xsl:choose>
+							<xsl:when test="mh:FileReference">
+								<td colspan="{($std-col)-1}">
+									<img>
+										<xsl:attribute name="src"><xsl:value-of select="mh:FileReference"/></xsl:attribute>
+										<xsl:attribute name="alt">Bilde fra ekstern URL</xsl:attribute>
+									</img>
+								</td>
+							</xsl:when>
+							<xsl:when test="mh:Content">
+								<td colspan="{($std-col)-1}">
+									<xsl:choose>
+										<xsl:when test="mh:Content/base:Base64Container">
+											<img>
+												<xsl:attribute name="src"><xsl:value-of select="concat('data:',mh:MimeType,';base64,',mh:Content/base:Base64Container)"/></xsl:attribute>
+												<xsl:attribute name="alt">Bilde vedlagt som base64-kode</xsl:attribute>
+											</img>
+										</xsl:when>
+										<xsl:otherwise>
+											<xsl:value-of select="mh:Content"/>
+										</xsl:otherwise>
+									</xsl:choose>
+								</td>
+							</xsl:when>
+						</xsl:choose>
+					</tr>
+				</xsl:when>
+				<xsl:when test="contains(mh:MimeType,'pdf')">
+					<tr>
+						<th>pdf</th>
+						<xsl:choose>
+							<xsl:when test="mh:FileReference">
+								<td colspan="{($std-col)-1}">
+									<object>
+										<xsl:attribute name="data"><xsl:value-of select="concat(mh:FileReference,'&#35;view&#61;FitH&#38;toolbar&#61;1')"/></xsl:attribute>
+										<xsl:attribute name="type">application/pdf</xsl:attribute>
+										<xsl:attribute name="width">100%</xsl:attribute>
+										<xsl:attribute name="height">500px</xsl:attribute>
+									</object>
+								</td>
+							</xsl:when>
+							<xsl:when test="mh:Content">
+								<td colspan="{($std-col)-1}">
+									<xsl:choose>
+										<xsl:when test="mh:Content/base:Base64Container">
+											<object>
+												<xsl:attribute name="data"><xsl:value-of select="concat('data:application/pdf;base64,',mh:Content/base:Base64Container)"/></xsl:attribute>
+												<xsl:attribute name="type">application/pdf</xsl:attribute>
+												<xsl:attribute name="width">100%</xsl:attribute>
+												<xsl:attribute name="height">500px</xsl:attribute>
+											</object>
+										</xsl:when>
+										<xsl:otherwise>
+											<xsl:value-of select="mh:Content"/>
+										</xsl:otherwise>
+									</xsl:choose>
+								</td>
+							</xsl:when>
+						</xsl:choose>
+					</tr>
+				</xsl:when>
+				<xsl:otherwise>
+					<tr>
+						<td colspan="{($std-col)-1}">
+							<xsl:choose>
+								<xsl:when test="mh:Content">
+									<xsl:value-of select="mh:Content"/>
+								</xsl:when>
+								<xsl:when test="mh:FileReference">
+									<xsl:value-of select="mh:FileReference"/>
+								</xsl:when>
+							</xsl:choose>
+						</td>
+					</tr>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:if>
 	</xsl:template>
-	<xsl:template name="k-9034">
-		<xsl:choose>
-			<xsl:when test="@V='1'">Pasientansvarlig&#160;lege</xsl:when>
-			<xsl:when test="@V='2'">Pasientansvarlig&#160;psykolog</xsl:when>
-			<xsl:when test="@V='3'">Behandlingsansvarlig&#160;lege</xsl:when>
-			<xsl:when test="@V='4'">Journalansvarlig</xsl:when>
-			<xsl:when test="@V='5'">Informasjonsansvarlig</xsl:when>
-			<xsl:when test="@V='6'">Fastlege</xsl:when>
-			<xsl:when test="@V='7'">Faglig&#160;ansvarlig&#160;for&#160;vedtak&#160;i&#160;psykisk&#160;helsevern</xsl:when>
-			<xsl:when test="@V='8'">Koordinator&#160;Individuel&#160;plan</xsl:when>
-			<xsl:when test="@V='9'">Primærkontakt</xsl:when>
-			<xsl:when test="@V='10'">Utskrivende&#160;lege</xsl:when>
-			<xsl:when test="@V='11'">Utskrivende&#160;sykepleier</xsl:when>
-			<xsl:when test="@V='12'">Instituerende&#160;lege</xsl:when>
-			<xsl:when test="@V='13'">Innleggende&#160;lege</xsl:when>
-			<xsl:when test="@V='14'">Ansvarlig&#160;jordmor</xsl:when>
-		</xsl:choose>
-	</xsl:template>
-	<xsl:template name="k-9060">
-		<xsl:choose>
-			<xsl:when test="@V='AA'">Ambulansearbeider</xsl:when>
-			<xsl:when test="@V='AT'">Apotektekniker</xsl:when>
-			<xsl:when test="@V='AU'">Audiograf</xsl:when>
-			<xsl:when test="@V='BI'">Bioingeniør</xsl:when>
-			<xsl:when test="@V='ET'">Ergoterapeut</xsl:when>
-			<xsl:when test="@V='FA1'">Provisorfarmasøyt</xsl:when>
-			<xsl:when test="@V='FA2'">Reseptarfarmasøyt</xsl:when>
-			<xsl:when test="@V='FO'">Fotterapeut</xsl:when>
-			<xsl:when test="@V='FT'">Fysioterapeut</xsl:when>
-			<xsl:when test="@V='HE'">Helsesekretær</xsl:when>
-			<xsl:when test="@V='HF'">Helsefagarbeider</xsl:when>
-			<xsl:when test="@V='HP'">Hjelpepleier</xsl:when>
-			<xsl:when test="@V='JO'">Jordmor</xsl:when>
-			<xsl:when test="@V='KE'">Klinisk ernæringsfysiolog</xsl:when>
-			<xsl:when test="@V='KI'">Kiropraktor</xsl:when>
-			<xsl:when test="@V='LE'">Lege</xsl:when>
-			<xsl:when test="@V='OA'">Omsorgsarbeider</xsl:when>
-			<xsl:when test="@V='OI'">Ortopedingeniør</xsl:when>
-			<xsl:when test="@V='OP'">Optiker</xsl:when>
-			<xsl:when test="@V='OR'">Ortoptist</xsl:when>
-			<xsl:when test="@V='PE'">Perfusjonist</xsl:when>
-			<xsl:when test="@V='PS'">Psykolog</xsl:when>
-			<xsl:when test="@V='RA'">Radiograf</xsl:when>
-			<xsl:when test="@V='SP'">Sykepleier</xsl:when>
-			<xsl:when test="@V='TH'">Tannhelsesekretær</xsl:when>
-			<xsl:when test="@V='TL'">Tannlege</xsl:when>
-			<xsl:when test="@V='TP'">Tannpleier</xsl:when>
-			<xsl:when test="@V='TT'">Tanntekniker</xsl:when>
-			<xsl:when test="@V='VP'">Vernepleier</xsl:when>
-		</xsl:choose>
-	</xsl:template>
-	<xsl:template name="k-9061">
-		<xsl:choose>
-			<xsl:when test="@V='HP'">Hovedtelefon</xsl:when>
-			<xsl:when test="@V='MC'">Mobiltelefon</xsl:when>
-			<xsl:when test="@V='HV'">Ferietelefon</xsl:when>
-			<xsl:when test="@V='F'">Fax</xsl:when>
-			<xsl:when test="@V='PG'">Personsøker</xsl:when>
-			<xsl:when test="@V='AS'">Telefonsvarer</xsl:when>
-			<xsl:when test="@V='WC'">Arbeidsplass,&#160;sentralbord</xsl:when>
-			<xsl:when test="@V='WP'">Arbeidsplass</xsl:when>
-			<xsl:when test="@V='WD'">Arbeidsplass,&#160;direktenummer</xsl:when>
-			<xsl:when test="@V='EC'">Nødnummer</xsl:when>
-			<xsl:when test="@V='H'">Hjemme</xsl:when>
-		</xsl:choose>
-	</xsl:template>
-	
 </xsl:stylesheet>

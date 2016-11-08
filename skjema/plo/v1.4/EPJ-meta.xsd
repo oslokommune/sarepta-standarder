@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Versjon 1.0 2008-01-28
+EPJ-meta.xsd inneholder XML-definisjon av fmetadata som benyttes i EPJ-komponenter:
+-->
+<!--	Endret 12. mars 2008 (MA)
+  | Fjernet hele attributeGroup meta2 som inneholdt attributtene "TilDato" og "Fradato"
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:m1="http://www.kith.no/xmlstds/epj/meta/2008-02-20" targetNamespace="http://www.kith.no/xmlstds/epj/meta/2008-02-20" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- Felles medadata -->
+	<attribute name="basiskomponenttype">
+		<simpleType>
+			<restriction base="string">
+				<enumeration value="Mappe"/>
+				<enumeration value="EPJ sak"/>
+				<enumeration value="Importert EPJ sak"/>
+				<enumeration value="Dokument"/>
+				<enumeration value="EPJ dokument"/>
+				<enumeration value="Importert EPJ dokument"/>
+				<enumeration value="Tilleggsinfo"/>
+				<enumeration value="Fragment"/>
+				<enumeration value="EPJ fragment"/>
+				<enumeration value="Dataelement"/>
+				<enumeration value="EPJ ekstrakt"/>
+			</restriction>
+		</simpleType>
+	</attribute>
+	<attribute name="komponenttype" type="string"/>
+	<attribute name="informasjonskategori">
+		<simpleType>
+			<restriction base="string">
+				<enumeration value="Cave/allergier"/>
+				<enumeration value="Legemidler"/>
+				<enumeration value="Andre notater"/>
+				<enumeration value="Uspesifisert"/>
+			</restriction>
+		</simpleType>
+	</attribute>
+	<attributeGroup name="meta1">
+		<attribute name="komponentID" type="string" use="required"/>
+		<attribute name="referanseViktigTilleggsinfo" type="string" use="optional"/>
+	</attributeGroup>
+</schema>

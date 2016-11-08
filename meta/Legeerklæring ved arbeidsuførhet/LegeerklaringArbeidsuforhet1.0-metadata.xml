@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>Legeerklæring ved arbeidsuførhet</Navn>
+	<Versjon>1.0</Versjon>
+	<Identifikator>HIS 80805:2008</Identifikator>
+	<Utgivelsesdato>2008-06-06</Utgivelsesdato>
+	<Utgiver>Helsedirektoratet</Utgiver>
+	<Status>Til utbredelse</Status>
+	<StatusReferansekatalog>Aktiv</StatusReferansekatalog>
+	<Standardtekster>
+		<Standardtekst>
+			<Beskrivelse>Legeerklæring ved arbeidsuførhet. Informasjonsmodell og XML meldingsbeskrivelse (PDF)</Beskrivelse>
+			<Referanse>standardtekst/NAVLegeerklæringVedArbeidsuførhet/HIS_80805_2008_NAV-Legeerklaring-2008-06-06.pdf</Referanse>
+		</Standardtekst>
+	</Standardtekster>
+	<Skjemaer>
+		<Skjema>
+			<Referanse>skjema/NAVLegeerklæringVedArbeidsuførhet/NAV-Legeerklaring-2008-06-06.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/legeerklaring/2008-06-06</Namespace>
+		</Skjema>
+	</Skjemaer>
+	<Felleskomponenter>
+		<Felleskomponent>
+			<Beskrivelse>XML-skjema for Hodemelding</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/MsgHead-v1_2.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Felles XML-definisjoner for person, helsepersonell, organisasjon etc</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/felleskomponent1.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Felles datatyper</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
+		</Felleskomponent>
+	</Felleskomponenter>
+	<Eksempler>
+		<Eksempel>
+			<Referanse>eksempel/NAVLegeerklæringVedArbeidsuførhet/NAV-Legerklaring-2008-06-06-eksempel-1-MsgHead.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/NAVLegeerklæringVedArbeidsuførhet/NAV-Legerklaring-2008-06-06-eksempel-2-MsgHead.xml</Referanse>
+		</Eksempel>
+	</Eksempler>
+	<RelaterteFiler>
+		<RelatertFil>
+			<Beskrivelse>Referansekatalog-oppføring for Legeerklæring ved arbeidsuførhet (HIS 80805:2008)</Beskrivelse>
+			<Referanse>https://ehelse.no/Sider/Legeerkl%c3%a6ring-ved-arbeidsuf%c3%b8rhet--Informasjonsmodell-og-XML-meldingsbeskrivelse-%e2%80%93-HIS-808052008.aspx</Referanse>
+		</RelatertFil>
+	</RelaterteFiler>
+</StandardMetadata>

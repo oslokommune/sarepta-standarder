@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Timebestilling: Inngår som en del av pasientkommunikasjonsmeldingene -->
+<!-- Namespace  http://www.kith.no/xmlstds/paskomm/Timebestilling/2007-12-17 -->
+<schema xmlns:pas="http://www.kith.no/xmlstds/paskomm/Timebestilling/2007-12-17" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" xmlns:tk="http://www.kith.no/xmlstds/paskomm/TjenesteKomponent/2007-12-17" targetNamespace="http://www.kith.no/xmlstds/paskomm/Timebestilling/2007-12-17" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds/paskomm/TjenesteKomponent/2007-12-17" schemaLocation="TjenesteKomponent.xsd"/>
+	<!-- LEVEL 1 -->
+	<!-- Class: Timebestilling topp -->
+	<element name="TimebestillingTop">
+		<annotation>
+			<documentation>
+         Benyttes av pasienten eller pasientens foresatte ved bestilling av time. 
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="tk:Fellesinfo"/>
+				<element ref="tk:Timebestilling"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>
