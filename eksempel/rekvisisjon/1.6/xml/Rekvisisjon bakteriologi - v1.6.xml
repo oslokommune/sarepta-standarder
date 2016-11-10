@@ -24,6 +24,10 @@
 						<Id>9144900</Id>
 						<TypeId V="HPR" DN="HPR-nummer"/>
 					</HCProf>
+					<Address>
+						<Type V="WP" DN="Arbeidsadresse"/>
+						<TeleAddress V="tel:12345678"/>
+					</Address>
 				</HCP>
 			</ResponsibleHcp>
 		</Patient>
@@ -56,16 +60,15 @@
 			</HCP>
 		</Requester>
 		<ReasonAsText>
-		<Heading V="PROB" DN="Problemstilling"/>
-		<TextResultValue>Komplisert cystitt</TextResultValue>
+			<Heading V="PROB" DN="Problemstilling"/>
+			<TextResultValue>Komplisert cystitt</TextResultValue>
 		</ReasonAsText>
 		<Comment>
-			<TextResultValue>Receiving system: Unilab bakteriologi </TextResultValue>
+			<TextResultValue>Analysene ønskes utført ved spesiallab </TextResultValue>
 		</Comment>
 		<ReqInvestigation>
 			<ServType V="N" DN="Ny"/>
 			<Investigation>
-				<!--<Id V="DYUP10" S="2.16.578.1.12.4.1.1.8212" DN="Dyrkning aerobt" OT="Dyrkning aerobt"/>-->
 				<Id V="NPU06099" S="2.16.578.1.12.4.1.1.7280" DN="B-Aerob blodkultur"/>
 			</Investigation>
 			<AnalysedSubject>

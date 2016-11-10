@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Edited with Atova XLMSpy (x64) ver. 2013 rel.2  sp.2 (http://www.altova.com) by Jan Sigurd Dragsjø - avd. Standardisering, Helsedirektoratet-->
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:ki="http://www.kith.no/xmlstds/eresept/ki/2013-04-25" xmlns="http://www.w3.org/1999/xhtml" xmlns:dt="http://xsltsl.org/date-time" exclude-result-prefixes="mh ki dt">
+<xsl:stylesheet version="1.0" 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
+	xmlns:ki="http://www.kith.no/xmlstds/eresept/ki/2013-04-25" 
+	xmlns:dt="http://xsltsl.org/date-time" 
+	exclude-result-prefixes="mh ki dt">
+
 	<!-- Visningsfil M25 Legemidler i bruk
 	- Visningsfilen kan benyttes til alle kategorier av M25 (M25.1-4) -->
 	<!-- Endringslogg:
+	-	2016-10-25: La til visningsversjonnr
 	-	2016-04-04: Rettet visning for Antall/Mengde
 	-	2016-03-30: La til ny linje for hva som faktisk ble utlevert i pakking/multidose. Aktuelt for M25.3.
 	-	2015-06-16: Rettet logisk feil hvor overskriftsrad manglet enkelte ganger i legemiddeltabellene.
@@ -13,14 +21,22 @@
 	-	2014-02-12: Antall tas nå med i legemiddelblanding
 	-	2014-02-11: Kategoriserte legemiddel seponert frem i tid under legemidler i bruk
 	-	2013-11-07 Første versjon -->
+
 	<xsl:import href="../../Felleskomponenter/meldingshode2html.xsl"/>
 	<xsl:import href="../../Felleskomponenter/funksjoner.xsl"/>
 	<xsl:import href="../../Felleskomponenter/kodeverk.xsl"/>
 	<xsl:import href="../../Felleskomponenter/kritiskInfo2html-v2.5.xsl"/>
 	<xsl:import href="../../Felleskomponenter/base64decoder.xsl"/>
-	<xsl:output method="html" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+
+	<xsl:output method="html" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" 
+		doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" 
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+
 	<!-- Variabel for hvilken stil visningen har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
 	<xsl:variable name="stil" select="'One-line-doc'"/>
+	<!-- Variabel for hvilken versjon av visningsfilen -->
+	<xsl:variable name="versjon" select="'eresept-m25-2.5 v3.1.0 '"/>
+
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
 			<head>
@@ -41,6 +57,7 @@
 		<xsl:call-template name="Innhold"/>
 		<xsl:call-template name="BunnTillegg">
 			<xsl:with-param name="stil" select="$stil"/>
+			<xsl:with-param name="versjon" select="$versjon"/>
 		</xsl:call-template>
 	</xsl:template>
 	<!-- Template som kalles fra BunnTillegg i meldingshodet. Kan brukes til visning av egenkomponert bunn -->

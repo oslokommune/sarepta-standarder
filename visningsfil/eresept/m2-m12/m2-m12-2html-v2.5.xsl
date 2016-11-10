@@ -3,12 +3,22 @@
 <!-- Visningsfil for eReseptmeldingen: M2 Individuell søknad om refusjon til HELFO
 	- Visningen håndterer vedlegg av en eller flere M12 Søknadssvar - Individuell søknad om refusjon til HELFO-->
 <!-- Siste endring:
+	- 2016-10-25: La til visningsversjonnr
 	- 2015-09-24: Oppdatert til siste versjon av 2.5 datert 2015-05-26. Felles kodeverksfil innført.
 	- 2013-10-31: Oppdatert til å kunne håndtere Forskrivning-2013-10-08
 	- 2013-08-13: Versjon for eResept v2.5
 	- 2011-02-11: Første versjon -->
 	
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:m2="http://www.kith.no/xmlstds/eresept/m2/2014-12-01" xmlns:m12="http://www.kith.no/xmlstds/eresept/m12/2014-12-01" xmlns:base="http://www.kith.no/xmlstds/base64container" xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml" exclude-result-prefixes="mh fk1 m2 m12 base xhtml">
+<xsl:stylesheet version="1.0" 
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
+	xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" 
+	xmlns:m2="http://www.kith.no/xmlstds/eresept/m2/2014-12-01" 
+	xmlns:m12="http://www.kith.no/xmlstds/eresept/m12/2014-12-01" 
+	xmlns:base="http://www.kith.no/xmlstds/base64container" 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+	exclude-result-prefixes="mh fk1 m2 m12 base xhtml">
 
 	<xsl:import href="../../Felleskomponenter/meldingshode2html.xsl"/>
 	<xsl:import href="../../Felleskomponenter/funksjoner.xsl"/>
@@ -22,6 +32,9 @@
 	<xsl:variable name="antall-legemidler" select="count(//m2:OmsoktLegemiddel)"/>
 	<!-- Variabel for hvilken stil visningen har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
 	<xsl:variable name="stil" select="'One-line-doc'"/>
+	<!-- Variabel for hvilken versjon av visningsfilen -->
+	<xsl:variable name="versjon" select="'eresept-m2-2.5 v3.1.0 '"/>
+
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
 			<head>
@@ -45,11 +58,13 @@
 			<xsl:when test="not(1)">
 				<xsl:call-template name="BunnTillegg">
 					<xsl:with-param name="stil" select="$stil"/>
+					<xsl:with-param name="versjon" select="$versjon"/>
 				</xsl:call-template>
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:call-template name="Bunn">
 					<xsl:with-param name="stil" select="$stil"/>
+					<xsl:with-param name="versjon" select="$versjon"/>
 				</xsl:call-template>
 			</xsl:otherwise>
 		</xsl:choose>

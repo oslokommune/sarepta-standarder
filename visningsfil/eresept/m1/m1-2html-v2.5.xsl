@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Laget i XMLSpy v2013 sp1 (http://www.altova.com) av Jan Sigurd Dragsjø (helsedirektoratet.no) -->
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:m1="http://www.kith.no/xmlstds/eresept/m1/2013-10-08" xmlns:m15="http://www.kith.no/xmlstds/eresept/m15/2006-10-06" xmlns:fs="http://www.kith.no/xmlstds/eresept/forskrivning/2013-10-08" xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml" exclude-result-prefixes="mh fk1 m1 m15 fs xhtml">
+<xsl:stylesheet version="1.0" 
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
+	xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" 
+	xmlns:m1="http://www.kith.no/xmlstds/eresept/m1/2013-10-08" 
+	xmlns:m15="http://www.kith.no/xmlstds/eresept/m15/2006-10-06" 
+	xmlns:fs="http://www.kith.no/xmlstds/eresept/forskrivning/2013-10-08" 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+	exclude-result-prefixes="mh fk1 m1 m15 fs xhtml">
 
 <!-- Visningsfil for eReseptmeldingen: M1 med multidose og eventuell vedlegg av M15 -->
 <!-- Siste endring:
+	- 2016-10-25: La til visningsversjonnr
 	- 2014-11-12: Utvidelse for å håndtere flere varienter av faste doserings-dager
 	- 2014-04-30: Bugfix av ProdGruppe i handelsvare
 	- 2014-03-13: Flyttet plassering av Ref.nr og Refusjonskode. Fikset bug med uendelig rekursjon om Faste ukedager og Faste dager på var begge oppgitt.
@@ -27,7 +37,10 @@
 	
 	<!-- Variabel for standard antall kolonner i tabellene -->
 	<xsl:variable name="std-col" select="8"/>
-	
+
+	<!-- Variabel for hvilken versjon av visningsfilen -->
+	<xsl:variable name="versjon" select="'eresept-m1-2.5 v3.1.0 '"/>
+
 	<!-- html oppsett -->
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
@@ -53,11 +66,13 @@
 			<xsl:when test="not(1)">
 				<xsl:call-template name="BunnTillegg">
 					<xsl:with-param name="stil" select="$stil"/>
+					<xsl:with-param name="versjon" select="$versjon"/>
 				</xsl:call-template>
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:call-template name="Bunn">
 					<xsl:with-param name="stil" select="$stil"/>
+					<xsl:with-param name="versjon" select="$versjon"/>
 				</xsl:call-template>
 			</xsl:otherwise>
 		</xsl:choose>
