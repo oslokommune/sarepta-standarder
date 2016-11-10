@@ -34,14 +34,15 @@
 		<xsl:variable name="Multi" select="boolean(../child::*[local-name()=&quot;Legemiddelinfo&quot;]//child::*[local-name()=&quot;InngaarIMultidose&quot;])"/>
 		<xsl:variable name="Viktig" select="boolean(../child::*[local-name()=&quot;Legemiddelinfo&quot;]/@referanseViktigTilleggsinfo)"/>
 		<!-- Variabler for beregning av colspan i legemiddel-tabellen -->
-		<xsl:variable name="lege-atc-col" select="(($std-col)-2)*number(not($Form or $Styrke or $BrukT or $Bruk or $Dos or $Skal or $Start or $Slutt or $Status or $Forskr or $Merk or $Multi or $Viktig))+1"/>
-		<xsl:variable name="lege-form-col" select="(($std-col)-2-number($Atc))*number(not($Styrke or $BrukT or $Bruk or $Dos or $Skal or $Start or $Slutt or $Status or $Forskr or $Merk or $Multi or $Viktig))+1"/>
-		<xsl:variable name="lege-bruk-col" select="(($std-col)-2-number($Atc)-number($Form or $Styrke))*number(not($Start or $Slutt or $Status or $Forskr or $Merk or $Multi or $Viktig))+1"/>
-		<xsl:variable name="lege-tid-col" select="(($std-col)-2-number($Atc)-number($Form or $Styrke)-number($BrukT or $Bruk or $Dos or $Skal))*number(not($Status or $Forskr or $Merk or $Multi or $Viktig))+1"/>
-		<xsl:variable name="lege-status-col" select="(($std-col)-2-number($Atc)-number($Form or $Styrke)-number($BrukT or $Bruk or $Dos or $Skal)-number($Start or $Slutt))*number(not($Forskr or $Merk or $Multi or $Viktig))+1"/>
-		<xsl:variable name="lege-forskr-col" select="(($std-col)-2-number($Atc)-number($Form or $Styrke)-number($BrukT or $Bruk or $Dos or $Skal)-number($Start or $Slutt)-number($Status))*number(not($Merk or $Multi or $Viktig))+1"/>
-		<xsl:variable name="lege-merk-col" select="(($std-col)-2-number($Atc)-number($Form or $Styrke)-number($BrukT or $Bruk or $Dos or $Skal)-number($Start or $Slutt)-number($Status)-number($Forskr))*number(not($Viktig))+1"/>
-		<xsl:variable name="lege-viktig-col" select="(($std-col)-1-number($Atc)-number($Form or $Styrke)-number($BrukT or $Bruk or $Dos or $Skal)-number($Start or $Slutt)-number($Status)-number($Forskr)-number($Merk or $Multi))"/>
+		<xsl:variable name="lege-atc-col" select="(($std-col)-2)*number(not($Form or $Styrke or $BrukT or $Bruk or $Dos or $Skal or $Start or $Slutt or $Status or $Forskr or $Multi or $Merk or $Viktig))+1"/>
+		<xsl:variable name="lege-form-col" select="(($std-col)-2-number($Atc))*number(not($Styrke or $BrukT or $Bruk or $Dos or $Skal or $Start or $Slutt or $Status or $Forskr or $Multi or $Merk or $Viktig))+1"/>
+		<xsl:variable name="lege-bruk-col" select="(($std-col)-2-number($Atc)-number($Form or $Styrke))*number(not($Start or $Slutt or $Status or $Forskr or $Multi or $Merk or $Viktig))+1"/>
+		<xsl:variable name="lege-tid-col" select="(($std-col)-2-number($Atc)-number($Form or $Styrke)-number($BrukT or $Bruk or $Dos or $Skal))*number(not($Status or $Forskr or $Multi or $Merk or $Viktig))+1"/>
+		<xsl:variable name="lege-status-col" select="(($std-col)-2-number($Atc)-number($Form or $Styrke)-number($BrukT or $Bruk or $Dos or $Skal)-number($Start or $Slutt))*number(not($Forskr or $Multi or $Merk or $Viktig))+1"/>
+		<xsl:variable name="lege-forskr-col" select="(($std-col)-2-number($Atc)-number($Form or $Styrke)-number($BrukT or $Bruk or $Dos or $Skal)-number($Start or $Slutt)-number($Status))*number(not($Multi or $Merk or $Viktig))+1"/>
+		<xsl:variable name="lege-multi-col" select="(($std-col)-2-number($Atc)-number($Form or $Styrke)-number($BrukT or $Bruk or $Dos or $Skal)-number($Start or $Slutt)-number($Status)-number($Forskr))*number(not($Merk or $Viktig))+1"/>
+		<xsl:variable name="lege-merk-col" select="(($std-col)-2-number($Atc)-number($Form or $Styrke)-number($BrukT or $Bruk or $Dos or $Skal)-number($Start or $Slutt)-number($Status)-number($Forskr)-number($Multi))*number(not($Viktig))+1"/>
+		<xsl:variable name="lege-viktig-col" select="(($std-col)-1-number($Atc)-number($Form or $Styrke)-number($BrukT or $Bruk or $Dos or $Skal)-number($Start or $Slutt)-number($Status)-number($Forskr)-number($Multi)-number($Merk))"/>
 		<!-- Visning av legemiddel-tabellen -->
 		<xsl:if test="not(preceding-sibling::*[local-name()=&quot;Legemiddelinfo&quot;])">
 			<!-- Visning av legemiddel-tabellen header-overskrifter -->
@@ -57,7 +58,7 @@
 					<th colspan="{($lege-bruk-col)}">Bruk&#160;og&#160;dosering</th>
 				</xsl:if>
 				<xsl:if test="$Start or $Slutt">
-					<th colspan="{($lege-tid-col)}">Start&#160;og&#160;slutt</th>
+					<th colspan="{($lege-tid-col)}">Start&#160;-&#160;slutt</th>
 				</xsl:if>
 				<xsl:if test="$Status">
 					<th colspan="{($lege-status-col)}">Status</th>
@@ -65,7 +66,10 @@
 				<xsl:if test="$Forskr">
 					<th colspan="{($lege-forskr-col)}">Forskriver</th>
 				</xsl:if>
-				<xsl:if test="$Merk or $Multi">
+				<xsl:if test="$Multi">
+					<th colspan="{($lege-multi-col)}">Multidose</th>
+				</xsl:if>
+				<xsl:if test="$Merk">
 					<th colspan="{($lege-merk-col)}">Merknad</th>
 				</xsl:if>
 				<xsl:if test="$Viktig">
@@ -74,7 +78,7 @@
 			</tr>
 		</xsl:if>
 		<tr>
-			<td>
+			<td width="{($std-td)}px">
 				<div>
 					<b>
 						<xsl:call-template name="line-breaks">
@@ -92,7 +96,7 @@
 				</xsl:if>
 				<xsl:if test=".//child::*[local-name()=&quot;Nr&quot;]">
 					<div>
-						<b>Varenummer:</b>&#160;
+						<b>V.nr:</b>&#160;
 						<xsl:call-template name="line-breaks">
 							<xsl:with-param name="text" select=".//child::*[local-name()=&quot;Nr&quot;]"/>
 						</xsl:call-template>
@@ -100,14 +104,14 @@
 				</xsl:if>
 			</td>
 			<xsl:if test="$Atc">
-				<td colspan="{($lege-atc-col)}">
+				<td width="{($lege-atc-col)*$std-td}px" colspan="{($lege-atc-col)}">
 					<xsl:for-each select=".//child::*[local-name()=&quot;Atc&quot;]">
 						<xsl:call-template name="k-dummy"/>&#160;
 					</xsl:for-each>
 				</td>
 			</xsl:if>
 			<xsl:if test="$Form or $Styrke">
-				<td colspan="{($lege-form-col)}">
+				<td width="{($lege-form-col)*$std-td}px" colspan="{($lege-form-col)}">
 					<xsl:for-each select=".//child::*[local-name()=&quot;Legemiddelform&quot;]">
 						<xsl:call-template name="k-dummy"/>&#160;
 					</xsl:for-each>
@@ -117,27 +121,23 @@
 				</td>
 			</xsl:if>
 			<xsl:if test="$BrukT or $Bruk or $Dos or $Skal">
-				<td colspan="{($lege-bruk-col)}">
+				<td width="{($lege-bruk-col)*$std-td*1.5}px" colspan="{($lege-bruk-col)}">
 					<xsl:if test=".//child::*[local-name()=&quot;Bruk&quot;] or .//child::*[local-name()=&quot;BruksomradeTekst&quot;]">
-						<b>Bruk:</b>&#160;
 						<xsl:for-each select=".//child::*[local-name()=&quot;Bruk&quot;]">
 							<xsl:call-template name="k-9101"/>&#160;
 						</xsl:for-each>
 						<xsl:for-each select=".//child::*[local-name()=&quot;BruksomradeTekst&quot;]">
 							<xsl:call-template name="line-breaks">
 								<xsl:with-param name="text" select="."/>
-							</xsl:call-template>
+							</xsl:call-template>&#160;
 						</xsl:for-each>
 					</xsl:if>
 					<xsl:if test=".//child::*[local-name()=&quot;DosVeiledEnkel&quot;]">
-						<div>
-							<b>Dosering:</b>&#160;
-							<xsl:for-each select=".//child::*[local-name()=&quot;DosVeiledEnkel&quot;]">
-								<xsl:call-template name="line-breaks">
-									<xsl:with-param name="text" select="."/>
-								</xsl:call-template>
-							</xsl:for-each>
-						</div>
+						<xsl:for-each select=".//child::*[local-name()=&quot;DosVeiledEnkel&quot;]">
+							<xsl:call-template name="line-breaks">
+								<xsl:with-param name="text" select="."/>
+							</xsl:call-template>
+						</xsl:for-each>
 					</xsl:if>
 					<xsl:if test=".//child::*[local-name()=&quot;SkalIkkeTasSammenMedAnnetLegemiddel&quot;]">
 						<xsl:if test=".//child::*[local-name()=&quot;SkalIkkeTasSammenMedAnnetLegemiddel&quot;]='true'">
@@ -147,9 +147,8 @@
 				</td>
 			</xsl:if>
 			<xsl:if test="$Start or $Slutt">
-				<td colspan="{($lege-tid-col)}">
+				<td width="{($lege-tid-col)*$std-td}px" colspan="{($lege-tid-col)}">
 					<xsl:if test=".//child::*[local-name()=&quot;DoseringStarttidspunkt&quot;]">
-						<b>Start:</b>&#160;
 						<xsl:for-each select=".//child::*[local-name()=&quot;DoseringStarttidspunkt&quot;]">
 							<xsl:call-template name="skrivUtTS">
 								<xsl:with-param name="oppgittTid" select="@V"/>
@@ -157,26 +156,23 @@
 						</xsl:for-each>
 					</xsl:if>
 					<xsl:if test=".//child::*[local-name()=&quot;DoseringSluttidspunkt&quot;]">
-						<div>
-							<b>Slutt:</b>&#160;
-							<xsl:for-each select=".//child::*[local-name()=&quot;DoseringSluttidspunkt&quot;]">
-								<xsl:call-template name="skrivUtTS">
-									<xsl:with-param name="oppgittTid" select="@V"/>
-								</xsl:call-template>&#160;
-							</xsl:for-each>
-						</div>
+						<xsl:for-each select=".//child::*[local-name()=&quot;DoseringSluttidspunkt&quot;]">
+							-&#160;<xsl:call-template name="skrivUtTS">
+								<xsl:with-param name="oppgittTid" select="@V"/>
+							</xsl:call-template>&#160;
+						</xsl:for-each>
 					</xsl:if>
 				</td>
 			</xsl:if>
 			<xsl:if test="$Status">
-				<td colspan="{($lege-status-col)}">
+				<td width="{($lege-status-col)*$std-td}px" colspan="{($lege-status-col)}">
 					<xsl:for-each select=".//child::*[local-name()=&quot;StatusTilForskrivningen&quot;]">
 						<xsl:call-template name="k-9104"/>&#160;
 					</xsl:for-each>
 				</td>
 			</xsl:if>
 			<xsl:if test="$Forskr">
-				<td colspan="{($lege-forskr-col)}">
+				<td width="{($lege-forskr-col)*$std-td}px" colspan="{($lege-forskr-col)}">
 					<div class="No-line-content">
 						<xsl:for-each select=".//child::*[local-name()=&quot;Forskriver&quot;]">
 							<xsl:call-template name="HealthcareProfessional"/>
@@ -184,22 +180,27 @@
 					</div>
 				</td>
 			</xsl:if>
-			<xsl:if test="$Merk or $Multi">
-				<td colspan="{($lege-merk-col)}">
+			<xsl:if test="$Multi">
+				<td width="{($lege-multi-col)*$std-td*0.5}px" colspan="{($lege-multi-col)}">
+					<xsl:for-each select=".//child::*[local-name()=&quot;InngaarIMultidose&quot;]">
+						<xsl:choose>
+							<xsl:when test="@V='2'"><input type="checkbox" checked="checked" disabled="disabled"/></xsl:when>
+							<xsl:otherwise><input type="checkbox" disabled="disabled"/></xsl:otherwise>
+						</xsl:choose>
+					</xsl:for-each>
+				</td>
+			</xsl:if>
+			<xsl:if test="$Merk">
+				<td width="{($lege-merk-col)*$std-td*1.5}px" colspan="{($lege-merk-col)}">
 					<xsl:if test=".//child::*[local-name()=&quot;Merknad&quot;]">
 						<xsl:call-template name="line-breaks">
 							<xsl:with-param name="text" select=".//child::*[local-name()=&quot;Merknad&quot;]"/>
 						</xsl:call-template>
 					</xsl:if>
-					<xsl:for-each select=".//child::*[local-name()=&quot;InngaarIMultidose&quot;]">
-						<div>
-							<xsl:call-template name="k-9103"/>&#160;
-						</div>
-					</xsl:for-each>
 				</td>
 			</xsl:if>
 			<xsl:if test="$Viktig">
-				<td colspan="{($lege-viktig-col)}">
+				<td width="{($lege-viktig-col)*$std-td}px" colspan="{($lege-viktig-col)}">
 					<xsl:if test="@komponentID = //child::*[local-name()=&quot;tilleggsinfoEPJKomponent&quot;]//child::*[local-name()=&quot;linkTilKomponent&quot;]">
 						Referert versjon
 					</xsl:if>

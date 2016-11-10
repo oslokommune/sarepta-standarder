@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Endringslogg
+	- 25.10.16: La til visningsversjonnr
 	- 09.05.14: La til import av kodeverk-fil
 	- 27.04.11: La til visning av flere enn en underavdeling ved pasientopphold, la til visning av Comment/TextResultValue, samt erstattet mange <br/> med <div>.
 	- 01.12.10: Import av felles CSS-fil
@@ -26,16 +27,28 @@
 	- Inngår i Hdirs visningsfiler versjon 2.0
 	- Laget i XMLSpy v2014 rel.2 sp1 (http://www.altova.com) av Jan Sigurd Dragsjø (nhn.no)
 -->
-<xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lso="http://www.kith.no/xmlstds/rekvisisjon/2012-02-15" xmlns:base="http://www.kith.no/xmlstds/base64container" xmlns:xhtml="http://www.w3.org/1999/xhtml" exclude-result-prefixes="lso xhtml base">
+<xsl:stylesheet version="1.0" 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+	xmlns:lso="http://www.kith.no/xmlstds/rekvisisjon/2012-02-15" 
+	xmlns:base="http://www.kith.no/xmlstds/base64container" 
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+	exclude-result-prefixes="lso xhtml base">
+	
 	<xsl:import href="../../Felleskomponenter/funksjoner.xsl"/>
 	<xsl:import href="../../Felleskomponenter/kodeverk.xsl"/>
+
 	<xsl:output method="html" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+
 	<!-- Variabel-deklarasjon -->
 	<!-- Variabel for hvilken stil visning har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
 	<xsl:variable name="stil" select="'No-line-doc'"/>
 	<!-- Variabler for antall kolonner og bredde -->
 	<xsl:variable name="std-col" select="10"/>
 	<xsl:variable name="std-td" select="200"/>
+	<!-- Variabel for hvilken versjon av visningsfilen -->
+	<xsl:variable name="versjon" select="'rekvisisjon1.6 v3.1.0 '"/>
+
 	<!-- Meldingsstart -->
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
@@ -135,14 +148,18 @@
 	</xsl:template>
 	<xsl:template match="lso:Animal" mode="hode">
 		<div>
-			<xsl:if test="lso:Name"><b>Navn</b>:&#160;<xsl:value-of select="lso:Name"/>&#160;</xsl:if>
-			<xsl:if test="lso:Species"><b>Art</b>:&#160;<xsl:value-of select="lso:Species"/>&#160;</xsl:if>
-			<xsl:if test="lso:NameOwner"><b>Eier</b>:&#160;<xsl:value-of select="lso:NameOwner"/>&#160;</xsl:if>
+			<xsl:if test="lso:Name">
+				<b>Navn</b>:&#160;<xsl:value-of select="lso:Name"/>&#160;</xsl:if>
+			<xsl:if test="lso:Species">
+				<b>Art</b>:&#160;<xsl:value-of select="lso:Species"/>&#160;</xsl:if>
+			<xsl:if test="lso:NameOwner">
+				<b>Eier</b>:&#160;<xsl:value-of select="lso:NameOwner"/>&#160;</xsl:if>
 		</div>
 	</xsl:template>
 	<xsl:template match="lso:Material" mode="hode">
 		<div>
-			<xsl:if test="lso:InvMaterial"><b>Beskrivelse</b>:&#160;<xsl:value-of select="lso:InvMaterial"/>&#160;</xsl:if>
+			<xsl:if test="lso:InvMaterial">
+				<b>Beskrivelse</b>:&#160;<xsl:value-of select="lso:InvMaterial"/>&#160;</xsl:if>
 		</div>
 	</xsl:template>
 	<xsl:template match="lso:HCPerson" mode="hode">
@@ -179,9 +196,9 @@
 	<xsl:template match="lso:Address" mode="hode">
 		<xsl:if test="lso:Type and (lso:StreetAdr or lso:PostalCode or lso:City or lso:CityDistr)">
 			<div class="NoPrint">&#160;<b>
-				<xsl:for-each select="lso:Type">
-					<xsl:call-template name="k-3401"/>
-				</xsl:for-each>:&#160;</b>
+					<xsl:for-each select="lso:Type">
+						<xsl:call-template name="k-3401"/>
+					</xsl:for-each>:&#160;</b>
 			</div>
 		</xsl:if>
 		<xsl:if test="lso:StreetAdr">
@@ -271,7 +288,7 @@
 				<h2 id="{$id2}">
 					<xsl:choose>
 						<xsl:when test="last()!=1">
-								<xsl:value-of select="concat('Rekvirert undersøkelse',position())"/>
+							<xsl:value-of select="concat('Rekvirert undersøkelse',position())"/>
 						</xsl:when>
 						<xsl:otherwise>Rekvirert undersøkelse</xsl:otherwise>
 					</xsl:choose>
@@ -367,6 +384,12 @@
 						<th>Meldingsid</th>
 						<td>
 							<xsl:value-of select="../lso:MsgId"/>
+						</td>
+					</tr>
+					<tr>
+						<th>Visningsversjon</th>
+						<td colspan="3">
+							<xsl:value-of select="$versjon"/>
 						</td>
 					</tr>
 				</tbody>
@@ -708,7 +731,9 @@
 				</th>
 				<td colspan="{($col)-1}">
 					<xsl:if test="lso:TextResultValue">
-						<div><xsl:value-of select="lso:TextResultValue"/></div>
+						<div>
+							<xsl:value-of select="lso:TextResultValue"/>
+						</div>
 					</xsl:if>
 					<xsl:for-each select="lso:TextCode">
 						<xsl:choose>
@@ -753,7 +778,11 @@
 	<xsl:template match="lso:Patient">
 		<xsl:param name="col"/>
 		<tr>
-			<th>Navn&#160;<xsl:if test="lso:Relation and local-name(..)=&quot;Patient&quot;">-&#160;relasjon:&#160;<xsl:for-each select="lso:Relation"><xsl:call-template name="k-8238"/></xsl:for-each></xsl:if></th>
+			<th>Navn&#160;<xsl:if test="lso:Relation and local-name(..)=&quot;Patient&quot;">-&#160;relasjon:&#160;<xsl:for-each select="lso:Relation">
+						<xsl:call-template name="k-8238"/>
+					</xsl:for-each>
+				</xsl:if>
+			</th>
 			<td width="{$std-td}px">
 				<xsl:value-of select="lso:Name"/>
 			</td>
@@ -869,7 +898,9 @@
 						<xsl:for-each select="lso:Location/lso:Inst/lso:Dept">,&#160;<xsl:value-of select="lso:Name"/>
 						</xsl:for-each>
 					</xsl:if>
-					<xsl:for-each select="lso:Location/lso:SubLocation">,&#160;<xsl:for-each select="lso:Type"><xsl:call-template name="k-8242"/></xsl:for-each>:&#160;<xsl:value-of select="lso:Place"/>
+					<xsl:for-each select="lso:Location/lso:SubLocation">,&#160;<xsl:for-each select="lso:Type">
+							<xsl:call-template name="k-8242"/>
+						</xsl:for-each>:&#160;<xsl:value-of select="lso:Place"/>
 					</xsl:for-each>
 				</td>
 				<xsl:if test="lso:AdmCat">
@@ -916,7 +947,9 @@
 			<xsl:if test="lso:Name">
 				<th>Navn&#160;
 					<xsl:if test="local-name(..)=&quot;Animal&quot;">
-						-&#160;relasjon:&#160;<xsl:for-each select="lso:Relation"><xsl:call-template name="k-8238"/></xsl:for-each>
+						-&#160;relasjon:&#160;<xsl:for-each select="lso:Relation">
+							<xsl:call-template name="k-8238"/>
+						</xsl:for-each>
 					</xsl:if>
 				</th>
 				<td width="{((($col)-2-count(lso:NameOwner)*2)*number(not(lso:Sex | lso:Species))+1)*$std-td}px" colspan="{(($col)-2-count(lso:NameOwner)*2)*number(not(lso:Sex | lso:Species))+1}">
@@ -951,9 +984,11 @@
 		<xsl:if test="lso:Type or lso:TypeCoded or lso:IdByRequester or lso:RequestedSubject or lso:CollectedSample or lso:CollectedStudyProduct">
 			<tr>
 				<xsl:if test="lso:Type or lso:TypeCoded">
-					<th>Type materiale<xsl:if test="$last!=1">&#160;<xsl:value-of select="$pos"/></xsl:if></th>
+					<th>Type materiale<xsl:if test="$last!=1">&#160;<xsl:value-of select="$pos"/>
+						</xsl:if>
+					</th>
 					<td width="{((($col)-2)*number(not(lso:IdByRequester | lso:RequestedSubject | lso:CollectedSample | lso:CollectedStudyProduct))+1)*$std-td}px" colspan="{(($col)-2)*number(not(lso:IdByRequester | lso:RequestedSubject | lso:CollectedSample | lso:CollectedStudyProduct))+1}">
-					<!--Kommentar til en tilsynelatende for lang kolonnebredde: RequestedSubject, CollectedSample og CollectedStudyProduct er innenfor en choice -->
+						<!--Kommentar til en tilsynelatende for lang kolonnebredde: RequestedSubject, CollectedSample og CollectedStudyProduct er innenfor en choice -->
 						<xsl:choose>
 							<xsl:when test="lso:Type">
 								<xsl:value-of select="lso:Type"/>
@@ -1124,7 +1159,8 @@
 					<td colspan="{($col)-1-count(lso:AnatomicalOrigin | lso:PreservMaterial | lso:Pretreatment)*2}">
 						<xsl:for-each select="lso:SubjectMeasures">
 							<div>
-								<b><xsl:value-of select="lso:TypeQuantity"/>:&#160;</b>
+								<b>
+									<xsl:value-of select="lso:TypeQuantity"/>:&#160;</b>
 								<xsl:value-of select="lso:Quantity/@V"/>&#160;<xsl:value-of select="lso:Quantity/@U"/>&#160;
 							</div>
 						</xsl:for-each>
@@ -1679,11 +1715,17 @@
 			</xsl:if>
 			<xsl:if test="lso:City">&#160;<xsl:value-of select="lso:City"/>
 			</xsl:if>
-			<xsl:if test="lso:CityDistr">,&#160;<xsl:for-each select="lso:CityDistr"><xsl:call-template name="k-3403"/></xsl:for-each>
+			<xsl:if test="lso:CityDistr">,&#160;<xsl:for-each select="lso:CityDistr">
+					<xsl:call-template name="k-3403"/>
+				</xsl:for-each>
 			</xsl:if>
-			<xsl:if test="lso:County">,&#160;<xsl:for-each select="lso:County"><xsl:call-template name="k-3402"/></xsl:for-each>
+			<xsl:if test="lso:County">,&#160;<xsl:for-each select="lso:County">
+					<xsl:call-template name="k-3402"/>
+				</xsl:for-each>
 			</xsl:if>
-			<xsl:if test="lso:Country">,&#160;<xsl:for-each select="lso:Country"><xsl:call-template name="k-9043"/></xsl:for-each>
+			<xsl:if test="lso:Country">,&#160;<xsl:for-each select="lso:Country">
+					<xsl:call-template name="k-9043"/>
+				</xsl:for-each>
 			</xsl:if>
 		</td>
 	</xsl:template>

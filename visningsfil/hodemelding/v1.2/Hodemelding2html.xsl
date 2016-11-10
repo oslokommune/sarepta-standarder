@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:dia="http://www.kith.no/xmlstds/dialog/2006-10-11" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml" exclude-result-prefixes="mh fk1 dia ds xhtml">
+<xsl:stylesheet version="1.0" 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
+	xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" 
+	xmlns:dia="http://www.kith.no/xmlstds/dialog/2006-10-11" 
+	xmlns:ds="http://www.w3.org/2000/09/xmldsig#" 
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+	exclude-result-prefixes="mh fk1 dia ds xhtml">
+
 	<!--
 Inngår i KITHs visningsfiler versjon 10
 
@@ -9,6 +18,7 @@ BRUK
 Importeres vha. <xsl:include href="Hodemelding2html.xsl"/>
 
 ENDRINGER:
+25.10.2016: La til visningsversjonnr
 01.12.2010: Enkelte tabeller erstattet med div-tagger og layout overtatt av CSS
 05.03.2010: Layoutmessige justeringer
 28.04.2009: Måtte ta bort alle div-klasser for å unngå unødig linjeskift i visningsmodus "@media screen"
@@ -16,6 +26,7 @@ ENDRINGER:
 25.01.2006: Første versjon
 -->
 	<xsl:import href="../../Felleskomponenter/funksjoner.xsl"/>
+
 	<xsl:template match="mh:MsgHead">
 		<xsl:apply-templates/>
 	</xsl:template>
@@ -25,13 +36,17 @@ ENDRINGER:
 			<div class="Header">
 				<div class="HeaderContent">
 					<div class="Caption">Avsender &#160;</div>
-					<div class="Content"><xsl:apply-templates select="mh:Sender/mh:Organisation"/></div>
+					<div class="Content">
+						<xsl:apply-templates select="mh:Sender/mh:Organisation"/>
+					</div>
 				</div>
 				<xsl:choose>
 					<xsl:when test="mh:Patient">
 						<div class="HeaderContent">
 							<div class="Caption">Pasient &#160;</div>
-							<div class="Content"><xsl:apply-templates select="mh:Patient"/></div>
+							<div class="Content">
+								<xsl:apply-templates select="mh:Patient"/>
+							</div>
 						</div>
 					</xsl:when>
 					<xsl:otherwise>
@@ -42,13 +57,17 @@ ENDRINGER:
 				</xsl:choose>
 				<div class="HeaderContent">
 					<div class="Caption">Mottaker &#160;</div>
-					<div class="Content"><xsl:apply-templates select="mh:Receiver/mh:Organisation"/></div>
+					<div class="Content">
+						<xsl:apply-templates select="mh:Receiver/mh:Organisation"/>
+					</div>
 				</div>
 				<xsl:choose>
 					<xsl:when test="mh:OtherReceiver">
 						<div class="HeaderContent">
 							<div class="Caption">Kopimottaker(e) &#160;</div>
-							<div class="Content"><xsl:apply-templates select="mh:OtherReceiver"/></div>
+							<div class="Content">
+								<xsl:apply-templates select="mh:OtherReceiver"/>
+							</div>
 						</div>
 					</xsl:when>
 					<xsl:otherwise>
@@ -61,15 +80,21 @@ ENDRINGER:
 		</div>
 	</xsl:template>
 	<xsl:template match="mh:Patient" name="Patient">
-		<div><xsl:value-of select="mh:GivenName"/>&#160;<xsl:value-of select="mh:MiddleName"/>&#160;<xsl:value-of select="mh:FamilyName"/>&#160;
+		<div>
+			<xsl:value-of select="mh:GivenName"/>&#160;<xsl:value-of select="mh:MiddleName"/>&#160;<xsl:value-of select="mh:FamilyName"/>&#160;
 			<!--** for-each løkke for å få med alle id-er dersom mer en enn id er oppgitt ** -->
 			<xsl:for-each select="mh:Ident">
 				<!--** Sjekker om id er av type XXX (Annet), da skrives den ikke ut ** -->
-				<xsl:if test="not(mh:TypeId/@V='XXX')"><b><xsl:value-of select="mh:TypeId/@V"/>:&#160;</b><xsl:value-of select="substring(mh:Id, 1,6)"/>&#160;<xsl:value-of select="substring(mh:Id, 7)"/>&#160;</xsl:if>
+				<xsl:if test="not(mh:TypeId/@V='XXX')">
+					<b>
+						<xsl:value-of select="mh:TypeId/@V"/>:&#160;</b>
+					<xsl:value-of select="substring(mh:Id, 1,6)"/>&#160;<xsl:value-of select="substring(mh:Id, 7)"/>&#160;</xsl:if>
 			</xsl:for-each>
 		</div>
 		<xsl:if test="mh:Nationality">
-			<div><b>Nasjonalitet:&#160;</b><xsl:value-of select="mh:Nationality/@DN"/>&#160;</div>
+			<div>
+				<b>Nasjonalitet:&#160;</b>
+				<xsl:value-of select="mh:Nationality/@DN"/>&#160;</div>
 		</xsl:if>
 		<xsl:apply-templates select="mh:Address"/>
 		<xsl:apply-templates select="mh:TeleCom"/>
@@ -83,10 +108,13 @@ ENDRINGER:
 		</xsl:if>
 		<xsl:choose>
 			<xsl:when test="local-name(..)!=&quot;Organisation&quot;">
-				<div><xsl:value-of select="mh:OrganisationName"/>&#160;</div>
+				<div>
+					<xsl:value-of select="mh:OrganisationName"/>&#160;</div>
 			</xsl:when>
 			<xsl:otherwise>
-				<div><div class="NoPrint">-&#160;</div><xsl:value-of select="mh:OrganisationName"/>&#160;</div>
+				<div>
+					<div class="NoPrint">-&#160;</div>
+					<xsl:value-of select="mh:OrganisationName"/>&#160;</div>
 			</xsl:otherwise>
 		</xsl:choose>
 		<xsl:if test="not(mh:Organisation//mh:Address)">
@@ -101,31 +129,43 @@ ENDRINGER:
 	</xsl:template>
 	<xsl:template match="mh:Address">
 		<div class="NoPrint">&#160;<b>
-			<xsl:choose>
-				<xsl:when test="mh:Type/@DN"><xsl:value-of select="mh:Type/@DN"/>:&#160;</xsl:when>
-				<xsl:otherwise>Adresse:&#160;</xsl:otherwise>
-			</xsl:choose>
-		</b></div>
+				<xsl:choose>
+					<xsl:when test="mh:Type/@DN">
+						<xsl:value-of select="mh:Type/@DN"/>:&#160;</xsl:when>
+					<xsl:otherwise>Adresse:&#160;</xsl:otherwise>
+				</xsl:choose>
+			</b>
+		</div>
 		<xsl:if test="mh:StreetAdr">
-			<div><xsl:value-of select="mh:StreetAdr"/></div>
+			<div>
+				<xsl:value-of select="mh:StreetAdr"/>
+			</div>
 		</xsl:if>
 		<xsl:if test="mh:PostalCode or mh:City">
 			<xsl:if test="mh:StreetAdr">
 				<div class="NoPrint">,</div>
 			</xsl:if>
-			<div><xsl:value-of select="mh:PostalCode"/>&#160;<xsl:value-of select="mh:City"/></div>
+			<div>
+				<xsl:value-of select="mh:PostalCode"/>&#160;<xsl:value-of select="mh:City"/>
+			</div>
 		</xsl:if>
 		<xsl:if test="mh:CityDistr">
 			<div class="NoPrint">,</div>
-			<div><xsl:value-of select="mh:CityDistr/@DN"/></div>
+			<div>
+				<xsl:value-of select="mh:CityDistr/@DN"/>
+			</div>
 		</xsl:if>
 		<xsl:if test="mh:County">
 			<div class="NoPrint">,</div>
-			<div><xsl:value-of select="mh:County/@DN"/></div>
+			<div>
+				<xsl:value-of select="mh:County/@DN"/>
+			</div>
 		</xsl:if>
 		<xsl:if test="mh:Country">
 			<div class="NoPrint">,</div>
-			<div><xsl:value-of select="mh:Country/@DN"/></div>
+			<div>
+				<xsl:value-of select="mh:Country/@DN"/>
+			</div>
 		</xsl:if>
 		<xsl:for-each select="mh:TeleAddress">
 			<div class="NoPrint">&#160;</div>
@@ -135,13 +175,16 @@ ENDRINGER:
 	<xsl:template match="mh:TeleCom">
 		<xsl:for-each select="mh:TeleAddress">
 			<xsl:if test="starts-with(@V, &quot;tel:&quot;) or starts-with(@V, &quot;callto:&quot;)">
-				<div><b>Telefon:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
+				<div>
+					<b>Telefon:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
 			</xsl:if>
 			<xsl:if test="starts-with(@V, &quot;fax:&quot;)">
-				<div><b>Faks:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
+				<div>
+					<b>Faks:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
 			</xsl:if>
 			<xsl:if test="starts-with(@V, &quot;mailto:&quot;)">
-				<div><b>e-post:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
+				<div>
+					<b>e-post:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
 			</xsl:if>
 		</xsl:for-each>
 	</xsl:template>
@@ -284,9 +327,15 @@ ENDRINGER:
 								<xsl:value-of select="../mh:MsgInfo/mh:MsgId"/>
 							</td>
 						</tr>
+						<tr>
+							<th>Visningsversjon</th>
+							<td>
+								<xsl:value-of select="$versjon"/>
+							</td>
+						</tr>
 					</tbody>
 				</table>
-<!-- Alternativ måte å vise dokumentinformasjonen hvor elementene flyter etter hverandre:
+				<!-- Alternativ måte å vise dokumentinformasjonen hvor elementene flyter etter hverandre:
 				<div class="Header">
 					<xsl:if test="mh:ContentType">
 						<div class="Block">

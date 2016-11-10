@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Dato oppdatert: 2016-08-17T08:48:45+02:00-->
+<!-- Dato oppdatert: 2016-11-03T10:07:02+01:00-->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:output method="html" encoding="utf-8"/>
 	<xsl:template name="k-dummy">
@@ -2214,6 +2214,7 @@
 			<xsl:when test="@V='DIALOG_INNBYGGER_HENT_DOKUMENTER'">Dialog med innbygger – hent dokument</xsl:when>
 			<xsl:when test="@V='DIALOG_INNBYGGER_TIMER'">Dialog med innbygger om timer</xsl:when>
 			<xsl:when test="@V='DIALOG_INNBYGGER_KOORDINATOR'">Dialog mellom innbygger og koordinator</xsl:when>
+			<xsl:when test="@V='0'"></xsl:when>
 			<xsl:when test="@V='EBREV'">Elektronisk brev</xsl:when>
 			<xsl:when test="@V='EbrevAbonnementStatus'">Status om abonnement</xsl:when>
 			<xsl:when test="@V='EbrevForesporsel'">Forespørsel om elektronisk brev</xsl:when>
@@ -2459,7 +2460,8 @@
 			<xsl:when test="@V='3'">Annen helseinstitusjon innen spesialisthelsetjenesten</xsl:when>
 			<xsl:when test="@V='10'">Pasienthotell</xsl:when>
 			<xsl:when test="@V='5'">Institusjon i utlandet</xsl:when>
-			<xsl:when test="@V='6'">Annet/ukjent</xsl:when>
+			<xsl:when test="@V='88'">Annet</xsl:when>
+			<xsl:when test="@V='98'">Ukjent</xsl:when>
 			<xsl:otherwise><xsl:call-template name="k-dummy"/></xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
@@ -2812,6 +2814,8 @@
 			<xsl:when test="@V='16'">Turnuslege</xsl:when>
 			<xsl:when test="@V='17'">Forløpskoordinator kreft</xsl:when>
 			<xsl:when test="@V='18'">Koordinator (spesialisthelsetjenesteloven)</xsl:when>
+			<xsl:when test="@V='19'">Kontaktlege</xsl:when>
+			<xsl:when test="@V='20'">Kontaktpsykolog</xsl:when>
 			<xsl:otherwise><xsl:call-template name="k-dummy"/></xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
@@ -3064,13 +3068,13 @@
 			<xsl:when test="@V='WF'">Wallis- og Futunaøyene</xsl:when>
 			<xsl:when test="@V='WS'">Samoa</xsl:when>
 			<xsl:when test="@V='XK'">Kosovo</xsl:when>
-			<xsl:when test="@V='XX'">Ukjent nasjon</xsl:when>
 			<xsl:when test="@V='YE'">Jemen</xsl:when>
 			<xsl:when test="@V='YT'">Mayotte</xsl:when>
 			<xsl:when test="@V='YU'">Jugoslavia</xsl:when>
 			<xsl:when test="@V='ZA'">Sør-Afrika</xsl:when>
 			<xsl:when test="@V='ZM'">Zambia</xsl:when>
 			<xsl:when test="@V='ZW'">Zimbabwe</xsl:when>
+			<xsl:when test="@V='XX'">Ukjent nasjon</xsl:when>
 			<xsl:otherwise><xsl:call-template name="k-dummy"/></xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>

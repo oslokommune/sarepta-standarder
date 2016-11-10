@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 	<!-- Endringslogg
+	- 25.10.16: La til visningsversjonnr
 	- 12.05.16: Komplettering av Helsetjenesteenheter-tabellen
 	- 05.11.15: Innføring av felles kodeverksfil
 	- 01.04.12: Ny grafisk layout
@@ -20,16 +21,27 @@
 	- Inngår i Hdirs visningsfiler versjon 2.0
 	- Laget i XMLSpy v2016 (http://www.altova.com) av Jan Sigurd Dragsjø (nhn.no)
 	-->
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dis="http://www.kith.no/xmlstds/epikrise/2006-09-23" xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:base="http://www.kith.no/xmlstds/base64container" exclude-result-prefixes="dis xhtml base">
+<xsl:stylesheet version="1.0" 
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+	xmlns:dis="http://www.kith.no/xmlstds/epikrise/2006-09-23" 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+	xmlns:base="http://www.kith.no/xmlstds/base64container" 
+	exclude-result-prefixes="dis xhtml base">
+	
 	<!-- Import. Stien tilrettelegger for katalogstruktur med en meldings-katalog med versjons-kataloger inni. Sti må endres om slik struktur ikke benyttes -->
 	<xsl:import href="../../Felleskomponenter/funksjoner.xsl"/>
 	<xsl:import href="../../Felleskomponenter/kodeverk.xsl"/>
+
 	<xsl:output method="html" encoding="UTF-8" indent="yes" omit-xml-declaration="no" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+
 	<!-- Variabel for hvilken stil visning har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
 	<xsl:variable name="stil" select="'No-line-doc'"/>
 	<!-- Variabel for standard antall kolonner i tabellene-->
 	<xsl:variable name="std-col" select="8"/>
 	<xsl:variable name="std-td" select="200"/>
+	<!-- Variabel for hvilken versjon av visningsfilen -->
+	<xsl:variable name="versjon" select="'epikrise1.1 v3.1.0 '"/>
 	<!-- Variabler for beregning av colspan i legemiddel-tabellen -->
 	<xsl:variable name="med-stat-col" select="(($std-col)-2)*number(not(//dis:Medication/dis:UnitDose | //dis:Medication/dis:QuantitySupplied | //dis:Medication/dis:DosageText | //dis:Medication/dis:IntendedDuration | //dis:Medication/dis:Comment | //dis:InfItem[dis:Medication]/dis:StartDateTime | //dis:InfItem[dis:Medication]/dis:EndDateTime | //dis:InfItem[dis:Medication]/dis:OrgDate))+1"/>
 	<xsl:variable name="med-unit-col" select="(($std-col)-3)*number(not(//dis:Medication/dis:DosageText | //dis:Medication/dis:IntendedDuration | //dis:Medication/dis:Comment | //dis:InfItem[dis:Medication]/dis:StartDateTime | //dis:InfItem[dis:Medication]/dis:EndDateTime | //dis:InfItem[dis:Medication]/dis:OrgDate))+1"/>
@@ -52,6 +64,7 @@
 	<xsl:variable name="event-out-col" select="(($std-col)-2-number(boolean(//dis:Event/dis:EventLocation))-number(boolean(//dis:Event/dis:ReportedEvent | //dis:Event/dis:ExpDuration)))*number(not(//dis:Event/dis:Priority | //dis:Event/dis:AssRequest))+1"/>
 	<xsl:variable name="event-pri-col" select="(($std-col)-2-number(boolean(//dis:Event/dis:EventLocation))-number(boolean(//dis:Event/dis:ReportedEvent | //dis:Event/dis:ExpDuration))-number(boolean(//dis:Event/dis:AdmOutcome)))*number(not(//dis:Event/dis:AssRequest))+1"/>
 	<xsl:variable name="event-ass-col" select="(($std-col)-1-number(boolean(//dis:Event/dis:EventLocation))-number(boolean(//dis:Event/dis:ReportedEvent | //dis:Event/dis:ExpDuration))-number(boolean(//dis:Event/dis:AdmOutcome))-number(boolean(//dis:Event/dis:Priority)))"/>
+
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
 			<head>
@@ -700,6 +713,12 @@
 						</td>
 						<th>Meldingsid</th>
 						<td><xsl:value-of select="../dis:MsgId"/></td>
+					</tr>
+					<tr>
+						<th>Visningsversjon</th>
+						<td colspan="3">
+							<xsl:value-of select="$versjon"/>
+						</td>
 					</tr>
 				</tbody>
 			</table>

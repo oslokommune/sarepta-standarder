@@ -84,6 +84,20 @@ body
 	display: none;
 	}
 	
+	input:checked+table {
+	display: none;
+	}
+
+	.VisSkjul {
+	margin-left: 5px;
+	color: blue;
+	}
+
+	.VisSkjul:after {
+	content:"\A";
+	white-space: pre;
+	}
+	
 }
 
 @media print {
@@ -113,6 +127,14 @@ body
 	}
 	
 	.NoPrint {
+	display: none;
+	}
+	
+	input:checked+table {
+	display: block;
+	}
+
+	.VisSkjul {
 	display: none;
 	}
 
@@ -174,8 +196,8 @@ margin-bottom:0.3em;
 padding:0.1em;
 font-size: 1.3em;
 line-height:1em;
-margin-top:2em;
-margin-bottom:0.3em;
+margin-top:1em;
+margin-bottom:0em;
 }
 
 .Document h3 {
@@ -249,7 +271,6 @@ padding: 4px 2px 4px 2px;
 }
 
 .No-line-doc td {
-background-color: white;
 border-style: none;
 text-align: left;
 vertical-align: top;
@@ -383,5 +404,6 @@ width:15em;
 #FellesMeny a:hover {
 color: purple;
 }
+
 
 <!--/*-->]]></root><!--*/--> 

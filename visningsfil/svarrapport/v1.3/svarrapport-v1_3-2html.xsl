@@ -2226,14 +2226,19 @@ Oppholdssted for pasient
 					</tr>
 				</xsl:when>
 				<xsl:otherwise>
-					<xsl:choose>
-						<xsl:when test="lsr:Content">
-							<xsl:value-of select="lsr:Content"/>
-						</xsl:when>
-						<xsl:when test="lsr:FileReference">
-							<xsl:value-of select="lsr:FileReference"/>
-						</xsl:when>
-					</xsl:choose>
+					<tr>
+						<th>Fil</th>
+						<td colspan="{($col)-1}">
+							<xsl:choose>
+								<xsl:when test="lsr:Content">
+									<xsl:value-of select="lsr:Content"/>
+								</xsl:when>
+								<xsl:when test="lsr:FileReference">
+									<xsl:value-of select="lsr:FileReference"/>
+								</xsl:when>
+							</xsl:choose>
+						</td>
+					</tr>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:if>

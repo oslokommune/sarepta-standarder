@@ -6,9 +6,9 @@
 	<Identifikator>HIS 80517:2014</Identifikator>
 	<Utgivelsesdato>2014-02-13</Utgivelsesdato>
 	<Utgiver>Helsedirektoratet</Utgiver>
+	<Status>Til utbredelse</Status>
 	<StatusReferansekatalog>Under innfasing</StatusReferansekatalog>
 	<Erstatter>HIS 80517:2005</Erstatter>
-	<Kontakt>gry.seland@ehelse.no</Kontakt>
 	<Standardtekster>
 		<Standardtekst>
 			<Beskrivelse>Henvisning. Informasjonsmodell og XML meldingsbeskrivelse (PDF)</Beskrivelse>

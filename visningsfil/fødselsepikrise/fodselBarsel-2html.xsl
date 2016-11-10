@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<!-- Endringslogg
+	- 25.10.16: La til visningsversjonnr
 	- 17.06.16 - Første versjon. Viser Fødselspikrise v1.3 eller lavere samt vedlagt Utskrivningsrapport versjon 1.6 eller lavere.
 	-->
 	<!-- Om
 	- Inngår i Hdirs visningsfiler versjon 3.0
 	- Laget i XMLSpy Ent.Ed. ver. 2016 rel. 2  (http://www.altova.com) av Jan Sigurd Dragsjø (nhn.no)
 	-->
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns="http://www.w3.org/1999/xhtml" exclude-result-prefixes="mh">
+<xsl:stylesheet version="1.0" 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
+	exclude-result-prefixes="mh">
 
 	<xsl:import href="../Felleskomponenter/meldingshode2html.xsl"/>
 	<xsl:import href="../Felleskomponenter/funksjoner.xsl"/>
 	<xsl:import href="../Felleskomponenter/kodeverk.xsl"/>
 	<xsl:import href="../plo/v1.6 eller lavere/plo2html.xsl"/>
 	
-	<xsl:output method="html" version="4.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+	<xsl:output method="html" version="4.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" 
+		doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" 
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
 	
 	<!-- Variabel for hvilken stil visningen har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
 	<xsl:variable name="stil" select="'One-line-doc'"/>
@@ -21,7 +28,10 @@
 	<!-- Variabel for standard antall kolonner i tabellene-->
 	<xsl:variable name="std-col" select="8"/>
 	<xsl:variable name="std-td" select="100"/>
-	
+
+	<!-- Variabel for hvilken versjon av visningsfilen -->
+	<xsl:variable name="versjon" select="'fødselsepikrise v3.1.0 '"/>
+
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
 			<head>
@@ -45,11 +55,13 @@
 			<xsl:when test="not(1)">
 				<xsl:call-template name="BunnTillegg">
 					<xsl:with-param name="stil" select="$stil"/>
+					<xsl:with-param name="versjon" select="$versjon"/>
 				</xsl:call-template>
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:call-template name="Bunn">
 					<xsl:with-param name="stil" select="$stil"/>
+					<xsl:with-param name="versjon" select="$versjon"/>
 				</xsl:call-template>
 			</xsl:otherwise>
 		</xsl:choose>

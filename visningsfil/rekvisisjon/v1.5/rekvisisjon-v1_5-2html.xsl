@@ -3,6 +3,7 @@
 	-	Inngår i KITHs visningsfiler versjon 10
 	-->
 	<!-- Endringslogg
+	-	25.10.16: La til visningsversjonnr
 	-	27.04.11: La til visning av flere enn en underavdeling ved pasientopphold, la til visning av Comment/TextResultValue, samt erstattet mange <br/> med <div>.
 	-	01.12.10: Import av felles CSS-fil
 	-	10.07.09: Felles komplett visningsfil for rekvisisjon
@@ -28,16 +29,28 @@
 	- Inngår i Hdirs visningsfiler versjon 2.0
 	- Laget i XMLSpy v2015 sp2 (http://www.altova.com) av Jan Sigurd Dragsjø (nhn.no)
 -->
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lso="http://www.kith.no/xmlstds/rekvisisjon/2008-12-01" xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:base="http://www.kith.no/xmlstds/base64container" exclude-result-prefixes="lso xhtml base">
+<xsl:stylesheet version="1.0" 
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+	xmlns:lso="http://www.kith.no/xmlstds/rekvisisjon/2008-12-01" 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+	xmlns:base="http://www.kith.no/xmlstds/base64container" 
+	exclude-result-prefixes="lso xhtml base">
+	
 	<xsl:import href="../../Felleskomponenter/funksjoner.xsl"/>
 	<xsl:import href="../../Felleskomponenter/kodeverk.xsl"/>
+
 	<xsl:output method="html" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+
 	<!-- Variabel-deklarasjon -->
 	<!-- Variabel for hvilken stil visning har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
 	<xsl:variable name="stil" select="'No-line-doc'"/>
 	<!-- Variabler for antall kolonner og bredde -->
 	<xsl:variable name="std-col" select="10"/>
 	<xsl:variable name="std-td" select="200"/>
+	<!-- Variabel for hvilken versjon av visningsfilen -->
+	<xsl:variable name="versjon" select="'rekvisisjon1.5 v3.1.0 '"/>
+
 	<!-- Meldingsstart -->
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
@@ -369,6 +382,12 @@
 						<th>Meldingsid</th>
 						<td>
 							<xsl:value-of select="../lso:MsgId"/>
+						</td>
+					</tr>
+					<tr>
+						<th>Visningsversjon</th>
+						<td colspan="3">
+							<xsl:value-of select="$versjon"/>
 						</td>
 					</tr>
 				</tbody>
