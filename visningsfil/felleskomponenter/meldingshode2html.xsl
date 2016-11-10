@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 	<!-- Endringslogg
+	- 25.10.16: La til visningsversjonnr
 	- 19.11.15: Småjusteringer ift. kodeverkskall.
 	- 01.01.13: Oppdatert versjon av hodemelding2html for å håndtere ulike css-stiler.
 	-->
@@ -7,11 +9,16 @@
 	- Inngår i Hdirs visningsfiler versjon 2.0
 	- Laget i XMLSpy v2016 (http://www.altova.com) av Jan Sigurd Dragsjø (nhn.no)
 	-->
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:base="http://www.kith.no/xmlstds/base64container" exclude-result-prefixes="mh base">
-	
+
+<xsl:stylesheet version="1.0" 
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
+	xmlns:base="http://www.kith.no/xmlstds/base64container" 
+	exclude-result-prefixes="mh base">
+
 	<!-- Filer som må importeres. Vanligvis gjøres dette i hovedfila som importerer denne komponentfila. Derfor er de kommentert ut.
 	<xsl:import href="funksjoner.xsl"/> -->
-	
+
 	<!-- Layout av topp -->
 	<xsl:template name="Topp">
 		<div class="No-line-top">
@@ -64,6 +71,7 @@
 	<!-- Layout av bunn -->
 	<xsl:template name="Bunn">
 		<xsl:param name="stil"/>
+		<xsl:param name="versjon"/>
 		<div class="{$stil}">
 			<h2>Dokumentinformasjon</h2>
 			<table>
@@ -76,8 +84,18 @@
 							</xsl:call-template>
 						</td>
 						<th>Meldingsid</th>
-						<td><xsl:value-of select="//mh:MsgId"/></td>
+						<td>
+							<xsl:value-of select="//mh:MsgId"/>
+						</td>
 					</tr>
+					<xsl:if test="$versjon">
+						<tr>
+							<th>Visningsversjon</th>
+							<td colspan="3">
+								<xsl:value-of select="$versjon"/>
+							</td>
+						</tr>
+					</xsl:if>
 				</tbody>
 			</table>
 		</div>
@@ -85,6 +103,7 @@
 	<!-- Layout av bunn med tillegg -->
 	<xsl:template name="BunnTillegg">
 		<xsl:param name="stil"/>
+		<xsl:param name="versjon"/>
 		<div class="{$stil}">
 			<h2>Dokumentinformasjon</h2>
 			<table>
@@ -99,8 +118,18 @@
 							</xsl:call-template>
 						</td>
 						<th>Meldingsid</th>
-						<td><xsl:value-of select="//mh:MsgId"/></td>
+						<td>
+							<xsl:value-of select="//mh:MsgId"/>
+						</td>
 					</tr>
+					<xsl:if test="$versjon">
+						<tr>
+							<th>Visningsversjon</th>
+							<td colspan="3">
+								<xsl:value-of select="$versjon"/>
+							</td>
+						</tr>
+					</xsl:if>
 				</tbody>
 			</table>
 		</div>
@@ -181,7 +210,8 @@
 			</xsl:if>
 			<xsl:for-each select="child::*[local-name()=&quot;Ident&quot;]">
 				<xsl:if test="not(child::*[local-name()=&quot;TypeId&quot;]/@V='XXX')">
-					<b><xsl:value-of select="child::*[local-name()=&quot;TypeId&quot;]/@V"/>:&#160;</b>
+					<b>
+						<xsl:value-of select="child::*[local-name()=&quot;TypeId&quot;]/@V"/>:&#160;</b>
 					<xsl:value-of select="substring(child::*[local-name()=&quot;Id&quot;], 1,6)"/>&#160;
 					<xsl:value-of select="substring(child::*[local-name()=&quot;Id&quot;], 7)"/>&#160;
 				</xsl:if>
@@ -238,7 +268,9 @@
 			</b>
 		</div>
 		<xsl:if test="child::*[local-name()=&quot;StreetAdr&quot;]">
-			<div><xsl:value-of select="child::*[local-name()=&quot;StreetAdr&quot;]"/></div>
+			<div>
+				<xsl:value-of select="child::*[local-name()=&quot;StreetAdr&quot;]"/>
+			</div>
 		</xsl:if>
 		<xsl:if test="child::*[local-name()=&quot;PostalCode&quot;] or child::*[local-name()=&quot;City&quot;]">
 			<xsl:if test="child::*[local-name()=&quot;StreetAdr&quot;]">
@@ -259,7 +291,8 @@
 		</xsl:if>
 		<xsl:if test="child::*[local-name()=&quot;Country&quot;]">
 			<div class="NoPrint">,&#160;</div>
-			<div><xsl:value-of select="child::*[local-name()=&quot;Country&quot;]/@DN"/>&#160;</div>
+			<div>
+				<xsl:value-of select="child::*[local-name()=&quot;Country&quot;]/@DN"/>&#160;</div>
 		</xsl:if>
 	</xsl:template>
 	<!-- Telekommunikasjon -->
@@ -272,38 +305,49 @@
 	<xsl:template match="mh:TeleAddress" name="TeleAddress">
 		<xsl:choose>
 			<xsl:when test="starts-with(@V, &quot;tel:&quot;) or starts-with(@V, &quot;callto:&quot;)">
-				<div><b>Telefon:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
+				<div>
+					<b>Telefon:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
 			</xsl:when>
 			<xsl:when test="starts-with(@V, &quot;fax:&quot;)">
-				<div><b>Fax:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
+				<div>
+					<b>Fax:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
 			</xsl:when>
 			<xsl:when test="starts-with(@V, &quot;mailto:&quot;)">
-				<div><b>e-post:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
+				<div>
+					<b>e-post:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
 			</xsl:when>
 			<xsl:when test="starts-with(@V, &quot;http:&quot;)">
-				<div><b>Web:</b>&#160;<xsl:value-of select="@V"/>&#160;</div>
+				<div>
+					<b>Web:</b>&#160;<xsl:value-of select="@V"/>&#160;</div>
 			</xsl:when>
 			<!-- Bruker axis her for bruk både i fk1: og mh: namespace -->
 			<xsl:when test="preceding-sibling::*/@DN">
-				<div><b><xsl:value-of select="preceding-sibling::*/@DN"/>:</b>&#160;<xsl:value-of select="@V"/></div>
+				<div>
+					<b>
+						<xsl:value-of select="preceding-sibling::*/@DN"/>:</b>&#160;<xsl:value-of select="@V"/>
+				</div>
 			</xsl:when>
 			<xsl:when test="preceding-sibling::*/@V">
-				<div><b>
-					<xsl:for-each select="preceding-sibling::*">
-						<xsl:call-template name="k-9061"/>:
-					</xsl:for-each></b>&#160;
+				<div>
+					<b>
+						<xsl:for-each select="preceding-sibling::*">
+							<xsl:call-template name="k-9061"/>:
+					</xsl:for-each>
+					</b>&#160;
 					<xsl:value-of select="@V"/>
 				</div>
 			</xsl:when>
 			<xsl:when test="contains(@V, &quot;:&quot;)">
-				<div><b>Kontakt:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
+				<div>
+					<b>Kontakt:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
 			</xsl:when>
 			<xsl:otherwise>
-				<div><b>Kontakt:</b>&#160;<xsl:value-of select="@V"/>&#160;</div>
+				<div>
+					<b>Kontakt:</b>&#160;<xsl:value-of select="@V"/>&#160;</div>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
-		<!-- Visning av vedllegg -->
+	<!-- Visning av vedllegg -->
 	<xsl:template match="mh:RefDoc">
 		<xsl:param name="std-col"/>
 		<xsl:param name="std-td"/>

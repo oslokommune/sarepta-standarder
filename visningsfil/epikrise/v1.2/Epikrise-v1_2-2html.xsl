@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 	<!-- Endringslogg
+	- 01.11.16: Justeringer av layout etter innspill fra brukere. Bl.a.: Vurdering og Videre oppfølging plassert langt oppe og med grå bakgrunn.
+	- 25.10.16: La til visningsversjonnr
 	- 12.05.16: Komplettering av Helsetjenesteenheter-tabellen
 	- 05.11.15: Innføring av felles kodeverksfil
 	- 01.04.12: Første versjon
@@ -18,16 +20,34 @@
 	- Inngår i Hdirs visningsfiler versjon 2.0
 	- Laget i XMLSpy v2016 (http://www.altova.com) av Jan Sigurd Dragsjø (nhn.no)
 	-->
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dis="http://www.kith.no/xmlstds/epikrise/2012-02-15" xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:base="http://www.kith.no/xmlstds/base64container" exclude-result-prefixes="dis xhtml base">
+	
+<xsl:stylesheet version="1.0" 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+	xmlns:dis="http://www.kith.no/xmlstds/epikrise/2012-02-15" 
+	xmlns:base="http://www.kith.no/xmlstds/base64container" 
+	exclude-result-prefixes="dis xhtml base">
+	
 	<!-- Import. Stien tilrettelegger for katalogstruktur med en meldings-katalog med versjons-kataloger inni. Sti må endres om slik struktur ikke benyttes -->
 	<xsl:import href="../../Felleskomponenter/funksjoner.xsl"/>
 	<xsl:import href="../../Felleskomponenter/kodeverk.xsl"/>
-	<xsl:output method="html" encoding="UTF-8" indent="yes" omit-xml-declaration="no" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+
+	<xsl:output method="html" encoding="UTF-8" indent="yes" 
+		omit-xml-declaration="yes" 
+		doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" 
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+
 	<!-- Variabel for hvilken stil visning har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
 	<xsl:variable name="stil" select="'No-line-doc'"/>
-	<!-- Variabel for standard antall kolonner i tabellene-->
+	
+	<!-- Variabel for hvilken versjon av visningsfilen -->
+	<xsl:variable name="versjon" select="'epikrisev1.2 v3.1.1'"/>
+
+	<!-- Variabeler for standard antall kolonner i tabellene, og for standard cellebredde i tabellene -->
 	<xsl:variable name="std-col" select="8"/>
 	<xsl:variable name="std-td" select="200"/>
+	
 	<!-- Variabler for beregning av colspan i legemiddel-tabellen -->
 	<xsl:variable name="med-stat-col" select="(($std-col)-2)*number(not(//dis:Medication/dis:UnitDose | //dis:Medication/dis:QuantitySupplied | //dis:Medication/dis:DosageText | //dis:Medication/dis:IntendedDuration | //dis:Medication/dis:Comment | //dis:InfItem[dis:Medication]/dis:StartDateTime | //dis:InfItem[dis:Medication]/dis:EndDateTime | //dis:InfItem[dis:Medication]/dis:OrgDate))+1"/>
 	<xsl:variable name="med-unit-col" select="(($std-col)-3)*number(not(//dis:Medication/dis:DosageText | //dis:Medication/dis:IntendedDuration | //dis:Medication/dis:Comment | //dis:InfItem[dis:Medication]/dis:StartDateTime | //dis:InfItem[dis:Medication]/dis:EndDateTime | //dis:InfItem[dis:Medication]/dis:OrgDate))+1"/>
@@ -36,6 +56,7 @@
 	<xsl:variable name="med-sdate-col" select="(($std-col)-3-number(boolean(//dis:Medication/dis:UnitDose | //dis:Medication/dis:QuantitySupplied))-number(boolean(//dis:Medication/dis:DosageText | //dis:Medication/dis:IntendedDuration))-number(boolean(//dis:Medication/dis:Comment)))*number(not(//dis:InfItem[dis:Medication]/dis:EndDateTime | //dis:InfItem[dis:Medication]/dis:OrgDate))+1"/>
 	<xsl:variable name="med-edate-col" select="(($std-col)-3-number(boolean(//dis:Medication/dis:UnitDose | //dis:Medication/dis:QuantitySupplied))-number(boolean(//dis:Medication/dis:DosageText | //dis:Medication/dis:IntendedDuration))-number(boolean(//dis:Medication/dis:Comment))-number(boolean(//dis:InfItem[dis:Medication]/dis:StartDateTime)))*number(not(//dis:InfItem[dis:Medication]/dis:OrgDate))+1"/>
 	<xsl:variable name="med-odate-col" select="(($std-col)-2-number(boolean(//dis:Medication/dis:UnitDose | //dis:Medication/dis:QuantitySupplied))-number(boolean(//dis:Medication/dis:DosageText | //dis:Medication/dis:IntendedDuration))-number(boolean(//dis:Medication/dis:Comment))-number(boolean(//dis:InfItem[dis:Medication]/dis:StartDateTime))-number(boolean(//dis:InfItem[dis:Medication]/dis:EndDateTime)))"/>
+	
 	<!-- Variabler for beregning av colspan i resultat-tabellen -->
 	<xsl:variable name="res-res-col" select="(($std-col)-2)*number(not(//dis:ResultItem/dis:DevResultInd | //dis:ResultItem/dis:InvDate | //dis:InfItem[dis:ResultItem]/dis:StartDateTime | //dis:InfItem[dis:ResultItem]/dis:EndDateTime | //dis:InfItem[dis:ResultItem]/dis:OrgDate))+1"/>
 	<xsl:variable name="res-dev-col" select="(($std-col)-3)*number(not(//dis:ResultItem/dis:InvDate | //dis:InfItem[dis:ResultItem]/dis:StartDateTime | //dis:InfItem[dis:ResultItem]/dis:EndDateTime | //dis:InfItem[dis:ResultItem]/dis:OrgDate))+1"/>
@@ -43,6 +64,7 @@
 	<xsl:variable name="res-sdate-col" select="(($std-col)-3-number(boolean(//dis:ResultItem/dis:DevResultInd))-number(boolean(//dis:ResultItem/dis:InvDate)))*number(not(//dis:InfItem[dis:ResultItem]/dis:EndDateTime | //dis:InfItem[dis:ResultItem]/dis:OrgDate))+1"/>
 	<xsl:variable name="res-edate-col" select="(($std-col)-3-number(boolean(//dis:ResultItem/dis:DevResultInd))-number(boolean(//dis:ResultItem/dis:InvDate))-number(boolean(//dis:InfItem[dis:ResultItem]/dis:StartDateTime)))*number(not(//dis:InfItem[dis:ResultItem]/dis:OrgDate))+1"/>
 	<xsl:variable name="res-odate-col" select="(($std-col)-2-number(boolean(//dis:ResultItem/dis:DevResultInd))-number(boolean(//dis:ResultItem/dis:InvDate))-number(boolean(//dis:InfItem[dis:ResultItem]/dis:StartDateTime))-number(boolean(//dis:InfItem[dis:ResultItem]/dis:EndDateTime)))"/>
+	
 	<!-- Variabler for beregning av colspan i hendelser-tabellen -->
 	<xsl:variable name="event-type-col" select="(($std-col)-1)*number(not(//dis:Event/dis:EventLocation | //dis:Event/dis:ReportedEvent | //dis:Event/dis:ExpDuration | //dis:Event/dis:AdmOutcome | //dis:Event/dis:Priority | //dis:Event/dis:AssRequest))+1"/>
 	<xsl:variable name="event-place-col" select="(($std-col)-2)*number(not(//dis:Event/dis:ReportedEvent | //dis:Event/dis:ExpDuration | //dis:Event/dis:AdmOutcome | //dis:Event/dis:Priority | //dis:Event/dis:AssRequest))+1"/>
@@ -50,6 +72,37 @@
 	<xsl:variable name="event-out-col" select="(($std-col)-2-number(boolean(//dis:Event/dis:EventLocation))-number(boolean(//dis:Event/dis:ReportedEvent | //dis:Event/dis:ExpDuration)))*number(not(//dis:Event/dis:Priority | //dis:Event/dis:AssRequest))+1"/>
 	<xsl:variable name="event-pri-col" select="(($std-col)-2-number(boolean(//dis:Event/dis:EventLocation))-number(boolean(//dis:Event/dis:ReportedEvent | //dis:Event/dis:ExpDuration))-number(boolean(//dis:Event/dis:AdmOutcome)))*number(not(//dis:Event/dis:AssRequest))+1"/>
 	<xsl:variable name="event-ass-col" select="(($std-col)-1-number(boolean(//dis:Event/dis:EventLocation))-number(boolean(//dis:Event/dis:ReportedEvent | //dis:Event/dis:ExpDuration))-number(boolean(//dis:Event/dis:AdmOutcome))-number(boolean(//dis:Event/dis:Priority)))"/>
+	
+	<!-- Boolske variabler for visning av 'Vis/Skjul' knapp ved hver overskrift. Settes til 'true()' om knappen skal vises -->
+	<xsl:variable name="VisDiagnoserVisSkjul" select="false()"/>
+	<xsl:variable name="VisVurderingVisSkjul" select="false()"/>
+	<xsl:variable name="VisVidereOppfolgingVisSkjul" select="false()"/>
+	<xsl:variable name="VisCAVEVisSkjul" select="false()"/>
+	<xsl:variable name="VisAarsakInnleggelseVisSkjul" select="false()"/>
+	<xsl:variable name="VisAarsakHenvisningVisSkjul" select="false()"/>
+	<xsl:variable name="VisKliniskeOpplysningerVisSkjul" select="false()"/>
+	<xsl:variable name="VisSykehistorieVisSkjul" select="false()"/>
+	<xsl:variable name="VisResultatVisSkjul" select="false()"/>
+	<xsl:variable name="VisForlopBehandlingVisSkjul" select="false()"/>
+	<xsl:variable name="VisMedisineringVisSkjul" select="false()"/>
+	<xsl:variable name="VisFunksjonVisSkjul" select="false()"/>
+	<xsl:variable name="VisSykmeldingVisSkjul" select="false()"/>
+	<xsl:variable name="VisProsedyrerVisSkjul" select="false()"/>
+	<xsl:variable name="VisAndreKliniskeVisSkjul" select="false()"/>
+	<xsl:variable name="VisFamilieVisSkjul" select="false()"/>
+	<xsl:variable name="VisInfoPasientVisSkjul" select="false()"/>
+	<xsl:variable name="VisUbesvarteVisSkjul" select="false()"/>
+	<xsl:variable name="VisTilbakemeldingVisSkjul" select="false()"/>
+	<xsl:variable name="VisOvrigPasientInfoVisSkjul" select="false()"/>
+	<xsl:variable name="VisOvrigHelsetjenesteInfoVisSkjul" select="false()"/>
+	<xsl:variable name="VisHendelseVisSkjul" select="false()"/>
+	<xsl:variable name="VisRefDokVisSkjul" select="false()"/>
+	<xsl:variable name="VisOpprinneligHenvisningVisSkjul" select="false()"/>
+	<xsl:variable name="VisDokInfoVisSkjul" select="false()"/>
+	
+	<!-- Boolsk variabel om menylinjen skal vises. Settes til true() om den skal vises. -->
+	<xsl:variable name="VisMenylinje" select="false()"/>
+	
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
 			<head>
@@ -64,6 +117,8 @@
 			</body>
 		</html>
 	</xsl:template>
+
+
 	<xsl:template match="dis:Message">
 		<xsl:for-each select="dis:ServRprt">
 			<!-- utelater meldingsid og kommunikasjonsinformasjon -->
@@ -72,6 +127,8 @@
 			<xsl:call-template name="Footer"/>
 		</xsl:for-each>
 	</xsl:template>
+
+
 	<!-- Meldingshodet - avsender og mottaker-informasjon -->
 	<xsl:template name="Header">
 		<div class="No-line-top">
@@ -97,27 +154,31 @@
 						</div>
 					</xsl:otherwise>
 				</xsl:choose>
-				<div class="No-line-headerContent">
-					<div class="No-line-caption">Mottaker&#160;</div>
-					<div class="No-line-content">
-						<xsl:apply-templates select="dis:Requester" mode="hode"/>
+				<div>
+					<div class="No-line-headerContent">
+						<div class="No-line-caption">Hovedmottaker&#160;</div>
+						<div class="No-line-content">
+							<xsl:apply-templates select="dis:Requester" mode="hode"/>
+						</div>
 					</div>
 				</div>
-				<xsl:choose>
-					<xsl:when test="dis:CopyDest">
-						<div class="No-line-headerContent">
-							<div class="No-line-caption">Kopimottaker&#160;</div>
-							<div class="No-line-content">
-								<xsl:apply-templates select="dis:CopyDest" mode="hode"/>
+				<div>
+					<xsl:choose>
+						<xsl:when test="dis:CopyDest">
+							<div class="No-line-headerContent">
+								<div class="No-line-caption">Kopimottaker&#160;</div>
+								<div class="No-line-content">
+									<xsl:apply-templates select="dis:CopyDest" mode="hode"/>
+								</div>
 							</div>
-						</div>
-					</xsl:when>
-					<xsl:otherwise>
-						<div class="No-line-headerContent">
-							<div class="NoScreen">&#160;</div>
-						</div>
-					</xsl:otherwise>
-				</xsl:choose>
+						</xsl:when>
+						<xsl:otherwise>
+							<div class="No-line-headerContent">
+								<div class="NoScreen">&#160;</div>
+							</div>
+						</xsl:otherwise>
+					</xsl:choose>
+				</div>
 			</div>
 		</div>
 	</xsl:template>
@@ -148,7 +209,11 @@
 	</xsl:template>
 	<xsl:template match="dis:HCPerson" mode="hode">
 		<div>
-			<xsl:value-of select="dis:Name"/>
+			<xsl:choose>
+				<xsl:when test="ancestor::dis:ServProvider"><font size="3em"><b><xsl:value-of select="dis:Name"/></b></font></xsl:when>
+				<xsl:otherwise><xsl:value-of select="dis:Name"/>"/></xsl:otherwise>
+			</xsl:choose>
+			<!--<xsl:value-of select="dis:Name"/>-->
 			<div class="NoPrint">,</div>&#160;</div>
 	</xsl:template>
 	<xsl:template match="dis:HCP" mode="hode">
@@ -159,7 +224,11 @@
 	<xsl:template match="dis:Inst" mode="hode">
 		<xsl:apply-templates select="dis:HCPerson" mode="hode"/>
 		<div>
-			<xsl:value-of select="dis:Name"/>
+			<xsl:choose>
+				<xsl:when test="ancestor::dis:ServProvider"><font size="3em"><b><xsl:value-of select="dis:Name"/></b></font></xsl:when>
+				<xsl:otherwise><xsl:value-of select="dis:Name"/></xsl:otherwise>
+			</xsl:choose>
+			<!--<xsl:value-of select="dis:Name"/>-->
 		</div>
 		<xsl:for-each select="dis:Dept">
 			<div>
@@ -171,7 +240,12 @@
 		<div>
 			<xsl:for-each select="dis:Type">
 				<xsl:call-template name="k-9060"/>
-			</xsl:for-each>&#160;<xsl:value-of select="dis:Name"/>
+			</xsl:for-each>&#160;
+			<xsl:choose>
+				<xsl:when test="ancestor::dis:ServProvider"><font size="3em"><b><xsl:value-of select="dis:Name"/></b></font></xsl:when>
+				<xsl:otherwise><xsl:value-of select="dis:Name"/></xsl:otherwise>
+			</xsl:choose>
+			<!--<font size="3em"><b><xsl:value-of select="dis:Name"/></b></font>-->
 		</div>
 	</xsl:template>
 	<xsl:template match="dis:CopyDest" mode="hode">
@@ -245,9 +319,11 @@
 			</xsl:choose>
 		</xsl:variable>
 		<div class="{$stil}">
-			<xsl:call-template name="FellesMeny">
-				<xsl:with-param name="position" select="position()"/>
-			</xsl:call-template>
+			<xsl:if test="$VisMenylinje">
+				<xsl:call-template name="FellesMeny">
+					<xsl:with-param name="position" select="position()"/>
+				</xsl:call-template>
+			</xsl:if>
 			<!-- Overskrift og tabell for epikrisen -->
 			<h1>
 				<xsl:choose>
@@ -272,18 +348,72 @@
 				<xsl:variable name="id1">
 					<xsl:value-of select="concat('Diagnosis',$position)"/>
 				</xsl:variable>
-				<h2 id="{$id1}">Diagnoser</h2>
-				<table>
+				<xsl:variable name="DisplayBlock">
+					<xsl:choose>
+						<xsl:when test="$VisDiagnoserVisSkjul">inline-block</xsl:when>
+						<xsl:otherwise>block</xsl:otherwise>
+					</xsl:choose>
+				</xsl:variable>
+				<h2 style="background-color:#e3e3e3; padding-top:1em; margin-top:0em; padding-left:1em; margin-left:0em; display:{$DisplayBlock}" id="{$id1}">Diagnoser</h2>
+				<xsl:if test="$VisDiagnoserVisSkjul">
+					<label for="vis{$id1}" class="VisSkjul">Vis/Skjul</label>
+					<input type="checkbox" id="vis{$id1}" style="display: none; margin-bottom:0em;"/>
+				</xsl:if>
+				<table style="background-color:#e3e3e3; padding-left:1em; margin-left:0em;">
 					<tbody>
-						<xsl:apply-templates select="//dis:Diagnosis"/>
-						<xsl:apply-templates select="//dis:DiagComment"/>
-						<xsl:apply-templates select="//dis:ReasonAsText[dis:Heading/@V='DIAG']"/>
 						<xsl:for-each select="//dis:InfItem[dis:Type/@V='H']">
 							<xsl:apply-templates/>
 						</xsl:for-each>
 						<xsl:for-each select="//dis:InfItem[dis:Type/@V='B']">
 							<xsl:apply-templates/>
 						</xsl:for-each>
+						<xsl:apply-templates select="//dis:Diagnosis"/>
+						<xsl:apply-templates select="//dis:DiagComment"/>
+						<xsl:apply-templates select="//dis:ReasonAsText[dis:Heading/@V='DIAG']"/>
+					</tbody>
+				</table>
+			</xsl:if>
+			<!-- Overskrift og tabell for Vurdering -->
+			<xsl:if test="//dis:Comment[dis:Heading/@V='VU']">
+				<xsl:variable name="id6">
+					<xsl:value-of select="concat('VU',$position)"/>
+				</xsl:variable>
+				<xsl:variable name="DisplayBlock">
+					<xsl:choose>
+						<xsl:when test="$VisVurderingVisSkjul">inline-block</xsl:when>
+						<xsl:otherwise>block</xsl:otherwise>
+					</xsl:choose>
+				</xsl:variable>
+				<h2 id="{$id6}" style="background-color:#e3e3e3; padding-top:1em; margin-top:0em; padding-left:1em; margin-left:0em; display:{$DisplayBlock}">Vurdering</h2>
+				<xsl:if test="$VisVurderingVisSkjul">
+					<label for="vis{$id6}" class="VisSkjul">Vis/Skjul</label>
+					<input type="checkbox" id="vis{$id6}" style="display: none;"/>
+				</xsl:if>
+				<table style="background-color:#e3e3e3; padding-left:1em; margin-left:0em;">
+					<tbody>
+						<xsl:apply-templates select="//dis:Comment[dis:Heading/@V='VU']"/>
+					</tbody>
+				</table>
+			</xsl:if>
+			<!-- Overskrift og tabell for Videre oppfølging -->
+			<xsl:if test="//dis:Comment[dis:Heading/@V='OP']">
+				<xsl:variable name="id11">
+					<xsl:value-of select="concat('OP',$position)"/>
+				</xsl:variable>
+				<xsl:variable name="DisplayBlock">
+					<xsl:choose>
+						<xsl:when test="$VisVidereOppfolgingVisSkjul">inline-block</xsl:when>
+						<xsl:otherwise>block</xsl:otherwise>
+					</xsl:choose>
+				</xsl:variable>
+				<h2 id="{$id11}" style="background-color:#e3e3e3; padding-top:1em; margin-top:0em; padding-left:1em; margin-left:0em; display:{$DisplayBlock}">Videre&#160;oppfølging</h2>
+				<xsl:if test="$VisVidereOppfolgingVisSkjul">
+					<label for="vis{$id11}" class="VisSkjul">Vis/Skjul</label>
+					<input type="checkbox" id="vis{$id11}" style="display: none;"/>
+				</xsl:if>
+				<table style="background-color:#e3e3e3; padding-left:1em; margin-left:0em;">
+					<tbody>
+						<xsl:apply-templates select="//dis:Comment[dis:Heading/@V='OP']"/>
 					</tbody>
 				</table>
 			</xsl:if>
@@ -292,11 +422,15 @@
 				<xsl:variable name="id2">
 					<xsl:value-of select="concat('CAVE',$position)"/>
 				</xsl:variable>
-				<h2 id="{$id2}">
+				<h2 id="{$id2}" style="display:inline-block">
 					<xsl:if test="//dis:InfItem[dis:Type/@V='CAVE']">CAVE</xsl:if>
 					<xsl:if test="//dis:InfItem[dis:Type/@V='CAVE'] and //dis:InfItem[dis:Type/@V='NB']">&#160;og&#160;</xsl:if>
 					<xsl:if test="//dis:InfItem[dis:Type/@V='NB']">NB-opplysninger</xsl:if>
 				</h2>
+				<xsl:if test="VisCAVEVisSkjul">
+					<label for="vis{$id2}" class="VisSkjul">Vis/Skjul</label>
+					<input type="checkbox" id="vis{$id2}" style="display: none; margin-bottom:0em;"/>
+				</xsl:if>
 				<table>
 					<tbody>
 						<xsl:for-each select="//dis:InfItem[dis:Type/@V='CAVE']">
@@ -313,7 +447,11 @@
 				<xsl:variable name="id3">
 					<xsl:value-of select="concat('AI',$position)"/>
 				</xsl:variable>
-				<h2 id="{$id3}">Årsak&#160;til&#160;innleggelse</h2>
+				<h2 id="{$id3}" style="display:inline-block">Årsak&#160;til&#160;innleggelse</h2>
+				<xsl:if test="VisAarsakInnleggelseVisSkjul">
+					<label for="vis{$id3}" class="VisSkjul">Vis/Skjul</label>
+					<input type="checkbox" id="vis{$id3}" style="display: none;"/>
+				</xsl:if>
 				<table>
 					<tbody>
 						<xsl:apply-templates select="//dis:Comment[dis:Heading/@V='AI']"/>
@@ -326,7 +464,11 @@
 				<xsl:variable name="id4">
 					<xsl:value-of select="concat('AH',$position)"/>
 				</xsl:variable>
-				<h2 id="{$id4}">Årsak&#160;til&#160;henvisning</h2>
+				<h2 id="{$id4}" style="display:inline-block">Årsak&#160;til&#160;henvisning</h2>
+				<xsl:if test="$VisAarsakHenvisningVisSkjul">
+					<label for="vis{$id4}" class="VisSkjul">Vis/Skjul</label>
+					<input type="checkbox" id="vis{$id4}" style="display: none;"/>
+				</xsl:if>
 				<table>
 					<tbody>
 						<xsl:apply-templates select="//dis:Comment[dis:Heading/@V='AH']"/>
@@ -338,7 +480,11 @@
 				<xsl:variable name="id50">
 					<xsl:value-of select="concat('OPPL',$position)"/>
 				</xsl:variable>
-				<h2 id="{$id50}">Kliniske&#160;opplysninger</h2>
+				<h2 id="{$id50}" style="display:inline-block">Kliniske&#160;opplysninger</h2>
+				<xsl:if test="VisKliniskeOpplysningerVisSkjul">
+					<label for="vis{$id50}" class="VisSkjul">Vis/Skjul</label>
+					<input type="checkbox" id="vis{$id50}" style="display: none;"/>
+				</xsl:if>
 				<table>
 					<tbody>
 						<xsl:for-each select="//dis:InfItem[dis:Type/@V='OPPL']">
@@ -352,7 +498,11 @@
 				<xsl:variable name="id5">
 					<xsl:value-of select="concat('TS',$position)"/>
 				</xsl:variable>
-				<h2 id="{$id5}">Sykehistorie</h2>
+				<h2 id="{$id5}" style="display:inline-block">Sykehistorie</h2>
+				<xsl:if test="$VisSykehistorieVisSkjul">
+					<label for="vis{$id5}" class="VisSkjul">Vis/Skjul</label>
+					<input type="checkbox" id="vis{$id5}" style="display: none;"/>
+				</xsl:if>
 				<table>
 					<tbody>
 						<xsl:apply-templates select="//dis:Comment[dis:Heading/@V='TS']"/>
@@ -362,24 +512,16 @@
 					</tbody>
 				</table>
 			</xsl:if>
-			<!-- Overskrift og tabell for Vurdering -->
-			<xsl:if test="//dis:Comment[dis:Heading/@V='VU']">
-				<xsl:variable name="id6">
-					<xsl:value-of select="concat('VU',$position)"/>
-				</xsl:variable>
-				<h2 id="{$id6}">Vurdering</h2>
-				<table>
-					<tbody>
-						<xsl:apply-templates select="//dis:Comment[dis:Heading/@V='VU']"/>
-					</tbody>
-				</table>
-			</xsl:if>
 			<!-- Overskrift og tabell for Funn/undersøkelsesresultat -->
 			<xsl:if test="//dis:Comment[dis:Heading/@V='FU' or dis:Heading/@V='LR'] or //dis:InfItem[dis:Type/@V='FUNN']">
 				<xsl:variable name="id7">
 					<xsl:value-of select="concat('FU',$position)"/>
 				</xsl:variable>
-				<h2 id="{$id7}">Funn/undersøkelsesresultat</h2>
+				<h2 id="{$id7}" style="display:inline-block">Funn/undersøkelsesresultat</h2>
+				<xsl:if test="$VisResultatVisSkjul">
+					<label for="vis{$id7}" class="VisSkjul">Vis/Skjul</label>
+					<input type="checkbox" id="vis{$id7}" style="display: none;"/>
+				</xsl:if>
 				<table>
 					<tbody>
 						<xsl:apply-templates select="//dis:Comment[dis:Heading/@V='FU']"/>
@@ -421,7 +563,11 @@
 				<xsl:variable name="id8">
 					<xsl:value-of select="concat('FO',$position)"/>
 				</xsl:variable>
-				<h2 id="{$id8}">Forløp&#160;og&#160;behandling</h2>
+				<h2 id="{$id8}" style="display:inline-block">Forløp&#160;og&#160;behandling</h2>
+				<xsl:if test="$VisForlopBehandlingVisSkjul">
+					<label for="vis{$id8}" class="VisSkjul">Vis/Skjul</label>
+					<input type="checkbox" id="vis{$id8}" style="display: none;"/>
+				</xsl:if>
 				<table>
 					<tbody>
 						<xsl:apply-templates select="//dis:Comment[dis:Heading/@V='FO']"/>
@@ -433,7 +579,11 @@
 				<xsl:variable name="id9">
 					<xsl:value-of select="concat('ME',$position)"/>
 				</xsl:variable>
-				<h2 id="{$id9}">Medisinering</h2>
+				<h2 id="{$id9}" style="display:inline-block">Medisinering</h2>
+				<xsl:if test="$VisForlopBehandlingVisSkjul">
+					<label for="vis{$id9}" class="VisSkjul">Vis/Skjul</label>
+					<input type="checkbox" id="vis{$id9}" style="display: none;"/>
+				</xsl:if>
 				<table>
 					<tbody>
 						<xsl:apply-templates select="//dis:Comment[dis:Heading/@V='ME']"/>
@@ -441,6 +591,12 @@
 							<xsl:apply-templates select="."/>
 						</xsl:for-each>
 						<xsl:for-each select="//dis:Medication">
+							<xsl:variable name="rowColor">
+								<xsl:choose>
+									<xsl:when test="boolean(position() mod 2)">#f8f8f8</xsl:when>
+									<xsl:otherwise>white</xsl:otherwise>
+								</xsl:choose>
+							</xsl:variable>
 							<xsl:if test="position()=1">
 								<tr>
 									<th>Legemiddel</th>
@@ -469,7 +625,7 @@
 									</xsl:if>
 								</tr>
 							</xsl:if>
-							<tr>
+							<tr bgcolor="{$rowColor}">
 								<xsl:apply-templates select="."/>
 							</tr>
 						</xsl:for-each>
@@ -481,22 +637,14 @@
 				<xsl:variable name="id10">
 					<xsl:value-of select="concat('HJ',$position)"/>
 				</xsl:variable>
-				<h2 id="{$id10}">Funksjonsnivå/hjelpetiltak</h2>
+				<h2 id="{$id10}" style="display:inline-block">Funksjonsnivå/hjelpetiltak</h2>
+				<xsl:if test="$VisFunksjonVisSkjul">
+					<label for="vis{$id10}" class="VisSkjul">Vis/Skjul</label>
+					<input type="checkbox" id="vis{$id10}" style="display: none;"/>
+				</xsl:if>
 				<table>
 					<tbody>
 						<xsl:apply-templates select="//dis:Comment[dis:Heading/@V='HJ']"/>
-					</tbody>
-				</table>
-			</xsl:if>
-			<!-- Overskrift og tabell for Videre oppfølging -->
-			<xsl:if test="//dis:Comment[dis:Heading/@V='OP']">
-				<xsl:variable name="id11">
-					<xsl:value-of select="concat('OP',$position)"/>
-				</xsl:variable>
-				<h2 id="{$id11}">Videre&#160;oppfølging</h2>
-				<table>
-					<tbody>
-						<xsl:apply-templates select="//dis:Comment[dis:Heading/@V='OP']"/>
 					</tbody>
 				</table>
 			</xsl:if>
@@ -505,7 +653,11 @@
 				<xsl:variable name="id12">
 					<xsl:value-of select="concat('SY',$position)"/>
 				</xsl:variable>
-				<h2 id="{$id12}">Sykmelding</h2>
+				<h2 id="{$id12}" style="display:inline-block">Sykmelding</h2>
+				<xsl:if test="$VisSykmeldingVisSkjul">
+					<label for="vis{$id12}" class="VisSkjul">Vis/Skjul</label>
+					<input type="checkbox" id="vis{$id12}" style="display: none;"/>
+				</xsl:if>
 				<table>
 					<tbody>
 						<xsl:apply-templates select="//dis:Comment[dis:Heading/@V='SY']"/>
@@ -520,7 +672,11 @@
 				<xsl:variable name="id60">
 					<xsl:value-of select="concat('PRS',$position)"/>
 				</xsl:variable>
-				<h2 id="{$id60}">Prosedyrer&#160;mv.</h2>
+				<h2 id="{$id60}" style="display:inline-block">Prosedyrer&#160;mv.</h2>
+				<xsl:if test="$VisProsedyrerVisSkjul">
+					<label for="vis{$id60}" class="VisSkjul">Vis/Skjul</label>
+					<input type="checkbox" id="vis{$id60}" style="display: none;"/>
+				</xsl:if>
 				<table>
 					<tbody>
 						<xsl:for-each select="//dis:InfItem[dis:Type/@V='OPIN' or dis:Type/@V='MPRS' or dis:Type/@V='PRS']">
@@ -534,7 +690,11 @@
 				<xsl:variable name="id70">
 					<xsl:value-of select="concat('PROG',$position)"/>
 				</xsl:variable>
-				<h2 id="{$id70}">Andre&#160;kliniske&#160;opplysninger</h2>
+				<h2 id="{$id70}" style="display:inline-block">Andre&#160;kliniske&#160;opplysninger</h2>
+				<xsl:if test="$VisAndreKliniskeVisSkjul">
+					<label for="vis{$id70}" class="VisSkjul">Vis/Skjul</label>
+					<input type="checkbox" id="vis{$id70}" style="display: none;"/>
+				</xsl:if>
 				<table>
 					<tbody>
 						<xsl:for-each select="//dis:InfItem[dis:Type/@V='PROG' or dis:Type/@V='GBEH' or dis:Type/@V='GOPL' or dis:Type/@V='SYMP' or dis:Type/@V='TB' or dis:Type/@V='US' or dis:Type/@V='SM']">
@@ -548,7 +708,11 @@
 				<xsl:variable name="id13">
 					<xsl:value-of select="concat('FA',$position)"/>
 				</xsl:variable>
-				<h2 id="{$id13}">Familie/sosialt</h2>
+				<h2 id="{$id13}" style="display:inline-block">Familie/sosialt</h2>
+				<xsl:if test="$VisFamilieVisSkjul">
+					<label for="vis{$id13}" class="VisSkjul">Vis/Skjul</label>
+					<input type="checkbox" id="vis{$id13}" style="display: none;"/>
+				</xsl:if>
 				<table>
 					<tbody>
 						<xsl:apply-templates select="//dis:Comment[dis:Heading/@V='FA']"/>
@@ -560,7 +724,11 @@
 				<xsl:variable name="id14">
 					<xsl:value-of select="concat('IP',$position)"/>
 				</xsl:variable>
-				<h2 id="{$id14}">Informasjon&#160;til&#160;pasient/pårørende</h2>
+				<h2 id="{$id14}" style="display:inline-block">Informasjon&#160;til&#160;pasient/pårørende</h2>
+				<xsl:if test="$VisInfoPasientVisSkjul">
+					<label for="vis{$id14}" class="VisSkjul">Vis/Skjul</label>
+					<input type="checkbox" id="vis{$id14}" style="display: none;"/>
+				</xsl:if>
 				<table>
 					<tbody>
 						<xsl:apply-templates select="//dis:Comment[dis:Heading/@V='IP']"/>
@@ -572,7 +740,11 @@
 				<xsl:variable name="id15">
 					<xsl:value-of select="concat('UP',$position)"/>
 				</xsl:variable>
-				<h2 id="{$id15}">Ubesvarte&#160;prøver</h2>
+				<h2 id="{$id15}" style="display:inline-block">Ubesvarte&#160;prøver</h2>
+				<xsl:if test="$VisUbesvarteVisSkjul">
+					<label for="vis{$id15}" class="VisSkjul">Vis/Skjul</label>
+					<input type="checkbox" id="vis{$id15}" style="display: none;"/>
+				</xsl:if>
 				<table>
 					<tbody>
 						<xsl:apply-templates select="//dis:Comment[dis:Heading/@V='UP']"/>
@@ -584,7 +756,11 @@
 				<xsl:variable name="id16">
 					<xsl:value-of select="concat('TB',$position)"/>
 				</xsl:variable>
-				<h2 id="{$id16}">Tilbakemelding&#160;(uspes.)</h2>
+				<h2 id="{$id16}" style="display:inline-block">Tilbakemelding&#160;(uspes.)</h2>
+				<xsl:if test="$VisTilbakemeldingVisSkjul">
+					<label for="vis{$id16}" class="VisSkjul">Vis/Skjul</label>
+					<input type="checkbox" id="vis{$id16}" style="display: none;"/>
+				</xsl:if>
 				<table>
 					<tbody>
 						<xsl:apply-templates select="//dis:Comment[dis:Heading/@V='TB']"/>
@@ -598,7 +774,11 @@
 					<xsl:variable name="id30">
 						<xsl:value-of select="concat('Patient',$position)"/>
 					</xsl:variable>
-					<h2 id="{$id30}">Pasient</h2>
+					<h2 id="{$id30}" style="display:inline-block">Pasient</h2>
+					<xsl:if test="$VisOvrigPasientInfoVisSkjul">
+						<label for="vis{$id30}" class="VisSkjul">Vis/Skjul</label>
+						<input type="checkbox" id="vis{$id30}" style="display: none;"/>
+					</xsl:if>
 					<table>
 						<tbody>
 							<xsl:apply-templates select="."/>
@@ -610,7 +790,11 @@
 			<xsl:variable name="id31">
 				<xsl:value-of select="concat('HCP',$position)"/>
 			</xsl:variable>
-			<h2 id="{$id31}">Helsetjenesteenheter</h2>
+			<h2 id="{$id31}" style="display:inline-block">Helsetjenesteenheter</h2>
+			<xsl:if test="$VisOvrigHelsetjenesteInfoVisSkjul">
+				<label for="vis{$id31}" class="VisSkjul">Vis/Skjul</label>
+				<input type="checkbox" id="vis{$id31}" style="display: none;"/>
+			</xsl:if>
 			<table>
 				<tbody>
 					<xsl:for-each select="dis:ServProvider | dis:Requester | dis:CopyDest | .//dis:RelServProvider | .//dis:Origin | .//dis:RelHCProvider | .//dis:PatRelHCP">
@@ -625,7 +809,11 @@
 				<xsl:variable name="id32">
 					<xsl:value-of select="concat('Event',$position)"/>
 				</xsl:variable>
-				<h2 id="{$id32}">Hendelser</h2>
+				<h2 id="{$id32}" style="display:inline-block">Hendelser</h2>
+				<xsl:if test="$VisHendelseVisSkjul">
+					<label for="vis{$id32}" class="VisSkjul">Vis/Skjul</label>
+					<input type="checkbox" id="vis{$id32}" style="display: none;"/>
+				</xsl:if>
 				<table>
 					<tbody>
 						<xsl:for-each select="//dis:Event">
@@ -662,7 +850,11 @@
 				<xsl:variable name="id40">
 					<xsl:value-of select="concat('RefDoc',$position)"/>
 				</xsl:variable>
-				<h2 id="{$id40}">Vedlegg</h2>
+				<h2 id="{$id40}" style="display:inline-block">Vedlegg</h2>
+				<xsl:if test="$VisRefDokVisSkjul">
+					<label for="vis{$id40}" class="VisSkjul">Vis/Skjul</label>
+					<input type="checkbox" id="vis{$id40}" style="display: none;"/>
+				</xsl:if>
 				<table>
 					<tbody>
 						<xsl:apply-templates select="dis:RefDoc"/>
@@ -674,7 +866,11 @@
 				<xsl:variable name="id41">
 					<xsl:value-of select="concat('ServReq',$position)"/>
 				</xsl:variable>
-				<h2 id="{$id41}">Opprinnelig&#160;henvisning</h2>
+				<h2 id="{$id41}" style="display:inline-block">Opprinnelig&#160;henvisning</h2>
+				<xsl:if test="$VisOpprinneligHenvisningVisSkjul">
+					<label for="vis{$id41}" class="VisSkjul">Vis/Skjul</label>
+					<input type="checkbox" id="vis{$id41}" style="display: none;"/>
+				</xsl:if>
 				<table>
 					<tbody>
 						<xsl:apply-templates select="dis:ServReq"/>
@@ -686,7 +882,11 @@
 	<!-- Meldingshodet - Dokumentopplysninger -->
 	<xsl:template name="Footer">
 		<div class="{$stil}">
-			<h2>Dokumentinformasjon</h2>
+			<h2 style="display:inline-block">Dokumentinformasjon</h2>
+			<xsl:if test="$VisDokInfoVisSkjul">
+				<label for="visFooter" class="VisSkjul">Vis/Skjul</label>
+				<input type="checkbox" id="visFooter" style="display: none;"/>
+			</xsl:if>
 			<table>
 				<tbody>
 					<tr>
@@ -698,6 +898,46 @@
 						</td>
 						<th>Meldingsid</th>
 						<td><xsl:value-of select="../dis:MsgId"/></td>
+					</tr>
+					<tr>
+						<th>Visningsversjon</th>
+						<td colspan="3">
+							<xsl:value-of select="$versjon"/>
+						</td>
+					</tr>
+					<tr>
+						<xsl:if test="dis:IssueDate">
+							<th>Utstedt</th>
+							<td width="{((($std-col)-2)*number(not(dis:Priority | dis:ApprDate | dis:Ack))+1)*$std-td}px" colspan="{(($std-col)-2)*number(not(dis:Priority | dis:ApprDate | dis:Ack))+1}">
+								<xsl:call-template name="skrivUtTS">
+									<xsl:with-param name="oppgittTid" select="dis:IssueDate/@V"/>
+								</xsl:call-template>
+							</td>
+						</xsl:if>
+						<xsl:if test="dis:Priority">
+							<th>Hastegrad</th>
+							<td width="{((($std-col)-2-count(dis:IssueDate)*2)*number(not(dis:ApprDate | dis:Ack))+1)*$std-td}px" colspan="{(($std-col)-2-count(dis:IssueDate)*2)*number(not(dis:ApprDate | dis:Ack))+1}">
+								<xsl:for-each select="dis:Priority">
+									<xsl:call-template name="k-7303"/>
+								</xsl:for-each>
+							</td>
+						</xsl:if>
+						<xsl:if test="dis:ApprDate">
+							<th>Godkjent</th>
+							<td width="{((($std-col)-2-count(dis:IssueDate | dis:Priority)*2)*number(not(dis:Ack))+1)*$std-td}px" colspan="{(($std-col)-2-count(dis:IssueDate | dis:Priority)*2)*number(not(dis:Ack))+1}">
+								<xsl:call-template name="skrivUtTS">
+									<xsl:with-param name="oppgittTid" select="dis:ApprDate/@V"/>
+								</xsl:call-template>
+							</td>
+						</xsl:if>
+						<xsl:if test="dis:Ack">
+							<th>Meldingsbekreftelse</th>
+							<td colspan="{($std-col)-1-count(dis:IssueDate | dis:Priority | dis:ApprDate)*2}">
+								<xsl:for-each select="dis:Ack">
+									<xsl:call-template name="k-7304"/>
+								</xsl:for-each>
+							</td>
+						</xsl:if>
 					</tr>
 				</tbody>
 			</table>
@@ -725,6 +965,18 @@
 							</a>
 						</li>
 					</xsl:if>
+					<xsl:if test="//dis:Comment[dis:Heading/@V='VU']">
+						<li>
+							<xsl:variable name="temp6" select="concat('VU',$position)"/>
+							<a href="#{$temp6}">Vurdering</a>
+						</li>
+					</xsl:if>
+					<xsl:if test="//dis:Comment[dis:Heading/@V='OP']">
+						<li>
+							<xsl:variable name="temp11" select="concat('OP',$position)"/>
+							<a href="#{$temp11}">Videre&#160;oppfølging</a>
+						</li>
+					</xsl:if>
 					<xsl:if test="//dis:Comment[dis:Heading/@V='AI'] or //dis:Comment[dis:Heading/@V='ÅI']">
 						<li>
 							<xsl:variable name="temp3" select="concat('AI',$position)"/>
@@ -749,12 +1001,6 @@
 							<a href="#{$temp5}">Sykehistorie</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//dis:Comment[dis:Heading/@V='VU']">
-						<li>
-							<xsl:variable name="temp6" select="concat('VU',$position)"/>
-							<a href="#{$temp6}">Vurdering</a>
-						</li>
-					</xsl:if>
 					<xsl:if test="//dis:Comment[dis:Heading/@V='FU' or dis:Heading/@V='LR'] or //dis:InfItem[dis:Type/@V='FUNN']">
 						<li>
 							<xsl:variable name="temp7" select="concat('FU',$position)"/>
@@ -777,12 +1023,6 @@
 						<li>
 							<xsl:variable name="temp10" select="concat('HJ',$position)"/>
 							<a href="#{$temp10}">Funksjonsnivå/hjelpetiltak</a>
-						</li>
-					</xsl:if>
-					<xsl:if test="//dis:Comment[dis:Heading/@V='OP']">
-						<li>
-							<xsl:variable name="temp11" select="concat('OP',$position)"/>
-							<a href="#{$temp11}">Videre&#160;oppfølging</a>
 						</li>
 					</xsl:if>
 					<xsl:if test="//dis:Comment[dis:Heading/@V='SY'] or //dis:InfItem[dis:Type/@V='SYKM']">
@@ -865,12 +1105,12 @@
 	</xsl:template>
 	<!-- Visning av Tilbakemelding -->
 	<xsl:template match="dis:ServRprt">
-		<xsl:if test="//dis:ReportedEvent/dis:StartDateTime or //dis:ReportedEvent/dis:EndDateTime">
+		<xsl:if test="//dis:ReportedEvent/dis:StartDateTime or //dis:ReportedEvent/dis:EndDateTime or //dis:RelServProvider">
 			<tr>
 				<xsl:for-each select="//dis:ReportedEvent">
 					<xsl:if test="dis:StartDateTime and position()=1">
 						<th>Innlagt</th>
-						<td width="{((($std-col)-2)*number(not(dis:EndDateTime))+1)*$std-td}px" colspan="{(($std-col)-2)*number(not(dis:EndDateTime))+1}">
+						<td width="{((($std-col)-2)*number(not(dis:EndDateTime | //dis:RelServProvider))+1)*$std-td}px" colspan="{(($std-col)-2)*number(not(dis:EndDateTime | //dis:RelServProvider))+1}">
 							<xsl:call-template name="skrivUtTS">
 								<xsl:with-param name="oppgittTid" select="dis:StartDateTime/@V"/>
 							</xsl:call-template>
@@ -878,64 +1118,26 @@
 					</xsl:if>
 					<xsl:if test="dis:EndDateTime and position()=last()">
 						<th>Utskrevet</th>
-						<td colspan="{($std-col)-1-count(dis:StartDateTime)*2}">
+						<td width="{((($std-col)-2-count(dis:StartDateTime)*2)*number(not(//dis:RelServProvider))+1)*$std-td}px" colspan="{(($std-col)-2-count(dis:StartDateTime)*2)*number(not(//dis:RelServProvider))+1}">
 							<xsl:call-template name="skrivUtTS">
 								<xsl:with-param name="oppgittTid" select="dis:EndDateTime/@V"/>
 							</xsl:call-template>
 						</td>
 					</xsl:if>
 				</xsl:for-each>
-			</tr>
-		</xsl:if>
-		<xsl:if test="//dis:RelServProvider">
-			<xsl:for-each select="//dis:RelServProvider//dis:HCProf">
-				<xsl:if test="position()=1">
-					<tr>
+				<xsl:for-each select="//dis:RelServProvider//dis:HCProf">
+					<xsl:if test="position()=1">
 						<th>Ansvarlig</th>
-						<td colspan="{($std-col)-1}">
+						<td colspan="{($std-col)-1-count(//dis:ReportedEvent/dis:EndDateTime | //dis:ReportedEvent/dis:StartDateTime)*2}">
 							<xsl:for-each select="dis:Type">
 								<xsl:call-template name="k-9060"/>&#160;
 							</xsl:for-each>
 							<xsl:value-of select="dis:Name"/>
 						</td>
-					</tr>
-				</xsl:if>
-			</xsl:for-each>
+					</xsl:if>
+				</xsl:for-each>
+			</tr>
 		</xsl:if>
-		<tr>
-			<xsl:if test="dis:IssueDate">
-				<th>Utstedt</th>
-				<td width="{((($std-col)-2)*number(not(dis:Priority | dis:ApprDate | dis:Ack))+1)*$std-td}px" colspan="{(($std-col)-2)*number(not(dis:Priority | dis:ApprDate | dis:Ack))+1}">
-					<xsl:call-template name="skrivUtTS">
-						<xsl:with-param name="oppgittTid" select="dis:IssueDate/@V"/>
-					</xsl:call-template>
-				</td>
-			</xsl:if>
-			<xsl:if test="dis:Priority">
-				<th>Hastegrad</th>
-				<td width="{((($std-col)-2-count(dis:IssueDate)*2)*number(not(dis:ApprDate | dis:Ack))+1)*$std-td}px" colspan="{(($std-col)-2-count(dis:IssueDate)*2)*number(not(dis:ApprDate | dis:Ack))+1}">
-					<xsl:for-each select="dis:Priority">
-						<xsl:call-template name="k-7303"/>
-					</xsl:for-each>
-				</td>
-			</xsl:if>
-			<xsl:if test="dis:ApprDate">
-				<th>Godkjent</th>
-				<td width="{((($std-col)-2-count(dis:IssueDate | dis:Priority)*2)*number(not(dis:Ack))+1)*$std-td}px" colspan="{(($std-col)-2-count(dis:IssueDate | dis:Priority)*2)*number(not(dis:Ack))+1}">
-					<xsl:call-template name="skrivUtTS">
-						<xsl:with-param name="oppgittTid" select="dis:ApprDate/@V"/>
-					</xsl:call-template>
-				</td>
-			</xsl:if>
-			<xsl:if test="dis:Ack">
-				<th>Meldingsbekreftelse</th>
-				<td colspan="{($std-col)-1-count(dis:IssueDate | dis:Priority | dis:ApprDate)*2}">
-					<xsl:for-each select="dis:Ack">
-						<xsl:call-template name="k-7304"/>
-					</xsl:for-each>
-				</td>
-			</xsl:if>
-		</tr>
 	</xsl:template>
 	<!-- Visning av Henvisning -->
 	<xsl:template match="dis:ServReq">
@@ -986,28 +1188,27 @@
 	</xsl:template>
 	<!-- Visning av Diagnose -->
 	<xsl:template match="dis:Diagnosis | dis:DiagComment | dis:CodedDescr | dis:CodedComment">
+		<xsl:variable name="HovedDiagnose">
+			<xsl:choose>
+				<xsl:when test="../../dis:Type/@V='H'">bold</xsl:when>
+				<xsl:otherwise>normal</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
 		<tr>
-			<th>
-				<xsl:value-of select="dis:Concept/@V"/>&#160;
-				<xsl:if test="contains(dis:Concept/@S, '7170')">(ICPC)</xsl:if>
-				<xsl:if test="contains(dis:Concept/@S, '7110')">(ICD-10)</xsl:if>
-			</th>
-			<td width="{((($std-col)-2)*number(not(dis:Modifier))+1)*$std-td}px" colspan="{(($std-col)-2)*number(not(dis:Modifier))+1}">
+			<td width="{$std-td}px" style="font-weight:{$HovedDiagnose}">
 				<xsl:if test="dis:Concept/@DN or dis:Concept/@OT">
 					<xsl:for-each select="dis:Concept">
 						<xsl:call-template name="k-dummy"/>
 					</xsl:for-each>
 				</xsl:if>
+				<xsl:for-each select="dis:Modifier">,&#160;<xsl:value-of select="dis:Value/@DN"/></xsl:for-each>
 			</td>
-			<xsl:if test="dis:Modifier">
-				<td colspan="{($std-col)-2}">
-					<xsl:for-each select="dis:Modifier">
-						<div><b><xsl:call-template name="k-7305"/>&#160;</b>
-							<xsl:value-of select="dis:Value/@V"/>&#160;-&#160;<xsl:value-of select="dis:Value/@DN"/>
-						</div>
-					</xsl:for-each>
-				</td>
-			</xsl:if>
+			<td colspan="{($std-col)-1}" style="font-weight:{$HovedDiagnose}">
+				<xsl:value-of select="dis:Concept/@V"/>&#160;
+				<xsl:if test="contains(dis:Concept/@S, '7170')">(ICPC)</xsl:if>
+				<xsl:if test="contains(dis:Concept/@S, '7110')">(ICD-10)</xsl:if>
+				<xsl:for-each select="dis:Modifier">,&#160;<xsl:value-of select="dis:Value/@V"/></xsl:for-each>
+			</td>
 		</tr>
 	</xsl:template>
 	<!-- Visning av Begrunnelse for / kommentar til henvisningen -->
@@ -1742,7 +1943,7 @@
 					<xsl:otherwise>Helsepersonell</xsl:otherwise>
 				</xsl:choose>
 			</th>
-			<td width="{$std-td}px">
+			<td width="{$std-td*2}px">
 				<xsl:value-of select="dis:Name"/>
 			</td>
 		</xsl:if>
@@ -1791,7 +1992,7 @@
 		<xsl:param name="col"/>
 		<xsl:if test="dis:Name">
 			<th>Navn</th>
-			<td width="{$std-td}px">
+			<td width="{$std-td*2}px">
 				<xsl:value-of select="dis:Name"/>
 			</td>
 		</xsl:if>
@@ -1849,7 +2050,7 @@
 					<xsl:otherwise>Avdeling</xsl:otherwise>
 				</xsl:choose>
 			</th>
-			<td width="{$std-td}px">
+			<td width="{$std-td*2}px">
 				<xsl:value-of select="dis:Name"/>
 			</td>
 		</xsl:if>
@@ -1898,7 +2099,7 @@
 		<xsl:param name="col"/>
 		<xsl:if test="dis:Name">
 			<th>Helsepersonell</th>
-			<td width="{$std-td}px">
+			<td width="{$std-td*2}px">
 				<xsl:value-of select="dis:Name"/>
 			</td>
 		</xsl:if>

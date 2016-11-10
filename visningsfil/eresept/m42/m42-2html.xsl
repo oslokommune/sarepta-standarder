@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Edited with Atova XLMSpy (x64) ver. 2011 rel. 2 (http://www.altova.com) by Jan Sigurd Dragsjø -->
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:m41="http://www.kith.no/xmlstds/eresept/m41/2006-10-06" xmlns:m42="http://www.kith.no/xmlstds/eresept/m42/2006-10-06" xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml" exclude-result-prefixes="mh fk1 m41 m42 xhtml">
+<xsl:stylesheet version="1.0" 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
+	xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" 
+	xmlns:m41="http://www.kith.no/xmlstds/eresept/m41/2006-10-06" 
+	xmlns:m42="http://www.kith.no/xmlstds/eresept/m42/2006-10-06" 
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+	exclude-result-prefixes="mh fk1 m41 m42 xhtml">
 
 <!-- Visningsfil for eReseptmeldingen: M42 Referansenummer
 Inngår i KITHs visningsfiler versjon 10
 
+25-10-2016: La til variabel for visningsversjonnr
 09-03-2011: Første versjon
 
 MERK:
@@ -13,10 +22,16 @@ MERK:
 
 	<xsl:import href="../../Hodemelding/v1.2/Hodemelding2html.xsl"/>
 	
-	<xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+	
+	<xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" 
+		doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" 
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
 	
 	<xsl:param name="vedlegg"/>
-	
+
+	<!-- Variabel for hvilken versjon av visningsfilen -->
+	<xsl:variable name="versjon" select="'eresept-m42 v3.1.0 '"/>
+
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
 			<head>

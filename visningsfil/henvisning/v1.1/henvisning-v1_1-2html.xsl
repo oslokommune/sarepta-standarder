@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<!-- Endringslogg
-	- 10.11.16: Mere test av GIT rettigheter
+	- 25.10.16: La til visningsversjonnr
 	- 11.03.16: Bugfix - telefon til pasient vises nå i header
 	- 01.11.15: Småjusteringer, bl.a. dynamisk cellebredde, visning av vedlegg mm.
 	- 04.05.15: Import av felles kodeverksfil
@@ -10,15 +10,29 @@
 	- Inngår i Hdirs visningsfiler versjon 2.0
 	- Laget i XMLSpy v2015 sp2 (http://www.altova.com) av Jan Sigurd Dragsjø (nhn.no)
 	-->
-<xsl:stylesheet version="1.0" xmlns:h="http://www.kith.no/xmlstds/henvisning/2012-02-15" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:po="http://www.kith.no/xmlstds/po/poKomponent/2009-06-30" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:base="http://www.kith.no/xmlstds/base64container" exclude-result-prefixes="h xhtml po fk1 base">
+<xsl:stylesheet version="1.0" 
+	xmlns:h="http://www.kith.no/xmlstds/henvisning/2012-02-15" 
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+	xmlns:po="http://www.kith.no/xmlstds/po/poKomponent/2009-06-30" 
+	xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" 
+	xmlns:base="http://www.kith.no/xmlstds/base64container" 
+	exclude-result-prefixes="h xhtml po fk1 base">
+
 	<xsl:import href="../../Felleskomponenter/funksjoner.xsl"/>
 	<xsl:import href="../../Felleskomponenter/kodeverk.xsl"/>
-	<xsl:output method="html" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+
+	<xsl:output method="html" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" 
+		doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" 
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+
 	<!-- Variabel for hvilken stil visning har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
 	<xsl:variable name="stil" select="'No-line-doc'"/>
 	<!-- Variabel for standard antall kolonner i tabellene-->
 	<xsl:variable name="std-col" select="8"/>
 	<xsl:variable name="std-td" select="100"/>
+	<!-- Variabel for hvilken versjon av visningsfilen -->
+	<xsl:variable name="versjon" select="'henvisning1.1 v3.1.0 '"/>
 	<!-- Variabler for beregning av antall kolonner i legemiddel-tabellen -->
 	<xsl:variable name="med-stat-col" select="(($std-col)-2)*number(not(//h:Medication/h:UnitDose | //h:Medication/h:QuantitySupplied | //h:Medication/h:DosageText | //h:Medication/h:IntendedDuration | //h:Medication/h:Comment | //h:InfItem[h:Medication]/h:StartDateTime | //h:InfItem[h:Medication]/h:EndDateTime | //h:InfItem[h:Medication]/h:OrgDate))+1"/>
 	<xsl:variable name="med-unit-col" select="(($std-col)-3)*number(not(//h:Medication/h:DosageText | //h:Medication/h:IntendedDuration | //h:Medication/h:Comment | //h:InfItem[h:Medication]/h:StartDateTime | //h:InfItem[h:Medication]/h:EndDateTime | //h:InfItem[h:Medication]/h:OrgDate))+1"/>
@@ -33,7 +47,6 @@
 	<xsl:variable name="res-sdate-col" select="(($std-col)-3-number(boolean(//h:ResultItem/h:InvDate)))*number(not(//h:InfItem[h:ResultItem]/h:EndDateTime | //h:InfItem[h:ResultItem]/h:OrgDate))+1"/>
 	<xsl:variable name="res-edate-col" select="(($std-col)-3-number(boolean(//h:ResultItem/h:InvDate))-number(boolean(//h:InfItem[h:ResultItem]/h:StartDateTime)))*number(not(//h:InfItem[h:ResultItem]/h:OrgDate))+1"/>
 	<xsl:variable name="res-odate-col" select="(($std-col)-2-number(boolean(//h:ResultItem/h:InvDate))-number(boolean(//h:InfItem[h:ResultItem]/h:StartDateTime))-number(boolean(//h:InfItem[h:ResultItem]/h:EndDateTime)))"/>
-	
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
 			<head>
@@ -114,7 +127,8 @@
 	<xsl:template match="h:Patient" mode="hode">
 		<div>
 			<xsl:value-of select="h:Name"/>&#160;
-			<b><xsl:value-of select="h:TypeOffId/@V"/>:&#160;</b>
+			<b>
+				<xsl:value-of select="h:TypeOffId/@V"/>:&#160;</b>
 			<xsl:value-of select="substring(h:OffId, 1,6)"/>&#160;<xsl:value-of select="substring(h:OffId, 7)"/>&#160;
 		</div>
 		<xsl:if test="h:DateOfDeath">
@@ -128,7 +142,8 @@
 		<xsl:apply-templates select="h:Address" mode="hode"/>
 	</xsl:template>
 	<xsl:template match="h:HCPerson" mode="hode">
-		<div><xsl:value-of select="h:Name"/>&#160;</div>
+		<div>
+			<xsl:value-of select="h:Name"/>&#160;</div>
 		<xsl:apply-templates select="h:Address" mode="hode"/>
 	</xsl:template>
 	<xsl:template match="h:HCP" mode="hode">
@@ -163,8 +178,8 @@
 	<xsl:template match="h:Address" mode="hode">
 		<xsl:if test="h:Type and (h:StreetAdr or h:PostalCode or h:City or h:CityDistr)">
 			<div class="NoPrint">&#160;<b>
-				<xsl:for-each select="h:Type">
-					<xsl:call-template name="k-3401"/>&#160;</xsl:for-each>
+					<xsl:for-each select="h:Type">
+						<xsl:call-template name="k-3401"/>&#160;</xsl:for-each>
 				</b>
 			</div>
 		</xsl:if>
@@ -206,13 +221,16 @@
 	</xsl:template>
 	<xsl:template match="h:TeleAddress" name="h:TeleAddress" mode="hode">
 		<xsl:if test="starts-with(@V, &quot;tel:&quot;) or starts-with(@V, &quot;callto:&quot;)">
-			<div><b>Telefon:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
+			<div>
+				<b>Telefon:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
 		</xsl:if>
 		<xsl:if test="starts-with(@V, &quot;fax:&quot;)">
-			<div><b>Faks:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
+			<div>
+				<b>Faks:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
 		</xsl:if>
 		<xsl:if test="starts-with(@V, &quot;mailto:&quot;)">
-			<div><b>e-post:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
+			<div>
+				<b>e-post:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
 		</xsl:if>
 	</xsl:template>
 	<!-- Hoveddokumentet -->
@@ -231,17 +249,23 @@
 			</xsl:choose>
 		</xsl:variable>
 		<div class="{$stil}">
-			<xsl:call-template name="FellesMeny"><xsl:with-param name="position" select="position()"/></xsl:call-template>
+			<xsl:call-template name="FellesMeny">
+				<xsl:with-param name="position" select="position()"/>
+			</xsl:call-template>
 			<!-- Overskrift og tabell for henvisningen -->
 			<h1>Henvisning&#160;-&#160;<xsl:for-each select="h:MsgDescr">
 					<xsl:call-template name="k-8455"/>
 				</xsl:for-each>
 				<xsl:for-each select="h:ServType[@V!='N']">&#160;-
-					<font color="{$color}"><xsl:call-template name="k-7309"/></font>
+					<font color="{$color}">
+						<xsl:call-template name="k-7309"/>
+					</font>
 				</xsl:for-each>
 				<xsl:for-each select="h:ReqServ/h:ServType[@V!='N']">
 					&#160;Status&#160;rekvirert&#160;tjeneste:&#160;-
-					<font color="{$color2}"><xsl:call-template name="k-7309"/></font>
+					<font color="{$color2}">
+						<xsl:call-template name="k-7309"/>
+					</font>
 				</xsl:for-each>
 			</h1>
 			<table>
@@ -251,7 +275,9 @@
 			</table>
 			<!-- Overskrift og tabell for Diagnoser -->
 			<xsl:if test="h:Diagnosis or h:ReasonAsText[h:Heading/@V='DIAG'] or //h:InfItem[h:Type/@V='H' or h:Type/@V='B']">
-				<xsl:variable name="id10"><xsl:value-of select="concat('Diagnosis',$position)"/></xsl:variable>
+				<xsl:variable name="id10">
+					<xsl:value-of select="concat('Diagnosis',$position)"/>
+				</xsl:variable>
 				<h2 id="{$id10}">Diagnoser</h2>
 				<table>
 					<tbody>
@@ -265,7 +291,9 @@
 			</xsl:if>
 			<!-- Overskrift og tabell for CAVE og NB-opplysninger -->
 			<xsl:if test="//h:InfItem[h:Type/@V='CAVE' or h:Type/@V='NB']">
-				<xsl:variable name="id20"><xsl:value-of select="concat('CAVE',$position)"/></xsl:variable>
+				<xsl:variable name="id20">
+					<xsl:value-of select="concat('CAVE',$position)"/>
+				</xsl:variable>
 				<h2 id="{$id20}">
 					<xsl:if test="//h:InfItem[h:Type/@V='CAVE']">CAVE</xsl:if>
 					<xsl:if test="//h:InfItem[h:Type/@V='CAVE'] and //h:InfItem[h:Type/@V='NB']">&#160;og&#160;</xsl:if>
@@ -281,7 +309,9 @@
 			</xsl:if>
 			<!-- Overskrift og tabell for Problemstilling -->
 			<xsl:if test="//h:ReasonAsText[h:Heading/@V='PROB'] or //h:InfItem[h:Type/@V='SYMP' or h:Type/@V='PROG' or h:Type/@V='SM']">
-				<xsl:variable name="id30"><xsl:value-of select="concat('PROB',$position)"/></xsl:variable>
+				<xsl:variable name="id30">
+					<xsl:value-of select="concat('PROB',$position)"/>
+				</xsl:variable>
 				<h2 id="{$id30}">Problemstilling</h2>
 				<table>
 					<tbody>
@@ -294,7 +324,9 @@
 			</xsl:if>
 			<!-- Overskrift og tabell for Forventet utredning/behandling -->
 			<xsl:if test="h:ReasonAsText[h:Heading/@V='UTRED']">
-				<xsl:variable name="id40"><xsl:value-of select="concat('UTRED',$position)"/></xsl:variable>
+				<xsl:variable name="id40">
+					<xsl:value-of select="concat('UTRED',$position)"/>
+				</xsl:variable>
 				<h2 id="{$id40}">Forventet utredning/behandling</h2>
 				<table>
 					<tbody>
@@ -304,7 +336,9 @@
 			</xsl:if>
 			<!-- Overskrift og tabell for Kliniske opplysninger -->
 			<xsl:if test="//h:InfItem[h:Type/@V='OPPL']">
-				<xsl:variable name="id50"><xsl:value-of select="concat('OPPL',$position)"/></xsl:variable>
+				<xsl:variable name="id50">
+					<xsl:value-of select="concat('OPPL',$position)"/>
+				</xsl:variable>
 				<h2 id="{$id50}">Kliniske opplysninger</h2>
 				<table>
 					<tbody>
@@ -316,7 +350,9 @@
 			</xsl:if>
 			<!-- Overskrift og tabell for Gynekologiske opplysninger -->
 			<xsl:if test="//h:InfItem[h:Type/@V='GOPL' or h:Type/@V='GBEH']">
-				<xsl:variable name="id60"><xsl:value-of select="concat('GOPL',$position)"/></xsl:variable>
+				<xsl:variable name="id60">
+					<xsl:value-of select="concat('GOPL',$position)"/>
+				</xsl:variable>
 				<h2 id="{$id60}">Gynekologiske opplysninger</h2>
 				<table>
 					<tbody>
@@ -328,7 +364,9 @@
 			</xsl:if>
 			<!-- Overskrift og tabell for Spesialistvurdering -->
 			<xsl:if test="h:ReasonAsText[h:Heading/@V='SVU']">
-				<xsl:variable name="id70"><xsl:value-of select="concat('SVU',$position)"/></xsl:variable>
+				<xsl:variable name="id70">
+					<xsl:value-of select="concat('SVU',$position)"/>
+				</xsl:variable>
 				<h2 id="{$id70}">Spesialistvurdering</h2>
 				<table>
 					<tbody>
@@ -338,7 +376,9 @@
 			</xsl:if>
 			<!-- Overskrift og tabell for Vurdering -->
 			<xsl:if test="h:ReasonAsText[h:Heading/@V='VU']">
-				<xsl:variable name="id80"><xsl:value-of select="concat('VU',$position)"/></xsl:variable>
+				<xsl:variable name="id80">
+					<xsl:value-of select="concat('VU',$position)"/>
+				</xsl:variable>
 				<h2 id="{$id80}">Vurdering</h2>
 				<table>
 					<tbody>
@@ -348,7 +388,9 @@
 			</xsl:if>
 			<!-- Overskrift og tabell for Annen begrunnelse for henvisningen -->
 			<xsl:if test="h:ReasonAsText[h:Heading/@V='BG' or h:Heading/@V='BUP-BM' or h:Heading/@V='BUP-HG' or h:Heading/@V='KF' or h:Heading/@V='MAAL' or h:Heading/@V='MU' or h:Heading/@V='RU' or h:Heading/@V='UP' or not(h:Heading)]">
-				<xsl:variable name="id90"><xsl:value-of select="concat('Annen',$position)"/></xsl:variable>
+				<xsl:variable name="id90">
+					<xsl:value-of select="concat('Annen',$position)"/>
+				</xsl:variable>
 				<h2 id="{$id90}">Annen begrunnelse for henvisningen</h2>
 				<table>
 					<tbody>
@@ -358,7 +400,9 @@
 			</xsl:if>
 			<!-- Overskrift og tabell for Sykehistorie -->
 			<xsl:if test="//h:InfItem[h:Type/@V='ANAM' or h:Type/@V='TB' or h:Type/@V='US']">
-				<xsl:variable name="id100"><xsl:value-of select="concat('ANAM',$position)"/></xsl:variable>
+				<xsl:variable name="id100">
+					<xsl:value-of select="concat('ANAM',$position)"/>
+				</xsl:variable>
 				<h2 id="{$id100}">Sykehistorie</h2>
 				<table>
 					<tbody>
@@ -370,7 +414,9 @@
 			</xsl:if>
 			<!-- Overskrift og tabell for Funn/undersøkelsesresultat -->
 			<xsl:if test="//h:InfItem[h:Type/@V='FUNN'] or h:ReasonAsText[h:Heading/@V='FU']">
-				<xsl:variable name="id110"><xsl:value-of select="concat('ResultItem',$position)"/></xsl:variable>
+				<xsl:variable name="id110">
+					<xsl:value-of select="concat('ResultItem',$position)"/>
+				</xsl:variable>
 				<h2 id="{$id110}">Funn/undersøkelsesresultat</h2>
 				<table>
 					<tbody>
@@ -406,7 +452,9 @@
 			</xsl:if>
 			<!-- Overskrift og tabell for Prosedyrer -->
 			<xsl:if test="//h:InfItem[h:Type/@V='OPIN' or h:Type/@V='MPRS' or h:Type/@V='PRS']">
-				<xsl:variable name="id120"><xsl:value-of select="concat('OPIN',$position)"/></xsl:variable>
+				<xsl:variable name="id120">
+					<xsl:value-of select="concat('OPIN',$position)"/>
+				</xsl:variable>
 				<h2 id="{$id120}">Prosedyrer</h2>
 				<table>
 					<tbody>
@@ -418,7 +466,9 @@
 			</xsl:if>
 			<!-- Overskrift og tabell for Forløp og behandling -->
 			<xsl:if test="h:ReasonAsText[h:Heading/@V='FO']">
-				<xsl:variable name="id130"><xsl:value-of select="concat('FO',$position)"/></xsl:variable>
+				<xsl:variable name="id130">
+					<xsl:value-of select="concat('FO',$position)"/>
+				</xsl:variable>
 				<h2 id="{$id130}">Forløp og behandling</h2>
 				<table>
 					<tbody>
@@ -428,7 +478,9 @@
 			</xsl:if>
 			<!-- Overskrift og tabell for Funksjonsnivå/hjelpetiltak -->
 			<xsl:if test="h:ReasonAsText[h:Heading/@V='HJ']">
-				<xsl:variable name="id140"><xsl:value-of select="concat('HJ',$position)"/></xsl:variable>
+				<xsl:variable name="id140">
+					<xsl:value-of select="concat('HJ',$position)"/>
+				</xsl:variable>
 				<h2 id="{$id140}">Funksjonsnivå/hjelpetiltak</h2>
 				<table>
 					<tbody>
@@ -438,7 +490,9 @@
 			</xsl:if>
 			<!-- Overskrift og tabell for Medisinering -->
 			<xsl:if test="//h:InfItem[h:Type/@V='MEDB']">
-				<xsl:variable name="id150"><xsl:value-of select="concat('Medication',$position)"/></xsl:variable>
+				<xsl:variable name="id150">
+					<xsl:value-of select="concat('Medication',$position)"/>
+				</xsl:variable>
 				<h2 id="{$id150}">Medisinering</h2>
 				<table>
 					<tbody>
@@ -483,7 +537,9 @@
 			</xsl:if>
 			<!-- Overskrift og tabell for Familie/sosialt -->
 			<xsl:if test="h:ReasonAsText[h:Heading/@V='FA']">
-				<xsl:variable name="id160"><xsl:value-of select="concat('FA',$position)"/></xsl:variable>
+				<xsl:variable name="id160">
+					<xsl:value-of select="concat('FA',$position)"/>
+				</xsl:variable>
 				<h2 id="{$id160}">Familie/sosialt</h2>
 				<table>
 					<tbody>
@@ -493,7 +549,9 @@
 			</xsl:if>
 			<!-- Overskrift og tabell for Informasjon til pasient/pårørende -->
 			<xsl:if test="h:ReasonAsText[h:Heading/@V='IP']">
-				<xsl:variable name="id170"><xsl:value-of select="concat('IP',$position)"/></xsl:variable>
+				<xsl:variable name="id170">
+					<xsl:value-of select="concat('IP',$position)"/>
+				</xsl:variable>
 				<h2 id="{$id170}">Informasjon til pasient/pårørende</h2>
 				<table>
 					<tbody>
@@ -503,7 +561,9 @@
 			</xsl:if>
 			<!-- Overskrift og tabell for Sykemelding -->
 			<xsl:if test="//h:InfItem[h:Type/@V='SYKM']">
-				<xsl:variable name="id180"><xsl:value-of select="concat('SYKM',$position)"/></xsl:variable>
+				<xsl:variable name="id180">
+					<xsl:value-of select="concat('SYKM',$position)"/>
+				</xsl:variable>
 				<h2 id="{$id180}">Sykemelding</h2>
 				<table>
 					<tbody>
@@ -515,7 +575,9 @@
 			</xsl:if>
 			<!-- Overskrift og tabell for Kommentarer -->
 			<xsl:if test="h:Comment">
-				<xsl:variable name="id190"><xsl:value-of select="concat('Comment',$position)"/></xsl:variable>
+				<xsl:variable name="id190">
+					<xsl:value-of select="concat('Comment',$position)"/>
+				</xsl:variable>
 				<h2 id="{$id190}">Kommentarer</h2>
 				<table>
 					<tbody>
@@ -523,19 +585,35 @@
 							<tr>
 								<th>
 									<xsl:choose>
-										<xsl:when test="h:Heading"><xsl:for-each select="h:Heading"><xsl:call-template name="k-8234"/></xsl:for-each></xsl:when>
+										<xsl:when test="h:Heading">
+											<xsl:for-each select="h:Heading">
+												<xsl:call-template name="k-8234"/>
+											</xsl:for-each>
+										</xsl:when>
 										<xsl:otherwise>Kommentar</xsl:otherwise>
 									</xsl:choose>
 								</th>
 								<td colspan="{($std-col)-1}">
-									<xsl:if test="h:TextResultValue"><div><xsl:value-of select="h:TextResultValue"/></div></xsl:if>
+									<xsl:if test="h:TextResultValue">
+										<div>
+											<xsl:value-of select="h:TextResultValue"/>
+										</div>
+									</xsl:if>
 									<xsl:for-each select="h:CodedComment">
 										<div>
 											<xsl:choose>
-												<xsl:when test="contains(@S,'8403')"><xsl:call-template name="k-8403"/></xsl:when>
-												<xsl:when test="contains(@S,'8419')"><xsl:call-template name="k-8419"/></xsl:when>
-												<xsl:when test="contains(@S,'9513')"><xsl:call-template name="k-9513"/></xsl:when>
-												<xsl:otherwise><xsl:call-template name="k-dummy"/></xsl:otherwise>
+												<xsl:when test="contains(@S,'8403')">
+													<xsl:call-template name="k-8403"/>
+												</xsl:when>
+												<xsl:when test="contains(@S,'8419')">
+													<xsl:call-template name="k-8419"/>
+												</xsl:when>
+												<xsl:when test="contains(@S,'9513')">
+													<xsl:call-template name="k-9513"/>
+												</xsl:when>
+												<xsl:otherwise>
+													<xsl:call-template name="k-dummy"/>
+												</xsl:otherwise>
 											</xsl:choose>
 										</div>
 									</xsl:for-each>
@@ -548,7 +626,9 @@
 			<!-- Overskrift og tabell for Pasient -->
 			<xsl:for-each select="h:Patient">
 				<xsl:if test="h:BasisForHealthServices or h:Sex or h:DateOfBirth or h:PatientPrecaution or po:AssistertKommunikasjon or po:ParorendeForesatt or h:ContactPerson or h:PatRelInst or h:Consent or h:AdditionalId">
-					<xsl:variable name="id200"><xsl:value-of select="concat('Patient',$position)"/></xsl:variable>
+					<xsl:variable name="id200">
+						<xsl:value-of select="concat('Patient',$position)"/>
+					</xsl:variable>
 					<h2 id="{$id200}">Pasient</h2>
 					<table>
 						<tbody>
@@ -559,7 +639,9 @@
 			</xsl:for-each>
 			<!-- Overskrift og tabell for Helsetjenesteenheter -->
 			<xsl:if test="h:Patient/h:PatRelHCP">
-				<xsl:variable name="id210"><xsl:value-of select="concat('PatRelHCP',$position)"/></xsl:variable>
+				<xsl:variable name="id210">
+					<xsl:value-of select="concat('PatRelHCP',$position)"/>
+				</xsl:variable>
 				<h2 id="{$id210}">Helsetjenesteenheter</h2>
 				<table>
 					<tbody>
@@ -601,7 +683,9 @@
 			</xsl:if>
 			<!-- Overskrift og tabell for vedlegg -->
 			<xsl:if test="h:RefDoc">
-				<xsl:variable name="id220"><xsl:value-of select="concat('RefDoc',$position)"/></xsl:variable>
+				<xsl:variable name="id220">
+					<xsl:value-of select="concat('RefDoc',$position)"/>
+				</xsl:variable>
 				<h2 id="{$id220}">Vedlegg</h2>
 				<table>
 					<tbody>
@@ -625,7 +709,15 @@
 							</xsl:call-template>
 						</td>
 						<th>Meldingsid</th>
-						<td><xsl:value-of select="../h:MsgId"/></td>
+						<td>
+							<xsl:value-of select="../h:MsgId"/>
+						</td>
+					</tr>
+					<tr>
+						<th>Visningsversjon</th>
+						<td colspan="3">
+							<xsl:value-of select="$versjon"/>
+						</td>
 					</tr>
 				</tbody>
 			</table>
@@ -792,13 +884,15 @@
 			<xsl:if test="h:PaymentCat">
 				<th>Betalingskategori</th>
 				<td width="{((($std-col)-2-count(h:IssueDate)*2)*number(not(h:Ack))+1)*$std-td}px" colspan="{(($std-col)-2-count(h:IssueDate)*2)*number(not(h:Ack))+1}">
-					<xsl:for-each select="h:PaymentCat"><xsl:call-template name="k-8246"/>&#160;</xsl:for-each>
+					<xsl:for-each select="h:PaymentCat">
+						<xsl:call-template name="k-8246"/>&#160;</xsl:for-each>
 				</td>
 			</xsl:if>
 			<xsl:if test="h:Ack">
 				<th>Meldingsbekreftelse</th>
 				<td colspan="{($std-col)-2-count(h:IssueDate | h:PaymentCat)*2}">
-					<xsl:for-each select="h:Ack"><xsl:call-template name="k-7304"/>&#160;</xsl:for-each>
+					<xsl:for-each select="h:Ack">
+						<xsl:call-template name="k-7304"/>&#160;</xsl:for-each>
 				</td>
 			</xsl:if>
 		</tr>
@@ -854,9 +948,15 @@
 							<td width="{((($std-col)-2-count(h:ServId)*2)*number(not(h:AdmCat))+1)*$std-td}px" colspan="{(($std-col)-2-count(h:ServId)*2)*number(not(h:AdmCat))+1}">
 								<xsl:for-each select="h:MedSpeciality">
 									<xsl:choose>
-										<xsl:when test="contains(@S,'7426')"><xsl:call-template name="k-7426"/></xsl:when>
-										<xsl:when test="contains(@S,'8451')"><xsl:call-template name="k-8451"/></xsl:when>
-										<xsl:otherwise><xsl:call-template name="k-dummy"/></xsl:otherwise>
+										<xsl:when test="contains(@S,'7426')">
+											<xsl:call-template name="k-7426"/>
+										</xsl:when>
+										<xsl:when test="contains(@S,'8451')">
+											<xsl:call-template name="k-8451"/>
+										</xsl:when>
+										<xsl:otherwise>
+											<xsl:call-template name="k-dummy"/>
+										</xsl:otherwise>
 									</xsl:choose>
 								</xsl:for-each>
 							</td>
@@ -909,7 +1009,9 @@
 			<xsl:if test="h:Modifier">
 				<td colspan="{($std-col)-2}">
 					<xsl:for-each select="h:Modifier">
-						<div><b><xsl:call-template name="k-7305"/>&#160;</b>
+						<div>
+							<b>
+								<xsl:call-template name="k-7305"/>&#160;</b>
 							<xsl:value-of select="h:Value/@V"/>&#160;-&#160;<xsl:value-of select="h:Value/@DN"/>
 						</div>
 					</xsl:for-each>
@@ -938,9 +1040,12 @@
 				<xsl:for-each select="h:TextCode">
 					<div>
 						<xsl:choose>
-							<xsl:when test="@DN"><xsl:value-of select="@DN"/>&#160;</xsl:when>
-							<xsl:when test="@OT"><xsl:value-of select="@OT"/>&#160;</xsl:when>
-							<xsl:when test="@V"><xsl:value-of select="@V"/>&#160;<xsl:choose>
+							<xsl:when test="@DN">
+								<xsl:value-of select="@DN"/>&#160;</xsl:when>
+							<xsl:when test="@OT">
+								<xsl:value-of select="@OT"/>&#160;</xsl:when>
+							<xsl:when test="@V">
+								<xsl:value-of select="@V"/>&#160;<xsl:choose>
 									<xsl:when test="contains(@S,'7010')">(SNOMED)</xsl:when>
 									<xsl:when test="contains(@S,'7230')">(NKKKL)</xsl:when>
 									<xsl:when test="contains(@S,'7240')">(NORAKO)</xsl:when>
@@ -956,10 +1061,18 @@
 		<tr>
 			<td width="{((($std-col)-1)*number(not(../h:StartDateTime | ../h:EndDateTime | ../h:OrgDate))+1)*$std-td}px" colspan="{(($std-col)-1)*number(not(../h:StartDateTime | ../h:EndDateTime | ../h:OrgDate))+1}">
 				<xsl:if test="h:Description">
-					<div><xsl:call-template name="line-breaks"><xsl:with-param name="text" select="h:Description"/></xsl:call-template></div>
+					<div>
+						<xsl:call-template name="line-breaks">
+							<xsl:with-param name="text" select="h:Description"/>
+						</xsl:call-template>
+					</div>
 				</xsl:if>
 				<xsl:if test="h:Comment">
-					<div><xsl:call-template name="line-breaks"><xsl:with-param name="text" select="h:Comment"/></xsl:call-template></div>
+					<div>
+						<xsl:call-template name="line-breaks">
+							<xsl:with-param name="text" select="h:Comment"/>
+						</xsl:call-template>
+					</div>
 				</xsl:if>
 			</td>
 			<xsl:if test="../h:StartDateTime or ../h:EndDateTime or ../h:OrgDate">
@@ -1007,8 +1120,12 @@
 		</td>
 		<td width="{$res-res-col*$std-td}px" colspan="{$res-res-col}">
 			<xsl:for-each select="h:Interval">
-				<xsl:if test="h:Low"><b>Nedre:</b>&#160;<xsl:value-of select="h:Low/@V"/><xsl:value-of select="h:Low/@U"/>&#160;</xsl:if>
-				<xsl:if test="h:High"><b>Øvre:</b>&#160;<xsl:value-of select="h:High/@V"/><xsl:value-of select="h:High/@U"/>&#160;</xsl:if>
+				<xsl:if test="h:Low">
+					<b>Nedre:</b>&#160;<xsl:value-of select="h:Low/@V"/>
+					<xsl:value-of select="h:Low/@U"/>&#160;</xsl:if>
+				<xsl:if test="h:High">
+					<b>Øvre:</b>&#160;<xsl:value-of select="h:High/@V"/>
+					<xsl:value-of select="h:High/@U"/>&#160;</xsl:if>
 			</xsl:for-each>
 			<xsl:for-each select="h:DateResult">
 				<xsl:call-template name="skrivUtTS">
@@ -1021,12 +1138,18 @@
 				</xsl:for-each>
 				<xsl:value-of select="h:NumResultValue/@V"/>&#160;<xsl:value-of select="h:NumResultValue/@U"/>&#160;
 				<xsl:for-each select="../h:DevResultInd">
-					<b><xsl:call-template name="k-8244"/></b>
+					<b>
+						<xsl:call-template name="k-8244"/>
+					</b>
 				</xsl:for-each>
 			</xsl:for-each>
 			<xsl:for-each select="h:TextResult/h:Result">
 				<xsl:if test="h:TextResultValue">
-					<div><xsl:call-template name="line-breaks"><xsl:with-param name="text" select="h:TextResultValue"/></xsl:call-template></div>
+					<div>
+						<xsl:call-template name="line-breaks">
+							<xsl:with-param name="text" select="h:TextResultValue"/>
+						</xsl:call-template>
+					</div>
 				</xsl:if>
 				<xsl:if test="h:TextCode">
 					<div>
@@ -1036,7 +1159,9 @@
 			</xsl:for-each>
 			<xsl:if test="h:Comment">
 				<div>
-					<b>Kommentar:</b>&#160;<xsl:call-template name="line-breaks"><xsl:with-param name="text" select="h:Comment"/></xsl:call-template>
+					<b>Kommentar:</b>&#160;<xsl:call-template name="line-breaks">
+						<xsl:with-param name="text" select="h:Comment"/>
+					</xsl:call-template>
 				</div>
 			</xsl:if>
 		</td>
@@ -1094,11 +1219,12 @@
 		<xsl:if test="//h:Medication/h:DosageText or //h:Medication/h:IntendedDuration">
 			<td width="{$med-text-col*$std-td}px" colspan="{$med-text-col}">
 				<xsl:if test="h:DosageText">
-						<xsl:call-template name="line-breaks">
-							<xsl:with-param name="text" select="h:DosageText"/>
-						</xsl:call-template>
+					<xsl:call-template name="line-breaks">
+						<xsl:with-param name="text" select="h:DosageText"/>
+					</xsl:call-template>
 				</xsl:if>&#160;
-				<xsl:if test="h:IntendedDuration">&#160;/&#160;<xsl:value-of select="h:IntendedDuration/@V"/>&#160;<xsl:value-of select="h:IntendedDuration/@U"/></xsl:if>
+				<xsl:if test="h:IntendedDuration">&#160;/&#160;<xsl:value-of select="h:IntendedDuration/@V"/>&#160;<xsl:value-of select="h:IntendedDuration/@U"/>
+				</xsl:if>
 				<xsl:if test="not(h:DosageText) and not(h:IntendedDuration)">&#160;</xsl:if>
 			</td>
 		</xsl:if>
@@ -1204,7 +1330,9 @@
 					<td colspan="{(($std-col)-1-count(h:Name | h:OffId | h:Sex | h:DateOfBirth | h:DateOfDeath | h:BasisForHealthServices))}">
 						<xsl:for-each select="h:AdditionalId">
 							<div>
-								<xsl:if test="h:Type"><b><xsl:value-of select="h:Type/@V"/>:</b>&#160;</xsl:if>
+								<xsl:if test="h:Type">
+									<b>
+										<xsl:value-of select="h:Type/@V"/>:</b>&#160;</xsl:if>
 								<xsl:value-of select="h:Id"/>
 							</div>
 						</xsl:for-each>
@@ -1214,7 +1342,11 @@
 		</xsl:if>
 		<xsl:for-each select="h:PatientPrecaution">
 			<xsl:if test="position()=1">
-				<tr><td colspan="{$std-col}"><hr/></td></tr>
+				<tr>
+					<td colspan="{$std-col}">
+						<hr/>
+					</td>
+				</tr>
 				<tr>
 					<th rowspan="{last()+1}">Advarsel til tjenesteyter</th>
 					<xsl:if test="..//h:PatientPrecaution/h:Precaution">
@@ -1251,7 +1383,11 @@
 			</tr>
 		</xsl:for-each>
 		<xsl:for-each select="h:Consent">
-			<tr><td colspan="{$std-col}"><hr/></td></tr>
+			<tr>
+				<td colspan="{$std-col}">
+					<hr/>
+				</td>
+			</tr>
 			<tr>
 				<th rowspan="2">Samtykke</th>
 				<xsl:if test="h:ConsentStatus">
@@ -1284,7 +1420,9 @@
 				</xsl:if>
 				<xsl:if test="h:Merknad">
 					<td width="{((($std-col)-2-count(h:ConsentStatus | h:ConsentDate))*number(not(h:GivenBy))+1)*$std-td}px" colspan="{(($std-col)-2-count(h:ConsentStatus | h:ConsentDate))*number(not(h:GivenBy))+1}">
-						<xsl:call-template name="line-breaks"><xsl:with-param name="text" select="h:Merknad"/></xsl:call-template>
+						<xsl:call-template name="line-breaks">
+							<xsl:with-param name="text" select="h:Merknad"/>
+						</xsl:call-template>
 					</td>
 				</xsl:if>
 				<xsl:if test="h:GivenBy">
@@ -1296,7 +1434,11 @@
 		</xsl:for-each>
 		<xsl:for-each select="po:AssistertKommunikasjon">
 			<xsl:if test="position()=1">
-				<tr><td colspan="{$std-col}"><hr/></td></tr>
+				<tr>
+					<td colspan="{$std-col}">
+						<hr/>
+					</td>
+				</tr>
 				<tr>
 					<th rowspan="{(last()+1)}">Behov&#160;for&#160;tolk</th>
 					<xsl:if test="..//po:AssistertKommunikasjon/po:PersonTolkebehov">
@@ -1323,8 +1465,12 @@
 				<xsl:if test="..//po:AssistertKommunikasjon/po:PersonTolkebehov">
 					<td width="{((($std-col)-2)*number(not(..//po:AssistertKommunikasjon/po:Horselsvikt | ..//po:AssistertKommunikasjon/po:Synsvikt | ..//po:AssistertKommunikasjon/po:BehovTolkSprak | ..//po:AssistertKommunikasjon/po:PreferertTolk | ..//po:AssistertKommunikasjon/po:BehovOpphortDato | ..//po:AssistertKommunikasjon/po:Merknad))+1)*$std-td}px" colspan="{(($std-col)-2)*number(not(..//po:AssistertKommunikasjon/po:Horselsvikt | ..//po:AssistertKommunikasjon/po:Synsvikt | ..//po:AssistertKommunikasjon/po:BehovTolkSprak | ..//po:AssistertKommunikasjon/po:PreferertTolk | ..//po:AssistertKommunikasjon/po:BehovOpphortDato | ..//po:AssistertKommunikasjon/po:Merknad))+1}">
 						<xsl:for-each select="po:PersonTolkebehov">
-							<div><xsl:value-of select="fk1:FamilyName"/>,&#160;<xsl:value-of select="fk1:GivenName"/>&#160;<xsl:value-of select="fk1:MiddleName"/></div>
-							<xsl:for-each select=".//fk1:TeleAddress"><xsl:call-template name="h:TeleAddress"/></xsl:for-each>
+							<div>
+								<xsl:value-of select="fk1:FamilyName"/>,&#160;<xsl:value-of select="fk1:GivenName"/>&#160;<xsl:value-of select="fk1:MiddleName"/>
+							</div>
+							<xsl:for-each select=".//fk1:TeleAddress">
+								<xsl:call-template name="h:TeleAddress"/>
+							</xsl:for-each>
 						</xsl:for-each>
 					</td>
 				</xsl:if>
@@ -1345,8 +1491,12 @@
 				<xsl:if test="..//po:AssistertKommunikasjon/po:PreferertTolk">
 					<td width="{((($std-col)-2-number(boolean(..//po:AssistertKommunikasjon/po:PersonTolkebehov))-number(boolean(..//po:AssistertKommunikasjon/po:Horselsvikt | ..//po:AssistertKommunikasjon/po:Synsvikt))-number(boolean(..//po:AssistertKommunikasjon/po:BehovTolkSprak)))*number(not(..//po:AssistertKommunikasjon/po:BehovOpphortDato | ..//po:AssistertKommunikasjon/po:Merknad))+1)*$std-td}px" colspan="{(($std-col)-2-number(boolean(..//po:AssistertKommunikasjon/po:PersonTolkebehov))-number(boolean(..//po:AssistertKommunikasjon/po:Horselsvikt | ..//po:AssistertKommunikasjon/po:Synsvikt))-number(boolean(..//po:AssistertKommunikasjon/po:BehovTolkSprak)))*number(not(..//po:AssistertKommunikasjon/po:BehovOpphortDato | ..//po:AssistertKommunikasjon/po:Merknad))+1}">
 						<xsl:for-each select="po:PreferertTolk">
-							<div><xsl:value-of select="fk1:FamilyName"/>,&#160;<xsl:value-of select="fk1:GivenName"/>&#160;<xsl:value-of select="fk1:MiddleName"/></div>
-							<xsl:for-each select=".//fk1:TeleAddress"><xsl:call-template name="h:TeleAddress"/></xsl:for-each>
+							<div>
+								<xsl:value-of select="fk1:FamilyName"/>,&#160;<xsl:value-of select="fk1:GivenName"/>&#160;<xsl:value-of select="fk1:MiddleName"/>
+							</div>
+							<xsl:for-each select=".//fk1:TeleAddress">
+								<xsl:call-template name="h:TeleAddress"/>
+							</xsl:for-each>
 						</xsl:for-each>
 					</td>
 				</xsl:if>
@@ -1359,14 +1509,20 @@
 				</xsl:if>
 				<xsl:if test="..//po:AssistertKommunikasjon/po:Merknad">
 					<td colspan="{(($std-col)-1-number(boolean(..//po:AssistertKommunikasjon/po:PersonTolkebehov))-number(boolean(..//po:AssistertKommunikasjon/po:Horselsvikt | ..//po:AssistertKommunikasjon/po:Synsvikt))-number(boolean(..//po:AssistertKommunikasjon/po:BehovTolkSprak))-number(boolean(..//po:AssistertKommunikasjon/po:PreferertTolk))-number(boolean(..//po:AssistertKommunikasjon/po:BehovOpphortDato)))}">
-						<xsl:call-template name="line-breaks"><xsl:with-param name="text" select="po:Merknad"/></xsl:call-template>&#160;
+						<xsl:call-template name="line-breaks">
+							<xsl:with-param name="text" select="po:Merknad"/>
+						</xsl:call-template>&#160;
 					</td>
 				</xsl:if>
 			</tr>
 		</xsl:for-each>
 		<xsl:for-each select="po:ParorendeForesatt">
 			<xsl:if test="position()=1">
-				<tr><td colspan="{$std-col}"><hr/></td></tr>
+				<tr>
+					<td colspan="{$std-col}">
+						<hr/>
+					</td>
+				</tr>
 				<tr>
 					<th rowspan="{last()+1}">Pårørende/foresatt</th>
 					<xsl:if test="..//po:ParorendeForesatt/po:Referanseperson">
@@ -1387,8 +1543,12 @@
 				<xsl:if test="..//po:ParorendeForesatt/po:Referanseperson">
 					<td width="{((($std-col)-2)*number(not(..//po:ParorendeForesatt/po:Slektskap | ..//po:ParorendeForesatt/po:Omsorgsfunksjon | ..//po:ParorendeForesatt/po:Merknad))+1)*$std-td}px" colspan="{(($std-col)-2)*number(not(..//po:ParorendeForesatt/po:Slektskap | ..//po:ParorendeForesatt/po:Omsorgsfunksjon | ..//po:ParorendeForesatt/po:Merknad))+1}">
 						<xsl:for-each select="po:Referanseperson">
-							<div><xsl:value-of select="fk1:FamilyName"/>,&#160;<xsl:value-of select="fk1:GivenName"/>&#160;<xsl:value-of select="fk1:MiddleName"/></div>
-							<xsl:for-each select=".//fk1:TeleAddress"><xsl:call-template name="h:TeleAddress"/></xsl:for-each>
+							<div>
+								<xsl:value-of select="fk1:FamilyName"/>,&#160;<xsl:value-of select="fk1:GivenName"/>&#160;<xsl:value-of select="fk1:MiddleName"/>
+							</div>
+							<xsl:for-each select=".//fk1:TeleAddress">
+								<xsl:call-template name="h:TeleAddress"/>
+							</xsl:for-each>
 						</xsl:for-each>
 					</td>
 				</xsl:if>
@@ -1415,7 +1575,11 @@
 		</xsl:for-each>
 		<xsl:for-each select="h:ContactPerson">
 			<xsl:if test="position()=1">
-				<tr><td colspan="{$std-col}"><hr/></td></tr>
+				<tr>
+					<td colspan="{$std-col}">
+						<hr/>
+					</td>
+				</tr>
 				<tr>
 					<th rowspan="{last()+1}">Kontaktperson</th>
 					<xsl:if test="..//h:ContactPerson/h:Referanseperson">
@@ -1436,8 +1600,12 @@
 				<xsl:if test="..//h:ContactPerson/h:Referanseperson">
 					<td width="{((($std-col)-2)*number(not(..//h:ContactPerson/h:OccupationRole | ..//h:ContactPerson/h:WorkingPlace | ..//h:ContactPerson/h:Merknad))+1)*$std-td}px" colspan="{(($std-col)-2)*number(not(..//h:ContactPerson/h:OccupationRole | ..//h:ContactPerson/h:WorkingPlace | ..//h:ContactPerson/h:Merknad))+1}">
 						<xsl:for-each select="h:Referanseperson">
-							<div><xsl:value-of select="fk1:FamilyName"/>,&#160;<xsl:value-of select="fk1:GivenName"/>&#160;<xsl:value-of select="fk1:MiddleName"/></div>
-							<xsl:for-each select=".//fk1:TeleAddress"><xsl:call-template name="h:TeleAddress"/></xsl:for-each>
+							<div>
+								<xsl:value-of select="fk1:FamilyName"/>,&#160;<xsl:value-of select="fk1:GivenName"/>&#160;<xsl:value-of select="fk1:MiddleName"/>
+							</div>
+							<xsl:for-each select=".//fk1:TeleAddress">
+								<xsl:call-template name="h:TeleAddress"/>
+							</xsl:for-each>
 						</xsl:for-each>
 					</td>
 				</xsl:if>
@@ -1460,7 +1628,11 @@
 		</xsl:for-each>
 		<xsl:for-each select="h:PatRelInst">
 			<xsl:if test="position()=1">
-				<tr><td colspan="{$std-col}"><hr/></td></tr>
+				<tr>
+					<td colspan="{$std-col}">
+						<hr/>
+					</td>
+				</tr>
 				<tr>
 					<th rowspan="{last()+1}">Referert virksomhet</th>
 					<xsl:if test="..//h:PatRelInst/h:NameInst">
@@ -1505,7 +1677,9 @@
 		<xsl:variable name="raw-rows" select="count(.//h:HCProf | .//h:HCPerson | .//h:Dept)"/>
 		<xsl:variable name="rows">
 			<xsl:choose>
-				<xsl:when test="$raw-rows&gt;0"><xsl:value-of select="$raw-rows"/></xsl:when>
+				<xsl:when test="$raw-rows&gt;0">
+					<xsl:value-of select="$raw-rows"/>
+				</xsl:when>
 				<xsl:otherwise>1</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
@@ -1521,10 +1695,15 @@
 				<xsl:choose>
 					<xsl:when test=".//h:HCProf | .//h:HCPerson | .//h:Dept">
 						<xsl:for-each select=".//h:HCProf | .//h:HCPerson | .//h:Dept">
-							<xsl:if test="position()=1"><xsl:apply-templates select="."/></xsl:if>
+							<xsl:if test="position()=1">
+								<xsl:apply-templates select="."/>
+							</xsl:if>
 						</xsl:for-each>
 					</xsl:when>
-					<xsl:otherwise><td>&#160;</td><td>&#160;</td></xsl:otherwise>
+					<xsl:otherwise>
+						<td>&#160;</td>
+						<td>&#160;</td>
+					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:if>
 			<xsl:if test="..//h:PatRelHCP//h:Inst/h:Name">
@@ -1542,7 +1721,8 @@
 			<xsl:if test="..//h:PatRelHCP//h:Inst/h:Id">
 				<td rowspan="{$rows}" width="{((($std-col)-2-number(boolean(..//h:PatRelHCP//h:HCProf | ..//h:PatRelHCP//h:HCPerson | ..//h:PatRelHCP//h:Dept))-1-number(boolean(..//h:PatRelHCP//h:Inst/h:Name))-number(boolean(..//h:PatRelHCP//h:MedSpeciality)))*number(not(..//h:PatRelHCP/h:StartDateTime | ..//h:PatRelHCP/h:EndDateTime | ..//h:PatRelHCP//h:Address))+1)*$std-td}px" colspan="{(($std-col)-2-number(boolean(..//h:PatRelHCP//h:HCProf | ..//h:PatRelHCP//h:HCPerson | ..//h:PatRelHCP//h:Dept))-1-number(boolean(..//h:PatRelHCP//h:Inst/h:Name))-number(boolean(..//h:PatRelHCP//h:MedSpeciality)))*number(not(..//h:PatRelHCP/h:StartDateTime | ..//h:PatRelHCP/h:EndDateTime | ..//h:PatRelHCP//h:Address))+1}">
 					<xsl:if test=".//h:Inst/h:TypeId/@V">
-						<b><xsl:value-of select=".//h:Inst/h:TypeId/@V"/>:</b>
+						<b>
+							<xsl:value-of select=".//h:Inst/h:TypeId/@V"/>:</b>
 					</xsl:if>&#160;
 					<xsl:value-of select=".//h:Inst/h:Id"/>
 				</td>
@@ -1556,7 +1736,8 @@
 						</xsl:call-template>
 					</xsl:if>&#160;
 					<xsl:if test="h:EndDateTime">
-						<div><b>Slutt:</b>&#160;
+						<div>
+							<b>Slutt:</b>&#160;
 							<xsl:call-template name="skrivUtTS">
 								<xsl:with-param name="oppgittTid" select="h:EndDateTime/@V"/>
 							</xsl:call-template>
@@ -1571,19 +1752,26 @@
 			</xsl:if>
 		</tr>
 		<xsl:for-each select=".//h:HCProf | .//h:HCPerson | .//h:Dept">
-			<xsl:if test="position()!=1"><tr><xsl:apply-templates select="."/></tr></xsl:if>
+			<xsl:if test="position()!=1">
+				<tr>
+					<xsl:apply-templates select="."/>
+				</tr>
+			</xsl:if>
 		</xsl:for-each>
 	</xsl:template>
 	<xsl:template match="h:HCProf | h:HCPerson | h:Dept">
 		<td width="{((($std-col)-2)*number(not(//h:PatRelHCP//h:HCProf/h:Id | //h:PatRelHCP//h:HCProf/h:AdditionalId | //h:PatRelHCP//h:HCPerson/h:Id | //h:PatRelHCP//h:HCPerson/h:AdditionalId | //h:PatRelHCP//h:Dept/h:Id | //h:PatRelHCP//h:Dept/h:AdditionalId | //h:PatRelHCP//h:Inst/h:Name | //h:PatRelHCP//h:MedSpeciality | //h:PatRelHCP//h:Inst/h:Id | //h:PatRelHCP/h:StartDateTime | //h:PatRelHCP/h:EndDateTime | //h:PatRelHCP//h:Address))+1)*$std-td}px" colspan="{(($std-col)-2)*number(not(//h:PatRelHCP//h:HCProf/h:Id | //h:PatRelHCP//h:HCProf/h:AdditionalId | //h:PatRelHCP//h:HCPerson/h:Id | //h:PatRelHCP//h:HCPerson/h:AdditionalId | //h:PatRelHCP//h:Dept/h:Id | //h:PatRelHCP//h:Dept/h:AdditionalId | //h:PatRelHCP//h:Inst/h:Name | //h:PatRelHCP//h:MedSpeciality | //h:PatRelHCP//h:Inst/h:Id | //h:PatRelHCP/h:StartDateTime | //h:PatRelHCP/h:EndDateTime | //h:PatRelHCP//h:Address))+1}">
 			<xsl:if test="h:Type/@DN">
-				<b><xsl:value-of select="h:Type/@DN"/></b>&#160;
+				<b>
+					<xsl:value-of select="h:Type/@DN"/>
+				</b>&#160;
 			</xsl:if>
 			<xsl:value-of select="h:Name"/>&#160;
 		</td>
 		<td colspan="{(($std-col)-3)*number(not(//h:PatRelHCP//h:Inst/h:Name | //h:PatRelHCP//h:MedSpeciality | //h:PatRelHCP//h:Inst/h:Id | //h:PatRelHCP/h:StartDateTime | //h:PatRelHCP/h:EndDateTime | //h:PatRelHCP//h:Address))+1}">
 			<xsl:if test="h:TypeId/@V">
-				<b><xsl:value-of select="h:TypeId/@V"/>:</b>&#160;
+				<b>
+					<xsl:value-of select="h:TypeId/@V"/>:</b>&#160;
 			</xsl:if>
 			<xsl:value-of select="h:Id"/>&#160;
 		</td>
@@ -1596,16 +1784,29 @@
 				</xsl:for-each>
 			</b>
 		</xsl:if>
-		<xsl:if test="h:StreetAdr"><xsl:value-of select="h:StreetAdr"/></xsl:if>
+		<xsl:if test="h:StreetAdr">
+			<xsl:value-of select="h:StreetAdr"/>
+		</xsl:if>
 		<xsl:if test="h:PostalCode or h:City">
 			<xsl:if test="h:StreetAdr">,&#160;</xsl:if>
 			<xsl:value-of select="h:PostalCode"/>&#160;<xsl:value-of select="h:City"/>
 		</xsl:if>
-		<xsl:if test="h:CityDistr">&#160;,<xsl:for-each select="h:CityDistr"><xsl:call-template name="k-3403"/></xsl:for-each></xsl:if>
-		<xsl:if test="h:County">&#160;,<xsl:for-each select="h:County"><xsl:call-template name="k-3402"/></xsl:for-each></xsl:if>
-		<xsl:if test="h:Country">&#160;,<xsl:for-each select="h:Country"><xsl:call-template name="k-9043"/></xsl:for-each></xsl:if>
+		<xsl:if test="h:CityDistr">&#160;,<xsl:for-each select="h:CityDistr">
+				<xsl:call-template name="k-3403"/>
+			</xsl:for-each>
+		</xsl:if>
+		<xsl:if test="h:County">&#160;,<xsl:for-each select="h:County">
+				<xsl:call-template name="k-3402"/>
+			</xsl:for-each>
+		</xsl:if>
+		<xsl:if test="h:Country">&#160;,<xsl:for-each select="h:Country">
+				<xsl:call-template name="k-9043"/>
+			</xsl:for-each>
+		</xsl:if>
 		&#160;
-		<xsl:for-each select="h:TeleAddress"><xsl:apply-templates select="."/></xsl:for-each>
+		<xsl:for-each select="h:TeleAddress">
+			<xsl:apply-templates select="."/>
+		</xsl:for-each>
 	</xsl:template>
 	<!-- Visning av vedllegg -->
 	<xsl:template match="h:RefDoc">

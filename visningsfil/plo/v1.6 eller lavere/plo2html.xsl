@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<!-- Endringslogg
+	- 25.10.16: La til visningsversjonnr
 	- 02.12.15: Generalisert til å håndtere alle plo-versjoner opp til v1.6
 	- 01.12.15: Oppdatering for bruk av poKomponent uten navnerom. Innføring av felles kodeverksfil. Småjustering på layout.
 	- 01.10.12: Oppdatert til versjon 1.6
@@ -8,7 +9,12 @@
 	- Inngår i Hdirs visningsfiler versjon 2.0
 	- Laget i XMLSpy v2016 (http://www.altova.com) av Jan Sigurd Dragsjø (nhn.no)
 	-->
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" exclude-result-prefixes="mh fk1">
+<xsl:stylesheet version="1.0" 
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
+	xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" 
+	exclude-result-prefixes="mh fk1">
+	
 	<xsl:import href="../../Felleskomponenter/funksjoner.xsl"/>
 	<xsl:import href="../../Felleskomponenter/meldingshode2html.xsl"/>
 	<xsl:import href="../../Felleskomponenter/poKomponent2html.xsl"/>
@@ -16,10 +22,15 @@
 	<xsl:import href="../../Felleskomponenter/journalnotat2html.xsl"/>
 	<xsl:import href="../../Felleskomponenter/legemiddel2html.xsl"/>
 	<xsl:import href="../../Felleskomponenter/kodeverk.xsl"/>
-	<xsl:output method="html" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+
+	<xsl:output method="html" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" 
+		doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" 
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
 	
 	<!-- Variabel for hvilken stil visning har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
 	<xsl:variable name="stil" select="'One-line-doc'"/>
+	<!-- Variabel for hvilken versjon av visningsfilen -->
+	<xsl:variable name="versjon" select="'plo1.6 v3.1.0 '"/>
 	
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
@@ -46,11 +57,13 @@
 			<xsl:when test="//child::*[local-name()=&quot;InformasjonOmForsendelsen&quot;]">
 				<xsl:call-template name="BunnTillegg">
 					<xsl:with-param name="stil" select="$stil"/>
+					<xsl:with-param name="versjon" select="$versjon"/>
 				</xsl:call-template>
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:call-template name="Bunn">
 					<xsl:with-param name="stil" select="$stil"/>
+					<xsl:with-param name="versjon" select="$versjon"/>
 				</xsl:call-template>
 			</xsl:otherwise>
 		</xsl:choose>
