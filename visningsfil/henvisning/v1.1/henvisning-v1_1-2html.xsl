@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<!-- Endringslogg
+	- 10.11.16: Test av GIT rettigheter
 	- 11.03.16: Bugfix - telefon til pasient vises nå i header
 	- 01.11.15: Småjusteringer, bl.a. dynamisk cellebredde, visning av vedlegg mm.
 	- 04.05.15: Import av felles kodeverksfil
