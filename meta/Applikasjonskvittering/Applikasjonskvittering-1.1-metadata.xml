@@ -7,12 +7,8 @@
 	<Utgivelsesdato>2012-02-15</Utgivelsesdato>
 	<Utgiver>Helsedirektoratet</Utgiver>
 	<Status>Til utbredelse</Status>
-	<StatusReferansekatalog>Under innfasing</StatusReferansekatalog>
+	<StatusReferansekatalog>Fastsatt som standard</StatusReferansekatalog>
 	<Erstatter>HIS 80415:2004</Erstatter>
-	<Referansekatalog>
-		<Beskrivelse>Applikasjonskvittering (v1.1) (HIS 80415:2012)</Beskrivelse>
-        <Referanse>https://ehelse.no/Sider/Applikasjonskvittering--Informasjonsmodell%2c-XML-meldingsbeskrivelse-og-retningslinjer-for-bruk-%E2%80%93-HIS-804152012.aspx</Referanse>
-    </Referansekatalog>
 	<Standardtekster>
 		<Standardtekst>
 			<Beskrivelse>Applikasjonskvittering Informasjonsmodell, XML meldingsbeskrivelse og retningslinjer for bruk inklusive errata nr 3 (PDF)</Beskrivelse>
