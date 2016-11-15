@@ -64,7 +64,7 @@
 						<xs:restriction base="xs:string">
 							<xs:enumeration value="Under utprøving"/>
 							<xs:enumeration value="Under innfasing"/>
-							<xs:enumeration value="Aktiv"/>
+							<xs:enumeration value="Fastsatt som standard"/>
 							<xs:enumeration value="Under utfasing"/>
 							<xs:enumeration value="Utgått"/>
 						</xs:restriction>
