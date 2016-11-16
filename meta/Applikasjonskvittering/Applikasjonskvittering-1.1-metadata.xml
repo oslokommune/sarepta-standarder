@@ -4,21 +4,25 @@
 	<Navn>Applikasjonskvittering</Navn>
 	<Versjon>1.1</Versjon>
 	<Identifikator>HIS 80415:2012</Identifikator>
-	<Utgivelsesdato>2012-02-15</Utgivelsesdato>
-	<Utgiver>Helsedirektoratet</Utgiver>
-	<Status>Til utbredelse</Status>
-	<StatusReferansekatalog>Fastsatt som standard</StatusReferansekatalog>
-	<Erstatter>HIS 80415:2004</Erstatter>
-	<Standardtekster>
-		<Standardtekst>
+	<Utgitt>2012-02-15</Utgitt>
+	<Referansekatalogen>
+		<Oppforing>
+			<Beskrivelse>Referansekatalog-oppføring for Applikasjonskvittering 1.1 (HIS 80415:2012)</Beskrivelse>
+			<Referanse>https://ehelse.no/standarder-kodeverk-og-referansekatalog/standarder-og-referansekatalog/applikasjonskvittering-v11-his-804152012</Referanse>
+		</Oppforing>
+	</Referansekatalogen>
+	<Status>Fastsatt som standard</Status>
+	<ForrigeVersjon>HIS 80415:2004</ForrigeVersjon>
+	<Kravdokumenter>
+		<Kravdokument>
 			<Beskrivelse>Applikasjonskvittering Informasjonsmodell, XML meldingsbeskrivelse og retningslinjer for bruk inklusive errata nr 3 (PDF)</Beskrivelse>
 			<Referanse>standardtekst/applikasjonskvittering/HIS_80415_2012_AppRec-v1 1-2014-02-13.pdf</Referanse>
-		</Standardtekst>
-		<Standardtekst>
+		</Kravdokument>
+		<Kravdokument>
 			<Beskrivelse>Errata HIS 80415:2012 nr 3. Applikasjonskvittering 1.1: Retting av feil på datatyper for GenDate og IssueDate i standarden. Inkluderer også errata nr 2 (PDF)</Beskrivelse>
 			<Referanse>standardtekst/applikasjonskvittering/Errata_HIS_80415_2012_3-apprec.pdf</Referanse>
-		</Standardtekst>
-	</Standardtekster>
+		</Kravdokument>
+	</Kravdokumenter>
 	<Skjemaer>
 		<Skjema>
 			<Referanse>skjema/applikasjonskvittering/AppRec-v1.1.xsd</Referanse>

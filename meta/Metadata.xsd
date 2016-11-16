@@ -27,7 +27,7 @@
 						<xs:documentation>Unik identifikator for denne standarden for denne utgiveren</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="Utgivelsesdato" type="xs:date">
+				<xs:element name="Utgitt" type="xs:string">
 					<xs:annotation>
 						<xs:documentation>Dato for når standarden ble utgitt.</xs:documentation>
 					</xs:annotation>
@@ -37,42 +37,33 @@
 						<xs:documentation>Dato for når standardens status sist ble oppdatert.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="Utgiver" type="xs:string">
+				<xs:element name="Referansekatalogen" minOccurs="0">
 					<xs:annotation>
-						<xs:documentation>Navn på organisasjonen som utgir standarden</xs:documentation>
+						<xs:documentation>Lenke til referansekatalogen</xs:documentation>
 					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Oppforing" type="Filreferanse"/>
+						</xs:sequence>
+					</xs:complexType>
 				</xs:element>
-				<xs:element name="Status">
+				<xs:element name="Status" minOccurs="0">
 					<xs:annotation>
-						<xs:documentation>Angir om standarden er "til utprøving", mfl. Tatt fra REUMS + utgått</xs:documentation>
+						<xs:documentation>Status for standardens livsløp. Oppgis kun for standarder som inngår i referansekatalogen</xs:documentation>
 					</xs:annotation>
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
-							<xs:enumeration value="Under planlegging"/>
-							<xs:enumeration value="Til utprøving"/>
+							<xs:enumeration value="Under utvikling"/>
 							<xs:enumeration value="Til høring"/>
-							<xs:enumeration value="Til utbredelse"/>
-							<xs:enumeration value="Utgått"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:element>
-				<xs:element name="StatusReferansekatalog" minOccurs="0">
-					<xs:annotation>
-						<xs:documentation>Status for standardens oppføring i referansekatalogen. Oppgis kun for standarder som inngår i referansekatalogen</xs:documentation>
-					</xs:annotation>
-					<xs:simpleType>
-						<xs:restriction base="xs:string">
-							<xs:enumeration value="Under utprøving"/>
-							<xs:enumeration value="Under innfasing"/>
+							<xs:enumeration value="Til pilotering"/>
 							<xs:enumeration value="Fastsatt som standard"/>
-							<xs:enumeration value="Under utfasing"/>
 							<xs:enumeration value="Utgått"/>
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
-				<xs:element name="Erstatter" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="ForrigeVersjon" type="xs:string" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
-						<xs:documentation>Identifikator til den eller de standardene denne erstatter</xs:documentation>
+						<xs:documentation>Identifikator til forrige versjon</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="ErstattetAv" type="xs:string" minOccurs="0" maxOccurs="unbounded">
@@ -90,13 +81,13 @@
 						<xs:documentation>Målgruppen(e) til standarden. Kilde: Referansekatalogen</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="Standardtekster" minOccurs="0">
+				<xs:element name="Kravdokumenter" minOccurs="0">
 					<xs:annotation>
-						<xs:documentation>Tekstdokument som definerer en standard</xs:documentation>
+						<xs:documentation>Kravdokument som definerer en standard</xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="Standardtekst" type="Filreferanse" maxOccurs="unbounded"/>
+							<xs:element name="Kravdokument" type="Filreferanse" maxOccurs="unbounded"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
