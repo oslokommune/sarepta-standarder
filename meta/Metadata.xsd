@@ -5,46 +5,38 @@
 		<xs:annotation>
 			<xs:documentation>Definisjon av metadata knyttet til en standard</xs:documentation>
 		</xs:annotation>
-		
 		<xs:complexType>
 			<xs:sequence>
-			
 				<xs:element name="Navn" type="xs:string">
 					<xs:annotation>
 						<xs:documentation>Standardens navn</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				
 				<xs:element name="Emne" type="xs:string" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Hvilket område standarden tilhører. Definert av referansekatalogen</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				
 				<xs:element name="Versjon" type="xs:string">
 					<xs:annotation>
 						<xs:documentation>Standardens versjon</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				
 				<xs:element name="Identifikator" type="xs:string">
 					<xs:annotation>
 						<xs:documentation>Unik identifikator for denne standarden for denne utgiveren</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				
 				<xs:element name="Utgitt" type="xs:string">
 					<xs:annotation>
 						<xs:documentation>Dato for når standarden ble utgitt.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				
 				<xs:element name="Statusdato" type="xs:date" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Dato for når standardens status sist ble oppdatert.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				
 				<xs:element name="Referansekatalogen" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Lenke til referansekatalogen</xs:documentation>
@@ -55,7 +47,16 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				
+				<xs:element name="Kontakt" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Epostadresse kontakt</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="RelatertFil" type="Filreferanse" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
 				<xs:element name="Status" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Status for standardens livsløp. Oppgis kun for standarder som inngår i referansekatalogen</xs:documentation>
@@ -70,31 +71,26 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
-				
 				<xs:element name="ForrigeVersjon" type="xs:string" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
 						<xs:documentation>Identifikator til forrige versjon</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				
 				<xs:element name="ErstattetAv" type="xs:string" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
 						<xs:documentation>Identifikator til den eller de standardene som erstatter denne</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				
 				<xs:element name="ProfilAv" type="xs:string" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Identifikator til en standard som denne er en profil av.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				
 				<xs:element name="Maalgruppe" type="xs:string" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
 						<xs:documentation>Målgruppen(e) til standarden. Kilde: Referansekatalogen</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				
 				<xs:element name="Kravdokumenter" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Kravdokument som definerer en standard</xs:documentation>
@@ -105,7 +101,6 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				
 				<xs:element name="Skjemaer" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>XML-skjema</xs:documentation>
@@ -116,7 +111,6 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				
 				<xs:element name="Felleskomponenter" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Gjenbrukbare komponenter som benyttes av flere standarder. Typisk felles XML-skjema</xs:documentation>
@@ -127,7 +121,6 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				
 				<xs:element name="Modellfiler" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Modell som beskriver informasjonsstrukturen i standarden, f eks en UML-modell.</xs:documentation>
@@ -138,7 +131,6 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				
 				<xs:element name="Visningsfiler" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Fil som bestemmer hvordan innholdet i en melding skal presenteres, f eks en xslt-fil.</xs:documentation>
@@ -149,7 +141,6 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				
 				<xs:element name="Testmateriell" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Testmateriell.</xs:documentation>
@@ -160,7 +151,6 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				
 				<xs:element name="Eksempler" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Eksempler som viser bruk av standarden</xs:documentation>
@@ -171,7 +161,6 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				
 				<xs:element name="RelaterteFiler" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Andre filer som er relevante for bruk av standarden</xs:documentation>
@@ -186,7 +175,6 @@
 			<xs:attribute name="definisjonVersjon" type="xs:string" use="required"/>
 		</xs:complexType>
 	</xs:element>
-	
 	<xs:complexType name="Filreferanse">
 		<xs:annotation>
 			<xs:documentation>Referanse til en lokal eller global fil</xs:documentation>
@@ -196,7 +184,6 @@
 			<xs:element name="Referanse" type="xs:anyURI"/>
 		</xs:sequence>
 	</xs:complexType>
-	
 	<xs:complexType name="Skjemareferanse">
 		<xs:annotation>
 			<xs:documentation>Referanse til skjemafil</xs:documentation>
@@ -209,5 +196,4 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	
 </xs:schema>
