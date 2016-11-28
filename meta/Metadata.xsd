@@ -7,56 +7,55 @@
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
+			
 				<xs:element name="Navn" type="xs:string">
 					<xs:annotation>
 						<xs:documentation>Standardens navn</xs:documentation>
 					</xs:annotation>
 				</xs:element>
+				
 				<xs:element name="Emne" type="xs:string" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Hvilket område standarden tilhører. Definert av referansekatalogen</xs:documentation>
 					</xs:annotation>
 				</xs:element>
+				
 				<xs:element name="Versjon" type="xs:string">
 					<xs:annotation>
 						<xs:documentation>Standardens versjon</xs:documentation>
 					</xs:annotation>
 				</xs:element>
+				
 				<xs:element name="Identifikator" type="xs:string">
 					<xs:annotation>
 						<xs:documentation>Unik identifikator for denne standarden for denne utgiveren</xs:documentation>
 					</xs:annotation>
 				</xs:element>
+				
 				<xs:element name="Utgitt" type="xs:string">
 					<xs:annotation>
 						<xs:documentation>Dato for når standarden ble utgitt.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
+				
 				<xs:element name="Statusdato" type="xs:date" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Dato for når standardens status sist ble oppdatert.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="Referansekatalogen" minOccurs="0">
+				
+				<xs:element name="Referansekatalogen" type="Filreferanse" minOccurs="0">
 					<xs:annotation>
-						<xs:documentation>Lenke til referansekatalogen</xs:documentation>
+                        <xs:documentation>Lenke til referansekatalogen på ehelse.no</xs:documentation>
 					</xs:annotation>
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="Oppforing" type="Filreferanse"/>
-						</xs:sequence>
-					</xs:complexType>
 				</xs:element>
-				<xs:element name="Kontakt" minOccurs="0">
+				
+				<xs:element name="Kontakt" type="xs:string" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
-						<xs:documentation>Epostadresse kontakt</xs:documentation>
+						<xs:documentation>Identifikator til forrige versjon</xs:documentation>
 					</xs:annotation>
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="RelatertFil" type="Filreferanse" maxOccurs="unbounded"/>
-						</xs:sequence>
-					</xs:complexType>
 				</xs:element>
+				
 				<xs:element name="Status" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Status for standardens livsløp. Oppgis kun for standarder som inngår i referansekatalogen</xs:documentation>

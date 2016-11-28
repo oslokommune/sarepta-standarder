@@ -6,13 +6,13 @@
 	<Identifikator>HIS 80415:2012</Identifikator>
 	<Utgitt>12/2012</Utgitt>
 	<Referansekatalogen>
-		<Oppforing>
-			<Beskrivelse>Referansekatalog-oppføring for Applikasjonskvittering 1.1 (HIS 80415:2012)</Beskrivelse>
-			<Referanse>https://ehelse.no/standarder-kodeverk-og-referansekatalog/standarder-og-referansekatalog/applikasjonskvittering-v11-his-804152012</Referanse>
-		</Oppforing>
+			<Beskrivelse>Applikasjonskvittering 1.1 (HIS 80415:2012)</Beskrivelse>
+			<Referanse>https://ehelse.no/standarder-kodeverk-og-referansekatalog/standarder-og-referansekatalog/applikasjonskvittering-v11-his-804152012								</Referanse>
 	</Referansekatalogen>
+
 	<Status>Fastsatt som standard</Status>
 	<ForrigeVersjon>HIS 80415:2004</ForrigeVersjon>
+	
 	<Kravdokumenter>
 		<Kravdokument>
 			<Beskrivelse>Applikasjonskvittering Informasjonsmodell, XML meldingsbeskrivelse og retningslinjer for bruk inklusive errata nr 3 (PDF)</Beskrivelse>
