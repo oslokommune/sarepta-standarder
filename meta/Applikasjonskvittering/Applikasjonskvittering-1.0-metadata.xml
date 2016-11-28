@@ -4,33 +4,35 @@
 	<Navn>Applikasjonskvittering</Navn>
 	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 80415:2004</Identifikator>
-	<Utgivelsesdato>2004-11-21</Utgivelsesdato>
-	<Utgiver>Helsedirektoratet</Utgiver>
-	<Status>Til utbredelse</Status>
-	<StatusReferansekatalog>Under utfasing</StatusReferansekatalog>
+	<Utgitt>11/2004</Utgitt>
+	<Status>Fastsatt som standard</Status>
 	<ErstattetAv>HIS 80415:2012</ErstattetAv>
-	<Standardtekster>
-		<Standardtekst>
+	
+	<Kravdokumenter>
+		<Kravdokument>
 			<Beskrivelse>Applikasjonskvittering Informasjonsmodell, XML meldingsbeskrivelse og retningslinjer for bruk (PDF)</Beskrivelse>
-			<Referanse>standardtekst/applikasjonskvittering/HIS_80415_2004-AppRec-v1 rev2-2013-03-26.pdf</Referanse>
-		</Standardtekst>
-		<Standardtekst>
-			<Beskrivelse>Errata HIS 80415:2004 nr 1: Applikasjonskvittering 1.0: Retting av feil på datatyper for GenDate og IssueDate i standarden (PDF)</Beskrivelse>
-			<Referanse>standardtekst/applikasjonskvittering/Errata_HIS_80415_2004_1-apprec.pdf</Referanse>
-		</Standardtekst>
-	</Standardtekster>
+			<Referanse>kravdokument/applikasjonskvittering/HIS_80415_2004-AppRec-v1 rev2-2013-03-26.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Errata HIS 80415:2004 nr 1: Applikasjonskvittering 1.0: Retting av feil på datatyper for GenDate og IssueDate i 	  standarden (PDF)</Beskrivelse>
+			<Referanse>kravdokument/applikasjonskvittering/Errata_HIS_80415_2004_1-apprec.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+	
 	<Skjemaer>
 		<Skjema>
 			<Referanse>skjema/applikasjonskvittering/AppRec-v1-2004-11-21.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/apprec/2004-11-21</Namespace>
 		</Skjema>
 	</Skjemaer>
+	
 	<Felleskomponenter>
 		<Felleskomponent>
 			<Beskrivelse>Felles datatyper</Beskrivelse>
 			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
+	
 	<Testmateriell>
 		<Testfil>
 			<Beskrivelse>Testcase for riktig implementasjon og bruk av applikasjonskvittering (XLSX)</Beskrivelse>
@@ -41,6 +43,7 @@
 			<Referanse>https://validator.test.nhn.no/validering/index.cgi</Referanse>
 		</Testfil>
 	</Testmateriell>
+	
 	<Eksempler>
 		<Eksempel>
 			<Referanse>eksempel/applikasjonskvittering/AppRec-v1-eksempel-ok.xml</Referanse>
@@ -52,6 +55,7 @@
 			<Referanse>eksempel/applikasjonskvittering/AppRec-v1-eksempel-ok_feil_i_delmelding.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
+	
 	<RelaterteFiler>
 		<RelatertFil>
 			<Beskrivelse>Veiledning til riktig bruk av applikasjonskvittering (HISD 1168:2016) (PDF)</Beskrivelse>
@@ -62,4 +66,5 @@
 			<Referanse>https://ehelse.no/Sider/Applikasjonskvittering--Informasjonsmodell,-XML-meldingsbeskrivelse-og-retningslinjer-for-bruk---HIS-804152004.aspx</Referanse>
 		</RelatertFil>
 	</RelaterteFiler>
+	
 </StandardMetadata>
