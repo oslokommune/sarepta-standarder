@@ -6,10 +6,12 @@
 	<Identifikator>HIS 80226:2014</Identifikator>
 	<Utgitt>2014-02-01</Utgitt>
 	<Utgiver>Helsedirektoratet</Utgiver>
+	
 	<Referansekatalogen>
 		<Beskrivelse>Epikrise 1.2 (HIS 80226:2014)</Beskrivelse>
 		<Referanse>https://ehelse.no/Sider/Epikrise--Informasjonsmodell-og-XML-meldingsbeskrivelse-%e2%80%93-HIS-802262014.aspx</Referanse>
 	</Referansekatalogen>
+	
 	<Status>Fastsatt som standard</Status>
 	<ForrigeVersjon>HIS 80226:2006</ForrigeVersjon>
 	
