@@ -4,22 +4,30 @@
 	<Navn>Hodemelding</Navn>
 	<Versjon>1.2</Versjon>
 	<Identifikator>HIS 80601:2006</Identifikator>
-	<Utgivelsesdato>2006-05-24</Utgivelsesdato>
+	<Utgitt>05/2006</Utgitt>
 	<Utgiver>Helsedirektoratet</Utgiver>
-	<Status>Til utbredelse</Status>
-	<StatusReferansekatalog>Aktiv</StatusReferansekatalog>
-	<Standardtekster>
-		<Standardtekst>
+	
+	<Referansekatalogen>
+		<Beskrivelse>Standard for hodemelding (HIS 80601:2006)</Beskrivelse>
+		<Referanse>https://ehelse.no/standard-for-hodemelding-his-806012006</Referanse>
+	</Referansekatalogen>
+	
+	<Status>Fastsatt som standard</Status>
+
+	<Kravdokumenter>
+		<Kravdokument>
 			<Beskrivelse>Standard for hodemelding. Informasjonsmodell og XML meldingsbeskrivelse (PDF)</Beskrivelse>
-			<Referanse>standardtekst/hodemelding/HIS_80601_2006-Hodemelding-v12.pdf</Referanse>
-		</Standardtekst>
-	</Standardtekster>
+			<Referanse>kravdokument/hodemelding/HIS_80601_2006-Hodemelding-v12.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+	
 	<Skjemaer>
 		<Skjema>
 			<Referanse>skjema/felleskomponenter/MsgHead-v1_2.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/msghead/2006-05-24</Namespace>
 		</Skjema>
 	</Skjemaer>
+	
 	<Felleskomponenter>
 		<Felleskomponent>
 			<Beskrivelse>Felles datatyper</Beskrivelse>
@@ -30,6 +38,7 @@
 			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
+	
 	<Visningsfiler>
 		<Visningsfil>
 			<Referanse>visningsfil/felleskomponenter/meldingshode2html.xsl</Referanse>
@@ -111,15 +120,11 @@
 			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
-	<Testmateriell>
-		<Testfil>
-			<Beskrivelse>Syntaks-sjekk av XML-meldinger (XML-validering)</Beskrivelse>
-			<Referanse>https://validator.test.nhn.no/validering/index.cgi</Referanse>
-		</Testfil>
-	</Testmateriell>
+	
 	<Eksempler>
 		<Eksempel>
 			<Referanse>eksempel/hodemelding/ER-M1-2010-05-01-eksempel1-msghead.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
+	
 </StandardMetadata>

@@ -1,25 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
-	<Navn>Henvisning</Navn>
+	<Navn>Henvisningsmelding</Navn>
 	<Versjon>1.1</Versjon>
 	<Identifikator>HIS 80517:2014</Identifikator>
-	<Utgivelsesdato>2014-02-13</Utgivelsesdato>
-	<Status>Til utbredelse</Status>
-	<StatusReferansekatalog>Under innfasing</StatusReferansekatalog>
-	<Erstatter>HIS 80517:2005</Erstatter>
-	<Standardtekster>
-		<Standardtekst>
+	<Utgitt>02/2014</Utgitt>
+
+	<Referansekatalogen>
+		<Beskrivelse>Henvisningsmelding 1.1 (HIS 80517:2014)</Beskrivelse>
+		<Referanse>https://ehelse.no/Sider/Henvisning--Informasjonsmodell-og-XML-meldingsbeskrivelse-%E2%80%93-HIS-805172014.aspx</Referanse>
+	</Referansekatalogen>
+
+	<Status>Fastsatt som standard</Status>
+
+	<ForrigeVersjon>HIS 80517:2005</ForrigeVersjon>
+	
+	<Kravdokumenter>
+		<Kravdokument>
 			<Beskrivelse>Henvisning. Informasjonsmodell og XML meldingsbeskrivelse (PDF)</Beskrivelse>
-			<Referanse>standardtekst/henvisning/HIS_80517_2014_Henvisning_v1-1-2014-02-13.pdf</Referanse>
-		</Standardtekst>
-	</Standardtekster>
+			<Referanse>kravdokument/henvisning/HIS_80517_2014_Henvisning_v1-1-2014-02-13.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+	
 	<Skjemaer>
 		<Skjema>
 			<Referanse>skjema/henvisning/Henvisning-v1.1.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/Henvisning/2012-02-15</Namespace>
 		</Skjema>
 	</Skjemaer>
+	
 	<Felleskomponenter>
 		<Felleskomponent>
 			<Beskrivelse>Felles XML-definisjoner for person, helsepersonell, organisasjon etc</Beskrivelse>
@@ -34,6 +43,7 @@
 			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
+	
 	<Visningsfiler>
 		<Visningsfil>
 			<Referanse>visningsfil/henvisning/v1.1/henvisning-v1_1-2html.xsl</Referanse>
@@ -115,16 +125,5 @@
 			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
-	<Testmateriell>
-		<Testfil>
-			<Beskrivelse>Syntaks-sjekk av XML-meldinger (XML-validering)</Beskrivelse>
-			<Referanse>https://validator.test.nhn.no/validering/index.cgi</Referanse>
-		</Testfil>
-	</Testmateriell>
-	<RelaterteFiler>
-		<RelatertFil>
-			<Beskrivelse>Referansekatalog-oppføring for Henvisning 1.1 (HIS 80517:2014)</Beskrivelse>
-			<Referanse>https://ehelse.no/Sider/Henvisning--Informasjonsmodell-og-XML-meldingsbeskrivelse-%E2%80%93-HIS-805172014.aspx</Referanse>
-		</RelatertFil>
-	</RelaterteFiler>
+	
 </StandardMetadata>

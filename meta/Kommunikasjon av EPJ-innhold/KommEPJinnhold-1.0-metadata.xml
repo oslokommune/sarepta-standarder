@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
-	<Navn>Standard for kommunikasjon av EPJ-innhold</Navn>
+	<Navn>Kommunikasjon av EPJ-innhold</Navn>
 	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 80710:2007</Identifikator>
-	<Utgivelsesdato>2007-01-01</Utgivelsesdato>
+	<Utgitt>01/2007</Utgitt>
 	<Utgiver>Helsedirektoratet</Utgiver>
-	<Status>Til utbredelse</Status>
-	<StatusReferansekatalog>Aktiv</StatusReferansekatalog>
-	<Standardtekster>
-		<Standardtekst>
+	
+	<Referansekatalogen>
+		<Beskrivelse>Standard for kommunikasjon av EPJ-innhold (HIS 80710:2007)</Beskrivelse>
+		<Referanse>https://ehelse.no/Sider/Standard-for-kommunikasjon-av-EPJ-innhold--Informasjonsmodell-og-XML-meldingsbeskrivelse---HIS-807102007.aspx</Referanse>
+	</Referansekatalogen>
+	
+	<Status>Fastsatt som standard</Status>
+
+	<Kravdokumenter>
+		<Kravdokument>
 			<Beskrivelse>Standard for kommunikasjon av EPJ-innhold. Informasjonsmodell og XML meldingsbeskrivelse (PDF)</Beskrivelse>
-			<Referanse>standardtekst/kommEPJinnhold/HIS_80710_2007-Standard for kommunikasjon av EPJ-innhold-v1.0.pdf</Referanse>
-		</Standardtekst>
-	</Standardtekster>
+			<Referanse>kravdoument/kommEPJinnhold/HIS_80710_2007-Standard for kommunikasjon av EPJ-innhold-v1.0.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+	
 	<Felleskomponenter>
 		<Felleskomponent>
 			<Referanse>skjema/felleskomponenter/EPJEkstrakt.xsd</Referanse>
@@ -38,11 +45,8 @@
 			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
+	
 	<RelaterteFiler>
-		<RelatertFil>
-			<Beskrivelse>Referansekatalog-oppføring for Standard for kommunikasjon av EPJ-innhold (HIS 80710:2007)</Beskrivelse>
-			<Referanse>https://ehelse.no/Sider/Standard-for-kommunikasjon-av-EPJ-innhold--Informasjonsmodell-og-XML-meldingsbeskrivelse---HIS-807102007.aspx</Referanse>
-		</RelatertFil>
 		<RelatertFil>
 			<Beskrivelse>Referansekatalog-oppføring for profil som beskriver overføring av legemiddelopplysninger i PLO-meldinger (HIS 1150:2014)</Beskrivelse>
 			<Referanse>https://ehelse.no/Sider/Standard-for-elektronisk-kommunikasjon-med-pleie--og-omsorgstjenesten-Overføring-av-legemiddelopplysninger---HIS-11502014.aspx</Referanse>
