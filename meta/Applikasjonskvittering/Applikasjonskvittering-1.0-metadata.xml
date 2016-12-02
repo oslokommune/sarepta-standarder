@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
-<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+<StandardMetadata definisjonVersjon="" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="../Metadata.xsd">
 	<Navn>Applikasjonskvittering</Navn>
 	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 80415:2004</Identifikator>
 	<Utgitt>11/2004</Utgitt>
+	<Utgiver>Helsedirektoratet</Utgiver>
+	<Referansekatalogen>
+		<Beskrivelse>Applikasjonskvittering 1.0 (HIS 80415:2004)</Beskrivelse>
+		<Referanse>https://ehelse.no/Sider/Applikasjonskvittering--Informasjonsmodell,-XML-meldingsbeskrivelse-og-retningslinjer-for-bruk---HIS-804152004.aspx</Referanse>
+	</Referansekatalogen>
 	<Status>Fastsatt som standard</Status>
-	<ErstattetAv>HIS 80415:2012</ErstattetAv>
 	
 	<Kravdokumenter>
 		<Kravdokument>
@@ -38,10 +44,6 @@
 			<Beskrivelse>Testcase for riktig implementasjon og bruk av applikasjonskvittering (XLSX)</Beskrivelse>
 			<Referanse>test/applikasjonskvittering/TestcaseApplikasjonskvittering.xlsx</Referanse>
 		</Testfil>
-		<Testfil>
-			<Beskrivelse>Syntaks-sjekk av XML-meldinger (XML-validering)</Beskrivelse>
-			<Referanse>https://validator.test.nhn.no/validering/index.cgi</Referanse>
-		</Testfil>
 	</Testmateriell>
 	
 	<Eksempler>
@@ -60,10 +62,6 @@
 		<RelatertFil>
 			<Beskrivelse>Veiledning til riktig bruk av applikasjonskvittering (HISD 1168:2016) (PDF)</Beskrivelse>
 			<Referanse>relaterteFiler/applikasjonskvittering/HISD_1168_2016-Veiledning til riktig bruk av Applikasjonskvittering.pdf</Referanse>
-		</RelatertFil>
-		<RelatertFil>
-			<Beskrivelse>Referansekatalog-oppføring for Applikasjonskvittering 1.0 (HIS 80415:2004)</Beskrivelse>
-			<Referanse>https://ehelse.no/Sider/Applikasjonskvittering--Informasjonsmodell,-XML-meldingsbeskrivelse-og-retningslinjer-for-bruk---HIS-804152004.aspx</Referanse>
 		</RelatertFil>
 	</RelaterteFiler>
 	

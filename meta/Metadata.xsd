@@ -32,7 +32,7 @@
 						<xs:documentation>Dato for når standarden ble utgitt.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="Utgiver" type="xs:string">
+				<xs:element name="Utgiver" type="xs:string" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Utgiver av standard</xs:documentation>
 					</xs:annotation>

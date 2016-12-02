@@ -4,16 +4,23 @@
 	<Navn>Fødselsepikrise</Navn>
 	<Versjon>1.3</Versjon>
 	<Identifikator>HIS 1045:2012</Identifikator>
-	<Utgivelsesdato>2012-11-21</Utgivelsesdato>
+	<Utgitt>11/2012</Utgitt>
 	<Utgiver>Helsedirektoratet</Utgiver>
-	<Status>Til utbredelse</Status>
-	<StatusReferansekatalog>Aktiv</StatusReferansekatalog>
-	<Standardtekster>
-		<Standardtekst>
+
+	<Referansekatalogen>
+		<Beskrivelse>Fødselsepikrise (HIS 1045:2012)</Beskrivelse>
+		<Referanse>https://ehelse.no/fodselsepikrise-his-10452012</Referanse>
+	</Referansekatalogen>
+
+	<Status>Til pilotering</Status>
+
+	<Kravdokumenter>
+		<Kravdokument>
 			<Beskrivelse>Fødselsepikrise Informasjonsmodell og XML meldingsbeskrivelse (PDF)</Beskrivelse>
-			<Referanse>standardtekst/fødselsepikrise/HIS_1045_2012-Fødselsepikrise_v1.3.pdf</Referanse>
-		</Standardtekst>
-	</Standardtekster>
+			<Referanse>kravdokument/fødselsepikrise/HIS_1045_2012-Fødselsepikrise_v1.3.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+	
 	<Skjemaer>
 		<Skjema>
 			<Referanse>skjema/fødselsepikrise/FodselBarsel-v1.3.xsd</Referanse>
@@ -25,6 +32,7 @@
 			<Namespace>http://www.kith.no/xmlstds/po/TverrfagligEpikrise/2012-04-01</Namespace>
 		</Skjema>
 	</Skjemaer>
+	
 	<Felleskomponenter>
 		<Felleskomponent>
 			<Beskrivelse>XML-skjema for Hodemelding</Beskrivelse>
@@ -59,6 +67,7 @@
 			<Referanse>skjema/felleskomponenter/EPJ-meta.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
+
 	<Eksempler>
 		<Eksempel>
 			<Referanse>eksempel/fødselsepikrise/Fødselsepikrise_BARN.xml</Referanse>
@@ -67,10 +76,5 @@
 			<Referanse>eksempel/fødselsepikrise/Fødselsepikrise_MOR.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
-	<RelaterteFiler>
-		<RelatertFil>
-			<Beskrivelse>Utdypende informasjon om fødselsepikrise på ehelse.no (HIS 1045:2012)</Beskrivelse>
-			<Referanse>https://ehelse.no/fodselsepikrise-his-10452012</Referanse>
-		</RelatertFil>
-	</RelaterteFiler>
+
 </StandardMetadata>
