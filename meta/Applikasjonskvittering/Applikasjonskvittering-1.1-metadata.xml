@@ -17,20 +17,18 @@
 	
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Applikasjonskvittering Informasjonsmodell, XML meldingsbeskrivelse og retningslinjer for bruk inklusive errata nr 3 (PDF)</Beskrivelse>
+			<Beskrivelse>Applikasjonskvittering Informasjonsmodell, XML meldingsbeskrivelse og retningslinjer for bruk (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/applikasjonskvittering/HIS_80415_2012_AppRec-v1 1-2014-02-13.pdf</Referanse>
 		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>Errata HIS 80415:2012 nr 3. Applikasjonskvittering 1.1: Retting av feil på datatyper for GenDate og IssueDate i standarden. Inkluderer også errata nr 2 (PDF)</Beskrivelse>
-			<Referanse>kravdokument/applikasjonskvittering/Errata_HIS_80415_2012_3-apprec.pdf</Referanse>
-		</Kravdokument>
 	</Kravdokumenter>
+	
 	<Skjemaer>
 		<Skjema>
 			<Referanse>skjema/applikasjonskvittering/AppRec-v1.1.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/apprec/2012-02-15</Namespace>
 		</Skjema>
 	</Skjemaer>
+	
 	<Felleskomponenter>
 		<Felleskomponent>
 			<Beskrivelse>Felles datatyper</Beskrivelse>
@@ -41,12 +39,14 @@
 			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
+	
 	<Testmateriell>
 		<Testfil>
 			<Beskrivelse>Testcase for riktig implementasjon og bruk av applikasjonskvittering (XLSX)</Beskrivelse>
 			<Referanse>test/applikasjonskvittering/TestcaseApplikasjonskvittering.xlsx</Referanse>
 		</Testfil>
 	</Testmateriell>
+	
 	<RelaterteFiler>
 		<RelatertFil>
 			<Beskrivelse>Veiledning til riktig bruk av applikasjonskvittering (HISD 1168:2016) (PDF)</Beskrivelse>
