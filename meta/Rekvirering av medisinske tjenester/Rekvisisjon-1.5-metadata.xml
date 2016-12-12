@@ -4,22 +4,30 @@
 	<Navn>Rekvirering av medisinske tjenester</Navn>
 	<Versjon>1.5</Versjon>
 	<Identifikator>HIS 80821:2008</Identifikator>
-	<Utgivelsesdato>2008-12-01</Utgivelsesdato>
+	<Utgitt>12/2008</Utgitt>
 	<Utgiver>Helsedirektoratet</Utgiver>
-	<Status>Til utbredelse</Status>
-	<StatusReferansekatalog>Aktiv</StatusReferansekatalog>
-	<Standardtekster>
-		<Standardtekst>
+
+	<Referansekatalogen>
+		<Beskrivelse>Referansekatalog-oppføring for Rekvisisjon 1.5 (HIS 80821:2008)</Beskrivelse>
+		<Referanse>https://ehelse.no/Sider/Rekvirering-av-medisinske-tjenester--Informasjonsmodell-og-XML-meldingsbeskrivelse-–-HIS-808212008.aspx</Referanse>
+	</Referansekatalogen>
+
+	<Status>Fastsatt som standard</Status>
+
+	<Kravdokumenter>
+		<Kravdokument>
 			<Beskrivelse>Rekvirering av medisinske tjenester. Informasjonsmodell og XML meldingsbeskrivelse (PDF)</Beskrivelse>
-			<Referanse>standardtekst/rekvisisjon/HIS_80821_2008-Rekvirering-av-medisinske-tjenester-v1_5.pdf</Referanse>
-		</Standardtekst>
-	</Standardtekster>
+			<Referanse>kravdokument/rekvisisjon/HIS_80821_2008-Rekvirering-av-medisinske-tjenester-v1_5.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+
 	<Skjemaer>
 		<Skjema>
 			<Referanse>skjema/rekvisisjon/Rekvisisjon-v1_5.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/rekvisisjon/2008-12-01</Namespace>
 		</Skjema>
 	</Skjemaer>
+
 	<Felleskomponenter>
 		<Felleskomponent>
 			<Beskrivelse>Felles datatyper</Beskrivelse>
@@ -30,6 +38,7 @@
 			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
+
 	<Visningsfiler>
 		<Visningsfil>
 			<Referanse>visningsfil/rekvisisjon/v1.5/rekvisisjon-v1_5-2html.xsl</Referanse>
@@ -111,16 +120,12 @@
 			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
+
 	<Testmateriell>
 		<Testfil>
 			<Beskrivelse>Syntaks-sjekk av XML-meldinger (XML-validering)</Beskrivelse>
 			<Referanse>https://validator.test.nhn.no/validering/index.cgi</Referanse>
 		</Testfil>
 	</Testmateriell>
-	<RelaterteFiler>
-		<RelatertFil>
-			<Beskrivelse>Referansekatalog-oppføring for Rekvisisjon 1.5 (HIS 80821:2008)</Beskrivelse>
-			<Referanse>https://ehelse.no/Sider/Rekvirering-av-medisinske-tjenester--Informasjonsmodell-og-XML-meldingsbeskrivelse-–-HIS-808212008.aspx</Referanse>
-		</RelatertFil>
-	</RelaterteFiler>
+
 </StandardMetadata>
