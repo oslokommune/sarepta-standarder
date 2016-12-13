@@ -4,22 +4,30 @@
 	<Navn>Pasientens fastlege</Navn>
 	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 1022:2010</Identifikator>
-	<Utgivelsesdato>2010-02-01</Utgivelsesdato>
+	<Utgitt>02/2010</Utgitt>
 	<Utgiver>Helsedirektoratet</Utgiver>
-	<Status>Til utbredelse</Status>
-	<StatusReferansekatalog>Aktiv</StatusReferansekatalog>
-	<Standardtekster>
-		<Standardtekst>
+
+	<Referansekatalogen>
+		<Beskrivelse>Referansekatalog-oppføring for Forespørsel om fastlege (HIS 1022:2010)</Beskrivelse>
+		<Referanse>https://ehelse.no/Sider/Foresp%c3%b8rsel-om-fastlege--Informasjonsmodell-og-XML-meldingsbeskrivelse-%e2%80%93-HIS-10222010.aspx</Referanse>
+	</Referansekatalogen>
+
+	<Status>Fastsatt som standard</Status>
+
+	<Kravdokumenter>
+		<Kravdokument>
 			<Beskrivelse>Forespørsel om fastlege. Informasjonsmodell og XML meldingsbeskrivelse (PDF)</Beskrivelse>
-			<Referanse>standardtekst/HELFOPasientensFastlege/HIS_1022_2010_NAV-Fastlege-2010-02-01.pdf</Referanse>
-		</Standardtekst>
-	</Standardtekster>
+			<Referanse>kravdokument/HELFOPasientensFastlege/HIS_1022_2010_NAV-Fastlege-2010-02-01.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+
 	<Skjemaer>
 		<Skjema>
 			<Referanse>skjema/HELFOPasientensFastlege/NAV-Fastlege-2010-02-01.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/nav/fastlege/2010-02-01</Namespace>
 		</Skjema>
 	</Skjemaer>
+
 	<Felleskomponenter>
 		<Felleskomponent>
 			<Beskrivelse>XML-skjema for Hodemelding</Beskrivelse>
@@ -34,10 +42,5 @@
 			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
-	<RelaterteFiler>
-		<RelatertFil>
-			<Beskrivelse>Referansekatalog-oppføring for Forespørsel om fastlege (HIS 1022:2010)</Beskrivelse>
-			<Referanse>https://ehelse.no/Sider/Foresp%c3%b8rsel-om-fastlege--Informasjonsmodell-og-XML-meldingsbeskrivelse-%e2%80%93-HIS-10222010.aspx</Referanse>
-		</RelatertFil>
-	</RelaterteFiler>
+
 </StandardMetadata>

@@ -4,17 +4,25 @@
 	<Navn>Pleie- og omsorgsmeldinger</Navn>
 	<Versjon>1.5</Versjon>
 	<Identifikator>HIS 80704:2009</Identifikator>
-	<Utgivelsesdato>2014-09-01</Utgivelsesdato>
+	<Utgitt>09/2014</Utgitt>
 	<Utgiver>Helsedirektoratet</Utgiver>
-	<Status>Til utbredelse</Status>
-	<StatusReferansekatalog>Under utfasing</StatusReferansekatalog>
+
+	<Referansekatalogen>
+		<Beskrivelse>Referansekatalog-oppføring for Pleie- og omsorgsmeldinger v1.5 (HIS 80704:2009)</Beskrivelse>
+		<Referanse>https://ehelse.no/Sider/Standard-for-elektronisk-kommunikasjon-med-pleie--og-omsorgstjenesten--Informasjonsmodell-og-XML-meldingsbeskrivelse-–-HIS-.aspx</Referanse>
+	</Referansekatalogen>
+
+	<Status>Fastsatt som standard</Status>
+
 	<ErstattetAv>HIS80709:2014</ErstattetAv>
-	<Standardtekster>
-		<Standardtekst>
+
+	<Kravdokumenter>
+		<Kravdokument>
 			<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten. Informasjonsmodell og XML meldingsbeskrivelse (PDF)</Beskrivelse>
-			<Referanse>standardtekst/plo/HIS_80704_2009-Pleie-og-omsorg-melding-1.5.pdf</Referanse>
-		</Standardtekst>
-	</Standardtekster>
+			<Referanse>kravdokument/plo/HIS_80704_2009-Pleie-og-omsorg-melding-1.5.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+
 	<Skjemaer>
 		<Skjema>
 			<Referanse>skjema/plo/v1.5/HelseopplysningerTilLege-v1.5.xsd</Referanse>
@@ -55,6 +63,7 @@
 			<Namespace>http://www.kith.no/xmlstds/po/poKomponent/2009-06-30</Namespace>
 		</Skjema>
 	</Skjemaer>
+
 	<Felleskomponenter>
 		<Felleskomponent>
 			<Beskrivelse>XML-skjema for Hodemelding</Beskrivelse>
@@ -89,6 +98,7 @@
 			<Referanse>skjema/felleskomponenter/EPJ-meta.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
+
 	<Visningsfiler>
 		<Visningsfil>
 			<Referanse>visningsfil/plo/v1.6 eller lavere/plo2html.xsl</Referanse>
@@ -170,16 +180,12 @@
 			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
+
 	<Testmateriell>
 		<Testfil>
 			<Beskrivelse>Syntaks-sjekk av XML-meldinger (XML-validering)</Beskrivelse>
 			<Referanse>https://validator.test.nhn.no/validering/index.cgi</Referanse>
 		</Testfil>
 	</Testmateriell>
-	<RelaterteFiler>
-		<RelatertFil>
-			<Beskrivelse>Referansekatalog-oppføring for Pleie- og omsorgsmeldinger v1.5 (HIS 80704:2009)</Beskrivelse>
-			<Referanse>https://ehelse.no/Sider/Standard-for-elektronisk-kommunikasjon-med-pleie--og-omsorgstjenesten--Informasjonsmodell-og-XML-meldingsbeskrivelse-–-HIS-.aspx</Referanse>
-		</RelatertFil>
-	</RelaterteFiler>
+
 </StandardMetadata>

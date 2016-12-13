@@ -4,22 +4,30 @@
 	<Navn>Elektronisk melding om arbeidsrelatert sykdom eller skade</Navn>
 	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 80820:2008</Identifikator>
-	<Utgivelsesdato>2008-09-01</Utgivelsesdato>
+	<Utgitt>09/2008</Utgitt>
 	<Utgiver>Helsedirektoratet</Utgiver>
-	<Status>Til utbredelse</Status>
-	<StatusReferansekatalog>Aktiv</StatusReferansekatalog>
-	<Standardtekster>
-		<Standardtekst>
+
+	<Referansekatalogen>
+		<Beskrivelse>Dokumentasjon av melding om om arbeidsrelatert skade på ehelse.no (HIS 80820:2008)</Beskrivelse>
+		<Referanse>https://ehelse.no/Sider/Elektronisk-melding-om-arbeidsrelatert-sykdom-eller-skade--Informasjonsmodell-og-XML-meldingsbeskrivelse-–-HIS-808202008.aspx</Referanse>
+	</Referansekatalogen>
+
+	<Status>Fastsatt som standard</Status>
+
+	<Kravdokumenter>
+		<Kravdokument>
 			<Beskrivelse>Elektronisk melding om arbeidsrelatert sykdom eller skade. Informasonsmodell og XML meldingsbeskrivelse (PDF)</Beskrivelse>
-			<Referanse>standardtekst/meldingArbeidsrelatertSkade/HIS_80820_2008-DAT-MOAS-2008-09-29-aas.pdf</Referanse>
-		</Standardtekst>
-	</Standardtekster>
+			<Referanse>kravdokument/meldingArbeidsrelatertSkade/HIS_80820_2008-DAT-MOAS-2008-09-29-aas.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+
 	<Skjemaer>
 		<Skjema>
 			<Referanse>skjema/meldingArbeidsrelatertSkade/DAT-MOAS-2008-09-29.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/dat/moas/2008-09-29</Namespace>
 		</Skjema>
 	</Skjemaer>
+
 	<Felleskomponenter>
 		<Felleskomponent>
 			<Beskrivelse>XML-skjema for Hodemelding</Beskrivelse>
@@ -34,6 +42,7 @@
 			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
+
 	<RelaterteFiler>
 		<RelatertFil>
 			<Referanse>relaterteFiler/meldingArbeidsrelatertSkade/AMF-technical-guide-v1_0.pdf</Referanse>
@@ -43,10 +52,6 @@
 		</RelatertFil>
 		<RelatertFil>
 			<Referanse>relaterteFiler/meldingArbeidsrelatertSkade/ICPC-2n-v40-RASTXT_CSV.txt</Referanse>
-		</RelatertFil>
-		<RelatertFil>
-			<Beskrivelse>Dokumentasjon av melding om om arbeidsrelatert skade på ehelse.no (HIS 80820:2008)</Beskrivelse>
-			<Referanse>https://ehelse.no/Sider/Elektronisk-melding-om-arbeidsrelatert-sykdom-eller-skade--Informasjonsmodell-og-XML-meldingsbeskrivelse-–-HIS-808202008.aspx</Referanse>
 		</RelatertFil>
 	</RelaterteFiler>
 </StandardMetadata>

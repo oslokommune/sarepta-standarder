@@ -4,16 +4,23 @@
 	<Navn>Elektronisk utveksling av tilbakemelding på henvisning</Navn>
 	<Versjon>0.9</Versjon>
 	<Identifikator>HIS 80326:2003</Identifikator>
-	<Utgivelsesdato>2003-10-10</Utgivelsesdato>
+	<Utgitt>10/2003</Utgitt>
 	<Utgiver>Helsedirektoratet</Utgiver>
-	<Status>Til utbredelse</Status>
-	<StatusReferansekatalog>Aktiv</StatusReferansekatalog>
-	<Standardtekster>
-		<Standardtekst>
+
+	<Referansekatalogen>
+		<Beskrivelse>Dokumentasjon av tilbakemelding på henvisning på ehelse.no (HIS 80326:2003)</Beskrivelse>
+		<Referanse>https://ehelse.no/elektronisk-utveksling-av-tilbakemelding-pa-henvisning-xml-meldingsbeskrivelse-his-803262003</Referanse>
+	</Referansekatalogen>
+
+	<Status>Fastsatt som standard</Status>
+
+	<Kravdokumenter>
+		<Kravdokument>
 			<Beskrivelse>Elektronisk utveksling av tilbakemelding på henvisning. XML meldingsbeskrivelse (PDF)</Beskrivelse>
-			<Referanse>standardtekst/tilbakemeldingPåHenvisning/HIS_80326_2003_Tilbakemelding-på-henvisning.pdf</Referanse>
-		</Standardtekst>
-	</Standardtekster>
+			<Referanse>kravdokument/tilbakemeldingPåHenvisning/HIS_80326_2003_Tilbakemelding-på-henvisning.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+
 	<Skjemaer>
 		<Skjema>
 			<Referanse>skjema/tilbakemeldingPåHenvisning/Tilbakemelding-v09.xsd</Referanse>
@@ -32,10 +39,4 @@
 			<Referanse>https://validator.test.nhn.no/validering/index.cgi</Referanse>
 		</Testfil>
 	</Testmateriell>
-	<RelaterteFiler>
-		<RelatertFil>
-			<Beskrivelse>Dokumentasjon av tilbakemelding på henvisning på ehelse.no (HIS 80326:2003)</Beskrivelse>
-			<Referanse>https://ehelse.no/elektronisk-utveksling-av-tilbakemelding-pa-henvisning-xml-meldingsbeskrivelse-his-803262003</Referanse>
-		</RelatertFil>
-	</RelaterteFiler>
 </StandardMetadata>
