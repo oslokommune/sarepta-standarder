@@ -8,7 +8,7 @@
 	<Utgiver>Helsedirektoratet</Utgiver>
 
 	<Referansekatalogen>
-		<Beskrivelse>Referansekatalog-oppføring for Svarrapport 1.4 (HIS 80822:2014)</Beskrivelse>
+		<Beskrivelse>Svarrapportering av medisinske tjenester (v1.4) (HIS 80822:2014) </Beskrivelse>
 		<Referanse>https://ehelse.no/Sider/Svarrapportering-av-medisinske-tjenester--Informasjonsmodell-og-XML-meldingsbeskrivelse-%e2%80%93-HIS-808222014.aspx</Referanse>
 	</Referansekatalogen>
 
@@ -16,7 +16,7 @@
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Svarrapportering av medisinske tjenester. Informasjonsmodell og XML meldingsbeskrivelse (PDF)</Beskrivelse>
+			<Beskrivelse>Svarrapportering av medisinske tjenester v.1.4. Informasjonsmodell og XML meldingsbeskrivelse (PDF)</Beskrivelse>
 			<Referanse>kravdokument/svarrapport/HIS_80822_2014_Svarrapport_v1 4-2014-02-13.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>

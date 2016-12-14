@@ -8,15 +8,15 @@
 	<Utgiver>Helsedirektoratet</Utgiver>
 
 	<Referansekatalogen>
-		<Beskrivelse>Dokumentasjon av melding om om arbeidsrelatert skade på ehelse.no (HIS 80820:2008)</Beskrivelse>
+		<Beskrivelse>Melding om arbeidsrelatert skade på ehelse.no (HIS 80820:2008)</Beskrivelse>
 		<Referanse>https://ehelse.no/Sider/Elektronisk-melding-om-arbeidsrelatert-sykdom-eller-skade--Informasjonsmodell-og-XML-meldingsbeskrivelse-–-HIS-808202008.aspx</Referanse>
 	</Referansekatalogen>
 
-	<Status>Fastsatt som standard</Status>
+	<Status>Utgått</Status>
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Elektronisk melding om arbeidsrelatert sykdom eller skade. Informasonsmodell og XML meldingsbeskrivelse (PDF)</Beskrivelse>
+			<Beskrivelse>Elektronisk melding om arbeidsrelatert sykdom eller skade. Informasjonsmodell og XML meldingsbeskrivelse (PDF)</Beskrivelse>
 			<Referanse>kravdokument/meldingArbeidsrelatertSkade/HIS_80820_2008-DAT-MOAS-2008-09-29-aas.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
