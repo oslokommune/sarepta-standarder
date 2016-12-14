@@ -8,11 +8,11 @@
 	<Utgiver>Helsedirektoratet</Utgiver>
 
 	<Referansekatalogen>
-		<Beskrivelse>Dokumentasjon av tilbakemelding på henvisning på ehelse.no (HIS 80326:2003)</Beskrivelse>
+		<Beskrivelse>Elektronisk utveksling av tilbakemelding på henvisning. XML-meldingsbeskrivelse - HIS 80326:2003 </Beskrivelse>
 		<Referanse>https://ehelse.no/elektronisk-utveksling-av-tilbakemelding-pa-henvisning-xml-meldingsbeskrivelse-his-803262003</Referanse>
 	</Referansekatalogen>
 
-	<Status>Fastsatt som standard</Status>
+	<Status>Til pilotering</Status>
 
 	<Kravdokumenter>
 		<Kravdokument>
