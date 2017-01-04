@@ -4,26 +4,34 @@
 	<Navn>Svarrapportering av medisinske tjenester</Navn>
 	<Versjon>1.3</Versjon>
 	<Identifikator>HIS 80822:2008</Identifikator>
-	<Utgivelsesdato>2008-12-01</Utgivelsesdato>
+	<Utgitt>12/2008</Utgitt>
 	<Utgiver>Helsedirektoratet</Utgiver>
-	<Status>Til utbredelse</Status>
-	<StatusReferansekatalog>Aktiv</StatusReferansekatalog>
-	<Standardtekster>
-		<Standardtekst>
-			<Beskrivelse>Svarrapportering av medisinske tjenester. XML meldingsbeskrivelse. Inkluderer errata nr. 1 (PDF)</Beskrivelse>
-			<Referanse>standardtekst/svarrapport/HIS_80822_2008-svarraport_v1.3.pdf</Referanse>
-		</Standardtekst>
-		<Standardtekst>
+
+	<Referansekatalogen>
+		<Beskrivelse>Svarrapportering av medisinske tjenester (v1.3) (HIS 80822:2008)</Beskrivelse>
+		<Referanse>https://ehelse.no/Sider/Svarrapportering-av-medisinske-tjenester--Informasjonsmodell-og-XML-meldingsbeskrivelse-–-HIS-808222008.aspx</Referanse>
+	</Referansekatalogen>
+
+	<Status>Fastsatt som standard</Status>
+
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>Svarrapportering av medisinske tjenester v. 1.3. XML meldingsbeskrivelse (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/HIS_80822_2008-svarraport_v1.3.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
 			<Beskrivelse>Errata HIS 80822:2008 nr 1: Svarrapportering av medisinske tjenester v1.3: Retting av feil i eksempel for GenDate i standarden</Beskrivelse>
-			<Referanse>standardtekst/svarrapport/Errata-svarrapport_v1.3_nr1.pdf</Referanse>
-		</Standardtekst>
-	</Standardtekster>
+			<Referanse>kravdokument/svarrapport/Errata-svarrapport_v1.3_nr1.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+
 	<Skjemaer>
 		<Skjema>
 			<Referanse>skjema/svarrapport/svar-v13.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/labsvar/2008-12-01</Namespace>
 		</Skjema>
 	</Skjemaer>
+
 	<Felleskomponenter>
 		<Felleskomponent>
 			<Beskrivelse>Felles datatyper</Beskrivelse>
@@ -34,6 +42,7 @@
 			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
+
 	<Visningsfiler>
 		<Visningsfil>
 			<Referanse>visningsfil/svarrapport/v1.3/svarrapport-v1_3-2html.xsl</Referanse>
@@ -115,16 +124,12 @@
 			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
+
 	<Testmateriell>
 		<Testfil>
 			<Beskrivelse>Syntaks-sjekk av XML-meldinger (XML-validering)</Beskrivelse>
 			<Referanse>https://validator.test.nhn.no/validering/index.cgi</Referanse>
 		</Testfil>
 	</Testmateriell>
-	<RelaterteFiler>
-		<RelatertFil>
-			<Beskrivelse>Referansekatalog-oppføring for Svarrapport 1.3 (HIS 80822:2008)</Beskrivelse>
-			<Referanse>https://ehelse.no/Sider/Svarrapportering-av-medisinske-tjenester--Informasjonsmodell-og-XML-meldingsbeskrivelse-–-HIS-808222008.aspx</Referanse>
-		</RelatertFil>
-	</RelaterteFiler>
+
 </StandardMetadata>

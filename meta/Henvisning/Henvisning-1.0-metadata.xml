@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
-	<Navn>Henvisning</Navn>
+	<Navn>Henvisningsmelding</Navn>
 	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 80517:2005</Identifikator>
-	<Utgivelsesdato>2005-07-01</Utgivelsesdato>
+	<Utgitt>07/2005</Utgitt>
 	<Utgiver>Helsedirektoratet</Utgiver>
-	<Status>Til utbredelse</Status>
-	<StatusReferansekatalog>Under utfasing</StatusReferansekatalog>
-	<ErstattetAv>HIS 80517:2014</ErstattetAv>
-	<Standardtekster>
-		<Standardtekst>
-			<Beskrivelse>Henvisning. Informasjonsmodell og XML meldingsbeskrivelse (PDF)</Beskrivelse>
-			<Referanse>standardtekst/henvisning/HIS_80517_2005_Henvisning_v1.0.pdf</Referanse>
-		</Standardtekst>
-	</Standardtekster>
+	
+	<Referansekatalogen>
+		<Beskrivelse>Henvisningsmelding 1.0 (HIS 80517:2005)</Beskrivelse>
+		<Referanse>https://ehelse.no/Sider/Henvisning--Informasjonsmodell-og-XML-meldingsbeskrivelse-%E2%80%93-HIS-805172005.aspx</Referanse>
+	</Referansekatalogen>	
+	
+	<Status>Fastsatt som standard</Status>
+
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>Henvisning. Informasjonsmodell og XML meldingsbeskrivelse (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/henvisning/HIS_80517_2005_Henvisning_v1.0.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+	
 	<Skjemaer>
 		<Skjema>
 			<Referanse>skjema/henvisning/Henvisning-v1.0.xsd</Referanse>
@@ -35,6 +41,7 @@
 			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
+	
 	<Visningsfiler>
 		<Visningsfil>
 			<Referanse>visningsfil/henvisning/v1.0/henvisning-v1_0-2html.xsl</Referanse>
@@ -116,16 +123,5 @@
 			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
-	<Testmateriell>
-		<Testfil>
-			<Beskrivelse>Syntaks-sjekk av XML-meldinger (XML-validering)</Beskrivelse>
-			<Referanse>https://validator.test.nhn.no/validering/index.cgi</Referanse>
-		</Testfil>
-	</Testmateriell>
-	<RelaterteFiler>
-		<RelatertFil>
-			<Beskrivelse>Referansekatalog-oppføring for Henvisning 1.0 (HIS 80517:2005)</Beskrivelse>
-			<Referanse>https://ehelse.no/Sider/Henvisning--Informasjonsmodell-og-XML-meldingsbeskrivelse-%E2%80%93-HIS-805172005.aspx</Referanse>
-		</RelatertFil>
-	</RelaterteFiler>
+	
 </StandardMetadata>

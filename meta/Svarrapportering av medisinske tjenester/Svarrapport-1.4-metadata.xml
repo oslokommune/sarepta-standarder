@@ -4,22 +4,30 @@
 	<Navn>Svarrapportering av medisinske tjenester</Navn>
 	<Versjon>1.4</Versjon>
 	<Identifikator>HIS 80822:2014</Identifikator>
-	<Utgivelsesdato>2014-02-01</Utgivelsesdato>
+	<Utgitt>02/2014</Utgitt>
 	<Utgiver>Helsedirektoratet</Utgiver>
-	<Status>Til utbredelse</Status>
-	<StatusReferansekatalog>Aktiv</StatusReferansekatalog>
-	<Standardtekster>
-		<Standardtekst>
-			<Beskrivelse>Svarrapportering av medisinske tjenester. Informasjonsmodell og XML meldingsbeskrivelse (PDF)</Beskrivelse>
-			<Referanse>standardtekst/svarrapport/HIS_80822_2014_Svarrapport_v1 4-2014-02-13.pdf</Referanse>
-		</Standardtekst>
-	</Standardtekster>
+
+	<Referansekatalogen>
+		<Beskrivelse>Svarrapportering av medisinske tjenester (v1.4) (HIS 80822:2014) </Beskrivelse>
+		<Referanse>https://ehelse.no/Sider/Svarrapportering-av-medisinske-tjenester--Informasjonsmodell-og-XML-meldingsbeskrivelse-%e2%80%93-HIS-808222014.aspx</Referanse>
+	</Referansekatalogen>
+
+	<Status>Fastsatt som standard</Status>
+
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>Svarrapportering av medisinske tjenester v.1.4. Informasjonsmodell og XML meldingsbeskrivelse (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/HIS_80822_2014_Svarrapport_v1 4-2014-02-13.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+
 	<Skjemaer>
 		<Skjema>
 			<Referanse>skjema/svarrapport/svar-v1.4.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/labsvar/2012-02-15</Namespace>
 		</Skjema>
 	</Skjemaer>
+
 	<Felleskomponenter>
 		<Felleskomponent>
 			<Beskrivelse>Felles datatyper</Beskrivelse>
@@ -30,6 +38,7 @@
 			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
+
 	<Visningsfiler>
 		<Visningsfil>
 			<Referanse>visningsfil/svarrapport/v1.4/svarrapport-v1_4-2html.xsl</Referanse>
@@ -111,12 +120,14 @@
 			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
+
 	<Testmateriell>
 		<Testfil>
 			<Beskrivelse>Syntaks-sjekk av XML-meldinger (XML-validering)</Beskrivelse>
 			<Referanse>https://validator.test.nhn.no/validering/index.cgi</Referanse>
 		</Testfil>
 	</Testmateriell>
+
 	<Eksempler>
 		<Eksempel>
 			<Referanse>eksempel/svarrapport/1.4/xml/Svar biokjemi - v1.4.xml</Referanse>
@@ -179,10 +190,5 @@
 			<Referanse>eksempel/svarrapport/1.4/html/Svar rekvisisjon virologi - v1.4.html</Referanse>
 		</Eksempel>
 	</Eksempler>
-	<RelaterteFiler>
-		<RelatertFil>
-			<Beskrivelse>Referansekatalog-oppføring for Svarrapport 1.4 (HIS 80822:2014)</Beskrivelse>
-			<Referanse>https://ehelse.no/Sider/Svarrapportering-av-medisinske-tjenester--Informasjonsmodell-og-XML-meldingsbeskrivelse-%e2%80%93-HIS-808222014.aspx</Referanse>
-		</RelatertFil>
-	</RelaterteFiler>
+
 </StandardMetadata>

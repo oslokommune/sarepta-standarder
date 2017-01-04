@@ -4,16 +4,23 @@
 	<Navn>Overføring av legemiddelopplysninger</Navn>
 	<Versjon>1.4</Versjon>
 	<Identifikator>HIS 1150:2014</Identifikator>
-	<Utgivelsesdato>2014-01-01</Utgivelsesdato>
+	<Utgitt>01/2014</Utgitt>
 	<Utgiver>Helsedirektoratet</Utgiver>
-	<Status>Til utbredelse</Status>
-	<StatusReferansekatalog>Aktiv</StatusReferansekatalog>
-	<Standardtekster>
-		<Standardtekst>
-			<Beskrivelse>Standard for kommunikasjon av EPJ-innhold: Overføring av legemiddelopplysninger (PDF)</Beskrivelse>
-			<Referanse>standardtekst/overforingLegemiddelopplysninger/HIS_1150_2014_EPJ-overforingLegemiddelopplysninger.pdf</Referanse>
-		</Standardtekst>
-	</Standardtekster>
+
+	<Referansekatalogen>
+		<Beskrivelse>Overføring av legemiddelopplysninger (HIS 1150:2014)</Beskrivelse>
+		<Referanse>https://ehelse.no/Sider/Standard-for-elektronisk-kommunikasjon-med-pleie--og-omsorgstjenesten-Overføring-av-legemiddelopplysninger---HIS-11502014.aspx</Referanse>
+	</Referansekatalogen>
+
+	<Status>Fastsatt som standard</Status>
+
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>Standard for kommunikasjon av EPJ-innhold: Overføring av legemiddelopplysninger (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/overforingLegemiddelopplysninger/HIS_1150_2014_EPJ-overforingLegemiddelopplysninger.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+
 	<Felleskomponenter>
 		<Felleskomponent>
 			<Referanse>skjema/felleskomponenter/EPJEkstrakt.xsd</Referanse>
@@ -38,17 +45,15 @@
 			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
+
 	<Testmateriell>
 		<Testfil>
 			<Beskrivelse>Syntaks-sjekk av XML-meldinger (XML-validering)</Beskrivelse>
 			<Referanse>https://validator.test.nhn.no/validering/index.cgi</Referanse>
 		</Testfil>
 	</Testmateriell>
+
 	<RelaterteFiler>
-		<RelatertFil>
-			<Beskrivelse>Referansekatalog-oppføring for profil som beskriver overføring av legemiddelopplysninger i PLO-meldinger (HIS 1150:2014)</Beskrivelse>
-			<Referanse>https://ehelse.no/Sider/Standard-for-elektronisk-kommunikasjon-med-pleie--og-omsorgstjenesten-Overføring-av-legemiddelopplysninger---HIS-11502014.aspx</Referanse>
-		</RelatertFil>
 		<RelatertFil>
 			<Beskrivelse>Referansekatalog-oppføring for Standard for kommunikasjon av EPJ-innhold (HIS 80710:2007)</Beskrivelse>
 			<Referanse>https://ehelse.no/Sider/Standard-for-kommunikasjon-av-EPJ-innhold--Informasjonsmodell-og-XML-meldingsbeskrivelse---HIS-807102007.aspx</Referanse>

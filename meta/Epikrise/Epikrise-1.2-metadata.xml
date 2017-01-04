@@ -4,22 +4,31 @@
 	<Navn>Epikrise</Navn>
 	<Versjon>1.2</Versjon>
 	<Identifikator>HIS 80226:2014</Identifikator>
-	<Utgivelsesdato>2014-02-01</Utgivelsesdato>
+	<Utgitt>2014-02-01</Utgitt>
 	<Utgiver>Helsedirektoratet</Utgiver>
-	<Status>Til utbredelse</Status>
-	<StatusReferansekatalog>Under innfasing</StatusReferansekatalog>
-	<Standardtekster>
-		<Standardtekst>
-			<Beskrivelse>Epikrise. Informasjonsmodell og XML meldingsbeskrivelse (PDF)</Beskrivelse>
-			<Referanse>standardtekst/epikrise/HIS_80226_2014_Epikrise_v1 2-2014-02-13.pdf</Referanse>
-		</Standardtekst>
-	</Standardtekster>
+	
+	<Referansekatalogen>
+		<Beskrivelse>Epikrise 1.2 (HIS 80226:2014)</Beskrivelse>
+		<Referanse>https://ehelse.no/Sider/Epikrise--Informasjonsmodell-og-XML-meldingsbeskrivelse-%e2%80%93-HIS-802262014.aspx</Referanse>
+	</Referansekatalogen>
+	
+	<Status>Fastsatt som standard</Status>
+	<ForrigeVersjon>HIS 80226:2006</ForrigeVersjon>
+	
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>Epikrise. Informasjonsmodell og XML meldingsbeskrivelse (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/epikrise/HIS_80226_2014_Epikrise_v1 2-2014-02-13.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+	
 	<Skjemaer>
 		<Skjema>
 			<Referanse>skjema/epikrise/Epikrise-v1.2.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/epikrise/2012-02-15</Namespace>
 		</Skjema>
 	</Skjemaer>
+	
 	<Felleskomponenter>
 		<Felleskomponent>
 			<Beskrivelse>Felles datatyper</Beskrivelse>
@@ -30,6 +39,7 @@
 			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
+	
 	<Visningsfiler>
 		<Visningsfil>
 			<Referanse>visningsfil/epikrise/v1.2/Epikrise-v1_2-2html.xsl</Referanse>
@@ -111,16 +121,5 @@
 			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
-	<Testmateriell>
-		<Testfil>
-			<Beskrivelse>Syntaks-sjekk av XML-meldinger (XML-validering)</Beskrivelse>
-			<Referanse>https://validator.test.nhn.no/validering/index.cgi</Referanse>
-		</Testfil>
-	</Testmateriell>
-	<RelaterteFiler>
-		<RelatertFil>
-			<Beskrivelse>Referansekatalog-oppføring for Epikrise 1.2 (HIS 80226:2014)</Beskrivelse>
-			<Referanse>https://ehelse.no/Sider/Epikrise--Informasjonsmodell-og-XML-meldingsbeskrivelse-%e2%80%93-HIS-802262014.aspx</Referanse>
-		</RelatertFil>
-	</RelaterteFiler>
+		
 </StandardMetadata>

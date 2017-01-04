@@ -1,46 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
-<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+<StandardMetadata definisjonVersjon="" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="../Metadata.xsd">
 	<Navn>Applikasjonskvittering</Navn>
 	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 80415:2004</Identifikator>
-	<Utgivelsesdato>2004-11-21</Utgivelsesdato>
+	<Utgitt>11/2004</Utgitt>
 	<Utgiver>Helsedirektoratet</Utgiver>
-	<Status>Til utbredelse</Status>
-	<StatusReferansekatalog>Under utfasing</StatusReferansekatalog>
-	<ErstattetAv>HIS 80415:2012</ErstattetAv>
-	<Standardtekster>
-		<Standardtekst>
-			<Beskrivelse>Applikasjonskvittering Informasjonsmodell, XML meldingsbeskrivelse og retningslinjer for bruk (PDF)</Beskrivelse>
-			<Referanse>standardtekst/applikasjonskvittering/HIS_80415_2004-AppRec-v1 rev2-2013-03-26.pdf</Referanse>
-		</Standardtekst>
-		<Standardtekst>
-			<Beskrivelse>Errata HIS 80415:2004 nr 1: Applikasjonskvittering 1.0: Retting av feil på datatyper for GenDate og IssueDate i standarden (PDF)</Beskrivelse>
-			<Referanse>standardtekst/applikasjonskvittering/Errata_HIS_80415_2004_1-apprec.pdf</Referanse>
-		</Standardtekst>
-	</Standardtekster>
+	<Referansekatalogen>
+		<Beskrivelse>Applikasjonskvittering 1.0 (HIS 80415:2004)</Beskrivelse>
+		<Referanse>https://ehelse.no/Sider/Applikasjonskvittering--Informasjonsmodell,-XML-meldingsbeskrivelse-og-retningslinjer-for-bruk---HIS-804152004.aspx</Referanse>
+	</Referansekatalogen>
+	<Status>Fastsatt som standard</Status>
+	
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>Applikasjonskvittering: Informasjonsmodell, XML meldingsbeskrivelse og retningslinjer for bruk (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/applikasjonskvittering/HIS_80415_2004-AppRec-v1 rev2-2013-03-26.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+	
 	<Skjemaer>
 		<Skjema>
 			<Referanse>skjema/applikasjonskvittering/AppRec-v1-2004-11-21.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/apprec/2004-11-21</Namespace>
 		</Skjema>
 	</Skjemaer>
+	
 	<Felleskomponenter>
 		<Felleskomponent>
 			<Beskrivelse>Felles datatyper</Beskrivelse>
 			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
+	
 	<Testmateriell>
 		<Testfil>
 			<Beskrivelse>Testcase for riktig implementasjon og bruk av applikasjonskvittering (XLSX)</Beskrivelse>
 			<Referanse>test/applikasjonskvittering/TestcaseApplikasjonskvittering.xlsx</Referanse>
 		</Testfil>
-		<Testfil>
-			<Beskrivelse>Syntaks-sjekk av XML-meldinger (XML-validering)</Beskrivelse>
-			<Referanse>https://validator.test.nhn.no/validering/index.cgi</Referanse>
-		</Testfil>
 	</Testmateriell>
+	
 	<Eksempler>
 		<Eksempel>
 			<Referanse>eksempel/applikasjonskvittering/AppRec-v1-eksempel-ok.xml</Referanse>
@@ -52,14 +53,12 @@
 			<Referanse>eksempel/applikasjonskvittering/AppRec-v1-eksempel-ok_feil_i_delmelding.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
+	
 	<RelaterteFiler>
 		<RelatertFil>
 			<Beskrivelse>Veiledning til riktig bruk av applikasjonskvittering (HISD 1168:2016) (PDF)</Beskrivelse>
 			<Referanse>relaterteFiler/applikasjonskvittering/HISD_1168_2016-Veiledning til riktig bruk av Applikasjonskvittering.pdf</Referanse>
 		</RelatertFil>
-		<RelatertFil>
-			<Beskrivelse>Referansekatalog-oppføring for Applikasjonskvittering 1.0 (HIS 80415:2004)</Beskrivelse>
-			<Referanse>https://ehelse.no/Sider/Applikasjonskvittering--Informasjonsmodell,-XML-meldingsbeskrivelse-og-retningslinjer-for-bruk---HIS-804152004.aspx</Referanse>
-		</RelatertFil>
 	</RelaterteFiler>
+	
 </StandardMetadata>

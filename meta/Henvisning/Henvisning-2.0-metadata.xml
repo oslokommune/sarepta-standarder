@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
-	<Navn>Henvisning</Navn>
+	<Navn>Henvisningsmelding</Navn>
 	<Versjon>2.0</Versjon>
 	<Identifikator>HIS 80517:2014 Rev2 utprøving</Identifikator>
-	<Utgivelsesdato>2014-04-30</Utgivelsesdato>
-	<Utgiver>Helsedirektoratet</Utgiver>
-	<Status>Til utprøving</Status>
-	<Erstatter>HIS 80517:2005</Erstatter>
-	<Standardtekster>
-		<Standardtekst>
-			<Beskrivelse>Henvisning. Informasjonsmodell og XML meldingsbeskrivelse (PDF)</Beskrivelse>
-			<Referanse>standardtekst/henvisning/HIS_80517_2014_utproving_Henvisning_v2-2014-04-30.pdf</Referanse>
-		</Standardtekst>
-	</Standardtekster>
+	<Utgitt>04/2014</Utgitt>
+
+	<Status>Til pilotering</Status>
+	<ForrigeVersjon>HIS 80517:2014</ForrigeVersjon>
+	
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>Henvisning. Informasjonsmodell og XML meldingsbeskrivelse (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/henvisning/HIS_80517_2014_utproving_Henvisning_v2-2014-04-30.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+	
 	<Skjemaer>
 		<Skjema>
 			<Referanse>skjema/henvisning/Henvisning-v2.0.xsd</Referanse>
@@ -25,6 +27,7 @@
 			<Namespace>http://www.kith.no/xmlstds/po/poKomponent/2012-04-01</Namespace>
 		</Skjema>
 	</Skjemaer>
+	
 	<Felleskomponenter>
 		<Felleskomponent>
 			<Beskrivelse>Felles XML-definisjoner for person, helsepersonell, organisasjon etc</Beskrivelse>
@@ -43,6 +46,7 @@
 			<Referanse>skjema/felleskomponenter/MsgHead-v1_2.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
+	
 	<Visningsfiler>
 		<Visningsfil>
 			<Beskrivelse>Felleskomponent for alle visningsfiler: KITH-visning.css</Beskrivelse>
