@@ -41,7 +41,7 @@ For innholdsprodusenter og -ansvarlige
 
  1. Åpne **GitExt Browse**
  2. Velg Commands → **Pull...**
- 3. Under Merge Options, velg **"Rebase current branch ..."**
+ 3. Under Merge Options, velg **"Merge remote branch into current branch"**
  4. Trykk **Pull**
 
 ----------
