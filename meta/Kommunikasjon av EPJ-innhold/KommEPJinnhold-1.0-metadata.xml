@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
 	<Navn>Kommunikasjon av EPJ-innhold</Navn>
@@ -17,7 +17,7 @@
 	<Kravdokumenter>
 		<Kravdokument>
 			<Beskrivelse>Standard for kommunikasjon av EPJ-innhold. Informasjonsmodell og XML meldingsbeskrivelse (GitLab)</Beskrivelse>
-			<Referanse>kravdoument/kommEPJinnhold/HIS_80710_2007-Standard for kommunikasjon av EPJ-innhold-v1.0.pdf</Referanse>
+			<Referanse>kravdokument/kommEPJinnhold/HIS_80710_2007-Standard for kommunikasjon av EPJ-innhold-v1.0.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
 	

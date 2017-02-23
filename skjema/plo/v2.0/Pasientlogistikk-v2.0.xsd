@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:po="http://www.kith.no/xmlstds/po/poKomponent/2015-xx-xx" xmlns:p1="http://www.kith.no/xmlstds/po/Pasientlogistikk/2015-xx-xx" targetNamespace="http://www.kith.no/xmlstds/po/Pasientlogistikk/2015-xx-xx" attributeFormDefault="unqualified">
-	<import namespace="http://www.kith.no/xmlstds/po/poKomponent/2015-xx-xx" schemaLocation="poKomponent-v2.0.xsd"/>
+<!-- Versjon 2.0 2016-05-30-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:po="http://ehelse.no/xmlstds/po/poKomponent/2016-05-30" xmlns:p1="http://ehelse.no/xmlstds/po/Pasientlogistikk/2016-05-30" targetNamespace="http://ehelse.no/xmlstds/po/Pasientlogistikk/2016-05-30" attributeFormDefault="unqualified">
+	<import namespace="http://ehelse.no/xmlstds/po/poKomponent/2016-05-30" schemaLocation="poKomponent-v2.0.xsd"/>
 	<!--LEVEL 1-->
 	<element name="Pasientlogistikk">
 		<annotation>
@@ -29,7 +29,6 @@
 			</sequence>
 		</complexType>
 	</element>
-	<!--CLASS: Orientering om dødsfall-->
 	<element name="MeldingOmUtskrevetPasient">
 		<complexType>
 			<sequence>
