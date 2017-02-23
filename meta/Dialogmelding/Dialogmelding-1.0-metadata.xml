@@ -119,10 +119,5 @@
 		</Visningsfil>
 	</Visningsfiler>
 	
-	<Eksempler>
-		<Eksempel>
-			<Referanse>eksempel/dialogmelding/Dialogmelding-ex1.xml</Referanse>
-		</Eksempel>
-	</Eksempler>
 
 </StandardMetadata>

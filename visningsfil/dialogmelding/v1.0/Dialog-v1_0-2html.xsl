@@ -31,10 +31,13 @@
 	xmlns:base="http://www.kith.no/xmlstds/base64container" 
 	exclude-result-prefixes="fk1 dia mh xhtml base">
 
-	<xsl:import href="../../Felleskomponenter/meldingshode2html.xsl"/>
-	<xsl:import href="../../Felleskomponenter/funksjoner.xsl"/>
-	<xsl:import href="../../Felleskomponenter/kodeverk.xsl"/>
-	<xsl:output method="html" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+	<xsl:import href="../../felleskomponenter/meldingshode2html.xsl"/>
+	<xsl:import href="../../felleskomponenter/funksjoner.xsl"/>
+	<xsl:import href="../../felleskomponenter/kodeverk.xsl"/>
+
+	<xsl:output method="html" encoding="UTF-8" indent="yes" omit-xml-declaration="yes"
+		doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
 
 	<!-- Variabel for hvilken stil visning har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
 	<xsl:variable name="stil" select="'One-line-doc'"/>
@@ -42,7 +45,7 @@
 	<xsl:variable name="std-col" select="8"/>
 	<xsl:variable name="std-td" select="100"/>
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'dialog1.0 v3.1.0 '"/>
+	<xsl:variable name="versjon" select="'dialog1.0 - v3.1.0 '"/>
 
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
@@ -50,7 +53,7 @@
 				<title>Dialogmelding</title>
 				<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 				<style type="text/css">
-					<xsl:value-of select="document('../../Felleskomponenter/KITH-visning.css')" disable-output-escaping="yes"/>
+					<xsl:value-of select="document('../../felleskomponenter/KITH-visning.css')" disable-output-escaping="yes"/>
 				</style>
 			</head>
 			<body>
@@ -58,9 +61,11 @@
 			</body>
 		</html>
 	</xsl:template>
+
 	<!-- Template som kalles fra BunnTillegg i meldingshodet. Kan brukes til visning av egenkomponert bunn -->
 	<xsl:template name="EgetBunnTillegg">
 	</xsl:template>
+
 	<!-- Visning av meldingshodet. Tilpasset vinduskonvolutt ved utskrift -->
 	<xsl:template match="mh:MsgHead">
 		<xsl:call-template name="Topp"/>
@@ -70,6 +75,7 @@
 			<xsl:with-param name="versjon" select="$versjon"/>
 		</xsl:call-template>
 	</xsl:template>
+
 	<xsl:template name="Innhold" match="dia:Dialogmelding">
 		<div class="{$stil}">
 			<h1>
@@ -148,6 +154,7 @@
 			</xsl:for-each>
 		</div>
 	</xsl:template>
+
 	<xsl:template match="dia:Foresporsel">
 		<xsl:if test="dia:TypeForesp or dia:Hastegrad">
 			<tr>
@@ -328,6 +335,7 @@
 			</tr>
 		</xsl:if>
 	</xsl:template>
+
 	<xsl:template match="dia:RollerRelatertNotat">
 		<tr>
 			<td>
@@ -367,6 +375,7 @@
 			</td>
 		</tr>
 	</xsl:template>
+
 	<xsl:template match="mh:RefDoc">
 		<xsl:if test="mh:MsgType or mh:Id or mh:IssueDate or mh:MimeType or mh:Compression">
 			<tr>
@@ -507,4 +516,5 @@
 			</xsl:choose>
 		</xsl:if>
 	</xsl:template>
+
 </xsl:stylesheet>

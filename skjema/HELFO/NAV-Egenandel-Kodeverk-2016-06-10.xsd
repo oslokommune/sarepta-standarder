@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Kodeverk NAV Egenandelsspørring
+Versjon 1
+2016-06-10
+-->
+<xs:schema
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		xmlns="http://www.kith.no/xmlstds/nav/egenandel/kodeverk/2016-06-10"
+		targetNamespace="http://www.kith.no/xmlstds/nav/egenandel/kodeverk/2016-06-10"
+		elementFormDefault="qualified"
+		attributeFormDefault="unqualified">
+
+	<xs:simpleType name="TjenestetypeKode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="A"/>   <!-- Apotek, frikort tak 1 -->
+			<xs:enumeration value="S"/>   <!-- Sykehusapotek, frikort tak 1 -->
+			<xs:enumeration value="B"/>   <!-- Bandasjist, frikort tak 1 -->
+			<xs:enumeration value="LE"/>  <!-- Lege, frikort tak 1 -->
+			<xs:enumeration value="PO"/>  <!-- Sykehus(poliklinikk), frikort tak 1 -->
+			<xs:enumeration value="HS"/>  <!-- Helsestasjon, frikort tak 1 -->
+			<xs:enumeration value="LR"/>  <!-- Lab/røntgen, frikort tak 1 -->
+			<xs:enumeration value="PR"/>  <!-- Pasientreiser, frikort tak 1 -->
+			<xs:enumeration value="PS"/>  <!-- Psykolog, frikort tak 1 -->
+			<xs:enumeration value="TB"/>  <!-- Tannbehandling, frikort tak 2 -->
+			<xs:enumeration value="RH"/>  <!-- Rehabiliteringsopphold, frikort tak 2 -->
+			<xs:enumeration value="FT"/>  <!-- Fysioterapi, frikort tak 2 -->
+			<xs:enumeration value="BR"/>  <!-- Behandlingsreiser til utlandet, frikort tak 2 -->
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>
