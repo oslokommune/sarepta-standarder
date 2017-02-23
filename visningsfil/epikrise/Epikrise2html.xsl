@@ -19,7 +19,7 @@
 	<!-- Om
 	- Laget i XMLSpy v2016 (http://www.altova.com) av Jan Sigurd Dragsjø (nhn.no)
 	-->
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dis="http://www.kith.no/xmlstds/epikrise/2012-02-15" xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:base="http://www.kith.no/xmlstds/base64container" exclude-result-prefixes="dis xhtml base">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:base="http://www.kith.no/xmlstds/base64container" exclude-result-prefixes="xhtml base">
 
 	<!-- Import. Stien tilrettelegger for katalogstruktur med en meldings-katalog med versjons-kataloger inni. Sti må endres om slik struktur ikke benyttes -->
 	<xsl:import href="../Felleskomponenter/funksjoner.xsl"/>
@@ -90,6 +90,9 @@
 	
 	<!-- Boolsk variabel om menylinjen skal vises. Settes til true() om den skal vises. -->
 	<xsl:variable name="VisMenylinje" select="false()"/>
+	
+	<!-- Boolsk variabel for å anonymisere pasienten i visningen -->
+	<xsl:variable name="Anonymisert" select="false()"/>
 	
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
@@ -184,12 +187,24 @@
 	</xsl:template>
 	<xsl:template name="PatientHode">
 		<div>
-			<xsl:value-of select="child::*[local-name()=&quot;Name&quot;]"/>&#160;
+			<xsl:choose>
+				<xsl:when test="not($Anonymisert)">
+					<xsl:value-of select="child::*[local-name()='Name']"/>&#160;</xsl:when>
+				<xsl:otherwise>Gundersen,&#160;Roland&#160;</xsl:otherwise>
+			</xsl:choose>
 			<b>
-				<xsl:for-each select="child::*[local-name()=&quot;TypeOffId&quot;]">
-					<xsl:call-template name="k-8116"/>
-				</xsl:for-each>:&#160;</b>
-			<xsl:value-of select="child::*[local-name()=&quot;OffId&quot;]"/>&#160;
+				<xsl:choose>
+					<xsl:when test="not($Anonymisert)">
+						<xsl:for-each select="child::*[local-name()='TypeOffId']">
+							<xsl:call-template name="k-8116"/>
+						</xsl:for-each>:&#160;</xsl:when>
+					<xsl:otherwise>Fødselsnummer:&#160;</xsl:otherwise>
+				</xsl:choose></b>
+			<xsl:choose>
+				<xsl:when test="not($Anonymisert)">
+					<xsl:value-of select="child::*[local-name()='OffId']"/>&#160;</xsl:when>
+				<xsl:otherwise>15076500565</xsl:otherwise>
+			</xsl:choose>
 		</div>
 		<xsl:if test="child::*[local-name()=&quot;DateOfDeath&quot;]">
 			<div>
@@ -244,8 +259,7 @@
 		<div>
 			<xsl:for-each select="child::*[local-name()=&quot;Type&quot;]">
 				<xsl:call-template name="k-9060"/>
-			</xsl:for-each>&#160;
-			<xsl:choose>
+			</xsl:for-each>&#160;<xsl:choose>
 				<xsl:when test="ancestor::*[local-name()=&quot;ServProvider&quot;]"><font size="3em"><b><xsl:value-of select="child::*[local-name()=&quot;Name&quot;]"/></b></font></xsl:when>
 				<xsl:otherwise><xsl:value-of select="child::*[local-name()=&quot;Name&quot;]"/></xsl:otherwise>
 			</xsl:choose>
@@ -258,47 +272,82 @@
 		</xsl:for-each>
 	</xsl:template>
 	<xsl:template name="AddressHode">
-		<xsl:if test="child::*[local-name()=&quot;Type&quot;] and (child::*[local-name()=&quot;StreetAdr&quot;] or child::*[local-name()=&quot;PostalCode&quot;] or child::*[local-name()=&quot;City&quot;] or child::*[local-name()=&quot;CityDistr&quot;])">
+		<xsl:if test="child::*[local-name()='Type'] and (child::*[local-name()='StreetAdr'] or child::*[local-name()='PostalCode'] or child::*[local-name()='City'] or child::*[local-name()='CityDistr'])">
 			<div class="NoPrint">&#160;<b>
-				<xsl:for-each select="child::*[local-name()=&quot;Type&quot;]">
-					<xsl:call-template name="k-3401"/>
+				<xsl:for-each select="child::*[local-name()='Type']">
+					<xsl:choose>
+						<xsl:when test="$Anonymisert and local-name(..)='Patient'">Bostedsadresse</xsl:when>
+						<xsl:otherwise>
+							<xsl:call-template name="k-3401"/>
+						</xsl:otherwise>
+					</xsl:choose>
 				</xsl:for-each>:&#160;</b>
 			</div>
 		</xsl:if>
-		<xsl:if test="child::*[local-name()=&quot;StreetAdr&quot;]">
+		<xsl:if test="child::*[local-name()='StreetAdr']">
 			<div>
-				<xsl:value-of select="child::*[local-name()=&quot;StreetAdr&quot;]"/>
+				<xsl:choose>
+					<xsl:when test="$Anonymisert and local-name(..)='Patient'">Flåklypa&#160;31</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="child::*[local-name()='StreetAdr']"/>
+					</xsl:otherwise>
+				</xsl:choose>
 			</div>
 		</xsl:if>
-		<xsl:if test="child::*[local-name()=&quot;PostalCode&quot;] or child::*[local-name()=&quot;City&quot;]">
-			<xsl:if test="child::*[local-name()=&quot;StreetAdr&quot;]">
+		<xsl:if test="child::*[local-name()='PostalCode'] or child::*[local-name()='City']">
+			<xsl:if test="child::*[local-name()='StreetAdr']">
 				<div class="NoPrint">,</div>
 			</xsl:if>
 			<div>
-				<xsl:value-of select="child::*[local-name()=&quot;PostalCode&quot;]"/>&#160;<xsl:value-of select="child::*[local-name()=&quot;City&quot;]"/>
+				<xsl:choose>
+					<xsl:when test="$Anonymisert and local-name(..)='Patient'">2560&#160;Alvdal</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="child::*[local-name()='PostalCode']"/>&#160;<xsl:value-of select="child::*[local-name()='City']"/>
+					</xsl:otherwise>
+				</xsl:choose>
 			</div>
 		</xsl:if>
-		<xsl:for-each select="child::*[local-name()=&quot;CityDistr&quot;]">
+		<xsl:for-each select="child::*[local-name()='CityDistr']">
 			<div class="NoPrint">,</div>
 			<div>
-				<xsl:call-template name="k-3403"/>
+				<xsl:choose>
+					<xsl:when test="$Anonymisert and local-name(..)='Patient'">&#160;</xsl:when>
+					<xsl:otherwise>
+						<xsl:call-template name="k-3403"/>
+					</xsl:otherwise>
+				</xsl:choose>
 			</div>
 		</xsl:for-each>
-		<xsl:for-each select="child::*[local-name()=&quot;County&quot;]">
+		<xsl:for-each select="child::*[local-name()='County']">
 			<div class="NoPrint">,</div>
 			<div>
-				<xsl:call-template name="k-3402"/>
+				<xsl:choose>
+					<xsl:when test="$Anonymisert and local-name(..)='Patient'">&#160;</xsl:when>
+					<xsl:otherwise>
+						<xsl:call-template name="k-3402"/>
+					</xsl:otherwise>
+				</xsl:choose>
 			</div>
 		</xsl:for-each>
-		<xsl:for-each select="child::*[local-name()=&quot;Country&quot;]">
+		<xsl:for-each select="child::*[local-name()='Country']">
 			<div class="NoPrint">,</div>
 			<div>
-				<xsl:call-template name="k-9043"/>
+				<xsl:choose>
+					<xsl:when test="$Anonymisert and local-name(..)='Patient'">Norge&#160;</xsl:when>
+					<xsl:otherwise>
+						<xsl:call-template name="k-9043"/>
+					</xsl:otherwise>
+				</xsl:choose>
 			</div>
 		</xsl:for-each>
-		<xsl:for-each select="child::*[local-name()=&quot;TeleAddress&quot;]">
+		<xsl:for-each select="child::*[local-name()='TeleAddress']">
 			<div class="NoPrint">&#160;</div>
-			<xsl:call-template name="TeleAddressHode"/>
+			<xsl:choose>
+				<xsl:when test="$Anonymisert and local-name(..)='Patient'"></xsl:when>
+				<xsl:otherwise>
+					<xsl:call-template name="TeleAddressHode"/>
+				</xsl:otherwise>
+			</xsl:choose>
 		</xsl:for-each>
 	</xsl:template>
 	<xsl:template name="TeleAddressHode">
@@ -1553,9 +1602,14 @@
 				</xsl:if>
 				<xsl:if test="child::*[local-name()=&quot;OffId&quot;]">
 					<th colspan="{(($std-col)-2-count(child::*[local-name()=&quot;Name&quot;]))*number(not(child::*[local-name()=&quot;Sex&quot;] | child::*[local-name()=&quot;DateOfBirth&quot;] | child::*[local-name()=&quot;DateOfDeath&quot;] | child::*[local-name()=&quot;AdditionalId&quot;]))+1}">
-						<xsl:for-each select="child::*[local-name()=&quot;TypeOffId&quot;]">
-							<xsl:call-template name="k-8116"/>&#160;
-						</xsl:for-each>
+						<xsl:choose>
+							<xsl:when test="not($Anonymisert)">
+								<xsl:for-each select="child::*[local-name()='TypeOffId']">
+									<xsl:call-template name="k-8116"/>
+								</xsl:for-each>
+							</xsl:when>
+							<xsl:otherwise>Fødselsnummer</xsl:otherwise>
+						</xsl:choose>
 					</th>
 				</xsl:if>
 				<xsl:if test="child::*[local-name()=&quot;Sex&quot;]">
@@ -1574,134 +1628,168 @@
 			<tr>
 				<xsl:if test="child::*[local-name()=&quot;Name&quot;]">
 					<td width="{((($std-col)-2)*number(not(child::*[local-name()=&quot;OffId&quot;] | child::*[local-name()=&quot;Sex&quot;] | child::*[local-name()=&quot;DateOfBirth&quot;] | child::*[local-name()=&quot;DateOfDeath&quot;] | child::*[local-name()=&quot;AdditionalId&quot;] ))+1)*$std-td}px" colspan="{(($std-col)-2)*number(not(child::*[local-name()=&quot;OffId&quot;] | child::*[local-name()=&quot;Sex&quot;] | child::*[local-name()=&quot;DateOfBirth&quot;] | child::*[local-name()=&quot;DateOfDeath&quot;] | child::*[local-name()=&quot;AdditionalId&quot;] ))+1}">
-						<xsl:value-of select="child::*[local-name()=&quot;Name&quot;]"/>
+						<xsl:choose>
+							<xsl:when test="not($Anonymisert)">
+								<xsl:value-of select="child::*[local-name()='Name']"/>
+							</xsl:when>
+							<xsl:otherwise>Gundersen,&#160;Roland</xsl:otherwise>
+						</xsl:choose>
 					</td>
 				</xsl:if>
 				<xsl:if test="child::*[local-name()=&quot;OffId&quot;]">
 					<td width="{((($std-col)-2-count(child::*[local-name()=&quot;Name&quot;]))*number(not(child::*[local-name()=&quot;Sex&quot;] | child::*[local-name()=&quot;DateOfBirth&quot;] | child::*[local-name()=&quot;DateOfDeath&quot;] | child::*[local-name()=&quot;AdditionalId&quot;]))+1)*$std-td}px" colspan="{(($std-col)-2-count(child::*[local-name()=&quot;Name&quot;]))*number(not(child::*[local-name()=&quot;Sex&quot;] | child::*[local-name()=&quot;DateOfBirth&quot;] | child::*[local-name()=&quot;DateOfDeath&quot;] | child::*[local-name()=&quot;AdditionalId&quot;]))+1}">
-						<xsl:value-of select="child::*[local-name()=&quot;OffId&quot;]"/>
+						<xsl:choose>
+							<xsl:when test="not($Anonymisert)">
+								<xsl:value-of select="child::*[local-name()='OffId']"/>
+							</xsl:when>
+							<xsl:otherwise>15076500565</xsl:otherwise>
+						</xsl:choose>
 					</td>
 				</xsl:if>
 				<xsl:if test="child::*[local-name()=&quot;Sex&quot;]">
 					<td width="{((($std-col)-2-count(child::*[local-name()=&quot;Name&quot;] | child::*[local-name()=&quot;OffId&quot;]))*number(not(child::*[local-name()=&quot;DateOfBirth&quot;] | child::*[local-name()=&quot;DateOfDeath&quot;] | child::*[local-name()=&quot;AdditionalId&quot;]))+1)*$std-td}px" colspan="{(($std-col)-2-count(child::*[local-name()=&quot;Name&quot;] | child::*[local-name()=&quot;OffId&quot;]))*number(not(child::*[local-name()=&quot;DateOfBirth&quot;] | child::*[local-name()=&quot;DateOfDeath&quot;] | child::*[local-name()=&quot;AdditionalId&quot;]))+1}">
-						<xsl:for-each select="child::*[local-name()=&quot;Sex&quot;]">
-							<xsl:call-template name="k-3101"/>&#160;
-						</xsl:for-each>
+						<xsl:choose>
+							<xsl:when test="not($Anonymisert)">
+								<xsl:for-each select="child::*[local-name()='Sex']">
+									<xsl:call-template name="k-3101"/>&#160;
+								</xsl:for-each>
+							</xsl:when>
+							<xsl:otherwise>Mann</xsl:otherwise>
+						</xsl:choose>
 					</td>
 				</xsl:if>
 				<xsl:if test="child::*[local-name()=&quot;DateOfBirth&quot;]">
 					<td width="{((($std-col)-2-count(child::*[local-name()=&quot;Name&quot;] | child::*[local-name()=&quot;OffId&quot;] | child::*[local-name()=&quot;Sex&quot;]))*number(not(child::*[local-name()=&quot;DateOfDeath&quot;] | child::*[local-name()=&quot;AdditionalId&quot;]))+1)*$std-td}px" colspan="{(($std-col)-2-count(child::*[local-name()=&quot;Name&quot;] | child::*[local-name()=&quot;OffId&quot;] | child::*[local-name()=&quot;Sex&quot;]))*number(not(child::*[local-name()=&quot;DateOfDeath&quot;] | child::*[local-name()=&quot;AdditionalId&quot;]))+1}">
-						<xsl:call-template name="skrivUtTS">
-							<xsl:with-param name="oppgittTid" select="child::*[local-name()=&quot;DateOfBirth&quot;]/@V"/>
-						</xsl:call-template>
+						<xsl:choose>
+							<xsl:when test="not($Anonymisert)">
+								<xsl:call-template name="skrivUtTS">
+									<xsl:with-param name="oppgittTid" select="child::*[local-name()='DateOfBirth']/@V"/>
+								</xsl:call-template>
+							</xsl:when>
+							<xsl:otherwise>15.07.65</xsl:otherwise>
+						</xsl:choose>
 					</td>
 				</xsl:if>
 				<xsl:if test="child::*[local-name()=&quot;DateOfDeath&quot;]">
 					<td width="{((($std-col)-2-count(child::*[local-name()=&quot;Name&quot;] | child::*[local-name()=&quot;OffId&quot;] | child::*[local-name()=&quot;Sex&quot;] | child::*[local-name()=&quot;DateOfBirth&quot;]))*number(not(child::*[local-name()=&quot;AdditionalId&quot;]))+1)*$std-td}px" colspan="{(($std-col)-2-count(child::*[local-name()=&quot;Name&quot;] | child::*[local-name()=&quot;OffId&quot;] | child::*[local-name()=&quot;Sex&quot;] | child::*[local-name()=&quot;DateOfBirth&quot;]))*number(not(child::*[local-name()=&quot;AdditionalId&quot;]))+1}">
-						<xsl:call-template name="skrivUtTS">
-							<xsl:with-param name="oppgittTid" select="child::*[local-name()=&quot;DateOfDeath&quot;]/@V"/>
-						</xsl:call-template>
+						<xsl:choose>
+							<xsl:when test="not($Anonymisert)">
+								<xsl:call-template name="skrivUtTS">
+									<xsl:with-param name="oppgittTid" select="child::*[local-name()='DateOfDeath']/@V"/>
+								</xsl:call-template>
+							</xsl:when>
+							<xsl:otherwise>&#160;</xsl:otherwise>
+						</xsl:choose>
 					</td>
 				</xsl:if>
 				<xsl:if test="child::*[local-name()=&quot;AdditionalId&quot;]">
 					<td colspan="{(($std-col)-1-count(child::*[local-name()=&quot;Name&quot;] | child::*[local-name()=&quot;OffId&quot;] | child::*[local-name()=&quot;Sex&quot;] | child::*[local-name()=&quot;DateOfBirth&quot;] | child::*[local-name()=&quot;DateOfDeath&quot;]))}">
-						<xsl:for-each select="child::*[local-name()=&quot;AdditionalId&quot;]">
-							<div>
-								<xsl:if test="child::*[local-name()=&quot;Type&quot;]"><b><xsl:value-of select="child::*[local-name()=&quot;Type&quot;]/@V"/>:</b>&#160;</xsl:if>
-								<xsl:value-of select="child::*[local-name()=&quot;Id&quot;]"/>
-							</div>
-						</xsl:for-each>
+						<xsl:choose>
+							<xsl:when test="not($Anonymisert)">
+								<xsl:for-each select="child::*[local-name()=&quot;AdditionalId&quot;]">
+									<div>
+										<xsl:if test="child::*[local-name()=&quot;Type&quot;]"><b><xsl:value-of select="child::*[local-name()=&quot;Type&quot;]/@V"/>:</b>&#160;</xsl:if>
+										<xsl:value-of select="child::*[local-name()=&quot;Id&quot;]"/>
+									</div>
+								</xsl:for-each>
+							</xsl:when>
+							<xsl:otherwise>&#160;</xsl:otherwise>
+						</xsl:choose>
 					</td>
 				</xsl:if>
 			</tr>
 		</xsl:if>
 		<xsl:for-each select="child::*[local-name()=&quot;PatientPrecaution&quot;]">
-			<xsl:if test="position()=1">
-				<xsl:if test="../child::*[local-name()=&quot;Sex&quot;] or ../child::*[local-name()=&quot;DateOfBirth&quot;] or ../child::*[local-name()=&quot;AdditionalId&quot;]">
-					<tr><td colspan="{$std-col}"><hr/></td></tr>
+			<xsl:if test="not($Anonymisert)">
+				<xsl:if test="position()=1">
+					<xsl:if test="../child::*[local-name()=&quot;Sex&quot;] or ../child::*[local-name()=&quot;DateOfBirth&quot;] or ../child::*[local-name()=&quot;AdditionalId&quot;]">
+						<tr><td colspan="{$std-col}"><hr/></td></tr>
+					</xsl:if>
+					<tr>
+						<th rowspan="{last()+1}">Advarsel til tjenesteyter</th>
+						<xsl:if test="..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;Precaution&quot;]">
+							<th colspan="{(($std-col)-2)*number(not(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;StartDateTime&quot;] | ..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;EndDateTime&quot;]))+1}">Advarsel</th>
+						</xsl:if>
+						<xsl:if test="..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;StartDateTime&quot;]">
+							<th colspan="{(($std-col)-2-number(boolean(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;Precaution&quot;])))*number(not(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;EndDateTime&quot;]))+1}">Starttidspunkt</th>
+						</xsl:if>
+						<xsl:if test="..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;EndDateTime&quot;]">
+							<th colspan="{(($std-col)-1-number(boolean(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;Precaution&quot;]))-number(boolean(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;StartDateTime&quot;])))}">Sluttidspunkt</th>
+						</xsl:if>
+					</tr>
 				</xsl:if>
 				<tr>
-					<th rowspan="{last()+1}">Advarsel til tjenesteyter</th>
 					<xsl:if test="..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;Precaution&quot;]">
-						<th colspan="{(($std-col)-2)*number(not(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;StartDateTime&quot;] | ..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;EndDateTime&quot;]))+1}">Advarsel</th>
+						<td width="{((($std-col)-2)*number(not(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;StartDateTime&quot;] | ..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;EndDateTime&quot;]))+1)*$std-td}px" colspan="{(($std-col)-2)*number(not(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;StartDateTime&quot;] | ..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;EndDateTime&quot;]))+1}">
+							<xsl:value-of select="child::*[local-name()=&quot;Precaution&quot;]"/>&#160;
+						</td>
 					</xsl:if>
 					<xsl:if test="..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;StartDateTime&quot;]">
-						<th colspan="{(($std-col)-2-number(boolean(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;Precaution&quot;])))*number(not(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;EndDateTime&quot;]))+1}">Starttidspunkt</th>
+						<td width="{((($std-col)-2-number(boolean(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;Precaution&quot;])))*number(not(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;EndDateTime&quot;]))+1)*$std-td}px" colspan="{(($std-col)-2-number(boolean(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;Precaution&quot;])))*number(not(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;EndDateTime&quot;]))+1}">
+							<xsl:call-template name="skrivUtTS">
+								<xsl:with-param name="oppgittTid" select="child::*[local-name()=&quot;StartDateTime&quot;]/@V"/>
+							</xsl:call-template>
+						</td>
 					</xsl:if>
 					<xsl:if test="..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;EndDateTime&quot;]">
-						<th colspan="{(($std-col)-1-number(boolean(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;Precaution&quot;]))-number(boolean(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;StartDateTime&quot;])))}">Sluttidspunkt</th>
+						<td colspan="{(($std-col)-1-number(boolean(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;Precaution&quot;]))-number(boolean(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;StartDateTime&quot;])))}">
+							<xsl:call-template name="skrivUtTS">
+								<xsl:with-param name="oppgittTid" select="child::*[local-name()=&quot;EndDateTime&quot;]/@V"/>
+							</xsl:call-template>
+						</td>
 					</xsl:if>
 				</tr>
 			</xsl:if>
-			<tr>
-				<xsl:if test="..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;Precaution&quot;]">
-					<td width="{((($std-col)-2)*number(not(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;StartDateTime&quot;] | ..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;EndDateTime&quot;]))+1)*$std-td}px" colspan="{(($std-col)-2)*number(not(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;StartDateTime&quot;] | ..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;EndDateTime&quot;]))+1}">
-						<xsl:value-of select="child::*[local-name()=&quot;Precaution&quot;]"/>&#160;
-					</td>
-				</xsl:if>
-				<xsl:if test="..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;StartDateTime&quot;]">
-					<td width="{((($std-col)-2-number(boolean(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;Precaution&quot;])))*number(not(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;EndDateTime&quot;]))+1)*$std-td}px" colspan="{(($std-col)-2-number(boolean(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;Precaution&quot;])))*number(not(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;EndDateTime&quot;]))+1}">
-						<xsl:call-template name="skrivUtTS">
-							<xsl:with-param name="oppgittTid" select="child::*[local-name()=&quot;StartDateTime&quot;]/@V"/>
-						</xsl:call-template>
-					</td>
-				</xsl:if>
-				<xsl:if test="..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;EndDateTime&quot;]">
-					<td colspan="{(($std-col)-1-number(boolean(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;Precaution&quot;]))-number(boolean(..//child::*[local-name()=&quot;PatientPrecaution&quot;]/child::*[local-name()=&quot;StartDateTime&quot;])))}">
-						<xsl:call-template name="skrivUtTS">
-							<xsl:with-param name="oppgittTid" select="child::*[local-name()=&quot;EndDateTime&quot;]/@V"/>
-						</xsl:call-template>
-					</td>
-				</xsl:if>
-			</tr>
 		</xsl:for-each>
 		<xsl:for-each select="child::*[local-name()=&quot;PatientRelParty&quot;]">
-			<xsl:if test="position()=1">
-				<xsl:if test="../child::*[local-name()=&quot;Sex&quot;] or ../child::*[local-name()=&quot;DateOfBirth&quot;] or ../child::*[local-name()=&quot;AdditionalId&quot;] or ../child::*[local-name()=&quot;PatientPrecaution&quot;]">
-					<tr><td colspan="{$std-col}"><hr/></td></tr>
+			<xsl:if test="not($Anonymisert)">
+				<xsl:if test="position()=1">
+					<xsl:if test="../child::*[local-name()=&quot;Sex&quot;] or ../child::*[local-name()=&quot;DateOfBirth&quot;] or ../child::*[local-name()=&quot;AdditionalId&quot;] or ../child::*[local-name()=&quot;PatientPrecaution&quot;]">
+						<tr><td colspan="{$std-col}"><hr/></td></tr>
+					</xsl:if>
+					<tr>
+						<th rowspan="{last()+1}">Pasientrelatert part</th>
+						<xsl:if test="..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Relation&quot;]">
+							<th colspan="{(($std-col)-2)*number(not(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Name&quot;] | ..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;RelPartyOffId&quot;] | ..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Address&quot;]))+1}">Relasjon</th>
+						</xsl:if>
+						<xsl:if test="..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Name&quot;]">
+							<th colspan="{(($std-col)-2-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Relation&quot;])))*number(not(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;RelPartyOffId&quot;] | ..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Address&quot;]))+1}">Navn</th>
+						</xsl:if>
+						<xsl:if test="..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;RelPartyOffId&quot;]">
+							<th colspan="{(($std-col)-2-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Relation&quot;]))-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Name&quot;])))*number(not(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Address&quot;]))+1}">Fødselsnummer</th>
+						</xsl:if>
+						<xsl:if test="..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Address&quot;]">
+							<th colspan="{(($std-col)-1-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Relation&quot;]))-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Name&quot;]))-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;RelPartyOffId&quot;])))}">Adresse</th>
+						</xsl:if>
+					</tr>
 				</xsl:if>
 				<tr>
-					<th rowspan="{last()+1}">Pasientrelatert part</th>
 					<xsl:if test="..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Relation&quot;]">
-						<th colspan="{(($std-col)-2)*number(not(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Name&quot;] | ..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;RelPartyOffId&quot;] | ..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Address&quot;]))+1}">Relasjon</th>
+						<td width="{((($std-col)-2)*number(not(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Name&quot;] | ..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;RelPartyOffId&quot;] | ..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Address&quot;]))+1)*$std-td}px" colspan="{(($std-col)-2)*number(not(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Name&quot;] | ..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;RelPartyOffId&quot;] | ..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Address&quot;]))+1}">
+							<xsl:for-each select="child::*[local-name()=&quot;Relation&quot;]">
+								<xsl:call-template name="k-7317"/>&#160;
+							</xsl:for-each>
+						</td>
 					</xsl:if>
 					<xsl:if test="..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Name&quot;]">
-						<th colspan="{(($std-col)-2-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Relation&quot;])))*number(not(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;RelPartyOffId&quot;] | ..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Address&quot;]))+1}">Navn</th>
+						<td width="{((($std-col)-2-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Relation&quot;])))*number(not(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;RelPartyOffId&quot;] | ..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Address&quot;]))+1)*$std-td}px" colspan="{(($std-col)-2-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Relation&quot;])))*number(not(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;RelPartyOffId&quot;] | ..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Address&quot;]))+1}">
+							<xsl:value-of select="child::*[local-name()=&quot;Name&quot;]"/>
+						</td>
 					</xsl:if>
 					<xsl:if test="..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;RelPartyOffId&quot;]">
-						<th colspan="{(($std-col)-2-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Relation&quot;]))-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Name&quot;])))*number(not(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Address&quot;]))+1}">Fødselsnummer</th>
+						<td width="{((($std-col)-2-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Relation&quot;]))-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Name&quot;])))*number(not(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Address&quot;]))+1)*$std-td}px" colspan="{(($std-col)-2-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Relation&quot;]))-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Name&quot;])))*number(not(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Address&quot;]))+1}">
+							<xsl:value-of select="child::*[local-name()=&quot;RelPartyOffId&quot;]"/>
+						</td>
 					</xsl:if>
 					<xsl:if test="..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Address&quot;]">
-						<th colspan="{(($std-col)-1-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Relation&quot;]))-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Name&quot;]))-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;RelPartyOffId&quot;])))}">Adresse</th>
+						<td colspan="{(($std-col)-1-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Relation&quot;]))-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Name&quot;]))-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;RelPartyOffId&quot;])))}">
+							<xsl:for-each select="child::*[local-name()=&quot;Address&quot;]">
+								<xsl:call-template name="Address"/>
+							</xsl:for-each>
+						</td>
 					</xsl:if>
 				</tr>
 			</xsl:if>
-			<tr>
-				<xsl:if test="..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Relation&quot;]">
-					<td width="{((($std-col)-2)*number(not(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Name&quot;] | ..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;RelPartyOffId&quot;] | ..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Address&quot;]))+1)*$std-td}px" colspan="{(($std-col)-2)*number(not(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Name&quot;] | ..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;RelPartyOffId&quot;] | ..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Address&quot;]))+1}">
-						<xsl:for-each select="child::*[local-name()=&quot;Relation&quot;]">
-							<xsl:call-template name="k-7317"/>&#160;
-						</xsl:for-each>
-					</td>
-				</xsl:if>
-				<xsl:if test="..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Name&quot;]">
-					<td width="{((($std-col)-2-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Relation&quot;])))*number(not(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;RelPartyOffId&quot;] | ..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Address&quot;]))+1)*$std-td}px" colspan="{(($std-col)-2-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Relation&quot;])))*number(not(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;RelPartyOffId&quot;] | ..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Address&quot;]))+1}">
-						<xsl:value-of select="child::*[local-name()=&quot;Name&quot;]"/>
-					</td>
-				</xsl:if>
-				<xsl:if test="..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;RelPartyOffId&quot;]">
-					<td width="{((($std-col)-2-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Relation&quot;]))-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Name&quot;])))*number(not(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Address&quot;]))+1)*$std-td}px" colspan="{(($std-col)-2-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Relation&quot;]))-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Name&quot;])))*number(not(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Address&quot;]))+1}">
-						<xsl:value-of select="child::*[local-name()=&quot;RelPartyOffId&quot;]"/>
-					</td>
-				</xsl:if>
-				<xsl:if test="..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Address&quot;]">
-					<td colspan="{(($std-col)-1-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Relation&quot;]))-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;Name&quot;]))-number(boolean(..//child::*[local-name()=&quot;PatientRelParty&quot;]/child::*[local-name()=&quot;RelPartyOffId&quot;])))}">
-						<xsl:for-each select="child::*[local-name()=&quot;Address&quot;]">
-							<xsl:call-template name="Address"/>
-						</xsl:for-each>
-					</td>
-				</xsl:if>
-			</tr>
 		</xsl:for-each>
 	</xsl:template>
 	<!-- Visning av Hendelse -->

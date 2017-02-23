@@ -17,11 +17,7 @@
 	<Kravdokumenter>
 		<Kravdokument>
 			<Beskrivelse>Svarrapportering av medisinske tjenester v. 1.3. XML meldingsbeskrivelse (GitLab)</Beskrivelse>
-			<Referanse>kravdokument/svarrapport/HIS_80822_2008-svarraport_v1.3.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>Errata HIS 80822:2008 nr 1: Svarrapportering av medisinske tjenester v1.3: Retting av feil i eksempel for GenDate i standarden</Beskrivelse>
-			<Referanse>kravdokument/svarrapport/Errata-svarrapport_v1.3_nr1.pdf</Referanse>
+			<Referanse>kravdokument/svarrapport/HIS_80822_2008_Svarrapportering_av_medisinske_tjenester_v1.3-korrigert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
 

@@ -6,6 +6,7 @@ FORMÅL
 XSLT for generering av html fra Svarrapport Medisinske Tjenester - Mikrobiologi v.1.0
 
 ENDRINGER:
+21.02.2017: Endret html-tittel
 06.05.2008: Andre versjon etter forslag sendt inn 28.04
 
 TODO/Svakheter:
@@ -24,7 +25,7 @@ TODO/Svakheter:
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
 			<head>
-				<title>Svarrapport Mikrobiologi</title>
+				<title>Rekvisisjon Radiologi</title>
 				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 				<style type="text/css">
 					
