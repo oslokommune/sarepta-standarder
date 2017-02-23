@@ -1,18 +1,22 @@
 <!-- File name: Henvisning-v2.0.xsd -->
-<!-- Versjon 2.0 2014-03-06 -->
-<!-- Endringer fra versjon 1.1 til versjon 2.0: - Endret namespace xmlns:ref og targetNamespace til http://www.kith.no/xmlstds/henvisning/2014-04-30 - Tatt i bruk Hodemelding - Fjernet toppklassen Message - endret navn på ServRec til Henvisning for å synliggjøre endringene. Fjernet mange klasser og elementer som ligger i Hodemelding - Nytt element Vurdering med underelementer knyttet til viderehenvisning - Fjernet HCP-strukturen - Gjenbrukt flere klasser fra poKomponent som erstatter tidligere klasser i henvisning -->
-<!-- File name: Henvisning-v1.1.xsd -->
-<!-- Versjon 1.1 2012-02-15 -->
-<!-- Endringer fra versjon 1.0 til versjon 1.1: - Endret tegnsett til UTF-8 - Endret namespace xmlns:ref og targetNamespace til http://www.kith.no/xmlstds/henvisning/2012-02-15 - Lagt til namespace xmlns:po="http://www.kith.no/xmlstds/po/poKomponent/2009-06-30" - Lagt til namespace xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" - Endret kardinalitet fra 1..* til 0..* for <Diagnosis> under <ServReq> - Endret kardinalitet fra 0..1 til 1 for <ReqServ> under <ServReq> - Endret kardinalitet fra 0..1 til 1 for <Priority> under < ReqServ> - Endret XML-strukturen RefDoc til å være kompatibel med Hodemelding og andre XML-meldinger - Nytt element <element name="ComMethod" type="kith:CS" minOccurs="0"/> under <Requester> og <ServProvider> - Fjernet PartyIdByRequester og PartyIdByServProv under HCP for å være kompatibel med informasjon i Hodemelding og øvrige basismeldinger) - Følgende endringer gjelder deler som foreløpig kun omfatter henvisning til BUP: - Endret XML-strukturen <NeedTranslator> til den gjenbrukbare XML-struktur <AssistertKommunikasjon> fra poKomponent.no - Endret XML-strukturen <PatRelperson> til den gjenbrukbare XML-struktur <ParorendeForesatt> fra poKomponent.no og ny XML-struktur <ContactPerson> - Fjernet XML-strukturen <CareSituation> pga endringer i BUP henvisningsskjema. Opplysninger om foreldreansvar dekkes som kodet opplysning i klassen <Comment> under <ServReq> - Fjernet XML-strukturen <Relation> - Fjernet XML-strukturene <Booking>, <Appointment> og <SubOrg> da disse ikke er i bruk - Endret XML-strukturen <PatRelInst> (både datatyper og XML-elementer) - Endret datatypen ST til string for elementet <Merknad> under <Consent> - Endret datatypen TS til date for elementet <ConsentDate> under <Consent> - Nytt element <GivenBy> under <Consent> -->
-<!-- Skjema dekker opplysninger i "Henvisning" -->
-<!-- Skjema dekker dagens papirblankett for henvisning til BUP (Barne- og ungdomspsykiatri), per juli 2005 -->
-<!-- Skjema er kompatibelt med Henvisning-v0.91.xsd og med namespace http://www.kith.no/xmlstds/henvisning/2003-10-13 -->
-<!-- Endringer mellom v0.91 og v1.0 er dokumentert i KITH R17/05 -->
-<!-- -->
-<!-- File name: Henvisning-v1.0.xsd -->
-<!-- Version: "v1.0 2005-07-08" -->
-<!-- Endringer 20.05.2010 - Flyttet annotation til ServReq innenfor Element - La til annotation til SubOrg -->
-<schema xmlns:ref="http://www.kith.no/xmlstds/henvisning/2014-04-30" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:po="http://www.kith.no/xmlstds/po/poKomponent/2012-04-01" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" targetNamespace="http://www.kith.no/xmlstds/henvisning/2014-04-30" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<!-- Versjon 2.0 2017-01-31 -->
+<!-- Endringer fra http://www.kith.no/xmlstds/henvisning/2014-04-30 etter innspill fra pilotering vår 2016 
+      - Endret namespace til http://ehelse.no/xmlstds/henvisning/2017-01-31 
+      - Nytt element <Forsendelsesstatus> under <Henvisning>
+      - Nytt element <RettTilHelsehjelp> under <Opplysninger>
+      - Nytt element <UtfallAvVurdering> under <Opplysninger>
+      - Fjernet element <Omsorgsniva> under <Opplysninger> 
+-->
+<!-- Endringer fra versjon 1.1 til versjon 2.0: 
+      - Endret namespace xmlns:ref og targetNamespace til http://www.kith.no/xmlstds/henvisning/2014-04-30 
+      - Tatt i bruk Hodemelding - Fjernet toppklassen Message 
+      - endret navn på ServRec til Henvisning for å synliggjøre endringene. 
+      - Fjernet mange klasser og elementer som ligger i Hodemelding 
+      - Nytt element Vurdering med underelementer knyttet til viderehenvisning 
+      - Fjernet HCP-strukturen 
+      - Gjenbrukt flere klasser fra poKomponent som erstatter tidligere klasser i henvisning 
+-->
+<schema xmlns:ref="http://ehelse.no/xmlstds/henvisning/2017-01-31" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:po="http://.no/xmlstds/po/poKomponent/2012-04-01" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:ns1="http://www.kith.no/xmlstds/po/poKomponent/2012-04-01" targetNamespace="http://ehelse.no/xmlstds/henvisning/2017-01-31" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<import namespace="http://www.kith.no/xmlstds" schemaLocation="kith.xsd"/>
 	<import namespace="http://www.kith.no/xmlstds/po/poKomponent/2012-04-01" schemaLocation="poKomponent-v1.6.xsd"/>
 	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="felleskomponent1.xsd"/>
@@ -31,6 +35,7 @@
 				<element name="ReqComment" type="kith:ST" minOccurs="0"/>
 				<element name="DocumentId" type="kith:ST"/>
 				<element name="BasisForHealthServices" type="kith:CS" minOccurs="0"/>
+				<element name="Forsendelsesstatus" type="kith:CS"/>
 				<element ref="po:TilleggsopplysningPasient" minOccurs="0"/>
 				<element ref="po:ParorendeForesatt" minOccurs="0" maxOccurs="unbounded"/>
 				<element ref="po:TilknyttetEnhet" minOccurs="0" maxOccurs="unbounded"/>
@@ -91,8 +96,9 @@ Denne klassen grupperer  opplysningene sammen.
 			<sequence>
 				<element name="FrittSykehusvalg" type="boolean" minOccurs="0"/>
 				<element name="VentetidSluttkode" type="kith:CV" minOccurs="0"/>
-				<element name="Omsorgsniva" type="kith:CV" minOccurs="0"/>
 				<element name="ForlopsId" type="string"/>
+				<element name="RettTilHelsehjelp" type="boolean"/>
+				<element name="UtfallAvVurdering" type="kith:CV"/>
 			</sequence>
 		</complexType>
 	</element>

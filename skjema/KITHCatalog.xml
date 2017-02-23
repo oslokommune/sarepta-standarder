@@ -93,7 +93,7 @@ Catalog.xsd">
 	<public uri="epikrise/Epikrise-v1.2.xsd" publicId="http://www.kith.no/xmlstds/epikrise/2012-02-15" />
 	
 	<!-- Fødselsepikrise -->
-	<public uri="fodselsepikrise/FodselBarsel-v1.3.xsd" publicId="http://www.kith.no/xmlstds/FodselBarsel/2012-11-07" />
+	<public uri="fodselsepikrise/FodselBarsel-v1.3.xsd" publicId="http://www.kith.no/xmlstds/FodselBarsel/2012-11-21" />
 
 	<!-- Henvisning -->
 	<public uri="henvisning/Henvisning-v0.91.xsd" publicId="http://www.kith.no/xmlstds/henvisning/2003-10-13" />
@@ -248,7 +248,7 @@ Catalog.xsd">
 	
 	<!-- eResept v2.5 -->
 	<public uri="eresept/m1/2013-10-08/ER-M1-2013-10-08.xsd" publicId="http://www.kith.no/xmlstds/eresept/m1/2013-10-08" />
-    <public uri="eresept/m2/2013-05-30/ER-M2-2013-05-30.xsd" publicId="http://www.kith.no/xmlstds/eresept/m2/2013-05-30"/>
+    <public uri="eresept/m2/2014-12-01/ER-M2-2014-12-01.xsd" publicId="http://www.kith.no/xmlstds/eresept/m2/2014-12-01"/>
 	<!-- m3 er uforandret siden versjon 2.4 se der -->
 	<!-- m4.1 er uforandret siden versjon 1.0 se der -->
 	<!-- m4.2 er uforandret siden versjon 1.0 se der -->
@@ -287,9 +287,11 @@ Catalog.xsd">
 	<!-- m26.2 er uforandret siden versjon 2.0 se der -->
 	<public uri="eresept/m271/2013-04-16/ER-M271-2013-04-16.xsd" publicId="http://www.kith.no/xmlstds/eresept/m271/2013-04-16" />
 	<public uri="eresept/m272/2013-04-16/ER-M272-2013-04-16.xsd" publicId="http://www.kith.no/xmlstds/eresept/m272/2013-04-16" />
+	<public uri="eresept/m274/2012-06-11/ER-M274-2012-06-11.xsd" publicId="http://www.kith.no/xmlstds/eresept/m274/2012-06-11" />
     <public uri="eresept/m28/2012-06-11/ER-M28-2012-06-11.xsd" publicId="http://www.kith.no/xmlstds/eresept/m28/2012-06-11" />
 	<public uri="eresept/m30/2014-12-01/ER-M30-2014-12-01.xsd" publicId="http://www.kith.no/xmlstds/eresept/m30/2014-12-01" />
 	<public uri="eresept/Forskrivning/2013-10-08/Forskrivning-2013-10-08.xsd" publicId="http://www.kith.no/xmlstds/eresept/forskrivning/2013-10-08" />
+	<public uri="eresept/Forskrivning/2014-12-01/Forskrivning-2014-12-01.xsd" publicId="http://www.kith.no/xmlstds/eresept/forskrivning/2014-12-01" />
 	<public uri="eresept/Utlevering/2013-10-08/ER-Utlevering-2013-10-08.xsd" publicId="http://www.kith.no/xmlstds/eresept/utlevering/2013-10-08" />
 	
 	

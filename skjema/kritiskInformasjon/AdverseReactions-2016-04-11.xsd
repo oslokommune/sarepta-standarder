@@ -1,0 +1,83 @@
+<schema xmlns:cia="http://www.ehelse.no/xmlstds/criticalinformation/adversereactions/2016-04-11" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:cic="http://www.ehelse.no/xmlstds/criticalinformation/common/2016-04-11" targetNamespace="http://www.ehelse.no/xmlstds/criticalinformation/adversereactions/2016-04-11" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="kith.xsd"/>
+	<import namespace="http://www.ehelse.no/xmlstds/criticalinformation/common/2016-04-11" schemaLocation="CriticalInformationCommon-2016-04-11.xsd"/>
+	<element name="AdverseReactions">
+		<complexType>
+			<sequence>
+				<element ref="cic:VerifiedNoKnown" minOccurs="0" maxOccurs="1"/>
+				<element ref="cia:AdverseDrugReaction" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="cia:OtherAdverseReaction" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="AdverseDrugReaction">
+		<complexType>
+			<complexContent>
+				<extension base="cic:CommonBaseType">
+					<sequence>
+						<choice>
+							<element name="Atc" type="kith:CV" minOccurs="1" maxOccurs="1"/>
+							<element ref="cia:MedicineBrandedProduct" minOccurs="1" maxOccurs="1"/>
+							<element ref="cia:InactiveIngredient" minOccurs="1" maxOccurs="1"/>
+							<element ref="cia:ActiveIngredient" minOccurs="1" maxOccurs="1"/>
+						</choice>
+						<element ref="cia:Reaction" minOccurs="1" maxOccurs="1"/>
+						<element ref="cic:SourceOfInformation" minOccurs="1" maxOccurs="1"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="OtherAdverseReaction">
+		<complexType>
+			<complexContent>
+				<extension base="cic:CommonBaseType">
+					<sequence>
+						<choice>
+							<element name="Allergen" type="kith:CV" minOccurs="1" maxOccurs="1"/>
+							<element name="OtherAllergen" type="string" minOccurs="1" maxOccurs="1"/>
+						</choice>
+						<element ref="cia:Reaction" minOccurs="1" maxOccurs="1"/>
+						<element ref="cic:SourceOfInformation" minOccurs="1" maxOccurs="1"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="Reaction">
+		<complexType>
+			<sequence>
+				<element name="Manifistation" type="kith:CV" minOccurs="1" maxOccurs="1"/>
+				<element name="Severity" type="kith:CV" minOccurs="1" maxOccurs="1"/>
+				<element name="Certainty" type="kith:CV" minOccurs="1" maxOccurs="1"/>
+				<element name="Note" type="string" minOccurs="0" maxOccurs="1"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="MedicineBrandedProduct">
+		<complexType>
+			<sequence>
+				<element name="Id" type="string" minOccurs="1" maxOccurs="1"/>
+				<element name="NameFormStrength" type="string" minOccurs="1" maxOccurs="1"/>
+				<element name="Atc" type="kith:CV" minOccurs="0" maxOccurs="1"/>
+				<element ref="cia:ActiveIngredient" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ActiveIngredient">
+		<complexType>
+			<sequence>
+				<element name="Id" type="string" minOccurs="1" maxOccurs="1"/>
+				<element name="Name" type="string" minOccurs="1" maxOccurs="1"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="InactiveIngredient">
+		<complexType>
+			<sequence>
+				<element name="Id" type="string" minOccurs="1" maxOccurs="1"/>
+				<element name="NameFormStrength" type="string" minOccurs="1" maxOccurs="1"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

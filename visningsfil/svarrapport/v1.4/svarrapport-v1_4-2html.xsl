@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 	<!-- Endringslogg
+	- 03.01.17: (v3.1.1) Lagt til konvertering av linjeskift for felt ResultItem/StructuredInfo/TextInfo/Text
 	- 24.04.16: Historikk får egen tabell. Egne kolonner i undersøkelsestabellen for prøve-referanser. Bruk av kodeverk 8212 vises med OT. Bruk av 7010 vises med V og DN.
 	- 11.04.16: Fjernet gjennomstreking av historikk
 	- 15.05.14: La til import av kodeverk-fil
@@ -33,7 +34,7 @@
 	<!-- Variabel for hvilken stil visning har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
 	<xsl:variable name="stil" select="'No-line-doc'"/>
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'svar1.4 v3.1.0'"/>
+	<xsl:variable name="versjon" select="'svar1.4 - v3.1.1'"/>
 	<!-- Variabler for kolonnebredde -->
 	<xsl:variable name="structured-col-width" select="'40%'"/>
 	<xsl:variable name="structured-head-width" select="'20%'"/>
@@ -1486,7 +1487,9 @@
 						</td>
 						<td>
 							<xsl:for-each select="lsr:TextInfo">
-								<xsl:value-of select="lsr:Text"/>&#160;
+								<xsl:call-template name="line-breaks">
+									<xsl:with-param name="text" select="lsr:Text"/>
+								</xsl:call-template>&#160;
 							</xsl:for-each>
 							<xsl:for-each select="lsr:IntegerInfo">
 								<xsl:value-of select="lsr:Integer"/>&#160;

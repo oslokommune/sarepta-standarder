@@ -10,6 +10,11 @@
 	- Nytt element: "EmneSporsmal" i klassen "Foresporsel"
 	- Nytt element: "KodetOpplysning" i klassen "Foresporsel"
 -->
+<!-- Endret jan 2017
+	- La til klassen TilknyttetEnhet som refereres fra klassen RollerRelatertNotat
+	- Endret kardinalitet i choice i klassen RollerRelatertNotat fra "1" til "0..*"
+	- namespace og filnavn er uendret
+-->
 <schema xmlns:dia="http://www.kith.no/xmlstds/dialog/2013-01-23" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" targetNamespace="http://www.kith.no/xmlstds/dialog/2013-01-23" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../../felleskomponenter/kith.xsd"/>
 	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="../../felleskomponenter/felleskomponent1.xsd"/>
@@ -90,7 +95,8 @@
 			<sequence>
 				<element name="RolleNotat" type="kith:CV" minOccurs="0"/>
 				<element name="RoleToPatient" type="kith:CV" minOccurs="0"/>
-				<choice>
+				<element ref="dia:TilknyttetEnhet" minOccurs="0"/>
+				<choice minOccurs="0">
 					<element ref="dia:HealthcareProfessional"/>
 					<element ref="dia:Person"/>
 				</choice>
@@ -98,6 +104,19 @@
 		</complexType>
 	</element>
 	<!-- LEVEL 5 -->
+	<!-- Class: TilknyttetEnhet, lagt til 2017 -->
+	<element name="TilknyttetEnhet">
+		<complexType>
+			<sequence>
+				<element name="Kontaktenhet" type="fk1:Organisation"/>
+				<element name="Merknad" type="string" minOccurs="0"/>
+				<choice minOccurs="0">
+					<element ref="dia:HealthcareProfessional"/>
+					<element ref="dia:Person"/>
+				</choice>
+			</sequence>
+		</complexType>
+	</element>
 	<!-- Class: Helsepersonell -->
 	<element name="HealthcareProfessional">
 		<annotation>

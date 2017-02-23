@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<!-- Endringslogg
-	- 25.10.16: La til visningsversjonnr
+	- 07.02.17: (v3.1.1) Endret kodeverk fra 7319 til 8254 på Henvisning-1.1 vedr. relasjonstype for helseperson.
+	- 25.10.16: (v3.1.0) La til visningsversjonnr
 	- 11.03.16: Bugfix - telefon til pasient vises nå i header
 	- 01.11.15: Småjusteringer, bl.a. dynamisk cellebredde, visning av vedlegg mm.
 	- 04.05.15: Import av felles kodeverksfil
@@ -32,7 +33,7 @@
 	<xsl:variable name="std-col" select="8"/>
 	<xsl:variable name="std-td" select="100"/>
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'henvisning1.1 v3.1.0 '"/>
+	<xsl:variable name="versjon" select="'henvisning1.1 v3.1.1 '"/>
 	<!-- Variabler for beregning av antall kolonner i legemiddel-tabellen -->
 	<xsl:variable name="med-stat-col" select="(($std-col)-2)*number(not(//h:Medication/h:UnitDose | //h:Medication/h:QuantitySupplied | //h:Medication/h:DosageText | //h:Medication/h:IntendedDuration | //h:Medication/h:Comment | //h:InfItem[h:Medication]/h:StartDateTime | //h:InfItem[h:Medication]/h:EndDateTime | //h:InfItem[h:Medication]/h:OrgDate))+1"/>
 	<xsl:variable name="med-unit-col" select="(($std-col)-3)*number(not(//h:Medication/h:DosageText | //h:Medication/h:IntendedDuration | //h:Medication/h:Comment | //h:InfItem[h:Medication]/h:StartDateTime | //h:InfItem[h:Medication]/h:EndDateTime | //h:InfItem[h:Medication]/h:OrgDate))+1"/>
@@ -1687,7 +1688,7 @@
 			<xsl:if test="..//h:PatRelHCP/h:Relation">
 				<th rowspan="{$rows}">
 					<xsl:for-each select="h:Relation">
-						<xsl:call-template name="k-7319"/>&#160;
+						<xsl:call-template name="k-8254"/>&#160;
 					</xsl:for-each>
 				</th>
 			</xsl:if>
