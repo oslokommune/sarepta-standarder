@@ -23,7 +23,7 @@
 	
 	<Skjemaer>
 		<Skjema>
-			<Referanse>skjema/applikasjonskvittering/AppRec-v1-2004-11-21.xsd</Referanse>
+			<Referanse>skjema/Applikasjonskvittering/AppRec-v1-2004-11-21.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/apprec/2004-11-21</Namespace>
 		</Skjema>
 	</Skjemaer>
@@ -44,13 +44,13 @@
 	
 	<Eksempler>
 		<Eksempel>
-			<Referanse>eksempel/applikasjonskvittering/AppRec-v1-eksempel-ok.xml</Referanse>
+			<Referanse>eksempel/Applikasjonskvittering/AppRec-v1-eksempel-ok.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/applikasjonskvittering/AppRec-v1-eksempel-avvist.xml</Referanse>
+			<Referanse>eksempel/Applikasjonskvittering/AppRec-v1-eksempel-avvist.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/applikasjonskvittering/AppRec-v1-eksempel-ok_feil_i_delmelding.xml</Referanse>
+			<Referanse>eksempel/Applikasjonskvittering/AppRec-v1-eksempel-ok_feil_i_delmelding.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
 	
