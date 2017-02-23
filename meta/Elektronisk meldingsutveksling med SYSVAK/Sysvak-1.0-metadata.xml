@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>Elektronisk meldingsutveksling med SYSVAK</Navn>
+	<Versjon>1.0</Versjon>
+	<Identifikator></Identifikator>
+	<Utgitt>12/2007</Utgitt>
+	<Utgiver>Folkehelseinstituttet</Utgiver>
+	<Referansekatalogen>
+		<Beskrivelse>Elektronisk meldingsutveksling med SYSVAK</Beskrivelse>
+		<Referanse>https://ehelse.no/standarder-kodeverk-og-referansekatalog/referansekatalogen/del-4-elektronisk-samhandling</Referanse>
+	</Referansekatalogen>
+	<Status>Fastsatt som standard</Status>
+
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>Elektronisk meldingsutveksling med SYSVAK (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/sysvak/dok-31---sysvak-meldingsbeskrivelse.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+
+	<Skjemaer>
+		<Skjema>
+			<Referanse>skjema/sysvak/hendelserequest/2008-01-01/HendelseRequest.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/sysvak/hendelserequest/2008-01-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/sysvak/hendelseresponse/2008-01-01/HendelseResponse.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/sysvak/hendelseresponse/2008-01-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/sysvak/kodeverkrequest/2008-01-01/KodeverkRequest.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/sysvak/kodeverkrequest/2008-01-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/sysvak/kodeverkresponse/2008-01-01/KodeverkResponse.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/sysvak/kodeverkresponse/2008-01-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/sysvak/sokrequest/2008-01-01/SokRequest.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/sysvak/sokrequest/2008-01-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/sysvak/sokresponse/2008-01-01/SokResponse.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/sysvak/sokresponse/2008-01-01</Namespace>
+		</Skjema>
+	</Skjemaer>
+
+	<Felleskomponenter>
+		<Felleskomponent>
+			<Beskrivelse>Felles typer for meldinger fra SYSVAK  </Beskrivelse>
+			<Referanse>skjema/sysvak/CommonTypes.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Valideringskoder fra valideringsmeldinger fra SYSVAK</Beskrivelse>
+			<Referanse>skjema/sysvak/CommonTypes.xsd</Referanse>
+		</Felleskomponent>
+	</Felleskomponenter>
+
+
+	<Eksempler>
+		<Eksempel>
+			<Referanse>eksempel/sysvak/100_krequest.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/sysvak/100_krequest_response.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/sysvak/210_hrequest_vaksinering_vaksinandident.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/sysvak/210_hrequest_vaksinering_vaksinandident_response.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/sysvak/211_hrequest_vaksinasjon_sletting.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/sysvak/211_hrequest_vaksinasjon_sletting_response.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/sysvak/220_hrequest_manglendevaksinering_vaksinandutenident.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/sysvak/220_hrequest_manglendevaksinering_vaksinandutenident_response.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/sysvak/290_hrequest_med_feil.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/sysvak/390_srequest_med_feil_response.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/sysvak/310_srequest_med_ident.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/sysvak/310_srequest_med_ident_response.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/sysvak/320_srequest_uten_ident.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/sysvak/320_srequest_uten_ident_response.xml</Referanse>
+		</Eksempel>
+	</Eksempler>
+
+</StandardMetadata>
