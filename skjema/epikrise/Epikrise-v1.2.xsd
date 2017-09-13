@@ -9,6 +9,7 @@
 - Fjernet elemenetet Role for å samordne med henvisning undet PatRelHCP. Feltet har fast verdi og gir dermed ingen merverdi
 - Endret datatype ST til CS for ServReq/MsgDescr for å være kompatibel med tilsvarende felt i henvisningen
 - Nytt element <Status> i under <Message> for å være kompatibel med Henvisning, Rekvirering av medisinske tjenester og Svarrapportering av medisinske tjenester.
+- **Rask edit for publisering test**
 -->
 <!-- KITH Epikrise versjon 1.1 2006-09-23 -->
 <!-- Endret 20021107 for eget targetNamespace  -->
