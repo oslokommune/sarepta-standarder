@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 ../felles/MsgHead-v1_2.xsd">
+    <!-- Comment for å teste Git Merge -->
 	<MsgInfo>
 		<Type V="ERM1" DN="Resept"/>
 		<MIGversion>v1.2 2006-05-24</MIGversion>
