@@ -1,6 +1,7 @@
 ﻿Sarepta - Teknisk arkiv!
 =========================
 
+[comment]: <> (Kommentar for oppdatering)
 
 Innledning 
 ----------
