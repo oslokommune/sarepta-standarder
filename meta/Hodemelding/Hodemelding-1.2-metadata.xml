@@ -129,7 +129,7 @@
 			<Referanse>eksempel/hodemelding/test.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-		    <Referanse>Servernedetest.xml</Referanse>
+		    <Referanse>eksempel/hodemelding/Servernedetest.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
 	
