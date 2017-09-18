@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 ../felles/MsgHead-v1_2.xsd">
+	<MsgInfo>
+		<Type V="ERM1" DN="Resept"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2007-03-12T19:20:00</GenDate>
+		<MsgId>d0d653be-f5a1-484b-9b9a-d99c74636cb2</MsgId>
+		<Sender>
+			<Organisation>
+				<OrganisationName>Kattskinnet legesenter</OrganisationName>
+				<Ident>
+					<Id>971318864</Id>
+					<TypeId S="2.16.578.1.12.4.1.1.9051" V="ENH" DN="Organisasjonsnummeret i Enhetsregister"/>
+				</Ident>
+				<HealthcareProfessional>
+					<FamilyName>Koman</FamilyName>
+					<GivenName>Magnar</GivenName>
+					<Ident>
+						<Id>9144889</Id>
+						<TypeId S="2.16.578.1.12.4.1.1.8116" V="HPR" DN="HPR-nummer"/>
+					</Ident>
+				</HealthcareProfessional>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>Reseptbanken</OrganisationName>
+				<Ident>
+					<Id>1234567890-example</Id>
+					<TypeId S="2.16.578.1.12.4.1.1.9051" V="ENH" DN="Organisasjonsnummeret i Enhetsregister"/>
+				</Ident>
+			</Organisation>
+		</Receiver>
+		<Patient>
+			<FamilyName>Gundersen</FamilyName>
+			<GivenName>Roland</GivenName>
+			<Ident>
+				<Id>15076500565</Id>
+				<TypeId V="FNR" DN="Fødselsnummer" S="2.16.578.1.12.4.1.1.8116"/>
+			</Ident>
+		</Patient>
+	</MsgInfo>
+	<Document>
+		<RefDoc>
+			<MsgType V="XML" DN="XML-instans"/>
+			<Content>
+				<Resept xsi:schemaLocation="http://www.kith.no/xmlstds/eresept/m1/2010-05-01 ER-M1-2010-05-01.xsd" xmlns:fs="http://www.kith.no/xmlstds/eresept/forskrivning/2010-04-01" xmlns="http://www.kith.no/xmlstds/eresept/m1/2010-05-01" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<Forskrivningsdato>2006-10-06</Forskrivningsdato>
+					<Utloper>2007-10-06</Utloper>
+					<ReseptDokLegemiddel>
+						<Varegruppekode V="L"/>
+						<Antall>1</Antall>
+						<Reiterasjon/>
+						<fs:Forskrivning>
+							<fs:DosVeiledEnkel>String</fs:DosVeiledEnkel>
+							<fs:IngenKombinasjon>true</fs:IngenKombinasjon>
+							<fs:Dosering>
+								<fs:Starttidspunkt V="2008-09-17"/>
+								<fs:Sluttidspunkt V="2009-06-20"/>
+								<fs:Doseringsregel>
+									<fs:DoseresEtter V="V" DN="Vekst"/>
+								</fs:Doseringsregel>
+								<fs:DoseFastTidspunkt>
+									<fs:Mengde V="1" U="kg"/>
+									<fs:Intervall V="10" U="s"/>
+									<fs:GisEksakt>false</fs:GisEksakt>
+								</fs:DoseFastTidspunkt>
+							</fs:Dosering>
+							<fs:Legemiddelpakning>
+								<fs:Atc V="N03AF01" DN="Karbamazepin" S="2.16.578.1.12.4.1.1.7180"/>
+								<fs:NavnFormStyrke>Trimonil Retard depottabletter 150g</fs:NavnFormStyrke>
+								<fs:Reseptgruppe V="L"/>
+								<fs:LegemiddelformKort V="53" DN="Tablett" S="2.16.578.1.12.4.1.1.7448"/>
+								<fs:Varenr>550962</fs:Varenr>
+							</fs:Legemiddelpakning>
+						</fs:Forskrivning>
+					</ReseptDokLegemiddel>
+					<OppdatertFest>2008-09-17T13:22:01</OppdatertFest>
+				</Resept>
+			</Content>
+		</RefDoc>
+	</Document>
+	<!-- <ds:Signature> er utelatt i eksemplet, men skal være med -->
+</MsgHead>
