@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<!-- Endringslogg
-	-	09.05.17: v3.1.2: Liten formell justering av SakstypeKodet
-	-	27.03.17: v3.1.1: Ny parameter for "visningStil". Ny stil "Smooth".
-	-	25.10.16: v3.1.0: La til visningsversjonnr
+	-	25.10.16: La til visningsversjonnr
 	-	17.11.15: Innføring av kodeverksfil, lauotmessige justeringer og små bugfix
 	-	20.11.13: Bugfix: Rettet en bug hvor svar på et svar ble merket som opprinnnelig forespørsel.
 	-	01.12.10: Import av felles CSS-fil
@@ -28,32 +26,34 @@
 	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
 	xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" 
 	xmlns:dia="http://www.kith.no/xmlstds/dialog/2006-10-11" 
+	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
 	xmlns:base="http://www.kith.no/xmlstds/base64container" 
-	exclude-result-prefixes="fk1 dia mh base">
+	exclude-result-prefixes="fk1 dia mh xhtml base">
 
 	<xsl:import href="../../felleskomponenter/meldingshode2html.xsl"/>
 	<xsl:import href="../../felleskomponenter/funksjoner.xsl"/>
 	<xsl:import href="../../felleskomponenter/kodeverk.xsl"/>
-	<xsl:import href="../../felleskomponenter/eh-komponent2.xsl"/>
 
+	<xsl:output method="html" encoding="UTF-8" indent="yes" omit-xml-declaration="yes"
+		doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
 
+	<!-- Variabel for hvilken stil visning har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
+	<xsl:variable name="stil" select="'One-line-doc'"/>
 	<!-- Variabel for standard antall kolonner i tabellene-->
 	<xsl:variable name="std-col" select="8"/>
 	<xsl:variable name="std-td" select="100"/>
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'dialog1.0 - v3.1.2 '"/>
+	<xsl:variable name="versjon" select="'dialog1.0 - v3.1.0 '"/>
 
 	<xsl:template match="/">
-		<html>
+		<html xmlns="http://www.w3.org/1999/xhtml">
 			<head>
 				<title>Dialogmelding</title>
 				<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 				<style type="text/css">
 					<xsl:value-of select="document('../../felleskomponenter/KITH-visning.css')" disable-output-escaping="yes"/>
-				</style>
-				<style type="text/css">
-					<xsl:value-of select="document('../../felleskomponenter/smooth-visning.css')" disable-output-escaping="yes"/>
 				</style>
 			</head>
 			<body>
@@ -96,16 +96,14 @@
 							<xsl:if test="//dia:SakstypeKodet or //dia:Sakstype">
 								<th>Sakstype</th>
 								<td>
-									<xsl:if test="//dia:SakstypeKodet">
-										<span class="strong">
-											<xsl:value-of select="/descendant::dia:SakstypeKodet[1]/@V"/>&#160;
-										</span>
-										<xsl:if test="contains(/descendant::dia:SakstypeKodet[1]/@S, '7170')">(ICPC)</xsl:if>
-										<xsl:if test="contains(/descendant::dia:SakstypeKodet[1]/@S, '7110')">(ICD-10)</xsl:if>
-										<xsl:if test="contains(/descendant::dia:SakstypeKodet[1]/@S, '7250')">(ICF)</xsl:if>
-										<br/>
-									</xsl:if>
-									<xsl:value-of select="/descendant::dia:Sakstype[1]"/>
+									<b>
+										<xsl:value-of select="//dia:SakstypeKodet/@V"/>&#160;
+									</b>
+									<xsl:if test="contains(dia:SakstypeKodet/@S, '7170')">(ICPC)</xsl:if>
+									<xsl:if test="contains(dia:SakstypeKodet/@S, '7110')">(ICD-10)</xsl:if>
+									<xsl:if test="contains(dia:SakstypeKodet/@S, '7250')">(ICF)</xsl:if>
+									<br/>
+									<xsl:value-of select="//dia:Sakstype"/>
 								</td>
 							</xsl:if>
 						</tr>
@@ -341,7 +339,7 @@
 	<xsl:template match="dia:RollerRelatertNotat">
 		<tr>
 			<td>
-				<span class="strong">
+				<b>
 					<xsl:for-each select=".//dia:RoleToPatient">
 						<xsl:if test="position()&gt;1">,&#160;</xsl:if>
 						<xsl:choose>
@@ -367,7 +365,7 @@
 							</xsl:otherwise>
 						</xsl:choose>
 					</xsl:for-each>
-				</span>&#160;
+				</b>&#160;
 				<xsl:for-each select="dia:HealthcareProfessional">
 					<xsl:call-template name="HealthcareProfessional"/>
 				</xsl:for-each>
@@ -487,7 +485,7 @@
 											</object>
 											<p>
 												<!-- Denne paragrafen blir aktivert når pdf-visningen feiler - f.eks. med InternetExplorer -->
-												<span class="strong">Visning av vedlagte pdf-fil feilet.</span>
+												<b>Visning av vedlagte pdf-fil feilet.</b>
 												<br/>
 												Vanligste årsak er bruk av Internet Explorer, eller manglende plug-in.
 											</p>

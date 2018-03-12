@@ -5,11 +5,11 @@
 	<Versjon>1.2</Versjon>
 	<Identifikator>HIS 80226:2014</Identifikator>
 	<Utgitt>2014-02-01</Utgitt>
-	<Utgiver>Direktoratet for e-helse</Utgiver>
+	<Utgiver>Helsedirektoratet</Utgiver>
 	
 	<Referansekatalogen>
 		<Beskrivelse>Epikrise 1.2 (HIS 80226:2014)</Beskrivelse>
-		<Referanse>http://ehelse.no/HIS80226-2014</Referanse>
+		<Referanse>https://ehelse.no/Sider/Epikrise--Informasjonsmodell-og-XML-meldingsbeskrivelse-%e2%80%93-HIS-802262014.aspx</Referanse>
 	</Referansekatalogen>
 	
 	<Status>Fastsatt som standard</Status>
@@ -17,7 +17,7 @@
 	
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Epikrise v1.2 (GitLab)</Beskrivelse>
+			<Beskrivelse>HIS 80226:2014 Epikrise: Informasjonsmodell og XML meldingsbeskrivelse (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/epikrise/HIS 80226_2014 Epikrisemelding - korrigert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
@@ -43,25 +43,6 @@
 	<Visningsfiler>
 		<Visningsfil>
 			<Referanse>visningsfil/epikrise/v1.2/Epikrise-v1_2-2html.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/epikrise/Epikrise2html.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: smooth-visning.css</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/smooth-visning.css</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: ehelse-visning.css</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/ehelse-visning.css</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: eh-komponent1.xsl</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/eh-komponent1.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: eh-komponent2.xsl</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/eh-komponent2.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
 			<Beskrivelse>Felleskomponent for alle visningsfiler: KITH-visning.css</Beskrivelse>
@@ -140,25 +121,5 @@
 			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
-	<Eksempler>
-		<Eksempel>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-2/Epikrise_v1-2_Eksempel_Fastlege_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-2/Epikrise_v1-2_Eksempel_Fastlege_Endring.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-2/Epikrise_v1-2_Eksempel_Fastlege_Kansellering.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-2/Epikrise_v1-2_Eksempel_Legevakt_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-2/Epikrise_v1-2_Eksempel_Legevakt_Endring.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-2/Epikrise_v1-2_Eksempel_Legevakt_Kansellering.xml</Referanse>
-		</Eksempel>
-	</Eksempler>
 		
 </StandardMetadata>

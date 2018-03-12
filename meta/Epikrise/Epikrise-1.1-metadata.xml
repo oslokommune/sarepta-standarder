@@ -5,17 +5,17 @@
 	<Versjon>1.1</Versjon>
 	<Identifikator>HIS 80226:2006</Identifikator>
 	<Utgitt>02/2006</Utgitt>
-	<Utgiver>Direktoratet for e-helse</Utgiver>
+	<Utgiver>Helsedirektoratet</Utgiver>
 	<Referansekatalogen>
 		<Beskrivelse>Epikrise 1.1 (HIS 80226:2006)</Beskrivelse>
-		<Referanse>http://ehelse.no/HIS80226-2006</Referanse>
+		<Referanse>https://ehelse.no/Sider/Epikrise--Informasjonsmodell-og-XML-meldingsbeskrivelse-–-HIS-802262006.aspx</Referanse>
 	</Referansekatalogen>
 	
 	<Status>Fastsatt som standard</Status>
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Epikrise v1.1 (GitLab)</Beskrivelse>
+			<Beskrivelse>Epikrise. Informasjonsmodell og XML meldingsbeskrivelse (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/epikrise/HIS_80226_2006-epikrise_1.1.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
@@ -41,25 +41,6 @@
 	<Visningsfiler>
 		<Visningsfil>
 			<Referanse>visningsfil/epikrise/v1.1/Epikrise-v1_1-2html.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/epikrise/Epikrise2html.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: smooth-visning.css</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/smooth-visning.css</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: ehelse-visning.css</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/ehelse-visning.css</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: eh-komponent1.xsl</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/eh-komponent1.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: eh-komponent2.xsl</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/eh-komponent2.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
 			<Beskrivelse>Felleskomponent for alle visningsfiler: KITH-visning.css</Beskrivelse>
@@ -138,26 +119,5 @@
 			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
-
-	<Eksempler>
-		<Eksempel>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-1/Epikrise_v1-1_Eksempel_Fastlege_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-1/Epikrise_v1-1_Eksempel_Fastlege_Endring.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-1/Epikrise_v1-1_Eksempel_Fastlege_Kansellering.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-1/Epikrise_v1-1_Eksempel_Legevakt_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-1/Epikrise_v1-1_Eksempel_Legevakt_Endring.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-1/Epikrise_v1-1_Eksempel_Legevakt_Kansellering.xml</Referanse>
-		</Eksempel>
-	</Eksempler>
 
 </StandardMetadata>

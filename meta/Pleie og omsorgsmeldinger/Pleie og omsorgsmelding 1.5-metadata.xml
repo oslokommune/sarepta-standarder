@@ -5,10 +5,10 @@
 	<Versjon>1.5</Versjon>
 	<Identifikator>HIS 80704:2009</Identifikator>
 	<Utgitt>09/2009</Utgitt>
-	<Utgiver>Direktoratet for e-helse</Utgiver>
+	<Utgiver>Helsedirektoratet</Utgiver>
 
 	<Referansekatalogen>
-		<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten v1.5</Beskrivelse>
+		<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten v1.5 (HIS 80704:2009)</Beskrivelse>
 		<Referanse>https://ehelse.no/Sider/Standard-for-elektronisk-kommunikasjon-med-pleie--og-omsorgstjenesten--Informasjonsmodell-og-XML-meldingsbeskrivelse-–-HIS-.aspx</Referanse>
 	</Referansekatalogen>
 
@@ -18,7 +18,7 @@
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten v1.5 (GitLab)</Beskrivelse>
+			<Beskrivelse>HIS 80704:2009 Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten. Informasjonsmodell og XML meldingsbeskrivelse (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/plo/HIS_80704_2009 Pleie- og omsorgsmeldinger 1.5 -korrigert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
@@ -104,14 +104,6 @@
 			<Referanse>visningsfil/plo/v1.6 eller lavere/plo2html.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: smooth-visning.css</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/smooth-visning.css</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: eh-komponent2.xsl</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/eh-komponent2.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
 			<Beskrivelse>Felleskomponent for alle visningsfiler: KITH-visning.css</Beskrivelse>
 			<Referanse>visningsfil/felleskomponenter/KITH-visning.css</Referanse>
 		</Visningsfil>
@@ -188,5 +180,12 @@
 			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
+
+	<Testmateriell>
+		<Testfil>
+			<Beskrivelse>Syntaks-sjekk av XML-meldinger (XML-validering)</Beskrivelse>
+			<Referanse>https://validator.test.nhn.no/validering/index.cgi</Referanse>
+		</Testfil>
+	</Testmateriell>
 
 </StandardMetadata>

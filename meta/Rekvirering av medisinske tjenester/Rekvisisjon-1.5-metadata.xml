@@ -5,18 +5,18 @@
 	<Versjon>1.5</Versjon>
 	<Identifikator>HIS 80821:2008</Identifikator>
 	<Utgitt>12/2008</Utgitt>
-	<Utgiver>Direktoratet for e-helse</Utgiver>
+	<Utgiver>Helsedirektoratet</Utgiver>
 
 	<Referansekatalogen>
-		<Beskrivelse>Rekvirering av medisinske tjenester v1.5</Beskrivelse>
-		<Referanse>http://ehelse.no/HIS80821-2008</Referanse>
+		<Beskrivelse>Rekvisisjon/henvisning - radiologi (v1.5) (HIS 80821:2008)</Beskrivelse>
+		<Referanse>https://ehelse.no/Sider/Rekvirering-av-medisinske-tjenester--Informasjonsmodell-og-XML-meldingsbeskrivelse-–-HIS-808212008.aspx</Referanse>
 	</Referansekatalogen>
 
 	<Status>Fastsatt som standard</Status>
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Rekvirering av medisinske tjenester v1.5 (GitLab)</Beskrivelse>
+			<Beskrivelse>Rekvirering av medisinske tjenester. Informasjonsmodell og XML meldingsbeskrivelse (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/rekvisisjon/HIS_80821_2008 Rekvirering av medisinske tjenester v1.5 -korrigert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
@@ -42,25 +42,6 @@
 	<Visningsfiler>
 		<Visningsfil>
 			<Referanse>visningsfil/rekvisisjon/v1.5/rekvisisjon-v1_5-2html.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/rekvisisjon/rekvisisjon2html.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: smooth-visning.css</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/smooth-visning.css</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: ehelse-visning.css</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/ehelse-visning.css</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: eh-komponent1.xsl</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/eh-komponent1.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: eh-komponent2.xsl</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/eh-komponent2.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
 			<Beskrivelse>Felleskomponent for alle visningsfiler: KITH-visning.css</Beskrivelse>
@@ -139,26 +120,12 @@
 			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
-	
-	<Eksempler>
-		<Eksempel>
-			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-5/Rekvisisjon_radiologi_enkel_v1-5_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-5/Rekvisisjon_radiologi_enkel_v1-5_Endring.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-5/Rekvisisjon_radiologi_enkel_v1-5_Kansellering.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-5/Rekvisisjon_radiologi_MR_v1-5_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-5/Rekvisisjon_radiologi_MR_v1-5_Endring.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-5/Rekvisisjon_radiologi_MR_v1-5_Kansellering.xml</Referanse>
-		</Eksempel>
-	</Eksempler>
-	
+
+	<Testmateriell>
+		<Testfil>
+			<Beskrivelse>Syntaks-sjekk av XML-meldinger (XML-validering)</Beskrivelse>
+			<Referanse>https://validator.test.nhn.no/validering/index.cgi</Referanse>
+		</Testfil>
+	</Testmateriell>
+
 </StandardMetadata>

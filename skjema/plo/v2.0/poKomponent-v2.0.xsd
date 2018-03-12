@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Versjon 2.0 2017-11-30-->
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:kith="http://www.kith.no/xmlstds" xmlns:po="http://ehelse.no/xmlstds/po/poKomponent/2017-11-30" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:epj1="http://www.kith.no/xmlstds/epj/epj1/2008-02-20" xmlns:epj2="http://www.kith.no/xmlstds/epj/epj2/2008-02-20" xmlns:epj3="http://www.kith.no/xmlstds/epj/epj3/2008-02-20" targetNamespace="http://ehelse.no/xmlstds/po/poKomponent/2017-11-30" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com)  -->
+<!-- Versjon 2.0 2016-05-30-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:kith="http://www.kith.no/xmlstds" xmlns:po="http://ehelse.no/xmlstds/po/poKomponent/2016-05-30" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:epj1="http://www.kith.no/xmlstds/epj/epj1/2008-02-20" xmlns:epj2="http://www.kith.no/xmlstds/epj/epj2/2008-02-20" xmlns:epj3="http://www.kith.no/xmlstds/epj/epj3/2008-02-20" targetNamespace="http://ehelse.no/xmlstds/po/poKomponent/2016-05-30" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<import namespace="http://www.kith.no/xmlstds" schemaLocation="kith.xsd"/>
 	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="felleskomponent1.xsd"/>
 	<import namespace="http://www.kith.no/xmlstds/epj/epj1/2008-02-20" schemaLocation="EPJ-cave-mv.xsd"/>
@@ -13,8 +14,6 @@
 			<sequence>
 				<element name="Slektskap" type="kith:CS" minOccurs="0"/>
 				<element name="Omsorgsfunksjon" type="kith:CS" minOccurs="0"/>
-				<element name="FodselsarMindrearigParorende" type="gYear" minOccurs="0"/>
-				<element name="NarmesteParorende" type="boolean" minOccurs="0"/>
 				<element name="Referanseperson" type="fk1:Person"/>
 				<element name="Merknad" type="string" minOccurs="0"/>
 			</sequence>
@@ -41,14 +40,15 @@
 	<!-- Class: Tilleggsopplysninger pasient -->
 	<element name="TilleggsopplysningPasient">
 		<annotation>
-			<documentation>         Særskilte pasientopplysninger som ikke dekkes av den generelle personklassen kan angis her.      </documentation>
+			<documentation>
+         Særskilte pasientopplysninger som ikke dekkes av den generelle personklassen kan angis her.
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
 				<element name="SivilStatus" type="kith:CS" minOccurs="0"/>
 				<element name="BorAlene" type="boolean" minOccurs="0"/>
 				<element name="Sprak" type="kith:CS" minOccurs="0"/>
-				<element name="MottarKommunaleTjenester" type="boolean" minOccurs="0"/>
 				<element name="Merknad" type="string" minOccurs="0"/>
 			</sequence>
 		</complexType>
@@ -56,7 +56,9 @@
 	<!-- Class: Sendt dokument -->
 	<element name="SendtDokument">
 		<annotation>
-			<documentation>         Denne klassen benyttes til å angi om det er oversendt andre dokumenter som kan være relevante i forhold til den informasjonen som oversendes gjennom denne meldingen.      </documentation>
+			<documentation>
+         Denne klassen benyttes til å angi om det er oversendt andre dokumenter som kan være relevante i forhold til den informasjonen som oversendes gjennom denne meldingen.
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -82,7 +84,9 @@
 	<!-- Class: Ansvar for rapport -->
 	<element name="AnsvarForRapport">
 		<annotation>
-			<documentation>         Benyttes for å registrere hvem som er ansvarlig for denne rapporten.      </documentation>
+			<documentation>
+         Benyttes for å registrere hvem som er ansvarlig for denne rapporten.
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -96,7 +100,9 @@
 	<!-- Class: Opplysninger til søknad -->
 	<element name="OpplysningerTilSoknad">
 		<annotation>
-			<documentation>         Inneholder administrative opplysninger i forbindelse med oversending av helseopplysninger ved søknad til kommunale tjenester.      </documentation>
+			<documentation>
+         Inneholder administrative opplysninger i forbindelse med oversending av helseopplysninger ved søknad til kommunale tjenester.
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -108,7 +114,9 @@
 	<!-- Class: Info om behov for assistert kommunikasjon mv -->
 	<element name="InfoAssistertKommunikasjon">
 		<annotation>
-			<documentation>         Denne informasjonsgrupperingen benyttes ved kommunikasjon med andre aktører og benyttes for å registrere hvilket behov og ønsker pasienten og dennes omsorgspersoner har når det gjelder bruk av tolk, samt opplysninger om andre praktiske forhold de som har kontakt med personen bør ha kjennskap til.  Tilsvarende informasjon er dekket i EPJ-dokumentet "Behov for assistert kommunikasjons mv".      </documentation>
+			<documentation>
+         Denne informasjonsgrupperingen benyttes ved kommunikasjon med andre aktører og benyttes for å registrere hvilket behov og ønsker pasienten og dennes omsorgspersoner har når det gjelder bruk av tolk, samt opplysninger om andre praktiske forhold de som har kontakt med personen bør ha kjennskap til.  Tilsvarende informasjon er dekket i EPJ-dokumentet "Behov for assistert kommunikasjons mv".
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -119,7 +127,9 @@
 	<!-- Class: Info om kartlegging av funksjonsnivå -->
 	<element name="InfoKartleggingFunksjonsniva">
 		<annotation>
-			<documentation>         Denne informasjonsgrupperingen benyttes ved kommunikasjon med andre aktører og inneholder informasjon om tjenestemottakerens funksjonsnivå. Benyttes primært i forbindelse med søknadsbehandlingen.  Tilsvarende informasjon er dekket i EPJ-dokumentet "Kartlegging av funksjonsnivå".      </documentation>
+			<documentation>
+         Denne informasjonsgrupperingen benyttes ved kommunikasjon med andre aktører og inneholder informasjon om tjenestemottakerens funksjonsnivå. Benyttes primært i forbindelse med søknadsbehandlingen.  Tilsvarende informasjon er dekket i EPJ-dokumentet "Kartlegging av funksjonsnivå".
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -139,7 +149,9 @@
 	<!-- Class: Eksisterende tjeneste -->
 	<element name="EksisterendeTjeneste">
 		<annotation>
-			<documentation>         Inneholder opplysninger om en tjeneste som pasienten allerede har. Dette kan både være kommunale pleie- og omsorgstjenester og private tjenester som tjenestemottakeren har skaffet og betaler selv.      </documentation>
+			<documentation>
+         Inneholder opplysninger om en tjeneste som pasienten allerede har. Dette kan både være kommunale pleie- og omsorgstjenester og private tjenester som tjenestemottakeren har skaffet og betaler selv.
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -158,13 +170,15 @@
 	<!-- Class: Tidsfestet hendelse -->
 	<element name="TidsfestetHendelse">
 		<annotation>
-			<documentation>         Benyttes for å kommunisere forskjellige typer "hendelser", både planlagte og slike som har funnet sted. Eksempler på slike hendelser kan f.eks. være:  Innlagt tidspunkt  Forventet utskrivningsklar dato  Utskrivningsklar tidspunkt      </documentation>
+			<documentation>
+         Benyttes for å kommunisere forskjellige typer "hendelser", både planlagte og slike som har funnet sted. Eksempler på slike hendelser kan f.eks. være:  Innlagt tidspunkt  Forventet utskrivningsklar dato  Utskrivningsklar tidspunkt
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
 				<element name="Hendelsekode" type="kith:CV" minOccurs="0"/>
 				<element name="BeskrivelseAvHendelse" type="string" minOccurs="0"/>
-				<element name="TidspunktForHendelse" type="dateTime"/>
+				<element name="TidspunktForHendelse" type="kith:TS"/>
 				<element name="Anslag" type="boolean"/>
 				<element name="Merknad" type="string" minOccurs="0"/>
 				<element ref="po:StedForHendelse" minOccurs="0"/>
@@ -174,7 +188,9 @@
 	<!-- Class: Utskrevet til -->
 	<element name="UtskrevetTil">
 		<annotation>
-			<documentation>         Opplysning om hvor pasienten skrives ut.      </documentation>
+			<documentation>
+         Opplysning om hvor pasienten skrives ut.
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -187,7 +203,9 @@
 	<!-- Class: Avtale om adm. av legemidler -->
 	<element name="LegemidlerUtdelt">
 		<annotation>
-			<documentation>        Inneholder opplysninger om utdeling av legemidler til pasienten den dagen omsorgsepisoden avsluttes.      </documentation>
+			<documentation>
+        Inneholder opplysninger om utdeling av legemidler til pasienten den dagen omsorgsepisoden avsluttes.
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -200,7 +218,9 @@
 	<!-- Class: Bistand legemiddelhåndtering -->
 	<element name="BistandLegemiddelhandtering">
 		<annotation>
-			<documentation>       Inneholder opplysninger om pasientens behov for hjelp til legemiddelhåndtering.      </documentation>
+			<documentation>
+       Inneholder opplysninger om pasientens behov for hjelp til legemiddelhåndtering.
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -212,7 +232,9 @@
 	<!-- Class:  Legemiddelgjennomgang -->
 	<element name="Legemiddelgjennomgang">
 		<annotation>
-			<documentation>       Inneholder opplysninger om dato for siste legemiddelgjennomgang.      </documentation>
+			<documentation>
+       Inneholder opplysninger om dato for siste legemiddelgjennomgang.
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -225,7 +247,9 @@
 	<!-- Class: Avtale om adm. av legemidler -->
 	<element name="AvtaleOmAdmLegemidler">
 		<annotation>
-			<documentation>         Inneholder opplysninger om det foreligger avtale om administrering av legemidler og administrering av multidosepakning for pasienten/brukeren.      </documentation>
+			<documentation>
+         Inneholder opplysninger om det foreligger avtale om administrering av legemidler og administrering av multidosepakning for pasienten/brukeren.
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -238,7 +262,9 @@
 	<!-- Class: Reseptinformasjon -->
 	<element name="Reseptinformasjon">
 		<annotation>
-			<documentation>         Inneholder opplysninger om resept er sendt med pasienten, og om det er utstedt eResept.       </documentation>
+			<documentation>
+         Inneholder opplysninger om resept er sendt med pasienten, og om det er utstedt eResept. 
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -251,7 +277,9 @@
 	<!-- Class: Info om medisinsk diagnose -->
 	<element name="InfoMedisinskDiagnose">
 		<annotation>
-			<documentation>         Denne informasjonsgrupperingen benyttes ved kommunikasjon med andre aktører for å gruppere informasjon om medisinske diagnoser etter de gjeldene kodeverk. Tilsvarende informasjon ligger i EPJ-dokumentet "Medisinsk diagnose".      </documentation>
+			<documentation>
+         Denne informasjonsgrupperingen benyttes ved kommunikasjon med andre aktører for å gruppere informasjon om medisinske diagnoser etter de gjeldene kodeverk. Tilsvarende informasjon ligger i EPJ-dokumentet "Medisinsk diagnose".
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -262,7 +290,9 @@
 	<!-- Class: Info om andre viktige opplysninger -->
 	<element name="InfoAndreViktigeOpplysninger">
 		<annotation>
-			<documentation>         Denne informasjonsgrupperingen benyttes ved kommunikasjon med andre aktører og inneholder opplysninger om spesielle forhold som helsepersonellet bør være oppmerksom på når det gjelder pasienten og som ikke faller inn under Cave-begrepet eller NB-notat. Allergier som hører inn under CAVE skal oppgis under  "Cave".      </documentation>
+			<documentation>
+         Denne informasjonsgrupperingen benyttes ved kommunikasjon med andre aktører og inneholder opplysninger om spesielle forhold som helsepersonellet bør være oppmerksom på når det gjelder pasienten og som ikke faller inn under Cave-begrepet eller NB-notat. Allergier som hører inn under CAVE skal oppgis under  "Cave".
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -274,7 +304,9 @@
 	<!-- Class: Info om kontrolltime -->
 	<element name="InfoKontrolltime">
 		<annotation>
-			<documentation>         Denne informasjonsgrupperingen benyttes ved kommunikasjon med andre aktører og inneholder informasjon om kontrolltime (om time skal bestille, er bsetilt og eventuelt tidspunkt, hvem er informert).      </documentation>
+			<documentation>
+         Denne informasjonsgrupperingen benyttes ved kommunikasjon med andre aktører og inneholder informasjon om kontrolltime (om time skal bestille, er bsetilt og eventuelt tidspunkt, hvem er informert).
+      </documentation>
 		</annotation>
 		<complexType>
 			<choice>
@@ -287,7 +319,9 @@
 	<!-- Class: Opplysninger om hjelpemidler -->
 	<element name="OpplysningerOmHjelpemidler">
 		<annotation>
-			<documentation>         Denne informasjonsgrupperingen benyttes ved kommunikasjon med andre aktører for å gruppere informasjon om hjelpemidler som er i bruk eller som det er søkt om.      </documentation>
+			<documentation>
+         Denne informasjonsgrupperingen benyttes ved kommunikasjon med andre aktører for å gruppere informasjon om hjelpemidler som er i bruk eller som det er søkt om.
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -298,7 +332,9 @@
 	<!-- Class: Assistert kommunikasjon -->
 	<element name="AssistertKommunikasjon">
 		<annotation>
-			<documentation>         Fragment av denne typen benyttes til å registrere opplysninger om hvilket behov pasienten eller en av dennes pårørende har når det gjelder behov for tolk mv.      </documentation>
+			<documentation>
+         Fragment av denne typen benyttes til å registrere opplysninger om hvilket behov pasienten eller en av dennes pårørende har når det gjelder behov for tolk mv.
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -307,15 +343,17 @@
 				<element name="Synsvikt" type="boolean" minOccurs="0"/>
 				<element name="BehovTolkSprak" type="kith:CS" minOccurs="0"/>
 				<element name="PreferertTolk" type="fk1:Person" minOccurs="0"/>
-				<element name="BehovOpphortDato" type="date" minOccurs="0"/>
-				<element name="Merknad" type="string" minOccurs="0"/>
+				<element name="BehovOpphortDato" type="kith:TS" minOccurs="0"/>
+				<element name="Merknad" type="kith:ST" minOccurs="0"/>
 			</sequence>
 		</complexType>
 	</element>
 	<!-- Class: Hjelpemiddelbeskrivelse -->
 	<element name="Hjelpemiddelbeskrivelse">
 		<annotation>
-			<documentation>         Denne typen fragment benyttes til å beskrive konkrete typer hjelpemiddel.      </documentation>
+			<documentation>
+         Denne typen fragment benyttes til å beskrive konkrete typer hjelpemiddel.
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -328,7 +366,9 @@
 	<!-- Class: Informasjon om bestilt kontrolltime -->
 	<element name="InformasjonOmTime">
 		<annotation>
-			<documentation>         Inneholder informasjon om det er bestilt eller skal bestilles kontrolltime på sykehus/legekontor og hvem som er ansvarlig for bestillingen.      </documentation>
+			<documentation>
+         Inneholder informasjon om det er bestilt eller skal bestilles kontrolltime på sykehus/legekontor og hvem som er ansvarlig for bestillingen.
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -352,7 +392,9 @@
 	<!-- Class: Informasjon om tentativ kontrolltime -->
 	<element name="InformasjonOmTentativTime">
 		<annotation>
-			<documentation>         Inneholder informasjon om tentativ kontrolltime.      </documentation>
+			<documentation>
+         Inneholder informasjon om tentativ kontrolltime.
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -366,7 +408,9 @@
 	<!-- Class: Kartlagt funksjon -->
 	<element name="Funksjonsbeskrivelse">
 		<annotation>
-			<documentation>         Registrering av hvilken funksjon som er vurdert samt resultatet av vurderingen.      </documentation>
+			<documentation>
+         Registrering av hvilken funksjon som er vurdert samt resultatet av vurderingen.
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -380,7 +424,9 @@
 	<!-- Class: Info om avtale om legemiddeladministrering -->
 	<element name="InfoAvtaleOmLegemiddeladm">
 		<annotation>
-			<documentation>         Benyttes ved kommunkasjon med andre aktører for å gruppere informasjon med innhold i avtale om administrering av legemidler.      </documentation>
+			<documentation>
+         Benyttes ved kommunkasjon med andre aktører for å gruppere informasjon med innhold i avtale om administrering av legemidler.
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -388,14 +434,17 @@
 			</sequence>
 		</complexType>
 	</element>
-	<!-- Class: Type innhold i melding -->
+	<!-- Class: Type innhold i melding. Ny klasse i Medisinske opplysninger. Generaliserng av klassen "InnholdKonsultasjon" (Type innhold i konsultasjon) -->
 	<element name="TypeInnholdIMelding">
 		<annotation>
-			<documentation>         Inneholder informasjon om innholdet i meldingen.      </documentation>
+			<documentation>
+         Inneholder informasjon om 
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
 				<element name="TypeInnhold" type="kith:CV"/>
+				<!-- endret navn fra "TypeInnholdKonsultasjon" og endret datatype fra CS til CV -->
 				<element name="Merknad" type="string" minOccurs="0"/>
 			</sequence>
 		</complexType>
@@ -403,7 +452,9 @@
 	<!-- Class: Opplysninger relevant for oppfølging -->
 	<element name="OpplysningerRelevantOppfolging">
 		<annotation>
-			<documentation>         Inneholder informasjon fra sykepleier som er relevant for videre oppfølging av pasienten.      </documentation>
+			<documentation>
+         Inneholder informasjon fra sykepleier som er relevant for videre oppfølging av pasienten.
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -416,7 +467,9 @@
 	<!-- Class: Medisinsk diagnose fragment -->
 	<element name="MedisinskDiagnose">
 		<annotation>
-			<documentation>         Benyttes for å registrere en enkelt diagnose i form av en kode eller som tekst.      </documentation>
+			<documentation>
+         Benyttes for å registrere en enkelt diagnose i form av en kode eller som tekst.
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -429,7 +482,9 @@
 	<!-- Class: Status til hjelpemiddel -->
 	<element name="StatusHjelpemiddel">
 		<annotation>
-			<documentation>         Angir status til aktiviteten.      </documentation>
+			<documentation>
+         Angir status til aktiviteten.
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -441,7 +496,9 @@
 	<!-- Class: Sted for hendelsen -->
 	<element name="StedForHendelse">
 		<annotation>
-			<documentation>         Om ønskelig kan det her registreres hvor hendelsen blir eller ble gjennomført.      </documentation>
+			<documentation>
+         Om ønskelig kan det her registreres hvor hendelsen blir eller ble gjennomført.
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -452,7 +509,9 @@
 	<!-- Class: Informert om -->
 	<element name="InformertOm">
 		<annotation>
-			<documentation>         Inneholder opplysninger om pasient og/eller pårørende er informert om den aktuelle opplysningen.      </documentation>
+			<documentation>
+         Inneholder opplysninger om pasient og/eller pårørende er informert om den aktuelle opplysningen.
+      </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
@@ -466,8 +525,8 @@
 		<complexType>
 			<sequence>
 				<element name="IndividuellPlanForeligger" type="boolean" minOccurs="0"/>
-				<element name="KoordinatorOppnevnt" type="boolean" minOccurs="0"/>
-				<element name="Merknad" type="string" minOccurs="0"/>
+				<element name="koordinatorOppnevnt" type="boolean" minOccurs="0"/>
+				<element name="merknad" type="string" minOccurs="0"/>
 			</sequence>
 		</complexType>
 	</element>
@@ -482,18 +541,16 @@
 				<element ref="po:AnsvarForRapport" minOccurs="0" maxOccurs="unbounded"/>
 				<element ref="po:SendtDokument" minOccurs="0" maxOccurs="unbounded"/>
 				<element ref="po:AssistertKommunikasjon" minOccurs="0" maxOccurs="unbounded"/>
-				<element ref="po:PasientrelatertKontaktperson" minOccurs="0" maxOccurs="unbounded"/>
-			</sequence>
-		</complexType>
-	</element>
-	<!-- Class: Pasientrelatert kontaktperson -->
-	<element name="PasientrelatertKontaktperson">
-		<complexType>
-			<sequence>
-				<element name="StillingRolle" type="string" minOccurs="0"/>
-				<element name="Arbeidssted" type="string" minOccurs="0"/>
-				<element name="Referanseperson" type="fk1:Person"/>
-				<element name="Merknad" type="string" minOccurs="0"/>
+				<element name="PasientrelatertKontaktperson" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element name="StillingRolle" type="string" minOccurs="0"/>
+							<element name="Arbeidssted" type="string" minOccurs="0"/>
+							<element name="Referanseperson" type="fk1:Person"/>
+							<element name="Merknad" type="string" minOccurs="0"/>
+						</sequence>
+					</complexType>
+				</element>
 			</sequence>
 		</complexType>
 	</element>

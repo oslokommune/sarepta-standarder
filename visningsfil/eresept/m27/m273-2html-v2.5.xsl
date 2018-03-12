@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Edited with Atova XLMSpy (x64) ver. 2013 rel.2  sp.2 (http://www.altova.com) by Jan Sigurd Dragsjø - avd. Standardisering, Helsedirektoratet-->
 <xsl:stylesheet version="1.0" 
+	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
 	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
 	xmlns:m273="http://www.kith.no/xmlstds/eresept/m273/2012-06-11" 
@@ -9,32 +10,30 @@
 <!-- Visningsfil for eReseptmeldingen: M27.3 Registrering av multidoseansvarlig gruppe
 Inngår i Hdirs visningsfiler versjon 1
 
-27-03-2017: v3.1.1: Ny parameter for "visningStil". Ny stil "Smooth".
-25-10-2016: v3.1.0: La til visningsversjonnr
+25-10-2016: La til visningsversjonnr
 01-09-2013: versjon for eResept v2.5
 -->
 
-	<xsl:import href="../../felleskomponenter/meldingshode2html.xsl"/>
-	<xsl:import href="../../felleskomponenter/funksjoner.xsl"/>
-	<xsl:import href="../../felleskomponenter/kodeverk.xsl"/>
-	<xsl:import href="../../felleskomponenter/eh-komponent2.xsl"/>
-
-
-
+	<xsl:import href="../../Felleskomponenter/meldingshode2html.xsl"/>
+	<xsl:import href="../../Felleskomponenter/funksjoner.xsl"/>
+	<xsl:import href="../../Felleskomponenter/kodeverk.xsl"/>
+	
+	<xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" 
+		doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" 
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+		
+	<!-- Variabel for hvilken stil visningen har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
+	<xsl:variable name="stil" select="'One-line-doc'"/>
+	
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'eresept-m27.3-2.5 - v3.1.1 '"/>
+	<xsl:variable name="versjon" select="'eresept-m27.3-2.5 v3.1.0 '"/>
 
 	<xsl:template match="/">
-		<html>
+		<html xmlns="http://www.w3.org/1999/xhtml">
 			<head>
 				<title>M273</title>
 				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-				<style type="text/css">
-					<xsl:value-of select="document('../../felleskomponenter/KITH-visning.css')" disable-output-escaping="yes" />
-				</style>
-				<style type="text/css">
-					<xsl:value-of select="document('../../felleskomponenter/smooth-visning.css')" disable-output-escaping="yes"/>
-				</style>
+				<style type="text/css"><xsl:value-of select="document('../../Felleskomponenter/KITH-visning.css')" disable-output-escaping="yes" /></style>
 			</head>
 			<body>
 				<xsl:apply-templates select="mh:MsgHead"/>
