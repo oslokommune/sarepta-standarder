@@ -8,15 +8,15 @@
 	<Utgiver>Helsedirektoratet</Utgiver>
 
 	<Referansekatalogen>
-		<Beskrivelse>Fastlegeliste (oversikt over fastlegens listeinnbyggere) (HIS 1022:2010)</Beskrivelse>
-		<Referanse>https://ehelse.no/Sider/Pasientliste--Informasjonsmodell-og-XML-meldingsbeskrivelse-%e2%80%93-HIS-10232010.aspx</Referanse>
+		<Beskrivelse>Pasientliste (HIS 1023:2010)</Beskrivelse>
+		<Referanse>http://ehelse.no/HIS1023-2010</Referanse>
 	</Referansekatalogen>
 
 	<Status>Fastsatt som standard</Status>
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Pasientliste. Informasjonsmodell og XML meldingsbeskrivelse (GitLab)</Beskrivelse>
+			<Beskrivelse>Pasientliste (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/HELFOPasientliste/HIS_1023_2010_NAV-Pasientliste 2010-02-01.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>

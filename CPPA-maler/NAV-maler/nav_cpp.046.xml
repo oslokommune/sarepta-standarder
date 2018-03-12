@@ -1,0 +1,1936 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:CollaborationProtocolProfile xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:tns="http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" tns:cppid="nav:cpp:046" tns:version="string" xsi:schemaLocation="http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd cpp-cpa-2_0.xsd">
+	<tns:PartyInfo tns:partyName="NAV" tns:defaultMshChannelId="asyncSMTPChannelA1" tns:defaultMshPackageId="package_mshsignal">
+		<tns:PartyId tns:type="HER">79768</tns:PartyId>
+		<tns:PartyId tns:type="ENH">889640782</tns:PartyId>
+		<tns:PartyId tns:type="orgnummer">889640782</tns:PartyId>
+		<tns:PartyRef xlink:href="https://www.nav.no/about.html" xlink:type="simple"/>
+		<!--==================================================================== 
+			046 - 20171011/SB	- Fjernet 1.0 versjoner for eresept og LOM som alle har ligget der av historiske årsaker.
+			045 - 20170920/SB	- Lagt til flere action for EKHO. Tatt bort K27 og pasientens fastlege
+			044 - 20170208/SB	- Nytt NAV sertifikat for kryptering og signering
+			043 - 20140704/YPE	- Lagt inn ny ChannelId = asyncHttpChannelB2 for CollaborationRole = Inntektsforesporsel og CollaborationRole = Kreditortrekk (Brukes av SI og POD)
+			042 - 20140523/YPE	- Lagt inn ny versjon 2.0 av CollaborationRole=Sykmelde som benytter package_helseopplysningerarbeidsuforhet_v1p0
+											- Dummy-versjon 1.0 av eResept-prosessene (CollaborationRole="IndividuellRefusjon", "Reseptoppgjor", "Legemiddelinformasjon", 
+											  "Prisinformasjon") for automaisk å kunne akseptere innkomne CPPer med gammelt oppsett.
+											- Beholdt CollaborationRole="IkkeSendeGammelSmLe" for automaisk å kunne akseptere innkomne CPPer med gammelt oppsett.
+											- Lagt til TransportServerSecurity under TransportReceiver i Transport="transportHttp".
+			041 - 20140311/YPE	- Oppdatert CPP ihht. vedtatt standard for versjonering av meldinger/meldingsflyt.
+											- Spesielt for SI (Utleggstrekk/Utleggspant/Statussvar): Endret i DeliveryChannel=asyncHttpChannelB2 fra
+											  ns1:ackSignatureRequested="perMessage" til ns1:ackSignatureRequested="never" 
+											- Spesielt for SI (Utleggstrekk/Utleggspant/Statussvar): Endret i BusinessTransactionCharacteristics fra
+											  ns1:isNonRepudiationReceiptRequired="true" til ns1:isNonRepudiationReceiptRequired="false" 
+			040 - 20131211/YPE	- Endret attributter og textnode i SignatureAlgorithm
+											  <tns:SignatureAlgorithm tns:oid="1.2.840.113549.1.1.5" 
+												tns:w3c="http://www.w3.org/2000/09/xmldsig#rsa-sha1">RSA-SHA1</tns:SignatureAlgorithm>
+			039 - 20131009/YPE	- Tilrettelagt for ny Sykmelding
+			038 - 20130918/YPE	- Lagt til CollaborationRole = Inntektsforesporsel
+			037 - 20130903/YPE	- Rettet feil i Action for AppRec i CollaborationRole = DialogmoteInnkalling
+											- Fjernet CollaborationRole = POLK med tilhørende Transport, DocExchange og Packaging
+			036 - 20130723/YPE	- Lagt til Action = Soknad i CollaborationRole = Legemelding 
+		    035 - 20130529/YPE	- Oppdatert SimplePart og Packaging for CollaborationRole = IndividuellRefusjon med versjon 2.3, 2.4 og 2.5 for M2 og versjon 2.4 for M12
+		    034 - 20130312/YPE	- Endret ChannelId for CollaborationRole = IndividuellRefusjon slik at den bruker standard SMTP Channel
+		    033 - 20130305/YPE	- Rettet feil ifm. SimplePart og Packaging for Behandlerkrav
+		    032 - 20130218/YPE	- Endret Action i CollaborationRole = Legemiddelinformasjon og Prisinformasjon fra "Kvittering" til "Svar"
+		    031 - 20130125/YPE	- Fjernet ChannelId = SyncHttpChannelB1 på Svar i CollaborationRole = Pasientliste
+											- Fjernet ChannelId = asyncHttpChannelB2 på Svar i CollaborationRole = Kreditortrekk
+											- Lagt inn Encapsulation i alle Packaging 
+											- CollaborationRole = ForesporselFraLege ikke i bruk
+		    030 - 20121107/YPE	- Lagt inn ColaborationRole = Sykdomspulsen, med tilhørene SimplePart og Packaging
+		    029 - 20121012/YPE	- Fjernet CollaborationRole = UtleggstrekkBidrag, UtleggspantBidrag, StatussvarBidrag da disse ikke er i bruk.
+											  Fjernet ubrukte actions (CanSend/CanReceive) i CollaborationRole = PasientlisteForespørsel og Ebrev (Svar, AvvisningStartAbonnement,
+											  AvvisningStoppAbonnement og AvvisningHentAbonnementStatus)
+		    028 - 20120821/YPE	- Lagt til CollaborationRole = UtleggstrekkBidrag, UtleggspantBidrag, StatussvarBidrag (Utleggsbasen - SI)
+		    027 - 20120606/AG  	- Fjernet synkron channel for pasientlistesvar
+		    026 - 20120524/YPE  - Tatt ut  Encapsulation i alle Packaging.
+		    025 - 20120523/YPE  - Lagt til http://www.kith.no/xmlstds/msghead/2006-05-24/MsgHead-v1_2.xsd som første NamespaceSupported i alle SimplePart hvor
+											  hodemelding benyttes utenpå fagmelding. 
+											  Første NamespaceSupported identifiserer schema for SimplePart (hodemelding) mens påfølgende NamespaceSupported beskriver
+											  namespace som er importert av førstnevnte schema, dvs. fagmelding som er inkludert.
+											  For de fagmeldinger som ikke benytter hodemelding vil det kun være ett NamespaceSupported i SimplePart, dvs. det namespace som
+											  identifiserer schema for fagmeldingen.
+		    024 - 20120515/YPE  - SimplePart: Rettet namespace Dialogmelding, AppRec, Sykmelding, Legeerklæring, Behandlerkrav, LOM, Ebrev, Egenandel, Fastlege og
+											  Pasienliste
+											- Splittet SimplePart og Packaging for Egenandelspøring Frikort og Egenandelspørring Frikort mengde 
+											- Oppdatert tilhørende packageId i CollaborationRole = EgenandelMengde		    
+			023 - 20120511/YPE  - Lagt inn Encapsulation i alle Packaging
+											- Lagt til CollaborationRole = ForesporselFraLege, ForesporselFraSaksbehandler, HenvendelseFraLege, HenvendelseFraSaksbehandler,  
+												Oppfolgingsplan og DialogmoteInnkalling
+											- Fjernet CollaborationRole = Foresporselfralege, Tilleggsopplysninger og Oppfolging
+											- Oppdatert Role og Action for CollaborationRole = Legemiddelinformasjon og Prisinformasjon
+		    022 - 20110202/KSH  - Rettet opp ',' til '.' i namespace for simplepart:message_statusmelding_v1p0
+			021 - 20111219/YPE	- Fjernet NegativSvarmelding fra CollaborationRole = Kreditortrekk
+			020 - 20111011/TT		- Lagt inn uuid på ProcessSpecification for Service = SmLeLomSendingAsync
+			019 - 20110930/YPE	- Fremtidige tjenster er tatt inn igjen
+			018 - 20110930/YPE	- Lagt inn egne Transport for eResept og Altinn
+											- Endret DeliveryChannel = "asyncSMTPChannelA2" og "asyncSMTPChannelA5" slik at disse peker på nye Transport
+			017 - 20110927/YPE: - Lagt til tns:type="orgnummer" i PartyId
+			016 - 20110926/YPE: - Lagt til NonRepudiationProtocol, HashFunction, SignatureAlgorithm under tns:ReceiverNonRepudiation i alle DocExchange
+											- Endret action="Oppgjorsmelding" (liten m) under CollaborationRole = Legemelding 
+											- CollaborationRole = LOM lagt til. (Tjeneste som SKAL fases ut)
+			015 - 20110921/YPE: - Kommentert ut fremtidige tjenester: 
+											  CollaborationRole = Foresporsel fra lege, Foresporsel om tilleggsinformasjon fra NAV, Oppfolging - Dialogmote, eResept - 
+											  Legemiddelinformasjon og eResept - Prisinformasjon
+			014 - 20110915/YPE: - Lagt til CollaborationRole = POLK, EHIC, AltInnMelding
+											- Lagt til DeliveryChannel = asyncSMTPChannelA3, asyncSMTPChannelA4, asyncSMTPChannelA5
+											- Lagt til DocExchange = docexchange_smtp_AltInn, docexchange_smtp_POLK
+											- Lagt inn tilhørende Packaging og SimplePart
+			013 - 20110913/YPE: - Endret prosessnavn for Egenandelprosessene og uuid for Egenandelfritak
+			012 - 20110526/YPE: - Lagt til ENH (org.nr) i PatyId.
+			011 - 20110524/KIM:	- Lagt inn test sertifikater for signering, kryptering og SSL og endret cppid
+			010 - 20110524/YPE: - Lagt inn korrekte endpoints og sertifikatinfo for Q-miljøet
+			009 - 20110520/YPE: - Ny DeliveryChannel tns:channelId="asyncHttpChannelB2" (benyttes av Utleggsbasen - SI)
+											- CollaborationRole = Trekkinnmelding enablet ChannelId for å benytte både SyncHttpChannelB1 og asyncHttpChannelB2
+											- CollaborationRole = Utleggstrekk, Utleggspant, Statussvar skal benytte asyncHttpChannelB2 (Utleggsbasen - SI)
+			008 - 20110520/YPE:	- CollaborationRole = Sykmelde - Korrigert <tns:Service tns:type="string">Sykmelding</tns:Service>
+			007 - 20110513/YPE:	- Korrigerte namespace i SimplePart for Utleggetrekk og Utleggepant (Utleggsbasen - SI)
+			006 - 20110509/YPE:	- CollaborationRole = Utleggstrekk, Utleggspant, Statussvar (Utleggsbasen - SI)
+			005 - 20110224/YPE:	- CollaborationRole = Legemiddelinformasjon og Prisinformasjon (eResept - SLV)
+			004 - 20110216/YPE:	- CollaborationRole = Pasientliste (Fastlegens pasientliste) og eBrev
+											  tns.action "AvvisningStartAbonnement", "AvvisningStoppAbonnement" og "AvvisningHentAbonnementStatus" fjernes.
+											  Kun tns:action="Avvisning" som gjelder.
+											- CollaborationRole = Pasientliste (Fastlegens pasientliste) 
+											  Lag til <tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId> for alle synkrone actions.
+			003 - 20110209/YPE:	- CollaborationRole = Pasientliste (Fastlegens pasientliste), eBrev og Fastlege (Pasientens fastlege):
+											  tns:Service tns:type="String" endret til tns:Service tns:type="string"
+											  Lagt inn <tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			002 - 20110203/YPE:	- Nye elementer under Partyinfo:
+											  <tns:SecurityDetails tns:securityId="trustAnchorsAndPolicy" />
+											  <tns:Certificate tns:certId="default_ssl_cert"><ds:KeyInfo><ds:X509Data>
+													<ds:X509Certificate>SSLSERTIFIKATB64</ds:X509Certificate></ds:X509Data></ds:KeyInfo></tns:Certificate>
+											- Nye elementer under <Transport><TransportReceiver> for transportId="transportHttp_NAV":
+											  <tns:Endpoint tns:uri="https://nhn-gw.nav.no:9443/ebxml/msh" tns:type="allPurpose" /> 
+											  <tns:TransportServerSecurity><tns:TransportSecurityProtocol tns:version="3.0">SSL</tns:TransportSecurityProtocol>
+													<tns:ServerCertificateRef tns:certId="default_ssl_cert" /></tns:TransportServerSecurity>
+			001 - 20101129/YPE:	- Ny CPP mal for NAV som inkluderer alle prosesser NAV er i stand til å eksekvere ut mot andre aktører
+			2010.10.14: Changed in DocExchange tns:docExchangeId="docexchange_smtp" - Retries from 3 to 4 and RetryInterval from PT360M to PT720M
+			=====================================================================-->
+		<!--==================================================================== 
+			Apprec:		Action = Svar		- Det sendes enten Positiv eller Negativ AppRec i retur
+							Action = Avvisning	- Det sendes KUN negativ AppRec i retur (som regel sendes det da en fagmelding som kvittering (Positiv svarmelding))
+			=====================================================================-->
+		<!--==================================================================== 
+			En rolle i en prosess (tjeneste), f.eks. Rekvirent, kan bestaa av flere ulike aktoergrupper, eks. Lege, Tannlege, Veterinar, Helsestasjon m.fl.
+			I de tilfeller det er behov for aa skille de ulike aktoergruppene fra hverandre til tross for at de innehar samme aktive rollen kan dette elementet benyttes. 
+			Elementet har ingen spesiell betydning i en CPA, men kan benyttes av de aktøoeer som beskrevet ovenfor. 
+			Det anbefales at man benytter en beskrivende URL som verdi i elementet.
+		
+			Eksempel:
+				<tns:PartyRef xlink:href="http://reseptformidleren.no/eResept/Lege" />
+				<tns:PartyRef xlink:href="http://reseptformidleren.no/eResept/Tannlege" />
+				<tns:PartyRef xlink:href="http://reseptformidleren.no/eResept/Veterinar" />
+				<tns:PartyRef xlink:href="http://reseptformidleren.no/eResept/Helsestasjon" />
+			=====================================================================-->
+		<tns:CollaborationRole>
+			<!-- v2p4r1 -->
+			<tns:ProcessSpecification tns:name="IndividuellRefusjon" tns:version="2.4.1" xlink:href="http://www.helsedirektoratet.no/processes/eResept.xml" xlink:type="simple" tns:uuid="09adc08e-4be2-4f4a-b3ef-8ca0e633d43b"/>
+			<tns:Role tns:name="SoknadsBehandler" xlink:href="http://www.helsedirektoratet.no/processes#SoknadsBehandler" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">IndividuellRefusjon</tns:Service>
+				<tns:CanSend>
+					<!-- Soknadsvar - M12 -->
+					<tns:ThisPartyActionBinding tns:action="Soknadsvar" tns:id="Soknadsvar2" tns:packageId="package_individuellrefusjonsoknadsvar_v2p4r1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<!-- Kvittering - AppRec -->
+					<tns:ThisPartyActionBinding tns:action="Kvittering" tns:id="A132" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<!-- Soknad - M2 -->
+					<tns:ThisPartyActionBinding tns:action="Soknad" tns:id="IndividuellRefusjon_Soknad2" tns:packageId="package_individuellrefusjonsoknad_v2p4r1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<!-- Kvittering - AppRec -->
+					<tns:ThisPartyActionBinding tns:action="Kvittering" tns:id="IndividuellRefusjon_Kvittering2" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<!-- v2p5 -->
+			<tns:ProcessSpecification tns:name="IndividuellRefusjon" tns:version="2.5" xlink:href="http://www.helsedirektoratet.no/processes/eResept.xml" xlink:type="simple" tns:uuid="09adc08e-4be2-4f4a-b3ef-8ca0e633d43b"/>
+			<tns:Role tns:name="SoknadsBehandler" xlink:href="http://www.helsedirektoratet.no/processes#SoknadsBehandler" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">IndividuellRefusjon</tns:Service>
+				<tns:CanSend>
+					<!-- Soknadsvar - M12 -->
+					<tns:ThisPartyActionBinding tns:action="Soknadsvar" tns:id="Soknadsvar6" tns:packageId="package_individuellrefusjonsoknadsvar_v2p5" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<!-- Kvittering - AppRec -->
+					<tns:ThisPartyActionBinding tns:action="Kvittering" tns:id="A136" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<!-- Soknad - M2 -->
+					<tns:ThisPartyActionBinding tns:action="Soknad" tns:id="IndividuellRefusjon_Soknad6" tns:packageId="package_individuellrefusjonsoknad_v2p5" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<!-- Kvittering - AppRec -->
+					<tns:ThisPartyActionBinding tns:action="Kvittering" tns:id="IndividuellRefusjon_Kvittering6" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<!-- v2p4r1 -->
+			<tns:ProcessSpecification tns:name="Reseptoppgjor" tns:version="2.4.1" xlink:href="http://www.helsedirektoratet.no/processes/eResept.xml" xlink:type="simple" tns:uuid="9584df74-571a-487f-bc5c-jj438sg294bd "/>
+			<tns:Role tns:name="KontrollUtbetaler" xlink:href="http://www.helsedirektoratet.no/processes#KontrollUtbetaler" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">OppgjorsKontroll</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Oppgjorsresultat" tns:id="Oppgjorsresultat2" tns:packageId="package_oppgjorsresultat_v2p4r1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Utbetaling" tns:id="Utbetaling2" tns:packageId="package_utbetaling_v2p4r1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Svarmelding" tns:id="Bekreftelse2" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Oppgjorskrav" tns:id="Oppgjorskrav2" tns:packageId="package_oppgjorskrav_v2p4r1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Svarmelding" tns:id="A072" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<!-- v2p5 -->
+			<tns:ProcessSpecification tns:name="Reseptoppgjor" tns:version="2.5" xlink:href="http://www.helsedirektoratet.no/processes/eResept.xml" xlink:type="simple" tns:uuid="9584df74-571a-487f-bc5c-jj438sg294bd "/>
+			<tns:Role tns:name="KontrollUtbetaler" xlink:href="http://www.helsedirektoratet.no/processes#KontrollUtbetaler" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">OppgjorsKontroll</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Oppgjorsresultat" tns:id="Oppgjorsresultat6" tns:packageId="package_oppgjorsresultat_v2p5" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Utbetaling" tns:id="Utbetaling6" tns:packageId="package_utbetaling_v2p5" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Svarmelding" tns:id="Bekreftelse6" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Oppgjorskrav" tns:id="Oppgjorskrav6" tns:packageId="package_oppgjorskrav_v2p5" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Svarmelding" tns:id="A076" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<!-- v2p4r1 -->
+			<tns:ProcessSpecification tns:name="Legemiddelinformasjon" tns:version="2.4.1" xlink:href="http://www.helsedirektoratet.no/processes/eResept.xml" xlink:type="simple" tns:uuid="ef5babd8-0f60-45f7-b713-7e443f9ec8ad"/>
+			<tns:Role tns:name="Handelsvareregister" xlink:href="http://www.helsedirektoratet.no/processes#Handelsvareregister" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">Legemiddelinformasjon</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="A032" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Legemiddeloversikt" tns:id="M30L2" tns:packageId="package_legemiddeloversikt_v2p4r1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<!-- v2p5 -->
+			<tns:ProcessSpecification tns:name="Legemiddelinformasjon" tns:version="2.5" xlink:href="http://www.helsedirektoratet.no/processes/eResept.xml" xlink:type="simple" tns:uuid="ef5babd8-0f60-45f7-b713-7e443f9ec8ad"/>
+			<tns:Role tns:name="Handelsvareregister" xlink:href="http://www.helsedirektoratet.no/processes#Handelsvareregister" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">Legemiddelinformasjon</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="A0366" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Legemiddeloversikt" tns:id="M30L6" tns:packageId="package_legemiddeloversikt_v2p5" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="Legemelding" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Legemelding.xml" xlink:type="simple" tns:uuid="0ebb5fb6-6c42-429b-8f8a-c30d92c7a099"/>
+			<tns:Role tns:name="Nav" xlink:href="http://www.helsedirektoratet.no/processes#NAV" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">Legemelding</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Svarmelding" tns:id="Legemelding_Svarmelding2" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Sykmelding" tns:id="SM_Sending2" tns:packageId="package_sm_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Legeerklaring" tns:id="LE_Sending2" tns:packageId="package_le_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Oppgjorsmelding" tns:id="OM_Sending2" tns:packageId="package_lom_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Soknad" tns:id="SO_Sending2" tns:packageId="package_individuellrefusjonsoknad_v2p3" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="Sykmelde" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Sykmelding.xml" xlink:type="simple" tns:uuid="8c6bc694-f036-4e8e-ab18-44ac501cd9af"/>
+			<tns:Role tns:name="Saksbehandler" xlink:href="http://www.helsedirektoratet.no/processes#Saksbehandler" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">Sykmelding</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="Sykmelde_Svar" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<!-- Midlertidig melding som må støttes inntil Ei@ er oppdatert 27/6-2011 -->
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Svarmelding" tns:id="CopiedA04" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Registrering" tns:id="Sykmelding" tns:packageId="package_sm_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="Sykmelde" tns:version="2.0" xlink:href="http://www.helsedirektoratet.no/processes/Sykmelding.xml" xlink:type="simple" tns:uuid="8c6bc694-f036-4e8e-ab18-44ac501cd9af"/>
+			<tns:Role tns:name="Saksbehandler" xlink:href="http://www.helsedirektoratet.no/processes#Saksbehandler" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">Sykmelding</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="Sykmelde_Svar3" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Registrering" tns:id="Sykmelding3" tns:packageId="package_helseopplysningerarbeidsuforhet_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="HenvendelseFraLege" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Sykmelding.xml" xlink:type="simple" tns:uuid="cd9795aa-f492-4dba-a16e-414e8d3f1fe7"/>
+			<tns:Role tns:name="Saksbehandler" xlink:href="http://www.helsedirektoratet.no/processes#Saksbehandler" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">HenvendelseFraLege</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="HenvendelseFraLege_Svar" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Bekreftelse" tns:id="HenvendelseFraLege_Bekreftelse" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Henvendelse" tns:id="Henvendelse" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="BehandlerKrav" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/BehandlerKrav.xml" xlink:type="simple" tns:uuid="0781aac0-e7b8-11dd-ba2f-0800200c9a66"/>
+			<tns:Role tns:name="KontrollUtbetaler" xlink:href="http://www.helsedirektoratet.no/processes#KontrollUtbetaler" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">BehandlerKrav</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Svarmelding" tns:id="BehandlerKrav_Svarmelding2" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="OppgjorsMelding" tns:id="BehandlerKravOppgjorsMelding2" tns:packageId="package_behandlerkrav_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="BehandlerKrav" tns:version="0.78" xlink:href="http://www.helsedirektoratet.no/processes/BehandlerKrav.xml" xlink:type="simple" tns:uuid="0781aac0-e7b8-11dd-ba2f-0800200c9a66"/>
+			<tns:Role tns:name="KontrollUtbetaler" xlink:href="http://www.helsedirektoratet.no/processes#KontrollUtbetaler" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">BehandlerKrav</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Svarmelding" tns:id="BehandlerKrav_Svarmelding4" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="OppgjorsMelding" tns:id="BehandlerKravOppgjorsMelding4" tns:packageId="package_nprbehandlerkrav_v0p78" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="EgenandelFrikort" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Egenandel.xml" xlink:type="simple" tns:uuid="3333d8f2-ea87-49f1-ee2503a4469e"/>
+			<tns:Role tns:name="Frikortregister" xlink:href="http://www.helsedirektoratet.no/processes#Frikortregister" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">HarBorgerFrikort</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="EgenandelSvar" tns:packageId="package_egenandelsvar_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>SyncHttpChannelB1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Avvisning" tns:id="EgenandelAvvisning" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>SyncHttpChannelB1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="EgenandelForesporsel" tns:id="EgenandelForesporsel" tns:packageId="package_egenandelforesporsel_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>SyncHttpChannelB1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="EgenandelMengde" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Egenandel.xml" xlink:type="simple" tns:uuid="37d6ba07-c5b5-4e02-a786-895c2b1afefe"/>
+			<tns:Role tns:name="Frikortregister" xlink:href="http://www.helsedirektoratet.no/processes#Frikortregister" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">HarBorgerFrikortMengde</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="EgenandelSvarM" tns:packageId="package_egenandelsvarmengde_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Avvisning" tns:id="EgenandelAvvisningM" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="EgenandelForesporsel" tns:id="EgenandelForesporselM" tns:packageId="package_egenandelmengde_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="EgenandelFritak" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Egenandel.xml" xlink:type="simple" tns:uuid="b9b31088-eb0a-42ca-a47d-37f025958f02"/>
+			<tns:Role tns:name="Frikortregister" xlink:href="http://www.helsedirektoratet.no/processes#Frikortregister" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">HarBorgerEgenandelFritak</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="EgenandelFritak_Svar" tns:packageId="package_egenandelsvar_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>SyncHttpChannelB1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Avvisning" tns:id="EgenandelFritak_Avvisning" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>SyncHttpChannelB1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="EgenandelForesporsel" tns:id="EgenandelFritak_EgenandelForesporsel" tns:packageId="package_egenandelforesporsel_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>SyncHttpChannelB1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="Pasientliste" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Pasientliste.xml" xlink:type="simple" tns:uuid="aefc0f0e-7d02-48d5-822b-9dc0d0da5339"/>
+			<tns:Role tns:name="Fastlegeregister" xlink:href="http://www.helsedirektoratet.no/processes#Fastlegeregister" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">PasientlisteForesporsel</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="AbonnementStatus" tns:id="PLAS_Svarmelding" tns:packageId="package_pasientlisteabonnementstatus_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ActionContext tns:binaryCollaboration="String" tns:businessTransactionActivity="String" tns:requestOrResponseAction="String">
+							<tns:CollaborationActivity tns:name="String"/>
+						</tns:ActionContext>
+						<tns:ChannelId>SyncHttpChannelB1</tns:ChannelId>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Kvittering" tns:id="PLKV_Svarmelding" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ActionContext tns:binaryCollaboration="String" tns:businessTransactionActivity="String" tns:requestOrResponseAction="String">
+							<tns:CollaborationActivity tns:name="String"/>
+						</tns:ActionContext>
+						<tns:ChannelId>SyncHttpChannelB1</tns:ChannelId>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Avvisning" tns:id="PL_NegativSvarmelding" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ActionContext tns:binaryCollaboration="String" tns:businessTransactionActivity="String" tns:requestOrResponseAction="String">
+							<tns:CollaborationActivity tns:name="String"/>
+						</tns:ActionContext>
+						<tns:ChannelId>SyncHttpChannelB1</tns:ChannelId>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="PasientListe" tns:id="PasientListe" tns:packageId="package_pasientliste_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ActionContext tns:binaryCollaboration="String" tns:businessTransactionActivity="String" tns:requestOrResponseAction="String">
+							<tns:CollaborationActivity tns:name="String"/>
+						</tns:ActionContext>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="HentPasientliste" tns:id="FastlegensPasientliste" tns:packageId="package_hentpasientliste_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>SyncHttpChannelB1</tns:ChannelId>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="StartAbonnement" tns:id="PL_AbonnementInnmelding" tns:packageId="package_startpasientlisteabonnement_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>SyncHttpChannelB1</tns:ChannelId>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="StoppAbonnement" tns:id="PL_AbonnementUtmelding" tns:packageId="package_stopppasientlisteabonnement_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>SyncHttpChannelB1</tns:ChannelId>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="HentAbonnementStatus" tns:id="PL_StatusAbonnement" tns:packageId="package_hentpasientlisteabonnementstatus_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>SyncHttpChannelB1</tns:ChannelId>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="PL_Svarmelding" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="Inntektsforesporsel" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Inntektsforesporsel.xml" xlink:type="simple" tns:uuid="2e4b9873-5067-4ac1-ad6c-01ef14440a6b"/>
+			<tns:Role tns:name="Ytelsesutbetaler" xlink:href="http://www.helsedirektoratet.no/processes#Ytelsesutbetaler" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">Inntektsforesporsel</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="InntektInformasjon" tns:id="InntektOpplysning" tns:packageId="package_inntektsopplysning_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+						<tns:ChannelId>SyncHttpChannelB1</tns:ChannelId>
+						<tns:ChannelId>asyncHttpChannelB2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Avvisning" tns:id="AvvisningInntektsforesporsel" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+						<tns:ChannelId>SyncHttpChannelB1</tns:ChannelId>
+						<tns:ChannelId>asyncHttpChannelB2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Foresporsel" tns:id="Inntektsforesporsel" tns:packageId="package_inntektsforesporsel_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+						<tns:ChannelId>SyncHttpChannelB1</tns:ChannelId>
+						<tns:ChannelId>asyncHttpChannelB2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="Kreditortrekk" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Kreditortrekk.xml" xlink:type="simple" tns:uuid="176d0606-e41c-4f74-8104-3ed32d73013a"/>
+			<tns:Role tns:name="Ytelsesutbetaler" xlink:href="http://www.helsedirektoratet.no/processes#Ytelsesutbetaler" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">Trekkopplysning</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Kvittering" tns:id="KvitteringTrekkvedtak" tns:packageId="package_kvitteringtrekkvedtak_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+						<tns:ChannelId>asyncHttpChannelB2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Avvisning" tns:id="AvvisningTrekkvedtak" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+						<tns:ChannelId>asyncHttpChannelB2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Innmelding" tns:id="Trekkgrunnlag" tns:packageId="package_trekkinnmelding_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+						<tns:ChannelId>asyncHttpChannelB2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="Statussvar" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Statussvar.xml" xlink:type="simple" tns:uuid="47c3dcd7-54d8-494a-abf2-73732a0012eb"/>
+			<tns:Role tns:name="Namsmyndighet" xlink:href="http://www.helsedirektoratet.no/processes#Namsmyndighet" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">Statussvar</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Avvisning" tns:id="Statussvar_Avvisning" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="false" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<!-- NB! isNonRepudiationReceiptRequired skal være "false"!! -->
+						<tns:ChannelId>asyncHttpChannelB2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="Statussvarmelding" tns:packageId="package_statussvar_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="false" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<!-- NB! isNonRepudiationReceiptRequired skal være "false"!! -->
+						<tns:ChannelId>asyncHttpChannelB2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<!-- v2p4r1 -->
+			<tns:ProcessSpecification tns:name="Prisinformasjon" tns:version="2.4.1" xlink:href="http://www.helsedirektoratet.no/processes/eResept.xml" xlink:type="simple" tns:uuid="580a3623-5094-42ca-8657-9a1b3d6618c7"/>
+			<tns:Role tns:name="Handelsvareregister" xlink:href="http://www.helsedirektoratet.no/processes#Handelsvareregister" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">Prisinformasjon</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Prisoversikt" tns:id="M30N1" tns:packageId="package_prisoversikt_v2p4r1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="A041" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<!-- v2p5 -->
+			<tns:ProcessSpecification tns:name="Prisinformasjon" tns:version="2.5" xlink:href="http://www.helsedirektoratet.no/processes/eResept.xml" xlink:type="simple" tns:uuid="580a3623-5094-42ca-8657-9a1b3d6618c7"/>
+			<tns:Role tns:name="Handelsvareregister" xlink:href="http://www.helsedirektoratet.no/processes#Handelsvareregister" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">Prisinformasjon</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Prisoversikt" tns:id="M30N5" tns:packageId="package_prisoversikt_v2p5" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="A045" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="ForesporselFraSaksbehandler" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Sykmelding.xml" xlink:type="simple" tns:uuid="51044e86-554b-4fe5-a6c3-0a81ea638324"/>
+			<tns:Role tns:name="Saksbehandler" xlink:href="http://www.helsedirektoratet.no/processes#Saksbehandler" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">ForesporselFraSaksbehandler</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Foresporsel" tns:id="Foresporsel2" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="ForesporselFraSaksbehandler_Svar" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Bekreftelse" tns:id="ForesporselFraSaksbehandler_Bekreftelse" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="ForesporselSvar" tns:id="Svar2" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="A10" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Kvittering" tns:id="A10A" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="HenvendelseFraSaksbehandler" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Sykmelding.xml" xlink:type="simple" tns:uuid="6ce76f78-c64f-4b7d-841c-c4f46d31f7a1"/>
+			<tns:Role tns:name="Saksbehandler" xlink:href="http://www.helsedirektoratet.no/processes#Saksbehandler" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">HenvendelseFraSaksbehandler</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Henvendelse" tns:id="Henvendelse2" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="HenvendelseFraSaksbehandler_Svar" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Kvittering" tns:id="HenvendelseFraSaksbehandler_Kvittering" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="Oppfolgingsplan" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Sykmelding.xml" xlink:type="simple" tns:uuid="371d3987-a8a1-4cb4-9a67-223fae73227b"/>
+			<tns:Role tns:name="Saksbehandler" xlink:href="http://www.helsedirektoratet.no/processes#Saksbehandler" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">Oppfolgingsplan</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Plan" tns:id="Plan" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="Oppfolgingsplan_Svar" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Kvittering" tns:id="Oppfolgingsplan_Kvittering" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="DialogmoteInnkalling" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Sykmelding.xml" xlink:type="simple" tns:uuid="9bb081a0-8f86-4773-b97a-7ca42cde985c"/>
+			<tns:Role tns:name="Saksbehandler" xlink:href="http://www.helsedirektoratet.no/processes#Saksbehandler" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">DialogmoteInnkalling</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="MoteInnkalling" tns:id="MoteInnkalling" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Bekreftelse" tns:id="DialogmoteInnkalling_Kvittering" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="MoteRespons" tns:id="MoteRespons" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Kvittering" tns:id="DialogmoteInnkalling_Bekreftelse" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="Utleggstrekk" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Utleggstrekk.xml" xlink:type="simple" tns:uuid="85b55b62-1f58-4ebc-a947-67636bec3093"/>
+			<tns:Role tns:name="Namsmyndighet" xlink:href="http://www.helsedirektoratet.no/processes#Namsmyndighet" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">Utleggstrekk</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Trekkinnmelding" tns:id="Utleggstrekkinnmelding" tns:packageId="package_utleggstrekk_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="false" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<!-- NB! isNonRepudiationReceiptRequired skal være "false"!! -->
+						<tns:ChannelId>asyncHttpChannelB2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Avvisning" tns:id="Utleggstrekk_Avvisning" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="false" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<!-- NB! isNonRepudiationReceiptRequired skal være "false"!! -->
+						<tns:ChannelId>asyncHttpChannelB2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="UtleggstrekkSvar" tns:packageId="package_utleggstrekksvar_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="false" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<!-- NB! isNonRepudiationReceiptRequired skal være "false"!! -->
+						<tns:ChannelId>asyncHttpChannelB2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="Utleggspant" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Utleggspant.xml" xlink:type="simple" tns:uuid="d5e636cd-22f0-459f-95b2-5228fa87855f"/>
+			<tns:Role tns:name="Namsmyndighet" xlink:href="http://www.helsedirektoratet.no/processes#Namsmyndighet" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">Utleggspant</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Panteinnmelding" tns:id="Utleggspantinnmelding" tns:packageId="package_utleggspant_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="false" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<!-- NB! isNonRepudiationReceiptRequired skal være "false"!! -->
+						<tns:ChannelId>asyncHttpChannelB2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Avvisning" tns:id="Utleggspant_Avvisning" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="false" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<!-- NB! isNonRepudiationReceiptRequired skal være "false"!! -->
+						<tns:ChannelId>asyncHttpChannelB2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="UtleggspantSvar" tns:packageId="package_utleggspantsvar_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="false" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<!-- NB! isNonRepudiationReceiptRequired skal være "false"!! -->
+						<tns:ChannelId>asyncHttpChannelB2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="Sykdomspulsen" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Sykdomspulsen.xml" xlink:type="simple" tns:uuid="4f4469c3-177a-415e-9846-20bf221fc62d"/>
+			<tns:Role tns:name="Konsultasjonsregister" xlink:href="http://www.helsedirektoratet.no/processes#Konsultasjonsregister" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">Sykdomspulsen</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="Konsultasjonsrapportering" tns:id="Sykdomspulsen_Konsultasjonsrapportering" tns:packageId="package_sykdomspulsen_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="A32" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="EHIC" tns:version="1.0" xlink:href="http://www.trygdeetaten.no/processes/MeldingSending.xml" xlink:type="simple" tns:uuid="d1575807-0ef7-412b-96e7-55cf403c1b05"/>
+			<tns:Role tns:name="Kortbestiller" xlink:href="http://www.trygdeetaten.no/processes#MeldingMottaker" xlink:type="simple"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">EHIC</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="E111" tns:id="TPAID_889640782_002" tns:packageId="package_request_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA4</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="E111_RETURN" tns:id="TPAID_889640782_001" tns:packageId="package_response_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA4</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:Certificate tns:certId="default_sign_cert">
+			<ds:KeyInfo>
+				<ds:X509Data>
+					<ds:X509Certificate>MIIE1zCCA7+gAwIBAgILCUxiqiQicreFLc4wDQYJKoZIhvcNAQELBQAwSzELMAkGA1UEBhMCTk8xHTAbBgNVBAoMFEJ1eXBhc3MgQVMtOTgzMTYzMzI3MR0wGwYDVQQDDBRCdXlwYXNzIENsYXNzIDMgQ0EgMzAeFw0xNjEyMzAwNzQyMDJaFw0xOTEyMzAyMjU5MDBaMGsxCzAJBgNVBAYTAk5PMSMwIQYDVQQKDBpBUkJFSURTLSBPRyBWRUxGRVJEU0VUQVRFTjEjMCEGA1UEAwwaQVJCRUlEUy0gT0cgVkVMRkVSRFNFVEFURU4xEjAQBgNVBAUTCTg4OTY0MDc4MjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAI6il1SserFoBdZBxIR1Xa+Fcv3S9waZe+O3jwbCDqpinjkCpQ1m0CguXJsYoJyiKGbY1GyYH4AqvvJBBNoEkOOrhZ5SvLanOUa0zxR9QG7EOo2oidcpthmn8WeFQotLjN1BQ+04uZGlMlk0ZfmQindmEPjpLkakv+miR+gWFw1B2Z7fO13vRB5a9DZFuZBNfYoJiv79D5uZsjc8g4DcTR0h6rsd6wB2f6ImVomDH4O3C+/znMenLtZ4lt89p+IMUCmRkxLaabL3NSjkCywqaXlFf1uG0ONu1H5oRASDhZKMhUT8UJooyX0dgcIVU4C1+0dGUOm7Ld6p7vRn4Dr+hosCAwEAAaOCAZowggGWMAkGA1UdEwQCMAAwHwYDVR0jBBgwFoAUzMP4B7ecbXpO9acrHQX5s0cckdEwHQYDVR0OBBYEFG8EQq6JxjdZrt3wzAhMoK5vREU+MA4GA1UdDwEB/wQEAwIGQDAVBgNVHSAEDjAMMAoGCGCEQgEaAQMCMIGlBgNVHR8EgZ0wgZowL6AtoCuGKWh0dHA6Ly9jcmwuYnV5cGFzcy5uby9jcmwvQlBDbGFzczNDQTMuY3JsMGegZaBjhmFsZGFwOi8vbGRhcC5idXlwYXNzLm5vL2RjPUJ1eXBhc3MsZGM9Tk8sQ049QnV5cGFzcyUyMENsYXNzJTIwMyUyMENBJTIwMz9jZXJ0aWZpY2F0ZVJldm9jYXRpb25MaXN0MHoGCCsGAQUFBwEBBG4wbDAzBggrBgEFBQcwAYYnaHR0cDovL29jc3AuYnV5cGFzcy5uby9vY3NwL0JQQ2xhc3MzQ0EzMDUGCCsGAQUFBzAChilodHRwOi8vY3J0LmJ1eXBhc3Mubm8vY3J0L0JQQ2xhc3MzQ0EzLmNlcjANBgkqhkiG9w0BAQsFAAOCAQEADczGPBrWhSZVu/MZMLpJAHq5insAJRPg2zEma03Ws4x9IgCpBHBZgLy4uSMngX0vXvN0IhLEjqjHF97U6Y0+h2i/mI+YHoUfNy4DSwRcaXBDh/vlnqoDSiEFKeVwydWJwNXGqNI3+NB1mDuDPa0KJPHMclnH2zJiHnChPTMoQRr6Aw5KaJP5iuzFe1OkOchxs6kqcW79N0jS05Ed5TM+rPmO0J3YoC1yqEmIkXdFbnFZIf5KQgMAQI+8mmFXlo48mhk2B0019cJczsizPWNHzJX1OYCEBszEVcI1zpsv4ex9HIZn5mXGxKxD7Lkbne+Vcxi3hAUV7VHIeMB+AuRsug==</ds:X509Certificate>
+					<!--				<ds:X509Certificate>NONREPSERTIFIKATIB64</ds:X509Certificate>  -->
+				</ds:X509Data>
+			</ds:KeyInfo>
+		</tns:Certificate>
+		<tns:Certificate tns:certId="default_crypt_cert">
+			<ds:KeyInfo>
+				<ds:X509Data>
+					<ds:X509Certificate>MIIE1zCCA7+gAwIBAgILCUxhbP+/BwcgZfIwDQYJKoZIhvcNAQELBQAwSzELMAkGA1UEBhMCTk8xHTAbBgNVBAoMFEJ1eXBhc3MgQVMtOTgzMTYzMzI3MR0wGwYDVQQDDBRCdXlwYXNzIENsYXNzIDMgQ0EgMzAeFw0xNjEyMzAwNzQyMDFaFw0xOTEyMzAyMjU5MDBaMGsxCzAJBgNVBAYTAk5PMSMwIQYDVQQKDBpBUkJFSURTLSBPRyBWRUxGRVJEU0VUQVRFTjEjMCEGA1UEAwwaQVJCRUlEUy0gT0cgVkVMRkVSRFNFVEFURU4xEjAQBgNVBAUTCTg4OTY0MDc4MjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALwSlmN42Zc6dtW/Tw+S0sWSmEzsRhRSOo44F7bTy4XE3GWd0LfJfhpqiaKWRmBWHZzJ42dOmpiJpN++SWLfa4ro0MonUeIZx1Uf2+MBVEZ58KFIH5JJ///Rdz+r1dF3SyJqfOjnL6XV8lKKT2uyRkI6odPQJk3qThTvfBbQJdvKM+Kfdn4HFkhei5r/HXQbx4d6Qme/HKDkKq0to9AmmdGoWwLmM8X1FjqJOejRfdhO+45v2yGAjgJgFQ9BfAojVTWy/+pQXTp/o31Dle82DLto3KhP4YUGSTjnPpYkWXjb88sh6ZLXk2ACRN3rbawn4uxspz0zbHXqH69/10JQn8kCAwEAAaOCAZowggGWMAkGA1UdEwQCMAAwHwYDVR0jBBgwFoAUzMP4B7ecbXpO9acrHQX5s0cckdEwHQYDVR0OBBYEFNKZ1mfRoioWWrSQ9ETuBmzn6ftMMA4GA1UdDwEB/wQEAwIEsDAVBgNVHSAEDjAMMAoGCGCEQgEaAQMCMIGlBgNVHR8EgZ0wgZowL6AtoCuGKWh0dHA6Ly9jcmwuYnV5cGFzcy5uby9jcmwvQlBDbGFzczNDQTMuY3JsMGegZaBjhmFsZGFwOi8vbGRhcC5idXlwYXNzLm5vL2RjPUJ1eXBhc3MsZGM9Tk8sQ049QnV5cGFzcyUyMENsYXNzJTIwMyUyMENBJTIwMz9jZXJ0aWZpY2F0ZVJldm9jYXRpb25MaXN0MHoGCCsGAQUFBwEBBG4wbDAzBggrBgEFBQcwAYYnaHR0cDovL29jc3AuYnV5cGFzcy5uby9vY3NwL0JQQ2xhc3MzQ0EzMDUGCCsGAQUFBzAChilodHRwOi8vY3J0LmJ1eXBhc3Mubm8vY3J0L0JQQ2xhc3MzQ0EzLmNlcjANBgkqhkiG9w0BAQsFAAOCAQEAgyVcr1lmhmviU91HGnmimMSKW3gOHwDeICJ4J0u0+K9AWUjaYxzJIN28aXr7Bb/HIdvEkKA2ZCbiIGSHa+Oe5RzVgC4ltpidyFKCqRyKcwT1Wh1JJdN+tFfApZfE4Dny5cT13yTsuvASWE1+KLFvzIh5XSiiwlX19THtc+OO/qsQBf/mXOrCicIqR18HZ3K2oMtPckDWR3oIKlkvqMW9R1Ye1gYgZJIkLqbrOA2E8RRL3nXXNT9Ngy3llBdO9I+G/GgG0yiJ8OqP2UEIIk/tPz6eVatebGiH0eZKIDVphHDSCoGHO1ZfXJuSXOls6rYYJy6bTUP46onhoZcNn+84Yw==</ds:X509Certificate>
+					<!--				<ds:X509Certificate>CONFIDSERTIFIKATIB64</ds:X509Certificate>  -->
+				</ds:X509Data>
+			</ds:KeyInfo>
+		</tns:Certificate>
+		<tns:Certificate tns:certId="default_ssl_cert">
+			<ds:KeyInfo>
+				<ds:X509Data>
+					<ds:X509Certificate>MIIEhjCCA26gAwIBAgIQUkIGSk83/kNpSHqWZ/9dJzANBgkqhkiG9w0BAQUFADBvMQswCQYDVQQGEwJTRTEUMBIGA1UEChMLQWRkVHJ1c3QgQUIxJjAkBgNVBAsTHUFkZFRydXN0IEV4dGVybmFsIFRUUCBOZXR3b3JrMSIwIAYDVQQDExlBZGRUcnVzdCBFeHRlcm5hbCBDQSBSb290MB4XDTA1MDYwNzA4MDkxMFoXDTIwMDUzMDEwNDgzOFowgZcxCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJVVDEXMBUGA1UEBxMOU2FsdCBMYWtlIENpdHkxHjAcBgNVBAoTFVRoZSBVU0VSVFJVU1QgTmV0d29yazEhMB8GA1UECxMYaHR0cDovL3d3dy51c2VydHJ1c3QuY29tMR8wHQYDVQQDExZVVE4tVVNFUkZpcnN0LUhhcmR3YXJlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsffDOD+0qH/POYJRZ9Btn9L/WPPnnyvsDYlUmbk4mRb34CF5SMK7YXQSlh08anLVPBBnOjntKxPNZuuVCTOkbJex6MbswXV5nEZejavQav25KlUXEFSzGfCa9vGxXbanbfvgcRdrooj7AN/+GjF3DJoBerEy4ysBBzhuw6VeI7xFm3tQwckwj9vlK3rTW/szQB6g1ZgXvIuHw4nTXaCOsqqq9o5piAbF+okh8widaS4JM5spDUYPjMxJNLBpUb35Bs1orWZMvD6sYb0KiA7I3z3ufARMnQpea5HW7sftKI2rTYeJc9BupNAeFosU4XZEA39jrOTNSZzFkvSrMqFIWwIDAQABo4H0MIHxMB8GA1UdIwQYMBaAFK29mHo0tCb3+sQmVO8DveAky1QaMB0GA1UdDgQWBBShcl8mGyiYQ5VdBzfVhZadS9LDRTAOBgNVHQ8BAf8EBAMCAQYwDwYDVR0TAQH/BAUwAwEB/zARBgNVHSAECjAIMAYGBFUdIAAwewYDVR0fBHQwcjA4oDagNIYyaHR0cDovL2NybC5jb21vZG9jYS5jb20vQWRkVHJ1c3RFeHRlcm5hbENBUm9vdC5jcmwwNqA0oDKGMGh0dHA6Ly9jcmwuY29tb2RvLm5ldC9BZGRUcnVzdEV4dGVybmFsQ0FSb290LmNybDANBgkqhkiG9w0BAQUFAAOCAQEAYGQ5WaJDZS79+R/WrjO76FMTxIjuIxpszthkWVNTkOg239T88055L9XmjwzvKkFtcb2beDgj03BLhgz9EqciYhLYzOBR7y3lzQxFoura7X7s9zKa5wU1Xm7CLGhonf+M8cpVh8QvsUAG3IQiXG2zzdGbGgozKGYWDL0zwvYH8eOheZTg+NDQ099Shj+p4ckdPoaEsdtf7uRJQ8E5fc8vlqd1XX5nZ4TlWSBAvzcivwdDtDDhQ4rNA11tuSnZhKf1YmOEhtY3vm9nu/9iVzmdDE2yKmE9HZzvmncgoC/uGnKdsJ2/eBMnBwpgEZP1Dy7J72skg/6bkLRLaIHQwvrgPw==</ds:X509Certificate>
+					<!--				<ds:X509Certificate>SSLSERTIFIKATB64</ds:X509Certificate>  -->
+				</ds:X509Data>
+			</ds:KeyInfo>
+		</tns:Certificate>
+		<tns:SecurityDetails tns:securityId="trustAnchorsAndPolicy"/>
+		<tns:DeliveryChannel tns:channelId="asyncSMTPChannelA1" tns:docExchangeId="docexchange_smtp" tns:transportId="transportSMTP">
+			<tns:MessagingCharacteristics tns:ackRequested="always" tns:ackSignatureRequested="perMessage" tns:duplicateElimination="perMessage" tns:syncReplyMode="none"/>
+		</tns:DeliveryChannel>
+		<tns:DeliveryChannel tns:channelId="asyncSMTPChannelA2" tns:docExchangeId="docexchange_smtp_eresept" tns:transportId="transportSMTP_eresept">
+			<tns:MessagingCharacteristics tns:ackRequested="always" tns:ackSignatureRequested="perMessage" tns:duplicateElimination="perMessage" tns:syncReplyMode="none"/>
+		</tns:DeliveryChannel>
+		<tns:DeliveryChannel tns:channelId="asyncSMTPChannelA4" tns:docExchangeId="docexchange_smtp" tns:transportId="transportSMTP">
+			<tns:MessagingCharacteristics tns:ackRequested="always" tns:ackSignatureRequested="perMessage" tns:duplicateElimination="always" tns:syncReplyMode="none"/>
+		</tns:DeliveryChannel>
+		<tns:DeliveryChannel tns:channelId="asyncSMTPChannelA5" tns:docExchangeId="docexchange_smtp_AltInn" tns:transportId="transportSMTP_altinn">
+			<tns:MessagingCharacteristics tns:ackRequested="always" tns:ackSignatureRequested="perMessage" tns:duplicateElimination="always" tns:syncReplyMode="none"/>
+		</tns:DeliveryChannel>
+		<tns:DeliveryChannel tns:channelId="SyncHttpChannelB1" tns:transportId="transportHttp" tns:docExchangeId="docexchange_http">
+			<tns:MessagingCharacteristics tns:syncReplyMode="signalsAndResponse" tns:ackRequested="never" tns:ackSignatureRequested="never" tns:duplicateElimination="never"/>
+		</tns:DeliveryChannel>
+		<tns:DeliveryChannel tns:channelId="asyncHttpChannelB2" tns:transportId="transportAsyncHttp" tns:docExchangeId="docexchange_http">
+			<!-- Kun benyttet for kommunikasjon med SI  - ackSignatureRequested="never"-->
+			<tns:MessagingCharacteristics tns:syncReplyMode="mshSignalsOnly" tns:ackRequested="always" tns:ackSignatureRequested="never" tns:duplicateElimination="never"/>
+		</tns:DeliveryChannel>
+		<tns:Transport tns:transportId="transportSMTP">
+			<tns:TransportSender>
+				<tns:TransportProtocol tns:version="1.1">SMTP</tns:TransportProtocol>
+			</tns:TransportSender>
+			<tns:TransportReceiver>
+				<tns:TransportProtocol tns:version="1.1">SMTP</tns:TransportProtocol>
+				<!-- <tns:Endpoint tns:type="allPurpose" tns:uri="mailto://EPOSTADRESSE"/> -->
+				<tns:Endpoint tns:type="allPurpose" tns:uri="mailto://mottak-prod@es.nav.no"/>
+			</tns:TransportReceiver>
+		</tns:Transport>
+		<tns:Transport tns:transportId="transportSMTP_eresept">
+			<tns:TransportSender>
+				<tns:TransportProtocol tns:version="1.1">SMTP</tns:TransportProtocol>
+			</tns:TransportSender>
+			<tns:TransportReceiver>
+				<tns:TransportProtocol tns:version="1.1">SMTP</tns:TransportProtocol>
+				<!-- <tns:Endpoint tns:type="allPurpose" tns:uri="mailto://EPOSTADRESSE"/> -->
+				<tns:Endpoint tns:type="allPurpose" tns:uri="mailto://mottak-prod-eresept@es.nav.no"/>
+			</tns:TransportReceiver>
+		</tns:Transport>
+		<tns:Transport tns:transportId="transportSMTP_altinn">
+			<tns:TransportSender>
+				<tns:TransportProtocol tns:version="1.1">SMTP</tns:TransportProtocol>
+			</tns:TransportSender>
+			<tns:TransportReceiver>
+				<tns:TransportProtocol tns:version="1.1">SMTP</tns:TransportProtocol>
+				<!-- <tns:Endpoint tns:type="allPurpose" tns:uri="mailto://EPOSTADRESSE"/> -->
+				<tns:Endpoint tns:type="allPurpose" tns:uri="mailto://mottak-prod-altinn@es.nav.no"/>
+			</tns:TransportReceiver>
+		</tns:Transport>
+		<tns:Transport tns:transportId="transportHttp">
+			<tns:TransportSender>
+				<tns:TransportProtocol tns:version="1.1">HTTP</tns:TransportProtocol>
+				<tns:TransportClientSecurity>
+					<tns:TransportSecurityProtocol tns:version="3.0">SSL</tns:TransportSecurityProtocol>
+				</tns:TransportClientSecurity>
+			</tns:TransportSender>
+			<tns:TransportReceiver>
+				<tns:TransportProtocol tns:version="1.1">HTTP</tns:TransportProtocol>
+				<!-- <tns:Endpoint tns:uri="http://foo.bar" tns:type="allPurpose"/> -->
+				<tns:Endpoint tns:uri="https://nhn-gw.nav.no:9443/ebxml/msh" tns:type="allPurpose"/>
+				<tns:TransportServerSecurity>
+					<tns:TransportSecurityProtocol tns:version="3.0">SSL</tns:TransportSecurityProtocol>
+					<tns:ServerCertificateRef tns:certId="default_ssl_cert"/>
+				</tns:TransportServerSecurity>
+			</tns:TransportReceiver>
+		</tns:Transport>
+		<tns:Transport tns:transportId="transportAsyncHttp">
+			<tns:TransportSender>
+				<tns:TransportProtocol tns:version="1.1">HTTP</tns:TransportProtocol>
+				<tns:TransportClientSecurity>
+					<tns:TransportSecurityProtocol tns:version="3.0">SSL</tns:TransportSecurityProtocol>
+				</tns:TransportClientSecurity>
+			</tns:TransportSender>
+			<tns:TransportReceiver>
+				<tns:TransportProtocol tns:version="1.1">HTTP</tns:TransportProtocol>
+				<!-- <tns:Endpoint tns:uri="http://foo.bar" tns:type="allPurpose"/> -->
+				<tns:Endpoint tns:uri="https://es-gw.nav.no:443/asynchebxml/msh" tns:type="allPurpose"/>
+				<tns:TransportServerSecurity>
+					<tns:TransportSecurityProtocol tns:version="3.0">SSL</tns:TransportSecurityProtocol>
+					<tns:ServerCertificateRef tns:certId="default_ssl_cert"/>
+				</tns:TransportServerSecurity>
+			</tns:TransportReceiver>
+		</tns:Transport>
+		<tns:DocExchange tns:docExchangeId="docexchange_smtp">
+			<tns:ebXMLSenderBinding tns:version="2.0">
+				<tns:ReliableMessaging>
+					<tns:Retries>4</tns:Retries>
+					<tns:RetryInterval>PT720M</tns:RetryInterval>
+					<tns:MessageOrderSemantics>NotGuaranteed</tns:MessageOrderSemantics>
+				</tns:ReliableMessaging>
+				<tns:PersistDuration>P4D</tns:PersistDuration>
+				<tns:SenderNonRepudiation>
+					<tns:NonRepudiationProtocol tns:version="string">http://www.w3.org/2000/09/xmldsig#</tns:NonRepudiationProtocol>
+					<tns:HashFunction>http://www.w3.org/2000/09/xmldsig#sha1</tns:HashFunction>
+					<tns:SignatureAlgorithm tns:oid="1.2.840.113549.1.1.5" tns:w3c="http://www.w3.org/2000/09/xmldsig#rsa-sha1">RSA-SHA1</tns:SignatureAlgorithm>
+					<tns:SigningCertificateRef tns:certId="default_sign_cert"/>
+				</tns:SenderNonRepudiation>
+			</tns:ebXMLSenderBinding>
+			<tns:ebXMLReceiverBinding tns:version="2.0">
+				<tns:ReliableMessaging>
+					<tns:Retries>4</tns:Retries>
+					<tns:RetryInterval>PT720M</tns:RetryInterval>
+					<tns:MessageOrderSemantics>NotGuaranteed</tns:MessageOrderSemantics>
+				</tns:ReliableMessaging>
+				<tns:PersistDuration>P4D</tns:PersistDuration>
+				<tns:ReceiverNonRepudiation>
+					<tns:NonRepudiationProtocol tns:version="string">http://www.w3.org/2000/09/xmldsig#</tns:NonRepudiationProtocol>
+					<tns:HashFunction>http://www.w3.org/2000/09/xmldsig#sha1</tns:HashFunction>
+					<tns:SignatureAlgorithm tns:oid="1.2.840.113549.1.1.5" tns:w3c="http://www.w3.org/2000/09/xmldsig#rsa-sha1">RSA-SHA1</tns:SignatureAlgorithm>
+				</tns:ReceiverNonRepudiation>
+			</tns:ebXMLReceiverBinding>
+		</tns:DocExchange>
+		<tns:DocExchange tns:docExchangeId="docexchange_smtp_eresept">
+			<tns:ebXMLSenderBinding tns:version="2.0">
+				<tns:ReliableMessaging>
+					<tns:Retries>4</tns:Retries>
+					<tns:RetryInterval>PT240M</tns:RetryInterval>
+					<tns:MessageOrderSemantics>NotGuaranteed</tns:MessageOrderSemantics>
+				</tns:ReliableMessaging>
+				<tns:PersistDuration>P2D</tns:PersistDuration>
+				<tns:SenderNonRepudiation>
+					<tns:NonRepudiationProtocol tns:version="string">http://www.w3.org/2000/09/xmldsig#</tns:NonRepudiationProtocol>
+					<tns:HashFunction>http://www.w3.org/2000/09/xmldsig#sha1</tns:HashFunction>
+					<tns:SignatureAlgorithm tns:oid="1.2.840.113549.1.1.5" tns:w3c="http://www.w3.org/2000/09/xmldsig#rsa-sha1">RSA-SHA1</tns:SignatureAlgorithm>
+					<tns:SigningCertificateRef tns:certId="default_sign_cert"/>
+				</tns:SenderNonRepudiation>
+			</tns:ebXMLSenderBinding>
+			<tns:ebXMLReceiverBinding tns:version="2.0">
+				<tns:ReliableMessaging>
+					<tns:Retries>4</tns:Retries>
+					<tns:RetryInterval>PT240M</tns:RetryInterval>
+					<tns:MessageOrderSemantics>NotGuaranteed</tns:MessageOrderSemantics>
+				</tns:ReliableMessaging>
+				<tns:PersistDuration>P2D</tns:PersistDuration>
+				<tns:ReceiverNonRepudiation>
+					<tns:NonRepudiationProtocol tns:version="string">http://www.w3.org/2000/09/xmldsig#</tns:NonRepudiationProtocol>
+					<tns:HashFunction>http://www.w3.org/2000/09/xmldsig#sha1</tns:HashFunction>
+					<tns:SignatureAlgorithm tns:oid="1.2.840.113549.1.1.5" tns:w3c="http://www.w3.org/2000/09/xmldsig#rsa-sha1">RSA-SHA1</tns:SignatureAlgorithm>
+				</tns:ReceiverNonRepudiation>
+			</tns:ebXMLReceiverBinding>
+		</tns:DocExchange>
+		<tns:DocExchange tns:docExchangeId="docexchange_smtp_AltInn">
+			<tns:ebXMLSenderBinding tns:version="2.0">
+				<tns:ReliableMessaging>
+					<tns:Retries>8</tns:Retries>
+					<tns:RetryInterval>PT720M</tns:RetryInterval>
+					<tns:MessageOrderSemantics>NotGuaranteed</tns:MessageOrderSemantics>
+				</tns:ReliableMessaging>
+				<tns:PersistDuration>P4D</tns:PersistDuration>
+				<tns:SenderNonRepudiation>
+					<tns:NonRepudiationProtocol tns:version="string">http://www.w3.org/2000/09/xmldsig#</tns:NonRepudiationProtocol>
+					<tns:HashFunction>http://www.w3.org/2000/09/xmldsig#sha1</tns:HashFunction>
+					<tns:SignatureAlgorithm tns:oid="1.2.840.113549.1.1.5" tns:w3c="http://www.w3.org/2000/09/xmldsig#rsa-sha1">RSA-SHA1</tns:SignatureAlgorithm>
+					<tns:SigningCertificateRef tns:certId="default_sign_cert"/>
+				</tns:SenderNonRepudiation>
+			</tns:ebXMLSenderBinding>
+			<tns:ebXMLReceiverBinding tns:version="2.0">
+				<tns:ReliableMessaging>
+					<tns:Retries>8</tns:Retries>
+					<tns:RetryInterval>PT720M</tns:RetryInterval>
+					<tns:MessageOrderSemantics>NotGuaranteed</tns:MessageOrderSemantics>
+				</tns:ReliableMessaging>
+				<tns:PersistDuration>P4D</tns:PersistDuration>
+				<tns:ReceiverNonRepudiation>
+					<tns:NonRepudiationProtocol tns:version="string">http://www.w3.org/2000/09/xmldsig#</tns:NonRepudiationProtocol>
+					<tns:HashFunction>http://www.w3.org/2000/09/xmldsig#sha1</tns:HashFunction>
+					<tns:SignatureAlgorithm tns:oid="1.2.840.113549.1.1.5" tns:w3c="http://www.w3.org/2000/09/xmldsig#rsa-sha1">RSA-SHA1</tns:SignatureAlgorithm>
+				</tns:ReceiverNonRepudiation>
+			</tns:ebXMLReceiverBinding>
+		</tns:DocExchange>
+		<tns:DocExchange tns:docExchangeId="docexchange_http">
+			<tns:ebXMLSenderBinding tns:version="2.0">
+				<tns:SenderNonRepudiation>
+					<tns:NonRepudiationProtocol>
+						http://www.w3.org/2000/09/xmldsig#
+					</tns:NonRepudiationProtocol>
+					<tns:HashFunction>http://www.w3.org/2000/09/xmldsig#sha1</tns:HashFunction>
+					<tns:SignatureAlgorithm tns:oid="1.2.840.113549.1.1.5" tns:w3c="http://www.w3.org/2000/09/xmldsig#rsa-sha1">RSA-SHA1</tns:SignatureAlgorithm>
+					<tns:SigningCertificateRef tns:certId="default_sign_cert"/>
+				</tns:SenderNonRepudiation>
+			</tns:ebXMLSenderBinding>
+			<tns:ebXMLReceiverBinding tns:version="2.0">
+				<tns:ReceiverNonRepudiation>
+					<tns:NonRepudiationProtocol>http://www.w3.org/2000/09/xmldsig#</tns:NonRepudiationProtocol>
+					<tns:HashFunction>http://www.w3.org/2000/09/xmldsig#sha1</tns:HashFunction>
+					<tns:SignatureAlgorithm tns:oid="1.2.840.113549.1.1.5" tns:w3c="http://www.w3.org/2000/09/xmldsig#rsa-sha1">RSA-SHA1</tns:SignatureAlgorithm>
+				</tns:ReceiverNonRepudiation>
+			</tns:ebXMLReceiverBinding>
+		</tns:DocExchange>
+	</tns:PartyInfo>
+	<tns:SimplePart tns:id="msg_header" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="msg-header-2_0.xsd" tns:version="2.0">http://www.oasis-open.org/committees/ebxml-msg/schema</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="Request_message" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="" tns:version="1.0"/>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="Response_message" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="" tns:version="1.0"/>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_apprec_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="AppRec-v1-2004-11-21.xsd" tns:version="1.0">http://www.kith.no/xmlstds/apprec/2004-11-21</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_dialogmld_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="dialogmelding.xsd" tns:version="1.0">http://www.kith.no/xmlstds/dialog/2006-10-11</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_erm2_v2p3" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="ER-M2-2010-06-18.xsd" tns:version="2.3">http://www.kith.no/xmlstds/eresept/m2/2010-06-18</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_erm2_v2p4r1" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="ER-M2-2010-07-01-BF1.xsd" tns:version="2.4.1">http://www.kith.no/xmlstds/eresept/m2/2010-07-01</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_erm2_v2p5" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="ER-M2-2013-05-30.xsd" tns:version="2.5">http://www.kith.no/xmlstds/eresept/m2/2013-05-30</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_erm12_v2p4r1" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="ER-M12-2010-07-01.xsd" tns:version="2.4.1">http://www.kith.no/xmlstds/eresept/m12/2010-07-01</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_erm12_v2p5" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="ER-M12-2010-07-01.xsd" tns:version="2.5">http://www.kith.no/xmlstds/eresept/m12/2010-07-01</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_erm18_v2p4r1" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="ER-M18-2010-10-01.xsd" tns:version="2.4.1">http://www.kith.no/xmlstds/eresept/m18/2010-10-01</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_erm18_v2p5" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="ER-M18-2013-04-16.xsd" tns:version="2.5">http://www.kith.no/xmlstds/eresept/m18/2013-04-16</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_erm22_v2p4r1" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="ER-M22-2006-10-06.xsd" tns:version="2.4.2">http://www.kith.no/xmlstds/eresept/m22/2006-10-06</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_erm22_v2p5" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="ER-M22-2006-10-06.xsd" tns:version="2.5">http://www.kith.no/xmlstds/eresept/m22/2006-10-06</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_erm23_v2p4r1" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="ER-M23-2006-10-06.xsd" tns:version="2.4.1">http://www.kith.no/xmlstds/eresept/m23/2006-10-06</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_erm23_v2p5" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="ER-M23-2006-10-06.xsd" tns:version="2.5">http://www.kith.no/xmlstds/eresept/m23/2006-10-06</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_erm30l_v2p4r1" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="ER-M30-2011-01-01.xsd" tns:version="2.4.1">http://www.kith.no/xmlstds/eresept/m30/2011-01-01</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_erm30l_v2p5" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="ER-M30-2013-10-08.xsd" tns:version="2.5">http://www.kith.no/xmlstds/eresept/m30/2013-10-08</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_erm30n_v2p4r1" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="ER-M30-2011-01-01.xsd" tns:version="2.4.1">http://www.kith.no/xmlstds/eresept/m30/2011-01-01</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_erm30n_v2p5" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="ER-M30-2013-10-08.xsd" tns:version="2.5">http://www.kith.no/xmlstds/eresept/m30/2013-10-08</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_sykmelding_v1p1" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="NAV-Sykmelding-2011-03-04.xsd" tns:version="1.1">http://www.kith.no/xmlstds/sykmelding/2011-03-04</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_helseopplysningerarbeidsuforhet_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="HelseOpplysningerArbeidsuforhet_2013-10-01.xsd" tns:version="1.0">http://www.kith.no/xmlstds/HelseOpplysningerArbeidsuforhet/2013-10-01</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_legeerklaring_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="NAV-Legeerklaring-2008-06-06.xsd" tns:version="1.0">http://www.kith.no/xmlstds/legeerklaring/2008-06-06</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_lom_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="LOM-0.91.xsd" tns:version="1.0">http://www.kith.no/xmlstds/lom/2003-12-01</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_behandlerkrav_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="behandlerkrav.xsd" tns:version="1.0">http://www.kith.no/xmlstds/bkm/2006-12-20</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_nprbehandlerkrav_v0p78" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="bkm.xsd" tns:version="0.78">http://www.npr.no/xmlstds</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_egenandel_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="NAV-Egenandel-2010-02-01.xsd" tns:version="1.0">http://www.kith.no/xmlstds/nav/egenandel/2010-02-01</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_egenandelsvar_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="NAV-Egenandel-2010-02-01.xsd" tns:version="1.0">http://www.kith.no/xmlstds/nav/egenandel/2010-02-01</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_egenandelmengde_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="NAV-EgenandelMengde-2010-10-06.xsd" tns:version="1.0">http://www.kith.no/xmlstds/nav/egenandelmengde/2010-10-06</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_egenandelsvar_mengde_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="NAV-EgenandelMengde-2010-10-06.xsd" tns:version="1.0">http://www.kith.no/xmlstds/nav/egenandelmengde/2010-10-06</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_pasientliste_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="NAV-Pasientliste-2010-02-01.xsd" tns:version="1.0">http://www.kith.no/xmlstds/nav/pasientliste/2010-02-01</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_fastlege_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="NAV-Fastlege-2010-02-01.xsd" tns:version="1.0">http://www.kith.no/xmlstds/nav/fastlege/2010-02-01</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_fastlegesvar_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="NAV-Fastlege-2010-02-01.xsd" tns:version="1.0">http://www.kith.no/xmlstds/nav/fastlege/2010-02-01</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_inntektsforesporsel_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="inntektsforesporsel.xsd" tns:version="1.0">http://nav.no/ekstern/virkemiddelokonomi/tjenester/utbetaling/v1</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_inntektsopplysning_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="inntektsforesporsel.xsd" tns:version="1.0">http://nav.no/ekstern/virkemiddelokonomi/tjenester/utbetaling/v1</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_trekkinnmelding_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="InnrapporteringTrekk-2010-02-04.xsd" tns:version="1.0">http://www.kith.no/xmlstds/InnrapporteringTrekk/InnrapporteringTrekk/2010-02-04</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_kvitteringtrekkvedtak_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="InnrapporteringTrekk-2010-02-04.xsd" tns:version="1.0">http://www.kith.no/xmlstds/InnrapporteringTrekk/InnrapporteringTrekk/2010-02-04</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_utt_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="transkonv_namsbok.xsd" tns:version="1.0">http://www.sismo.no/selma/xsd/transkonv</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_utp_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="transkonv_namsbok.xsd" tns:version="1.0">http://www.sismo.no/selma/xsd/transkonv</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_statusmelding_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="utleggsbasen.xsd" tns:version="1.0">http://www.sismo.no/selma/xsd</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_sykdomspulsen" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="sykdomspulsen.xsd" tns:version="1.0">http://www.fhi.no/xml/sykdomspulsen/konsultasjon/2012-06-01</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:Packaging tns:id="package_mshsignal">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Composite tns:id="msh_signal" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_response_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Composite tns:id="Response_msg" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="Response_message" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_request_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Composite tns:id="Request_msg" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="Request_message" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_apprec_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_apprec_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_apprec_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_apprec_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_apprec_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_dialogmld_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_dialogmld_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_dialogmld_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_dialogmld_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_dialogmld_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_individuellrefusjonsoknad_v2p3">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_erm2_v2p3" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_erm2_v2p3" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_erm2_v2p3" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_erm2_v2p3" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_individuellrefusjonsoknad_v2p4r1">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_erm2_v2p4r1" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_erm2_v2p4r1" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_erm2_v2p4r1" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_erm2_v2p4r1" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_individuellrefusjonsoknad_v2p5">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_erm2_v2p5" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_erm2_v2p5" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_erm2_v2p5" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_erm2_v2p5" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_individuellrefusjonsoknadsvar_v2p4r1">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_erm12_v2p4r1" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_erm12_v2p4r1" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_erm12_v2p4r1" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_erm12_v2p4r1" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_individuellrefusjonsoknadsvar_v2p5">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_erm12_v2p5" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_erm12_v2p5" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_erm12_v2p5" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_erm12_v2p5" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_oppgjorskrav_v2p4r1">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="zip_erm18_v2p4r1" tns:mimetype="application/x-gzip" tns:mimeparameters="type=application/x-gzip">
+				<tns:Constituent tns:idref="message_erm18_v2p4r1" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_erm18_v2p4r1" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="zip_erm18_v2p4r1" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_erm18_v2p4r1" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_erm18_v2p4r1" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_oppgjorskrav_v2p5">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="zip_erm18_v2p5" tns:mimetype="application/x-gzip" tns:mimeparameters="type=application/x-gzip">
+				<tns:Constituent tns:idref="message_erm18_v2p5" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_erm18_v2p5" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="zip_erm18_v2p5" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_erm18_v2p5" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_erm18_v2p5" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_oppgjorsresultat_v2p4r1">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_erm22_v2p4r1" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_erm22_v2p4r1" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_erm22_v2p4r1" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_erm22_v2p4r1" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_oppgjorsresultat_v2p5">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_erm22_v2p5" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_erm22_v2p5" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_erm22_v2p5" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_erm22_v2p5" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_utbetaling_v2p4r1">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_erm23_v2p4r1" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_erm23_v2p4r1" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_erm23_v2p4r1" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_erm23_v2p4r1" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_utbetaling_v2p5">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_erm23_v2p5" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_erm23_v2p5" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_erm23_v2p5" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_erm23_v2p5" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_legemiddeloversikt_v2p4r1">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="zip_erm30l_v2p4r1" tns:mimetype="application/x-gzip" tns:mimeparameters="type=application/x-gzip">
+				<tns:Constituent tns:idref="message_erm30l_v2p4r1" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_erm30l_v2p4r1" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="zip_erm30l_v2p4r1" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_erm30l_v2p4r1" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_erm30l_v2p4r1" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_legemiddeloversikt_v2p5">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="zip_erm30l_v2p5" tns:mimetype="application/x-gzip" tns:mimeparameters="type=application/x-gzip">
+				<tns:Constituent tns:idref="message_erm30l_v2p5" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_erm30l_v2p5" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="zip_erm30l_v2p5" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_erm30l_v2p5" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_erm30l_v2p5" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_prisoversikt_v2p4r1">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="zip_erm30n_v2p4r1" tns:mimetype="application/x-gzip" tns:mimeparameters="type=application/x-gzip">
+				<tns:Constituent tns:idref="message_erm30n_v2p4r1" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_erm30n_v2p4r1" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="zip_erm30n_v2p4r1" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_erm30n_v2p4r1" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_erm30n_v2p4r1" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_prisoversikt_v2p5">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="zip_erm30n_v2p5" tns:mimetype="application/x-gzip" tns:mimeparameters="type=application/x-gzip">
+				<tns:Constituent tns:idref="message_erm30n_v2p5" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_erm30n_v2p5" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="zip_erm30n_v2p5" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_erm30n_v2p5" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_erm30n_v2p5" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_sm_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_sykmelding_v1p1" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_sykmelding_v1p1" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_sykmelding_v1p1" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_sykmelding_v1p1" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_le_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_legeerklaring_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_legeerklaring_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_legeerklaring_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_legeerklaring_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_lom_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="zip_lom_v1p0" tns:mimetype="application/x-gzip" tns:mimeparameters="type=application/x-gzip">
+				<tns:Constituent tns:idref="message_lom_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_lom_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="zip_lom_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_lom_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_lom_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_helseopplysningerarbeidsuforhet_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_helseopplysningerarbeidsuforhet_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_helseopplysningerarbeidsuforhet_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_helseopplysningerarbeidsuforhet_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_helseopplysningerarbeidsuforhet_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_behandlerkrav_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="zip_behandlerkrav_v1p0" tns:mimetype="application/x-gzip" tns:mimeparameters="type=application/x-gzip">
+				<tns:Constituent tns:idref="message_behandlerkrav_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_behandlerkrav_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="zip_behandlerkrav_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_behandlerkrav_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_behandlerkrav_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_nprbehandlerkrav_v0p78">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="zip_nprbehandlerkrav_v0p78" tns:mimetype="application/x-gzip" tns:mimeparameters="type=application/x-gzip">
+				<tns:Constituent tns:idref="message_nprbehandlerkrav_v0p78" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_nprbehandlerkrav_v0p78" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="zip_nprbehandlerkrav_v0p78" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_nprbehandlerkrav_v0p78" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_nprbehandlerkrav_v0p78" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_egenandelforesporsel_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_egenandel_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_egenandel_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_egenandel_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_egenandel_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_egenandelsvar_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_egenandelsvar_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_egenandelsvar_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_egenandelsvar_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_egenandelsvar_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_egenandelmengde_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_egenandelmengde_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_egenandelmengde_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_egenandelmengde_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_egenandelmengde_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_egenandelsvarmengde_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_egenandelsvar_mengde_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_egenandelsvar_mengde_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_egenandelsvar_mengde_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_egenandelsvar_mengde_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_hentpasientliste_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_hentpasientliste_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_pasientliste_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_hentpasientliste_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_hentpasientliste_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_startpasientlisteabonnement_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_startpasientlisteabonnement_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_pasientliste_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_startpasientlisteabonnement_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_startpasientlisteabonnement_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_stopppasientlisteabonnement_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_stopppasientlisteabonnement_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_pasientliste_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_stopppasientlisteabonnement_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_stopppasientlisteabonnement_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_hentpasientlisteabonnementstatus_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_hentpasientlisteabonnementstatus_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_pasientliste_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_hentpasientlisteabonnementstatus_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_hentpasientlisteabonnementstatus_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_pasientlisteabonnementstatus_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_pasientlisteabonnementstatus_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_pasientliste_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_pasientlisteabonnementstatus_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_pasientlisteabonnementstatus_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_pasientliste_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_pasientliste_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_pasientliste_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_pasientliste_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_pasientliste_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_hentfastlege_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Composite tns:id="request_msg_fastlege_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="message_fastlege_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_fastlege_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Composite tns:id="request_msg_fastlegesvar_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="message_fastlegesvar_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_inntektsforesporsel_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_inntektsforesporsel_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_inntektsforesporsel_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_inntektsforesporsel_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_inntektsforesporsel_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_inntektsopplysning_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_inntektsopplysning_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_inntektsopplysning_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_inntektsopplysning_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_inntektsopplysning_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_trekkinnmelding_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_trekkinnmelding_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_trekkinnmelding_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_trekkinnmelding_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_trekkinnmelding_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_kvitteringtrekkvedtak_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_kvitteringtrekkvedtak_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_kvitteringtrekkvedtak_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_kvitteringtrekkvedtak_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_kvitteringtrekkvedtak_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_utleggstrekk_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Composite tns:id="request_msg_UTT_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="message_utt_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_utleggstrekksvar_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Composite tns:id="request_msg_UTTstatusmelding_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="message_statusmelding_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_utleggspant_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Composite tns:id="request_msg_UTP_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="message_utp_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_utleggspantsvar_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Composite tns:id="request_msg_UTPstatusmelding_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="message_statusmelding_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_statussvar_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Composite tns:id="request_msg_Losorestatusmelding_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="message_statusmelding_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_sykdomspulsen_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_sykdomspulsen" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_sykdomspulsen" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_Sykdomspulsen" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="msg_header" tns:excludedFromSignature="false"/>
+				<tns:Constituent tns:idref="enc_sykdomspulsen" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+		<Signature>
+			<SignedInfo>
+				<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+				<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+				<Reference URI="">
+					<Transforms>
+						<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+						<Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+					</Transforms>
+					<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+					<DigestValue/>
+				</Reference>
+			</SignedInfo>
+			<SignatureValue/>
+		</Signature>
+	</tns:Signature>
+	<tns:Comment xml:lang="no">Skal erstatte tidligere CPA med cpaid XXXXXX</tns:Comment>
+</tns:CollaborationProtocolProfile>

@@ -2,18 +2,13 @@
 <!-- Edited with XMLSpy v2013 rel2 sp2 (www.altova.com) by Jan Sigurd Dragsjø (www.helsedirektoratet.no) -->
 <xsl:stylesheet version="1.0" 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-	xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
 	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
-	exclude-result-prefixes="xhtml mh">
-	
-	<xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" 
-		doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" 
-		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+	exclude-result-prefixes="mh">
 
 	<!-- Visningsfil for forskrivninger og tilbakekallinger -->
 	<!-- Endringslogg
-	-	2016-10-25: La til variabel for visningsversjonnr
+	-	2017-03-27: v3.1.1: Ny parameter for "visningStil". Ny stil "Smooth".
+	-	2016-10-25: v3.1.0: La til variabel for visningsversjonnr
 	-	2014-02-12: La til visning av antall ifm legemiddelblanding
 	-	2013-10-30: Oppdatert til også å håndtere versjon 2.5
 	-	2011-04-28: Rettet bug med visning av antall handelsvarer
@@ -34,12 +29,12 @@
 	-	CSS-klassene gir bl.a. forskjellig visning ved utskrift.	-->
 	<!-- Svakheter
 	-	Visningsfilen sjekker foreløpig ikke om det er samme pasient og samme rekvirent meldingene gjelder. Den henter aktør-info fra vilkårlig fil i fil-lista.	-->
-	
+
+	<xsl:import href="../felleskomponenter/eh-komponent2.xsl"/>
+
 	<xsl:param name="fil-union" select="document('fil-liste.xml')//Fil"/>
 	<xsl:param name="meldings-union" select="document($fil-union)"/>
-	
-	<!-- Variabel for hvilken stil visningen har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
-	<xsl:variable name="stil" select="'One-line-doc'"/>
+
 	
 	<!-- Variabel for alle ReseptId-ene som tilbakekalles-->
 	<xsl:variable name="tilbakekallte-Ider">
@@ -49,7 +44,7 @@
 	</xsl:variable>
 
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'forskrivning v3.1.0 '"/>
+	<xsl:variable name="versjon" select="'forskrivning - v3.1.0 '"/>
 
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
@@ -74,7 +69,7 @@
 			</body>
 		</html>
 	</xsl:template>
-	
+
 	<!-- Visning av meldingshode -->
 	<xsl:template match="mh:MsgInfo">
 		<div class="No-line-doc">
@@ -82,7 +77,7 @@
 				<tbody>
 					<tr>
 						<td width="20%">
-							<b>Pasient&#160;</b><br/>
+							<span class="strong">Pasient&#160;</span><br/>
 							<xsl:for-each select="mh:Patient">
 								<b><xsl:value-of select="mh:GivenName"/>&#160;<xsl:if test="mh:MiddleName"><xsl:value-of select="mh:MiddleName"/>&#160;</xsl:if><xsl:value-of select="mh:FamilyName"/></b>
 								<xsl:if test="mh:Ident and mh:Ident/mh:TypeId/@V = 'FNR'">
@@ -91,7 +86,7 @@
 							</xsl:for-each>
 						</td>
 						<td>
-							<b>Rekvirent&#160;</b><br/>
+							<span class="strong">Rekvirent&#160;</span><br/>
 							<xsl:for-each select="mh:Sender/mh:Organisation/mh:HealthcareProfessional">
 								<b><xsl:value-of select="mh:GivenName"/>&#160;<xsl:value-of select="mh:FamilyName"/></b>
 								<xsl:choose>
@@ -111,7 +106,7 @@
 			</table>
 		</div>
 	</xsl:template>
-	
+
 	<!-- Visning av forskrivninger -->
 	<xsl:template name="Forskrivninger">
 		<div class="{$stil}">
@@ -150,7 +145,7 @@
 			</table>
 		</div>
 	</xsl:template>
-	
+
 	<!-- Visning av tilbakekallinger -->
 	<xsl:template name="Tilbakekallinger">
 		<div class="{$stil}">
@@ -177,7 +172,7 @@
 			</table>
 		</div>
 	</xsl:template>
-	
+
 	<!-- Visning av reseptdokument - legemiddel -->
 	<xsl:template name="ReseptDokLegemiddel">
 		<tr>
@@ -288,7 +283,7 @@
 				<xsl:for-each select="descendant::*[local-name()='Navn' and not(parent::*[local-name()='BestanddelMatr'])]">
 					<xsl:value-of select="."/>&#160;
 					<xsl:for-each select="descendant::*[local-name()='BestanddelMatr']">,&#160;
-						<b>Bestanddel:&#160;</b><xsl:value-of select="child::*[local-name()='Navn']"/>&#160;
+						<span class="strong">Bestanddel:&#160;</span><xsl:value-of select="child::*[local-name()='Navn']"/>&#160;
 					</xsl:for-each>
 				</xsl:for-each>
 				<xsl:for-each select="descendant::*[local-name()='StyrkeFormStoff']">

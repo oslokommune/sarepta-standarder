@@ -3,7 +3,9 @@
 <!-- Visningsfil for eReseptmeldingen: M2 Individuell søknad om refusjon til HELFO
 	- Visningen håndterer vedlegg av en eller flere M12 Søknadssvar - Individuell søknad om refusjon til HELFO-->
 <!-- Siste endring:
-	- 2016-10-25: La til visningsversjonnr
+	- 09-05-2017: v3.1.2: Rettet formell test på tekst mot number
+	- 27-03-2017: v3.1.1: Ny parameter for "visningStil". Ny stil "Smooth".
+	- 2016-10-25: v3.1.0: La til visningsversjonnr
 	- 2015-09-24: Oppdatert til siste versjon av 2.5 datert 2015-05-26. Felles kodeverksfil innført.
 	- 2013-10-31: Oppdatert til å kunne håndtere Forskrivning-2013-10-08
 	- 2013-08-13: Versjon for eResept v2.5
@@ -16,32 +18,32 @@
 	xmlns:m2="http://www.kith.no/xmlstds/eresept/m2/2014-12-01" 
 	xmlns:m12="http://www.kith.no/xmlstds/eresept/m12/2014-12-01" 
 	xmlns:base="http://www.kith.no/xmlstds/base64container" 
-	xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
-	exclude-result-prefixes="mh fk1 m2 m12 base xhtml">
+	exclude-result-prefixes="mh fk1 m2 m12 base">
 
-	<xsl:import href="../../Felleskomponenter/meldingshode2html.xsl"/>
-	<xsl:import href="../../Felleskomponenter/funksjoner.xsl"/>
-	<xsl:import href="../../Felleskomponenter/base64decoder.xsl"/>
-	<xsl:import href="../../Felleskomponenter/kodeverk.xsl"/>
-	
-	<xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
-	
+	<xsl:import href="../../felleskomponenter/meldingshode2html.xsl"/>
+	<xsl:import href="../../felleskomponenter/funksjoner.xsl"/>
+	<xsl:import href="../../felleskomponenter/base64decoder.xsl"/>
+	<xsl:import href="../../felleskomponenter/kodeverk.xsl"/>
+	<xsl:import href="../../felleskomponenter/eh-komponent2.xsl"/>
+
+
 	<!-- Vedlegg i denne sammenhengen er en eller flere m12-meldinger -->
 	<xsl:param name="vedlegg"/>
+
 	<xsl:variable name="antall-legemidler" select="count(//m2:OmsoktLegemiddel)"/>
-	<!-- Variabel for hvilken stil visningen har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
-	<xsl:variable name="stil" select="'One-line-doc'"/>
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'eresept-m2-2.5 v3.1.0 '"/>
+	<xsl:variable name="versjon" select="'eresept-m2-2.5 - v3.1.2 '"/>
 
 	<xsl:template match="/">
-		<html xmlns="http://www.w3.org/1999/xhtml">
+		<html>
 			<head>
 				<title>Individuell søknad om refusjon til HELFO</title>
 				<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 				<style type="text/css">
-					<xsl:value-of select="document('../../Felleskomponenter/KITH-visning.css')" disable-output-escaping="yes"/>
+					<xsl:value-of select="document('../../felleskomponenter/KITH-visning.css')" disable-output-escaping="yes"/>
+				</style>
+				<style type="text/css">
+					<xsl:value-of select="document('../../felleskomponenter/smooth-visning.css')" disable-output-escaping="yes"/>
 				</style>
 			</head>
 			<body>
@@ -49,6 +51,7 @@
 			</body>
 		</html>
 	</xsl:template>
+
 	<!-- Visning av meldingshodet. Tilpasset vinduskonvolutt ved utskrift -->
 	<xsl:template match="mh:MsgHead">
 		<xsl:call-template name="Topp"/>
@@ -69,6 +72,7 @@
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
+
 	<!-- Template som kalles fra BunnTillegg i meldingshodet. Kan brukes til visning av egenkomponert bunn -->
 	<xsl:template name="EgetBunnTillegg">
 	</xsl:template>
@@ -300,7 +304,7 @@
 								<xsl:if test="m2:KroniskSykdom">
 									<td width="25%">
 										<xsl:choose>
-											<xsl:when test="m2:KroniskSykdom/@V = 1">
+											<xsl:when test="m2:KroniskSykdom/@V = '1'">
 												<input type="checkbox" disabled="disabled" checked="checked">Kronisk sykdom</input>
 											</xsl:when>
 											<xsl:otherwise>
@@ -312,7 +316,7 @@
 								<xsl:if test="m2:LangvarigBeh">
 									<td width="25%">
 										<xsl:choose>
-											<xsl:when test="m2:LangvarigBeh/@V = 1">
+											<xsl:when test="m2:LangvarigBeh/@V = '1'">
 												<input type="checkbox" disabled="disabled" checked="checked">Langvarig behandling</input>
 											</xsl:when>
 											<xsl:otherwise>
@@ -324,7 +328,7 @@
 								<xsl:if test="m2:BrukUtenforSykehus">
 									<td width="25%">
 										<xsl:choose>
-											<xsl:when test="m2:BrukUtenforSykehus/@V = 1">
+											<xsl:when test="m2:BrukUtenforSykehus/@V = '1'">
 												<input type="checkbox" disabled="disabled" checked="checked">Bruk utenfor sykehus</input>
 											</xsl:when>
 											<xsl:otherwise>
@@ -340,7 +344,7 @@
 								<xsl:if test="m2:SamPasient">
 									<td width="25%">
 										<xsl:choose>
-											<xsl:when test="m2:SamPasient/@V = 1">
+											<xsl:when test="m2:SamPasient/@V = '1'">
 												<input type="checkbox" disabled="disabled" checked="checked">Samtykke</input>
 											</xsl:when>
 											<xsl:otherwise>
@@ -352,7 +356,7 @@
 								<xsl:if test="m2:SamVedtak">
 									<td width="25%">
 										<xsl:choose>
-											<xsl:when test="m2:SamVedtak/@V = 1">
+											<xsl:when test="m2:SamVedtak/@V = '1'">
 												<input type="checkbox" disabled="disabled" checked="checked">Samtykke kopi</input>
 											</xsl:when>
 											<xsl:otherwise>
@@ -364,7 +368,7 @@
 								<xsl:if test="m2:Forstegangs">
 									<td width="25%">
 										<xsl:choose>
-											<xsl:when test="m2:Forstegangs/@V = 1">
+											<xsl:when test="m2:Forstegangs/@V = '1'">
 												<input type="checkbox" disabled="disabled" checked="checked">Førstegangssøknad</input>
 											</xsl:when>
 											<xsl:otherwise>
@@ -380,7 +384,7 @@
 								<xsl:if test="//m2:Yrkesskade/m2:Vedtak">
 									<td width="25%">
 										<xsl:choose>
-											<xsl:when test="//m2:Yrkesskade/m2:Vedtak/@V = 1">
+											<xsl:when test="//m2:Yrkesskade/m2:Vedtak/@V = '1'">
 												<input type="checkbox" disabled="disabled" checked="checked">Har&#160;vedtak&#160;om&#160;yrkesskade</input>
 											</xsl:when>
 											<xsl:otherwise>
@@ -392,7 +396,7 @@
 								<xsl:if test="//m2:Yrkesskade/m2:Arsak">
 									<td width="25%">
 										<xsl:choose>
-											<xsl:when test="//m2:Yrkesskade/m2:Arsak/@V = 1">
+											<xsl:when test="//m2:Yrkesskade/m2:Arsak/@V = '1'">
 												<input type="checkbox" disabled="disabled" checked="checked">Yrkesskade&#160;årsak&#160;til&#160;behandlingsbehovet</input>
 											</xsl:when>
 											<xsl:otherwise>
@@ -404,7 +408,7 @@
 								<xsl:if test="m2:Soknad3b/m2:SjeldenSykdom">
 									<td width="25%">
 										<xsl:choose>
-											<xsl:when test="m2:Soknad3b/m2:SjeldenSykdom/@V = 1">
+											<xsl:when test="m2:Soknad3b/m2:SjeldenSykdom/@V = '1'">
 												<input type="checkbox" disabled="disabled" checked="checked">Sjelden&#160;sykdom</input>
 											</xsl:when>
 											<xsl:otherwise>
@@ -546,7 +550,7 @@
 																<xsl:attribute name="height">500px</xsl:attribute>
 															</object>
 															<p> <!-- Denne paragrafen blir aktivert når pdf-visningen feiler - f.eks. med InternetExplorer -->
-																<b>Visning av vedlagte pdf-fil feilet.</b><br/>
+																<span class="strong">Visning av vedlagte pdf-fil feilet.</span><br/>
 																Vanligste årsak er bruk av Internet Explorer, eller manglende plug-in.
 															</p>
 														</xsl:when>
@@ -579,22 +583,22 @@
 								<th>Metadata</th>
 								<td colspan="3">
 									<xsl:if test="mh:MsgType">
-										<b>Meldingstype&#160;</b><xsl:value-of select="mh:MsgType/@DN"/>&#160;
+										<span class="strong">Meldingstype&#160;</span><xsl:value-of select="mh:MsgType/@DN"/>&#160;
 									</xsl:if>
 									<xsl:if test="mh:Id">
-										<b>Id:&#160;</b><xsl:value-of select="mh:Id"/>&#160;
+										<span class="strong">Id:&#160;</span><xsl:value-of select="mh:Id"/>&#160;
 									</xsl:if>
 									<xsl:if test="mh:IssueDate">
-										<b>Utstedt-dato:&#160;</b><xsl:call-template name="skrivUtDateTime"><xsl:with-param name="oppgittTid" select="mh:IssueDate/@V"/></xsl:call-template>&#160;
+										<span class="strong">Utstedt-dato:&#160;</span><xsl:call-template name="skrivUtDateTime"><xsl:with-param name="oppgittTid" select="mh:IssueDate/@V"/></xsl:call-template>&#160;
 									</xsl:if>
 									<xsl:if test="mh:MimeType">
-										<b>Mimetype:&#160;</b><xsl:value-of select="mh:MimeType"/>&#160;
+										<span class="strong">Mimetype:&#160;</span><xsl:value-of select="mh:MimeType"/>&#160;
 									</xsl:if>
 									<xsl:if test="mh:Compression">
-										<b>Komprimering:&#160;</b><xsl:value-of select="mh:Compression/@DN"/>&#160;
+										<span class="strong">Komprimering:&#160;</span><xsl:value-of select="mh:Compression/@DN"/>&#160;
 									</xsl:if>
 									<xsl:if test="mh:Description">
-										<b>Beskrivelse:&#160;</b>
+										<span class="strong">Beskrivelse:&#160;</span>
 										<xsl:call-template name="line-breaks">
 											<xsl:with-param name="text" select="mh:Description"/>
 										</xsl:call-template>&#160;

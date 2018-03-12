@@ -3,27 +3,41 @@
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
 	<Navn>Henvisningsmelding</Navn>
 	<Versjon>2.0</Versjon>
-	<Identifikator>HIS 80517 Utprøving 2017</Identifikator>
+	<Identifikator>HIS 80517:2017</Identifikator>
 	<Utgitt>02/2017</Utgitt>
-
-	<Status>Til pilotering</Status>
+	<Utgiver>Direktoratet for e-helse</Utgiver>
+	<Referansekatalogen>
+		<Beskrivelse>Henvisningsmelding 2.0 (HIS 80517:2017)</Beskrivelse>
+		<Referanse>https://ehelse.no/standarder-kodeverk-og-referansekatalog/standarder-og-referansekatalog/henvisningsmelding-his-80517-utkast-til-utproving-2017</Referanse>
+	</Referansekatalogen>
+	<Status>Fastsatt som standard</Status>
 	<ForrigeVersjon>HIS 80517:2014</ForrigeVersjon>
+	
+	
 	
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Henvisning. Informasjonsmodell og XML meldingsbeskrivelse (GitLab)</Beskrivelse>
-			<Referanse>kravdokument/henvisning/HIS_80517_2017 Henvisning 2.0 til utprøving.pdf</Referanse>
+			<Beskrivelse>Henvisning v2.0 (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/henvisning/HIS_80517_2017 Henvisning 2.0 -korrigert.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Profil: Henvisning ny tilstand (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/henvisning/HIS_1207-2018 Henvisning ny tilstand.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Profil: Viderehenvisning (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/henvisning/HIS_1208-2018-Viderehenvisning.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
 	
 	<Skjemaer>
 		<Skjema>
 			<Referanse>skjema/henvisning/Henvisning-v2.0.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/henvisning/2014-04-30</Namespace>
+			<Namespace>http://www.kith.no/xmlstds/henvisning/2017-01-31</Namespace>
 		</Skjema>
 		<Skjema>
 			<Beskrivelse>Komponenter som gjenbrukes i flere ulike Pleie- og omsorgsmeldinger</Beskrivelse>
-			<Referanse>skjema/plo/v1.6/poKomponent-v1.6.xsd</Referanse>
+			<Referanse>skjema/plo/v2.0/poKomponent-v2.0.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/po/poKomponent/2012-04-01</Namespace>
 		</Skjema>
 	</Skjemaer>
@@ -48,6 +62,25 @@
 	</Felleskomponenter>
 	
 	<Visningsfiler>
+		<Visningsfil>
+			<Referanse>visningsfil/henvisning/henvisning2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Felleskomponent for alle visningsfiler: smooth-visning.css</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/smooth-visning.css</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Felleskomponent for alle visningsfiler: ehelse-visning.css</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/ehelse-visning.css</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Felleskomponent for alle visningsfiler: eh-komponent1.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/eh-komponent1.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Felleskomponent for alle visningsfiler: eh-komponent2.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/eh-komponent2.xsl</Referanse>
+		</Visningsfil>
 		<Visningsfil>
 			<Beskrivelse>Felleskomponent for alle visningsfiler: KITH-visning.css</Beskrivelse>
 			<Referanse>visningsfil/felleskomponenter/KITH-visning.css</Referanse>
@@ -124,5 +157,11 @@
 			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler (Fra SourceForge): string.xsl</Beskrivelse>
 			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
 		</Visningsfil>
-	</Visningsfiler>	
+	</Visningsfiler>
+	<Eksempler>
+		<Eksempel>
+			<Referanse>eksempel/Henvisning/Henvisning_v2-0/Henvisning_v2-0_Eksempel_Rettighetsvurdert_etter_ventetid_pakkeforlop.xml</Referanse>
+		</Eksempel>
+	</Eksempler>
+	
 </StandardMetadata>

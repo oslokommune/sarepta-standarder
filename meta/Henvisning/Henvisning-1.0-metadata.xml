@@ -5,18 +5,18 @@
 	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 80517:2005</Identifikator>
 	<Utgitt>07/2005</Utgitt>
-	<Utgiver>Helsedirektoratet</Utgiver>
+	<Utgiver>Direktoratet for e-helse</Utgiver>
 	
 	<Referansekatalogen>
 		<Beskrivelse>Henvisningsmelding 1.0 (HIS 80517:2005)</Beskrivelse>
-		<Referanse>https://ehelse.no/Sider/Henvisning--Informasjonsmodell-og-XML-meldingsbeskrivelse-%E2%80%93-HIS-805172005.aspx</Referanse>
+		<Referanse>http://ehelse.no/HIS80517-2005</Referanse>
 	</Referansekatalogen>	
 	
 	<Status>Fastsatt som standard</Status>
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Henvisning. Informasjonsmodell og XML meldingsbeskrivelse (GitLab)</Beskrivelse>
+			<Beskrivelse>Henvisning v1.0 (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/henvisning/HIS_80517_2005_Henvisning_v1.0.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
@@ -45,6 +45,25 @@
 	<Visningsfiler>
 		<Visningsfil>
 			<Referanse>visningsfil/henvisning/v1.0/henvisning-v1_0-2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/henvisning/henvisning2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Felleskomponent for alle visningsfiler: smooth-visning.css</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/smooth-visning.css</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Felleskomponent for alle visningsfiler: ehelse-visning.css</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/ehelse-visning.css</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Felleskomponent for alle visningsfiler: eh-komponent1.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/eh-komponent1.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Felleskomponent for alle visningsfiler: eh-komponent2.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/eh-komponent2.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
 			<Beskrivelse>Felleskomponent for alle visningsfiler: KITH-visning.css</Beskrivelse>
@@ -124,4 +143,35 @@
 		</Visningsfil>
 	</Visningsfiler>
 	
+	
+	<Eksempler>
+		<Eksempel>
+			<Referanse>eksempel/Henvisning/Henvisning_v1-0/Henvisning_v1-0_Eksempel_Fastlege_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/Henvisning/Henvisning_v1-0/Henvisning_v1-0_Eksempel_Fastlege_Endring.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/Henvisning/Henvisning_v1-0/Henvisning_v1-0_Eksempel_Fastlege_Kansellering.xml</Referanse>
+		</Eksempel>
+			
+		<Eksempel>
+			<Referanse>eksempel/Henvisning/Henvisning_v1-0/henvisning_v1-0_Eksempel_AnnenLege_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/Henvisning/Henvisning_v1-0/henvisning_v1-0_Eksempel_AnnenLege_Endring.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/Henvisning/Henvisning_v1-0/Henvisning_v1-0_Eksempel_AnnenLege_Kansellering.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/Henvisning/Henvisning_v1-0/Henvisning_v1-0_Eksempel_Legevakt_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/Henvisning/Henvisning_v1-0/Henvisning_v1-0_Eksempel_Legevakt_Endring.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/Henvisning/Henvisning_v1-0/Henvisning_v1-0_Eksempel_Legevakt_Kansellering.xml</Referanse>
+		</Eksempel>
+	</Eksempler>
 </StandardMetadata>
