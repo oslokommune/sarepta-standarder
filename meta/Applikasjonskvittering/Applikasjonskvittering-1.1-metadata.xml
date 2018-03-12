@@ -5,10 +5,10 @@
 	<Versjon>1.1</Versjon>
 	<Identifikator>HIS 80415:2012</Identifikator>
 	<Utgitt>12/2012</Utgitt>
-	<Utgiver>Helsedirektoratet</Utgiver>
+	<Utgiver>Direktoratet for e-helse</Utgiver>
 	<Referansekatalogen>
 			<Beskrivelse>Applikasjonskvittering 1.1 (HIS 80415:2012)</Beskrivelse>
-			<Referanse>https://ehelse.no/standarder-kodeverk-og-referansekatalog/standarder-og-referansekatalog/applikasjonskvittering-v11-his-804152012								</Referanse>
+			<Referanse>http://ehelse.no/HIS80415-2012</Referanse>
 	</Referansekatalogen>
 
 	<Status>Fastsatt som standard</Status>
@@ -17,8 +17,8 @@
 	
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Applikasjonskvittering Informasjonsmodell, XML meldingsbeskrivelse og retningslinjer for bruk (GitLab)</Beskrivelse>
-			<Referanse>kravdokument/applikasjonskvittering/HIS_80415_2012_AppRec-v1 1-2014-02-13.pdf</Referanse>
+			<Beskrivelse>Applikasjonskvittering v1.1 (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/applikasjonskvittering/HIS 80415_2012 AppRec v1.1 -korrigert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
 	
@@ -39,13 +39,6 @@
 			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
-	
-	<Testmateriell>
-		<Testfil>
-			<Beskrivelse>Testcase for riktig implementasjon og bruk av applikasjonskvittering (XLSX)</Beskrivelse>
-			<Referanse>test/applikasjonskvittering/TestcaseApplikasjonskvittering.xlsx</Referanse>
-		</Testfil>
-	</Testmateriell>
 	
 	<RelaterteFiler>
 		<RelatertFil>

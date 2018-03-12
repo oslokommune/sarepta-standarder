@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Message xmlns="http://www.kith.no/xmlstds/henvisning/2005-07-08" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/henvisning/2005-07-08 Henvisning-v1.0.xsd">
+	<Type V="H" DN="Henvisning"/>
+	<!-- samme faglig innhold, men endrede meldings- og henvisningsidentifikatorer samt datoer for å teste mottak og merking av endring -->
+	<!-- [?] Legg inn CAVE, flere legemidler, sjekk at pasientadressen er med, at både hoveddiagnose og bidiagnose er med, sjekk mot oversiktet av obligatoriske felt (ref SENDING) -->
+	<MsgVersion>v1.0 2005-07-08</MsgVersion>
+	<MIGversion>v1.0 2005-07-08</MIGversion>
+	<GenDate V="2015-04-11T09:32:47"/>
+	<MsgId>bfe3c070-c5dc-11e6-9598-0800200c9a66</MsgId>
+	<ServReq>
+		<ServType V="M" DN="Endring"/>
+		<IssueDate V="2015-04-10T18:10:47"/>
+		<MsgDescr V="10" DN="Utredning/behandling"/>
+		<Id>b4eadc50-f2b2-11e6-9598-0800200c9a66</Id>
+		<Patient>
+			<Sex V="2" DN="Kvinne"/>
+			<DateOfBirth V="1969-11-13"/>
+			<Name>Danser, Line</Name>
+			<OffId>13116900216</OffId>
+			<TypeOffId V="FNR" DN="Fødselsnummer"/>
+			<InfItem>
+				<Observation>
+					<Description>Seropos RA fra 65-Myocrisinbeh tidl m god effekt, også brukt Ridaura. Fra 93 Methotrexat 7,5mg ukentlig, sep pga hematuri og fra april 97 Ercoquin 200mgx2. Vurdert v Reum.pol.RiT 28.04.14 - fikk da endel leddinj DepoMedrol og red Ercoquin til 200mgx1. 
+På ny vurdert 18.08.14: Ercoquin seponert, på ny steroidinj i div ledd og eneste faste med. Prednisolon 7,5mg dgl. 
+I sept tiltagende plager, fikk nytt "støt" med Prednisolon uten særlig effekt og 21.10. startet opp igjen med Ercoquin. Hun hadde da CRP 200 og SR økende til 85. 
+Utover vinteren stadig dårligere, hevelse og rubor over en rekke ledd, betydelige smerter og stokk stiv, greier seg knapt nok selv lenger. Vedvarende plager, bortsett fra en kortere periode i januar med bedring både klinisk og lab.messig. 
+Idag riktig ille, "orker snart ikke mer" - noe som er meget sjeldent å høre fra henne. Verst smerter nå i hofter, men også smerter i en rekke andre ledd, til tross for økning prednison opp til 30mg dgl i en uke fra 16.03. 
+Hun er nå ille plaget, og jeg tillater meg  søke henne inn til dere litt snarere enn mulig til vurdering, evt for gode råd. 
+Laboratorieverdier: 08/04/15 
+HVITE : 9200 RØDE : 3.87 HB : 12.3 
+HCT : 35.8 MCV : 92.5 TROMBOCYT : 222 
+CRP : 42 SR : 70 
+ALAT : 18 KREAT : 64 GAMMA-GT : 47 
+URISTIX : b++ 
+Beskjed om time bes sendt til pasienten. 
+</Description>
+				</Observation>
+				<Type V="ANAM" DN="Sykehistorie"/>
+			</InfItem>
+			<InfItem>
+				<Medication>
+					<DrugId V="H02A B06" S="2.16.578.1.12.4.1.1.7180" DN="Prednisolon"/>
+					<Status V="2"/>
+					<IntendedDuration V="1" U="uke"/>
+					<UnitDose V="30" U="mg"/>
+					<DosageText>Økning til 30 mg daglig i en uke fra 16.03.</DosageText>
+				</Medication>
+				<Type V="MEDB" DN="Legemiddelopplysning"/>
+			</InfItem>
+			<Address>
+				<Type V="H" DN="Bostedsadresse"/>
+				<StreetAdr>Lungegaardsbakken 13</StreetAdr>
+				<PostalCode>5020</PostalCode>
+				<City>Bergen</City>
+			</Address>
+		</Patient>
+		<ServProvider>
+			<HCP>
+				<Inst>
+					<Name>ST OLAVS HOSPITAL HF</Name>
+					<Id>59</Id>
+					<TypeId V="HER" DN="HER-id"/>
+					<Dept>
+						<Name>Ortopedisk kirurgi</Name>
+						<Id>90998</Id>
+						<TypeId V="HER" DN="HER-id"/>
+					</Dept>
+				</Inst>
+			</HCP>
+		</ServProvider>
+		<Requester>
+			<HCP>
+				<Inst>
+					<Name>Kattskinnet legesenter</Name>
+					<Id>56704</Id>
+					<TypeId V="HER" DN="HER-id"/>
+					<HCPerson>
+						<Name>Magnar Koman</Name>
+						<Id>148985</Id>
+						<TypeId V="HER" DN="HER-id" />
+					</HCPerson>
+				</Inst>
+			</HCP>
+		</Requester>
+		<ReasonAsText>
+			<Heading V="FA" DN="Familie/sosialt"/>
+			<TextResultValue>Enke, bor alene i eget hus. En datter bosatt i Larvik.</TextResultValue>
+		</ReasonAsText>
+		<ReasonAsText>
+			<Heading V="UTRED"/>
+			<TextResultValue>Vurdering, evt. gode råd</TextResultValue>
+		</ReasonAsText>
+		<Diagnosis>
+			<Concept V="L88" S="2.16.578.1.12.4.1.1.7170" DN="Reumatoid artritt/reumatisk sykdom"/>
+		</Diagnosis>
+	</ServReq>
+</Message>

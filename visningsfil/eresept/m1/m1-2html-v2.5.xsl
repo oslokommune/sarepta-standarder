@@ -7,13 +7,14 @@
 	xmlns:m1="http://www.kith.no/xmlstds/eresept/m1/2013-10-08" 
 	xmlns:m15="http://www.kith.no/xmlstds/eresept/m15/2006-10-06" 
 	xmlns:fs="http://www.kith.no/xmlstds/eresept/forskrivning/2013-10-08" 
-	xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
-	exclude-result-prefixes="mh fk1 m1 m15 fs xhtml">
+	exclude-result-prefixes="mh fk1 m1 m15 fs">
 
 <!-- Visningsfil for eReseptmeldingen: M1 med multidose og eventuell vedlegg av M15 -->
 <!-- Siste endring:
-	- 2016-10-25: La til visningsversjonnr
+	- 2017-09-01: v3.1.3: La in while istedet for if test på om M15 er med.
+	- 2017-05-19: v3.1.2: La inn sjekk ved begrunnelse om avslag, bruker da M15:BegrunnelseAvslag i stedet for M1:Begrunnelse
+	- 2017-03-27: v3.1.1: Ny parameter for "visningStil". Ny stil "Smooth".
+	- 2016-10-25: v3.1.0: La til visningsversjonnr
 	- 2014-11-12: Utvidelse for å håndtere flere varienter av faste doserings-dager
 	- 2014-04-30: Bugfix av ProdGruppe i handelsvare
 	- 2014-03-13: Flyttet plassering av Ref.nr og Refusjonskode. Fikset bug med uendelig rekursjon om Faste ukedager og Faste dager på var begge oppgitt.
@@ -23,32 +24,33 @@
 	- 2011-02-21: Første versjon -->
 	
 
-	<xsl:import href="../../Felleskomponenter/meldingshode2html.xsl"/>
-	<xsl:import href="../../Felleskomponenter/funksjoner.xsl"/>
-	<xsl:import href="../../Felleskomponenter/kodeverk.xsl"/>
+	<xsl:import href="../../felleskomponenter/meldingshode2html.xsl"/>
+	<xsl:import href="../../felleskomponenter/funksjoner.xsl"/>
+	<xsl:import href="../../felleskomponenter/kodeverk.xsl"/>
+	<xsl:import href="../../felleskomponenter/eh-komponent2.xsl"/>
 
-	<xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
-		
 	<!-- Input-parameter som brukes til å legge ved Søknadssvar fra SLV (m15) -->
 	<xsl:param name="vedlegg"/>
-	
-	<!-- Variabel for hvilken stil visningen har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
-	<xsl:variable name="stil" select="'One-line-doc'"/>
-	
+
+
+
 	<!-- Variabel for standard antall kolonner i tabellene -->
 	<xsl:variable name="std-col" select="8"/>
 
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'eresept-m1-2.5 v3.1.0 '"/>
+	<xsl:variable name="versjon" select="'eresept-m1-2.5 - v3.1.2'"/>
 
 	<!-- html oppsett -->
 	<xsl:template match="/">
-		<html xmlns="http://www.w3.org/1999/xhtml">
+		<html>
 			<head>
 				<title></title>
 				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 				<style type="text/css">
-					<xsl:value-of select="document('../../Felleskomponenter/KITH-visning.css')" disable-output-escaping="yes"/>
+					<xsl:value-of select="document('../../felleskomponenter/KITH-visning.css')" disable-output-escaping="yes"/>
+				</style>
+				<style type="text/css">
+					<xsl:value-of select="document('../../felleskomponenter/smooth-visning.css')" disable-output-escaping="yes"/>
 				</style>
 			</head>
 			<body>
@@ -154,7 +156,7 @@
 																	<xsl:value-of select="@DN"/>
 																</xsl:when>
 																<xsl:when test="@OT">
-																	<b>Fritekst:&#160;</b><xsl:value-of select="@OT"/>
+																	<span class="strong">Fritekst:&#160;</span><xsl:value-of select="@OT"/>
 																</xsl:when>
 																<xsl:otherwise>
 																	<xsl:for-each select="//m1:RefHjemmel">
@@ -169,7 +171,7 @@
 																	<xsl:value-of select="@DN"/>
 																</xsl:when>
 																<xsl:when test="@OT">
-																	<b>Fritekst:&#160;</b><xsl:value-of select="@OT"/>
+																	<span class="strong">Fritekst:&#160;</span><xsl:value-of select="@OT"/>
 																</xsl:when>
 																<xsl:otherwise>
 																	<xsl:for-each select="//m1:RefHjemmel">
@@ -184,7 +186,7 @@
 																	<xsl:value-of select="@DN"/>
 																</xsl:when>
 																<xsl:when test="@OT">
-																	<b>Fritekst:&#160;</b><xsl:value-of select="@OT"/>
+																	<span class="strong">Fritekst:&#160;</span><xsl:value-of select="@OT"/>
 																</xsl:when>
 																<xsl:otherwise>
 																	<xsl:value-of select="@V"/>
@@ -302,7 +304,7 @@
 						</xsl:if>
 						<xsl:if test="m1:TidligsteUtlevering or m1:UtskrevetSykehus or m1:LastResept">
 							<tr>
-								<xsl:if test="m1:TidligsteUtlevering"><th width="25%">Tidligste tillate utlevering</th></xsl:if>
+								<xsl:if test="m1:TidligsteUtlevering"><th width="25%">Tidligste tillatte utlevering</th></xsl:if>
 								<xsl:if test="m1:UtskrevetSykehus"><th width="25%">Utskrevet fra sykehus</th></xsl:if>
 								<xsl:if test="m1:LastResept"><th width="25%">Låst resept</th></xsl:if>
 							</tr>
@@ -521,10 +523,10 @@
 									<xsl:value-of select="m1:ProdGruppe/@DN"/>
 								</xsl:when>
 								<xsl:when test="m1:ProdGruppe/@OT">
-									<b>Fritekst:&#160;</b><xsl:value-of select="m1:ProdGruppe/@OT"/>
+									<span class="strong">Fritekst:&#160;</span><xsl:value-of select="m1:ProdGruppe/@OT"/>
 								</xsl:when>
 								<xsl:otherwise>
-									<b>Kodet:&#160;</b><xsl:value-of select="m1:ProdGruppe/@V"/>
+									<span class="strong">Kodet:&#160;</span><xsl:value-of select="m1:ProdGruppe/@V"/>
 								</xsl:otherwise>
 							</xsl:choose>
 							/<xsl:value-of select="//fs:Navn"/>
@@ -538,10 +540,10 @@
 										<xsl:value-of select="m1:ProdGruppe/@DN"/>
 									</xsl:when>
 									<xsl:when test="m1:ProdGruppe/@OT">
-										<b>Fritekst:&#160;</b><xsl:value-of select="m1:ProdGruppe/@OT"/>
+										<span class="strong">Fritekst:&#160;</span><xsl:value-of select="m1:ProdGruppe/@OT"/>
 									</xsl:when>
 									<xsl:otherwise>
-										<b>Kodet:&#160;</b><xsl:value-of select="m1:ProdGruppe/@V"/>
+										<span class="strong">Kodet:&#160;</span><xsl:value-of select="m1:ProdGruppe/@V"/>
 									</xsl:otherwise>
 								</xsl:choose>
 							</td>
@@ -880,7 +882,7 @@
 								</xsl:variable>
 								<tr>
 									<td colspan="3">
-										<b>Doseringen som er angitt på legemidlet er ikke mulig å vise. Kontakt forskrivende lege!</b><br/>
+										<span class="strong">Doseringen som er angitt på legemidlet er ikke mulig å vise. Kontakt forskrivende lege!</span><br/>
 										Årsak:
 										<xsl:if test="count(.//fs:Intervall)!=count(.//fs:Intervall[@V=$intervall])">
 											Forskjellige døgnintervall.&#160;
@@ -920,35 +922,52 @@
 	
 	<xsl:template match="m1:LegemiddelUtenMt">
 		<h2>Søknad SLV
-			<xsl:if test="string-length($vedlegg) != 0 and count($vedlegg//m15:SvarSLV) != 0">
-				&#160;-&#160;
-				<xsl:choose>
-					<xsl:when test="/.//mh:MsgId = $vedlegg//m15:ReseptId">
-						<xsl:if test="$vedlegg//m15:Innvilget/@V = 1">Innvilget</xsl:if>
-						<xsl:if test="$vedlegg//m15:Innvilget/@V = 2">Avslått</xsl:if>
-					</xsl:when>
-					<xsl:otherwise>
-						Vedlagte søknadssvars referanseid ikke i samsvar med reseptid
-					</xsl:otherwise>
-				</xsl:choose>
-			</xsl:if>
+			<xsl:choose>
+				<xsl:when test="string-length($vedlegg) != 0 and count($vedlegg//m15:SvarSLV) != 0">
+					&#160;-&#160;
+					<xsl:choose>
+						<xsl:when test="/.//mh:MsgId = $vedlegg//m15:ReseptId">
+							<xsl:if test="$vedlegg//m15:Innvilget/@V = 1">Innvilget</xsl:if>
+							<xsl:if test="$vedlegg//m15:Innvilget/@V = 2">Avslått</xsl:if>
+						</xsl:when>
+						<xsl:otherwise>
+							Vedlagte søknadssvars referanseid ikke i samsvar med reseptid
+						</xsl:otherwise>
+					</xsl:choose>
+				</xsl:when>
+			</xsl:choose>
 		</h2>
 		<table>
 			<tbody>
 				<tr>
-					<th width="25%">Begrunnelse</th>
-					<th width="25%">Produsent</th>
-					<th width="25%">Direktesøknad</th>
+					<th width="15%">Produsent</th>
+					<th width="10%">Direktesøknad</th>
+					<th>Begrunnelse</th>
 				</tr>
 				<tr>
-					<td width="25%"><xsl:value-of select="m1:Begrunnelse"/></td>
-					<td width="25%"><xsl:value-of select="m1:Produsent"/></td>
-					<td width="25%">
+					<td width="15%"><xsl:value-of select="m1:Produsent"/></td>
+					<td width="10%">
 						<xsl:choose>
 							<xsl:when test="m1:DirektesoknadSlv='true'">Ja</xsl:when>
 							<xsl:otherwise>Nei</xsl:otherwise>
 						</xsl:choose>
 					</td>
+					<td>
+				<xsl:choose>
+						<xsl:when test="string-length($vedlegg) !=0 and count($vedlegg//m15:SvarSLV)!=0">	
+							<xsl:choose>
+								<xsl:when test="/.//mh:MsgId = $vedlegg//m15:ReseptId">
+									<xsl:if test="$vedlegg//m15:Innvilget/@V = 1"><xsl:value-of select="m1:Begrunnelse"/></xsl:if>
+									<xsl:if test="$vedlegg//m15:Innvilget/@V = 2"><xsl:value-of select="$vedlegg//m15:BegrunnelseAvslag"/></xsl:if>
+								</xsl:when>
+							<xsl:otherwise>
+								Vedlagte søknadssvars referanseid ikke i samsvar med reseptid
+							</xsl:otherwise>
+							</xsl:choose>
+						</xsl:when>
+					</xsl:choose>
+				
+				</td>
 				</tr>
 			</tbody>
 		</table>

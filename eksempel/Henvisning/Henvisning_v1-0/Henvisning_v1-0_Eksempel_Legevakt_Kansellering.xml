@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Message xmlns="http://www.kith.no/xmlstds/henvisning/2005-07-08" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/henvisning/2005-07-08 Henvisning-v1.0.xsd">
+	<Type V="H" DN="Henvisning"/>
+	<MsgVersion>v1.0 2005-07-08</MsgVersion>
+	<MIGversion>v1.0 2005-07-08</MIGversion>
+	<GenDate V="2016-04-11T09:33:47"/>
+	<MsgId>6208d890-c5dd-11e6-9598-0800200c9a66</MsgId>
+	<ServReq>
+		<ServType V="C" DN="Kansellering"/>
+		<IssueDate V="2016-04-10T18:10:47"/>
+		<MsgDescr V="10" DN="Utredning/behandling"/>
+		<Id>4079f450-f2b7-11e6-9598-0800200c9a66</Id>
+		<Patient>
+			<Sex V="2" DN="Kvinne"/>
+			<DateOfBirth V="1969-11-13"/>
+			<Name>Danser, Line</Name>
+			<OffId>13116900216</OffId>
+			<TypeOffId V="FNR" DN="Fødselsnummer"/>
+			<PatRelHCP>
+				<Relation V="FLE" DN="Fastlege"/>
+				<HCP>
+					<Inst>
+						<Name>Kattskinnet legesenter</Name>
+						<HCPerson>
+							<Name>Rita Lin</Name>
+							<Id>9144900</Id>
+							<TypeId V="HPR" DN="HPR-nummer"/>
+							<!-- Helsepersonellnummer -->
+						</HCPerson>
+					</Inst>
+				</HCP>
+			</PatRelHCP>
+			<PatRelHCP>
+				<Relation V="HHE" DN="Henvisende helsepersonell"/>
+				<HCP>
+					<HCProf>
+						<Type V="LE" DN="Lege" />
+						<Name>Magnar Koman</Name>
+						<Id>9144889</Id>
+						<TypeId V="HPR" DN="HPR-nummer"/>
+						<!-- Helsepersonellnummer -->
+					</HCProf>
+					<Address>
+						<Type V="PST" DN="Postadresse"/>
+						<StreetAdr>Ølvegata 2</StreetAdr>
+						<PostalCode>7715</PostalCode>
+						<City>STEINKJER</City>
+						<TeleAddress V="tel:74141000"/>
+					</Address>
+				</HCP>
+			</PatRelHCP>
+			<Address>
+				<Type V="H" DN="Bostedsadresse"/>
+				<StreetAdr>Lungegaardsbakken 13</StreetAdr>
+				<PostalCode>5020</PostalCode>
+				<City>Bergen</City>
+			</Address>
+		</Patient>
+		<ServProvider>
+			<HCP>
+				<Inst>
+					<Name>ST OLAVS HOSPITAL HF</Name>
+					<Id>59</Id>
+					<TypeId V="HER" DN="HER-id"/>
+					<Dept>
+						<Name>Ortopedisk kirurgi</Name>
+						<Id>90998</Id>
+						<TypeId V="HER" DN="HER-id"/>
+					</Dept>
+				</Inst>
+			</HCP>
+		</ServProvider>
+		<Requester>
+			<HCP>
+				<Inst>
+					<Name>STEINKJER KOMMUNE</Name>
+					<Id>81923</Id>
+					<TypeId V="HER" DN="HER-id"/>
+					<Dept>
+						<Name>Legevakt</Name>
+						<Id>2550</Id>
+						<TypeId V="HER" DN="HER-id"/>
+					</Dept>
+				</Inst>
+			</HCP>
+		</Requester>
+		<CopyDest>
+			<HCP>
+				<Inst>
+					<Name>Kattskinnet legesenter</Name>
+					<Id>56704</Id>
+					<TypeId V="HER" DN="HER-id"/>
+					<HCPerson>
+						<Name>Rita Lin</Name>
+						<Id>258521</Id>
+						<TypeId V="HER" DN="HER-id"/>
+					</HCPerson>
+				</Inst>
+			</HCP>
+		</CopyDest>
+		<RefDoc>
+			<MsgType DN="Referanse" V="H"/>
+			<Id>cef6ac80-5f27-11df-a08a-0800200c9a66</Id>
+		</RefDoc>
+		<Diagnosis>
+			<Concept V="L88" S="2.16.578.1.12.4.1.1.7170" DN="Reumatoid artritt/reumatisk sykdom"/>
+		</Diagnosis>
+	</ServReq>
+</Message>

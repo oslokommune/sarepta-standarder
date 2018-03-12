@@ -5,19 +5,19 @@
 	<Versjon>1.6</Versjon>
 	<Identifikator>HIS 80821:2014</Identifikator>
 	<Utgitt>02/2014</Utgitt>
-	<Utgiver>Helsedirektoratet</Utgiver>
+	<Utgiver>Direktoratet for e-helse</Utgiver>
 
 	<Referansekatalogen>
-		<Beskrivelse>Rekvisisjon/henvisning - radiologi (v1.6) (HIS 80821:2014) </Beskrivelse>
-		<Referanse>https://ehelse.no/Sider/Rekvirering-av-medisinske-tjenester--Informasjonsmodell-og-XML-meldingsbeskrivelse-%e2%80%93-HIS-808212014.aspx</Referanse>
+		<Beskrivelse>Rekvirering av medisinske tjenester v1.6</Beskrivelse>
+		<Referanse>http://ehelse.no/HIS80821-2014</Referanse>
 	</Referansekatalogen>
 
 	<Status>Fastsatt som standard</Status>
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Rekvirering av medisinske tjenester. Informasjonsmodell og XML meldingsbeskrivelse (GitLab)</Beskrivelse>
-			<Referanse>kravdokument/rekvisisjon/HIS_80821_2014_Rekvisisjon-v1 6-2014-02-13.pdf</Referanse>
+			<Beskrivelse>Rekvirering av medisinske tjenester v1.6 (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/rekvisisjon/HIS_80821_2014 Rekvirering av medisinske tjenester v1.6 -korrigert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
 
@@ -42,6 +42,25 @@
 	<Visningsfiler>
 		<Visningsfil>
 			<Referanse>visningsfil/rekvisisjon/v1.6/rekvisisjon-v1_6-2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/rekvisisjon/rekvisisjon2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Felleskomponent for alle visningsfiler: smooth-visning.css</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/smooth-visning.css</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Felleskomponent for alle visningsfiler: ehelse-visning.css</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/ehelse-visning.css</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Felleskomponent for alle visningsfiler: eh-komponent1.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/eh-komponent1.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Felleskomponent for alle visningsfiler: eh-komponent2.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/eh-komponent2.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
 			<Beskrivelse>Felleskomponent for alle visningsfiler: KITH-visning.css</Beskrivelse>
@@ -120,93 +139,25 @@
 			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
-
-	<Testmateriell>
-		<Testfil>
-			<Beskrivelse>Syntaks-sjekk av XML-meldinger (XML-validering)</Beskrivelse>
-			<Referanse>https://validator.test.nhn.no/validering/index.cgi</Referanse>
-		</Testfil>
-	</Testmateriell>
-
+	
 	<Eksempler>
 		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/xml/Rekvisisjon virologi - v1.6.xml</Referanse>
+			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-6/Rekvisisjon_radiologi_enkel_v1-6_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/xml/Rekvisisjon svangerskap - v1.6.xml</Referanse>
+			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-6/Rekvisisjon_radiologi_enkel_v1-6_Endring.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/xml/Rekvisisjon serologi - v1.6.xml</Referanse>
+			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-6/Rekvisisjon_radiologi_enkel_v1-6_Kansellering.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/xml/Rekvisisjon rus - v1.6.xml</Referanse>
+			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-6/Rekvisisjon_radiologi_MR_v1-6_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/xml/Rekvisisjon mikrobiologi 1- v1.6.xml</Referanse>
+			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-6/Rekvisisjon_radiologi_MR_v1-6_Endring.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/xml/Rekvisisjon mikrobiologi 2 - v1.6.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/xml/Rekvisisjon Blodkult - v1.6.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/xml/Rekvisisjon biokjemi 1 - v1.6.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/xml/Rekvisisjon biokjemi 2 - v1.6.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/xml/Rekvisisjon biokjemi 3 - v1.6.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/xml/Rekvisisjon biokjemi 4 - v1.6.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/xml/Rekvisisjon biokjemi 5 - v1.6.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/xml/Rekvisisjon bakteriologi - v1.6.xml</Referanse>
-		</Eksempel>
-				<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/html/Rekvisisjon virologi - v1.6.html</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/html/Rekvisisjon svangerskap - v1.6.html</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/html/Rekvisisjon serologi - v1.6.html</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/html/Rekvisisjon rus - v1.6.html</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/html/Rekvisisjon mikrobiologi 1- v1.6.html</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/html/Rekvisisjon mikrobiologi 2 - v1.6.html</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/html/Rekvisisjon Blodkult - v1.6.html</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/html/Rekvisisjon biokjemi 1 - v1.6.html</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/html/Rekvisisjon biokjemi 2 - v1.6.html</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/html/Rekvisisjon biokjemi 3 - v1.6.html</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/html/Rekvisisjon biokjemi 4 - v1.6.html</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/html/Rekvisisjon biokjemi 5 - v1.6.html</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/rekvisisjon/1.6/html/Rekvisisjon bakteriologi - v1.6.html</Referanse>
+			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-6/Rekvisisjon_radiologi_MR_v1-6_Kansellering.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
-
 </StandardMetadata>

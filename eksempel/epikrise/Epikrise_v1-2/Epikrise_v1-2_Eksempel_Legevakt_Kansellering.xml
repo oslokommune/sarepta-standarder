@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- DETTE ER EN TESTMELDING MED FIKTIVE PERSONDATA  -->
+<!-- Elementer som inneholder  blir overskrevet med mottakers ønskede testdata før utsendelse av meldingen fra wizarden i samsvarstesten  -->
+<!-- Dato sist endret: 17.03.2016 (AL) -->
+<Message xmlns="http://www.kith.no/xmlstds/epikrise/2012-02-15" xmlns:po="http://www.kith.no/xmlstds/po/poKomponent/2009-06-30" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/epikrise/2012-02-15 Epikrise-v1.2.xsd">	
+	<Type V="EPIKRISE" DN="Epikrise"/><!-- 8279 -->
+	<MIGversion>v1.2 2012-02-15</MIGversion>
+	<GenDate V="2016-02-23T17:20:23"/><!--  -->
+	<MsgId>1d787460-c5d8-11e6-9598-0800200c9a66</MsgId>
+	<Status V="TEST" DN="Melding til testformål" /><!-- 8323 -->
+	<ServRprt>
+		<ServType V="C" DN="Kansellering"/>
+		<IssueDate V="2016-02-11T10:20:15"/>
+		<ApprDate V="2016-02-23T17:15:20"/>
+		<Status V="F" DN="Endelig rapport"/><!-- 7306 -->
+		<MsgDescr>Sykehusepikrise</MsgDescr>
+		<ServProvId>e2201290-b9fe-11e1-afa6-0800200c9a66</ServProvId>
+		<ServReq>
+			<ServType V="N" DN="Ny"/><!-- 7309 -->
+			<IssueDate V="2016-02-15T10:15:02"/>
+			<MsgDescr V="10" DN="Utredning/behandling"/>
+			<Id>f73d70a0-f059-11e1-aff1-0800200c9a66</Id>
+			<Diagnosis>
+				<Concept DN="Abdominalsmerte/krampe generell" V="D01" S="2.16.578.1.12.4.1.1.7170"/>
+			</Diagnosis>
+		</ServReq>
+		<Event>
+			<ReportedEvent>
+				<StartDateTime V="2016-02-16T08:45:17"/>
+				<EndDateTime V="2016-02-17T10:13:22"/>
+			</ReportedEvent>
+			<ServType V="N" DN="Ny"/>
+			<AdmOutcome V="1" DN="Ut til hjemmet"/>
+			<Service>
+				<AdmCat V="1" DN="Heldøgnsopphold"/>
+			</Service>
+			<InfItem>
+				<Observation>
+					<CodedDescr>
+						<Concept V="N211" DN="Sten i urinrør" S="2.16.578.1.12.4.1.1.7110"/>
+					</CodedDescr>
+				</Observation>
+				<Type V="H" DN="Hoveddiagnose"/>
+			</InfItem>
+			<InfItem>
+				<Observation>
+					<Description>Morfin</Description>
+				</Observation>
+				<Type V="CAVE" DN="Cave-opplysninger"/>
+			</InfItem>
+			<InfItem>
+				<Observation>
+					<Description>Paracet, tablett 500 mg, 3 tabl. ved behov. Endret igjen fra 1-2 tabl. ved behov.</Description>
+				</Observation>
+				<Type V="MEDB" DN="Legemiddelopplysning"/>
+			</InfItem>
+			<Comment>
+				<Heading V="AI" DN="Årsak til innleggelse"/>
+				<TextResultValue>Pasienten ble innlagt akutt med store kolikkpregede smerter i høyre flanke. Det var påvist blod i urinen.
+				</TextResultValue>
+			</Comment>
+			<Comment>
+				<Heading V="FO" DN="Forløp og behandling"/>
+				<TextResultValue>Forløp og behandling: &#13;&#10; Urinprøver, blodprøver og CT abdomen/bekken avdekket nyrestein. Behandlet i steinknuser med sjokkbølger. &#13;&#10; &#13;&#10; Vurdering: &#13;&#10; Man anser pasienten som ferdigbehandlet. &#13;&#10; &#13;&#10; Planer for videre oppfølging: &#13;&#10; Kontroll avtalt i kir.pol. 
+				</TextResultValue>
+			</Comment>
+			<Comment>
+				<Heading V="VU" DN="Vurdering"/>
+				<TextResultValue>
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<p>Man anser pas. som ferdigbehandlet etter nærmere 6 uker med i.v. penicillin, har lav CRP, afebril utskrivelsesdagen, befinner seg i god allmenntilstand uten tegn til hjertesvikt. Pas. skal fortsette med antibiotisk behandling pr. os i 4 uker etter utskrivelse. Pas. trenger fra nå av endokardittprofylakse ved tannbehandling, kir. inngrep og instrumentering via øvre lufteveier, munnhule, urinveier og endetarmen.</p>
+					</div>
+				</TextResultValue>
+			</Comment>
+			<Comment>
+				<Heading V="OP" DN="Planer for videre oppfølging"/>
+				<TextResultValue>
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<p>Det avtales ingen videre kontroller her. Pas. skal til egen lege om 4 uker etter avsluttet behandling med antibiotika for kontroll av BT, CRP samt urin.</p>
+					</div>
+				</TextResultValue>
+			</Comment>
+		</Event>
+		<Patient>
+			<Sex V="2" DN="Kvinne"/>
+			<DateOfBirth V="1969-11-13"/>
+			<Name>Danser, Line</Name>
+			<OffId>13116900216</OffId>
+			<TypeOffId V="FNR" DN="Fødselsnummer"/>
+			<PatRelHCP>
+				<Relation V="HHE" DN="Henvisende helsepersonell"/>
+				<HCP>
+					<HCProf>
+						<Type V="LE" DN="Lege"/>
+						<Name>Magnar Koman</Name>
+						<Id>9144889</Id>
+						<TypeId V="HPR" DN="HPR-nummer"/>
+					</HCProf>
+					<Address>
+						<Type V="WP" DN="Arbeidsadresse"/>
+						<TeleAddress V="tel:72431796"/>
+					</Address>
+				</HCP>
+			</PatRelHCP>
+			<PatRelHCP>
+				<!-- Pasientrelatert helsetjenesteenhet: Fastlege -->
+				<Relation V="FLE" DN="Fastlege"/>
+				<HCP>
+					<HCProf>
+							<Name>Rita Lin</Name>
+							<Id>9144900</Id>
+							<TypeId V="HPR" DN="HPR-nummer"/>
+							<!-- Helsepersonellnummer -->
+					</HCProf>
+					<Address>
+						<Type V="WP" DN="Arbeidsadresse"/>
+						<TeleAddress V="tel:72431796"/>
+					</Address>
+				</HCP>
+			</PatRelHCP>
+			<Address>
+				<Type V="H" DN="Bostedsadresse"/>
+				<StreetAdr>Åssiden 31</StreetAdr>
+				<PostalCode>3008</PostalCode>
+				<City>Drammen</City>
+			</Address>
+		</Patient>
+		<ServProvider>
+			<ComMethod V="EDI" DN="EDI"/><!-- 8235 -->
+			<HCP>
+				<Inst>
+					<Name>ST OLAVS HOSPITAL HF</Name>
+					<Id>59</Id>
+					<TypeId V="HER" DN="HER-id"/>
+					<Dept>
+						<Name>Ortopedisk kirurgi</Name>
+						<Id>90998</Id>
+						<TypeId V="HER" DN="HER-id"/>
+					</Dept>
+				</Inst>
+			</HCP>
+		</ServProvider>
+		<CopyDest>
+			<CopyDestRole>
+				<MsgType V="EPIKRISE" DN="Epikrise"/>
+				<ActComMethod V="EDI" DN="EDI"/>
+			</CopyDestRole>
+			<HCP>
+				<Inst>
+					<Name>Kattskinnet legesenter</Name>
+					<Id>56704</Id>
+					<TypeId V="HER" DN="HER-id"/>
+					<HCPerson>
+						<Name>Rita Lin</Name>
+						<Id>258521</Id>
+						<TypeId V="HER" DN="HER-id"/>
+					</HCPerson>
+				</Inst>
+			</HCP>
+		</CopyDest>
+		<Requester>
+			<Role V="REQ" DN="Rekvirent"/>
+			<ComMethod V="EDI" DN="EDI"/>
+			<HCP>
+				<Inst>
+					<Name>STEINKJER KOMMUNE</Name>
+					<Id>81923</Id>
+					<TypeId V="HER" DN="HER-id"/>
+					<Dept>
+						<Name>Legevakt</Name>
+						<Id>2550</Id>
+						<TypeId V="HER" DN="HER-id"/>
+					</Dept>
+				</Inst>
+			</HCP>
+		</Requester>
+		<RelServProvider>
+			<Relation V="AHP" DN="Ansvarlig helsepersonell"/>
+			<HCP>
+				<HCProf>
+					<Type V="LE" DN="Lege"/>
+					<Name>August September</Name>
+					<Id>9144897</Id>
+					<TypeId V="HPR" DN="HPR-nummer"/>
+				</HCProf>
+				<Address>
+					<Type V="WP" DN="Arbeidsadresse"/>
+					<TeleAddress V="tel:73869750" />
+				</Address>
+			</HCP>
+		</RelServProvider>
+	</ServRprt>
+</Message>

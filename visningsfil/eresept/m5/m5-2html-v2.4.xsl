@@ -5,39 +5,42 @@
 	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
 	xmlns:m5="http://www.kith.no/xmlstds/eresept/m5/2009-02-20" 
 	xmlns:m1="http://www.kith.no/xmlstds/eresept/m1/2010-05-01" 
-	xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
-	exclude-result-prefixes="mh m5 m1 xhtml">
+	exclude-result-prefixes="mh m5 m1">
 
 <!-- Visningsfil for eReseptmeldingen: M5 Tilbakekalling
 Inngår i KITHs visningsfiler versjon 10
 
-25-10-2016: La til variabel for visningsversjonnr
+27-03-2017: v3.1.1: Ny parameter for "visningStil". Ny stil "Smooth".
+25-10-2016: v3.1.0: La til variabel for visningsversjonnr
 28-02-2011: Første versjon
 
 MERK:
 - Importerer visningsfil for hodemeldingen -->
 
-	<xsl:import href="../../Hodemelding/v1.2/Hodemelding2html.xsl"/>
+	<!-- Disse importeres også i /m1/m1-2html-v2.5.xsl :
+	<xsl:import href="../../felleskomponenter/eh-komponent2.xsl"/>
+	-->
 	<xsl:import href="../m1/m1-2html-v2.4.xsl"/>
+	<xsl:import href="../../hodemelding/v1.2/Hodemelding2html.xsl"/>
 	
-<!-- Vedlegg i denne sammenhengen er en m1-melding -->
+	<!-- Vedlegg i denne sammenhengen er en m1-melding -->
 	<xsl:param name="vedlegg"/>
 
 
-	<xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" 
-		doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" 
-		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
-
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'eresept-m5-2.4 v3.1.0 '"/>
+	<xsl:variable name="versjon" select="'eresept-m5-2.4 - v3.1.1 '"/>
 
 	<xsl:template match="/">
-		<html xmlns="http://www.w3.org/1999/xhtml">
+		<html>
 			<head>
 				<title>Tilbakekalling</title>
 				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-				<style type="text/css"><xsl:value-of select="document('../../Felleskomponenter/KITH-visning.css')" disable-output-escaping="yes" /></style>
+				<style type="text/css">
+					<xsl:value-of select="document('../../felleskomponenter/KITH-visning.css')" disable-output-escaping="yes" />
+				</style>
+				<style type="text/css">
+					<xsl:value-of select="document('../../felleskomponenter/smooth-visning.css')" disable-output-escaping="yes"/>
+				</style>
 			</head>
 			<body>
 				<xsl:apply-templates/>

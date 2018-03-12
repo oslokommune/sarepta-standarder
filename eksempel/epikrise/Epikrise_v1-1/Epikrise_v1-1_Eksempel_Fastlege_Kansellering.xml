@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy 2008 sp1 -->
+<Message xmlns="http://www.kith.no/xmlstds/epikrise/2006-09-23" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/epikrise/2006-09-23 Epikrise-v1.1.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd">
+<!-- Ovenstående referanse må vise til meldingens XML-skjema (tilpasses lokalt) -->
+<!-- Opplysninger om meldingen -->
+	<Type V="E" DN="Epikrise"/>
+	<MIGversion>v1.1 2006-09-23</MIGversion>
+	<GenDate V="2015-05-24T12:09:00"/>
+	<MsgId>b0f96570-c5d1-11e6-9598-0800200c9a66</MsgId>
+	<ServRprt>
+<!-- Opplysninger om epikrisen -->
+		<ServType V="C" DN="Kansellering"/>
+		<IssueDate V="2015-05-20T12:10:00"/>
+		<ApprDate V="2015-05-24T15:24:00"/>
+		<Status V="F" DN="Endelig rapport"/>
+		<MsgDescr>Sykehusepikrise</MsgDescr>
+		<ServProvId>SSMED2002012345</ServProvId>
+<!-- Tilknyttet henvisning -->
+		<ServReq>
+			<ServType V="N" DN="Ny"/>
+			<IssueDate V="2015-05-11"/>
+			<MsgDescr>Søknad om innleggelse</MsgDescr>
+			<Id>FY020725A</Id>
+			<!--Innleggelsesdiagnose-->
+			<Diagnosis>
+				<Concept DN="Sukkersyke" V="T90" S="2.16.578.1.12.4.1.1.7170"/>
+				
+			</Diagnosis>
+		</ServReq>
+<!-- Pasientopplysninger -->
+		<Patient>
+			<Sex V="2" DN="Kvinne"/>
+			<DateOfBirth V="1969-11-13"/>
+			<Name>Danser, Line</Name>
+			<OffId>13116900216</OffId>
+			<TypeOffId V="FNR" DN="Fødselsnummer"/>
+			<!-- Pasientrelatert helsetjenesteenhet: Henvisende helsepersonell -->
+			<PatRelHCP>
+				<Relation V="HHE" DN="Henvisende helsepersonell"/>
+				<HCP>
+					<HCProf>
+						<Name>Rita Lin</Name>
+						<Id>258521</Id>
+						<TypeId V="HER" DN="HER-id"/><!-- 9051 -->
+					</HCProf>
+					<Address>
+						<Type V="WP" DN="Arbeidsadresse"/>
+						<TeleAddress V="tel:72431796"/>
+					</Address>
+				</HCP>
+			</PatRelHCP>	
+			<Address>
+				<Type V="H" DN="Bostedsadresse"/>
+				<StreetAdr>Åssiden 31</StreetAdr>
+				<PostalCode>3008</PostalCode>
+				<City>Drammen</City>
+			</Address>
+		</Patient>
+<!-- Tjenesteyter: sykehus/avdeling/kontaktperson for oppholdet -->
+			<ServProvider>
+		   <ComMethod V="EDI" DN="EDI"/>
+			<HCP>
+				<Inst>
+					<Name>ST OLAVS HOSPITAL HF</Name>
+					<Id>59</Id>
+					<TypeId V="HER" DN="HER-id"/>
+					<Dept>
+						<Name>Ortopedisk kirurgi</Name>
+						<Id>90998</Id>
+						<TypeId V="HER" DN="HER-id"/>
+					</Dept>
+				</Inst>
+			</HCP>
+		</ServProvider>
+		
+		<!-- Henvisende instans: Lege -->
+		<Requester>
+			<ComMethod V="EDI" DN="EDI"/>
+			<HCP>
+				<Inst>
+					<Name>Kattskinnet legesenter</Name>
+					<Id>56704</Id>
+					<TypeId V="HER" DN="HER-id"/><!-- 9051 -->
+					<HCPerson>
+						<Name>Rita Lin</Name>
+						<Id>258521</Id>
+						<TypeId V="HER" DN="HER-id"/><!-- 9051 -->
+					</HCPerson>
+				</Inst>
+				</HCP>
+		</Requester>
+		<RelServProvider>
+			<Relation V="AHP" DN="Ansvarlig helsepersonell"/>
+			<HCP>
+				<HCProf>
+						<Type V="LE" DN="Lege"/>
+						<Name>Overlege August September</Name>
+						<Id>9144897</Id>
+						<TypeId V="HPR" DN="HPR-nummer"/><!-- 8116 -->
+				</HCProf>
+				<Address>
+					<Type V="WP" DN="Arbeidsadresse" />
+					<TeleAddress V="tel:73869750" />
+				</Address>
+			</HCP>
+		</RelServProvider>
+		<RefDoc>
+			<MsgType DN="Referanse" V="E"/>
+			<Id>25904950-a0fd-11dd-ad8b-0800200c9a66</Id>
+			<MimeType>text/pdf</MimeType>	
+			<Description>Epikrise som kanselleres</Description>
+			<FileReference>https://git.sarepta.ehelse.no/publisert/standarder/blob/master/kravdokument/epikrise/HIS_80226_2006-epikrise_1.1.pdf</FileReference>
+		</RefDoc>
+	</ServRprt>
+</Message>

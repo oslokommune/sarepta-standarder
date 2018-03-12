@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>Vedlegg til meldinger</Navn>
+	<Versjon>2.0</Versjon>
+	<Identifikator>HIS 1036:2011</Identifikator>
+	<Utgitt>05/2011</Utgitt>
+	<Utgiver>Direktoratet for e-helse</Utgiver>
+	<Referansekatalogen>
+		<Beskrivelse>Vedlegg til meldinger</Beskrivelse>
+		<Referanse>http://ehelse.no/HIS1036-2011</Referanse>
+	</Referansekatalogen>
+	<Status>Fastsatt som standard</Status>
+
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>Vedlegg til meldinger (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/VedleggTilMeldinger/HIS_1036_2011-Vedlegg_til_meldinger -korrigert.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+
+
+</StandardMetadata>

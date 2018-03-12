@@ -6,12 +6,15 @@
 	<Identifikator>HIS 1024:2017</Identifikator>
 	<Utgitt>01/2017</Utgitt>
 	<Utgiver>Helsedirektoratet</Utgiver>
-
+   	<Referansekatalogen>
+		<Beskrivelse>Spørretjenesten pasientens frikortstatus</Beskrivelse>
+		<Referanse>http://ehelse.no/HIS1024-2017</Referanse>
+	</Referansekatalogen>
 	<Status>Fastsatt som standard</Status>
 	<Kravdokumenter>
 	    <Kravdokument>
-			<Beskrivelse>Spørretjenesten pasientens frikortstatus.Informasjonsmodell og XML meldingsbeskrivelse (GitLab)</Beskrivelse>
-			<Referanse>kravdokument/HELFO/HIS_1024_2017_Spørretjenesten pasientens frikortstatus.pdf</Referanse>
+			<Beskrivelse>Spørretjenesten pasientens frikortstatus (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/HELFO/HIS_1024_2017_Spørretjenesten pasientens frikortstatus__20170703.pdf</Referanse>
 		</Kravdokument>
 	 </Kravdokumenter>
 
