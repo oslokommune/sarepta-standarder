@@ -5,19 +5,19 @@
 	<Versjon>1.3</Versjon>
 	<Identifikator>HIS 80822:2008</Identifikator>
 	<Utgitt>12/2008</Utgitt>
-	<Utgiver>Direktoratet for e-helse</Utgiver>
+	<Utgiver>Helsedirektoratet</Utgiver>
 
 	<Referansekatalogen>
-		<Beskrivelse>Svarrapportering av medisinske tjenester v1.3</Beskrivelse>
-		<Referanse>http://ehelse.no/HIS80822-2008</Referanse>
+		<Beskrivelse>Svarrapportering av medisinske tjenester (v1.3) (HIS 80822:2008)</Beskrivelse>
+		<Referanse>https://ehelse.no/Sider/Svarrapportering-av-medisinske-tjenester--Informasjonsmodell-og-XML-meldingsbeskrivelse-–-HIS-808222008.aspx</Referanse>
 	</Referansekatalogen>
 
 	<Status>Fastsatt som standard</Status>
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Svarrapportering av medisinske tjenester v1.3 (GitLab)</Beskrivelse>
-			<Referanse>kravdokument/svarrapport/HIS_80822_2008 Svarrapportering av medisinske tjenester v1.3 -korrigert.pdf</Referanse>
+			<Beskrivelse>Svarrapportering av medisinske tjenester v. 1.3. XML meldingsbeskrivelse (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/HIS_80822_2008_Svarrapportering_av_medisinske_tjenester_v1.3-korrigert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
 
@@ -42,25 +42,6 @@
 	<Visningsfiler>
 		<Visningsfil>
 			<Referanse>visningsfil/svarrapport/v1.3/svarrapport-v1_3-2html.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/svarrapport/svarrapport2html.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: smooth-visning.css</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/smooth-visning.css</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: ehelse-visning.css</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/ehelse-visning.css</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: eh-komponent1.xsl</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/eh-komponent1.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: eh-komponent2.xsl</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/eh-komponent2.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
 			<Beskrivelse>Felleskomponent for alle visningsfiler: KITH-visning.css</Beskrivelse>
@@ -139,59 +120,12 @@
 			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
-	
-	<Eksempler>
-		<Eksempel>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-3/Svar_immunologi_v1-3_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-3/Svar_immunologi_v1-3_Endring.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-3/Svar_immunologi_v1-3_Kansellering.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-3/Svar_mikrobiologi_dyrkning_v1-3_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-3/Svar_mikrobiologi_virologi_v1-3_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-3/Svar_mikrobiologi_gruppert_v1-3_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-3/Svar_mikrobiologi_gruppert_v1-3_Endring.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-3/Svar_mikrobiologi_gruppert_v1-3_Kansellering.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-3/Svar_patologi_cytologi_v1-3_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-3/Svar_patologi_cytologi_v1-3_Endring.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-3/Svar_patologi_cytologi_v1-3_Kansellering.xml</Referanse>
-			</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-3/Svar_patologi_histologi_v1-3_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-3/Svar_patologi_histologi_v1-3_Endring.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-3/Svar_patologi_histologi_v1-3_Tillegg.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-3/Svar_radiologi_v1-3_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-3/Svar_radiologi_v1-3_Endring.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-3/Svar_radiologi_v1-3_Kansellering.xml</Referanse>
-		</Eksempel>
-	</Eksempler>
+
+	<Testmateriell>
+		<Testfil>
+			<Beskrivelse>Syntaks-sjekk av XML-meldinger (XML-validering)</Beskrivelse>
+			<Referanse>https://validator.test.nhn.no/validering/index.cgi</Referanse>
+		</Testfil>
+	</Testmateriell>
 
 </StandardMetadata>

@@ -21,7 +21,6 @@
 	<xs:include schemaLocation="iCalendar-availability-extension.xsd"/>
 	<xs:include schemaLocation="iCalendar-wscal-extensions.xsd"/>-->
 	<xs:include schemaLocation="iCalendar-DigitalDialogSpesialist-extensions.xsd"/>
-	<xs:include schemaLocation="iCalendar-DigitalDialogKommune-extensions.xsd"/>
 	<!-- =====================================================================
        3.4 Calendar Components
        ===================================================================== -->

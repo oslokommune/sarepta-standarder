@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 	<!-- Endringslogg
-    - 18.05.17: v3.1.2 - Endret fra Rekvirent til Mottaker og Tjenesteyter til Avsender under "Helsetjenesteenheter"
-								Endret logikk i visning av  Type opprinnelig visning. Tar nå tekst som er med i dis:MsgDescr, istedet for @V som ikke er med uansett siden det ikke er tillatt
-								Fjernet visning av henvisningsdiagnose i epikrise-diagnosevisning. Flyttet den til feltet "Opprinnelig henvisning"
-								Endret rekkefølgen på visning av "Helsetjenesteenheter"
-	- 27.03.17: v3.1.1: Ny parameter for "visningStil. Ny stil "Smooth".
-	- 25.10.16: v3.1.0: La til visningsversjonnr
+	- 25.10.16: La til visningsversjonnr
 	- 12.05.16: Komplettering av Helsetjenesteenheter-tabellen
 	- 05.11.15: Innføring av felles kodeverksfil
 	- 01.04.12: Ny grafisk layout
@@ -29,20 +24,24 @@
 <xsl:stylesheet version="1.0" 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
 	xmlns:dis="http://www.kith.no/xmlstds/epikrise/2006-09-23" 
+	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
 	xmlns:base="http://www.kith.no/xmlstds/base64container" 
 	exclude-result-prefixes="dis xhtml base">
 	
 	<!-- Import. Stien tilrettelegger for katalogstruktur med en meldings-katalog med versjons-kataloger inni. Sti må endres om slik struktur ikke benyttes -->
-	<xsl:import href="../../felleskomponenter/funksjoner.xsl"/>
-	<xsl:import href="../../felleskomponenter/kodeverk.xsl"/>
-	<xsl:import href="../../felleskomponenter/eh-komponent2.xsl"/>
+	<xsl:import href="../../Felleskomponenter/funksjoner.xsl"/>
+	<xsl:import href="../../Felleskomponenter/kodeverk.xsl"/>
 
+	<xsl:output method="html" encoding="UTF-8" indent="yes" omit-xml-declaration="no" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+
+	<!-- Variabel for hvilken stil visning har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
+	<xsl:variable name="stil" select="'No-line-doc'"/>
 	<!-- Variabel for standard antall kolonner i tabellene-->
 	<xsl:variable name="std-col" select="8"/>
 	<xsl:variable name="std-td" select="200"/>
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'epikrise1.1 - v3.1.2 '"/>
+	<xsl:variable name="versjon" select="'epikrise1.1 v3.1.0 '"/>
 	<!-- Variabler for beregning av colspan i legemiddel-tabellen -->
 	<xsl:variable name="med-stat-col" select="(($std-col)-2)*number(not(//dis:Medication/dis:UnitDose | //dis:Medication/dis:QuantitySupplied | //dis:Medication/dis:DosageText | //dis:Medication/dis:IntendedDuration | //dis:Medication/dis:Comment | //dis:InfItem[dis:Medication]/dis:StartDateTime | //dis:InfItem[dis:Medication]/dis:EndDateTime | //dis:InfItem[dis:Medication]/dis:OrgDate))+1"/>
 	<xsl:variable name="med-unit-col" select="(($std-col)-3)*number(not(//dis:Medication/dis:DosageText | //dis:Medication/dis:IntendedDuration | //dis:Medication/dis:Comment | //dis:InfItem[dis:Medication]/dis:StartDateTime | //dis:InfItem[dis:Medication]/dis:EndDateTime | //dis:InfItem[dis:Medication]/dis:OrgDate))+1"/>
@@ -67,15 +66,12 @@
 	<xsl:variable name="event-ass-col" select="(($std-col)-1-number(boolean(//dis:Event/dis:EventLocation))-number(boolean(//dis:Event/dis:ReportedEvent | //dis:Event/dis:ExpDuration))-number(boolean(//dis:Event/dis:AdmOutcome))-number(boolean(//dis:Event/dis:Priority)))"/>
 
 	<xsl:template match="/">
-		<html>
+		<html xmlns="http://www.w3.org/1999/xhtml">
 			<head>
 				<title>Epikrise</title>
 				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 				<style type="text/css">
-					<xsl:value-of select="document('../../felleskomponenter/KITH-visning.css')" disable-output-escaping="yes"/>
-				</style>
-				<style type="text/css">
-					<xsl:value-of select="document('../../felleskomponenter/smooth-visning.css')" disable-output-escaping="yes"/>
+					<xsl:value-of select="document('../../Felleskomponenter/KITH-visning.css')" disable-output-escaping="yes"/>
 				</style>
 			</head>
 			<body>
@@ -149,15 +145,15 @@
 	<xsl:template match="dis:Patient" mode="hode">
 		<div>
 			<xsl:value-of select="dis:Name"/>&#160;
-			<span class="strong">
+			<b>
 				<xsl:for-each select="dis:TypeOffId">
 					<xsl:call-template name="k-8116"/>
-				</xsl:for-each>:&#160;</span>
+				</xsl:for-each>:&#160;</b>
 				<xsl:value-of select="dis:OffId"/>&#160;
 		</div>
 		<xsl:if test="dis:DateOfDeath">
 			<div>
-				<span class="strong">Dødsdato:&#160;</span>
+				<b>Dødsdato:&#160;</b>
 				<xsl:call-template name="skrivUtTS">
 					<xsl:with-param name="oppgittTid" select="dis:DateOfDeath/@V"/>
 				</xsl:call-template>
@@ -242,7 +238,7 @@
 	</xsl:template>
 	<xsl:template match="dis:TeleAddress" mode="hode">
 		<div>
-			<span class="strong">
+			<b>
 				<xsl:choose>
 					<xsl:when test="starts-with(@V, 'tel:') or starts-with(@V, 'callto:')">Telefon</xsl:when>
 					<xsl:when test="starts-with(@V, 'fax:')">Faks</xsl:when>
@@ -251,7 +247,7 @@
 						<xsl:value-of select="substring-before(@V, ':')"/>
 					</xsl:otherwise>
 				</xsl:choose>
-			</span>&#160;<xsl:value-of select="substring-after(@V, ':')"/>&#160;
+			</b>&#160;<xsl:value-of select="substring-after(@V, ':')"/>&#160;
 		</div>
 	</xsl:template>
 	<!-- Hoveddokumentet -->
@@ -287,24 +283,22 @@
 				</tbody>
 			</table>
 			<!-- Overskrift og tabell for Diagnoser -->
-			<xsl:if test="//dis:InfItem[dis:Type/@V='H' or dis:Type/@V='B'] or //dis:DiagComment ">
+			<xsl:if test="//dis:Diagnosis or //dis:DiagComment or //dis:ReasonAsText[dis:Heading/@V='DIAG'] or //dis:InfItem[dis:Type/@V='H' or dis:Type/@V='B']">
 				<xsl:variable name="id1">
 					<xsl:value-of select="concat('Diagnosis',$position)"/>
 				</xsl:variable>
 				<h2 id="{$id1}">Diagnoser</h2>
 				<table>
 					<tbody>
+						<xsl:apply-templates select="//dis:Diagnosis"/>
+						<xsl:apply-templates select="//dis:DiagComment"/>
+						<xsl:apply-templates select="//dis:ReasonAsText[dis:Heading/@V='DIAG']"/>
 						<xsl:for-each select="//dis:InfItem[dis:Type/@V='H']">
 							<xsl:apply-templates/>
 						</xsl:for-each>
 						<xsl:for-each select="//dis:InfItem[dis:Type/@V='B']">
 							<xsl:apply-templates/>
 						</xsl:for-each>
-						<!-- Dette gjelder for henvisningsgrunn
-						<xsl:apply-templates select="//dis:Diagnosis"/>
-						<xsl:apply-templates select="//dis:ReasonAsText[dis:Heading/@V='DIAG']"/>
-						-->
-						<xsl:apply-templates select="//dis:DiagComment"/>
 					</tbody>
 				</table>
 			</xsl:if>
@@ -634,48 +628,11 @@
 			<h2 id="{$id31}">Helsetjenesteenheter</h2>
 			<table>
 				<tbody>
-					<!-- For Avsender -->
-					<xsl:for-each select="dis:ServProvider">
+					<xsl:for-each select="dis:ServProvider | dis:Requester | dis:CopyDest | .//dis:RelServProvider | .//dis:Origin | .//dis:RelHCProvider | .//dis:PatRelHCP">
 						<xsl:apply-templates select=".">
 							<xsl:with-param name="col" select="$std-col"/>
 						</xsl:apply-templates>
 					</xsl:for-each>
-					<!-- For mottaker -->
-					<xsl:for-each select="dis:Requester">
-						<xsl:apply-templates select=".">
-							<xsl:with-param name="col" select="$std-col"/>
-						</xsl:apply-templates>
-					</xsl:for-each>
-					<!-- For kopimottaker -->
-					<xsl:for-each select="dis:CopyDest">
-						<xsl:apply-templates select=".">
-							<xsl:with-param name="col" select="$std-col"/>
-						</xsl:apply-templates>
-					</xsl:for-each>
-					<!-- For ansvarlig helsepersonell -->
-					<xsl:for-each select=".//dis:RelServProvider">
-						<xsl:apply-templates select=".">
-							<xsl:with-param name="col" select="$std-col"/>
-						</xsl:apply-templates>
-					</xsl:for-each>
-					<!-- For ansvarlig for opplysninger -->
-					<xsl:for-each select=".//dis:Origin">
-						<xsl:apply-templates select=".">
-							<xsl:with-param name="col" select="$std-col"/>
-						</xsl:apply-templates>
-					</xsl:for-each>	
-					<!-- For ansvarlig for noe informasjon -->
-					<xsl:for-each select=".//dis:RelHCProvider">
-						<xsl:apply-templates select=".">
-							<xsl:with-param name="col" select="$std-col"/>
-						</xsl:apply-templates>
-					</xsl:for-each>	
-					<!-- For pasientrelatert helsetjenesteenhet -->
-					<xsl:for-each select=".//dis:PatRelHCP">
-						<xsl:apply-templates select=".">
-							<xsl:with-param name="col" select="$std-col"/>
-						</xsl:apply-templates>
-					</xsl:for-each>	
 				</tbody>
 			</table>
 			<!-- Hendelse -->
@@ -1003,7 +960,6 @@
 	</xsl:template>
 	<!-- Visning av Henvisning -->
 	<xsl:template match="dis:ServReq">
-	   
 		<xsl:variable name="color2">
 			<xsl:choose>
 				<xsl:when test="dis:ServType[@V='M' or @V='C' or @V='O']">red</xsl:when>
@@ -1014,7 +970,9 @@
 			<xsl:if test="dis:MsgDescr">
 				<th>Type</th>
 				<td width="{((($std-col)-2)*number(not(dis:IssueDate | dis:ReceiptDate | dis:ReqComment))+1)*$std-td}px" colspan="{(($std-col)-2)*number(not(dis:IssueDate | dis:ReceiptDate | dis:ReqComment))+1}">
-					<xsl:value-of select="child::*[local-name()='MsgDescr']"/> <!-- For versjon av epikrise hvor MsgDescr er kith:ST -->
+					<xsl:for-each select="dis:MsgDescr">
+						<xsl:call-template name="k-8455"/>
+					</xsl:for-each>
 					<xsl:for-each select="dis:ServType[@V!='N']">
 						&#160;<font color="{$color2}"><xsl:call-template name="k-7309"/></font>
 					</xsl:for-each>
@@ -1044,77 +1002,33 @@
 					</xsl:call-template>
 				</td>
 			</xsl:if>
-			
 		</tr>
-		<tr>
-			<xsl:if test="//dis:Diagnosis or //dis:DiagComment or //dis:ReasonAsText[dis:Heading/@V='DIAG']">
-				<xsl:choose>
-					<xsl:when test="count(child::*[local-name()='Diagnosis'])>1">
-						<th>Diagnoser</th>
-						<td></td>
-						<tr></tr> 
-					</xsl:when>
-					<xsl:otherwise>
-						<th>Diagnose</th>
-					</xsl:otherwise>
-				</xsl:choose>
-				<xsl:for-each select="//dis:Diagnosis">
-				<!-- 	<th>Diagnose:</th> -->
-					<td colspan="2">
-						<xsl:value-of select="dis:Concept/@V"/>&#160;
-						<xsl:if test="contains(dis:Concept/@S, '7170')">(ICPC)&#160;</xsl:if>
-						<xsl:if test="contains(dis:Concept/@S, '7110')">(ICD-10)&#160;</xsl:if>
-						<xsl:if test="dis:Concept/@DN or dis:Concept/@OT">
-							<xsl:for-each select="dis:Concept">
-								<xsl:call-template name="k-dummy"/>
-							</xsl:for-each>
-					    </xsl:if>
-						<xsl:for-each select="dis:Modifier">
-							<xsl:if test="dis:Value/@DN or dis:Value/@OT">
-								<xsl:for-each select="dis:Value">, 
-									<xsl:call-template name="k-dummy"/>
-								</xsl:for-each>
-							</xsl:if>
-						</xsl:for-each>
-					</td>
-					<tr></tr> 
-				</xsl:for-each>
-			</xsl:if>		
-		
 		<xsl:apply-templates select="dis:ReasonAsText"/>
-		</tr>
-		
 	</xsl:template>
 	<!-- Visning av Diagnose -->
 	<xsl:template match="dis:Diagnosis | dis:DiagComment | dis:CodedDescr | dis:CodedComment">
-	
-		<xsl:variable name="HovedDiagnose">
-			<xsl:choose>
-				<xsl:when test="../../dis:Type/@V='H'">bold</xsl:when>
-				<xsl:otherwise>normal</xsl:otherwise>
-			</xsl:choose>
-		</xsl:variable>
 		<tr>
-			<th style="font-weight:{$HovedDiagnose}">
+			<th>
 				<xsl:value-of select="dis:Concept/@V"/>&#160;
 				<xsl:if test="contains(dis:Concept/@S, '7170')">(ICPC)</xsl:if>
 				<xsl:if test="contains(dis:Concept/@S, '7110')">(ICD-10)</xsl:if>
 			</th>
-			
-			<td style="font-weight:{$HovedDiagnose}" width="{((($std-col)-2)*number(not(dis:Modifier))+1)*$std-td}px" colspan="{(($std-col)-2)*number(not(dis:Modifier))+1}">
+			<td width="{((($std-col)-2)*number(not(dis:Modifier))+1)*$std-td}px" colspan="{(($std-col)-2)*number(not(dis:Modifier))+1}">
 				<xsl:if test="dis:Concept/@DN or dis:Concept/@OT">
 					<xsl:for-each select="dis:Concept">
 						<xsl:call-template name="k-dummy"/>
 					</xsl:for-each>
 				</xsl:if>
-				<xsl:for-each select="dis:Modifier">
-					<xsl:if test="dis:Value/@DN or dis:Value/@OT">
-				    	<xsl:for-each select="dis:Value">, 
-					        <xsl:call-template name="k-dummy"/>
-					    </xsl:for-each>
-					</xsl:if>
-				</xsl:for-each>
 			</td>
+			<xsl:if test="dis:Modifier">
+				<td colspan="{($std-col)-2}">
+					<xsl:for-each select="dis:Modifier">
+						<div><b><xsl:call-template name="k-7305"/>&#160;</b>
+							<xsl:value-of select="dis:Value/@V"/>&#160;-&#160;<xsl:value-of select="dis:Value/@DN"/>
+						</div>
+					</xsl:for-each>
+				</td>
+			</xsl:if>
 		</tr>
 	</xsl:template>
 	<!-- Visning av Begrunnelse for / kommentar til henvisningen -->
@@ -1225,7 +1139,7 @@
 				</div>
 				<xsl:for-each select="dis:Spec">
 					<div>
-						<span class="strong">Spesifisert:</span>&#160;
+						<b>Spesifisert:</b>&#160;
 						<xsl:call-template name="k-dummy"/>
 					</div>
 				</xsl:for-each>
@@ -1243,7 +1157,7 @@
 			</xsl:for-each>
 			<xsl:for-each select="dis:NumResult">
 				<xsl:for-each select="dis:ArithmeticComp">
-					<xsl:call-template name="k-8239"/>&#160;
+					<xsl:call-template name="k-8239"/>
 				</xsl:for-each>
 				<xsl:value-of select="dis:NumResultValue/@V"/>&#160;<xsl:value-of select="dis:NumResultValue/@U"/>&#160;
 				<xsl:for-each select="../dis:DevResultInd">
@@ -1262,7 +1176,7 @@
 			</xsl:for-each>
 			<xsl:if test="dis:Comment">
 				<div>
-					<span class="strong">Kommentar:</span>&#160;<xsl:call-template name="line-breaks"><xsl:with-param name="text" select="dis:Comment"/></xsl:call-template>
+					<b>Kommentar:</b>&#160;<xsl:call-template name="line-breaks"><xsl:with-param name="text" select="dis:Comment"/></xsl:call-template>
 				</div>
 			</xsl:if>
 		</td>
@@ -1436,7 +1350,7 @@
 					<tr><td colspan="{$std-col}"><hr/></td></tr>
 				</xsl:if>
 				<tr>
-					<th rowspan="{last()+1}">Advarsel til avsender</th>
+					<th rowspan="{last()+1}">Advarsel til tjenesteyter</th>
 					<xsl:if test="..//dis:PatientPrecaution/dis:Precaution">
 						<th colspan="{(($std-col)-2)*number(not(..//dis:PatientPrecaution/dis:StartDateTime | ..//dis:PatientPrecaution/dis:EndDateTime))+1}">Advarsel</th>
 					</xsl:if>
@@ -1521,12 +1435,12 @@
 	<xsl:template match="dis:Event">
 		<tr>
 			<td width="{$event-type-col*$std-td}px" colspan="{$event-type-col}">
-				<span class="strong">
+				<b>
 					<xsl:if test="local-name(..)=&quot;Event&quot;">Del-hendelse:&#160;</xsl:if>
 					<xsl:for-each select="dis:Service/dis:AdmCat">
 						<xsl:call-template name="k-8240"/>&#160;
 					</xsl:for-each>
-				</span>
+				</b>
 				<xsl:if test="dis:ServType/@V != &quot;N&quot;">
 					<div><b>Tjenstetype:&#160;</b>
 						<xsl:for-each select="dis:ServType">
@@ -1578,13 +1492,13 @@
 			<xsl:if test="..//dis:ReportedEvent/dis:StartDateTime or ..//dis:ReportedEvent/dis:EndDateTime or ..//dis:ExpDuration">
 				<td width="{$event-time-col*$std-td}px" colspan="{$event-time-col}">
 					<xsl:if test="dis:ReportedEvent/dis:StartDateTime">
-						<span class="strong">Start:&#160;</span>
+						<b>Start:&#160;</b>
 						<xsl:call-template name="skrivUtTS">
 							<xsl:with-param name="oppgittTid" select="dis:ReportedEvent/dis:StartDateTime/@V"/>
 						</xsl:call-template>
 					</xsl:if>
 					<xsl:if test="dis:ReportedEvent/dis:EndDateTime">
-						<span class="strong">Slutt:&#160;</span>
+						<b>Slutt:&#160;</b>
 						<xsl:call-template name="skrivUtTS">
 							<xsl:with-param name="oppgittTid" select="dis:ReportedEvent/dis:EndDateTime/@V"/>
 						</xsl:call-template>
@@ -1592,13 +1506,13 @@
 					<xsl:if test="dis:EventLocation/dis:StartDateTime or dis:EventLocation/dis:EndDateTime">
 						<div>
 							<xsl:if test="dis:EventLocation/dis:StartDateTime">
-								<span class="strong">Lokasjonstart:&#160;</span>
+								<b>Lokasjonstart:&#160;</b>
 								<xsl:call-template name="skrivUtTS">
 									<xsl:with-param name="oppgittTid" select="dis:EventLocation/dis:StartDateTime/@V"/>
 								</xsl:call-template>
 							</xsl:if>
 							<xsl:if test="dis:EventLocation/dis:EndDateTime">
-								<span class="strong">Lokasjonslutt:&#160;</span>
+								<b>Lokasjonslutt:&#160;</b>
 								<xsl:call-template name="skrivUtTS">
 									<xsl:with-param name="oppgittTid" select="dis:EventLocation/dis:EndDateTime/@V"/>
 								</xsl:call-template>
@@ -1646,7 +1560,7 @@
 	<xsl:template match="dis:ServProvider">
 		<xsl:param name="col"/>
 		<tr>
-			<th colspan="{$col}" class="h3">Avsender<xsl:if test="dis:HCP/dis:MedSpeciality"> - Spesialitet:&#160;<xsl:for-each select="dis:HCP/dis:MedSpeciality">
+			<th colspan="{$col}" class="h3">Tjenesteyter<xsl:if test="dis:HCP/dis:MedSpeciality"> - Spesialitet:&#160;<xsl:for-each select="dis:HCP/dis:MedSpeciality">
 						<xsl:choose>
 							<xsl:when test="contains(@S, '7426')">
 								<xsl:call-template name="k-7426"/>
@@ -1672,7 +1586,7 @@
 	<xsl:template match="dis:Requester">
 		<xsl:param name="col"/>
 		<tr>
-			<th colspan="{$col}" class="h3">Mottaker<xsl:if test="dis:HCP/dis:MedSpeciality"> - Spesialitet:&#160;<xsl:for-each select="dis:HCP/dis:MedSpeciality">
+			<th colspan="{$col}" class="h3">Rekvirent<xsl:if test="dis:HCP/dis:MedSpeciality"> - Spesialitet:&#160;<xsl:for-each select="dis:HCP/dis:MedSpeciality">
 						<xsl:choose>
 							<xsl:when test="contains(@S, '7426')">
 								<xsl:call-template name="k-7426"/>

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 	<!-- Endringslogg
-	- 15.05.17: v3.1.3: Endret tekst på akkreditering for prøvetaking og resultat. Endret tekst fra tjenesteyter til avsender og mottaker
-	- 27.03.17: v3.1.2: Ny parameter for "visningStil. Ny stil "Smooth"
-	- 03.01.17: v3.1.1: Lagt til konvertering av linjeskift for felt ResultItem/StructuredInfo/TextInfo/Text
+	- 03.01.17: (v3.1.1) Lagt til konvertering av linjeskift for felt ResultItem/StructuredInfo/TextInfo/Text
 	- 24.04.16: Historikk får egen tabell. Egne kolonner i undersøkelsestabellen for prøve-referanser. Bruk av kodeverk 8212 vises med OT. Bruk av 7010 vises med V og DN.
 	- 11.04.16: Fjernet gjennomstreking av historikk
 	- 15.05.14: La til import av kodeverk-fil
@@ -28,20 +26,15 @@
 	- Fravær av obligatoriske element kan gi tomme bokser/rader
 	- Fravær av DN-attributt (ev. OT-attributt) kan gi {Ukjent kode} i visningen
 	-->
-<xsl:stylesheet version="1.0" 
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-	xmlns:lsr="http://www.kith.no/xmlstds/labsvar/2012-02-15" 
-	xmlns:base="http://www.kith.no/xmlstds/base64container" 
-	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
-	exclude-result-prefixes="lsr base xhtml">
-
-	<xsl:import href="../../felleskomponenter/funksjoner.xsl"/>
-	<xsl:import href="../../felleskomponenter/kodeverk.xsl"/>
-	<xsl:import href="../../felleskomponenter/eh-komponent2.xsl"/>
-
-
+<xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lsr="http://www.kith.no/xmlstds/labsvar/2012-02-15" xmlns:base="http://www.kith.no/xmlstds/base64container" xmlns:xhtml="http://www.w3.org/1999/xhtml" exclude-result-prefixes="lsr base xhtml">
+	<xsl:import href="../../Felleskomponenter/funksjoner.xsl"/>
+	<xsl:import href="../../Felleskomponenter/kodeverk.xsl"/>
+	<xsl:output method="html" encoding="utf-8" indent="yes" omit-xml-declaration="yes" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+	<!-- Variabel-deklarasjon -->
+	<!-- Variabel for hvilken stil visning har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
+	<xsl:variable name="stil" select="'No-line-doc'"/>
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'svar1.4 - v3.1.3'"/>
+	<xsl:variable name="versjon" select="'svar1.4 - v3.1.1'"/>
 	<!-- Variabler for kolonnebredde -->
 	<xsl:variable name="structured-col-width" select="'40%'"/>
 	<xsl:variable name="structured-head-width" select="'20%'"/>
@@ -65,18 +58,14 @@
 	<xsl:variable name="date-col" select="(($result-col)-1-number(boolean(//lsr:Investigation))-number(boolean(//lsr:TextResult or //lsr:Interval or //lsr:DateResult or //lsr:NumResult))-number(boolean(//lsr:IdResultItem))-number(boolean(//lsr:RefIdResultItem))-number(boolean(//lsr:RefInterval)))*number(not(//lsr:DescrDate | //lsr:CounterSignDate | //lsr:MedicalValidationDate | //lsr:ResultItem/lsr:RelServProv | //lsr:ResultItem/lsr:Accredited | //lsr:StructuredInfo | //lsr:Investigation/lsr:Comment | //lsr:Investigation/lsr:Spec | //lsr:ResultItem/lsr:Comment | //lsr:ResultItem/lsr:DiagComment | //lsr:RefAnalysedSubject | //lsr:StatusInvestigation))+1"/>
 	<xsl:variable name="relserv-col" select="(($result-col)-1-number(boolean(//lsr:Investigation))-number(boolean(//lsr:TextResult or //lsr:Interval or //lsr:DateResult or //lsr:NumResult))-number(boolean(//lsr:IdResultItem))-number(boolean(//lsr:RefIdResultItem))-number(boolean(//lsr:RefInterval))-number(boolean(//lsr:InvDate or //lsr:StatusChangeDate or //lsr:DescrDate or //lsr:CounterSignDate or //lsr:MedicalValidationDate)))*number(not(//lsr:ResultItem/lsr:Accredited | //lsr:StructuredInfo | //lsr:Investigation/lsr:Comment | //lsr:Investigation/lsr:Spec | //lsr:ResultItem/lsr:Comment | //lsr:ResultItem/lsr:DiagComment | //lsr:RefAnalysedSubject | //lsr:StatusInvestigation))+1"/>
 	<xsl:variable name="tillegg-col" select="($result-col)-number(boolean(//lsr:Investigation))-number(boolean(//lsr:TextResult or //lsr:Interval or //lsr:DateResult or //lsr:NumResult))-number(boolean(//lsr:IdResultItem))-number(boolean(//lsr:RefIdResultItem))-number(boolean(//lsr:RefInterval))-number(boolean(//lsr:InvDate or //lsr:StatusChangeDate or //lsr:DescrDate or //lsr:CounterSignDate or //lsr:MedicalValidationDate))-number(boolean(//lsr:ResultItem/lsr:RelServProv))"/>
-
 	<!-- Meldingsstart -->
 	<xsl:template match="/">
-		<html>
+		<html xmlns="http://www.w3.org/1999/xhtml">
 			<head>
 				<title>Svarrapport</title>
 				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 				<style type="text/css">
-					<xsl:value-of select="document('../../felleskomponenter/KITH-visning.css')" disable-output-escaping="yes"/>
-				</style>
-				<style type="text/css">
-					<xsl:value-of select="document('../../felleskomponenter/smooth-visning.css')" disable-output-escaping="yes"/>
+					<xsl:value-of select="document('../../Felleskomponenter/KITH-visning.css')" disable-output-escaping="yes"/>
 				</style>
 			</head>
 			<body>
@@ -84,7 +73,6 @@
 			</body>
 		</html>
 	</xsl:template>
-
 	<xsl:template match="lsr:Message">
 		<xsl:for-each select="lsr:ServReport">
 			<!-- utelater meldingsid og kommunikasjonsinformasjon -->
@@ -93,7 +81,6 @@
 			<xsl:call-template name="Footer"/>
 		</xsl:for-each>
 	</xsl:template>
-
 	<!-- Header - avsender og mottaker-informasjon -->
 	<xsl:template name="Header">
 		<div class="No-line-top">
@@ -168,15 +155,15 @@
 	<xsl:template match="lsr:Patient" mode="hode">
 		<div>
 			<xsl:value-of select="lsr:Name"/>&#160;
-			<span class="strong">
+			<b>
 				<xsl:for-each select="lsr:TypeOffId">
 					<xsl:call-template name="k-8116"/>
-				</xsl:for-each>:&#160;</span>
+				</xsl:for-each>:&#160;</b>
 			<xsl:value-of select="lsr:OffId"/>&#160;
 		</div>
 		<xsl:if test="lsr:DateOfDeath">
 			<div>
-				<span class="strong">Dødsdato:&#160;</span>
+				<b>Dødsdato:&#160;</b>
 				<xsl:call-template name="skrivUtTS">
 					<xsl:with-param name="oppgittTid" select="lsr:DateOfDeath/@V"/>
 				</xsl:call-template>
@@ -273,7 +260,7 @@
 	</xsl:template>				
 	<xsl:template match="lsr:TeleAddress" mode="hode">
 		<div>
-			<span class="strong">
+			<b>
 				<xsl:choose>
 					<xsl:when test="starts-with(@V, 'tel:') or starts-with(@V, 'callto:')">Telefon</xsl:when>
 					<xsl:when test="starts-with(@V, 'fax:')">Faks</xsl:when>
@@ -282,7 +269,7 @@
 						<xsl:value-of select="substring-before(@V, ':')"/>
 					</xsl:otherwise>
 				</xsl:choose>
-			</span>&#160;<xsl:value-of select="substring-after(@V, ':')"/>&#160;
+			</b>&#160;<xsl:value-of select="substring-after(@V, ':')"/>&#160;
 		</div>
 	</xsl:template>
 	<!-- Hoveddokument -->
@@ -627,7 +614,7 @@
 								<xsl:with-param name="oppgittTid" select="../lsr:GenDate/@V"/>
 							</xsl:call-template>
 						</td>
-						<th>Avsenders id</th>
+						<th>Tjenesteyters id</th>
 						<td width="{$std-td}px">
 							<xsl:value-of select="lsr:ServProvId"/>
 						</td>
@@ -742,7 +729,7 @@
 					</xsl:for-each>
 					<xsl:for-each select="lsr:CodedComment[contains(@S,'8272')]">
 						<xsl:if test="position()=1">
-							<span class="strong">Anbefaler ny undersøkelse:&#160;</span>
+							<b>Anbefaler ny undersøkelse:&#160;</b>
 						</xsl:if>
 						<xsl:call-template name="k-8272"/>
 						<xsl:choose>
@@ -752,7 +739,7 @@
 					</xsl:for-each>
 					<xsl:for-each select="lsr:CodedComment[contains(@S,'8273')]">
 						<xsl:if test="position()=1">
-							<span class="strong">Hastegrad:&#160;</span>
+							<b>Hastegrad:&#160;</b>
 						</xsl:if>
 						<xsl:call-template name="k-8273"/>&#160;
 					</xsl:for-each>
@@ -1145,7 +1132,7 @@
 					</td>
 				</xsl:if>
 				<xsl:if test="lsr:IdByServProvider">
-					<th>Avsenders&#160;id</th>
+					<th>Tjenesteyters&#160;id</th>
 					<td width="{((($col)-2-number(boolean(../lsr:Type or ../lsr:TypeCoded))*2)*number(not(lsr:CollectedSample | lsr:CollectedStudyProduct))+1)*$std-td}px" colspan="{(($col)-2-number(boolean(../lsr:Type or ../lsr:TypeCoded))*2)*number(not(lsr:CollectedSample | lsr:CollectedStudyProduct))+1}">
 						<xsl:value-of select="lsr:IdByServProvider"/>
 					</td>
@@ -1264,7 +1251,7 @@
 						</xsl:for-each>
 						<xsl:if test="lsr:Pretreatment/lsr:TextResultValue">
 							<div>
-								<span class="strong">Beskrivelse:&#160;</span>
+								<b>Beskrivelse:&#160;</b>
 								<xsl:call-template name="line-breaks">
 									<xsl:with-param name="text" select="lsr:Pretreatment/lsr:TextResultValue"/>
 								</xsl:call-template>
@@ -1276,8 +1263,8 @@
 					<th>Akkreditert</th>
 					<td width="{((($col)-2-count(lsr:AnatomicalOrigin | lsr:PreservMaterial | lsr:Pretreatment)*2)*number(not(lsr:RelServProv))+1)*$std-td}px" colspan="{(($col)-2-count(lsr:AnatomicalOrigin | lsr:PreservMaterial | lsr:Pretreatment)*2)*number(not(lsr:RelServProv))+1}">
 						<xsl:choose>
-							<xsl:when test="lsr:Accredited/@V='true'">Prosedyren er akkreditert</xsl:when>
-							<xsl:otherwise>Prosedyren er ikke akkreditert</xsl:otherwise>
+							<xsl:when test="lsr:Accredited/@V='true'">Resultatet er akkreditert</xsl:when>
+							<xsl:otherwise>Resultatet er ikke akkreditert</xsl:otherwise>
 						</xsl:choose>
 					</td>
 				</xsl:if>
@@ -1351,7 +1338,7 @@
 			<xsl:if test="//lsr:Investigation or //lsr:ResultItem[lsr:TextResult/lsr:Heading/@V='GR']">
 				<td width="{$investigation-col*$result-td}px" colspan="{$investigation-col}">
 					<xsl:if test="lsr:TextResult/lsr:Heading/@V='GR'">
-						<span class="strong">Gruppe:&#160;</span>
+						<b>Gruppe:&#160;</b>
 					</xsl:if>
 					<xsl:choose>
 						<xsl:when test="lsr:Investigation">
@@ -1619,7 +1606,7 @@
 		<xsl:param name="col"/>
 		<xsl:param name="historikk"/>
 		<tr>
-			<th colspan="{$col}" class="h3">Avsender<xsl:if test="lsr:HCP/lsr:MedSpeciality"> - Spesialitet:&#160;<xsl:for-each select="lsr:HCP/lsr:MedSpeciality">
+			<th colspan="{$col}" class="h3">Tjenesteyter<xsl:if test="lsr:HCP/lsr:MedSpeciality"> - Spesialitet:&#160;<xsl:for-each select="lsr:HCP/lsr:MedSpeciality">
 						<xsl:choose>
 							<xsl:when test="contains(@S, '7426')">
 								<xsl:call-template name="k-7426"/>
@@ -1647,7 +1634,7 @@
 		<xsl:param name="col"/>
 		<xsl:param name="historikk"/>
 		<tr>
-			<th colspan="{$col}" class="h3">Mottaker<xsl:if test="lsr:HCP/lsr:MedSpeciality"> - Spesialitet:&#160;<xsl:for-each select="lsr:HCP/lsr:MedSpeciality">
+			<th colspan="{$col}" class="h3">Henvisende&#160;instans<xsl:if test="lsr:HCP/lsr:MedSpeciality"> - Spesialitet:&#160;<xsl:for-each select="lsr:HCP/lsr:MedSpeciality">
 						<xsl:choose>
 							<xsl:when test="contains(@S, '7426')">
 								<xsl:call-template name="k-7426"/>
@@ -2265,7 +2252,7 @@
 			<!-- Overskrift for Resultat -->
 			<xsl:if test="//lsr:TextResult or //lsr:Interval or //lsr:DateResult or //lsr:NumResult">
 				<td colspan="{$res-col}">
-					<span class="strong">
+					<b>
 						<xsl:choose>
 							<xsl:when test="lsr:TextResult/lsr:Heading and lsr:TextResult/lsr:Heading/@V!='GR'">
 								<xsl:for-each select="lsr:TextResult/lsr:Heading">
@@ -2274,7 +2261,7 @@
 							</xsl:when>
 							<xsl:otherwise>Resultat</xsl:otherwise>
 						</xsl:choose>
-					</span>
+					</b>
 				</td>
 			</xsl:if>
 			<!-- Overskrift for Id -->
@@ -2316,12 +2303,12 @@
 										<xsl:when test="count(//lsr:RelServProv/lsr:Relation)=count(//lsr:RelServProv/lsr:Relation[@V=$relationOne])"><!-- Samme kode i alle relation-elementene -->
 											<xsl:call-template name="k-8254"/>
 										</xsl:when>
-										<xsl:otherwise>Tilknyttet avsender</xsl:otherwise>
+										<xsl:otherwise>Tilknyttet tjenesteyter</xsl:otherwise>
 									</xsl:choose>
 								</xsl:if>
 							</xsl:for-each>
 						</xsl:when>
-						<xsl:otherwise>Tilknyttet avsender</xsl:otherwise>
+						<xsl:otherwise>Tilknyttet tjenesteyter</xsl:otherwise>
 					</xsl:choose>
 				</th>
 			</xsl:if>
@@ -2359,7 +2346,7 @@
 					<xsl:call-template name="k-8220"/>
 				</xsl:when>
 				<xsl:otherwise>
-					<xsl:call-template name="k-dummy-V"/>
+					<xsl:call-template name="k-dummy"/>
 				</xsl:otherwise>
 			</xsl:choose>
 			<xsl:if test="position()!=last()">,&#160;</xsl:if>
@@ -2398,7 +2385,7 @@
 					</xsl:choose>
 				</xsl:for-each>
 				<xsl:if test="lsr:TextResult/lsr:Unit">
-					<span class="strong">Benevning:</span>&#160;<xsl:value-of select="lsr:TextResult/lsr:Unit"/>&#160;
+					<b>Benevning:</b>&#160;<xsl:value-of select="lsr:TextResult/lsr:Unit"/>&#160;
 				</xsl:if>
 			</xsl:when>
 			<xsl:when test="lsr:Interval">
@@ -2411,7 +2398,7 @@
 			</xsl:when>
 			<xsl:when test="lsr:NumResult">
 				<xsl:for-each select="lsr:NumResult/lsr:ArithmeticComp">
-					<xsl:call-template name="k-8239"/>&#160;
+					<xsl:call-template name="k-8239"/>
 				</xsl:for-each>
 				<xsl:value-of select="lsr:NumResult/lsr:NumResultValue/@V"/>&#160;<xsl:value-of select="lsr:NumResult/lsr:NumResultValue/@U"/>&#160;
 				<xsl:for-each select="lsr:DevResultInd">
@@ -2484,8 +2471,8 @@
 	<xsl:template name="skrivUtTillegg">
 		<xsl:if test="lsr:Accredited">
 			<xsl:choose>
-				<xsl:when test="lsr:Accredited/@V='true'">Analysen er akkreditert.&#160;</xsl:when>
-				<xsl:otherwise>Analysen er ikke akkreditert.&#160;</xsl:otherwise>
+				<xsl:when test="lsr:Accredited/@V='true'">Resultatet er akkreditert.&#160;</xsl:when>
+				<xsl:otherwise>Resultatet er ikke akkreditert.&#160;</xsl:otherwise>
 			</xsl:choose>
 		</xsl:if>
 		<xsl:if test="lsr:StructuredInfo">

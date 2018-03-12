@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
 	<Navn>Kommunikasjon av EPJ-innhold</Navn>
 	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 80710:2007</Identifikator>
 	<Utgitt>01/2007</Utgitt>
-	<Utgiver>Direktoratet for e-helse</Utgiver>
+	<Utgiver>Helsedirektoratet</Utgiver>
 	
 	<Referansekatalogen>
 		<Beskrivelse>Standard for kommunikasjon av EPJ-innhold (HIS 80710:2007)</Beskrivelse>
-		<Referanse>http://ehelse.no/HIS80710-2007</Referanse>
+		<Referanse>https://ehelse.no/Sider/Standard-for-kommunikasjon-av-EPJ-innhold--Informasjonsmodell-og-XML-meldingsbeskrivelse---HIS-807102007.aspx</Referanse>
 	</Referansekatalogen>
 	
 	<Status>Fastsatt som standard</Status>
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Kommunikasjon av EPJ-innhold (GitLab)</Beskrivelse>
+			<Beskrivelse>Standard for kommunikasjon av EPJ-innhold. Informasjonsmodell og XML meldingsbeskrivelse (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/kommEPJinnhold/HIS_80710_2007-Standard for kommunikasjon av EPJ-innhold-v1.0.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>

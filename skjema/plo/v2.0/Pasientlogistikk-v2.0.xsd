@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Versjon 2.0 2016-05-30-->
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:po="http://ehelse.no/xmlstds/po/poKomponent/2017-11-30" xmlns:p1="http://ehelse.no/xmlstds/po/Pasientlogistikk/2016-05-30" targetNamespace="http://ehelse.no/xmlstds/po/Pasientlogistikk/2016-05-30" attributeFormDefault="unqualified">
-	<import namespace="http://ehelse.no/xmlstds/po/poKomponent/2017-11-30" schemaLocation="poKomponent-v2.0.xsd"/>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:po="http://ehelse.no/xmlstds/po/poKomponent/2016-05-30" xmlns:p1="http://ehelse.no/xmlstds/po/Pasientlogistikk/2016-05-30" targetNamespace="http://ehelse.no/xmlstds/po/Pasientlogistikk/2016-05-30" attributeFormDefault="unqualified">
+	<import namespace="http://ehelse.no/xmlstds/po/poKomponent/2016-05-30" schemaLocation="poKomponent-v2.0.xsd"/>
 	<!--LEVEL 1-->
 	<element name="Pasientlogistikk">
 		<annotation>
