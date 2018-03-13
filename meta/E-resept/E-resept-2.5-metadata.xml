@@ -85,10 +85,6 @@
 			<Referanse>visningsfil/eresept/m15/m15-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Beskrivelse>Visningsfil for utlevering</Beskrivelse>
-			<Referanse>visningsfil/eresept/utlevering/utlevering-2html-v2.5.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
 			<Beskrivelse>Felleskomponent for alle visningsfiler: KITH-visning.css</Beskrivelse>
 			<Referanse>visningsfil/felleskomponenter/KITH-visning.css</Referanse>
 		</Visningsfil>
