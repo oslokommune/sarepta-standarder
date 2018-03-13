@@ -3,7 +3,7 @@
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
 	<Navn>E-resept</Navn>
 	<Versjon>2.5</Versjon>
-	<Identifikator>HIS 80226:2014??</Identifikator>
+	<Identifikator>E-resept v2.5</Identifikator>
 	<Utgitt>2013-08-10</Utgitt>
 	<Utgiver>Direktoratet for e-helse</Utgiver>
 	
@@ -12,8 +12,6 @@
 		<Referanse>https://ehelse.no/standarder-kodeverk-og-referansekatalog/referansekatalogen/4f-e-reseptmeldinger</Referanse>
 	</Referansekatalogen>
 	
-	<Status>Fastsatt som standard</Status>
-	<ForrigeVersjon>E-resept v2.4</ForrigeVersjon>
 	
 	<Kravdokumenter>
 		<Kravdokument>
@@ -67,7 +65,61 @@
 			<Namespace>http://www.kith.no/xmlstds/eresept/m15/2006-10-06</Namespace>
 		</Skjema>
 	</Skjemaer>
-	
-	
+	<Felleskomponenter>
+		<Felleskomponent>
+			<Beskrivelse>Felles datatyper</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
+		</Felleskomponent>
+	</Felleskomponenter>
+	<Visningsfiler>
+		<Visningsfil>
+			<Beskrivelse>Visningsfil for M1</Beskrivelse>
+			<Referanse>visningsfil/eresept/m1/m1-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Visningsfil for M2 og M12</Beskrivelse>
+			<Referanse>visningsfil/eresept/m2-m12/m2-m12-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Visningsfil for M15</Beskrivelse>
+			<Referanse>visningsfil/eresept/m15/m15-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Visningsfil for utlevering</Beskrivelse>
+			<Referanse>visningsfil/eresept/utlevering/utlevering-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Felleskomponent for alle visningsfiler: KITH-visning.css</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/KITH-visning.css</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: base64decoder.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/base64decoder.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: base64-konverterer.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/base64-konverterer.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler:datamap.xml</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/datamap.xml</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: funksjoner.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/funksjoner.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: kodeverk.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/kodeverk.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: kodeverk2template.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/kodeverk2template.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: meldingshode2html.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/meldingshode2html.xsl</Referanse>
+		</Visningsfil>
+	</Visningsfiler>
 		
 </StandardMetadata>
