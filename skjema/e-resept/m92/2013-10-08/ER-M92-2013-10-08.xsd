@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M9.2 Reseptliste
+2013-10-08
+-->
+<!--
+Endringer siden 2013-06-28
+Fjernet element m92:Reseptinfo/m92:Multidosepasient (EA 4615)
+Endret navn m92:Reseptliste/m92:Multidosepasient -> m92:Reseptliste/m92:Multidosebruker (Utviklingsforum 8.10.2013)
+-->
+<!--
+"Bugfix" 2014-01-21
+Endret path schemaLocation til m274
+-->
+<schema xmlns:m92="http://www.kith.no/xmlstds/eresept/m92/2013-10-08" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:m274="http://www.kith.no/xmlstds/eresept/m274/2012-06-11" targetNamespace="http://www.kith.no/xmlstds/eresept/m92/2013-10-08" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/eresept/m274/2012-06-11" schemaLocation="../R1608-eResept-M25-2014-04-07/ER-M274-2012-06-11.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="../felles/felleskomponent1.xsd"/>
+	<element name="Reseptliste">
+		<annotation>
+			<documentation>Returnerer en liste over aktuelle resepter fra reseptbank. </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Status" type="kith:CS" minOccurs="0">
+					<annotation>
+						<documentation>Status på søk hvis Reseptbanken ikke finner resepter på oppgitt søkekriterium</documentation>
+					</annotation>
+				</element>
+				<element ref="m92:Reseptinfo" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="Multidosebruker" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element name="Fnr" type="string"/>
+							<element ref="m274:Multidoseapotek" minOccurs="0"/>
+							<element ref="m274:Multidoselege" minOccurs="0"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Reseptinfo">
+		<complexType>
+			<sequence>
+				<element name="Forskrivningsdato" type="date">
+					<annotation>
+						<documentation>Reseptens forskrivningsdato</documentation>
+					</annotation>
+				</element>
+				<element name="Fornavn" type="string">
+					<annotation>
+						<documentation>Pasientens fornavn. </documentation>
+					</annotation>
+				</element>
+				<element name="Mellomnavn" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Pasientens mellomnavn. </documentation>
+					</annotation>
+				</element>
+				<element name="Etternavn" type="string">
+					<annotation>
+						<documentation>Pasientens etternavn. </documentation>
+					</annotation>
+				</element>
+				<element name="Address" type="fk1:Address" minOccurs="0"/>
+				<element name="RekvirentId" type="string">
+					<annotation>
+						<documentation>Rekvirent-ID (HPR-nummer). </documentation>
+					</annotation>
+				</element>
+				<element name="NavnRekvirent" type="string">
+					<annotation>
+						<documentation>Rekvirentens navn.</documentation>
+					</annotation>
+				</element>
+				<element name="Nr" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Varenummeret.</documentation>
+					</annotation>
+				</element>
+				<element name="NavnFormStyrke" type="string" minOccurs="0"/>
+				<element name="EndretFarmasoyt" type="kith:CS">
+					<annotation>
+						<documentation>Om den opprinnelige forskrivningen er endret av farmasøyt. </documentation>
+					</annotation>
+				</element>
+				<element name="RefHjemmel" type="kith:CV" minOccurs="0"/>
+				<element name="ReseptId" type="string">
+					<annotation>
+						<documentation>Reseptens ID</documentation>
+					</annotation>
+				</element>
+				<element name="Status" type="kith:CS">
+					<annotation>
+						<documentation>Indikerer hva slags status resepten har i reseptbanken. </documentation>
+					</annotation>
+				</element>
+				<element name="MerknadTilbakekalling" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Inneholder evt. merknad fra M5 Tilbakekalling. </documentation>
+					</annotation>
+				</element>
+				<element name="NavnUtleverer" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Navn på utleverer som har resepten til ekspedering eller når det er sendt en utleveringsanmodning (forsendelse).</documentation>
+					</annotation>
+				</element>
+				<element name="RefNr" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Referansenummer på resepten. </documentation>
+					</annotation>
+				</element>
+				<element name="ProdGruppe" type="kith:CV" minOccurs="0">
+					<annotation>
+						<documentation>Eksempel "bleier", "kateter". Lege kan forskrive på dette nivå.</documentation>
+					</annotation>
+				</element>
+				<element name="Ident" type="fk1:Ident" minOccurs="0">
+					<annotation>
+						<documentation>Identifikasjon som personen er eller har vært kjent under, enten fødselsnummer eller D-nummer for personer</documentation>
+					</annotation>
+				</element>
+				<element name="StatusSoknadSlv" type="kith:CS" minOccurs="0"/>
+				<element name="LegemiddelblandingNavn" type="string" minOccurs="0"/>
+				<element name="MetodeEkspedering" type="kith:CS" minOccurs="0"/>
+				<element name="Vergeinnsynsreservasjon" type="boolean">
+					<annotation>
+						<documentation>Angir om pasienten har reserveret seg mot at foreldre/verge/foresatt kan se denne resepten.</documentation>
+					</annotation>
+				</element>
+				<element name="SisteUtlevering" type="date" minOccurs="0">
+					<annotation>
+						<documentation>Dato for siste utlevering. </documentation>
+					</annotation>
+				</element>
+				<element name="Bruksomrade" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Bruksområde for resepten. </documentation>
+					</annotation>
+				</element>
+				<element name="Antall" type="decimal" minOccurs="0">
+					<annotation>
+						<documentation>Angir antall pakninger som skal utleveres ved en enkel utlevering. Feltet kan inneholde informasjon om delte pakninger (eg 2.5). </documentation>
+					</annotation>
+				</element>
+				<sequence minOccurs="0">
+					<element name="Pakningsstr" type="string">
+						<annotation>
+							<documentation>Pakningsstørrelse/minste salgsenhet til sluttbruker.</documentation>
+						</annotation>
+					</element>
+					<element name="EnhetPakning" type="kith:CV">
+						<annotation>
+							<documentation>"Stk", "pkn", "par", "ml", "IE"</documentation>
+						</annotation>
+					</element>
+				</sequence>
+				<element name="Mengde" type="kith:PQ" minOccurs="0"/>
+				<element name="Reiterasjon" type="int" minOccurs="0">
+					<annotation>
+						<documentation>Heltall som angir hvor mange ganger forskrevet mengde kan utleveres i tillegg til første gangs utlevering. </documentation>
+					</annotation>
+				</element>
+				<element name="TidligsteUtlevering" type="date" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>
