@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M21 Ekspederingsanmodning
+2013-10-08
+ -->
+<!-- 
+Endringer siden v2.5 2013-04-16
+Nytt namespace M1
+-->
+<schema xmlns:m21="http://www.kith.no/xmlstds/eresept/m21/2013-10-08" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:m1="http://www.kith.no/xmlstds/eresept/m1/2013-10-08" targetNamespace="http://www.kith.no/xmlstds/eresept/m21/2013-10-08" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds/eresept/m1/2013-10-08" schemaLocation="ER-M1-2013-10-08.xsd"/>
+	<element name="Ekspederingsanmodning">
+		<complexType>
+			<sequence>
+				<element name="ReseptId" type="string"/>
+				<element name="RefNr" type="string" minOccurs="0"/>
+				<element name="Fnr" type="string" minOccurs="0"/>
+				<element name="Navn" type="string" minOccurs="0"/>
+				<element ref="m1:EkspAnm"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

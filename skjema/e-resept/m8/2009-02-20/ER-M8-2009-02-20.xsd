@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.3
+M8 Utleveringsrapport fastlege
+2009-02-20
+ -->
+<!-- 
+Endringer siden v2.2 2009-02-20
+
+-->
+<schema xmlns:m8="http://www.kith.no/xmlstds/eresept/m8/2009-02-20" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:m1="http://www.kith.no/xmlstds/eresept/m1/2009-02-20" xmlns:kith="http://www.kith.no/xmlstds" xmlns:ul="http://www.kith.no/xmlstds/eresept/utlevering/2009-02-20" targetNamespace="http://www.kith.no/xmlstds/eresept/m8/2009-02-20" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="felleskomponent1.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/eresept/m1/2009-02-20" schemaLocation="ER-M1-2009-02-20.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/eresept/utlevering/2009-02-20" schemaLocation="ER-Utlevering-2009-02-20.xsd"/>
+	<element name="UtleveringsrapportFastlege">
+		<annotation>
+			<documentation>M8</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ul:Utlevering"/>
+				<element name="ReferanseM10" type="string"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>
