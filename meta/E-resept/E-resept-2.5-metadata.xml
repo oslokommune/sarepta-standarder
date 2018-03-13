@@ -24,11 +24,11 @@
 	
 	<Skjemaer>
 		<Skjema>
-			<Referanse>skjema/eresept/m1/ER-M1-2013-10-08</Referanse>
+			<Referanse>skjema/eresept/m1/2013-10-08/ER-M1-2013-10-08.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m1/2013-10-08</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/m21/ER-M21-2013-10-08.xsd</Referanse>
+			<Referanse>skjema/eresept/m21/2013-10-08/ER-M21-2013-10-08.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m21/2013-10-08</Namespace>
 		</Skjema>
 	</Skjemaer>
