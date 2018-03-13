@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.3
+M10 Utleveringsrapport reseptformidler
+2009-02-20
+ -->
+<!-- 
+Endringer siden v2.2 2008-12-12
+Nytt element: Egenandel (Sak 620)
+StartEgenandelsperiode flyttet til Egenandel, 0..1 -> 1..1 (Sak 620)
+BetaltEgenandel flyttet til Egenandel, 0..1 -> 1..1 (Sak 620)
+-->
+<schema xmlns:m10="http://www.kith.no/xmlstds/eresept/m10/2009-02-20" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:m1="http://www.kith.no/xmlstds/eresept/m1/2009-02-20" xmlns:kith="http://www.kith.no/xmlstds" xmlns:ul="http://www.kith.no/xmlstds/eresept/utlevering/2009-02-20" targetNamespace="http://www.kith.no/xmlstds/eresept/m10/2009-02-20" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="felleskomponent1.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/eresept/m1/2009-02-20" schemaLocation="ER-M1-2009-02-20.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/eresept/utlevering/2009-02-20" schemaLocation="ER-Utlevering-2009-02-20.xsd"/>
+	<element name="Utleveringsrapport">
+		<annotation>
+			<documentation>M10</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ul:Utlevering"/>
+				<element name="Kanselleringskode" type="kith:CS" minOccurs="0"/>
+				<element name="ReservasjonRapportFastlege" type="boolean"/>
+				<element name="PrisLegemiddelUtenMt" type="kith:MO" minOccurs="0"/>
+				<element name="AnsattId" type="string"/>
+				<sequence minOccurs="0">
+					<element ref="m10:Egenandel" minOccurs="4" maxOccurs="4"/>
+				</sequence>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Egenandel">
+		<complexType>
+			<sequence>
+				<element name="StartEgenandelsperiode" type="date"/>
+				<element name="BetaltEgenandel" type="kith:MO"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

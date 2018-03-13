@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.4
+M4.2 Referansenummer
+2006-10-06
+ -->
+<schema xmlns:m41="http://www.kith.no/xmlstds/eresept/m42/2006-10-06" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kith.no/xmlstds/eresept/m42/2006-10-06" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<element name="M42">
+		<complexType>
+			<sequence>
+				<element name="RefNr" type="string" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>
