@@ -82,7 +82,7 @@
 		</Visningsfil>
 		<Visningsfil>
 			<Beskrivelse>Visningsfil for M15</Beskrivelse>
-			<Referanse>visningsfil/eresept/m15m15-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m15/m15-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
 			<Beskrivelse>Visningsfil for utlevering</Beskrivelse>
