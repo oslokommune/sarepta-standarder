@@ -63,7 +63,7 @@
 		</Skjema>
 		<Skjema>
 			<Beskrivelse>eResept – M15 Søknadssvar fra SLV</Beskrivelse>
-			<Referanse>skjema/eresept/m15/2006-10-06/ER-M15-2006-10-06.xsd</Referanse>
+			<Referanse>skjema/e-resept/m15/2006-10-06/ER-M15-2006-10-06.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m15/2006-10-06</Namespace>
 		</Skjema>
 	</Skjemaer>
