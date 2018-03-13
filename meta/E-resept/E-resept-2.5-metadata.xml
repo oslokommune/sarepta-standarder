@@ -33,32 +33,32 @@
 	<Skjemaer>
 		<Skjema>
 			<Beskrivelse>eResept – M1 Resept og M21 Ekspederingsanmodning</Beskrivelse>
-			<Referanse>skjema/eresept/m1/2013-10-08/ER-M1-2013-10-08.xsd</Referanse>
+			<Referanse>skjema/e-resept/m1/2013-10-08/ER-M1-2013-10-08.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m1/2013-10-08</Namespace>
 		</Skjema>
 		<Skjema>
 			<Beskrivelse>eResept – M1 Resept og M21 Ekspederingsanmodning</Beskrivelse>
-			<Referanse>skjema/eresept/m21/2013-10-08/ER-M21-2013-10-08.xsd</Referanse>
+			<Referanse>skjema/e-resept/m21/2013-10-08/ER-M21-2013-10-08.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m21/2013-10-08</Namespace>
 		</Skjema>
 		<Skjema>
 			<Beskrivelse>eResept – M02 Individuell søknad om stønad til HELFO</Beskrivelse>
-			<Referanse>skjema/eresept/m2/2014-12-01/ER-M2-2014-12-01.xsd</Referanse>
+			<Referanse>skjema/e-resept/m2/2014-12-01/ER-M2-2014-12-01.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m2/2014-12-01</Namespace>
 		</Skjema>
 		<Skjema>
-			<Beskrivelse>eResept – M12 Søknadssvar - Individuell søknad om stønad til HELFO</Beskrivelse>
-			<Referanse>skjema/eresept/m12/2014-12-01/ER-M12-2014-12-01.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/eresept/m12/2014-12-01</Namespace>
-		</Skjema>
-		<Skjema>
 			<Beskrivelse>eResept – M3 Anmodning om søknad til SLV</Beskrivelse>
-			<Referanse>skjema/eresept/m3/2010-05-01/ER-M3-2010-05-01.xsd</Referanse>
+			<Referanse>skjema/e-resept/m3/2010-05-01/ER-M3-2010-05-01.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m3/2010-05-01</Namespace>
 		</Skjema>
 		<Skjema>
+			<Beskrivelse>eResept – M12 Søknadssvar - Individuell søknad om stønad til HELFO</Beskrivelse>
+			<Referanse>skjema/e-resept/m12/2014-12-01/ER-M12-2014-12-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m12/2014-12-01</Namespace>
+		</Skjema>
+		<Skjema>
 			<Beskrivelse>eResept – M14 Søknad til SLV</Beskrivelse>
-			<Referanse>skjema/eresept/m14/2008-12-12/ER-M14-2008-12-12.xsd</Referanse>
+			<Referanse>skjema/e-resept/m14/2008-12-12/ER-M14-2008-12-12.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m14/2008-12-12</Namespace>
 		</Skjema>
 		<Skjema>

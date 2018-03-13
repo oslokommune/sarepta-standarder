@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M12 Søknadssvar - Individuell søknad om stønad til HELFO
+2014-12-01
+-->
+<!--
+Endringer siden 2010-07-01
+Endret kardinalitet Soknadssvar/Avslagsgrunn 0..1 -> 0..* (ERSA/EO-nr mangler)
+Endret kardinalitet VedtaketOmfatter/RefKode 0..1 -> 0..2 (ERSA/EO-nr mangler)
+-->
+<schema xmlns:m12="http://www.kith.no/xmlstds/eresept/m12/2014-12-01" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kith.no/xmlstds/eresept/m12/2014-12-01" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<element name="Soknadssvar">
+		<complexType>
+			<sequence>
+				<element name="Svar-ID" type="string"/>
+				<element name="RefSoknad" type="string"/>
+				<element name="OmsoktVare" type="string"/>
+				<element name="Beslutning" type="kith:CS"/>
+				<element name="Begrunnelse" type="string" minOccurs="0"/>
+				<element name="Avslagsgrunn" type="kith:CS" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="Vedtaksdato" type="date"/>
+				<element ref="m12:VedtaketOmfatter" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="VedtaketOmfatter">
+		<complexType>
+			<sequence>
+				<element name="Varenavn" type="string" minOccurs="0"/>
+				<element name="ProdGruppe" type="kith:CV" minOccurs="0"/>
+				<element name="RefHjemmel" type="kith:CV" minOccurs="0"/>
+				<element name="RefKode" type="kith:CV" minOccurs="0" maxOccurs="2"/>
+				<element name="DoseDognMaks" type="kith:PQ" minOccurs="0"/>
+				<element name="GyldigTil" type="date" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

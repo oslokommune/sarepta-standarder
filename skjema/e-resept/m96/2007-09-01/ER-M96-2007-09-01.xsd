@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- M9.6 versjon 1.6 2007-09-01 -->
+<schema xmlns:m96="http://www.kith.no/xmlstds/eresept/m96/2007-09-01" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" targetNamespace="http://www.kith.no/xmlstds/eresept/m96/2007-09-01" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<element name="M96">
+		<complexType>
+			<sequence>
+				<element name="StatusSok" type="kith:CS" minOccurs="0">
+					<annotation>
+						<documentation>Status på søk hvis Reseptbanken ikke finner resepter på oppgitt søkekriterium</documentation>
+					</annotation>
+				</element>
+				<element name="SvarSLVDato" type="date" minOccurs="0"/>
+				<element name="InnvligetGodkjFritak" type="boolean" minOccurs="0">
+					<annotation>
+						<documentation>Indikerer at positivt svar fra SLV er mottat på søknad. </documentation>
+					</annotation>
+				</element>
+				<element name="Status" type="kith:CS"/>
+				<element name="HPRMerknad" type="kith:CV">
+					<annotation>
+						<documentation>Kode for staus for utfallet av HPR-sjekk. </documentation>
+					</annotation>
+				</element>
+				<element name="HPRMerknadDato" type="date" minOccurs="0">
+					<annotation>
+						<documentation>Dato for når HPR sjekk ble utført. </documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>
