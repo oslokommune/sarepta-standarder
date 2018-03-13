@@ -24,6 +24,10 @@
 			<Beskrivelse>eResept – M02 Individuell søknad om stønad til HELFO og M12 Søknadssvar - Individuell søknad om stønad til HELFO (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/e-resept/R1008-eResept-M2-M12-2015-12-02.pdf</Referanse>
 		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>eResept – M3 Anmodning om søknad til SLV, M14 Søknad til SLV og M15 Søknadssvar fra SLV (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/e-resept/R1108-eResept-M3-M14-M15-2013-04-16.pdf</Referanse>
+		</Kravdokument>
 	</Kravdokumenter>
 	
 	<Skjemaer>
@@ -46,6 +50,21 @@
 			<Beskrivelse>eResept – M12 Søknadssvar - Individuell søknad om stønad til HELFO</Beskrivelse>
 			<Referanse>skjema/eresept/m12/2014-12-01/ER-M12-2014-12-01.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m12/2014-12-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>eResept – M3 Anmodning om søknad til SLV</Beskrivelse>
+			<Referanse>skjema/eresept/m3/2010-05-01/ER-M3-2010-05-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m3/2010-05-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>eResept – M14 Søknad til SLV</Beskrivelse>
+			<Referanse>skjema/eresept/m14/2008-12-12/ER-M14-2008-12-12.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m14/2008-12-12</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>eResept – M15 Søknadssvar fra SLV</Beskrivelse>
+			<Referanse>skjema/eresept/m15/2006-10-06/ER-M15-2006-10-06.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m15/2006-10-06</Namespace>
 		</Skjema>
 	</Skjemaer>
 	
