@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?> 
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
 	<Navn>E-resept</Navn>
@@ -20,6 +20,10 @@
 			<Beskrivelse>eResept – M1 Resept og M21 Ekspederingsanmodning (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/e-resept/R0908-eResept-M1-M21-2013-10-08.pdf</Referanse>
 		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>eResept – M02 Individuell søknad om stønad til HELFO og M12 Søknadssvar - Individuell søknad om stønad til HELFO (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/e-resept/R1008-eResept-M2-M12-2015-12-02.pdf</Referanse>
+		</Kravdokument>
 	</Kravdokumenter>
 	
 	<Skjemaer>
@@ -29,8 +33,19 @@
 			<Namespace>http://www.kith.no/xmlstds/eresept/m1/2013-10-08</Namespace>
 		</Skjema>
 		<Skjema>
+			<Beskrivelse>eResept – M1 Resept og M21 Ekspederingsanmodning</Beskrivelse>
 			<Referanse>skjema/eresept/m21/2013-10-08/ER-M21-2013-10-08.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m21/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>eResept – M02 Individuell søknad om stønad til HELFO</Beskrivelse>
+			<Referanse>skjema/eresept/m2/2014-12-01/ER-M2-2014-12-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m2/2014-12-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>eResept – M12 Søknadssvar - Individuell søknad om stønad til HELFO</Beskrivelse>
+			<Referanse>skjema/eresept/m12/2014-12-01/ER-M12-2014-12-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m12/2014-12-01</Namespace>
 		</Skjema>
 	</Skjemaer>
 	
