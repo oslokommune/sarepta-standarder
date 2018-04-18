@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -->
+<!-- Dette er en testmelding med fiktive personer -->
+<!-- -->
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd">
+	<MsgInfo>
+		<Type V="MEDISINSKE_OPPLYSNINGER" DN="Medisinske opplysninger"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2018-01-31T12:30:47</GenDate>
+		<MsgId>e397dea0-0688-11e8-b566-0800200c9a66</MsgId>
+		<Sender>
+			<Organisation>
+				<OrganisationName>Kattskinnet legesenter</OrganisationName>
+				<Ident>
+					<Id>91096</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<HealthcareProfessional>
+					<FamilyName>September</FamilyName>
+					<GivenName>August</GivenName>
+					<Ident>
+						<Id>91100</Id>
+						<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.8116"/>
+					</Ident>
+				</HealthcareProfessional>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>Alvdal Kommune</OrganisationName>
+				<Ident>
+					<Id>99387</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Organisation>
+					<OrganisationName>Saksbehandling</OrganisationName>
+					<Ident>
+						<Id>5078</Id>
+						<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</Organisation>
+			</Organisation>
+		</Receiver>
+		<Patient>
+			<FamilyName>Danser</FamilyName>
+			<GivenName>Line</GivenName>
+			<DateOfBirth>1969-11-13</DateOfBirth>
+			<Sex V="2" DN="Kvinne"/>
+			<Ident>
+				<Id>13116900216</Id>
+				<TypeId V="FNR" DN="Fødselsnummer" S="2.16.578.1.12.4.1.1.8116"/>
+			</Ident>
+			<Address>
+				<StreetAdr>Numedalsveien 52</StreetAdr>
+				<PostalCode>3602</PostalCode>
+				<City>Kongsberg</City>
+			</Address>
+			<TeleCom>
+				<TypeTelecom V="MC" DN="Mobiltelefon"/>
+				<TeleAddress V="tel:90094004"/>
+			</TeleCom>
+		</Patient>
+	</MsgInfo>
+	<Document>
+		<RefDoc>
+			<IssueDate V="2018-01-31T15:29:32"/>
+			<MsgType V="XML" DN="XML-instans"/>
+			<Content>
+				<p4:OverforingMedisinskeOpplysninger xmlns:p4="http://www.kith.no/xmlstds/po/OverforingMedisinskeOpplysninger/2009-06-30" xmlns:epj1="http://www.kith.no/xmlstds/epj/epj1/2008-02-20" xmlns:epj2="http://www.kith.no/xmlstds/epj/epj2/2008-02-20" xmlns:epj3="http://www.kith.no/xmlstds/epj/epj3/2008-02-20" xmlns="http://www.kith.no/xmlstds/po/poKomponent/2009-06-30" xmlns:m1="http://www.kith.no/xmlstds/epj/meta/2008-02-20" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/po/OverforingMedisinskeOpplysninger/2009-06-30 MedisinskeOpplysninger-v1.5.xsd">
+					<InformasjonOmForsendelsen>
+						<Forsendelsesstatus V="N" DN="Ny"/>
+						<SvarPaaForesporsel>false</SvarPaaForesporsel>
+					</InformasjonOmForsendelsen>
+					<AnsvarForRapport>
+						<AnsvarligRapport>
+							<fk1:TypeHealthcareProfessional V="LE" DN="Lege"/>
+							<fk1:RoleToPatient V="16" DN="Turnuslege" S="2.16.578.1.12.4.1.1.9034"/>
+							<fk1:FamilyName>Lin</fk1:FamilyName>
+							<fk1:GivenName>Rita</fk1:GivenName>
+							<fk1:Ident>
+								<fk1:Id>9144900</fk1:Id>
+								<fk1:TypeId V="HPR" DN="HPR-nummer" S="2.16.578.1.12.4.1.1.8116"/>
+							</fk1:Ident>
+							<fk1:TeleCom>
+								<fk1:TeleAddress V="tel:77626660"/>
+							</fk1:TeleCom>
+						</AnsvarligRapport>
+						<GodkjentDato>2018-01-30</GodkjentDato>
+					</AnsvarForRapport>
+					<SendtDokument>
+						<Opplysning V="1" DN="Egensøknad" S="2.16.578.1.12.4.1.1.8329"/>
+						<JaNei>true</JaNei>
+					</SendtDokument>
+					<TypeInnholdIMelding>
+						<TypeInnhold V="5" DN="Opplysninger til søknad" S="2.16.578.1.12.4.1.1.9138"/>
+					</TypeInnholdIMelding>
+					<InfoMedisinskDiagnose>
+						<MedisinskDiagnose>
+							<Hoveddiagnose>true</Hoveddiagnose>
+							<Diagnosekode V="K77" S="2.16.578.1.12.4.1.1.7110" DN="Hjertesvikt"/>
+						</MedisinskDiagnose>
+					</InfoMedisinskDiagnose>
+					<MedisinskfagligeOpplysninger>
+						<InfoTidligereSykdommer>
+							<TidligereSykdomFragment>
+								<FunksjonshemmingKroniskSykdom>false</FunksjonshemmingKroniskSykdom>
+								<TidligereSykdom>Operert. Totalprotese 1995</TidligereSykdom>
+								<Diagnosekode V="L89" DN="Hofteleddsartrose" S="2.16.578.1.12.4.1.1.7110"/>
+							</TidligereSykdomFragment>
+						</InfoTidligereSykdommer>
+						<InfoTidligereSykdommer>
+							<TidligereSykdomFragment>
+								<FunksjonshemmingKroniskSykdom>false</FunksjonshemmingKroniskSykdom>
+								<TidligereSykdom>Ingen stikkord</TidligereSykdom>
+								<Diagnosekode V="D03" DN="Halsbrann" S="2.16.578.1.12.4.1.1.7110"/>
+							</TidligereSykdomFragment>
+						</InfoTidligereSykdommer>
+						<epj1:Cave m1:informasjonskategori="Cave/allergier" komponentID="f0dcd060-31bc-11df-9aae-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.14.50001.0" m1:basiskomponenttype="EPJ sak">
+							<epj1:SakshodeCave m1:informasjonskategori="Cave/allergier" komponentID="f6a9cca0-31bc-11df-9aae-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.10028.0" m1:basiskomponenttype="EPJ dokument">
+								<epj1:StikkordCave>
+									<epj1:CaveStikkord>Morfin. Registrert 13.03.04</epj1:CaveStikkord>
+								</epj1:StikkordCave>
+							</epj1:SakshodeCave>
+						</epj1:Cave>
+						<epj2:GenereltJournalnotat komponentID="1432e050-653a-11dd-ad8b-0800200c9a66" m1:informasjonskategori="Cave/allergier" m1:komponenttype="2.16.578.1.12.4.1.6.13.11009.0" m1:basiskomponenttype="EPJ dokument">
+							<epj2:Journaltekst>
+								<epj2:Overskriftskode DN="Kontaktsmitte" V="1" S="2.16.578.1.12.4.1.1.9143"/>
+								<epj2:Notat>MRSA. Registrert 13.02.07</epj2:Notat>
+							</epj2:Journaltekst>
+						</epj2:GenereltJournalnotat>
+						<epj2:GenereltJournalnotat m1:informasjonskategori="Cave/allergier" komponentID="00e4aa50-31bd-11df-9aae-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.11009.0" m1:basiskomponenttype="EPJ dokument">
+							<epj2:Journaltekst>
+								<epj2:Overskriftskode V="PROB" DN="Aktuell problemstilling" S="2.16.578.1.12.4.1.1.9142"/>
+								<epj2:Notat>
+								Utlevering av medisinske opplysninger til sykehjemslegen skjer i anledning tildeling av korttidsopphold på sykehjem 03.02.2018.
+								Tidligere stort sett frisk. Er klar og orientert. Utviklet hjertesvikt siste 5 år. Har fast oppfølging av cardiolog på sykehuset pga hjertesvikt. 
+								Innlagt i desember med uttalt erysipelas i venstre legg. God effekt av penicillinbehandling. 
+								
+								Siste legebesøk 01.06.17. Pasienten klaget da over sviktende hukommelse.
+								
+								Pasienten er informert om at det vurderes om hjemmesykepleien skal overta ansvar for legemiddelhåndteringen.</epj2:Notat>
+							</epj2:Journaltekst>
+							<epj2:Journaltekst>
+								<epj2:Overskriftskode V="UTRED" DN="Forventet/ønsket undersøkelser/behandling" S="2.16.578.1.12.4.1.1.9142"/>
+								<epj2:Notat>Korttidsopphold i sykehjem for å kunne foreta en grundig medisinsk vurdering både mht medisinering og problemer knyttet til hukommelsessvikt.&#13;&#10;&#13;&#10;Ber om at det tas opp til vurdering om pasienten har behov for tilsyn og hjelp til håndtering av legemidler etter utskriving fra korttidsoppholdet.</epj2:Notat>
+							</epj2:Journaltekst>
+							<epj2:Journaltekst>
+								<epj2:Overskriftskode V="FA" DN="Familie/sosialt" S="2.16.578.1.12.4.1.1.9142"/>
+								<epj2:Notat>Pasienten bor alene. Har en sønn som sjelden kommer på besøk, samt en sønn som arbeider i utlandet.  Har noen venner i samme blokk, men de møtes sjelden pga nedsatt førlighet. Har flere venner som ringer henne ved jevne mellomrom.</epj2:Notat>
+							</epj2:Journaltekst>
+							<epj2:Journaltekst>
+								<epj2:Overskriftskode V="FU" DN="Funn og undersøkelsesresultater" S="2.16.578.1.12.4.1.1.9142"/>
+								<epj2:Notat>Rtg Thorax  12.17.17 viser klare og fine lunger.</epj2:Notat>
+							</epj2:Journaltekst>
+						</epj2:GenereltJournalnotat>
+					</MedisinskfagligeOpplysninger>
+					<!-- *** Faste legemidler, multidosepakket *** -->
+					<epj3:Legemiddelinfo m1:informasjonskategori="Legemidler" komponentID="0d945890-31bd-11df-9aae-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.10301.0" m1:basiskomponenttype="EPJ dokument">
+						<epj3:ForenkletForskrivning>
+							<epj3:InngaarIMultidose DN="Legemiddeldosering inngår i multidose og informasjon er sendt til leverandør" V="2"/>
+							<epj3:Merknad>Pasienten har ikke svelgproblemer, men store tabletter må deles</epj3:Merknad>
+							<epj3:Forskrivningsinfo>
+								<epj3:DosVeiledEnkel>2 tabl kl 08 og 13. Gjentas hvert døgn.</epj3:DosVeiledEnkel>
+								<epj3:Navn>Burinex</epj3:Navn>
+								<epj3:Legemiddelform V="53" DN="Tablett"/>
+								<epj3:Styrke U="mg" V="1"/>
+								<epj3:Bruk DN="Fast" V="1"/>
+								<epj3:DoseringStarttidspunkt V="2017-09-25"/>
+								<epj3:SkalIkkeTasSammenMedAnnetLegemiddel>false</epj3:SkalIkkeTasSammenMedAnnetLegemiddel>
+							</epj3:Forskrivningsinfo>
+						</epj3:ForenkletForskrivning>
+					</epj3:Legemiddelinfo>
+					<epj3:Legemiddelinfo m1:informasjonskategori="Legemidler" komponentID="841f0840-fca2-11dc-95ff-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.10301.0" m1:basiskomponenttype="EPJ dokument">
+						<epj3:ForenkletForskrivning>
+							<epj3:InngaarIMultidose DN="Legemiddeldosering inngår i multidose og informasjon er sendt til leverandør" V="2"/>
+							<epj3:Merknad>Svelges med minst et ½ glass væske. Skal ikke tygges eller knuses.</epj3:Merknad>
+							<epj3:Forskrivningsinfo>
+								<epj3:DosVeiledEnkel>2 tabl kl 08 og 1 tabl kl 13. Gjentas hvert døgn.</epj3:DosVeiledEnkel>
+								<epj3:Navn>Triatec</epj3:Navn>
+								<epj3:Legemiddelform V="53" DN="Tablett"/>
+								<epj3:Styrke U="mg" V="2.5"/>
+								<epj3:Bruk DN="Fast" V="1"/>
+								<epj3:DoseringStarttidspunkt V="2017-09-25"/>
+								<epj3:SkalIkkeTasSammenMedAnnetLegemiddel>false</epj3:SkalIkkeTasSammenMedAnnetLegemiddel>
+							</epj3:Forskrivningsinfo>
+						</epj3:ForenkletForskrivning>
+					</epj3:Legemiddelinfo>
+					<epj3:Legemiddelinfo m1:informasjonskategori="Legemidler" komponentID="9a7fdfe0-fca4-11dc-95ff-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.10301.0" m1:basiskomponenttype="EPJ dokument">
+						<epj3:ForenkletForskrivning>
+							<epj3:InngaarIMultidose DN="Legemiddeldosering inngår i multidose og informasjon er sendt til leverandør" V="2"/>
+							<epj3:Forskrivningsinfo>
+								<epj3:DosVeiledEnkel>1 tabl kl 22. Gjentas hvert døgn.</epj3:DosVeiledEnkel>
+								<epj3:Navn>Lipitor</epj3:Navn>
+								<epj3:Legemiddelform V="53" DN="Tablett"/>
+								<epj3:Styrke U="mg" V="40"/>
+								<epj3:Bruk DN="Fast" V="1"/>
+								<epj3:DoseringStarttidspunkt V="2017-09-25"/>
+								<epj3:SkalIkkeTasSammenMedAnnetLegemiddel>false</epj3:SkalIkkeTasSammenMedAnnetLegemiddel>
+							</epj3:Forskrivningsinfo>
+						</epj3:ForenkletForskrivning>
+					</epj3:Legemiddelinfo>
+					<epj3:Legemiddelinfo m1:informasjonskategori="Legemidler" komponentID="d66b13d0-fca4-11dc-95ff-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.10301.0" m1:basiskomponenttype="EPJ dokument">
+						<epj3:ForenkletForskrivning>
+							<epj3:InngaarIMultidose DN="Legemiddeldosering inngår i multidose og informasjon er sendt til leverandør" V="2"/>
+							<epj3:Merknad>Depottablettene kan deles, men må ikke knuses eller tygges. Skal svelges med et ½ glass væske.</epj3:Merknad>
+							<epj3:Forskrivningsinfo>
+								<epj3:DosVeiledEnkel>2 tabl kl 08. Gjentas hvert døgn.</epj3:DosVeiledEnkel>
+								<epj3:Navn>Imdur</epj3:Navn>
+								<epj3:Legemiddelform V="53" DN="Tablett"/>
+								<epj3:Styrke U="mg" V="30"/>
+								<epj3:Bruk DN="Fast" V="1"/>
+								<epj3:DoseringStarttidspunkt V="2017-09-25"/>
+								<epj3:SkalIkkeTasSammenMedAnnetLegemiddel>false</epj3:SkalIkkeTasSammenMedAnnetLegemiddel>
+							</epj3:Forskrivningsinfo>
+						</epj3:ForenkletForskrivning>
+					</epj3:Legemiddelinfo>
+					<epj3:Legemiddelinfo m1:informasjonskategori="Legemidler" komponentID="bc8f9230-4360-11dd-ae16-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.10301.0" m1:basiskomponenttype="EPJ dokument">
+						<epj3:ForenkletForskrivning>
+							<epj3:InngaarIMultidose DN="Legemiddeldosering inngår i multidose og informasjon er sendt til leverandør" V="2"/>
+							<epj3:Forskrivningsinfo>
+								<epj3:DosVeiledEnkel>1 tabl kl 08, 1 tabl kl 13 og en tabl kl 22. Gjentas hvert døgn.</epj3:DosVeiledEnkel>
+								<epj3:Navn>Soctator</epj3:Navn>
+								<epj3:Legemiddelform V="53" DN="Tablett"/>
+								<epj3:Styrke U="mg" V="80"/>
+								<epj3:Bruk DN="Fast" V="1"/>
+								<epj3:DoseringStarttidspunkt V="2018-01-31"/>
+								<epj3:DoseringSluttidspunkt V="2018-02-04"/>
+								<epj3:SkalIkkeTasSammenMedAnnetLegemiddel>false</epj3:SkalIkkeTasSammenMedAnnetLegemiddel>
+							</epj3:Forskrivningsinfo>
+						</epj3:ForenkletForskrivning>
+					</epj3:Legemiddelinfo>
+					<!-- *** Faste legemidler *** -->
+					<epj3:Legemiddelinfo m1:informasjonskategori="Legemidler" komponentID="ef668e20-4360-11dd-ae16-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.10301.0" m1:basiskomponenttype="EPJ dokument">
+						<epj3:ForenkletForskrivning>
+							<epj3:InngaarIMultidose DN="Legemiddeldosering inngår ikke i en multidose" V="1"/>
+							<epj3:Merknad>Se marevanskjema</epj3:Merknad>
+							<epj3:Forskrivningsinfo>
+								<epj3:Navn>Marevan</epj3:Navn>
+								<epj3:Legemiddelform V="53" DN="Tablett"/>
+								<epj3:Styrke U="mg" V="2.5"/>
+								<epj3:Bruk DN="Fast" V="1"/>
+								<epj3:SkalIkkeTasSammenMedAnnetLegemiddel>false</epj3:SkalIkkeTasSammenMedAnnetLegemiddel>
+							</epj3:Forskrivningsinfo>
+						</epj3:ForenkletForskrivning>
+					</epj3:Legemiddelinfo>
+					<!-- *** Ved behov legemidler *** -->
+					<epj3:Legemiddelinfo m1:informasjonskategori="Legemidler" komponentID="36489d70-1da9-11dd-bd0b-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.10301.0" m1:basiskomponenttype="EPJ dokument">
+						<epj3:ForenkletForskrivning>
+							<epj3:InngaarIMultidose DN="Legemiddeldosering inngår ikke i en multidose" V="1"/>
+							<epj3:Forskrivningsinfo>
+								<epj3:DosVeiledEnkel>Tas ved smerter. Max 8 pr døgn</epj3:DosVeiledEnkel>
+								<epj3:Navn>Paracetamol</epj3:Navn>
+								<epj3:Legemiddelform V="53" DN="Tablett"/>
+								<epj3:Styrke U="mg" V="500"/>
+								<epj3:Bruk DN="Ved behov" V="3"/>
+								<epj3:DoseringStarttidspunkt V="2017-09-25"/>
+								<epj3:SkalIkkeTasSammenMedAnnetLegemiddel>false</epj3:SkalIkkeTasSammenMedAnnetLegemiddel>
+							</epj3:Forskrivningsinfo>
+						</epj3:ForenkletForskrivning>
+					</epj3:Legemiddelinfo>
+				</p4:OverforingMedisinskeOpplysninger>
+			</Content>
+		</RefDoc>
+	</Document>
+</MsgHead>

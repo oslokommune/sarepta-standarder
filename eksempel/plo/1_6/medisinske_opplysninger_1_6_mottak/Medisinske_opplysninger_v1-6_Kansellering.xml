@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -->
+<!-- Dette er en testmelding med fiktive personer -->
+<!-- -->
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd">
+	<MsgInfo>
+		<Type V="MEDISINSKE_OPPLYSNINGER" DN="Medisinske opplysninger"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2018-01-31T14:32:53</GenDate>
+		<MsgId>ee588390-0687-11e8-b566-0800200c9a66</MsgId>
+		<ConversationRef>
+			<RefToParent>85e9f800-067a-11e8-b566-0800200c9a66</RefToParent>
+			<RefToConversation>85e9f800-067a-11e8-b566-0800200c9a66</RefToConversation>
+		</ConversationRef>
+		<Sender>
+			<Organisation>
+				<OrganisationName>Kattskinnet legesenter</OrganisationName>
+				<Ident>
+					<Id>91096</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<HealthcareProfessional>
+					<FamilyName>September</FamilyName>
+					<GivenName>August</GivenName>
+					<Ident>
+						<Id>91100</Id>
+						<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.8116"/>
+					</Ident>
+				</HealthcareProfessional>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>Alvdal Kommune</OrganisationName>
+				<Ident>
+					<Id>99387</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Organisation>
+					<OrganisationName>Saksbehandling</OrganisationName>
+					<Ident>
+						<Id>5078</Id>
+						<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</Organisation>
+			</Organisation>
+		</Receiver>
+		<Patient>
+			<FamilyName>Danser</FamilyName>
+			<GivenName>Line</GivenName>
+			<DateOfBirth>1969-11-13</DateOfBirth>
+			<Sex V="2" DN="Kvinne"/>
+			<Ident>
+				<Id>13116900216</Id>
+				<TypeId V="FNR" DN="Fødselsnummer" S="2.16.578.1.12.4.1.1.8116"/>
+			</Ident>
+			<Address>
+				<StreetAdr>Numedalsveien 52</StreetAdr>
+				<PostalCode>3602</PostalCode>
+				<City>Kongsberg</City>
+			</Address>
+			<TeleCom>
+				<TypeTelecom V="MC" DN="Mobiltelefon"/>
+				<TeleAddress V="tel:90094004"/>
+			</TeleCom>
+		</Patient>
+	</MsgInfo>
+	<Document>
+		<RefDoc>
+			<IssueDate V="2018-01-31T12:28:22"/>
+			<MsgType V="XML" DN="XML-instans"/>
+			<Content>
+				<p4:OverforingMedisinskeOpplysninger xmlns:p4="http://www.kith.no/xmlstds/po/MedisinskeOpplysninger/2012-04-01" xmlns:epj1="http://www.kith.no/xmlstds/epj/epj1/2008-02-20" xmlns:epj2="http://www.kith.no/xmlstds/epj/epj2/2008-02-20" xmlns:epj3="http://www.kith.no/xmlstds/epj/epj3/2008-02-20" xmlns="http://www.kith.no/xmlstds/po/poKomponent/2012-04-01" xmlns:m1="http://www.kith.no/xmlstds/epj/meta/2008-02-20" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/po/MedisinskeOpplysninger/2012-04-01 MedisinskeOpplysninger-v1.6.xsd">
+					<InformasjonOmForsendelsen>
+						<Forsendelsesstatus V="C" DN="Kansellering"/>
+						<SvarPaaForesporsel>false</SvarPaaForesporsel>
+					</InformasjonOmForsendelsen>
+					<AnsvarForRapport>
+						<AnsvarligRapport>
+							<fk1:TypeHealthcareProfessional V="LE" DN="Lege"/>
+							<fk1:RoleToPatient V="16" DN="Turnuslege" S="2.16.578.1.12.4.1.1.9034"/>
+							<fk1:FamilyName>Lin</fk1:FamilyName>
+							<fk1:GivenName>Rita</fk1:GivenName>
+							<fk1:Ident>
+								<fk1:Id>9144900</fk1:Id>
+								<fk1:TypeId V="HPR" DN="HPR-nummer" S="2.16.578.1.12.4.1.1.8116"/>
+							</fk1:Ident>
+							<fk1:TeleCom>
+								<fk1:TeleAddress V="tel:77626660"/>
+							</fk1:TeleCom>
+						</AnsvarligRapport>
+						<GodkjentDato>2018-01-30</GodkjentDato>
+					</AnsvarForRapport>
+					<TypeInnholdIMelding>
+						<TypeInnhold V="5" DN="Opplysninger til søknad" S="2.16.578.1.12.4.1.1.9138"/>
+						<Merknad>Kansellering: Meldingen ble sendt på feil pasient.</Merknad>
+					</TypeInnholdIMelding>
+				</p4:OverforingMedisinskeOpplysninger>
+			</Content>
+		</RefDoc>
+	</Document>
+</MsgHead>

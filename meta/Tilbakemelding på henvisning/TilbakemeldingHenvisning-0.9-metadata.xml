@@ -5,18 +5,18 @@
 	<Versjon>0.9</Versjon>
 	<Identifikator>HIS 80326:2003</Identifikator>
 	<Utgitt>10/2003</Utgitt>
-	<Utgiver>Helsedirektoratet</Utgiver>
+	<Utgiver>Direktoratet for e-helse</Utgiver>
 
 	<Referansekatalogen>
-		<Beskrivelse>Elektronisk utveksling av tilbakemelding på henvisning. XML-meldingsbeskrivelse - HIS 80326:2003 </Beskrivelse>
-		<Referanse>https://ehelse.no/elektronisk-utveksling-av-tilbakemelding-pa-henvisning-xml-meldingsbeskrivelse-his-803262003</Referanse>
+		<Beskrivelse>Elektronisk utveksling av tilbakemelding på henvisning</Beskrivelse>
+		<Referanse>http://ehelse.no/his80326-2003</Referanse>
 	</Referansekatalogen>
 
 	<Status>Til pilotering</Status>
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Elektronisk utveksling av tilbakemelding på henvisning. XML meldingsbeskrivelse (GitLab)</Beskrivelse>
+			<Beskrivelse>Elektronisk utveksling av tilbakemelding på henvisning (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/tilbakemeldingPåHenvisning/HIS_80326_2003_Tilbakemelding-på-henvisning.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
@@ -33,10 +33,5 @@
 			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
-	<Testmateriell>
-		<Testfil>
-			<Beskrivelse>Syntaks-sjekk av XML-meldinger (XML-validering)</Beskrivelse>
-			<Referanse>https://validator.test.nhn.no/validering/index.cgi</Referanse>
-		</Testfil>
-	</Testmateriell>
+
 </StandardMetadata>

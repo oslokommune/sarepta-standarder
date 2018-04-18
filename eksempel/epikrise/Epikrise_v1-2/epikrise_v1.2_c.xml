@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- DETTE ER EN TESTMELDING MED FIKTIVE PERSONDATA  -->
+<Message xmlns="http://www.kith.no/xmlstds/epikrise/2012-02-15" xmlns:po="http://www.kith.no/xmlstds/po/poKomponent/2009-06-30" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/epikrise/2012-02-15 Epikrise-v1.2.xsd">
+	<Type V="EPIKRISE" DN="Epikrise"/>
+	<!-- 8279 -->
+	<MIGversion>v1.2 2012-02-15</MIGversion>
+	<!-- GenDate overskrives alltid -->
+	<GenDate V="2017-05-05T08:23:09"/>
+	<!-- Opplysninger om meldingen -->
+	<MsgId>89da1760-456e-11e7-9598-0800200c9a66</MsgId>
+	<Status V="TEST" DN="Melding til testformål"/>
+	<!-- 8323 -->
+	<ServRprt>
+		<!-- Opplysninger om epikrisen -->
+		<ServType V="C" DN="Kansellering"/>
+		<!-- 7309 -->
+		<IssueDate V="2017-05-05T00:33:00"/>
+		<ApprDate V="2017-05-05T03:15:20"/>
+		<Status V="F" DN="Endelig rapport"/>
+		<!-- 7306 -->
+		<MsgDescr>Sykehusepikrise</MsgDescr>
+		<ServProvId>b9270660-4567-11e7-9598-0800200c9a66</ServProvId>
+		<!-- Pasientopplysninger -->
+		<Patient>
+			<Sex V="2" DN="Kvinne"/>
+			<DateOfBirth V="1969-11-13"/>
+			<Name>Danser, Line</Name>
+			<OffId>13116900216</OffId>
+			<TypeOffId V="FNR" DN="Fødselsnummer"/>
+			<!-- 8116 -->
+			<PatRelHCP>
+				<!-- Pasientrelatert helsetjenesteenhet: Henvisende lege -->
+				<Relation V="HHE" DN="Henvisende helsepersonell"/>
+				<HCP>
+					<HCProf>
+						<Name>Turnuslege August September</Name>
+						<Id>9144897</Id>
+						<TypeId V="HPR" DN="Helsepersonellnummer"/>
+					</HCProf>
+					<Address>
+						<Type V="WP" DN="Arbeidsadresse"/>
+						<TeleAddress V="tel:+4712345678"/>
+					</Address>
+				</HCP>
+			</PatRelHCP>
+			<PatRelHCP>
+				<!-- Pasientrelatert helsetjenesteenhet:  -->
+				<Relation V="FLE" DN="Fastlege"/>
+				<HCP>
+					<HCProf>
+						<Name>Tulle tre</Name>
+						<!-- KomDir: her må dere legge inn hpr-nummer som denne testaktøren har -->
+						<Id>xxx</Id>
+						<TypeId V="HPR" DN="Helsepersonellnummer"/>
+					</HCProf>
+					<Address>
+						<Type V="WP" DN="Arbeidsadresse"/>
+						<TeleAddress V="tel:+4722335678"/>
+					</Address>
+				</HCP>
+			</PatRelHCP>
+		</Patient>
+		<!-- Tjenesteyter: sykehus/avdeling for oppholdet -->
+		<ServProvider>
+			<Role V="SPR" DN="Tjenesteyter"/>
+			<!-- fast verdi -->
+			<ComMethod V="EDI" DN="EDI"/>
+			<!-- 8235 -->
+			<HCP>
+				<Inst>
+					<Name>NORSK HELSENETT SF HOVEDKONTOR</Name>
+					<Id>91393</Id>
+					<TypeId V="HER" DN="HER-id"/>
+					<!-- 9051 -->
+					<Dept>
+						<Name>Meldingsvalidering</Name>
+						<Id>94866</Id>
+						<TypeId V="HER" DN="HER-id"/>
+					</Dept>
+				</Inst>
+			</HCP>
+		</ServProvider>
+		<CopyDest>
+			<HCP>
+				<Inst>
+					<Name>NORSK HELSENETT SF HOVEDKONTOR</Name>
+					<Id>91393</Id>
+					<TypeId V="HER" DN="HER-id"/>
+					<Dept>
+						<Name>***Testtjeneste***</Name>
+						<Id>95136</Id>
+						<TypeId V="HER" DN="HER-id"/>
+					</Dept>
+				</Inst>
+			</HCP>
+		</CopyDest>
+		<!-- Kopimottaker for å motta elektronisk epikrise -->
+		<!-- Henvisende instans: Lege -->
+		<Requester>
+			<Role V="REQ" DN="Rekvirent"/>
+			<!-- fast verdi -->
+			<ComMethod V="EDI" DN="EDI"/>
+			<!-- 8235 -->
+			<HCP>
+				<Inst>
+					<Name>NORSK HELSENETT SF HOVEDKONTOR</Name>
+					<Id>91393</Id>
+					<TypeId V="HER" DN="HER-id"/>
+					<!-- 9051 -->
+					<HCPerson>
+						<Name>Tulle Tre</Name>
+						<Id>91439</Id>
+						<TypeId V="HER" DN="HER-id"/>
+					</HCPerson>
+				</Inst>
+			</HCP>
+		</Requester>
+		<!-- Tilknyttet tjenesteyter -->
+		<RelServProvider>
+			<Relation V="AHP" DN="Ansvarlig helsepersonell"/>
+			<HCP>
+				<HCProf>
+					<Name>Overlege Rita Lin</Name>
+					<Id>9144900</Id>
+					<TypeId V="HPR" DN="HPR-nummer"/>
+				</HCProf>
+					<Address>
+						<Type V="WP" DN="Arbeidsadresse"/>
+						<TeleAddress V="tel:+4722345678"/>
+					</Address>
+			</HCP>
+		</RelServProvider>
+	</ServRprt>
+</Message>
