@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	Visningsfil for eReseptmeldingen M2 Individuell søknad om refusjon til HELFO
+	Visningen håndterer vedlegg av en eller flere M12 Søknadssvar - Individuell søknad om refusjon til HELFO
+	Inngår i KITHs visningsfiler versjon 10
+
+	09-05-2017: v3.1.2: Rettet formell test på tekst mot number
+	27-03-2017: v3.1.1: Ny parameter for "visningStil". Ny stil "Smooth".
+	25-10-2016: v3.1.0: La til variabel for visningsversjonnr
+	11-02-2011: Første versjon
+
+	MERK:
+	Bygger på visningsfil for hodemeldingen - denne må være tilstede. 
+-->
 <xsl:stylesheet version="1.0" 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
 	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
@@ -6,39 +19,36 @@
 	xmlns:m2="http://www.kith.no/xmlstds/eresept/m2/2010-07-01" 
 	xmlns:m12="http://www.kith.no/xmlstds/eresept/m12/2010-07-01" 
 	xmlns:fs="http://www.kith.no/xmlstds/eresept/forskrivning/2010-04-01" 
-	xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
-	exclude-result-prefixes="#all">
+	exclude-result-prefixes="mh fk1 m2 m12 fs">
 
-	<xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes" 
-		omit-xml-declaration="yes" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
-		
-	<!-- Visningsfil for eReseptmeldingen M2 Individuell søknad om refusjon til HELFO
-Visningen håndterer vedlegg av en eller flere M12 Søknadssvar - Individuell søknad om refusjon til HELFO
-Inngår i KITHs visningsfiler versjon 10
+	<xsl:import href="../../felleskomponenter/funksjoner.xsl"/>
+	<xsl:import href="../../felleskomponenter/eh-komponent2.xsl"/>
+	<xsl:include href="../../hodemelding/v1.2/Hodemelding2html.xsl"/>
 
-25-10-2016: La til variabel for visningsversjonnr
-11-02-2011: Første versjon
-
-MERK:
-Bygger på visningsfil for hodemeldingen - denne må være tilstede. -->
-	<xsl:include href="../../Hodemelding/v1.2/Hodemelding2html.xsl"/>
 	
-<!-- Vedlegg i denne sammenhengen er en eller flere m12-meldinger -->
+	<!-- Vedlegg i denne sammenhengen er en eller flere m12-meldinger -->
 	<xsl:param name="vedlegg"/>
+
 	<xsl:variable name="antall-legemidler" select="count(//m2:OmsoktLegemiddel)"/>
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'eresept-m2-2.4 v3.1.0 '"/>
+	<xsl:variable name="versjon" select="'eresept-m2-2.4 - v3.1.2 '"/>
 	
 	<xsl:template match="/">
-		<html xmlns="http://www.w3.org/1999/xhtml">
+		<html>
 			<head>
 				<title>M02 - Individuell søknad om refusjon til HELFO</title>
 				<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-				<style type="text/css"><xsl:value-of select="document('../../Felleskomponenter/KITH-visning.css')" disable-output-escaping="yes" /></style>
+				<style type="text/css">
+					<xsl:value-of select="document('../../felleskomponenter/KITH-visning.css')" disable-output-escaping="yes" />
+				</style>
+				<style type="text/css">
+					<xsl:value-of select="document('../../felleskomponenter/smooth-visning.css')" disable-output-escaping="yes"/>
+				</style>
 			</head>
 			<body>
-				<xsl:apply-templates/>
+				<xsl:apply-templates>
+					<xsl:with-param name="visningStil" select="$stil"/>
+				</xsl:apply-templates>
 			</body>
 		</html>
 	</xsl:template>
@@ -109,19 +119,19 @@ Bygger på visningsfil for hodemeldingen - denne må være tilstede. -->
 				<tr>
 					<xsl:if test="m2:KroniskSykdom"><td width="25%">
 						<xsl:choose>
-							<xsl:when test="m2:KroniskSykdom/@V = 1"><input type="checkbox" disabled="disabled" checked="checked">Kronisk sykdom</input></xsl:when>
+							<xsl:when test="m2:KroniskSykdom/@V = '1'"><input type="checkbox" disabled="disabled" checked="checked">Kronisk sykdom</input></xsl:when>
 							<xsl:otherwise><input type="checkbox" disabled="disabled">Kronisk sykdom</input></xsl:otherwise>
 						</xsl:choose>
 					</td></xsl:if>
 					<xsl:if test="m2:LangvarigBeh"><td width="25%">
 						<xsl:choose>
-							<xsl:when test="m2:LangvarigBeh/@V = 1"><input type="checkbox" disabled="disabled" checked="checked">Langvarig behandling</input></xsl:when>
+							<xsl:when test="m2:LangvarigBeh/@V = '1'"><input type="checkbox" disabled="disabled" checked="checked">Langvarig behandling</input></xsl:when>
 							<xsl:otherwise><input type="checkbox" disabled="disabled">Langvarig behandling</input></xsl:otherwise>
 						</xsl:choose>
 					</td></xsl:if>
 					<xsl:if test="m2:BrukUtenforSykehus"><td width="25%">
 						<xsl:choose>
-							<xsl:when test="m2:BrukUtenforSykehus/@V = 1"><input type="checkbox" disabled="disabled" checked="checked">Bruk utenfor sykehus</input></xsl:when>
+							<xsl:when test="m2:BrukUtenforSykehus/@V = '1'"><input type="checkbox" disabled="disabled" checked="checked">Bruk utenfor sykehus</input></xsl:when>
 							<xsl:otherwise><input type="checkbox" disabled="disabled">Bruk utenfor sykehus</input></xsl:otherwise>
 						</xsl:choose>
 					</td></xsl:if>
@@ -131,19 +141,19 @@ Bygger på visningsfil for hodemeldingen - denne må være tilstede. -->
 				<tr>
 					<xsl:if test="m2:SamPasient"><td width="25%">
 						<xsl:choose>
-							<xsl:when test="m2:SamPasient/@V = 1"><input type="checkbox" disabled="disabled" checked="checked">Samtykke</input></xsl:when>
+							<xsl:when test="m2:SamPasient/@V = '1'"><input type="checkbox" disabled="disabled" checked="checked">Samtykke</input></xsl:when>
 							<xsl:otherwise><input type="checkbox" disabled="disabled">Samtykke</input></xsl:otherwise>
 						</xsl:choose>
 					</td></xsl:if>
 					<xsl:if test="m2:SamVedtak"><td width="25%">
 						<xsl:choose>
-							<xsl:when test="m2:SamVedtak/@V = 1"><input type="checkbox" disabled="disabled" checked="checked">Samtykke kopi</input></xsl:when>
+							<xsl:when test="m2:SamVedtak/@V = '1'"><input type="checkbox" disabled="disabled" checked="checked">Samtykke kopi</input></xsl:when>
 							<xsl:otherwise><input type="checkbox" disabled="disabled">Samtykke kopi</input></xsl:otherwise>
 						</xsl:choose>
 					</td></xsl:if>
 					<xsl:if test="m2:Forstegangs"><td width="25%">
 						<xsl:choose>
-							<xsl:when test="m2:Forstegangs/@V = 1"><input type="checkbox" disabled="disabled" checked="checked">Førstegangssøknad</input></xsl:when>
+							<xsl:when test="m2:Forstegangs/@V = '1'"><input type="checkbox" disabled="disabled" checked="checked">Førstegangssøknad</input></xsl:when>
 							<xsl:otherwise><input type="checkbox" disabled="disabled">Førstegangssøknad</input></xsl:otherwise>
 						</xsl:choose>
 					</td></xsl:if>

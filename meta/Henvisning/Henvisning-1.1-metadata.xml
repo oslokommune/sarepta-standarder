@@ -5,10 +5,11 @@
 	<Versjon>1.1</Versjon>
 	<Identifikator>HIS 80517:2014</Identifikator>
 	<Utgitt>02/2014</Utgitt>
-
+    <Utgiver>Direktoratet for e-helse</Utgiver>
+    
 	<Referansekatalogen>
 		<Beskrivelse>Henvisningsmelding 1.1 (HIS 80517:2014)</Beskrivelse>
-		<Referanse>https://ehelse.no/Sider/Henvisning--Informasjonsmodell-og-XML-meldingsbeskrivelse-%E2%80%93-HIS-805172014.aspx</Referanse>
+		<Referanse>http://ehelse.no/HIS80517-2014</Referanse>
 	</Referansekatalogen>
 
 	<Status>Fastsatt som standard</Status>
@@ -17,8 +18,8 @@
 	
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Henvisning. Informasjonsmodell og XML meldingsbeskrivelse (GitLab)</Beskrivelse>
-			<Referanse>kravdokument/henvisning/HIS_80517_2014_Henvisning_v1-1-2014-02-13.pdf</Referanse>
+			<Beskrivelse>Henvisning v1.1 (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/henvisning/HIS_80517_2014_Henvisning_v1-1 -korrigert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
 	
@@ -47,6 +48,25 @@
 	<Visningsfiler>
 		<Visningsfil>
 			<Referanse>visningsfil/henvisning/v1.1/henvisning-v1_1-2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/henvisning/henvisning2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Felleskomponent for alle visningsfiler: smooth-visning.css</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/smooth-visning.css</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Felleskomponent for alle visningsfiler: ehelse-visning.css</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/ehelse-visning.css</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Felleskomponent for alle visningsfiler: eh-komponent1.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/eh-komponent1.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Felleskomponent for alle visningsfiler: eh-komponent2.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/eh-komponent2.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
 			<Beskrivelse>Felleskomponent for alle visningsfiler: KITH-visning.css</Beskrivelse>
@@ -126,4 +146,25 @@
 		</Visningsfil>
 	</Visningsfiler>
 	
+	<Eksempler>
+		<Eksempel>
+			<Referanse>eksempel/Henvisning/Henvisning_v1-1/henvisning strukturert_v1.1_n.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/Henvisning/Henvisning_v1-1/henvisning_v1.1_n.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/Henvisning/Henvisning_v1-1/henvisning_v1.1_m.xml</Referanse>
+		</Eksempel>
+			
+		<Eksempel>
+			<Referanse>eksempel/Henvisning/Henvisning_v1-1/henvisning_v1.1_c.xml</Referanse>
+		</Eksempel>
+	</Eksempler>
+	<RelaterteFiler>
+	<RelatertFil>
+		<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger</Beskrivelse>
+		<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
+	</RelatertFil>
+</RelaterteFiler>	
 </StandardMetadata>

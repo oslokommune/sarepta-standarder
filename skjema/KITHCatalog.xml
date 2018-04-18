@@ -77,7 +77,13 @@ Catalog.xsd">
 	<public uri="plo/v1.6/TverrfagligEpikrise-v1.6.xsd" publicId="http://www.kith.no/xmlstds/po/TverrfagligEpikrise/2012-04-01" />
 	<public uri="plo/v1.6/Helseopplysninger-v1.6.xsd" publicId="http://www.kith.no/xmlstds/po/HelseopplysningerVedSoknad/2012-04-01" />
 	<public uri="plo/v1.6/HelseopplysningerTilLege-v1.6.xsd" publicId="http://www.kith.no/xmlstds/po/HelseopplysningerTilLege/2012-04-01" />
-
+	
+	<!--  PLO-meldinger v2.0 -->
+	<public uri="plo/v2.0/poKomponent-v2.0.xsd" publicId="http://ehelse.no/xmlstds/po/poKomponent/2017-11-30"/>
+	<public uri="plo/v2.0/Pasientlogistikk-v2.0.xsd" publicId="http://ehelse.no/xmlstds/po/Pasientlogistikk/2016-05-30" />
+	<public uri="plo/v2.0/HelseopplysningerSaksbehandling-v2.0.xsd" publicId="http://ehelse.no/xmlstds/po/HelseopplysningerSaksbehandling/2016-05-30"/>
+	<public uri="plo/v2.0/Sammenfatning-v2.0.xsd" publicId="http://ehelse.no/xmlstds/po/Sammenfatning/2016-05-30"/>
+	
 	<!-- Kjernejournal -->
 	<public uri="sykemelding/rtv-smlepo-v075.xsd" publicId="http://www.kith.no/xmlstds/sykmelding/2004-05-03" />
 	
@@ -99,7 +105,7 @@ Catalog.xsd">
 	<public uri="henvisning/Henvisning-v0.91.xsd" publicId="http://www.kith.no/xmlstds/henvisning/2003-10-13" />
 	<public uri="henvisning/Henvisning-v1.0.xsd" publicId="http://www.kith.no/xmlstds/henvisning/2005-07-08" />
 	<public uri="henvisning/Henvisning-v1.1.xsd" publicId="http://www.kith.no/xmlstds/henvisning/2012-02-15" />
-	<public uri="henvisning/Henvisning-v2.0.xsd" publicId="http://www.kith.no/xmlstds/henvisning/2014-04-30" />
+	<public uri="henvisning/Henvisning-v2.0.xsd" publicId="http://ehelse.no/xmlstds/henvisning/2017-11-30" />
 	
 	<!-- Svarrapport -->
 	<public uri="svarrapport/svar-v12.xsd" publicId="http://www.kith.no/xmlstds/labsvar/2005-03-14" />

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Endringslogg
-	- 25.10.16: La til visningsversjonnr
+	- 19.06.17: v3.1.2: Endret fre "Tjenesteyter" til "Mottaker" og fra "Henvisende instans" til "Avsender" under avsnittet "Helsetjenesteenheter" for å få samsvar med heading. 
+	- 27.03.17: v3.1.1: Ny parameter for "visningStil. Ny stil "Smooth".
+	- 25.10.16: v3.1.0: La til visningsversjonnr
 	- 09.05.14: La til import av kodeverk-fil
 	- 27.04.11: La til visning av flere enn en underavdeling ved pasientopphold, la til visning av Comment/TextResultValue, samt erstattet mange <br/> med <div>.
 	- 01.12.10: Import av felles CSS-fil
@@ -35,28 +37,28 @@
 	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
 	exclude-result-prefixes="lso xhtml base">
 	
-	<xsl:import href="../../Felleskomponenter/funksjoner.xsl"/>
-	<xsl:import href="../../Felleskomponenter/kodeverk.xsl"/>
+	<xsl:import href="../../felleskomponenter/funksjoner.xsl"/>
+	<xsl:import href="../../felleskomponenter/kodeverk.xsl"/>
+	<xsl:import href="../../felleskomponenter/eh-komponent2.xsl"/>
 
-	<xsl:output method="html" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
 
-	<!-- Variabel-deklarasjon -->
-	<!-- Variabel for hvilken stil visning har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
-	<xsl:variable name="stil" select="'No-line-doc'"/>
 	<!-- Variabler for antall kolonner og bredde -->
 	<xsl:variable name="std-col" select="10"/>
 	<xsl:variable name="std-td" select="200"/>
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'rekvisisjon1.6 v3.1.0 '"/>
+	<xsl:variable name="versjon" select="'rekvisisjon1.6 - v3.1.2 '"/>
 
 	<!-- Meldingsstart -->
 	<xsl:template match="/">
-		<html xmlns="http://www.w3.org/1999/xhtml">
+		<html>
 			<head>
 				<title>Rekvisisjon</title>
 				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 				<style type="text/css">
-					<xsl:value-of select="document('../../Felleskomponenter/KITH-visning.css')" disable-output-escaping="yes"/>
+					<xsl:value-of select="document('../../felleskomponenter/KITH-visning.css')" disable-output-escaping="yes"/>
+				</style>
+				<style type="text/css">
+					<xsl:value-of select="document('../../felleskomponenter/smooth-visning.css')" disable-output-escaping="yes"/>
 				</style>
 			</head>
 			<body>
@@ -130,15 +132,15 @@
 	<xsl:template match="lso:Patient" mode="hode">
 		<div>
 			<xsl:value-of select="lso:Name"/>&#160;
-			<b>
+			<span class="strong">
 				<xsl:for-each select="lso:TypeOffId">
 					<xsl:call-template name="k-8116"/>
-				</xsl:for-each>:&#160;</b>
+				</xsl:for-each>:&#160;</span>
 			<xsl:value-of select="lso:OffId"/>&#160;
 		</div>
 		<xsl:if test="lso:DateOfDeath">
 			<div>
-				<b>Dødsdato:&#160;</b>
+				<span class="strong">Dødsdato:&#160;</span>
 				<xsl:call-template name="skrivUtTS">
 					<xsl:with-param name="oppgittTid" select="lso:DateOfDeath/@V"/>
 				</xsl:call-template>
@@ -149,17 +151,17 @@
 	<xsl:template match="lso:Animal" mode="hode">
 		<div>
 			<xsl:if test="lso:Name">
-				<b>Navn</b>:&#160;<xsl:value-of select="lso:Name"/>&#160;</xsl:if>
+				<span class="strong">Navn</span>:&#160;<xsl:value-of select="lso:Name"/>&#160;</xsl:if>
 			<xsl:if test="lso:Species">
-				<b>Art</b>:&#160;<xsl:value-of select="lso:Species"/>&#160;</xsl:if>
+				<span class="strong">Art</span>:&#160;<xsl:value-of select="lso:Species"/>&#160;</xsl:if>
 			<xsl:if test="lso:NameOwner">
-				<b>Eier</b>:&#160;<xsl:value-of select="lso:NameOwner"/>&#160;</xsl:if>
+				<span class="strong">Eier</span>:&#160;<xsl:value-of select="lso:NameOwner"/>&#160;</xsl:if>
 		</div>
 	</xsl:template>
 	<xsl:template match="lso:Material" mode="hode">
 		<div>
 			<xsl:if test="lso:InvMaterial">
-				<b>Beskrivelse</b>:&#160;<xsl:value-of select="lso:InvMaterial"/>&#160;</xsl:if>
+				<span class="strong">Beskrivelse</span>:&#160;<xsl:value-of select="lso:InvMaterial"/>&#160;</xsl:if>
 		</div>
 	</xsl:template>
 	<xsl:template match="lso:HCPerson" mode="hode">
@@ -239,7 +241,7 @@
 	</xsl:template>
 	<xsl:template match="lso:TeleAddress" mode="hode">
 		<div>
-			<b>
+			<span class="strong">
 				<xsl:choose>
 					<xsl:when test="starts-with(@V, &quot;tel:&quot;) or starts-with(@V, &quot;callto:&quot;)">Telefon</xsl:when>
 					<xsl:when test="starts-with(@V, &quot;fax:&quot;)">Faks</xsl:when>
@@ -248,7 +250,7 @@
 						<xsl:value-of select="substring-before(@V, &quot;:&quot;)"/>
 					</xsl:otherwise>
 				</xsl:choose>
-			</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;
+			</span>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;
 		</div>
 	</xsl:template>
 	<!-- Hoveddokument -->
@@ -288,7 +290,7 @@
 				<h2 id="{$id2}">
 					<xsl:choose>
 						<xsl:when test="last()!=1">
-							<xsl:value-of select="concat('Rekvirert undersøkelse',position())"/>
+							<xsl:value-of select="concat('Rekvirert undersøkelse ',position())"/>
 						</xsl:when>
 						<xsl:otherwise>Rekvirert undersøkelse</xsl:otherwise>
 					</xsl:choose>
@@ -515,7 +517,7 @@
 					</td>
 				</xsl:if>
 				<xsl:if test="lso:EscortRequired">
-					<th>Ledsgelsesbehov</th>
+					<th>Ledsagelsesbehov</th>
 					<td colspan="{(($col)-1-count(lso:NoReport | lso:LevelOfDetail)*2)}">
 						<xsl:for-each select="lso:EscortRequired">
 							<xsl:call-template name="k-8247"/>
@@ -1101,7 +1103,7 @@
 					</td>
 				</xsl:if>
 				<xsl:if test="lso:IdByServProv">
-					<th>Tjenesteyters id</th>
+					<th>Mottakers id</th>
 					<td width="{((($col)-2-count(lso:Number)*2)*number(not(lso:SampleCollInd | lso:SampleCollProc))+1)*$std-td}px" colspan="{(($col)-2-count(lso:Number)*2)*number(not(lso:SampleCollInd | lso:SampleCollProc))+1}">
 						<xsl:value-of select="lso:IdByServProv"/>
 					</td>
@@ -1146,7 +1148,7 @@
 						</xsl:for-each>
 						<xsl:if test="lso:Pretreatment/lso:TextResultValue">
 							<div>
-								<b>Beskrivelse:&#160;</b>
+								<span class="strong">Beskrivelse:&#160;</span>
 								<xsl:call-template name="line-breaks">
 									<xsl:with-param name="text" select="lso:Pretreatment/lso:TextResultValue"/>
 								</xsl:call-template>
@@ -1159,8 +1161,8 @@
 					<td colspan="{($col)-1-count(lso:AnatomicalOrigin | lso:PreservMaterial | lso:Pretreatment)*2}">
 						<xsl:for-each select="lso:SubjectMeasures">
 							<div>
-								<b>
-									<xsl:value-of select="lso:TypeQuantity"/>:&#160;</b>
+								<span class="strong">
+									<xsl:value-of select="lso:TypeQuantity"/>:&#160;</span>
 								<xsl:value-of select="lso:Quantity/@V"/>&#160;<xsl:value-of select="lso:Quantity/@U"/>&#160;
 							</div>
 						</xsl:for-each>
@@ -1292,7 +1294,7 @@
 	<xsl:template match="lso:ServProvider">
 		<xsl:param name="col"/>
 		<tr>
-			<th colspan="{$col}" class="h3">Tjenesteyter
+			<th colspan="{$col}" class="h3">Mottaker
 				<xsl:if test="lso:HCP/lso:MedSpeciality"> - Spesialitet:&#160;<xsl:for-each select="lso:HCP/lso:MedSpeciality">
 						<xsl:choose>
 							<xsl:when test="contains(@S, '7426')">
@@ -1318,7 +1320,7 @@
 	<xsl:template match="lso:Requester">
 		<xsl:param name="col"/>
 		<tr>
-			<th colspan="{$col}" class="h3">Henvisende instans
+			<th colspan="{$col}" class="h3">Avsender
 				<xsl:if test="lso:HCP/lso:MedSpeciality"> - Spesialitet:&#160;<xsl:for-each select="lso:HCP/lso:MedSpeciality">
 						<xsl:choose>
 							<xsl:when test="contains(@S, '7426')">
