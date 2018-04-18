@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:bkm="http://www.kith.no/xmlstds/bkm/2006-12-20" targetNamespace="http://www.kith.no/xmlstds/bkm/2006-12-20" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- LEVEL 1 -->
+	<!-- Class: BehandlerKrav -->
+	<element name="BehandlerKrav">
+		<complexType>
+			<sequence>
+				<element name="Avdeling" type="string" minOccurs="0"/>
+				<element name="RESH" type="string" minOccurs="0"/>
+				<element name="Praksistype" type="string" minOccurs="0"/>
+				<element name="Konto" type="string" minOccurs="0"/>
+				<element ref="bkm:Enkeltregning" maxOccurs="unbounded"/>
+				<element ref="bkm:Krav"/>
+			</sequence>
+			<attribute name="navnEPJ" type="string" use="optional"/>
+			<attribute name="versjonEPJ" type="string" use="optional"/>
+		</complexType>
+	</element>
+	<element name="Krav">
+		<annotation>
+			<documentation>       Informasjon om krav.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="AntallRegninger" type="int"/>
+				<element name="SumKravSamlet" type="bkm:MO"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 2 -->
+	<!-- Class: Enkeltregning -->
+	<element name="Enkeltregning">
+		<annotation>
+			<documentation>        Enkeltregning for en behandling. En behandlerkravregning kan inneholde mange enkeltregninger. </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Guid" type="bkm:GUID" minOccurs="0"/>
+				<element ref="bkm:BetaltEgenandel" minOccurs="0"/>
+				<element name="Kreditering" type="boolean" minOccurs="0"/>
+				<element name="RegningNr" type="string" minOccurs="0"/>
+				<element name="DatoTid" type="dateTime" minOccurs="0"/>
+				<element name="Merknad" type="string" minOccurs="0"/>
+				<element ref="bkm:Patient" minOccurs="0"/>
+				<element ref="bkm:Behandling" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 3 -->
+	<!-- Class: Pasient -->
+	<element name="Patient">
+		<annotation>
+			<documentation>        Informasjon som er knyttet til rollen som pasient.   </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="FamilyName" type="string" minOccurs="0"/>
+				<element name="MiddleName" type="string" minOccurs="0"/>
+				<element name="GivenName" type="string" minOccurs="0"/>
+				<element name="Sex" type="bkm:CS" minOccurs="0"/>
+				<element name="Nationality" type="bkm:CS" minOccurs="0"/>
+				<element name="Ident" type="bkm:Ident" minOccurs="0"/>
+				<element name="DateOfBirth" type="date" minOccurs="0"/>
+				<element name="ArbeidstagerNorge" type="bkm:CS" minOccurs="0"/>
+				<element ref="bkm:EEA" minOccurs="0"/>
+				<element name="Phone" minOccurs="0">
+					<simpleType>
+						<restriction base="string">
+							<whiteSpace value="collapse"/>
+						</restriction>
+					</simpleType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Behandling -->
+	<element name="Behandling">
+		<annotation>
+			<documentation> Informasjon om den enkelte behandling som ligger til grunn for enkeltregningen.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="KodeEgenandel" type="bkm:CS" minOccurs="0"/>
+				<element name="Diagnose" type="bkm:CV" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="TilsagnTK" type="bkm:CS" minOccurs="0"/>
+				<element name="Sykdomslistepunkt" type="string" minOccurs="0"/>
+				<element name="HenvisningsDato" type="date" minOccurs="0"/>
+				<element name="HenvisningsId" type="string" minOccurs="0"/>
+				<element name="HenvisningsDiagnose" type="bkm:CV" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="OperasjonsDato" type="date" minOccurs="0"/>
+				<element name="BehandlingsNr" type="int" minOccurs="0"/>
+				<element name="Behandlerident" type="bkm:Ident" minOccurs="0"/>
+				<element name="RelatertBehandler" type="string" minOccurs="0"/>
+				<element name="Moderasjonskode" type="bkm:CS" minOccurs="0"/>
+				<element name="Behandlingsform" type="bkm:CS" minOccurs="0"/>
+				<element name="Tann" type="bkm:CS" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="RettighetsvurdertAv" type="string" minOccurs="0"/>
+				<element name="RettighetsvurdertDato" type="date" minOccurs="0"/>
+				<element ref="bkm:Prosedyrekode" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="bkm:Takst" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="SumKrav">
+					<complexType>
+						<sequence>
+							<element name="EgenandelHonorar" type="bkm:MO" minOccurs="0"/>
+							<element name="Refusjon" type="bkm:MO" minOccurs="0"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 4 -->
+	<!-- Class: EEA -->
+	<element name="EEA">
+		<complexType>
+			<sequence>
+				<element name="EEADok" type="string" minOccurs="0"/>
+				<element name="EEACardId" type="string" minOccurs="0"/>
+				<element name="EEAId" type="string" minOccurs="0"/>
+				<element name="EEATrygdekontorNavn" type="string" minOccurs="0"/>
+				<element name="EEATrygdekontorNr" type="string" minOccurs="0"/>
+				<element name="EEAGyldighetFra" type="date" minOccurs="0"/>
+				<element name="EEAGyldighet" type="date" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Takst -->
+	<element name="Takst">
+		<annotation>
+			<documentation>Informasjon om takster som er brukt.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Verdi" type="bkm:MO" minOccurs="0"/>
+				<element name="Kode" type="string"/>
+				<element name="Antall" type="int"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Prosedyrekode">
+		<annotation>
+			<documentation>Informasjon om prosedyrekoder som er brukt.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Kodeverk" type="string"/>
+				<element name="Kode" type="string"/>
+			</sequence>
+		</complexType>
+	</element>
+	<complexType name="Ident">
+		<sequence>
+			<element name="Id" type="string"/>
+			<element name="TypeId" type="bkm:CV"/>
+		</sequence>
+	</complexType>
+	<!-- KITH/HL7 datatyper -->
+	<complexType name="CS">
+		<attribute name="V" type="token" use="optional"/>
+		<attribute name="DN" type="string" use="optional"/>
+	</complexType>
+	<complexType name="CV">
+		<attribute name="V" type="token" use="optional"/>
+		<attribute name="S" type="bkm:oid" use="optional"/>
+		<attribute name="DN" type="string" use="optional"/>
+		<attribute name="OT" type="string" use="optional"/>
+	</complexType>
+	<complexType name="MO">
+		<attribute name="V" type="double" use="optional"/>
+		<attribute name="U" type="token" use="optional"/>
+	</complexType>
+	<simpleType name="oid">
+		<restriction base="token">
+			<pattern value="(\d+\.?)*\d+"/>
+		</restriction>
+	</simpleType>
+	<element name="Norakokode">
+		<complexType>
+			<sequence>
+				<element name="Verdi" type="bkm:MO" minOccurs="0"/>
+				<element name="Kode" type="string"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="BetaltEgenandel">
+		<complexType>
+			<attribute name="korrigering" type="boolean" use="required"/>
+			<attribute name="erBetalt" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<simpleType name="GUID">
+		<annotation>
+			<documentation xml:lang="no">       representasjonen av en GUID, generelt en unik id paa et element</documentation>
+		</annotation>
+		<restriction base="string">
+			<pattern value="\{[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}\}"/>
+		</restriction>
+	</simpleType>
+</schema>

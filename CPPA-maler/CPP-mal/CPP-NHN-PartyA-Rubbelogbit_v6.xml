@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- SomeTest -->
 <tns:CollaborationProtocolProfile xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:tns="http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" tns:cppid="UNIKCPPID" tns:version="string" xsi:schemaLocation="http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd cpp-cpa-2_0.xsd">
 	<tns:PartyInfo tns:partyName="PARTYNAME" tns:defaultMshChannelId="asyncSMTPChannelA1" tns:defaultMshPackageId="package_mshsignal">
 		<tns:PartyId tns:type="HER">HERID</tns:PartyId>
@@ -2260,6 +2259,66 @@
 				</tns:CanSend>
 				<tns:CanReceive>
 					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="UtskrivingsklarPasient_APPREC9" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="DialogForesporsel" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Dialogmelding.xml" xlink:type="simple" tns:uuid="641eef31-8f9c-4c57-90f9-779d7e983d01"/>
+			<tns:Role tns:name="DIALOG_FORESPORSELsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_FORESPORSELsender" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">S-DIALOG_FORESPORSEL</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_FORESPORSEL" tns:id="DialogForesporsel1" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="DialogForesporsel_APPREC1" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="DialogSvar" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Dialogmelding.xml" xlink:type="simple" tns:uuid="641eef31-8f9c-4c57-90f9-779d7e983d01"/>
+			<tns:Role tns:name="DIALOG_SVARsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_SVARsender" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">S-DIALOG_SVAR</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_SVAR" tns:id="DialogSvar1" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="DialogSvar_APPREC1" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole>
+			<tns:ProcessSpecification tns:name="DialogAvvik" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Dialogmelding.xml" xlink:type="simple" tns:uuid="641eef31-8f9c-4c57-90f9-779d7e983d01"/>
+			<tns:Role tns:name="DIALOG_AVVIKsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_AVVIKsender" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">S-DIALOG_AVVIK</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_AVVIK" tns:id="DialogAvvik1" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="DialogAvvik_APPREC1" tns:packageId="package_apprec_v1p0" xlink:type="simple">
 						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
 						<tns:ChannelId>asyncSMTPChannelA1</tns:ChannelId>
 					</tns:ThisPartyActionBinding>

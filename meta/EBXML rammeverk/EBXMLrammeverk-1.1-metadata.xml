@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>ebXML Rammeverk</Navn>
+	<Versjon>1.1</Versjon>
+	<Identifikator>HIS 1037:2011</Identifikator>
+	<Utgitt>06/2011</Utgitt>
+	<Utgiver>Direktoratet for e-helse</Utgiver>
+	<Referansekatalogen>
+		<Beskrivelse>ebXML Rammeverk 1.1</Beskrivelse>
+		<Referanse>http://ehelse.no/HIS1037-2011</Referanse>
+	</Referansekatalogen>
+	<Status>Fastsatt som standard</Status>
+
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>ebXML Rammeverk 1.1 (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/EBXMLrammeverk/HIS 1037_2011 Rammeverk for meldingsutveksling v1.1 -korrigert.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+	<RelaterteFiler>
+		<RelatertFil>
+			<Beskrivelse>Veiledning til riktig implementasjon og bruk av ebXML</Beskrivelse>
+			<Referanse>relaterteFiler/EBXMLrammeverk/HISD 1171_2017 Veiledning til riktig implementasjon og bruk av ebXML v1.0.pdf</Referanse>
+		</RelatertFil>
+		<RelatertFil>
+			<Beskrivelse>Validering av ebXMK-meldinger</Beskrivelse>
+			<Referanse>relaterteFiler/EBXMLrammeverk/HISD 1172_2017 Validering av ebXML-meldinger.pdf</Referanse>
+		</RelatertFil>
+		<RelatertFil>
+			<Beskrivelse>Implementasjonsguide API for bruk av kommunikasjonsparametere</Beskrivelse>
+			<Referanse>relaterteFiler/EBXMLrammeverk/HISD_1177_2017 Implementasjonsguide API for bruk av kommunikasjonsparametere.pdf</Referanse>
+		</RelatertFil>
+	</RelaterteFiler>
+
+
+</StandardMetadata>

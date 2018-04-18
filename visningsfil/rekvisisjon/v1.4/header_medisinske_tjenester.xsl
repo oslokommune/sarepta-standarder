@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:hmt="http://www.kith.no/xmlstds/medtjenhdr/2008-23-05" xmlns:lso="http://www.kith.no/xmlstds/rekvisisjon/2005-05-20" xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml" exclude-result-prefixes="hmt lso xhtml">
-	<!--
+<xsl:stylesheet version="1.0" 
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+	xmlns:hmt="http://www.kith.no/xmlstds/medtjenhdr/2008-23-05" 
+	xmlns:lso="http://www.kith.no/xmlstds/rekvisisjon/2005-05-20" 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+	exclude-result-prefixes="hmt lso xhtml">
+
+<!--
 FORMÅL
 Felles XSLT for generering av html for visningsfiler for diverse svarrapporter av Medisinske Tjenester - v1.0
 
@@ -42,15 +49,15 @@ ENDRINGER:
 		<b>Navn:&#160;</b>
 		<xsl:value-of select="lso:Name"/>
 		<br/>
-			<xsl:if test="lso:OffId">
+		<xsl:if test="lso:OffId">
 			
 			<xsl:choose>
 				<xsl:when test="lso:OffId/@DN">
 					<b><xsl:value-of select="lso:TypeOffId/@DN"/> :&#160;</b>
 				</xsl:when>
 				<xsl:otherwise><b><xsl:value-of select="lso:TypeOffId/@V"/> :&#160;</b></xsl:otherwise>
-		</xsl:choose>
-						<xsl:value-of select="lso:OffId"/>
+			</xsl:choose>
+			<xsl:value-of select="lso:OffId"/>
 
 		</xsl:if>
 		<br/>

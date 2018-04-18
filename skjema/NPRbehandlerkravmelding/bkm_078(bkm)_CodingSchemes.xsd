@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSpy v2010 rel. 3 sp1 (x64) (http://www.altova.com) by XMLSpy 2009 Enterprise Ed., Installed for 30 users (with SMP from 2009-06-19 to 2010-06-20) (NAV ØKONOMITJENESTER) -->
+<!-- edited with XMLSPY v5 rel. 3 U (http://www.xmlspy.com) by Trygdeetaten (Rikstrygdeverket) -->
+<!-- Generated on 06-23-2009  09:07:19 at NPR -->
+<!-- NPR-meldingen -->
+<!-- Modul bkm  -->
+<!-- XML-Schema level supported is specified by W3C -->
+<!-- http://www.w3.org/2001/XMLSchema -->
+<schema xmlns:npr="http://www.npr.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.npr.no/xmlstds" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- LEVEL 1 -->
+	<!-- Class: Melding -->
+	<!-- LEVEL 2 -->
+	<!-- Class: Helseinstitusjon -->
+	<!-- LEVEL 3 -->
+	<!-- Class: Enhet -->
+	<!-- Class: Pasient -->
+	<!-- LEVEL 4 -->
+	<!-- Class: Krav -->
+	<!-- Coding schemes as simpleTypes in the class: 'Krav' -->
+	<simpleType name="krav_til_refusjon">
+		<restriction base="nonNegativeInteger">
+			<enumeration value="1"/>
+			<enumeration value="2"/>
+			<enumeration value="3"/>
+		</restriction>
+	</simpleType>
+	<!-- Appinfo for Coding schemes in the class: 'Krav' -->
+	<annotation>
+		<appinfo>
+			<class name="Krav"/>
+			<attribute name="kravGrunnlag"/>
+			<codingScheme name="7464 Krav til refusjon"/>
+			<codingScheme OID="7464"/>
+			<simpleT name="krav_til_refusjon"/>
+			<code value="1" text="Kontakten er refusjonsberettiget" comment=""/>
+			<code value="2" text="Inneliggende pasient (eget/annet helseforetak)" comment=""/>
+			<code value="3" text="Innleggelse samme dag" comment=""/>
+		</appinfo>
+	</annotation>
+	<!-- Class: PasientEx -->
+	<simpleType name="kjonn">
+		<restriction base="nonNegativeInteger">
+			<enumeration value="0"/>
+			<enumeration value="1"/>
+			<enumeration value="2"/>
+			<enumeration value="9"/>
+		</restriction>
+	</simpleType>
+	<!--oid=3101-->
+	<simpleType name="ja_nei">
+		<restriction base="nonNegativeInteger">
+			<enumeration value="1"/>
+			<enumeration value="2"/>
+		</restriction>
+	</simpleType>
+	<!--oid=1101-->
+	<annotation>
+		<appinfo>
+			<class name="PasientEx"/>
+			<attribute name="kjonn"/>
+			<codingScheme name="3101 Kjonn"/>
+			<codingScheme OID="3101"/>
+			<simpleT name="kjonn"/>
+			<code value="1" text="Mann" comment=""/>
+			<code value="2" text="Kvinne" comment=""/>
+			<code value="9" text="Ikke spesifisert" comment=""/>
+		</appinfo>
+	</annotation>
+	<annotation>
+		<appinfo>
+			<class name="PasientEx"/>
+			<attribute name="arbeidstager"/>
+			<codingScheme name="1101 Ja, nei"/>
+			<codingScheme OID="1101"/>
+			<simpleT name="ja_nei"/>
+			<code value="1" text="Ja" comment=""/>
+			<code value="2" text="Nei" comment=""/>
+		</appinfo>
+	</annotation>
+	<!-- Class: EEA -->
+	<!-- Coding schemes as simpleTypes in the class: 'EEA -->
+	<simpleType name="eoS_dokumentasjon">
+		<restriction base="string">
+			<enumeration value="E112"/>
+			<enumeration value="E123"/>
+			<enumeration value="EHIC"/>
+			<enumeration value="HAST"/>
+			<enumeration value="PASS"/>
+		</restriction>
+	</simpleType>
+	<!--oid=7462-->
+	<annotation>
+		<appinfo>
+			<class name="EEA"/>
+			<attribute name="eeaDok"/>
+			<codingScheme name="7462 EEA dokumentasjon"/>
+			<codingScheme OID="7462"/>
+			<simpleT name="eoS_dokumentasjon"/>
+			<code value="E112" text="EEA-blankett E112" comment=""/>
+			<code value="E123" text="EEA-blankett E123" comment=""/>
+			<code value="EHIC" text="Helsetrygdkort" comment="European Health Insurance Card) / EEA-kort"/>
+			<code value="HAST" text="Hasteblankett" comment="Hasteblankett benyttes som erstatning for EEA-kort"/>
+			<code value="PASS" text="Pass" comment=""/>
+		</appinfo>
+	</annotation>
+	<!-- Class: Henvisningsperiode -->
+	<!-- Coding schemes as simpleTypes in the class: 'Henvisningsperiode' -->
+	<simpleType name="tjenester_og_vesen">
+		<restriction base="nonNegativeInteger">
+			<enumeration value="1"/>
+			<enumeration value="2"/>
+			<enumeration value="3"/>
+			<enumeration value="4"/>
+			<enumeration value="5"/>
+			<enumeration value="6"/>
+			<enumeration value="7"/>
+			<enumeration value="8"/>
+			<enumeration value="9"/>
+			<enumeration value="10"/>
+			<enumeration value="21"/>
+			<enumeration value="41"/>
+			<enumeration value="42"/>
+			<enumeration value="43"/>
+			<enumeration value="49"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="trygdenasjon">
+		<restriction base="string">
+			<enumeration value="AD"/>
+			<enumeration value="AE"/>
+			<enumeration value="AF"/>
+			<enumeration value="AG"/>
+			<enumeration value="AI"/>
+			<enumeration value="AL"/>
+			<enumeration value="AM"/>
+			<enumeration value="AN"/>
+			<enumeration value="AO"/>
+			<enumeration value="AQ"/>
+			<enumeration value="AR"/>
+			<enumeration value="AS"/>
+			<enumeration value="AT"/>
+			<enumeration value="AU"/>
+			<enumeration value="AW"/>
+			<enumeration value="AX"/>
+			<enumeration value="AZ"/>
+			<enumeration value="BA"/>
+			<enumeration value="BB"/>
+			<enumeration value="BD"/>
+			<enumeration value="BE"/>
+			<enumeration value="BF"/>
+			<enumeration value="BG"/>
+			<enumeration value="BH"/>
+			<enumeration value="BI"/>
+			<enumeration value="BJ"/>
+			<enumeration value="BM"/>
+			<enumeration value="BN"/>
+			<enumeration value="BO"/>
+			<enumeration value="BR"/>
+			<enumeration value="BS"/>
+			<enumeration value="BT"/>
+			<enumeration value="BV"/>
+			<enumeration value="BW"/>
+			<enumeration value="BY"/>
+			<enumeration value="BZ"/>
+			<enumeration value="CA"/>
+			<enumeration value="CC"/>
+			<enumeration value="CD"/>
+			<enumeration value="CF"/>
+			<enumeration value="CG"/>
+			<enumeration value="CH"/>
+			<enumeration value="CI"/>
+			<enumeration value="CK"/>
+			<enumeration value="CL"/>
+			<enumeration value="CM"/>
+			<enumeration value="CN"/>
+			<enumeration value="CO"/>
+			<enumeration value="CR"/>
+			<enumeration value="CS"/>
+			<enumeration value="CU"/>
+			<enumeration value="CV"/>
+			<enumeration value="CX"/>
+			<enumeration value="CY"/>
+			<enumeration value="CZ"/>
+			<enumeration value="DE"/>
+			<enumeration value="DJ"/>
+			<enumeration value="DK"/>
+			<enumeration value="DM"/>
+			<enumeration value="DO"/>
+			<enumeration value="DZ"/>
+			<enumeration value="EC"/>
+			<enumeration value="EE"/>
+			<enumeration value="EG"/>
+			<enumeration value="EH"/>
+			<enumeration value="ER"/>
+			<enumeration value="ES"/>
+			<enumeration value="ET"/>
+			<enumeration value="FI"/>
+			<enumeration value="FJ"/>
+			<enumeration value="FK"/>
+			<enumeration value="FM"/>
+			<enumeration value="FO"/>
+			<enumeration value="FR"/>
+			<enumeration value="GA"/>
+			<enumeration value="GB"/>
+			<enumeration value="GD"/>
+			<enumeration value="GE"/>
+			<enumeration value="GF"/>
+			<enumeration value="GH"/>
+			<enumeration value="GI"/>
+			<enumeration value="GL"/>
+			<enumeration value="GM"/>
+			<enumeration value="GN"/>
+			<enumeration value="GP"/>
+			<enumeration value="GQ"/>
+			<enumeration value="GR"/>
+			<enumeration value="GS"/>
+			<enumeration value="GT"/>
+			<enumeration value="GU"/>
+			<enumeration value="GW"/>
+			<enumeration value="GY"/>
+			<enumeration value="HK"/>
+			<enumeration value="HM"/>
+			<enumeration value="HN"/>
+			<enumeration value="HR"/>
+			<enumeration value="HT"/>
+			<enumeration value="HU"/>
+			<enumeration value="ID"/>
+			<enumeration value="IE"/>
+			<enumeration value="IL"/>
+			<enumeration value="IN"/>
+			<enumeration value="IO"/>
+			<enumeration value="IQ"/>
+			<enumeration value="IR"/>
+			<enumeration value="IS"/>
+			<enumeration value="IT"/>
+			<enumeration value="JM"/>
+			<enumeration value="JO"/>
+			<enumeration value="JP"/>
+			<enumeration value="KE"/>
+			<enumeration value="KG"/>
+			<enumeration value="KH"/>
+			<enumeration value="KI"/>
+			<enumeration value="KM"/>
+			<enumeration value="KN"/>
+			<enumeration value="KP"/>
+			<enumeration value="KR"/>
+			<enumeration value="KW"/>
+			<enumeration value="KY"/>
+			<enumeration value="KZ"/>
+			<enumeration value="LA"/>
+			<enumeration value="LB"/>
+			<enumeration value="LC"/>
+			<enumeration value="LI"/>
+			<enumeration value="LK"/>
+			<enumeration value="LR"/>
+			<enumeration value="LS"/>
+			<enumeration value="LT"/>
+			<enumeration value="LU"/>
+			<enumeration value="LV"/>
+			<enumeration value="LY"/>
+			<enumeration value="MA"/>
+			<enumeration value="MC"/>
+			<enumeration value="MD"/>
+			<enumeration value="MG"/>
+			<enumeration value="MH"/>
+			<enumeration value="MK"/>
+			<enumeration value="ML"/>
+			<enumeration value="MM"/>
+			<enumeration value="MN"/>
+			<enumeration value="MO"/>
+			<enumeration value="MP"/>
+			<enumeration value="MQ"/>
+			<enumeration value="MR"/>
+			<enumeration value="MS"/>
+			<enumeration value="MT"/>
+			<enumeration value="MU"/>
+			<enumeration value="MV"/>
+			<enumeration value="MW"/>
+			<enumeration value="MX"/>
+			<enumeration value="MY"/>
+			<enumeration value="MZ"/>
+			<enumeration value="NA"/>
+			<enumeration value="NC"/>
+			<enumeration value="NE"/>
+			<enumeration value="NF"/>
+			<enumeration value="NG"/>
+			<enumeration value="NI"/>
+			<enumeration value="NL"/>
+			<enumeration value="NO"/>
+			<enumeration value="NP"/>
+			<enumeration value="NR"/>
+			<enumeration value="NU"/>
+			<enumeration value="NZ"/>
+			<enumeration value="OM"/>
+			<enumeration value="PA"/>
+			<enumeration value="PE"/>
+			<enumeration value="PF"/>
+			<enumeration value="PG"/>
+			<enumeration value="PH"/>
+			<enumeration value="PK"/>
+			<enumeration value="PL"/>
+			<enumeration value="PM"/>
+			<enumeration value="PN"/>
+			<enumeration value="PR"/>
+			<enumeration value="PS"/>
+			<enumeration value="PT"/>
+			<enumeration value="PW"/>
+			<enumeration value="PY"/>
+			<enumeration value="QA"/>
+			<enumeration value="RE"/>
+			<enumeration value="RO"/>
+			<enumeration value="RU"/>
+			<enumeration value="RW"/>
+			<enumeration value="SA"/>
+			<enumeration value="SB"/>
+			<enumeration value="SC"/>
+			<enumeration value="SD"/>
+			<enumeration value="SE"/>
+			<enumeration value="SG"/>
+			<enumeration value="SH"/>
+			<enumeration value="SI"/>
+			<enumeration value="SJ"/>
+			<enumeration value="SK"/>
+			<enumeration value="SL"/>
+			<enumeration value="SM"/>
+			<enumeration value="SN"/>
+			<enumeration value="SO"/>
+			<enumeration value="SR"/>
+			<enumeration value="ST"/>
+			<enumeration value="SV"/>
+			<enumeration value="SY"/>
+			<enumeration value="SZ"/>
+			<enumeration value="TC"/>
+			<enumeration value="TD"/>
+			<enumeration value="TF"/>
+			<enumeration value="TG"/>
+			<enumeration value="TH"/>
+			<enumeration value="TJ"/>
+			<enumeration value="TK"/>
+			<enumeration value="TL"/>
+			<enumeration value="TM"/>
+			<enumeration value="TN"/>
+			<enumeration value="TO"/>
+			<enumeration value="TR"/>
+			<enumeration value="TT"/>
+			<enumeration value="TV"/>
+			<enumeration value="TW"/>
+			<enumeration value="TZ"/>
+			<enumeration value="UA"/>
+			<enumeration value="UG"/>
+			<enumeration value="UM"/>
+			<enumeration value="US"/>
+			<enumeration value="UY"/>
+			<enumeration value="UZ"/>
+			<enumeration value="VA"/>
+			<enumeration value="VC"/>
+			<enumeration value="VE"/>
+			<enumeration value="VG"/>
+			<enumeration value="VI"/>
+			<enumeration value="VN"/>
+			<enumeration value="VU"/>
+			<enumeration value="WF"/>
+			<enumeration value="WS"/>
+			<enumeration value="YE"/>
+			<enumeration value="YT"/>
+			<enumeration value="YU"/>
+			<enumeration value="ZA"/>
+			<enumeration value="ZM"/>
+			<enumeration value="ZW"/>
+			<enumeration value="XX"/>
+		</restriction>
+	</simpleType>
+	<!--oid=8404-->
+	<!-- Appinfo for Coding schemes in the class: 'Henvisningsperiode' -->
+	<annotation>
+		<appinfo>
+			<class name="Henvisningsperiode"/>
+			<attribute name="henvFraTjeneste"/>
+			<codingScheme name="8404 Tjenester og vesen"/>
+			<codingScheme OID="8404"/>
+			<simpleT name="tjenester_og_vesen"/>
+			<code value="1" text="Pasienten selv" comment=""/>
+			<code value="2" text="Fastlege/primaerlege" comment=""/>
+			<code value="3" text="Oevrig primaerhelsetjeneste" comment=""/>
+			<code value="4" text="Spesialisthelsetjenesten" comment=""/>
+			<code value="5" text="Barnehage, skolesektor, PPT" comment=""/>
+			<code value="6" text="Sosialtjeneste, barnevern" comment=""/>
+			<code value="7" text="Politi, fengsel, rettsvesen" comment=""/>
+			<code value="8" text="Rehabiliteringsinstitusjoner, sykehjem" comment=""/>
+			<code value="10" text="Privatpraktiserede spesialister" comment=""/>
+			<code value="9" text="Andre tjenester" comment=""/>
+		</appinfo>
+	</annotation>
+	<annotation>
+		<appinfo>
+			<class name="Henvisningsperiode"/>
+			<attribute name="trygdenasjon"/>
+			<codingScheme name="8460 Trygdenasjon"/>
+			<codingScheme OID="8460"/>
+			<simpleT name="trygdenasjon"/>
+			<code value="AD" text="Andorra" comment=""/>
+			<code value="AE" text="De forente arabiske emiratene" comment=""/>
+			<code value="AF" text="Afghanistan" comment=""/>
+			<code value="AG" text="Antigua og Barbuda" comment=""/>
+			<code value="AI" text="Anguilla" comment=""/>
+			<code value="AL" text="Albania" comment=""/>
+			<code value="AM" text="Armenia" comment=""/>
+			<code value="AN" text="De nederlandske Antillene" comment=""/>
+			<code value="AO" text="Angola" comment=""/>
+			<code value="AQ" text="Antarktis" comment=""/>
+			<code value="AR" text="Argentina" comment=""/>
+			<code value="AS" text="Amerikansk Samoa" comment=""/>
+			<code value="AT" text="Oesterrike" comment=""/>
+			<code value="AU" text="Australia" comment=""/>
+			<code value="AW" text="Aruba" comment=""/>
+			<code value="AX" text="Aaland" comment=""/>
+			<code value="AZ" text="Aserbajdsjan" comment=""/>
+			<code value="BA" text="Bosnia-Hercegovina" comment=""/>
+			<code value="BB" text="Barbados" comment=""/>
+			<code value="BD" text="Bangladesh" comment=""/>
+			<code value="BE" text="Belgia" comment=""/>
+			<code value="BF" text="Burkina Faso" comment=""/>
+			<code value="BG" text="Bulgaria" comment=""/>
+			<code value="BH" text="Bahrain" comment=""/>
+			<code value="BI" text="Burundi" comment=""/>
+			<code value="BJ" text="Benin" comment=""/>
+			<code value="BM" text="Bermuda" comment=""/>
+			<code value="BN" text="Brunei Darussalam" comment=""/>
+			<code value="BO" text="Bolivia" comment=""/>
+			<code value="BR" text="Brasil" comment=""/>
+			<code value="BS" text="Bahamas" comment=""/>
+			<code value="BT" text="Bhutan" comment=""/>
+			<code value="BV" text="Bouvetoeya" comment=""/>
+			<code value="BW" text="Botswana" comment=""/>
+			<code value="BY" text="Hviterussland" comment=""/>
+			<code value="BZ" text="Belize" comment=""/>
+			<code value="CA" text="Canada" comment=""/>
+			<code value="CC" text="Kokosoeyene" comment=""/>
+			<code value="CD" text="Kongo" comment=""/>
+			<code value="CF" text="Den sentralafrikanske republikken" comment=""/>
+			<code value="CG" text="Kongo-Brazzaville" comment=""/>
+			<code value="CH" text="Sveits" comment=""/>
+			<code value="CI" text="Elfenbeinskysten" comment=""/>
+			<code value="CK" text="Cookoeyene" comment=""/>
+			<code value="CL" text="Chile" comment=""/>
+			<code value="CM" text="Kamerun" comment=""/>
+			<code value="CN" text="Kina" comment=""/>
+			<code value="CO" text="Colombia" comment=""/>
+			<code value="CR" text="Costa Rica" comment=""/>
+			<code value="CS" text="Serbia og Montenegro" comment=""/>
+			<code value="CU" text="Cuba" comment=""/>
+			<code value="CV" text="Kapp Verde" comment=""/>
+			<code value="CX" text="Christmasoeya" comment=""/>
+			<code value="CY" text="Kypros" comment=""/>
+			<code value="CZ" text="Tsjekkia" comment=""/>
+			<code value="DE" text="Tyskland" comment=""/>
+			<code value="DJ" text="Djibouti" comment=""/>
+			<code value="DK" text="Danmark" comment=""/>
+			<code value="DM" text="Dominica" comment=""/>
+			<code value="DO" text="Den dominikanske republikken" comment=""/>
+			<code value="DZ" text="Algerie" comment=""/>
+			<code value="EC" text="Ecuador" comment=""/>
+			<code value="EE" text="Estland" comment=""/>
+			<code value="EG" text="Egypt" comment=""/>
+			<code value="EH" text="Vest-Sahara" comment=""/>
+			<code value="ER" text="Eritrea" comment=""/>
+			<code value="ES" text="Spania" comment=""/>
+			<code value="ET" text="Etiopia" comment=""/>
+			<code value="FI" text="Finland" comment=""/>
+			<code value="FJ" text="Fiji" comment=""/>
+			<code value="FK" text="Falklandsoeyene" comment=""/>
+			<code value="FM" text="Mikronesiafoederasjonen" comment=""/>
+			<code value="FO" text="Faeroeyene" comment=""/>
+			<code value="FR" text="Frankrike" comment=""/>
+			<code value="GA" text="Gabon" comment=""/>
+			<code value="GB" text="Storbritannia" comment=""/>
+			<code value="GD" text="Grenada" comment=""/>
+			<code value="GE" text="Georgia" comment=""/>
+			<code value="GF" text="Fransk Guyana" comment=""/>
+			<code value="GH" text="Ghana" comment=""/>
+			<code value="GI" text="Gibraltar" comment=""/>
+			<code value="GL" text="Groenland" comment=""/>
+			<code value="GM" text="Gambia" comment=""/>
+			<code value="GN" text="Guinea" comment=""/>
+			<code value="GP" text="Guadeloupe" comment=""/>
+			<code value="GQ" text="Ekvatorial-Guinea" comment=""/>
+			<code value="GR" text="Hellas" comment=""/>
+			<code value="GS" text="Soer-Georgia og de soendre Sandwichoeyene" comment=""/>
+			<code value="GT" text="Guatemala" comment=""/>
+			<code value="GU" text="Guam" comment=""/>
+			<code value="GW" text="Guinea-Bissau" comment=""/>
+			<code value="GY" text="Guyana" comment=""/>
+			<code value="HK" text="Hong Kong" comment=""/>
+			<code value="HM" text="Heard- og McDonaldoeyene" comment=""/>
+			<code value="HN" text="Honduras" comment=""/>
+			<code value="HR" text="Kroatia" comment=""/>
+			<code value="HT" text="Haiti" comment=""/>
+			<code value="HU" text="Ungarn" comment=""/>
+			<code value="ID" text="Indonesia" comment=""/>
+			<code value="IE" text="Irland" comment=""/>
+			<code value="IL" text="Israel" comment=""/>
+			<code value="IN" text="India" comment=""/>
+			<code value="IO" text="Det britiske territoriet i Indiahavet" comment=""/>
+			<code value="IQ" text="Irak" comment=""/>
+			<code value="IR" text="Iran" comment=""/>
+			<code value="IS" text="Island" comment=""/>
+			<code value="IT" text="Italia" comment=""/>
+			<code value="JM" text="Jamaica" comment=""/>
+			<code value="JO" text="Jordan" comment=""/>
+			<code value="JP" text="Japan" comment=""/>
+			<code value="KE" text="Kenya" comment=""/>
+			<code value="KG" text="Kirgisistan" comment=""/>
+			<code value="KH" text="Kambodsja" comment=""/>
+			<code value="KI" text="Kiribati" comment=""/>
+			<code value="KM" text="Komorene" comment=""/>
+			<code value="KN" text="Saint Kitts og Nevis" comment=""/>
+			<code value="KP" text="Nord-Korea" comment=""/>
+			<code value="KR" text="Soer-Korea" comment=""/>
+			<code value="KW" text="Kuwait" comment=""/>
+			<code value="KY" text="Caymanoeyene" comment=""/>
+			<code value="KZ" text="Kasakhstan" comment=""/>
+			<code value="LA" text="Laos" comment=""/>
+			<code value="LB" text="Libanon" comment=""/>
+			<code value="LC" text="Saint Lucia" comment=""/>
+			<code value="LI" text="Liechtenstein" comment=""/>
+			<code value="LK" text="Sri Lanka" comment=""/>
+			<code value="LR" text="Liberia" comment=""/>
+			<code value="LS" text="Lesotho" comment=""/>
+			<code value="LT" text="Litauen" comment=""/>
+			<code value="LU" text="Luxembourg" comment=""/>
+			<code value="LV" text="Latvia" comment=""/>
+			<code value="LY" text="Libya" comment=""/>
+			<code value="MA" text="Marokko" comment=""/>
+			<code value="MC" text="Monaco" comment=""/>
+			<code value="MD" text="Moldova" comment=""/>
+			<code value="MG" text="Madagaskar" comment=""/>
+			<code value="MH" text="Marshalloeyene" comment=""/>
+			<code value="MK" text="Makedonia" comment=""/>
+			<code value="ML" text="Mali" comment=""/>
+			<code value="MM" text="Myanmar/Burma" comment=""/>
+			<code value="MN" text="Mongolia" comment=""/>
+			<code value="MO" text="Macao" comment=""/>
+			<code value="MP" text="Nord-Marianene" comment=""/>
+			<code value="MQ" text="Martinique" comment=""/>
+			<code value="MR" text="Mauritania" comment=""/>
+			<code value="MS" text="Montserrat" comment=""/>
+			<code value="MT" text="Malta" comment=""/>
+			<code value="MU" text="Mauritius" comment=""/>
+			<code value="MV" text="Maldivene" comment=""/>
+			<code value="MW" text="Malawi" comment=""/>
+			<code value="MX" text="Mexico" comment=""/>
+			<code value="MY" text="Malaysia" comment=""/>
+			<code value="MZ" text="Mosambik" comment=""/>
+			<code value="NA" text="Namibia" comment=""/>
+			<code value="NC" text="Ny-Caledonia" comment=""/>
+			<code value="NE" text="Niger" comment=""/>
+			<code value="NF" text="Norfolkoeya" comment=""/>
+			<code value="NG" text="Nigeria" comment=""/>
+			<code value="NI" text="Nicaragua" comment=""/>
+			<code value="NL" text="Nederland" comment=""/>
+			<code value="NO" text="Norge" comment=""/>
+			<code value="NP" text="Nepal" comment=""/>
+			<code value="NR" text="Nauru" comment=""/>
+			<code value="NU" text="Niue" comment=""/>
+			<code value="NZ" text="New Zealand" comment=""/>
+			<code value="OM" text="Oman" comment=""/>
+			<code value="PA" text="Panama" comment=""/>
+			<code value="PE" text="Peru" comment=""/>
+			<code value="PF" text="Fransk Polynesia" comment=""/>
+			<code value="PG" text="Papua Ny-Guinea" comment=""/>
+			<code value="PH" text="Filippinene" comment=""/>
+			<code value="PK" text="Pakistan" comment=""/>
+			<code value="PL" text="Polen" comment=""/>
+			<code value="PM" text="Saint-Pierre og Miquelon" comment=""/>
+			<code value="PN" text="Pitcairn" comment=""/>
+			<code value="PR" text="Puerto Rico" comment=""/>
+			<code value="PS" text="Det palestinske omraadet" comment=""/>
+			<code value="PT" text="Portugal" comment=""/>
+			<code value="PW" text="Palau" comment=""/>
+			<code value="PY" text="Paraguay" comment=""/>
+			<code value="QA" text="Qatar" comment=""/>
+			<code value="RE" text="Reunion" comment=""/>
+			<code value="RO" text="Romania" comment=""/>
+			<code value="RU" text="Russland" comment=""/>
+			<code value="RW" text="Rwanda" comment=""/>
+			<code value="SA" text="Saudi-Arabia" comment=""/>
+			<code value="SB" text="Salomonoeyene" comment=""/>
+			<code value="SC" text="Seychellene" comment=""/>
+			<code value="SD" text="Sudan" comment=""/>
+			<code value="SE" text="Sverige" comment=""/>
+			<code value="SG" text="Singapore" comment=""/>
+			<code value="SH" text="Saint Helena" comment=""/>
+			<code value="SI" text="Slovenia" comment=""/>
+			<code value="SJ" text="Svalbard og Jan Mayen" comment=""/>
+			<code value="SK" text="Slovakia" comment=""/>
+			<code value="SL" text="Sierra Leone" comment=""/>
+			<code value="SM" text="San Marino" comment=""/>
+			<code value="SN" text="Senegal" comment=""/>
+			<code value="SO" text="Somalia" comment=""/>
+			<code value="SR" text="Surinam" comment=""/>
+			<code value="ST" text="Sao Tome og Principe" comment=""/>
+			<code value="SV" text="El Salvador" comment=""/>
+			<code value="SY" text="Syria" comment=""/>
+			<code value="SZ" text="Swaziland" comment=""/>
+			<code value="TC" text="Turks- og Caicosoeyene" comment=""/>
+			<code value="TD" text="Tsjad" comment=""/>
+			<code value="TF" text="De franske territoriene i  soer" comment=""/>
+			<code value="TG" text="Togo" comment=""/>
+			<code value="TH" text="Thailand" comment=""/>
+			<code value="TJ" text="Tadsjikistan" comment=""/>
+			<code value="TK" text="Tokelau" comment=""/>
+			<code value="TL" text="Oest-Timor" comment=""/>
+			<code value="TM" text="Turkmenistan" comment=""/>
+			<code value="TN" text="Tunisia" comment=""/>
+			<code value="TO" text="Tonga" comment=""/>
+			<code value="TR" text="Tyrkia" comment=""/>
+			<code value="TT" text="Trinidad og Tobago" comment=""/>
+			<code value="TV" text="Tuvalu" comment=""/>
+			<code value="TW" text="Taiwan" comment=""/>
+			<code value="TZ" text="Tanzania" comment=""/>
+			<code value="UA" text="Ukraina" comment=""/>
+			<code value="UG" text="Uganda" comment=""/>
+			<code value="UM" text="De forente stater, mindre, avsidesliggende oeyer" comment=""/>
+			<code value="US" text="De forente stater (USA)" comment=""/>
+			<code value="UY" text="Uruguay" comment=""/>
+			<code value="UZ" text="Usbekistan" comment=""/>
+			<code value="VA" text="Vatikanstaten" comment=""/>
+			<code value="VC" text="Saint Vincent og Grenadinene" comment=""/>
+			<code value="VE" text="Venezuela" comment=""/>
+			<code value="VG" text="Jomfruoeyene (Britisk)" comment=""/>
+			<code value="VI" text="Jomfruoeyene (USA)" comment=""/>
+			<code value="VN" text="Vietnam" comment=""/>
+			<code value="VU" text="Vanuatu" comment=""/>
+			<code value="WF" text="Wallis- og Futunaoeyene" comment=""/>
+			<code value="WS" text="Samoa" comment=""/>
+			<code value="YE" text="Jemen" comment=""/>
+			<code value="YT" text="Mayotte" comment=""/>
+			<code value="YU" text="Jugoslavia" comment=""/>
+			<code value="ZA" text="Soer-Afrika" comment=""/>
+			<code value="ZM" text="Zambia" comment=""/>
+			<code value="ZW" text="Zimbabwe" comment=""/>
+			<code value="XX" text="Ukjent trygdenasjon" comment=""/>
+		</appinfo>
+	</annotation>
+	<!--oid=8404  -->
+	<!-- Class: Episode -->
+	<!-- Coding schemes as simpleTypes in the class: 'Episode' -->
+	<simpleType name="debitor">
+		<restriction base="nonNegativeInteger">
+			<enumeration value="1"/>
+			<enumeration value="11"/>
+			<enumeration value="12"/>
+			<enumeration value="20"/>
+			<enumeration value="22"/>
+			<enumeration value="30"/>
+			<enumeration value="32"/>
+			<enumeration value="40"/>
+			<enumeration value="41"/>
+			<enumeration value="42"/>
+			<enumeration value="43"/>
+			<enumeration value="44"/>
+			<enumeration value="45"/>
+			<enumeration value="47"/>
+			<enumeration value="50"/>
+			<enumeration value="60"/>
+			<enumeration value="70"/>
+			<enumeration value="80"/>
+			<enumeration value="90"/>
+			<enumeration value="99"/>
+		</restriction>
+	</simpleType>
+	<!--oid=8426-->
+	<annotation>
+		<appinfo>
+			<class name="Episode"/>
+			<attribute name="debitor"/>
+			<codingScheme name="8426 Debitor"/>
+			<codingScheme OID="8426"/>
+			<simpleT name="debitor"/>
+			<code value="1" text="Ordinaer pasient. Opphold finansiert paa ordinaer maate ISF,NAV og ordinaer finansiering innen psykisk helse" comment=""/>
+			<code value="11" text="Konvensjonspasient behandlet ved oe-hjelp" comment=""/>
+			<code value="12" text="Utlending fra land uten avtale (selvbetalende)" comment=""/>
+			<code value="20" text="Sykepengeprosjekt" comment=""/>
+			<code value="22" text="Forskningsprogram" comment=""/>
+			<code value="30" text="Selvbetalende norsk pasient og selvbetalende konvensjonspasient" comment=""/>
+			<code value="40" text="Anbudspasient finansiert via ISF" comment=""/>
+			<code value="41" text="Anbudspasient paa avtalen for Helse Oest RHF" comment=""/>
+			<code value="42" text="Anbudspasient paa avtalen for Helse Soer RHF" comment=""/>
+			<code value="43" text="Anbudspasient paa avtalen for Helse Vest RHF" comment=""/>
+			<code value="44" text="Anbudspasient paa avtalen for Helse Midt-Norge RHF" comment=""/>
+			<code value="45" text="Anbudspasient paa avtalen for Helse Nord RHF" comment=""/>
+			<code value="47" text="Anbudspasient paa avtalen for Helse Soer-oest RHF" comment=""/>
+			<code value="50" text="Opphold hos avtalespesialist finansiert via ISF" comment=""/>
+			<code value="60" text="Forsikringsfinansiert opphold" comment="Pasientbehandling finansiert av forsikringsselskaper via private helseforsikringer"/>
+			<code value="70" text="NAV formidlet opphold ved fristbrudd" comment="Pasientbehandling formidlet av rikstrygdeverket ved brudd paa frist for noedvendig helsehjelp"/>
+			<code value="80" text="Opphold paa avtale med HF/RHF" comment="Pasientbehandling paa avtale med helseforetak eller regionalt helseforetak"/>
+			<code value="90" text="Fritt behandlingsvalg" comment=""/>
+			<code value="99" text="Annet" comment=""/>
+		</appinfo>
+	</annotation>
+	<!-- LEVEL 5 -->
+	<!-- Class: Identifikator -->
+	<!-- Coding schemes as simpleTypes in the class: 'Identifikator' -->
+	<simpleType name="iD_type_for_personer">
+		<restriction base="string">
+			<enumeration value="FNR"/>
+			<enumeration value="DNR"/>
+			<enumeration value="HNR"/>
+			<enumeration value="HPR"/>
+			<enumeration value="HER"/>
+			<enumeration value="PNR"/>
+			<enumeration value="SEF"/>
+			<enumeration value="DKF"/>
+			<enumeration value="SSN"/>
+			<enumeration value="FPN"/>
+			<enumeration value="UID"/>
+			<enumeration value="DUF"/>
+			<enumeration value="FHN"/>
+			<enumeration value="XXX"/>
+		</restriction>
+	</simpleType>
+	<!--oid=8116-->
+	<annotation>
+		<appinfo>
+			<class name="Identifikator"/>
+			<attribute name="typeId"/>
+			<codingScheme name="8116 ID-type for personer"/>
+			<codingScheme OID="8116"/>
+			<simpleT name="iD_type_for_personer"/>
+			<code value="FNR" text="Foedselsnummer" comment="Norsk foedselsnummer"/>
+			<code value="DNR" text="D-nummer" comment="Personer i kontakt med norske myndigheter uten norsk foedselsnummer"/>
+			<code value="HNR" text="H-nummer" comment="Noednummer"/>
+			<code value="HPR" text="HPR-nummer" comment="Tildeles av Statens autorisasjonskontor for helsepersonell"/>
+			<code value="HER" text="Identifikator fra Helsetjenesteenhetsregisteret" comment="HER-Id"/>
+			<code value="PNR" text="Passnummer" comment=""/>
+			<code value="SEF" text="Svensk personnummer" comment=""/>
+			<code value="DKF" text="Dansk personnummer" comment=""/>
+			<code value="SSN" text="Sosial security number" comment=""/>
+			<code value="FPN" text="Forsikringspolise nummer" comment=""/>
+			<code value="UID" text="Utenlandsk identifikasjon" comment="Annet enn svensk- og dansk personnummer"/>
+			<code value="XXX" text="Annet" comment=""/>
+		</appinfo>
+	</annotation>
+	<!-- Class: Alternativ Identifikator -->
+	<!-- Class: Enkeltregning -->
+	<simpleType name="type_okonomisk_transaksjon">
+		<restriction base="nonNegativeInteger">
+			<enumeration value="1"/>
+			<enumeration value="2"/>
+			<enumeration value="3"/>
+			<enumeration value="4"/>
+			<enumeration value="5"/>
+		</restriction>
+	</simpleType>
+	<!--oid=7463-->
+	<simpleType name="kode_for_arsak_til_fri_egenandel">
+		<restriction base="string">
+			<enumeration value="A"/>
+			<enumeration value="B"/>
+			<enumeration value="E"/>
+			<enumeration value="F"/>
+			<enumeration value="H"/>
+			<enumeration value="I"/>
+			<enumeration value="J"/>
+			<enumeration value="K"/>
+			<enumeration value="M"/>
+			<enumeration value="O"/>
+			<enumeration value="S"/>
+			<enumeration value="T"/>
+			<enumeration value="Y"/>
+		</restriction>
+	</simpleType>
+	<!-- Appinfo for Coding schemes in the class: 'Enkeltregning' -->
+	<annotation>
+		<appinfo>
+			<class name="Enkeltregning"/>
+			<attribute name="typeTransaksjon"/>
+			<codingScheme name="7463 Type okonomisk transaksjon"/>
+			<codingScheme OID="7463"/>
+			<simpleT name="type_okonomisk_transaksjon"/>
+			<code value="1" text="Regning uten egenandel" comment="Pasienten er fritatt for egenandel eller regningen har ikke egenandelstakst."/>
+			<code value="2" text="Ikke betalt egenandel" comment="Paaloept egenandel er ikke betalt."/>
+			<code value="3" text="Betalt egenandel" comment="Paaloept egenandel er betalt."/>
+			<code value="4" text="Korrigering - egenandel er betalt" comment=""/>
+			<code value="5" text="Kreditering av tidligere innsendt regning" comment=""/>
+		</appinfo>
+	</annotation>
+	<annotation>
+		<appinfo>
+			<class name="Enkeltregning"/>
+			<attribute name="kodeEgenandel"/>
+			<codingScheme name="7461 Kode for Aarsak til fri egenandel"/>
+			<codingScheme OID="7461"/>
+			<simpleT name="kode_for_arsak_til_fri_egenandel"/>
+			<code value="A" text="Smittefarlig sykdom" comment="Brukes av lege, poliklinikk, privat laboratorium/roentgeninstitutt."/>
+			<code value="B" text="Barn under 12 aar" comment="Brukes av fysioterapeuter, lege, poliklinikk og privat laboratorium/roentgeninstitutt."/>
+			<code value="E" text="Kommunalt frikort" comment="Brukes av lege, psykolog, poliklinikk og privat laboratorium/roentgeninstitutt."/>
+			<code value="F" text="Frikort" comment="Frikort tak 1 for lege, psykolog, poliklinikk, privat laboratorium/roentgeninstitutt, pasienttransport og tak 2 for fysioterapeut og tannlege."/>
+			<code value="H" text="Pasientens tilstand til hinder for avkreving av egenandel" comment="Brukes av lege, poliklinikk og  privat laboratorium/roentgeninstitutt."/>
+			<code value="I" text="Innsatt i fengsel/sikringsanstalt" comment="Brukes av lege, poliklinikk og privat laboratorium/roentgeninstitutt. "/>
+			<code value="J" text="Barn under 18 aar psykoterapeutisk/psykiatrisk behandling" comment="Brukes av lege, psykolog, poliklinikk og privat laboratorium/roentgeninstitutt."/>
+			<code value="K" text="Krigsskade" comment="Brukes av lege, tannlege, poliklinikk og privat laboratorium/roentgeninstitutt."/>
+			<code value="M" text="Militaerperson, vernepliktig" comment="Samme som Y yrkesskade, brukes av lege, poliklinikk privat laboratorium/roentgeninstitutt."/>
+			<code value="O" text="Oppsoekende behandling overfor rusmiddelavhengige" comment="Brukes av poliklinikk og privat laboratorium/roentgeninstitutt."/>
+			<code value="S" text="Svangerskap" comment="Brukes av lege, poliklinikk og privat laboratorium/roentgeninstitutt."/>
+			<code value="T" text="Trygdesak" comment="Brukes av poliklinikk og privat laboratorium/roentgeninstitutt."/>
+			<code value="Y" text="Yrkesskade" comment="Brukes av lege, fysioterapeut, tannlege, poliklinikk og privat laboratorium/roentgeninstitutt ."/>
+		</appinfo>
+	</annotation>
+	<!-- Class: Henvisende instans -->
+	<!-- Class: Kontakt -->
+	<!-- Coding schemes as simpleTypes in the class: 'Kontakt' -->
+	<simpleType name="kontakttype">
+		<restriction base="nonNegativeInteger">
+			<enumeration value="1"/>
+			<enumeration value="2"/>
+			<enumeration value="3"/>
+			<enumeration value="5"/>
+			<enumeration value="12"/>
+			<enumeration value="13"/>
+		</restriction>
+	</simpleType>
+	<!--oid=8432-->
+	<annotation>
+		<appinfo>
+			<class name="Kontakt"/>
+			<attribute name="kontaktType"/>
+			<codingScheme name="8432 Kontakttype"/>
+			<codingScheme OID="8432"/>
+			<simpleT name="kontakttype"/>
+			<code value="1" text="Utredning" comment=""/>
+			<code value="2" text="Behandling" comment=""/>
+			<code value="3" text="Kontroll" comment=""/>
+			<code value="5" text="Indirekte pasientkontakt" comment="Arbeid eller aktivitet knyttet til helsehjelpen som gis til en pasient uten at pasienten deltar."/>
+			<code value="12" text="Pasientadministrert behandling" comment=""/>
+			<code value="13" text="Opplaering" comment="Opplaering av pasienter og/eller paaroerende. Inkludert laerings- og mestringsaktiviteter."/>
+		</appinfo>
+	</annotation>
+	<!-- Class: Tilstand -->
+	<!-- Class: Tjeneste -->
+	<!-- LEVEL 6 -->
+	<!-- Class: Helseperson -->
+	<!-- Coding schemes as simpleTypes in the class: 'Helseperson' -->
+	<simpleType name="utforende_helsepersonell">
+		<restriction base="nonNegativeInteger">
+			<enumeration value="1"/>
+			<enumeration value="2"/>
+			<enumeration value="3"/>
+			<enumeration value="4"/>
+			<enumeration value="5"/>
+			<enumeration value="6"/>
+			<enumeration value="7"/>
+			<enumeration value="8"/>
+			<enumeration value="11"/>
+			<enumeration value="12"/>
+			<enumeration value="13"/>
+			<enumeration value="14"/>
+			<enumeration value="15"/>
+			<enumeration value="16"/>
+			<enumeration value="17"/>
+			<enumeration value="9"/>
+		</restriction>
+	</simpleType>
+	<!--oid=8401-->
+	<annotation>
+		<appinfo>
+			<class name="Helseperson"/>
+			<attribute name="polUtforende"/>
+			<codingScheme name="8401 Utfoerende helsepersonell"/>
+			<codingScheme OID="8401"/>
+			<simpleT name="utforende_helsepersonell"/>
+			<code value="1" text="Lege" comment=""/>
+			<code value="2" text="Sykepleier" comment=""/>
+			<code value="3" text="Pedagog" comment=""/>
+			<code value="4" text="Psykolog" comment=""/>
+			<code value="5" text="Sosionom" comment=""/>
+			<code value="6" text="Barnevernpedagog" comment=""/>
+			<code value="7" text="Vernepleier" comment=""/>
+			<code value="8" text="Jordmor" comment=""/>
+			<code value="11" text="Audiograf" comment=""/>
+			<code value="12" text="Bioingenioer" comment=""/>
+			<code value="13" text="Ergoterapeut" comment=""/>
+			<code value="14" text="Fysioterapeut" comment=""/>
+			<code value="15" text="Klinisk ernaeringsfysiolog" comment=""/>
+			<code value="16" text="Radiograf" comment=""/>
+			<code value="17" text="Tannlege" comment=""/>
+			<code value="9" text="Annet helsepersonell" comment=""/>
+		</appinfo>
+	</annotation>
+	<!-- Class: Takst -->
+	<!-- Class: Tiltak -->
+	<!-- Coding schemes as simpleTypes in the class: 'Tiltak' -->
+	<simpleType name="type_tiltak">
+		<restriction base="nonNegativeInteger">
+			<enumeration value="1"/>
+		</restriction>
+	</simpleType>
+	<!--oid=8465-->
+	<annotation>
+		<appinfo>
+			<class name="Tiltak"/>
+			<attribute name="typeTiltak"/>
+			<codingScheme name="8465 Type tiltak"/>
+			<codingScheme OID="8465"/>
+			<simpleT name="type_tiltak"/>
+			<code value="1" text="Medisinske og kirurgiske tiltak" comment=""/>
+		</appinfo>
+	</annotation>
+	<!-- LEVEL 7 -->
+	<!-- Class: Prosedyre -->
+	<!-- LEVEL 8 -->
+	<!-- Class: Kode -->
+	<!-- Coding schemes as simpleTypes in the class: 'Kode' -->
+	<simpleType name="medisinske_kodeverk">
+		<restriction base="string">
+			<enumeration value="F"/>
+			<enumeration value="D"/>
+			<enumeration value="K"/>
+			<enumeration value="H"/>
+			<enumeration value="C"/>
+			<enumeration value="M"/>
+			<enumeration value="R"/>
+			<enumeration value="N"/>
+			<enumeration value="A"/>
+			<enumeration value="B"/>
+			<enumeration value="S"/>
+			<enumeration value="X"/>
+		</restriction>
+	</simpleType>
+	<!--oid=8410-->
+	<annotation>
+		<appinfo>
+			<class name="Kode"/>
+			<attribute name="Kodeverk"/>
+			<codingScheme name="8410 Medisinske kodeverk"/>
+			<codingScheme OID="8410"/>
+			<simpleT name="medisinske_kodeverk"/>
+			<code value="F" text="ATC" comment="7180 Anatomisk Terapeutisk Kjemisk legemiddelregister"/>
+			<code value="D" text="ICD-10" comment="7110 Den internasjonale statistiske klassifikasjonen av sykdommer og beslektede helseproblemer"/>
+			<code value="K" text="NCSP-N" comment="7210 NOMESCO Classification of Surgical Procedures, Norsk utgave"/>
+			<code value="H" text="ICPC" comment="7170 International Classification of Primary Care"/>
+			<code value="C" text="Cytoreg" comment="Nasjonalt register for medikamentell kreftbehandling"/>
+			<code value="M" text="NCMP" comment="7220 Norsk klassifikasjon av medisinske prosedyrer"/>
+			<code value="R" text="HRRP" comment="7260 Prosedyrekodeverk for (medisinsk) rehabilitering, barne- og voksenhabilitering, psykisk helsevern og tverrfaglig spesialisert behandling av rusmiddelmisbruk."/>
+			<code value="N" text="Intervensjon rus" comment="8740 Vil bli avloest av 7260"/>
+			<code value="A" text="Utredning kartlegging rusmisbruk" comment="8741 Vil bli avloest av 7260"/>
+			<code value="S" text="Nasjonale saerkoder" comment="Kodene benyttes som et grunnlag for finansieringsordninger"/>
+			<code value="X" text="NORAKO" comment="7240 Kodeverk for roentgenundersoekelser"/>
+		</appinfo>
+	</annotation>
+</schema>
