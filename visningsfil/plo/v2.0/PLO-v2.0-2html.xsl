@@ -1,22 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Inngår i Hdirs visningsfiler versjon 1.0
-
-	FORMÅL
-	XSLT for generering av html-visning av plo-meldinger v2.0
-
-	ENDRINGER:
-	27.03.2017: v3.1.1: Ny parameter for "visningStil. Ny stil "Smooth".
-	25.10.2016: v3.1.0: La til visningsversjonnr
-	27.10.2015: Første versjon
-	
-	SVAKHETER
-	- Hardkodet enkelte headere utifra nåværende kodeverk. Hvis kodeverket endres, må også visningsfilen endres.
-
-	Laget i XMLSpy v2012 rel2 (http://www.altova.com) av 
-	v2.0: Jørgen Wilhelmsen (helsedirektoratet.no)
-	v1.6: Jan Sigurd Dragsjø (helsedirektoratet.no) 
--->
-
 <xsl:stylesheet version="1.0" 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
 	xmlns:fo="http://www.w3.org/1999/XSL/Format" 
@@ -32,31 +14,50 @@
 	xmlns:m25="http://www.kith.no/xmlstds/eresept/m251/2013-10-08" 
 	exclude-result-prefixes="po mh p1 p3 p5 fk1 epj1 epj2 epj3 m25">
 	
-	<xsl:import href="../../felleskomponenter/funksjoner.xsl"/>
-	<xsl:import href="../../felleskomponenter/meldingshode2html.xsl"/>
-	<xsl:import href="../../felleskomponenter/poKomponent2html.xsl"/>
-	<xsl:import href="../../felleskomponenter/cave2html.xsl"/>
-	<xsl:import href="../../felleskomponenter/journalnotat2html.xsl"/>
-	<xsl:import href="../../felleskomponenter/legemiddel2html.xsl"/>
-	<xsl:import href="../../felleskomponenter/kodeverk.xsl"/>
+	<xsl:import href="../../Felleskomponenter/funksjoner.xsl"/>
+	<xsl:import href="../../Felleskomponenter/meldingshode2html.xsl"/>
+	<xsl:import href="../../Felleskomponenter/poKomponent2html.xsl"/>
+	<xsl:import href="../../Felleskomponenter/cave2html.xsl"/>
+	<xsl:import href="../../Felleskomponenter/journalnotat2html.xsl"/>
+	<xsl:import href="../../Felleskomponenter/legemiddel2html.xsl"/>
+	<xsl:import href="../../Felleskomponenter/kodeverk.xsl"/>
 	<xsl:import href="../../eresept/m25/m25-2html-v2.5.xsl"/>
-	<xsl:import href="../../felleskomponenter/eh-komponent2.xsl"/>
 
+	<!--<xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>-->
+	<!--XML Spy 2016 godtar tilsynelatende ingen verdier for HTML version-->
+	<xsl:output method="html" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" 
+		doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" 
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
 
+	<!-- Inngår i Hdirs visningsfiler versjon 1.0
+
+		FORMÅL
+		XSLT for generering av html-visning av plo-meldinger v2.0
+
+		ENDRINGER:
+		25.10.2016: La til visningsversjonnr
+		27.10.2015: Første versjon
+		
+		SVAKHETER
+		- Hardkodet enkelte headere utifra nåværende kodeverk. Hvis kodeverket endres, må også visningsfilen endres.
+
+		Laget i XMLSpy v2012 rel2 (http://www.altova.com) av 
+		v2.0: Jørgen Wilhelmsen (helsedirektoratet.no)
+		v1.6: Jan Sigurd Dragsjø (helsedirektoratet.no) -->
+
+	<!-- Variabel for hvilken stil visning har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
+	<xsl:variable name="stil" select="'One-line-doc'"/>
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'plo2.0 - v3.1.1 '"/>
+	<xsl:variable name="versjon" select="'plo2.0 v3.1.0 '"/>
 
 	<!-- html oppsett -->
 	<xsl:template match="/">
-		<html>
+		<html xmlns="http://www.w3.org/1999/xhtml">
 			<head>
 				<title>PLO</title>
 				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 				<style type="text/css">
-					<xsl:value-of select="document('../../felleskomponenter/KITH-visning.css')" disable-output-escaping="yes"/>
-				</style>
-				<style type="text/css">
-					<xsl:value-of select="document('../../felleskomponenter/smooth-visning.css')" disable-output-escaping="yes"/>
+					<xsl:value-of select="document('../../Felleskomponenter/KITH-visning.css')" disable-output-escaping="yes"/>
 				</style>
 			</head>
 			<body>

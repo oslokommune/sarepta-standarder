@@ -23,6 +23,7 @@ Catalog.xsd">
 	<!-- dialogmelding -->
 	<uri name="http://www.kith.no/xmlstds/dialog/2006-10-11" uri="dialogmelding/2006-10-11/dialogmelding.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/dialog/2013-01-23" uri="dialogmelding/2013-01-23/dialogmelding-v1.1.xsd"/>
+	<uri name="http://www.kith.no/xmlstds/dialog/2015-05-04" uri="dialogmelding/2015-05-04/dialogmelding-v1.2.xsd"/>
 	<!-- PLO-meldinger v1.31 -->
 	<uri name="http://www.kith.no/xmlstds/po/poKomponent/2007-10-16" uri="plo/v1.31/poKomponent.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/po/Innleggelsesrapport/2007-10-16" uri="plo/v1.31/Innleggelsesrapport.xsd"/>
@@ -68,10 +69,11 @@ Catalog.xsd">
 	<uri name="http://www.kith.no/xmlstds/po/HelseopplysningerVedSoknad/2012-04-01" uri="plo/v1.6/Helseopplysninger-v1.6.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/po/HelseopplysningerTilLege/2012-04-01" uri="plo/v1.6/HelseopplysningerTilLege-v1.6.xsd"/>
 	<!-- PLO-meldinger v2.0 -->
-	<uri name="http://ehelse.no/xmlstds/po/poKomponent/2017-11-30" uri="plo/v2.0/poKomponent-v2.0.xsd"/>
-	<uri name="http://ehelse.no/xmlstds/po/Pasientlogistikk/2016-05-30" uri="plo/v2.0/Pasientlogistikk-v2.0.xsd"/>
-	<uri name="http://ehelse.no/xmlstds/po/HelseopplysningerSaksbehandling/2016-05-30" uri="plo/v2.0/HelseopplysningerSaksbehandling-v2.0.xsd"/>
-	<uri name="http://ehelse.no/xmlstds/po/Sammenfatning/2016-05-30" uri="plo/v2.0/Sammenfatning-v2.0.xsd"/>
+	<uri name="http://www.kith.no/xmlstds/po/poKomponent/2015-xx-xx" uri="plo/v2.0/poKomponent-v2.0.xsd"/>
+	<uri name="http://www.kith.no/xmlstds/po/OrienteringOmTjenestetilbud/2015-xx-xx" uri="plo/v2.0/OrienteringOmTjenestetilbud-v2.0.xsd"/>
+	<uri name="http://www.kith.no/xmlstds/po/Pasientlogistikk/2015-xx-xx" uri="plo/v2.0/Pasientlogistikk-v2.0.xsd"/>
+	<uri name="http://www.kith.no/xmlstds/po/HelseopplysningerSaksbehandling/2015-xx-xx" uri="plo/v2.0/HelseopplysningerSaksbehandling-v2.0.xsd"/>
+	<uri name="http://www.kith.no/xmlstds/po/Sammenfatning/2015-xx-xx" uri="plo/v2.0/Sammenfatning-v2.0.xsd"/>
 	<!-- Sykemelding / Legeerklæring v.3.0 (manuell) -->
 	<uri name="http://www.kith.no/xmlstds/sykmelding/2004-05-03" uri="NAVSykmelding/rtv-smlepo-v075.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/sykmelding/2011-03-04" uri="NAVSykmelding/NAV-Sykmelding-2011-03-04.xsd"/>
@@ -89,7 +91,7 @@ Catalog.xsd">
 	<uri name="http://www.kith.no/xmlstds/henvisning/2003-10-13" uri="henvisning/Henvisning-v0.91.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/henvisning/2005-07-08" uri="henvisning/Henvisning-v1.0.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/henvisning/2012-02-15" uri="henvisning/Henvisning-v1.1.xsd"/>
-	<uri name="http://ehelse.no/xmlstds/henvisning/2017-11-30" uri="henvisning/Henvisning-v2.0.xsd"/>
+	<uri name="http://www.kith.no/xmlstds/henvisning/2014-04-30" uri="henvisning/Henvisning-v2.0.xsd"/>
 	<!-- Svarrapport -->
 	<uri name="http://www.kith.no/xmlstds/labsvar/2005-03-14" uri="svarrapport/svar-v12.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/labsvar/2008-12-01" uri="svarrapport/svar-v13.xsd"/>
@@ -121,13 +123,15 @@ Catalog.xsd">
 	<!-- eResept v1.2 -->
 	<uri name="http://www.kith.no/xmlstds/eresept/m96/2007-02-15" uri="eresept/m96/2007-02-15/ER-M96-2007-02-15.xsd"/>
 	<!-- eResept v1.3 -->
+	<uri name="http://www.kith.no/xmlstds/eresept/m2/2007-03-30" uri="eresept/m2/2007-03-30/ER-M2-2007-03-30.xsd"/>
 	<!-- eResept v1.4 -->
 	<!-- eResept v1.5 -->
 	<uri name="http://www.kith.no/xmlstds/eresept/m1/2007-06-01" uri="eresept/m1/2007-06-01/ER-M1-2007-06-01.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m10/2007-06-01" uri="eresept/m10/2007-06-01/ER-M10-2007-06-01.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m18/2007-06-01" uri="eresept/m18/2007-06-01/ER-M18-2007-06-01.xsd"/>
 	<!-- eResept v1.6 -->
-		<uri name="http://www.kith.no/xmlstds/eresept/m10/2007-09-01" uri="eresept/m10/2007-09-01/ER-M10-2007-09-01.xsd"/>
+	<uri name="http://www.kith.no/xmlstds/eresept/m1/2007-09-01" uri="eresept/m1/2007-09-01/ER-M1-2007-09-01.xsd"/>
+	<uri name="http://www.kith.no/xmlstds/eresept/m10/2007-09-01" uri="eresept/m10/2007-09-01/ER-M10-2007-09-01.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m18/2007-09-01" uri="eresept/m18/2007-09-01/ER-M18-2007-09-01.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m21/2007-09-01" uri="eresept/m21/2007-09-01/ER-M21-2007-09-01.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m30/2007-09-01" uri="eresept/m30/2007-09-01/ER-M30-2007-09-01.xsd"/>
@@ -138,6 +142,7 @@ Catalog.xsd">
 	<uri name="http://www.kith.no/xmlstds/eresept/m96/2007-09-01" uri="eresept/m96/2007-09-01/ER-M96-2007-09-01.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m96/2007-09-21" uri="eresept/m96/2007-09-21/ER-M96-2007-09-21.xsd"/>
 	<!-- eResept v1.61 -->
+	<uri name="http://www.kith.no/xmlstds/eresept/m1/2007-11-23" uri="eresept/m1/2007-11-23/ER-M1-2007-11-23.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m10/2007-11-23" uri="eresept/m10/2007-11-23/ER-M10-2007-11-23.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m18/2007-11-23" uri="eresept/m18/2007-11-23/ER-M18-2007-11-23.xsd"/>
 	<!-- eResept v1.7 -->
@@ -160,6 +165,7 @@ Catalog.xsd">
 	<uri name="http://www.kith.no/xmlstds/eresept/m30/2008-10-09" uri="eresept/m30/2008-10-09/ER-M30-2008-10-09.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m92/2008-10-03" uri="eresept/m92/2008-10-03/ER-M92-2008-10-03.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m95/2008-10-03" uri="eresept/m95/2008-10-03/ER-M95-2008-10-03.xsd"/>
+	<uri name="http://www.kith.no/xmlstds/eresept/m96/2008-10-03" uri="eresept/m96/2008-10-03/ER-M96-2008-10-03.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m242/2008-10-03" uri="eresept/m242/2008-10-03/ER-M242-2008-10-03.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/utlevering/2008-10-09" uri="eresept/utlevering/2008-10-09/ER-Utlevering-2008-10-09.xsd"/>
 	<!-- eResept v2.2 -->
@@ -167,13 +173,17 @@ Catalog.xsd">
 	<uri name="http://www.kith.no/xmlstds/eresept/m6/2008-12-12" uri="eresept/m6/2008-12-12/ER-M6-2008-12-12.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m10/2008-12-12" uri="eresept/m10/2008-12-12/ER-M10-2008-12-12.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m14/2008-12-12" uri="eresept/m14/2008-12-12/ER-M14-2008-12-12.xsd"/>
+	<uri name="http://www.kith.no/xmlstds/eresept/m18/2008-09-26" uri="eresept/m18/2008-09-26/ER-M18-2008-09-26.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m30/2008-12-12" uri="eresept/m30/2008-12-12/ER-M30-2008-12-12.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m92/2008-12-12" uri="eresept/m92/2008-12-12/ER-M92-2008-12-12.xsd"/>
+	<uri name="http://www.kith.no/xmlstds/eresept/m94/2008-06-25" uri="eresept/m94/2008-06-25/ER-M94-2008-06-25.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m96/2008-10-03" uri="eresept/m96/2008-10-03/ER-M96-2008-10-03.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/utlevering/2008-12-12" uri="eresept/utlevering/2008-12-12/ER-Utlevering-2008-12-12.xsd"/>
 	<!-- eResept v2.3 -->
+	<uri name="http://www.kith.no/xmlstds/eresept/m1/2009-02-20" uri="eresept/m1/2009-02-20/ER-M1-2009-02-20.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m2/2009-04-24" uri="eresept/m2/2009-04-24/ER-M2-2009-04-24.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m2/2009-07-03" uri="eresept/m2/2009-07-03/ER-M2-2009-07-03.xsd"/>
+	<uri name="http://www.kith.no/xmlstds/eresept/m3/2008-04-11" uri="eresept/m3/2008-04-11/ER-M3-2008-04-11.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m5/2009-02-20" uri="eresept/m5/2009-02-20/ER-M5-2009-02-20.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m6/2009-02-20" uri="eresept/m6/2009-02-20/ER-M6-2009-02-20.xsd"/>
 	<!-- m7 uforandret siden versjon 2.0? se der -->

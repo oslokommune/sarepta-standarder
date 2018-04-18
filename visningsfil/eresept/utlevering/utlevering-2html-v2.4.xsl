@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Edited with Atova XLMSpy (x64) ver. 2011 rel. 2 (http://www.altova.com) by Jan Sigurd Dragsjø -->
-<xsl:stylesheet version="1.0" 
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
-	xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" 
-	xmlns:ul="http://www.kith.no/xmlstds/eresept/utlevering/2010-05-01"  
-	xmlns:m1="http://www.kith.no/xmlstds/eresept/m1/2010-05-01" 
-	exclude-result-prefixes="mh fk1 ul m1">
-
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:ul="http://www.kith.no/xmlstds/eresept/utlevering/2010-05-01"  xmlns:m1="http://www.kith.no/xmlstds/eresept/m1/2010-05-01" xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml" exclude-result-prefixes="mh fk1 ul m1 xhtml">
 <!-- Visningsfil for eResept felleskomponent: Utlevering
 Inngår i KITHs visningsfiler versjon 10
 
-09-05-2017: Rettet formell test på tekst mot number
 25-02-2011: Første versjon
 
 MERK:
@@ -22,12 +14,12 @@ MERK:
 	<xsl:template match="ul:Utlevering">
 		<h1>Utlevering&#160;&#160;-&#160;&#160;<xsl:value-of select="ul:Utleveringsdato"/>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Resept: 
 			<xsl:choose>
-				<xsl:when test="ul:Annullering = 'true'">Annullert</xsl:when>
+				<xsl:when test="ul:Annullering = true">Annullert</xsl:when>
 				<xsl:otherwise>Ikke annullert</xsl:otherwise>
 			</xsl:choose>
-			&#160;&#160;-&#160;&#160;
+			<xsl:if test="ul:Annullering and ul:Avsluttet">&#160;&#160;-&#160;&#160;</xsl:if>
 			<xsl:choose>
-				<xsl:when test="ul:Avsluttet/@V = '1'">Avsluttet</xsl:when>
+				<xsl:when test="ul:Avsluttet/@V =1">Avsluttet</xsl:when>
 				<xsl:otherwise>Ikke avsluttet</xsl:otherwise>
 			</xsl:choose>
 		</h1>

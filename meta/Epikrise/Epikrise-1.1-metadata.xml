@@ -5,22 +5,18 @@
 	<Versjon>1.1</Versjon>
 	<Identifikator>HIS 80226:2006</Identifikator>
 	<Utgitt>02/2006</Utgitt>
-	<Utgiver>Direktoratet for e-helse</Utgiver>
+	<Utgiver>Helsedirektoratet</Utgiver>
 	<Referansekatalogen>
 		<Beskrivelse>Epikrise 1.1 (HIS 80226:2006)</Beskrivelse>
-		<Referanse>http://ehelse.no/HIS80226-2006</Referanse>
+		<Referanse>https://ehelse.no/Sider/Epikrise--Informasjonsmodell-og-XML-meldingsbeskrivelse-–-HIS-802262006.aspx</Referanse>
 	</Referansekatalogen>
 	
 	<Status>Fastsatt som standard</Status>
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Epikrise v1.1 (GitLab)</Beskrivelse>
-			<Referanse>kravdokument/epikrise/HIS_80226_2006_epikrise_1.1 -korrigert.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>Profil: Tannhelsetjenesten (GitLab)</Beskrivelse>
-			<Referanse>kravdokument/epikrise/HIS_1016_2010 XML epikrise Meldingsprofil tannhelse.pdf</Referanse>
+			<Beskrivelse>Epikrise. Informasjonsmodell og XML meldingsbeskrivelse (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/epikrise/HIS_80226_2006-epikrise_1.1.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
 
@@ -41,30 +37,10 @@
 			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
-
 	
 	<Visningsfiler>
 		<Visningsfil>
 			<Referanse>visningsfil/epikrise/v1.1/Epikrise-v1_1-2html.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/epikrise/Epikrise2html.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: smooth-visning.css</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/smooth-visning.css</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: ehelse-visning.css</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/ehelse-visning.css</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: eh-komponent1.xsl</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/eh-komponent1.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: eh-komponent2.xsl</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/eh-komponent2.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
 			<Beskrivelse>Felleskomponent for alle visningsfiler: KITH-visning.css</Beskrivelse>
@@ -144,21 +120,4 @@
 		</Visningsfil>
 	</Visningsfiler>
 
-	<Eksempler>
-		<Eksempel>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-1/epikrise_v1.1_n.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-1/epikrise_v1.1_m.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-1/epikrise_v1.1_c.xml</Referanse>
-		</Eksempel>
-	</Eksempler>
-<RelaterteFiler>
-	<RelatertFil>
-		<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger</Beskrivelse>
-		<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
-	</RelatertFil>
-</RelaterteFiler>	
 </StandardMetadata>

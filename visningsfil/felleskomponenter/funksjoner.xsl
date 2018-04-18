@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Edited with Atova XLMSpy (x64) ver. 2013 rel.2  sp.2 (http://www.altova.com) by Jan Sigurd Dragsjø - avd. Standardisering, Helsedirektoratet-->
-<xsl:stylesheet version="1.0" 
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-	xmlns:fo="http://www.w3.org/1999/XSL/Format" 
-	xmlns:dt="http://xsltsl.org/date-time"
-	exclude-result-prefixes="fo dt"
-	>
-
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:dt="http://xsltsl.org/date-time">
 	<xsl:import href="SourceForge/stdlib.xsl"/>
 	
 <!-- Funksjonsfil - impoerteres av alle visningsfiler -->
 <!-- Siste endring:
-	-	2017-03-07: Lagt til attributt exclude-result-prefix
 	-	2013-11-06: La til sjekk om tidspunkt ikke har verdi
 	-	2013-10-31: Endret dateTime-visning i funksjoner.xsl til å følge ISO-8601 -->
 
@@ -96,12 +89,10 @@
 	<!-- Funskjon for å skrive ut tidspunkt oppgitt i TS-element -->
 	<xsl:template name="skrivUtTS">
 		<xsl:param name="oppgittTid"/>
-		<xsl:param name="useNormalSpaceSeparator"/>
 		<xsl:choose>
 			<xsl:when test="contains($oppgittTid, 'T')"> <!-- Tid oppgitt som dateTime -->
 				<xsl:call-template name="skrivUtDateTime">
 					<xsl:with-param name="oppgittTid" select="$oppgittTid"/>
-					<xsl:with-param name="useNormalSpaceSeparator" select="$useNormalSpaceSeparator"/>
 				</xsl:call-template>
 			</xsl:when>
 			<xsl:otherwise>
@@ -238,15 +229,6 @@
 	- Benytter tilleggs-funksjonen 'sjekkSommertid' som benytter standard biblioteksmodul fra sourceforge.net. Returnerer '1' om oppgitt tidspunkt er innen norsk sommertid - '0' hvis ikke. -->
 	<xsl:template name="skrivUtDateTime">
 		<xsl:param name="oppgittTid"/>
-		<xsl:param name="useNormalSpaceSeparator"/>
-
-		<xsl:variable name="spaceChar">
-			<xsl:choose>
-				<xsl:when test="not($useNormalSpaceSeparator)">&#160;</xsl:when> <!-- -->
-				<xsl:otherwise>&#8200;</xsl:otherwise>
-			</xsl:choose>
-		</xsl:variable>
-
 		<xsl:if test="string-length($oppgittTid)!=0">
 			<xsl:choose>
 				<xsl:when test="contains($oppgittTid, 'Z')"> <!-- Sjekker om tidspunktet er oppgitt i UTC/Zulu -->
@@ -256,24 +238,24 @@
 					</xsl:variable>
 					<xsl:choose>
 						<xsl:when test="substring($oppgittTid,12,2) &lt; (24 - $forskyvning - $sommertid)"><!-- Sjekker om midnatt passeres -->
-							<xsl:value-of select="substring($oppgittTid,9,2)"/>.<xsl:value-of select="substring($oppgittTid,6,2)"/>.<xsl:value-of select="substring($oppgittTid,3,2)"/><xsl:value-of select="$spaceChar"/>kl.<xsl:if test="(substring($oppgittTid,12,2) + $forskyvning + $sommertid) &lt; 10">0</xsl:if><xsl:value-of select="substring($oppgittTid,12,2) + $forskyvning + $sommertid"/>:<xsl:value-of select="substring($oppgittTid,15,2)"/>
+							<xsl:value-of select="substring($oppgittTid,9,2)"/>.<xsl:value-of select="substring($oppgittTid,6,2)"/>.<xsl:value-of select="substring($oppgittTid,3,2)"/>&#160;kl.<xsl:if test="(substring($oppgittTid,12,2) + $forskyvning + $sommertid) &lt; 10">0</xsl:if><xsl:value-of select="substring($oppgittTid,12,2) + $forskyvning + $sommertid"/>:<xsl:value-of select="substring($oppgittTid,15,2)"/>
 						</xsl:when>
 						<xsl:otherwise>
 							<xsl:variable name="antDagerMnd"><xsl:call-template name="dt:calculate-last-day-of-month"><xsl:with-param name="month" select="substring($oppgittTid,6,2)"/><xsl:with-param name="year" select="substring($oppgittTid,1,4)"/></xsl:call-template></xsl:variable>
 							<xsl:choose>
 								<xsl:when test="substring($oppgittTid,9,2) &lt; $antDagerMnd"><!-- Sjekker om månedslutt passeres -->
-									<xsl:if test="(substring($oppgittTid,9,2)+1) &lt; 10">0</xsl:if><xsl:value-of select="substring($oppgittTid,9,2)+1"/>.<xsl:value-of select="substring($oppgittTid,6,2)"/>.<xsl:value-of select="substring($oppgittTid,3,2)"/><xsl:value-of select="$spaceChar"/>kl.<xsl:if test="(substring($oppgittTid,12,2)+$forskyvning+$sommertid)-24  &lt; 10">0</xsl:if><xsl:value-of select="(substring($oppgittTid,12,2)+$forskyvning+$sommertid)-24"/>:<xsl:value-of select="substring($oppgittTid,15,2)"/>
+									<xsl:if test="(substring($oppgittTid,9,2)+1) &lt; 10">0</xsl:if><xsl:value-of select="substring($oppgittTid,9,2)+1"/>.<xsl:value-of select="substring($oppgittTid,6,2)"/>.<xsl:value-of select="substring($oppgittTid,3,2)"/>&#160;kl.<xsl:if test="(substring($oppgittTid,12,2)+$forskyvning+$sommertid)-24  &lt; 10">0</xsl:if><xsl:value-of select="(substring($oppgittTid,12,2)+$forskyvning+$sommertid)-24"/>:<xsl:value-of select="substring($oppgittTid,15,2)"/>
 								</xsl:when>
 								<xsl:otherwise>
 									<xsl:choose>
 										<xsl:when test="substring($oppgittTid,6,2) &lt; 12"><!-- Sjekker om nyttår passeres -->
-											01.<xsl:if test="(substring($oppgittTid,6,2)+1) &lt; 10">0</xsl:if><xsl:value-of select="substring($oppgittTid,6,2)+1"/>.<xsl:value-of select="substring($oppgittTid,3,2)"/><xsl:value-of select="$spaceChar"/>kl.<xsl:if test="(substring($oppgittTid,12,2)+$forskyvning+$sommertid)-24  &lt; 10">0</xsl:if><xsl:value-of select="(substring($oppgittTid,12,2)+$forskyvning+$sommertid)-24"/>:<xsl:value-of select="substring($oppgittTid,15,2)"/>
+											01.<xsl:if test="(substring($oppgittTid,6,2)+1) &lt; 10">0</xsl:if><xsl:value-of select="substring($oppgittTid,6,2)+1"/>.<xsl:value-of select="substring($oppgittTid,3,2)"/>&#160;kl.<xsl:if test="(substring($oppgittTid,12,2)+$forskyvning+$sommertid)-24  &lt; 10">0</xsl:if><xsl:value-of select="(substring($oppgittTid,12,2)+$forskyvning+$sommertid)-24"/>:<xsl:value-of select="substring($oppgittTid,15,2)"/>
 										</xsl:when>
 										<xsl:otherwise>
 											01.01.<xsl:choose>
 												<xsl:when test="number(substring($oppgittTid,3,2)) = 99">00</xsl:when>
 												<xsl:otherwise><xsl:if test="(substring($oppgittTid,3,2)+1) &lt; 10">0</xsl:if><xsl:value-of select="substring($oppgittTid,3,2)+1"/></xsl:otherwise>
-											</xsl:choose><xsl:value-of select="$spaceChar"/>kl.<xsl:if test="(substring($oppgittTid,12,2)+$forskyvning+$sommertid)-24  &lt; 10">0</xsl:if><xsl:value-of select="(substring($oppgittTid,12,2)+$forskyvning+$sommertid)-24"/>:<xsl:value-of select="substring($oppgittTid,15,2)"/>
+											</xsl:choose>&#160;kl.<xsl:if test="(substring($oppgittTid,12,2)+$forskyvning+$sommertid)-24  &lt; 10">0</xsl:if><xsl:value-of select="(substring($oppgittTid,12,2)+$forskyvning+$sommertid)-24"/>:<xsl:value-of select="substring($oppgittTid,15,2)"/>
 										</xsl:otherwise>
 									</xsl:choose>
 								</xsl:otherwise>
@@ -282,7 +264,7 @@
 					</xsl:choose>
 				</xsl:when>
 				<xsl:otherwise> <!-- Antar at lokal tid er oppgitt - gjelder for alle tidspunkt oppgitt med eller uten tidssoneer -->
-					<xsl:value-of select="substring($oppgittTid,9,2)"/>.<xsl:value-of select="substring($oppgittTid,6,2)"/>.<xsl:value-of select="substring($oppgittTid,3,2)"/><xsl:value-of select="$spaceChar"/>kl.<xsl:value-of select="substring($oppgittTid,12,5)"/>
+					<xsl:value-of select="substring($oppgittTid,9,2)"/>.<xsl:value-of select="substring($oppgittTid,6,2)"/>.<xsl:value-of select="substring($oppgittTid,3,2)"/>&#160;kl.<xsl:value-of select="substring($oppgittTid,12,5)"/>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:if>

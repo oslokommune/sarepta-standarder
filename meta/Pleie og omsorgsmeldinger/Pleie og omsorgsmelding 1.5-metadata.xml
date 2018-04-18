@@ -5,10 +5,10 @@
 	<Versjon>1.5</Versjon>
 	<Identifikator>HIS 80704:2009</Identifikator>
 	<Utgitt>09/2009</Utgitt>
-	<Utgiver>Direktoratet for e-helse</Utgiver>
+	<Utgiver>Helsedirektoratet</Utgiver>
 
 	<Referansekatalogen>
-		<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten v1.5</Beskrivelse>
+		<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten v1.5 (HIS 80704:2009)</Beskrivelse>
 		<Referanse>https://ehelse.no/Sider/Standard-for-elektronisk-kommunikasjon-med-pleie--og-omsorgstjenesten--Informasjonsmodell-og-XML-meldingsbeskrivelse-–-HIS-.aspx</Referanse>
 	</Referansekatalogen>
 
@@ -18,36 +18,8 @@
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten v1.5 (GitLab)</Beskrivelse>
+			<Beskrivelse>HIS 80704:2009 Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten. Informasjonsmodell og XML meldingsbeskrivelse (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/plo/HIS_80704_2009 Pleie- og omsorgsmeldinger 1.5 -korrigert.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>Profil: Innleggelsesrapport (GitLab)</Beskrivelse>
-			<Referanse>kravdokument/plo/HIS_1143_2009_PLO-innleggelsesrapport.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>Profil: Helseopplysninger (GitLab)</Beskrivelse>
-			<Referanse>kravdokument/plo/HIS_1144_2009_PLO-helseopplysninger.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>Profil: Helseopplysninger til lege (GitLab)</Beskrivelse>
-			<Referanse>kravdokument/plo/HIS_1145_2009_PLO-helseopplysningerLege.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>Profil: Orientering om tjenestetilbud (GitLab)</Beskrivelse>
-			<Referanse>kravdokument/plo/HIS_1146_2009_PLO-orienteringTjenestetilbud.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>Profil: Medisinske opplysninger (GitLab)</Beskrivelse>
-			<Referanse>kravdokument/plo/HIS_1147_2009_PLO-medisinskeOpplysninger.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>Profil: Utskrivningsrapport (GitLab)</Beskrivelse>
-			<Referanse>kravdokument/plo/HIS_1148_2009_PLO-utskrivningsrapport.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>Profil: Pasientlogistikkmeldinger (GitLab)</Beskrivelse>
-			<Referanse>kravdokument/plo/HIS_1149_2009_PLO-pasientlogistikkmeldinger.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
 
@@ -132,14 +104,6 @@
 			<Referanse>visningsfil/plo/v1.6 eller lavere/plo2html.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: smooth-visning.css</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/smooth-visning.css</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: eh-komponent2.xsl</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/eh-komponent2.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
 			<Beskrivelse>Felleskomponent for alle visningsfiler: KITH-visning.css</Beskrivelse>
 			<Referanse>visningsfil/felleskomponenter/KITH-visning.css</Referanse>
 		</Visningsfil>
@@ -216,69 +180,12 @@
 			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
-	<Eksempler>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Helseopplysninger_til_lege-v1_5/Helseopplysninger_til_lege_v1-5_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Helseopplysninger_til_lege-v1_5/Helseopplysninger_til_lege_v1-5_Kansellering.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Helseopplysninger_ved_soknad-v1_5/Helseopplysninger_ved_soknad_Oppdatert_v1-5_Endring1.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Helseopplysninger_ved_soknad-v1_5/Helseopplysninger_ved_soknad_Oppdatert_v1-5_Endring2.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Helseopplysninger_ved_soknad-v1_5/Helseopplysninger_ved_soknad_Varsel_v1-5_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Innleggelsesrapport-v1_5/Innleggelsesrapport_v1-5_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Innleggelsesrapport-v1_5/Innleggelsesrapport_v1-5_Endring.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Innleggelsesrapport-v1_5/Innleggelsesrapport_v1-5_Kansellering.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Medisinske_opplysninger-v1_5/Medisinske_opplysninger_v1-5_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Medisinske_opplysninger-v1_5/Medisinske_opplysninger_v1-5_Kansellering.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Orientering_om_tjenestetilbud-v1_5/Orientering_om_tjenestetilbud_v1-5_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Orientering_om_tjenestetilbud-v1_5/Orientering_om_tjenestetilbud_v1-5_Kansellering.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Pasientlogistikk_dodsfall-v1_5/Pasientlogistikk_Avmelding_av_utskrivningsklar_pasient_v1-5_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Pasientlogistikk_dodsfall-v1_5/Pasientlogistikk_Innlagt_pasient_v1-5_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Pasientlogistikk_dodsfall-v1_5/Pasientlogistikk_Innlagt_pasient_v1-5_Kansellering.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Pasientlogistikk_dodsfall-v1_5/Pasientlogistikk_Melding_om_utskrevet_pasient_v1-5_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Pasientlogistikk_dodsfall-v1_5/Pasientlogistikk_Orientering_om_dodsfall_v1-5_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Pasientlogistikk_dodsfall-v1_5/Pasientlogistikk_Orientering_om_dodsfall_v1-5_Kansellering.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Pasientlogistikk_dodsfall-v1_5/Pasientlogistikk_Utskrivningsklar_pasient_v1-5_Ny.xml</Referanse>
-		</Eksempel>
-	</Eksempler>
-	<RelaterteFiler>
-	<RelatertFil>
-		<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger</Beskrivelse>
-		<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
-	</RelatertFil>
-</RelaterteFiler>	
+
+	<Testmateriell>
+		<Testfil>
+			<Beskrivelse>Syntaks-sjekk av XML-meldinger (XML-validering)</Beskrivelse>
+			<Referanse>https://validator.test.nhn.no/validering/index.cgi</Referanse>
+		</Testfil>
+	</Testmateriell>
+
 </StandardMetadata>

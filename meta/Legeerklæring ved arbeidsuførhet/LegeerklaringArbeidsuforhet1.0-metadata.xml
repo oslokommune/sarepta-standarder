@@ -5,18 +5,18 @@
 	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 80805:2008</Identifikator>
 	<Utgitt>06/2008</Utgitt>
-	<Utgiver>NAV</Utgiver>
+	<Utgiver>Helsedirektoratet</Utgiver>
 
 	<Referansekatalogen>
 		<Beskrivelse>Legeerklæring ved arbeidsuførhet (HIS 80805:2008)</Beskrivelse>
-		<Referanse>http://ehelse.no/HIS80805-2008</Referanse>
+		<Referanse>https://ehelse.no/Sider/Legeerkl%c3%a6ring-ved-arbeidsuf%c3%b8rhet--Informasjonsmodell-og-XML-meldingsbeskrivelse-%e2%80%93-HIS-808052008.aspx</Referanse>
 	</Referansekatalogen>
 
 	<Status>Fastsatt som standard</Status>
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Legeerklæring ved arbeidsuførhet (GitLab)</Beskrivelse>
+			<Beskrivelse>Legeerklæring ved arbeidsuførhet. Informasjonsmodell og XML meldingsbeskrivelse (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/NAVLegeerklæringVedArbeidsuførhet/HIS_80805_2008_NAV-Legeerklaring-2008-06-06.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
@@ -42,5 +42,14 @@
 			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
+
+	<Eksempler>
+		<Eksempel>
+			<Referanse>eksempel/NAVLegeerklæringVedArbeidsuførhet/NAV-Legerklaring-2008-06-06-eksempel-1-MsgHead.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/NAVLegeerklæringVedArbeidsuførhet/NAV-Legerklaring-2008-06-06-eksempel-2-MsgHead.xml</Referanse>
+		</Eksempel>
+	</Eksempler>
 
 </StandardMetadata>

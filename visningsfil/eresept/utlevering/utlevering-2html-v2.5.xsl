@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Edited with Atova XLMSpy (x64) ver. 2013 rel.2  sp.2 (http://www.altova.com) by Jan Sigurd Dragsjø - avd. Standardisering, Helsedirektoratet-->
-<xsl:stylesheet version="1.0" 
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
-	xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" 
-	xmlns:ul="http://www.kith.no/xmlstds/eresept/utlevering/2013-10-08"  
-	xmlns:m1v2.4="http://www.kith.no/xmlstds/eresept/m1/2010-05-01" 
-	xmlns:m1v2.5="http://www.kith.no/xmlstds/eresept/m1/2013-10-08" 
-	exclude-result-prefixes="mh fk1 ul m1v2.4 m1v2.5">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:ul="http://www.kith.no/xmlstds/eresept/utlevering/2013-10-08"  xmlns:m1v2.4="http://www.kith.no/xmlstds/eresept/m1/2010-05-01" xmlns:m1v2.5="http://www.kith.no/xmlstds/eresept/m1/2013-10-08" xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml" exclude-result-prefixes="mh fk1 ul m1v2.4 m1v2.5 xhtml">
 
 
 <!-- Visningsfil for Utlevering -->

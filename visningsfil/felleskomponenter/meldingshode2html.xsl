@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 	<!-- Endringslogg
-	- 06.06.17: template "mh:Address"/"Address": fjernet ledetekst type når adresse mangler.
 	- 25.10.16: La til visningsversjonnr
 	- 19.11.15: Småjusteringer ift. kodeverkskall.
 	- 01.01.13: Oppdatert versjon av hodemelding2html for å håndtere ulike css-stiler.
@@ -81,12 +80,12 @@
 						<th>Melding&#160;opprettet</th>
 						<td>
 							<xsl:call-template name="skrivUtTS">
-								<xsl:with-param name="oppgittTid" select="/descendant::mh:GenDate[1]"/>
+								<xsl:with-param name="oppgittTid" select="//mh:GenDate"/>
 							</xsl:call-template>
 						</td>
 						<th>Meldingsid</th>
 						<td>
-							<xsl:value-of select="/descendant::mh:MsgId[1]"/>
+							<xsl:value-of select="//mh:MsgId"/>
 						</td>
 					</tr>
 					<xsl:if test="$versjon">
@@ -115,12 +114,12 @@
 						<th>Melding&#160;opprettet</th>
 						<td>
 							<xsl:call-template name="skrivUtTS">
-								<xsl:with-param name="oppgittTid" select="/descendant::mh:GenDate[1]"/>
+								<xsl:with-param name="oppgittTid" select="//mh:GenDate"/>
 							</xsl:call-template>
 						</td>
 						<th>Meldingsid</th>
 						<td>
-							<xsl:value-of select="/descendant::mh:MsgId[1]"/>
+							<xsl:value-of select="//mh:MsgId"/>
 						</td>
 					</tr>
 					<xsl:if test="$versjon">
@@ -211,8 +210,8 @@
 			</xsl:if>
 			<xsl:for-each select="child::*[local-name()=&quot;Ident&quot;]">
 				<xsl:if test="not(child::*[local-name()=&quot;TypeId&quot;]/@V='XXX')">
-					<span class="strong">
-						<xsl:value-of select="child::*[local-name()=&quot;TypeId&quot;]/@V"/>:&#160;</span>
+					<b>
+						<xsl:value-of select="child::*[local-name()=&quot;TypeId&quot;]/@V"/>:&#160;</b>
 					<xsl:value-of select="substring(child::*[local-name()=&quot;Id&quot;], 1,6)"/>&#160;
 					<xsl:value-of select="substring(child::*[local-name()=&quot;Id&quot;], 7)"/>&#160;
 				</xsl:if>
@@ -256,20 +255,18 @@
 	<!-- Adresse -->
 	<xsl:template match="mh:Address" name="Address">
 		<!-- Bruker axis her for bruk både i fk1: og mh: namespace -->
-		<xsl:if test="child::*[local-name()='StreetAdr'] or child::*[local-name()='PostalCode'] or child::*[local-name()='City'] or child::*[local-name()='County'] or child::*[local-name()='Country']">
-			<div class="NoPrint">&#160;
-				<span class="strong">
-					<xsl:choose>
-						<xsl:when test="child::*[local-name()=&quot;Type&quot;]">
-							<xsl:for-each select="child::*[local-name()=&quot;Type&quot;]">
-								<xsl:call-template name="k-3401"/>:&#160;
-							</xsl:for-each>
-						</xsl:when>
-						<xsl:otherwise>Adresse:&#160;</xsl:otherwise>
-					</xsl:choose>
-				</span>
-			</div>
-		</xsl:if>
+		<div class="NoPrint">&#160;
+			<b>
+				<xsl:choose>
+					<xsl:when test="child::*[local-name()=&quot;Type&quot;]">
+						<xsl:for-each select="child::*[local-name()=&quot;Type&quot;]">
+							<xsl:call-template name="k-3401"/>:&#160;
+						</xsl:for-each>
+					</xsl:when>
+					<xsl:otherwise>Adresse:&#160;</xsl:otherwise>
+				</xsl:choose>
+			</b>
+		</div>
 		<xsl:if test="child::*[local-name()=&quot;StreetAdr&quot;]">
 			<div>
 				<xsl:value-of select="child::*[local-name()=&quot;StreetAdr&quot;]"/>
@@ -309,44 +306,44 @@
 		<xsl:choose>
 			<xsl:when test="starts-with(@V, &quot;tel:&quot;) or starts-with(@V, &quot;callto:&quot;)">
 				<div>
-					<span class="strong">Telefon:</span>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
+					<b>Telefon:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
 			</xsl:when>
 			<xsl:when test="starts-with(@V, &quot;fax:&quot;)">
 				<div>
-					<span class="strong">Fax:</span>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
+					<b>Fax:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
 			</xsl:when>
 			<xsl:when test="starts-with(@V, &quot;mailto:&quot;)">
 				<div>
-					<span class="strong">e-post:</span>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
+					<b>e-post:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
 			</xsl:when>
 			<xsl:when test="starts-with(@V, &quot;http:&quot;)">
 				<div>
-					<span class="strong">Web:</span>&#160;<xsl:value-of select="@V"/>&#160;</div>
+					<b>Web:</b>&#160;<xsl:value-of select="@V"/>&#160;</div>
 			</xsl:when>
 			<!-- Bruker axis her for bruk både i fk1: og mh: namespace -->
 			<xsl:when test="preceding-sibling::*/@DN">
 				<div>
-					<span class="strong">
-						<xsl:value-of select="preceding-sibling::*/@DN"/>:</span>&#160;<xsl:value-of select="@V"/>
+					<b>
+						<xsl:value-of select="preceding-sibling::*/@DN"/>:</b>&#160;<xsl:value-of select="@V"/>
 				</div>
 			</xsl:when>
 			<xsl:when test="preceding-sibling::*/@V">
 				<div>
-					<span class="strong">
+					<b>
 						<xsl:for-each select="preceding-sibling::*">
 							<xsl:call-template name="k-9061"/>:
 					</xsl:for-each>
-					</span>&#160;
+					</b>&#160;
 					<xsl:value-of select="@V"/>
 				</div>
 			</xsl:when>
 			<xsl:when test="contains(@V, &quot;:&quot;)">
 				<div>
-					<span class="strong">Kontakt:</span>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
+					<b>Kontakt:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
 			</xsl:when>
 			<xsl:otherwise>
 				<div>
-					<span class="strong">Kontakt:</span>&#160;<xsl:value-of select="@V"/>&#160;</div>
+					<b>Kontakt:</b>&#160;<xsl:value-of select="@V"/>&#160;</div>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
@@ -412,7 +409,7 @@
 						<xsl:choose>
 							<xsl:when test="mh:FileReference">
 								<td colspan="{($std-col)-1}">
-									<img style="max-width: 90%;">
+									<img>
 										<xsl:attribute name="src"><xsl:value-of select="mh:FileReference"/></xsl:attribute>
 										<xsl:attribute name="alt">Bilde fra ekstern URL</xsl:attribute>
 									</img>
@@ -422,7 +419,7 @@
 								<td colspan="{($std-col)-1}">
 									<xsl:choose>
 										<xsl:when test="mh:Content/base:Base64Container">
-											<img style="max-width: 90%;">
+											<img>
 												<xsl:attribute name="src"><xsl:value-of select="concat('data:',mh:MimeType,';base64,',mh:Content/base:Base64Container)"/></xsl:attribute>
 												<xsl:attribute name="alt">Bilde vedlagt som base64-kode</xsl:attribute>
 											</img>
@@ -439,10 +436,6 @@
 				<xsl:when test="contains(mh:MimeType,'pdf')">
 					<tr>
 						<th>pdf</th>
-						<td colspan="{($std-col)-1}">Hvis du ikke ser pdf-vedlegget kan du prøve en annen nettleser.</td>
-					</tr>
-					<tr>
-						<td>&#160;</td>
 						<xsl:choose>
 							<xsl:when test="mh:FileReference">
 								<td colspan="{($std-col)-1}">

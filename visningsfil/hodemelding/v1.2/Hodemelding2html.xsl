@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" 
+	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
 	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
 	xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" 
 	xmlns:dia="http://www.kith.no/xmlstds/dialog/2006-10-11" 
 	xmlns:ds="http://www.w3.org/2000/09/xmldsig#" 
-	exclude-result-prefixes="mh fk1 dia ds">
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+	exclude-result-prefixes="mh fk1 dia ds xhtml">
 
-<!--
-	Inngår i KITHs visningsfiler versjon 10
+	<!--
+Inngår i KITHs visningsfiler versjon 10
 
-	FORMÅL
-	Felles XSLT for generering av HTML for meldinger med hodemelding
-	BRUK
-	Importeres vha. <xsl:include href="Hodemelding2html.xsl"/>
+FORMÅL
+Felles XSLT for generering av HTML for meldinger med hodemelding
+BRUK
+Importeres vha. <xsl:include href="Hodemelding2html.xsl"/>
 
-	ENDRINGER:
-	25.10.2016: La til visningsversjonnr
-	01.12.2010: Enkelte tabeller erstattet med div-tagger og layout overtatt av CSS
-	05.03.2010: Layoutmessige justeringer
-	28.04.2009: Måtte ta bort alle div-klasser for å unngå unødig linjeskift i visningsmodus "@media screen"
-	06.02.2007: Mhj. id 1211 - feil i visning av fnr fikset
-	25.01.2006: Første versjon
+ENDRINGER:
+25.10.2016: La til visningsversjonnr
+01.12.2010: Enkelte tabeller erstattet med div-tagger og layout overtatt av CSS
+05.03.2010: Layoutmessige justeringer
+28.04.2009: Måtte ta bort alle div-klasser for å unngå unødig linjeskift i visningsmodus "@media screen"
+06.02.2007: Mhj. id 1211 - feil i visning av fnr fikset
+25.01.2006: Første versjon
 -->
-
-	<!-- Denne importeres i hovedfila
-	<xsl:import href="../../felleskomponenter/funksjoner.xsl"/>
-	-->
+	<xsl:import href="../../Felleskomponenter/funksjoner.xsl"/>
 
 	<xsl:template match="mh:MsgHead">
 		<xsl:apply-templates/>
@@ -87,14 +86,14 @@
 			<xsl:for-each select="mh:Ident">
 				<!--** Sjekker om id er av type XXX (Annet), da skrives den ikke ut ** -->
 				<xsl:if test="not(mh:TypeId/@V='XXX')">
-					<span class="strong">
-						<xsl:value-of select="mh:TypeId/@V"/>:&#160;</span>
+					<b>
+						<xsl:value-of select="mh:TypeId/@V"/>:&#160;</b>
 					<xsl:value-of select="substring(mh:Id, 1,6)"/>&#160;<xsl:value-of select="substring(mh:Id, 7)"/>&#160;</xsl:if>
 			</xsl:for-each>
 		</div>
 		<xsl:if test="mh:Nationality">
 			<div>
-				<span class="strong">Nasjonalitet:&#160;</span>
+				<b>Nasjonalitet:&#160;</b>
 				<xsl:value-of select="mh:Nationality/@DN"/>&#160;</div>
 		</xsl:if>
 		<xsl:apply-templates select="mh:Address"/>
@@ -103,7 +102,6 @@
 	<xsl:template match="mh:Person">
 		<xsl:call-template name="Patient"/>
 	</xsl:template>
-
 	<xsl:template match="mh:Organisation">
 		<xsl:if test="not(mh:Organisation//mh:HealthcareProfessional)">
 			<xsl:apply-templates select="mh:HealthcareProfessional"/>
@@ -129,15 +127,14 @@
 			<xsl:apply-templates select="mh:Organisation"/>
 		</xsl:if>
 	</xsl:template>
-
 	<xsl:template match="mh:Address">
-		<div class="NoPrint">&#160;<span class="strong">
+		<div class="NoPrint">&#160;<b>
 				<xsl:choose>
 					<xsl:when test="mh:Type/@DN">
 						<xsl:value-of select="mh:Type/@DN"/>:&#160;</xsl:when>
 					<xsl:otherwise>Adresse:&#160;</xsl:otherwise>
 				</xsl:choose>
-			</span>
+			</b>
 		</div>
 		<xsl:if test="mh:StreetAdr">
 			<div>
@@ -179,15 +176,15 @@
 		<xsl:for-each select="mh:TeleAddress">
 			<xsl:if test="starts-with(@V, &quot;tel:&quot;) or starts-with(@V, &quot;callto:&quot;)">
 				<div>
-					<span class="strong">Telefon:</span>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
+					<b>Telefon:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
 			</xsl:if>
 			<xsl:if test="starts-with(@V, &quot;fax:&quot;)">
 				<div>
-					<span class="strong">Faks:</span>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
+					<b>Faks:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
 			</xsl:if>
 			<xsl:if test="starts-with(@V, &quot;mailto:&quot;)">
 				<div>
-					<span class="strong">e-post:</span>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
+					<b>e-post:</b>&#160;<xsl:value-of select="substring-after(@V, &quot;:&quot;)"/>&#160;</div>
 			</xsl:if>
 		</xsl:for-each>
 	</xsl:template>
@@ -216,7 +213,6 @@
 		</div>
 	</xsl:template>
 	<xsl:template match="mh:Document">
-
 		<xsl:if test="not(preceding-sibling::mh:Document) and (../mh:MsgInfo/mh:Type/@V='EPJ-EKSTRAKT')">
 			<table width="95%" bgcolor="gray" style="padding:0.1em; color:white; background-color:gray; border:1px solid gray; font: 1.6em; font-weight: bold;">
 				<tr>
@@ -226,10 +222,10 @@
 		</xsl:if>
 		<xsl:if test="not(mh:RefDoc/mh:Content/epj-s:Node) and not(mh:RefDoc/mh:Content/epj-t:tilleggsinfoEPJKomponent) and not(../mh:MsgInfo/mh:Type/@V='EPJ-EKSTRAKT') and not(mh:RefDoc/mh:Content/bas:Base64Container)" xmlns:epj-s="http://www.kith.no/xmlstds/epj/EPJEkstrakt/2008-02-20" xmlns:epj-t="http://www.kith.no/xmlstds/epj/EPJTilleggsinfo/2008-02-20" xmlns:bas="http://www.kith.no/xmlstds/base64container">
 			<!-- HACK for å ikke vise epj-struktur-dokument og tilleggsinfodokument -->
-			<div class="{$stil}">
+			<div class="Document">
 				<xsl:apply-templates select="mh:RefDoc"/>
 			</div>
-			<div class="{$stil}">
+			<div class="Document">
 				<h2>Dokumentinformasjon</h2>
 				<table>
 					<tbody>
@@ -427,11 +423,11 @@
 		</xsl:if>
 		<!--** Test for å sjekke om meldingstypen er EPJ-ekstrakt ** -->
 		<xsl:if test="not(mh:RefDoc/mh:Content/epj-s:Node) and not(mh:RefDoc/mh:Content/epj-t:tilleggsinfoEPJKomponent) and (../mh:MsgInfo/mh:Type/@V='EPJ-EKSTRAKT')" xmlns:epj-s="http://www.kith.no/xmlstds/epj/EPJEkstrakt/2008-02-20" xmlns:epj-t="http://www.kith.no/xmlstds/epj/EPJTilleggsinfo/2008-02-20">
-			<div class="{$stil}">
+			<div class="Document">
 				<xsl:apply-templates select="mh:RefDoc"/>
 			</div>
 			<xsl:if test="mh:RefDoc/mh:IssueDate">
-				<div class="{$stil}">
+				<div class="Document">
 					<h2>Dokumentinformasjon:</h2>
 					<table>
 						<tbody>
