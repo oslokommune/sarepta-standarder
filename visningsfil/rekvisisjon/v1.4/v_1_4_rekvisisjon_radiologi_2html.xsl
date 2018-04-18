@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="1.0" 
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-	xmlns:hmt="http://www.kith.no/xmlstds/medtjenhdr/2008-23-05" 
-	xmlns:lso="http://www.kith.no/xmlstds/rekvisisjon/2005-05-20" 
-	xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
-	exclude-result-prefixes="hmt lso xhtml">
-
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:hmt="http://www.kith.no/xmlstds/medtjenhdr/2008-23-05" xmlns:lso="http://www.kith.no/xmlstds/rekvisisjon/2005-05-20" xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml" exclude-result-prefixes="hmt lso xhtml">
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
 	<!--
 FORMÅL
 XSLT for generering av html fra Svarrapport Medisinske Tjenester - Mikrobiologi v.1.0
@@ -27,14 +21,9 @@ TODO/Svakheter:
 *OBS! CAVE-informasjon må være med, dvs modde casefil!
 -->
 
-	<xsl:output method="html" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" 
-		doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" 
-		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
-
-	<xsl:include href="header_medisinske_tjenester.xsl"/>
-
+<xsl:include href="header_medisinske_tjenester.xsl"/>
 	<xsl:template match="/">
-		<html>
+		<html xmlns="http://www.w3.org/1999/xhtml">
 			<head>
 				<title>Rekvisisjon Radiologi</title>
 				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
@@ -49,7 +38,6 @@ padding:1em;
 background-color: #ffffff;
 font-family: arial;
 font-size: 0.8em;
-height: 24.5em;
 }
 .Patient,.ServProvider,.Requester, .CopyDest 
 {
@@ -73,7 +61,7 @@ padding: 0.5em;
 {
 width:95%;
 clear:left;
-margin: 20px 1px 1px 1px;
+margin: 1px;
 border:1px solid gray;
 padding:1em;
 background-color: #ffffff;

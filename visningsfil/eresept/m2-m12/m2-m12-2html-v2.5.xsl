@@ -3,11 +3,7 @@
 <!-- Visningsfil for eReseptmeldingen: M2 Individuell søknad om refusjon til HELFO
 	- Visningen håndterer vedlegg av en eller flere M12 Søknadssvar - Individuell søknad om refusjon til HELFO-->
 <!-- Siste endring:
-	- 13.04.2018: v3.2.1: Fikset bug hvor elementet Oppdatert ikke ble vist riktig. Endringer i noen overskrifter og diagnose-kodeverk. 
-	- 16.02.2018: v3.2.0: Tilpasset visningsfil for ny versjon av M2 og M12.
-	- 09-05-2017: v3.1.2: Rettet formell test på tekst mot number
-	- 27-03-2017: v3.1.1: Ny parameter for "visningStil". Ny stil "Smooth".
-	- 2016-10-25: v3.1.0: La til visningsversjonnr
+	- 2016-10-25: La til visningsversjonnr
 	- 2015-09-24: Oppdatert til siste versjon av 2.5 datert 2015-05-26. Felles kodeverksfil innført.
 	- 2013-10-31: Oppdatert til å kunne håndtere Forskrivning-2013-10-08
 	- 2013-08-13: Versjon for eResept v2.5
@@ -17,35 +13,35 @@
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
 	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
 	xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" 
-	xmlns:m2="http://www.ehelse.no/xmlstds/eresept/m2/2017-12-01" 
-	xmlns:m12="http://www.ehelse.no/xmlstds/eresept/m12/2017-12-01" 
+	xmlns:m2="http://www.kith.no/xmlstds/eresept/m2/2014-12-01" 
+	xmlns:m12="http://www.kith.no/xmlstds/eresept/m12/2014-12-01" 
 	xmlns:base="http://www.kith.no/xmlstds/base64container" 
-	exclude-result-prefixes="mh fk1 m2 m12 base">
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+	exclude-result-prefixes="mh fk1 m2 m12 base xhtml">
 
-	<xsl:import href="../../felleskomponenter/meldingshode2html.xsl"/>
-	<xsl:import href="../../felleskomponenter/funksjoner.xsl"/>
-	<xsl:import href="../../felleskomponenter/base64decoder.xsl"/>
-	<xsl:import href="../../felleskomponenter/kodeverk.xsl"/>
-	<xsl:import href="../../felleskomponenter/eh-komponent2.xsl"/>
-
-
+	<xsl:import href="../../Felleskomponenter/meldingshode2html.xsl"/>
+	<xsl:import href="../../Felleskomponenter/funksjoner.xsl"/>
+	<xsl:import href="../../Felleskomponenter/base64decoder.xsl"/>
+	<xsl:import href="../../Felleskomponenter/kodeverk.xsl"/>
+	
+	<xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+	
 	<!-- Vedlegg i denne sammenhengen er en eller flere m12-meldinger -->
 	<xsl:param name="vedlegg"/>
-
 	<xsl:variable name="antall-legemidler" select="count(//m2:OmsoktLegemiddel)"/>
+	<!-- Variabel for hvilken stil visningen har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
+	<xsl:variable name="stil" select="'One-line-doc'"/>
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'eresept-m2-2.5 - v3.2.1 '"/>
+	<xsl:variable name="versjon" select="'eresept-m2-2.5 v3.1.0 '"/>
 
 	<xsl:template match="/">
-		<html>
+		<html xmlns="http://www.w3.org/1999/xhtml">
 			<head>
 				<title>Individuell søknad om refusjon til HELFO</title>
 				<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 				<style type="text/css">
-					<xsl:value-of select="document('../../felleskomponenter/KITH-visning.css')" disable-output-escaping="yes"/>
-				</style>
-				<style type="text/css">
-					<xsl:value-of select="document('../../felleskomponenter/smooth-visning.css')" disable-output-escaping="yes"/>
+					<xsl:value-of select="document('../../Felleskomponenter/KITH-visning.css')" disable-output-escaping="yes"/>
 				</style>
 			</head>
 			<body>
@@ -53,7 +49,6 @@
 			</body>
 		</html>
 	</xsl:template>
-
 	<!-- Visning av meldingshodet. Tilpasset vinduskonvolutt ved utskrift -->
 	<xsl:template match="mh:MsgHead">
 		<xsl:call-template name="Topp"/>
@@ -74,7 +69,6 @@
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
-
 	<!-- Template som kalles fra BunnTillegg i meldingshodet. Kan brukes til visning av egenkomponert bunn -->
 	<xsl:template name="EgetBunnTillegg">
 	</xsl:template>
@@ -106,7 +100,7 @@
 						</tbody>
 					</table>
 				</xsl:if>
-				<xsl:if test="//m2:TidligereBehandling">
+				<xsl:if test="//m2:TidligereBeh">
 					<xsl:if test="//m2:SoknadNaringsmiddel">
 						<h2>Tidligere brukte næringsmidler</h2>
 					</xsl:if>
@@ -115,7 +109,7 @@
 					</xsl:if>
 					<table>
 						<tbody>
-							<xsl:for-each select="//m2:TidligereBehandling">
+							<xsl:for-each select="//m2:TidligereBeh">
 								<xsl:apply-templates select="."/>
 							</xsl:for-each>
 						</tbody>
@@ -132,17 +126,11 @@
 											<tr>
 												<td>
 													<xsl:choose>
-														<xsl:when test="contains(@S, '7110')">
-															<xsl:call-template name="k-dummy-V"/>
-														</xsl:when>
-														<xsl:when test="contains(@S, '7170')">
-															<xsl:call-template name="k-dummy-V"/>
-														</xsl:when>
 														<xsl:when test="contains(@S, '7434')">
-															<xsl:call-template name="k-dummy-V"/>
+															<xsl:call-template name="k-7434"/>
 														</xsl:when>
 														<xsl:when test="contains(@S, '7435')">
-															<xsl:call-template name="k-dummy-V"/>
+															<xsl:call-template name="k-7435"/>
 														</xsl:when>
 														<xsl:otherwise>
 															<xsl:call-template name="k-dummy"/>
@@ -151,15 +139,15 @@
 												</td>
 											</tr>
 										</xsl:for-each>
-										<xsl:for-each select="m2:RelatertDiagnose">
+										<xsl:for-each select="m2:Bidiagnose">
 											<tr>
 												<td>
 													<xsl:choose>
-														<xsl:when test="contains(@S, '7110')">
-															<xsl:call-template name="k-dummy"/>
+														<xsl:when test="contains(@S, '7434')">
+															<xsl:call-template name="k-7434"/>
 														</xsl:when>
-														<xsl:when test="contains(@S, '7170')">
-															<xsl:call-template name="k-dummy"/>
+														<xsl:when test="contains(@S, '7435')">
+															<xsl:call-template name="k-7435"/>
 														</xsl:when>
 														<xsl:otherwise>
 															<xsl:call-template name="k-dummy"/>
@@ -198,13 +186,16 @@
 				<h2>Relevant informasjon</h2>
 				<table>
 					<tbody>
-						<xsl:if test="m2:Begrunnelse or m2:Merknad">
+						<xsl:if test="m2:Begrunnelse or m2:Merknad or //m2:Alvorlighetsgrad">
 							<tr>
 								<xsl:if test="m2:Begrunnelse">
 									<th width="25%">Begrunnelse</th>
 								</xsl:if>
 								<xsl:if test="m2:Merknad">
 									<th width="25%">Merknad</th>
+								</xsl:if>
+								<xsl:if test="//m2:Alvorlighetsgrad">
+									<th width="25%">Alvorlighetsgrad</th>
 								</xsl:if>
 							</tr>
 							<tr>
@@ -218,27 +209,41 @@
 										<xsl:value-of select="m2:Merknad"/>
 									</td>
 								</xsl:if>
+								<xsl:if test="//m2:Alvorlighetsgrad">
+									<td width="25%">
+										<xsl:value-of select="//m2:Alvorlighetsgrad"/>
+									</td>
+								</xsl:if>
 							</tr>
 						</xsl:if>
-						<xsl:if test="m2:Soknad3 or m2:Vedlegg">
+						<xsl:if test="m2:Soknad3a or m2:Soknad4a or m2:Vedlegg">
 							<tr>
-								<xsl:if test="m2:Soknad3/m2:AlvorligSykdom">
-									<th width="25%">Alvorlig sykdom</th>
+								<xsl:if test="m2:Soknad3a/m2:Refusjonskode">
+									<th width="25%">Refusjonskode</th>
 								</xsl:if>
-								<xsl:if test="m2:Soknad3/m2:Prioriteringskriterier">
-									<th width="25%">Prioriteringskriterier</th>
+								<xsl:if test="m2:Soknad3a/m2:Underterm">
+									<th width="25%">Underterm til ICPC-kode</th>
+								</xsl:if>
+								<xsl:if test="m2:Soknad4a/m2:Genotype">
+									<th width="25%">Genotype for hepatitt C-infeksjon</th>
+								</xsl:if>
+								<xsl:if test="m2:Soknad4a/m2:GradLeverskade">
+									<th width="25%">Grad av leverskade</th>
 								</xsl:if>
 								<xsl:if test="m2:Vedlegg">
 									<th width="25%">Referanser til vedlegg</th>
 								</xsl:if>
 							</tr>
 							<tr>
-								<xsl:if test="m2:Soknad3/m2:AlvorligSykdom">
+								<xsl:if test="m2:Soknad3a/m2:Refusjonskode">
 									<td width="25%">
-										<xsl:for-each select="m2:Soknad3/m2:AlvorligSykdom">
+										<xsl:for-each select="m2:Soknad3a/m2:Refusjonskode">
 											<xsl:choose>
-												<xsl:when test="contains(@S, '7531')">
-													<xsl:call-template name="k-7531"/>
+												<xsl:when test="contains(@S, '7434')">
+													<xsl:call-template name="k-7434"/>
+												</xsl:when>
+												<xsl:when test="contains(@S, '7435')">
+													<xsl:call-template name="k-7435"/>
 												</xsl:when>
 												<xsl:otherwise>
 													<xsl:call-template name="k-dummy"/>
@@ -247,9 +252,37 @@
 										</xsl:for-each>
 									</td>
 								</xsl:if>
-								<xsl:if test="m2:Soknad3/m2:Prioriteringskriterier">
+								<xsl:if test="m2:Soknad3a/m2:Underterm">
 									<td width="25%">
-										<xsl:value-of select="m2:Soknad3/m2:Prioriteringskriterier"/>
+										<xsl:value-of select="m2:Soknad3a/m2:Underterm"/>
+									</td>
+								</xsl:if>
+								<xsl:if test="m2:Soknad4a/m2:Genotype">
+									<td width="25%">
+										<xsl:for-each select="m2:Soknad4a/m2:Genotype">
+											<xsl:choose>
+												<xsl:when test="contains(@S, '7508')">
+													<xsl:call-template name="k-7508"/>
+												</xsl:when>
+												<xsl:otherwise>
+													<xsl:call-template name="k-dummy"/>
+												</xsl:otherwise>
+											</xsl:choose>
+										</xsl:for-each>
+									</td>
+								</xsl:if>
+								<xsl:if test="m2:Soknad4a/m2:GradLeverskade">
+									<td width="25%">
+										<xsl:for-each select="m2:Soknad4a/m2:GradLeverskade">
+											<xsl:choose>
+												<xsl:when test="contains(@S, '7509')">
+													<xsl:call-template name="k-7509"/>
+												</xsl:when>
+												<xsl:otherwise>
+													<xsl:call-template name="k-dummy"/>
+												</xsl:otherwise>
+											</xsl:choose>
+										</xsl:for-each>
 									</td>
 								</xsl:if>
 								<xsl:if test="m2:Vedlegg">
@@ -262,12 +295,24 @@
 								</xsl:if>
 							</tr>
 						</xsl:if>
-						<xsl:if test="m2:KroniskSykdom or m2:LangvarigBehandling or m2:UtenforInstitusjon">
+						<xsl:if test="m2:KroniskSykdom or m2:LangvarigBeh or m2:BrukUtenforSykehus">
 							<tr>
-								<xsl:if test="m2:LangvarigBehandling">
+								<xsl:if test="m2:KroniskSykdom">
 									<td width="25%">
 										<xsl:choose>
-											<xsl:when test="m2:LangvarigBehandling/@V = '1'">
+											<xsl:when test="m2:KroniskSykdom/@V = 1">
+												<input type="checkbox" disabled="disabled" checked="checked">Kronisk sykdom</input>
+											</xsl:when>
+											<xsl:otherwise>
+												<input type="checkbox" disabled="disabled">Kronisk sykdom</input>
+											</xsl:otherwise>
+										</xsl:choose>
+									</td>
+								</xsl:if>
+								<xsl:if test="m2:LangvarigBeh">
+									<td width="25%">
+										<xsl:choose>
+											<xsl:when test="m2:LangvarigBeh/@V = 1">
 												<input type="checkbox" disabled="disabled" checked="checked">Langvarig behandling</input>
 											</xsl:when>
 											<xsl:otherwise>
@@ -276,26 +321,50 @@
 										</xsl:choose>
 									</td>
 								</xsl:if>
-								<xsl:if test="m2:UtenforInstitusjon">
+								<xsl:if test="m2:BrukUtenforSykehus">
 									<td width="25%">
 										<xsl:choose>
-											<xsl:when test="m2:UtenforInstitusjon/@V = '1'">
-												<input type="checkbox" disabled="disabled" checked="checked">Bruk utenfor institusjon</input>
+											<xsl:when test="m2:BrukUtenforSykehus/@V = 1">
+												<input type="checkbox" disabled="disabled" checked="checked">Bruk utenfor sykehus</input>
 											</xsl:when>
 											<xsl:otherwise>
-												<input type="checkbox" disabled="disabled">Bruk utenfor institusjon</input>
+												<input type="checkbox" disabled="disabled">Bruk utenfor sykehus</input>
 											</xsl:otherwise>
 										</xsl:choose>
 									</td>
 								</xsl:if>
 							</tr>
 						</xsl:if>
-						<xsl:if test="m2:Forstegangs">
+						<xsl:if test="m2:SamPasient or m2:SamVedtak or m2:Forstegangs">
 							<tr>
+								<xsl:if test="m2:SamPasient">
+									<td width="25%">
+										<xsl:choose>
+											<xsl:when test="m2:SamPasient/@V = 1">
+												<input type="checkbox" disabled="disabled" checked="checked">Samtykke</input>
+											</xsl:when>
+											<xsl:otherwise>
+												<input type="checkbox" disabled="disabled">Samtykke</input>
+											</xsl:otherwise>
+										</xsl:choose>
+									</td>
+								</xsl:if>
+								<xsl:if test="m2:SamVedtak">
+									<td width="25%">
+										<xsl:choose>
+											<xsl:when test="m2:SamVedtak/@V = 1">
+												<input type="checkbox" disabled="disabled" checked="checked">Samtykke kopi</input>
+											</xsl:when>
+											<xsl:otherwise>
+												<input type="checkbox" disabled="disabled">Samtykke kopi</input>
+											</xsl:otherwise>
+										</xsl:choose>
+									</td>
+								</xsl:if>
 								<xsl:if test="m2:Forstegangs">
 									<td width="25%">
 										<xsl:choose>
-											<xsl:when test="m2:Forstegangs/@V = '1'">
+											<xsl:when test="m2:Forstegangs/@V = 1">
 												<input type="checkbox" disabled="disabled" checked="checked">Førstegangssøknad</input>
 											</xsl:when>
 											<xsl:otherwise>
@@ -306,28 +375,12 @@
 								</xsl:if>
 							</tr>
 						</xsl:if>
-						<xsl:if test="m2:Oppdatert">
-							<tr>
-								<xsl:if test="m2:Oppdatert">
-									<td width="25%">
-										<xsl:choose>
-											<xsl:when test="m2:Oppdatert = 'true'">
-												<input type="checkbox" disabled="disabled" checked="checked">Oppdatering av tidligere søknad</input>
-											</xsl:when>
-											<xsl:otherwise>
-												<input type="checkbox" disabled="disabled">Oppdatering av tidligere søknad</input>
-											</xsl:otherwise>
-										</xsl:choose>
-									</td>
-								</xsl:if>
-							</tr>
-						</xsl:if>
-						<xsl:if test="//m2:Yrkesskade">
+						<xsl:if test="//m2:Yrkesskade or m2:Soknad3b">
 							<tr>
 								<xsl:if test="//m2:Yrkesskade/m2:Vedtak">
 									<td width="25%">
 										<xsl:choose>
-											<xsl:when test="//m2:Yrkesskade/m2:Vedtak/@V = '1'">
+											<xsl:when test="//m2:Yrkesskade/m2:Vedtak/@V = 1">
 												<input type="checkbox" disabled="disabled" checked="checked">Har&#160;vedtak&#160;om&#160;yrkesskade</input>
 											</xsl:when>
 											<xsl:otherwise>
@@ -339,7 +392,7 @@
 								<xsl:if test="//m2:Yrkesskade/m2:Arsak">
 									<td width="25%">
 										<xsl:choose>
-											<xsl:when test="//m2:Yrkesskade/m2:Arsak/@V = '1'">
+											<xsl:when test="//m2:Yrkesskade/m2:Arsak/@V = 1">
 												<input type="checkbox" disabled="disabled" checked="checked">Yrkesskade&#160;årsak&#160;til&#160;behandlingsbehovet</input>
 											</xsl:when>
 											<xsl:otherwise>
@@ -348,76 +401,52 @@
 										</xsl:choose>
 									</td>
 								</xsl:if>
+								<xsl:if test="m2:Soknad3b/m2:SjeldenSykdom">
+									<td width="25%">
+										<xsl:choose>
+											<xsl:when test="m2:Soknad3b/m2:SjeldenSykdom/@V = 1">
+												<input type="checkbox" disabled="disabled" checked="checked">Sjelden&#160;sykdom</input>
+											</xsl:when>
+											<xsl:otherwise>
+												<input type="checkbox" disabled="disabled">Sjelden&#160;sykdom</input>
+											</xsl:otherwise>
+										</xsl:choose>
+									</td>
+								</xsl:if>
 							</tr>
 						</xsl:if>
 					</tbody>
 				</table>
-				<xsl:if test="m2:Instituert">
+				<xsl:if test="m2:Instituert or m2:Institueringstidspunkt">
 					<h2>Instituert av</h2>
 					<table>
 						<tbody>
-							<xsl:if test="m2:Instituert/m2:Organisasjon">
-								<tr>
-									<xsl:if test="m2:Instituert/m2:Organisasjon/m2:HerId"><th width="25%">HER-id</th></xsl:if>
-									<xsl:if test="m2:Instituert/m2:Organisasjon/m2:Inst"><th width="25%">Inst</th></xsl:if>
-									<xsl:if test="m2:Instituert/m2:Organisasjon/m2:Dept"><th width="25%">Dept</th></xsl:if>
-									<xsl:if test="m2:Instituert/m2:Organisasjon/m2:InstitusjonsID"><th width="25%">Institusjonsid</th></xsl:if>	
-								</tr>
-								<tr>
-									<xsl:if test="m2:Instituert/m2:Organisasjon/m2:HerId">
-										<td width="25%">
-<xsl:value-of select="m2:Instituert/m2:Organisasjon/m2:HerId/fk1:Id"/>
-										</td>
-									</xsl:if>
-									<xsl:if test="m2:Instituert/m2:Organisasjon/m2:Inst"><td width="25%"><xsl:value-of select="m2:Instituert/m2:Organisasjon/m2:Inst"/></td></xsl:if>
-									<xsl:if test="m2:Instituert/m2:Organisasjon/m2:Dept"><td width="25%"><xsl:value-of select="m2:Instituert/m2:Organisasjon/m2:Dept"/></td></xsl:if>
-									<xsl:if test="m2:Instituert/m2:Organisasjon/m2:InstitusjonsID">
-										<td width="25%">
-											<xsl:choose>
-												<xsl:when test="m2:Instituert/m2:Organisasjon/m2:InstitusjonsID/@DN">
-													<xsl:value-of select="m2:Instituert/m2:Organisasjon/m2:InstitusjonsID/@DN"/>
-												</xsl:when>
-												<xsl:otherwise>
-													<b>Kodet: </b><xsl:value-of select="m2:Instituert/m2:Organisasjon/m2:InstitusjonsID/@V"/>
-												</xsl:otherwise>
-											</xsl:choose>
-										</td>
-									</xsl:if>
-								</tr>
-							</xsl:if>
-							<xsl:if test="m2:Instituert/m2:Helseperson">
-								<tr>
-									<xsl:if test="m2:Instituert/m2:Helseperson/m2:HprId"><th width="25%">HPR-id</th></xsl:if>
-									<xsl:if test="m2:Instituert/m2:Helseperson/m2:Fornavn or m2:Instituert/m2:Helseperson/m2:Etternavn"><th width="25%">Navn</th></xsl:if>
-									<xsl:if test="m2:Instituert/m2:Helseperson/m2:Spesialitet"><th width="25%">Spesialitet</th></xsl:if>
-								</tr>
-								<tr>
-									<xsl:if test="m2:Instituert/m2:Helseperson/m2:HprId"><td width="25%"><xsl:value-of select="m2:Instituert/m2:Helseperson/m2:HprId/fk1:Id"/></td></xsl:if>
-									<xsl:if test="m2:Instituert/m2:Helseperson/m2:Fornavn or m2:Instituert/m2:Helseperson/m2:Etternavn">
-										<xsl:choose>
-											<xsl:when test="m2:Instituert/m2:Helseperson/m2:Fornavn and m2:Instituert/m2:Helseperson/m2:Etternavn">
-												<td width="25%"><xsl:value-of select="m2:Instituert/m2:Helseperson/m2:Fornavn"/>&#160;<xsl:value-of select="m2:Instituert/m2:Helseperson/m2:Etternavn"/></td>
-											</xsl:when>
-											<xsl:otherwise>
-												<xsl:if test="m2:Instituert/m2:Helseperson/m2:Fornavn">
-													<td width="25%"><xsl:value-of select="m2:Instituert/m2:Helseperson/m2:Fornavn"/></td>
-												</xsl:if>
-												<xsl:if test="m2:Instituert/m2:Helseperson/m2:Etternavn">
-													<td width="25%"><xsl:value-of select="m2:Instituert/m2:Helseperson/m2:Etternavn"/></td>
-												</xsl:if>
-											</xsl:otherwise>
-										</xsl:choose>
-									</xsl:if>
-									<xsl:if test="m2:Helseperson/m2:Spesialitet">
-										<td width="25%">
-											<xsl:choose>
-												<xsl:when test="m2:Helseperson/m2:Spesialitet/@DN"><xsl:value-of select="m2:Helseperson/m2:Spesialitet/@DN"/></xsl:when>
-												<xsl:otherwise><b>Kodet: </b><xsl:value-of select="m2:Helseperson/m2:Spesialitet/@V"/></xsl:otherwise>
-											</xsl:choose>
-										</td>
-									</xsl:if>
-								</tr>
-							</xsl:if>
+							<tr>
+								<xsl:if test="m2:Instituert">
+									<th width="25%">Navn</th>
+								</xsl:if>
+								<xsl:if test="m2:Institueringstidspunkt">
+									<th width="25%">Institueringstidspunkt</th>
+								</xsl:if>
+							</tr>
+							<tr>
+								<xsl:if test="m2:Instituert">
+									<td width="25%">
+										<xsl:if test="m2:Instituert/m2:Helseperson">
+											<xsl:value-of select="m2:Instituert/m2:Helseperson/m2:Fornavn"/>&#160;<xsl:value-of select="m2:Instituert/m2:Helseperson/m2:Etternavn"/>
+											<xsl:if test="m2:Instituert/m2:Organisasjon/m2:Inst">&#160;&#160;</xsl:if>
+										</xsl:if>
+										<xsl:if test="m2:Instituert/m2:Organisasjon/m2:Inst">
+											<xsl:value-of select="m2:Instituert/m2:Organisasjon/m2:Inst"/>&#160;<xsl:value-of select="m2:Instituert/m2:Organisasjon/m2:Dept"/>
+										</xsl:if>
+									</td>
+								</xsl:if>
+								<xsl:if test="m2:Institueringstidspunkt">
+									<td width="25%">
+										<xsl:value-of select="m2:Institueringstidspunkt"/>
+									</td>
+								</xsl:if>
+							</tr>
 						</tbody>
 					</table>
 				</xsl:if>
@@ -517,7 +546,7 @@
 																<xsl:attribute name="height">500px</xsl:attribute>
 															</object>
 															<p> <!-- Denne paragrafen blir aktivert når pdf-visningen feiler - f.eks. med InternetExplorer -->
-																<span class="strong">Visning av vedlagte pdf-fil feilet.</span><br/>
+																<b>Visning av vedlagte pdf-fil feilet.</b><br/>
 																Vanligste årsak er bruk av Internet Explorer, eller manglende plug-in.
 															</p>
 														</xsl:when>
@@ -550,22 +579,22 @@
 								<th>Metadata</th>
 								<td colspan="3">
 									<xsl:if test="mh:MsgType">
-										<span class="strong">Meldingstype&#160;</span><xsl:value-of select="mh:MsgType/@DN"/>&#160;
+										<b>Meldingstype&#160;</b><xsl:value-of select="mh:MsgType/@DN"/>&#160;
 									</xsl:if>
 									<xsl:if test="mh:Id">
-										<span class="strong">Id:&#160;</span><xsl:value-of select="mh:Id"/>&#160;
+										<b>Id:&#160;</b><xsl:value-of select="mh:Id"/>&#160;
 									</xsl:if>
 									<xsl:if test="mh:IssueDate">
-										<span class="strong">Utstedt-dato:&#160;</span><xsl:call-template name="skrivUtDateTime"><xsl:with-param name="oppgittTid" select="mh:IssueDate/@V"/></xsl:call-template>&#160;
+										<b>Utstedt-dato:&#160;</b><xsl:call-template name="skrivUtDateTime"><xsl:with-param name="oppgittTid" select="mh:IssueDate/@V"/></xsl:call-template>&#160;
 									</xsl:if>
 									<xsl:if test="mh:MimeType">
-										<span class="strong">Mimetype:&#160;</span><xsl:value-of select="mh:MimeType"/>&#160;
+										<b>Mimetype:&#160;</b><xsl:value-of select="mh:MimeType"/>&#160;
 									</xsl:if>
 									<xsl:if test="mh:Compression">
-										<span class="strong">Komprimering:&#160;</span><xsl:value-of select="mh:Compression/@DN"/>&#160;
+										<b>Komprimering:&#160;</b><xsl:value-of select="mh:Compression/@DN"/>&#160;
 									</xsl:if>
 									<xsl:if test="mh:Description">
-										<span class="strong">Beskrivelse:&#160;</span>
+										<b>Beskrivelse:&#160;</b>
 										<xsl:call-template name="line-breaks">
 											<xsl:with-param name="text" select="mh:Description"/>
 										</xsl:call-template>&#160;
@@ -591,7 +620,7 @@
 		</xsl:variable>
 		<table>
 			<tbody>
-				<xsl:if test="m2:ForskrivningB64 or ../m2:IngenTidlBehandling or string-length($vedlegg) != 0 or /m2:ReseptklasseAB">
+				<xsl:if test="m2:ForskrivningB64 or ../m2:IngenTidlBeh or string-length($vedlegg) != 0">
 					<xsl:variable name="konvertertBase64">
 						<xsl:call-template name="convertBase64ToAscii">
 							<xsl:with-param name="base64String" select="m2:ForskrivningB64"/>
@@ -635,177 +664,6 @@
 							</tr>
 						</xsl:otherwise>
 					</xsl:choose>
-					<!-- FORTSETT HER OG IMPLEMENTER RESEPTKLASSEAB -->
-					<xsl:if test="m2:ReseptklasseAB">
-						<tr>
-							<th>Reseptklasse A eller B</th>
-						</tr>
-						<xsl:if test="m2:ReseptklasseAB/m2:HoyesteDogndose/@V">
-							<tr>
-								<td>Høyeste døgndose &#160;
-									<xsl:value-of select="m2:ReseptklasseAB/m2:HoyesteDogndose/@V"/>&#160;<xsl:value-of select="m2:ReseptklasseAB/m2:HoyesteDogndose/@U"/>
-								</td>
-							</tr>
-						</xsl:if>
-						<xsl:if test="m2:ReseptklasseAB/m2:Behandlingsplan">
-							<tr>
-								<td width="25%">
-									<xsl:choose>
-										<xsl:when test="m2:ReseptklasseAB/m2:Behandlingsplan/@V = '1'">
-											<input type="checkbox" disabled="disabled" checked="checked">Behandlingsplan</input>
-										</xsl:when>
-										<xsl:otherwise>
-											<input type="checkbox" disabled="disabled">Behandlingsplan</input>
-										</xsl:otherwise>
-									</xsl:choose>
-								</td>	
-							</tr>	
-						</xsl:if>
-						<xsl:if test="m2:ReseptklasseAB/m2:AvhengihetsfareVurdert">
-							<tr>
-								<td width="25%">
-									<xsl:choose>
-										<xsl:when test="m2:ReseptklasseAB/m2:AvhengihetsfareVurdert/@V = '1'">
-											<input type="checkbox" disabled="disabled" checked="checked">Avhengighetsfare vurdert</input>
-										</xsl:when>
-										<xsl:otherwise>
-											<input type="checkbox" disabled="disabled">Avhengighetsfare vurdert</input>
-										</xsl:otherwise>
-									</xsl:choose>
-								</td>	
-							</tr>	
-						</xsl:if>
-						<xsl:if test="m2:ReseptklasseAB/m2:Smerteanalyse">
-							<tr>
-								<td width="25%">
-									<xsl:choose>
-										<xsl:when test="m2:ReseptklasseAB/m2:Smerteanalyse/@V = '1'">
-											<input type="checkbox" disabled="disabled" checked="checked">Smerteanalyse foretatt</input>
-										</xsl:when>
-										<xsl:otherwise>
-											<input type="checkbox" disabled="disabled">Smerteanalyse foretatt</input>
-										</xsl:otherwise>
-									</xsl:choose>
-								</td>	
-							</tr>	
-						</xsl:if>
-						<!-- Test på om gyldig forskriver er oppgitt -->
-						<xsl:if test="m2:ReseptklasseAB/m2:GyldigForskriver">
-							<tr>
-								<td><b>Gyldig forskriver</b></td>
-							</tr>
-							<xsl:if test="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Organisasjon">
-								<tr>
-									<xsl:if test="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Organisasjon/m2:HerId"><th width="25%">HER-id</th></xsl:if>
-									<xsl:if test="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Organisasjon/m2:Inst"><th width="25%">Inst</th></xsl:if>
-									<xsl:if test="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Organisasjon/m2:Dept"><th width="25%">Dept</th></xsl:if>
-									<xsl:if test="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Organisasjon/m2:InstitusjonsID"><td width="25%">Institusjonsid</td></xsl:if>	
-								</tr>
-								<tr>
-									<xsl:if test="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Organisasjon/m2:HerId"><td width="25%"><xsl:value-of select="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Organisasjon/m2:HerId/fk1:Id"/></td></xsl:if>
-									<xsl:if test="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Organisasjon/m2:Inst"><td width="25%"><xsl:value-of select="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Organisasjon/m2:Inst"/></td></xsl:if>
-									<xsl:if test="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Organisasjon/m2:Dept"><td width="25%"><xsl:value-of select="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Organisasjon/m2:Dept"/></td></xsl:if>
-									<xsl:if test="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Organisasjon/m2:InstitusjonsID">
-										<td width="25%">
-											<xsl:choose>
-												<xsl:when test="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Organisasjon/m2:InstitusjonsID/@DN">
-													<xsl:value-of select="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Organisasjon/m2:InstitusjonsID/@DN"/>
-												</xsl:when>
-												<xsl:otherwise>
-													<b>Kodet: </b><xsl:value-of select="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Organisasjon/m2:InstitusjonsID/@V"/>
-												</xsl:otherwise>
-											</xsl:choose>
-										</td>
-									</xsl:if>
-								</tr>
-							</xsl:if>
-							<xsl:if test="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Helseperson">
-								<tr>
-									<xsl:if test="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Helseperson/m2:HprId"><th width="25%">HPR-id</th></xsl:if>
-									<xsl:if test="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Helseperson/m2:Fornavn or m2:ReseptklasseAB/m2:GyldigForskriver/m2:Helseperson/m2:Etternavn"><th width="25%">Navn</th></xsl:if>
-									<xsl:if test="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Helseperson/m2:Spesialitet"><th width="25%">Spesialitet</th></xsl:if>
-								</tr>
-								<tr>
-									<xsl:if test="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Helseperson/m2:HprId"><td width="25%"><xsl:value-of select="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Helseperson/m2:HprId/fk1:Id"/></td></xsl:if>
-									<xsl:if test="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Helseperson/m2:Fornavn or m2:ReseptklasseAB/m2:GyldigForskriver/m2:Helseperson/m2:Etternavn">
-										<xsl:choose>
-											<xsl:when test="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Helseperson/m2:Fornavn and m2:ReseptklasseAB/m2:GyldigForskriver/m2:Helseperson/m2:Etternavn">
-												<td width="25%"><xsl:value-of select="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Helseperson/m2:Fornavn"/>&#160;<xsl:value-of select="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Helseperson/m2:Etternavn"/></td>
-											</xsl:when>
-											<xsl:otherwise>
-												<xsl:if test="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Helseperson/m2:Fornavn">
-													<td width="25%"><xsl:value-of select="m2:Instituert/m2:Helseperson/m2:Fornavn"/></td>
-												</xsl:if>
-												<xsl:if test="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Helseperson/m2:Etternavn">
-													<td width="25%"><xsl:value-of select="m2:ReseptklasseAB/m2:GyldigForskriver/m2:Helseperson/m2:Etternavn"/></td>
-												</xsl:if>
-											</xsl:otherwise>
-										</xsl:choose>
-									</xsl:if>
-									<xsl:if test="m2:Helseperson/m2:Spesialitet">
-										<td width="25%">
-											<xsl:choose>
-												<xsl:when test="m2:Helseperson/m2:Spesialitet/@DN"><xsl:value-of select="m2:Helseperson/m2:Spesialitet/@DN"/></xsl:when>
-												<xsl:otherwise><b>Kodet: </b><xsl:value-of select="m2:Helseperson/m2:Spesialitet/@V"/></xsl:otherwise>
-											</xsl:choose>
-										</td>
-									</xsl:if>
-								</tr>
-							</xsl:if>
-						</xsl:if>
-						<tr>
-							<th>Reseptklasse A eller B</th>
-						</tr>
-						<xsl:if test="m2:ReseptklasseAB/m2:HoyesteDogndose/@V">
-							<tr>
-								<td>Høyeste døgndose &#160;
-									<xsl:value-of select="m2:ReseptklasseAB/m2:HoyesteDogndose/@V"/>&#160;<xsl:value-of select="m2:ReseptklasseAB/m2:HoyesteDogndose/@U"/>
-								</td>
-							</tr>
-						</xsl:if>
-						<xsl:if test="m2:ReseptklasseAB/m2:Behandlingsplan">
-							<tr>
-								<td width="25%">
-									<xsl:choose>
-										<xsl:when test="m2:ReseptklasseAB/m2:Behandlingsplan/@V = '1'">
-											<input type="checkbox" disabled="disabled" checked="checked">Behandlingsplan</input>
-										</xsl:when>
-										<xsl:otherwise>
-											<input type="checkbox" disabled="disabled">Behandlingsplan</input>
-										</xsl:otherwise>
-									</xsl:choose>
-								</td>	
-							</tr>	
-						</xsl:if>
-						<xsl:if test="m2:ReseptklasseAB/m2:AvhengihetsfareVurdert">
-							<tr>
-								<td width="25%">
-									<xsl:choose>
-										<xsl:when test="m2:ReseptklasseAB/m2:AvhengihetsfareVurdert/@V = '1'">
-											<input type="checkbox" disabled="disabled" checked="checked">Avhengighetsfare vurdert</input>
-										</xsl:when>
-										<xsl:otherwise>
-											<input type="checkbox" disabled="disabled">Avhengighetsfare vurdert</input>
-										</xsl:otherwise>
-									</xsl:choose>
-								</td>	
-							</tr>	
-						</xsl:if>
-						<xsl:if test="m2:ReseptklasseAB/m2:Smerteanalyse">
-							<tr>
-								<td width="25%">
-									<xsl:choose>
-										<xsl:when test="m2:ReseptklasseAB/m2:Smerteanalyse/@V = '1'">
-											<input type="checkbox" disabled="disabled" checked="checked">Smerteanalyse foretatt</input>
-										</xsl:when>
-										<xsl:otherwise>
-											<input type="checkbox" disabled="disabled">Smerteanalyse foretatt</input>
-										</xsl:otherwise>
-									</xsl:choose>
-								</td>	
-							</tr>	
-						</xsl:if>
-					</xsl:if>
 				</xsl:if>
 			</tbody>
 		</table>
@@ -855,6 +713,9 @@
 				</xsl:for-each>
 			</tbody>
 		</table>
+		<xsl:if test="not(following-sibling::m2:BehRegime)">
+			<p/>
+		</xsl:if>
 	</xsl:template>
 	<xsl:template match="m2:SoknadNaringsmiddel">
 		<h2>Omsøkt næringsmiddel</h2>
@@ -905,33 +766,6 @@
 						</xsl:if>
 					</tr>
 				</xsl:if>
-				<xsl:if test="m2:KroniskSykdom">
-					<tr>
-						<th>Kronisk sykdom</th>
-					</tr>
-					<tr>
-						<td width="25%">
-							<xsl:choose>
-								<xsl:when test="m2:KroniskSykdom/@V = '1'">
-									<input type="checkbox" disabled="disabled" checked="checked">Kronisk sykdom</input>
-								</xsl:when>
-								<xsl:otherwise>
-									<input type="checkbox" disabled="disabled">Kronisk sykdom</input>
-								</xsl:otherwise>
-							</xsl:choose>
-						</td>
-					</tr>
-				</xsl:if>
-				<xsl:if test="m2:Begrunnelse">
-					<tr>
-						<th width="25%">Begrunnelse</th>
-					</tr>
-					<tr>
-						<td width="25%">
-							<xsl:value-of select="m2:Begrunnelse/@DN"/>
-						</td>
-					</tr>
-				</xsl:if>
 				<xsl:if test="m2:Beskrivelse">
 					<tr>
 						<th width="25%">Beskrivelse</th>
@@ -946,9 +780,9 @@
 		</table>
 		<p/>
 	</xsl:template>
-	<xsl:template match="m2:TidligereBehandling">
+	<xsl:template match="m2:TidligereBeh">
 		<xsl:if test="m2:Varenavn or m2:Beskrivelse">
-			<xsl:if test="not(preceding-sibling::m2:TidligereBehandling)">
+			<xsl:if test="not(preceding-sibling::m2:TidligereBeh)">
 				<tr>
 					<xsl:if test="m2:Varenavn">
 						<th width="25%">Varenavn</th>
@@ -971,18 +805,18 @@
 				</xsl:if>
 			</tr>
 		</xsl:if>
-		<xsl:if test="m2:ForskrivningB64 or m2:MedisinskeHensyn">
+		<xsl:if test="m2:ForskrivningB64 or m2:SarligeGrunner">
 			<xsl:variable name="konvertertBase64">
 				<xsl:call-template name="convertBase64ToAscii">
 					<xsl:with-param name="base64String" select="m2:ForskrivningB64"/>
 				</xsl:call-template>
 			</xsl:variable>
-			<xsl:if test="not(preceding-sibling::m2:TidligereBehandling)">
+			<xsl:if test="not(preceding-sibling::m2:TidligereBeh)">
 				<tr>
 					<xsl:if test="m2:ForskrivningB64 and contains($konvertertBase64, 'NavnFormStyrke')">
 						<th width="25%">NavnFormStyrke</th>
 					</xsl:if>
-					<xsl:if test="m2:MedisinskeHensyn/@DN">
+					<xsl:if test="m2:SarligeGrunner/@DN">
 						<th width="25%">Særlige grunner</th>
 					</xsl:if>
 				</tr>
@@ -993,9 +827,9 @@
 						<xsl:value-of select="substring-after(substring-before($konvertertBase64, '&lt;/NavnFormStyrke&gt;'),'&lt;NavnFormStyrke&gt;')"/>
 					</td>
 				</xsl:if>
-				<xsl:if test="m2:MedisinskeHensyn/@DN">
+				<xsl:if test="m2:SarligeGrunner/@DN">
 					<td width="25%">
-						<xsl:value-of select="m2:MedisinskeHensyn/@DN"/>
+						<xsl:value-of select="m2:SarligeGrunner/@DN"/>
 					</td>
 				</xsl:if>
 			</tr>
@@ -1191,7 +1025,7 @@
 		</xsl:if>
 	</xsl:template>
 	<xsl:template name="fellesLegemiddelAvsluttningTopp">
-		<xsl:if test="../m2:IngenTidlBehandling">
+		<xsl:if test="../m2:IngenTidlBeh">
 			<th>Årsak til at forhåndsgodkjenning ikke er forsøkt</th>
 		</xsl:if>
 		<xsl:if test="string-length($vedlegg) != 0">
@@ -1239,14 +1073,7 @@
 		<xsl:param name="konvertertBase64"/>
 		<xsl:if test="string-length($konvertertBase64) != 0 and contains($konvertertBase64, 'Reseptgruppe')">
 			<td width="25%" valign="top">
-				<xsl:choose>
-					<xsl:when test="string-length(substring-before(substring-after(substring-before(substring-after($konvertertBase64,'Reseptgruppe '),'/'),'DN=&quot;'),'&quot;'))>0">
-					<xsl:value-of select="substring-before(substring-after(substring-before(substring-after($konvertertBase64,'Reseptgruppe '),'/'),'DN=&quot;'),'&quot;')"/>
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:value-of select="substring-before(substring-after(substring-before(substring-after($konvertertBase64,'Reseptgruppe '),'/'),'V=&quot;'),'&quot;')"/>
-					</xsl:otherwise>
-				</xsl:choose>
+				<xsl:value-of select="substring-before(substring-after(substring-before(substring-after($konvertertBase64,'Reseptgruppe '),'/'),'DN=&quot;'),'&quot;')"/>
 			</td>
 		</xsl:if>
 		<xsl:if test="string-length($konvertertBase64) != 0 and contains($konvertertBase64, 'NavnFormStyrke')">
@@ -1257,9 +1084,9 @@
 	</xsl:template>
 	<xsl:template name="fellesLegemiddelAvsluttningBunn">
 		<xsl:param name="refId"/>
-		<xsl:if test="../m2:IngenTidlBehandling">
+		<xsl:if test="../m2:IngenTidlBeh">
 			<td valign="top">
-				<xsl:for-each select="../m2:IngenTidlBehandling">
+				<xsl:for-each select="../m2:IngenTidlBeh">
 					<xsl:call-template name="k-7507"/>
 				</xsl:for-each>
 			</td>

@@ -5,29 +5,17 @@
 	<Versjon>1.1</Versjon>
 	<Identifikator>HIS 80603:2017</Identifikator>
 	<Utgitt>02/2017</Utgitt>
-	<Utgiver>Direktoratet for e-helse</Utgiver>
+	<Utgiver>Helsedirektoratet</Utgiver>
 	<Referansekatalogen>
 		<Beskrivelse>Dialogmelding 1.1 (HIS 80603:2017)</Beskrivelse>
-		<Referanse>http://ehelse.no/HIS80603-2017</Referanse>
+		<Referanse>https://ehelse.no/Sider/Standard-for-dialogmelding--Informasjonsmodell-og-XML-meldingsbeskrivelse-%e2%80%93-HIS-806032017.aspx</Referanse>
 	</Referansekatalogen>
 	<Status>Fastsatt som standard</Status>
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Dialogmelding v1.1 (GitLab)</Beskrivelse>
+			<Beskrivelse>Standard for dialogmelding. Informasjonsmodell og XML meldingsbeskrivelse (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/dialogmelding/v11/HIS 80603_2017 Standard for dialogmelding.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>Profil: Digital dialog (GitLab)</Beskrivelse>
-			<Referanse>kravdokument/dialogmelding/v11/HIS 1176_2017 Digital dialog Profil av dialogmelding.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>Profil: Helsefaglig dialog (GitLab)</Beskrivelse>
-			<Referanse>kravdokument/dialogmelding/v11/HIS 1077_2017 Helsefaglig dialog.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>Profil: Status på henvisning (GitLab)</Beskrivelse>
-			<Referanse>kravdokument/dialogmelding/v11/HIS_1206-2018 Status på henvisning.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
 
@@ -55,14 +43,6 @@
 		</Visningsfil>
 		<Visningsfil>
 			<Referanse>visningsfil/dialogmelding/v1.1/Dialog-v1_1-2html-forIE.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: smooth-visning.css</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/smooth-visning.css</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: eh-komponent2.xsl</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/eh-komponent2.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
 			<Beskrivelse>Felleskomponent for alle visningsfiler: KITH-visning.css</Beskrivelse>

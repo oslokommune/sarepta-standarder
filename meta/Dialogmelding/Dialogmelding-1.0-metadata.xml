@@ -5,25 +5,17 @@
 	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 80603:2006</Identifikator>
 	<Utgitt>10/2006</Utgitt>
-	<Utgiver>Direktoratet for e-helse</Utgiver>
+	<Utgiver>Helsedirektoratet</Utgiver>
 	<Referansekatalogen>
 		<Beskrivelse>Dialogmelding 1.0 (HIS 80603:2006)</Beskrivelse>
-		<Referanse>http://ehelse.no/HIS80603-2006</Referanse>
+		<Referanse>https://ehelse.no/Sider/Standard-for-dialogmelding--Informasjonsmodell-og-XML-meldingsbeskrivelse-%e2%80%93-HIS-806032006.aspx</Referanse>
 	</Referansekatalogen>
 	<Status>Fastsatt som standard</Status>
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Dialogmelding v1.0 (GitLab)</Beskrivelse>
-			<Referanse>kravdokument/dialogmelding/HIS 80603_2006 Standard for dialogmelding v1.0 -korrigert.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>Profil: Forespørsel og svar på forespørsel (GitLab)</Beskrivelse>
-			<Referanse>kravdokument/dialogmelding/HIS 1152_2006 Forespørsel og svar -korrigert.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>Profil: Tilbakemelding om feil i mottatt melding (GitLab)</Beskrivelse>
-			<Referanse>kravdokument/dialogmelding/HIS_1151_2006 Tilbakemelding om feil i mottatt melding -korrigert.pdf</Referanse>
+			<Beskrivelse>Standard for dialogmelding. Informasjonsmodell og XML meldingsbeskrivelse (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/dialogmelding/HIS_80603_2006_Standard for dialogmelding v1.0-2006-10-11.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
 
@@ -48,14 +40,6 @@
 	<Visningsfiler>
 		<Visningsfil>
 			<Referanse>visningsfil/dialogmelding/v1.0/Dialog-v1_0-2html.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: smooth-visning.css</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/smooth-visning.css</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Beskrivelse>Felleskomponent for alle visningsfiler: eh-komponent2.xsl</Beskrivelse>
-			<Referanse>visningsfil/felleskomponenter/eh-komponent2.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
 			<Beskrivelse>Felleskomponent for alle visningsfiler: KITH-visning.css</Beskrivelse>
@@ -134,16 +118,6 @@
 			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
-	<Eksempler>
-		<Eksempel>
-			<Referanse>eksempel/Dialogmelding/Dialogmelding-v1-0/Dialogmelding_avvik_v1-0.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Dialogmelding/Dialogmelding-v1-0/Dialogmelding_foresporsel_PLO_v1-0.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/Dialogmelding/Dialogmelding-v1-0/Dialogmelding_svar_foresporsel_PLO_v1-0.xml</Referanse>
-		</Eksempel>
-	</Eksempler>
+	
 
 </StandardMetadata>

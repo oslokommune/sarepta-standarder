@@ -23,7 +23,7 @@
 	<element name="Dialogmelding">
 		<annotation>
 			<documentation>
-         En instans kan inneholde en eller flere forespørsler, svar på forespørsler, notat eller avviksmeldinger. En instans vil alltid kun dekke en av anvendelsene. En instans vil for eksempel ikke kunne inneholde en forespørsl og et notat om en pasient.
+         En instans kan inneholde en eller flere forespørsler, svar på forespørsler, notat eller avviksmeldinger.   Ved svar på en forespøresl skal alltid forespørselen sendes ved svaret.  En instans vil alltid kun dekke en av anvendelsene. En instans vil for eksempel ikke kunne inneholde en forespørsl og et notat om en pasient.
       </documentation>
 		</annotation>
 		<complexType>
@@ -42,7 +42,7 @@
 	<element name="Notat">
 		<annotation>
 			<documentation>
-			Notat kan inneholde opplysninger om svar på en forespørsel, notat (om pasient) eller informasjon om avvik.
+         Notat kan inneholde opplysninger om svar på en forespørsel, notat (om pasient) eller informasjon om avvik. Dersom Notat er et svar på forespørsel skal alltid forespørselen sendes sammen med svaret. Dette for å kunne lett se hvilken forespørsel det svares på.
       </documentation>
 		</annotation>
 		<complexType>

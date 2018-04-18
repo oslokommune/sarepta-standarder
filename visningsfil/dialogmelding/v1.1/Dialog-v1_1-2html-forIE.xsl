@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<!-- Endringslogg
-    -   21.09.17: v3.1.4: Fjernet visning av teksten "Notat"
-                                 Delt opp tema og type i to separate linjer med egen overskrift
-	-	09.05.17: v3.1.3: Liten formell justering av SakstypeKodet
-	-	27.03.17: v3.1.2: Parameter for "visningStil". Ny stil "Smooth".
-	-	06.02.17: v3.1.1: Lagt til nytt element på RollerRelatertNotat: TilknyttetEnhet. Parameter for visningStil
-	-	25.10.16: (v3.1.0) La til visningsversjonnr
+	-	25.10.16: La til visningsversjonnr
 	-	17.11.15: Innføring av kodeverksfil, lauotmessige justeringer og små bugfix
 	-	20.11.13: Bugfix: Rettet en bug hvor svar på et svar ble merket som opprinnnelig forespørsel.
 	-	01.12.10: Import av felles CSS-fil
@@ -28,42 +23,44 @@
 	-->
 <xsl:stylesheet version="1.0" 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-	xmlns:xcal="urn:ietf:params:xml:ns:icalendar-2.0" 
 	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
 	xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" 
 	xmlns:dia="http://www.kith.no/xmlstds/dialog/2013-01-23" 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
 	xmlns:base="http://www.kith.no/xmlstds/base64container" 
+	xmlns:xcal="urn:ietf:params:xml:ns:icalendar-2.0" 
 	xmlns:m1-v2_4="http://www.kith.no/xmlstds/eresept/m1/2010-05-01" 
 	xmlns:m1-v2_5="http://www.kith.no/xmlstds/eresept/m1/2013-10-08" 
 	xmlns:pr="http://www.kith.no/xmlstds/pasientrelasjon/2014-03-28" 
 	xmlns:hcp="http://www.kith.no/xmlstds/helsepersonell/2014-03-28" 
 	xmlns:pers="http://www.kith.no/xmlstds/person/2014-03-28"  
-	exclude-result-prefixes="mh fk1 dia base xcal m1-v2_4 m1-v2_5 pr hcp pers">
+	exclude-result-prefixes="mh fk1 dia xhtml base xcal m1-v2_4 m1-v2_5 pr hcp pers">
 	
-	<!-- Disse er også importert i m1-2html-v2.4.xsl:
 	<xsl:import href="../../felleskomponenter/meldingshode2html.xsl"/>
 	<xsl:import href="../../felleskomponenter/funksjoner.xsl"/>
 	<xsl:import href="../../felleskomponenter/kodeverk.xsl"/>
-	<xsl:import href="../../felleskomponenter/eh-komponent2.xsl"/>
-	-->
 	<xsl:import href="../../eresept/m1/m1-2html-v2.4.xsl"/>
 	<xsl:import href="../../eresept/m1/m1-2html-v2.5.xsl"/>
 
+	<xsl:output method="html" encoding="UTF-8" indent="yes" omit-xml-declaration="yes"
+			doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
+			doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+	
+	<!-- Variabel for hvilken stil visning har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
+	<xsl:variable name="stil" select="'One-line-doc'"/>
 	<xsl:variable name="std-col" select="8"/>
 	<xsl:variable name="std-td" select="100"/>
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'dialog1.1-ie - v3.1.5 '"/>
+	<xsl:variable name="versjon" select="'dialog1.1-ie - v3.1.0 '"/>
 	
 	<xsl:template match="/">
-		<html>
+		<html xmlns="http://www.w3.org/1999/xhtml">
 			<head>
 				<title>Dialogmelding</title>
 				<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 				<style type="text/css">
 					<xsl:value-of select="document('../../felleskomponenter/KITH-visning.css')" disable-output-escaping="yes"/>
-				</style>
-				<style type="text/css">
-					<xsl:value-of select="document('../../felleskomponenter/smooth-visning.css')" disable-output-escaping="yes"/>
 				</style>
 			</head>
 			<body>
@@ -104,16 +101,14 @@
 							<xsl:if test="//dia:SakstypeKodet or //dia:Sakstype">
 								<th>Sakstype</th>
 								<td>
-									<xsl:if test="//dia:SakstypeKodet">
-										<span class="strong">
-											<xsl:value-of select="/descendant::dia:SakstypeKodet[1]/@V"/>&#160;
-										</span>
-										<xsl:if test="contains(/descendant::dia:SakstypeKodet[1]/@S, '7170')">(ICPC)</xsl:if>
-										<xsl:if test="contains(/descendant::dia:SakstypeKodet[1]/@S, '7110')">(ICD-10)</xsl:if>
-										<xsl:if test="contains(/descendant::dia:SakstypeKodet[1]/@S, '7250')">(ICF)</xsl:if>
-										<br/>
-									</xsl:if>
-									<xsl:value-of select="/descendant::dia:Sakstype[1]"/>
+									<b><xsl:value-of select="//dia:SakstypeKodet/@V"/>&#160;
+									</b>
+									<xsl:if test="contains(dia:SakstypeKodet/@S, '7170')">(ICPC)</xsl:if>
+									<xsl:if test="contains(dia:SakstypeKodet/@S, '7110')">(ICD-10)</xsl:if>
+
+									<xsl:if test="contains(dia:SakstypeKodet/@S, '7250')">(ICF)</xsl:if>
+									<br/>
+									<xsl:value-of select="//dia:Sakstype"/>
 								</td>
 							</xsl:if>
 						</tr>
@@ -121,11 +116,8 @@
 				</table>
 			</xsl:if>
 			<!-- Overskrift og tabell for Notat -->
-		    <!-- <xsl:if test="((//dia:Notat) and ( //mh:MsgInfo/mh:Type/@V != 'DIALOG_HELSEFAGLIG'))" >
-			<xsl:if test="//dia:Notat" >
-				<h2>Notat</h2>
-			</xsl:if>-->
 			<xsl:if test="//dia:Notat">
+				<h2>Notat</h2>
 				<table>
 					<tbody>
 						<xsl:apply-templates select="//dia:Notat"/>
@@ -302,14 +294,9 @@
 		</xsl:if>
 	</xsl:template>
 	<xsl:template match="dia:Notat">
-		<xsl:if test="dia:TemaKodet">
+		<xsl:if test="dia:TemaKodet or dia:Tema">
 			<tr>
-				<th width="20%">
-					<xsl:choose>
-						<xsl:when test="//mh:Type/@V='DIALOG_STATUS_HENVISNING'">Status</xsl:when>
-						<xsl:otherwise>Type</xsl:otherwise>
-					</xsl:choose>
-				</th>
+				<th width="20%">Type/tema</th>
 				<td colspan="3">
 					<xsl:for-each select="dia:TemaKodet">
 						<xsl:choose>
@@ -319,17 +306,14 @@
 							<xsl:otherwise><xsl:call-template name="k-dummy"/></xsl:otherwise>
 						</xsl:choose>
 					</xsl:for-each>
+					<xsl:if test="dia:Tema">
+						<div>
+							<xsl:value-of select="dia:Tema"/>
+						</div>
+					</xsl:if>
 				</td>
 			</tr>
 		</xsl:if>
-		<xsl:if test="dia:Tema">
-			<tr>
-				<th width="20%">Tema</th>
-				<td colspan="3">
-					<xsl:value-of select="dia:Tema"/>
-				</td>
-			</tr>
-		</xsl:if>   
 		<xsl:if test="dia:TekstNotatInnhold">
 			<tr>
 				<th width="20%">Innhold</th>
@@ -370,7 +354,8 @@
 	</xsl:template>
 	<xsl:template match="dia:RollerRelatertNotat">
 		<tr>
-			<th>
+			<td>
+				<b>
 					<xsl:for-each select=".//dia:RoleToPatient">
 						<xsl:if test="position()&gt;1">,&#160;</xsl:if>
 						<xsl:choose>
@@ -386,9 +371,7 @@
 							<xsl:otherwise><xsl:call-template name="k-dummy"/></xsl:otherwise>
 						</xsl:choose>
 					</xsl:for-each>
-			</th>
-			<td>
-				<!-- choice :-->
+				</b>&#160;
 				<xsl:for-each select="dia:HealthcareProfessional">
 					<xsl:call-template name="HealthcareProfessional"/>
 				</xsl:for-each>
@@ -397,89 +380,6 @@
 				</xsl:for-each>
 			</td>
 		</tr>
-		<tr>
-			<xsl:apply-templates select="dia:TilknyttetEnhet" /> <!-- maxOccurs="1" -->
-		</tr>
-	</xsl:template>
-
-	<xsl:template match="dia:TilknyttetEnhet">
-		<th>
-			Tilknyttet enhet
-		</th>
-		<td>
-			<div>
-				<xsl:for-each select="dia:Kontaktenhet">
-					<xsl:call-template name="dia:Organisation"/>
-				</xsl:for-each>
-			</div>
-			<div>
-				<xsl:for-each select="dia:HealthcareProfessional">
-					<xsl:call-template name="HealthcareProfessional"/>
-				</xsl:for-each>
-				<xsl:for-each select="dia:Person">
-					<xsl:call-template name="Person"/>
-				</xsl:for-each>
-			</div>
-			<xsl:if test="dia:Merknad">
-				<div>
-					<span style="font-weight: bold;">Merknad: </span>
-					<xsl:value-of select="dia:Merknad" />
-				</div>
-			</xsl:if>
-		</td>
-	</xsl:template>
-
-	<xsl:template name="dia:Organisation">
-		<div>
-			<xsl:value-of select="child::*[local-name()='OrganisationName']"/>
-		</div>
-
-		<div>
-			<xsl:if test="fk1:Ident">
-				<span style="font-weight: bold;">
-					<xsl:for-each select="fk1:Ident/fk1:TypeId">
-						<xsl:call-template name="k-9051"/>
-					</xsl:for-each>&#160;
-				</span>
-				<xsl:value-of select="fk1:Ident/fk1:Id"/>
-			</xsl:if>
-			<xsl:for-each select="fk1:Address">, 
-				<xsl:call-template name="fk1:Address"/>	
-			</xsl:for-each>
-		</div>
-
-	</xsl:template>
-
-	<xsl:template name="fk1:Address">
-		<span style="font-weight: bold;">
-			<xsl:choose>
-				<xsl:when test="child::*[local-name()='Type']">
-					<xsl:for-each select="child::*[local-name()='Type']">
-						<xsl:call-template name="k-3401"/>
-					</xsl:for-each>&#160;
-				</xsl:when>
-				<xsl:otherwise>Adresse </xsl:otherwise>
-			</xsl:choose>
-		</span>
-		<xsl:if test="child::*[local-name()='StreetAdr']">
-			<xsl:value-of select="child::*[local-name()='StreetAdr']"/>,&#160;</xsl:if>
-		<xsl:if test="child::*[local-name()='PostalCode']">
-			<xsl:value-of select="child::*[local-name()='PostalCode']"/>
-		</xsl:if>
-		<xsl:if test="child::*[local-name()='City']">&#160;<xsl:value-of select="child::*[local-name()='City']"/>
-		</xsl:if>
-		<xsl:if test="child::*[local-name()='CityDistr']">, <xsl:for-each select="child::*[local-name()='CityDistr']">
-				<xsl:call-template name="k-3403"/>
-			</xsl:for-each>
-		</xsl:if>
-		<xsl:if test="child::*[local-name()='County']">, <xsl:for-each select="child::*[local-name()='County']">
-				<xsl:call-template name="k-3402"/>
-			</xsl:for-each>
-		</xsl:if>
-		<xsl:if test="child::*[local-name()='Country']">, <xsl:for-each select="child::*[local-name()='Country']">
-				<xsl:call-template name="k-9043"/>
-			</xsl:for-each>
-		</xsl:if>
 	</xsl:template>
 
 	<xsl:template match="mh:RefDoc">

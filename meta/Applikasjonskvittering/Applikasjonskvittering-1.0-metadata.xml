@@ -7,23 +7,23 @@
 	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 80415:2004</Identifikator>
 	<Utgitt>11/2004</Utgitt>
-	<Utgiver>Direktoratet for e-helse</Utgiver>
+	<Utgiver>Helsedirektoratet</Utgiver>
 	<Referansekatalogen>
 		<Beskrivelse>Applikasjonskvittering 1.0 (HIS 80415:2004)</Beskrivelse>
-		<Referanse>http://ehelse.no/HIS80415-2004</Referanse>
+		<Referanse>https://ehelse.no/Sider/Applikasjonskvittering--Informasjonsmodell,-XML-meldingsbeskrivelse-og-retningslinjer-for-bruk---HIS-804152004.aspx</Referanse>
 	</Referansekatalogen>
 	<Status>Fastsatt som standard</Status>
 	
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Applikasjonskvittering v1.0 (GitLab)</Beskrivelse>
+			<Beskrivelse>Applikasjonskvittering: Informasjonsmodell, XML meldingsbeskrivelse og retningslinjer for bruk (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/applikasjonskvittering/HIS_80415_2004 AppRec v1.0 -korrigert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
 	
 	<Skjemaer>
 		<Skjema>
-			<Referanse>skjema/applikasjonskvittering/AppRec-v1-2004-11-21.xsd</Referanse>
+			<Referanse>skjema/Applikasjonskvittering/AppRec-v1-2004-11-21.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/apprec/2004-11-21</Namespace>
 		</Skjema>
 	</Skjemaer>
@@ -34,7 +34,26 @@
 			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
-		
+	
+	<Testmateriell>
+		<Testfil>
+			<Beskrivelse>Testcase for riktig implementasjon og bruk av applikasjonskvittering (XLSX)</Beskrivelse>
+			<Referanse>test/applikasjonskvittering/TestcaseApplikasjonskvittering.xlsx</Referanse>
+		</Testfil>
+	</Testmateriell>
+	
+	<Eksempler>
+		<Eksempel>
+			<Referanse>eksempel/Applikasjonskvittering/AppRec-v1-eksempel-ok.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/Applikasjonskvittering/AppRec-v1-eksempel-avvist.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/Applikasjonskvittering/AppRec-v1-eksempel-ok_feil_i_delmelding.xml</Referanse>
+		</Eksempel>
+	</Eksempler>
+	
 	<RelaterteFiler>
 		<RelatertFil>
 			<Beskrivelse>Veiledning til riktig bruk av applikasjonskvittering (HISD 1168:2016) (PDF)</Beskrivelse>
