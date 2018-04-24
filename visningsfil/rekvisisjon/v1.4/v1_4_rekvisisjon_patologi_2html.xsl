@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:hmt="http://www.kith.no/xmlstds/medtjenhdr/2008-23-05" xmlns:lso="http://www.kith.no/xmlstds/rekvisisjon/2005-05-20" xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml" exclude-result-prefixes="hmt lso xhtml">
-	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+<xsl:stylesheet version="1.0" 
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+	xmlns:hmt="http://www.kith.no/xmlstds/medtjenhdr/2008-23-05" 
+	xmlns:lso="http://www.kith.no/xmlstds/rekvisisjon/2005-05-20" 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+	exclude-result-prefixes="hmt lso xhtml">
+
 	<!--
 FORMÅL
 XSLT for generering av html for Rekvisisjon Patologi v.1.4
@@ -18,9 +24,15 @@ TODO/Svakheter:
 * Benytter skriveformene CollectorComment (entall), CollectorsCommentCoded (flertall) og SubjectMeasures (flertall) som definert i "XML meldingsbeskrivelse for rekvirering"
 
 -->
+
+	<xsl:output method="html" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" 
+		doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" 
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+
 	<xsl:include href="header_medisinske_tjenester.xsl"/>
+
 	<xsl:template match="/">
-		<html xmlns="http://www.w3.org/1999/xhtml">
+		<html>
 			<head>
 				<title>Rekvisisjon Patologi</title>
 				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
@@ -35,6 +47,7 @@ padding:1em;
 background-color: #ffffff;
 font-family: arial;
 font-size: 0.8em;
+height: 24.5em;
 }
 .Patient,.ServProvider,.Requester, .CopyDest 
 {
@@ -58,7 +71,7 @@ padding: 0.5em;
 {
 width:95%;
 clear:left;
-margin: 1px;
+margin: 20px 1px 1px 1px;
 border:1px solid gray;
 padding:1em;
 background-color: #ffffff;
@@ -283,7 +296,7 @@ Kommentar til tatt prøve:&#160; <xsl:value-of select="lso:Comment"/>
 				<br/>
 			</xsl:for-each>
 			<xsl:for-each select="lso:Patient/lso:InfItem">
-				<xsl:value-of select="./lso:Observation/lsr:CodedDescr/@DN"/>&#160;<xsl:value-of select="./lso:StartDateTime/@V"/>
+				<xsl:value-of select="./lso:Observation/lso:CodedDescr/@DN"/>&#160;<xsl:value-of select="./lso:StartDateTime/@V"/>
 			</xsl:for-each>
 		</div>
 	</xsl:template>
