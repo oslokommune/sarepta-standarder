@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -->
+<!-- Dette er en testmelding med fiktive personer -->
+<!-- -->
+<Message xmlns="http://www.kith.no/xmlstds/rekvisisjon/2008-12-01" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/rekvisisjon/2008-12-01 Rekvisisjon-v1_5.xsd">
+	<!-- -->
+	<!-- MR-undersøkelse  -->
+	<!-- -->
+	<Type V="R" DN="Rekvisisjon"/>
+	<MIGversion>v1.5 2008-12-01</MIGversion>
+	<GenDate V="2018-01-09T14:15:12"/>
+	<MsgId>f59a82a4-f51e-11e7-8c3f-9a214cf093ae</MsgId>
+	<ServReq>
+		<ServType V="N" DN="Ny"/>
+		<IssueDate V="2018-01-09T13:45:00"/>
+		<PaymentCat V="1" DN="Ordinær pasient"/>
+		<MsgDescr V="MR" DN="Magnettomografi"/>
+		<Id>08e32bb8-f51f-11e7-8c3f-9a214cf093ae</Id>
+		<RequestedPrioReport V="NORM" DN="Normal"/>
+		<Patient>
+			<Name>Telokk, Gry</Name>
+			<OffId>12057900499</OffId>
+			<TypeOffId V="FNR" DN="Fødselsnummer"/>
+			<ResponsibleHcp>
+				<Relation V="REK" DN="Rekvirent"/>
+				<HCP>
+					<HCProf>
+						<Type V="LE" DN="Lege"/>
+						<Name>Rita Lin</Name>
+						<Id>9144900</Id>
+						<TypeId V="HPR" DN="HPR-nummer"/>
+					</HCProf>
+					<Address>
+						<Type V="WP" DN="Arbeidsadresse"/>
+						<TeleAddress V="tel:12345678"/>
+					</Address>
+				</HCP>
+			</ResponsibleHcp>
+			<Address>
+				<Type V="H" DN="Bostedsadresse"/>
+				<StreetAdr>Lungegaardsbakken13</StreetAdr>
+				<PostalCode>5020</PostalCode>
+				<City>Bergen</City>
+			</Address>
+			<InfItem>
+				<Observation>
+					<CodedDescr V="NOIVK" S="2.16.578.1.12.4.1.1.8210" DN="Ikke Intrakranielle vaskulære klips"/>
+				</Observation>
+				<Type V="NB" DN="Spesielle hensyn av betydning for behandlingen"/>
+			</InfItem>
+			<InfItem>
+				<Observation>
+					<CodedDescr V="NOMEY" S="2.16.578.1.12.4.1.1.8210" DN="Ikke Metallfremmedlegeme i øye"/>
+				</Observation>
+				<Type V="NB" DN="Spesielle hensyn av betydning for behandlingen"/>
+			</InfItem>
+			<InfItem>
+				<Observation>
+					<CodedDescr V="NOCOC" S="2.16.578.1.12.4.1.1.8210" DN="Ikke Cochleaimplantat (øre)"/>
+				</Observation>
+				<Type V="NB" DN="Spesielle hensyn av betydning for behandlingen"/>
+			</InfItem>
+			<InfItem>
+				<Observation>
+					<CodedDescr V="NONEV" S="2.16.578.1.12.4.1.1.8210" DN="Ikke Nevrostimulator"/>
+				</Observation>
+				<Type V="NB" DN="Spesielle hensyn av betydning for behandlingen"/>
+			</InfItem>
+			<InfItem>
+				<Observation>
+					<CodedDescr V="NOPAC" S="2.16.578.1.12.4.1.1.8210" DN="Ikke Pacemaker elektrode"/>
+				</Observation>
+				<Type V="NB" DN="Spesielle hensyn av betydning for behandlingen"/>
+			</InfItem>
+			<InfItem>
+				<Observation>
+					<CodedDescr V="NOGR1" S="2.16.578.1.12.4.1.1.8210" DN="Ikke Graviditet 1. trimester"/>
+				</Observation>
+				<Type V="NB" DN="Spesielle hensyn av betydning for behandlingen"/>
+			</InfItem>
+			<InfItem>
+				<Observation>
+					<CodedDescr V="KOM" S="2.16.578.1.12.4.1.1.8209" DN="Kommunikasjons-problemer"/>
+				</Observation>
+				<Type V="NB" DN="Spesielle hensyn av betydning for behandlingen"/>
+			</InfItem>
+			<InfItem>
+				<Observation>
+					<CodedDescr V="INS" S="2.16.578.1.12.4.1.1.8209" DN="Insulin-/morfinpumpe"/>
+				</Observation>
+				<Type V="NB" DN="Spesielle hensyn av betydning for behandlingen"/>
+			</InfItem>
+		</Patient>
+		<ServProvider>
+			<HCP>
+				<Inst>
+					<Name>ST OLAVS HOSPITAL HF</Name>
+					<Id>59</Id>
+					<TypeId V="HER" DN="HER-id"/>
+					<Dept>
+						<Name>Bildediagnostikk</Name>
+						<Id>91120</Id>
+						<TypeId V="HER" DN="HER-id"/>
+					</Dept>
+				</Inst>
+			</HCP>
+		</ServProvider>
+		<Requester>
+			<HCP>
+				<Inst>
+					<Name>Trondheim kommune</Name>
+					<Id>2342</Id>
+					<TypeId V="HER" DN="HER-id"/>
+					<Dept>
+						<Name>Legetjeneste ved sykehjem mv.</Name>
+						<Id>88218</Id>
+						<TypeId V="HER" DN="HER-id"/>
+					</Dept>
+				</Inst>
+			</HCP>
+		</Requester>
+		<CopyDest>
+			<HCP>
+				<Inst>
+					<Name>Kattskinnet legesenter</Name>
+					<Id>91096</Id>
+					<TypeId V="HER" DN="HER-id"/>
+					<HCPerson>
+						<Name>August September</Name>
+						<Id>91100</Id>
+						<TypeId V="HER" DN="HER-id"/>
+					</HCPerson>
+				</Inst>
+			</HCP>
+		</CopyDest>
+		<ReasonAsText>
+			<Heading V="PROB" DN="Aktuell problemstilling"/>
+			<TextResultValue>Smerter og hevelse hø. kne, mistenker menisk, ønsker MR av høyre kne</TextResultValue>
+		</ReasonAsText>
+		<Comment>
+			<TextCode V="1" S="2.16.578.1.12.4.1.1.8274" DN="Tillatelse"/>
+		</Comment>
+		<ReqInvestigation>
+			<ServType V="N" DN="Ny"/>
+			<Investigation>
+				<Id V="SNG0AG" S="2.16.578.1.12.4.1.1.7270" DN="MR Kne"/>
+				<Spec V="ZTX0XA" S="2.16.578.1.12.4.1.1.7270" DN="Høyresidig bildediagnostisk undersøkelse"/>
+			</Investigation>
+		</ReqInvestigation>
+	</ServReq>
+</Message>

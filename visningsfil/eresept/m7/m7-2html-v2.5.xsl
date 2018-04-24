@@ -1,43 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Edited with Atova XLMSpy (x64) ver. 2013 rel.2  sp.2 (http://www.altova.com) by Jan Sigurd Dragsjø - avd. Standardisering, Helsedirektoratet-->
 <xsl:stylesheet version="1.0" 
-	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
 	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
 	xmlns:m7="http://www.kith.no/xmlstds/eresept/m7/2008-05-01" 
 	xmlns:m5v2.5="http://www.kith.no/xmlstds/eresept/m5/2013-04-16" 
 	xmlns:bas="http://www.kith.no/xmlstds/base64container" 
-	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
-	exclude-result-prefixes="mh m7 m5v2.5 bas xhtml">
+	exclude-result-prefixes="mh m7 m5v2.5 bas">
 
 <!-- Visningsfil for eReseptmeldingen: M7 Slettet resept i RF
 Inngår i Hdirs visningsfiler versjon 1
 
-25-10-2016: La til visningsversjonnr
+27-03-2017: v3.1.1: Ny parameter for "visningStil. Ny stil "Smooth".
+25-10-2016: v3.1.0: La til visningsversjonnr
 17-08-2013: versjon for eResept v2.5
 28-02-2011: versjon for eResept v2.4 
 -->
+
+	<!-- Disse importeres også i /m1/m1-2html-v2.5.xsl (via m5/m5-2html-v2.5.xsl):
+	<xsl:import href="../../felleskomponenter/meldingshode2html.xsl"/>
+	<xsl:import href="../../felleskomponenter/funksjoner.xsl"/>
+	<xsl:import href="../../felleskomponenter/eh-komponent2.xsl"/>
+	-->
 	<xsl:import href="../m5/m5-2html-v2.5.xsl"/>
-	<xsl:import href="../../Felleskomponenter/meldingshode2html.xsl"/>
-	<xsl:import href="../../Felleskomponenter/funksjoner.xsl"/>
-	<xsl:import href="../../Felleskomponenter/base64decoder.xsl"/>
-	
-	<xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" 
-		doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" 
-		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
-	
-	<!-- Variabel for hvilken stil visningen har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
-	<xsl:variable name="stil" select="'One-line-doc'"/>
+	<xsl:import href="../../felleskomponenter/base64decoder.xsl"/>
+
 	
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'eresept-m7-2.5 v3.1.0 '"/>
+	<xsl:variable name="versjon" select="'eresept-m7-2.5 - v3.1.1 '"/>
 
 	<xsl:template match="/">
-		<html xmlns="http://www.w3.org/1999/xhtml">
+		<html>
 			<head>
 				<title>Slettet resept i RF</title>
 				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-				<style type="text/css"><xsl:value-of select="document('../../Felleskomponenter/KITH-visning.css')" disable-output-escaping="yes" /></style>
+				<style type="text/css">
+					<xsl:value-of select="document('../../felleskomponenter/KITH-visning.css')" disable-output-escaping="yes" />
+				</style>
+				<style type="text/css">
+					<xsl:value-of select="document('../../felleskomponenter/smooth-visning.css')" disable-output-escaping="yes"/>
+				</style>
 			</head>
 			<body>
 				<xsl:apply-templates select="mh:MsgHead"/>

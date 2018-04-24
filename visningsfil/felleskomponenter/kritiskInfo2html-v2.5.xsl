@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Edited with Atova XLMSpy (x64) ver. 2013 rel.2  sp.2 (http://www.altova.com) by Jan Sigurd Dragsjø - avd. Standardisering, Helsedirektoratet-->
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ki="http://www.kith.no/xmlstds/eresept/ki/2013-04-25" exclude-result-prefixes="ki">
+<xsl:stylesheet version="1.0" 
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+	xmlns:ki="http://www.kith.no/xmlstds/eresept/ki/2013-04-25" 
+	exclude-result-prefixes="ki">
 
 <!-- Visningsfil for kritisk info
 Inngår i Hdirs visningsfiler versjon 1
@@ -10,8 +13,10 @@ Inngår i Hdirs visningsfiler versjon 1
 <!-- Endringslogg:
 	-	2014-10-21: Endret visning av Atc-kode slik at kon V-attributtet vises -->
 
+	<!-- Denne må importeres i hovefila:
 	<xsl:import href="funksjoner.xsl"/>
-	
+	-->
+
 	<xsl:template match="ki:Allergi">
 		<xsl:if test="ki:Legemiddelreaksjon or ki:Reaksjon or ki:Kilde or ki:Oppdatert or ki:Avkreftet or ki:Kommentar">
 			<tr>
@@ -20,18 +25,18 @@ Inngår i Hdirs visningsfiler versjon 1
 						<xsl:for-each select="ki:Legemiddelreaksjon">
 							<xsl:if test="ki:Varenavn">
 								<div>
-									<b>Varenavn:</b>&#160;
+									<span class="strong">Varenavn:</span>&#160;
 									<xsl:value-of select="ki:Varenavn"/>
 								</div>
 							</xsl:if>
 							<xsl:for-each select="ki:Atc">
 								<div>
-									<b>Atc:</b>&#160;<xsl:value-of select="@V"/>
+									<span class="strong">Atc:</span>&#160;<xsl:value-of select="@V"/>
 								</div>
 							</xsl:for-each>
 							<xsl:if test="ki:Hjelpestoffreaksjon">
 								<div>
-									<b>Hjelpestoffreaksjon:</b>&#160;
+									<span class="strong">Hjelpestoffreaksjon:</span>&#160;
 									<xsl:choose>
 										<xsl:when test="ki:Hjelpestoffreaksjon='true'">Ja</xsl:when>
 										<xsl:otherwise>Nei</xsl:otherwise>
@@ -40,7 +45,7 @@ Inngår i Hdirs visningsfiler versjon 1
 							</xsl:if>
 							<xsl:if test="ki:Virkestoff">
 								<div>
-									<b>Virkestoff:</b>&#160;
+									<span class="strong">Virkestoff:</span>&#160;
 									<xsl:for-each select="ki:Virkestoff">
 										<xsl:value-of select="."/>
 										<xsl:choose>
@@ -57,7 +62,7 @@ Inngår i Hdirs visningsfiler versjon 1
 					<td width="20%">
 						<xsl:for-each select="ki:Reaksjon">
 							<div>
-								<b>Reaksjon:</b>&#160;
+								<span class="strong">Reaksjon:</span>&#160;
 								<xsl:choose>
 									<xsl:when test="@DN">
 										<xsl:value-of select="@DN"/>
@@ -70,7 +75,7 @@ Inngår i Hdirs visningsfiler versjon 1
 						</xsl:for-each>
 						<xsl:for-each select="ki:Kilde">
 							<div>
-								<b>Kilde:</b>&#160;
+								<span class="strong">Kilde:</span>&#160;
 								<xsl:choose>
 									<xsl:when test="@DN">
 										<xsl:value-of select="@DN"/>
@@ -87,7 +92,7 @@ Inngår i Hdirs visningsfiler versjon 1
 					<td>
 						<xsl:if test="ki:Oppdatert">
 							<div>
-								<b>Oppdatert:</b>&#160;
+								<span class="strong">Oppdatert:</span>&#160;
 								<xsl:call-template name="skrivUtDateTime">
 									<xsl:with-param name="oppgittTid" select="ki:Oppdatert"/>
 								</xsl:call-template>
@@ -95,7 +100,7 @@ Inngår i Hdirs visningsfiler versjon 1
 						</xsl:if>
 						<xsl:if test="ki:Avkreftet">
 							<div>
-								<b>Avkreftet:</b>&#160;
+								<span class="strong">Avkreftet:</span>&#160;
 								<xsl:choose>
 									<xsl:when test="ki:Avkreftet='true'">Ja</xsl:when>
 									<xsl:otherwise>Nei</xsl:otherwise>
@@ -104,7 +109,7 @@ Inngår i Hdirs visningsfiler versjon 1
 						</xsl:if>
 						<xsl:if test="ki:Kommentar">
 							<div>
-								<b>Kommentar:</b>&#160;
+								<span class="strong">Kommentar:</span>&#160;
 								<xsl:value-of select="ki:Kommentar"/>
 							</div>
 						</xsl:if>

@@ -3,11 +3,13 @@
 <xsl:stylesheet version="1.0" 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
 	xmlns:dis="http://www.kith.no/xmlstds/epikrise" 
-	xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
 	exclude-result-prefixes="dis xhtml">
 
-<xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"   doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+<xsl:output method="html" version="4.01" encoding="UTF-8" indent="yes" 
+	omit-xml-declaration="yes" 
+	doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"   
+	doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
 
 <!--
 FORMÅL
@@ -26,7 +28,7 @@ TODO/Svakheter:
 	<xsl:variable name="versjon" select="'epikrise1.0 v3.1.0 '"/>
 
 	<xsl:template match="/">
-		<html xmlns="http://www.w3.org/1999/xhtml">
+		<html">
 			<head>
 				<title>Epikrise</title>
 				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>

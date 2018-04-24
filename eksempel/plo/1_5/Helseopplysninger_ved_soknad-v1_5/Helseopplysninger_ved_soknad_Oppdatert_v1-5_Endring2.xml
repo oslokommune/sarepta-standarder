@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -->
+<!-- Dette er en testmelding med fiktive personer -->
+<!-- -->
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd">
+	<MsgInfo>
+		<Type V="HELSEOPPL_SOKNAD" DN="Helseopplysninger"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2018-01-22T10:50:12</GenDate>
+		<MsgId>4ee318b0-0764-11e8-b566-0800200c9a66</MsgId>
+		<ConversationRef>
+			<RefToParent>1e0e4670-0745-11e8-b566-0800200c9a66</RefToParent>
+			<RefToConversation>ac28db00-fd27-11e7-8f1a-0800200c9a66</RefToConversation>
+		</ConversationRef>
+		<Sender>
+			<Organisation>
+				<OrganisationName>ST OLAVS HOSPITAL HF</OrganisationName>
+				<Ident>
+					<Id>59</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Organisation>
+					<OrganisationName>Ortopedisk kirurgi</OrganisationName>
+					<Ident>
+						<Id>90998</Id>
+						<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</Organisation>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>Alvdal Kommune</OrganisationName>
+				<Ident>
+					<Id>99387</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Organisation>
+					<OrganisationName>Sykepleietjeneste</OrganisationName>
+					<Ident>
+						<Id>5078</Id>
+						<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</Organisation>
+			</Organisation>
+		</Receiver>
+		<Patient>
+			<FamilyName>Gundersen</FamilyName>
+			<GivenName>Roland</GivenName>
+			<DateOfBirth>1965-07-15</DateOfBirth>
+			<Sex V="1" DN="Mann"/>
+			<Ident>
+				<Id>15076500565</Id>
+				<TypeId V="FNR" DN="Fødselsnummer" S="2.16.578.1.12.4.1.1.8116"/>
+			</Ident>
+			<Address>
+				<Type V="H" DN="Bostedsadresse"/>
+				<StreetAdr>Flåklypa 31</StreetAdr>
+				<PostalCode>2560</PostalCode>
+				<City>Alvdal</City>
+			</Address>
+			<TeleCom>
+				<TypeTelecom V="MC" DN="Mobiltelefon"/>
+				<TeleAddress V="tel:+4790091001"/>
+			</TeleCom>
+		</Patient>
+	</MsgInfo>
+	<Document>
+		<RefDoc>
+			<IssueDate V="2018-01-17T09:30:00"/>
+			<MsgType DN="XML-instans" V="XML"/>
+			<Content>
+				<p5:HelseopplysningerVedSoknad xmlns="http://www.kith.no/xmlstds/po/poKomponent/2009-06-30" xmlns:p5="http://www.kith.no/xmlstds/po/HelseopplysningerVedSoknad/2009-06-30" xmlns:epj1="http://www.kith.no/xmlstds/epj/epj1/2008-02-20" xmlns:epj2="http://www.kith.no/xmlstds/epj/epj2/2008-02-20" xmlns:epj3="http://www.kith.no/xmlstds/epj/epj3/2008-02-20" xmlns:m1="http://www.kith.no/xmlstds/epj/meta/2008-02-20" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/po/HelseopplysningerVedSoknad/2009-06-30 HelseopplysningerVedSoknad-v1.5.xsd">
+					<InformasjonOmForsendelsen>
+						<Forsendelsesstatus V="M" DN="Endring"/>
+					</InformasjonOmForsendelsen>
+					<TilknyttetEnhet>
+						<Kontaktenhet>
+							<fk1:OrganisationName>Ortopedisk avdeling Øya</fk1:OrganisationName>
+							<fk1:Ident>
+								<fk1:Id>ORTØYA</fk1:Id>
+								<fk1:TypeId V="LAV" DN="Lokal identifikator for avdelinger" S="2.16.578.1.12.4.1.1.9051"/>
+							</fk1:Ident>
+							<fk1:TeleCom>
+								<fk1:TeleAddress V="tel:73555555"/>
+							</fk1:TeleCom>
+						</Kontaktenhet>
+					</TilknyttetEnhet>
+					<KontaktpersonHelsepersonell>
+						<Kontaktperson>
+							<fk1:TypeHealthcareProfessional V="LE" DN="Lege"/>
+							<fk1:RoleToPatient V="19" DN="Kontaktlege" S="2.16.578.1.12.4.1.1.9034"/>
+							<fk1:FamilyName>Koman</fk1:FamilyName>
+							<fk1:GivenName>Magnar</fk1:GivenName>
+							<fk1:Ident>
+								<fk1:Id>9144889</fk1:Id>
+								<fk1:TypeId V="HPR" DN="HPR-nummer" S="2.16.578.1.12.4.1.1.8116"/>
+							</fk1:Ident>
+							<fk1:TeleCom>
+								<fk1:TeleAddress V="tel:73555555"/>
+							</fk1:TeleCom>
+						</Kontaktperson>
+					</KontaktpersonHelsepersonell>
+					<OpplysningerTilSoknad>
+						<EgensoknadSendt>false</EgensoknadSendt>
+					</OpplysningerTilSoknad>
+					<InfoMedisinskDiagnose>
+						<MedisinskDiagnose>
+							<Hoveddiagnose>true</Hoveddiagnose>
+							<Diagnosekode V="S720" DN="Brudd i lårhals" S="2.16.578.1.12.4.1.1.7110"/>
+						</MedisinskDiagnose>
+					</InfoMedisinskDiagnose>
+					<MedisinskfagligeOpplysninger>
+						<epj1:Cave m1:informasjonskategori="Cave/allergier" komponentID="bd15c660-fcd5-11e1-a21f-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.14.50001.0" m1:basiskomponenttype="EPJ sak">
+							<epj1:SakshodeCave m1:informasjonskategori="Cave/allergier" komponentID="c50eca60-fcd5-11e1-a21f-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.10028.0" m1:basiskomponenttype="EPJ dokument">
+								<epj1:StikkordCave>
+									<epj1:CaveStikkord>Morfin. Registrert 13.03.04.</epj1:CaveStikkord>
+								</epj1:StikkordCave>
+							</epj1:SakshodeCave>
+							<epj1:Allerginotat komponentID="d0f8deb0-fcd5-11e1-a21f-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.11036.1" m1:basiskomponenttype="EPJ dokument">
+								<epj1:Allergi>
+									<epj1:HensynVedForskrivning>true</epj1:HensynVedForskrivning>
+									<epj1:HensynMatDrikke>false</epj1:HensynMatDrikke>
+									<epj1:Kontaktallergi>false</epj1:Kontaktallergi>
+									<epj1:PollenInnsektstikk>false</epj1:PollenInnsektstikk>
+									<epj1:AllergiskMot>Digitalis glycosides</epj1:AllergiskMot>
+									<epj1:VirkestoffLegemiddel V="C01AA" DN="Digitalis glycosides" S="2.16.578.1.12.4.1.1.7180"/>
+								</epj1:Allergi>
+							</epj1:Allerginotat>
+						</epj1:Cave>
+						<epj2:GenereltJournalnotat m1:informasjonskategori="Andre notater" komponentID="fe6c2020-fcd8-11e1-a21f-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.11009.0" m1:basiskomponenttype="EPJ dokument">
+							<epj2:Journaltekst>
+								<epj2:Overskriftskode V="1" DN="Pasientens status" S="2.16.578.1.12.4.1.1.9145"/>
+								<epj2:Notat>Innlagt etter fall i trapp. Brudd i lårhalsen. Infeksjon i såret.</epj2:Notat>
+							</epj2:Journaltekst>
+							<epj2:Journaltekst>
+								<epj2:Overskriftskode V="2" DN="Antatt forløp" S="2.16.578.1.12.4.1.1.9145"/>
+								<epj2:Notat>Pasienten behandles for infeksjon. Behov for rehabilitering ved utskrivning.</epj2:Notat>
+							</epj2:Journaltekst>
+						</epj2:GenereltJournalnotat>
+					</MedisinskfagligeOpplysninger>
+					<Sykepleierdokumentasjon>
+						<InfoFraSykepleier>
+							<epj2:Journaltekst>
+								<epj2:Notat>Oppdaterte opplysninger
+Pasient forventet utskrivningsklar 01.02.2018</epj2:Notat>
+							</epj2:Journaltekst>
+						</InfoFraSykepleier>
+					</Sykepleierdokumentasjon>
+				</p5:HelseopplysningerVedSoknad>
+			</Content>
+		</RefDoc>
+	</Document>
+</MsgHead>
