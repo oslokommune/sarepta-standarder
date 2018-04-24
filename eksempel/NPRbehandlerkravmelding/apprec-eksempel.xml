@@ -1,0 +1,34 @@
+ <AppRec xmlns="http://www.kith.no/xmlstds/apprec/2004-11-21" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/apprec/2004-11-21 AppRec-v1-2004-11-21.xsd">
+        <MsgType V="APPREC"/>
+        <MIGversion>1.0 2004-11-21</MIGversion>
+        <GenDate>2009-09-10T11:31:54.148+02:00</GenDate>
+        <Id>fe6225205b3d3049e5f600a44a34ca77</Id>
+        <Sender>
+            <HCP>
+                <Inst>
+                    <Name>ARBEIDS- OG VELFERDSETATEN</Name>
+                    <Id>889640782</Id>
+                    <TypeId V="ENH"/>
+                    <Dept>
+                        <Name>Kontrollsystem</Name>
+                    </Dept>
+                </Inst>
+            </HCP>
+        </Sender>
+        <Receiver>
+            <HCP>
+                <Inst/>
+            </HCP>
+        </Receiver>
+        <Status V="3" DN="OK, feil i delmelding"/>
+        <Error DN="Pasientens fødselsnummer eller D-nummer finnes ikke registrert i Folkeregisteret." S="2.16.578.1.12.4.1.1.8223" V="53" OT="3"/>
+        <Error DN="Sum krav overstiger maksimal egenandel for pasientreiser." S="2.16.578.1.12.4.1.1.8223" V="1239" OT="2"/>
+        <Error DN="Dobbeltregning: Regningen er allerede innsendt" S="2.16.578.1.12.4.1.1.8223" V="531" OT="2"/>
+        <Error DN="Pasientens fødselsnummer eller D-nummer finnes ikke registrert i Folkeregisteret." S="2.16.578.1.12.4.1.1.8223" V="53" OT="4"/>
+        <Error DN="Dobbeltregning: Regningen er allerede innsendt" S="2.16.578.1.12.4.1.1.8223" V="531" OT="1"/>
+        <OriginalMsgId>
+            <MsgType V="PROM" DN=""/>
+            <IssueDate>2008-05-13T20:45:30+02:00</IssueDate>
+            <Id>1b08b3f5-76c1-4560-ae4e-90e04cb0bc70</Id>
+        </OriginalMsgId>
+    </AppRec>

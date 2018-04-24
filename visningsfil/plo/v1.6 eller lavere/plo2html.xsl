@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<!-- Endringslogg
-	- 25.10.16: La til visningsversjonnr
+	- 01.06.17: v3.2.0: Responsiv visning.
+	- 27.03.17: v3.1.1: Ny parameter for "visningStil. Ny stil "Smooth".
+	- 25.10.16: v3.1.0: La til visningsversjonnr
 	- 02.12.15: Generalisert til å håndtere alle plo-versjoner opp til v1.6
 	- 01.12.15: Oppdatering for bruk av poKomponent uten navnerom. Innføring av felles kodeverksfil. Småjustering på layout.
 	- 01.10.12: Oppdatert til versjon 1.6
@@ -15,30 +17,32 @@
 	xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" 
 	exclude-result-prefixes="mh fk1">
 	
-	<xsl:import href="../../Felleskomponenter/funksjoner.xsl"/>
-	<xsl:import href="../../Felleskomponenter/meldingshode2html.xsl"/>
-	<xsl:import href="../../Felleskomponenter/poKomponent2html.xsl"/>
-	<xsl:import href="../../Felleskomponenter/cave2html.xsl"/>
-	<xsl:import href="../../Felleskomponenter/journalnotat2html.xsl"/>
-	<xsl:import href="../../Felleskomponenter/legemiddel2html.xsl"/>
-	<xsl:import href="../../Felleskomponenter/kodeverk.xsl"/>
+	<xsl:import href="../../felleskomponenter/funksjoner.xsl"/>
+	<xsl:import href="../../felleskomponenter/meldingshode2html.xsl"/>
+	<xsl:import href="../../felleskomponenter/poKomponent2html.xsl"/>
+	<xsl:import href="../../felleskomponenter/cave2html.xsl"/>
+	<xsl:import href="../../felleskomponenter/journalnotat2html.xsl"/>
+	<xsl:import href="../../felleskomponenter/legemiddel2html.xsl"/>
+	<xsl:import href="../../felleskomponenter/kodeverk.xsl"/>
+	<xsl:import href="../../felleskomponenter/eh-komponent1.xsl"/>
+	<xsl:import href="../../felleskomponenter/eh-komponent2.xsl"/>
 
-	<xsl:output method="html" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" 
-		doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" 
-		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
-	
-	<!-- Variabel for hvilken stil visning har. Tilgjengelige stiler er: Document, One-line-doc, No-line-doc -->
-	<xsl:variable name="stil" select="'One-line-doc'"/>
-	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'plo1.6 v3.1.0 '"/>
+
+	<xsl:variable name="versjon" select="'plo1.6 - v3.2.0 '"/>
 	
 	<xsl:template match="/">
-		<html xmlns="http://www.w3.org/1999/xhtml">
+		<html>
 			<head>
 				<title>PLO</title>
 				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 				<style type="text/css">
-					<xsl:value-of select="document('../../Felleskomponenter/KITH-visning.css')" disable-output-escaping="yes"/>
+					<xsl:value-of select="document('../../felleskomponenter/KITH-visning.css')" disable-output-escaping="yes"/>
+				</style>
+				<style type="text/css">
+					<xsl:value-of select="document('../../felleskomponenter/ehelse-visning.css')" disable-output-escaping="yes"/>
+				</style>
+				<style type="text/css">
+					<xsl:value-of select="document('../../felleskomponenter/smooth-visning.css')" disable-output-escaping="yes"/>
 				</style>
 			</head>
 			<body>
@@ -53,21 +57,13 @@
 	<xsl:template name="MsgHead">
 		<xsl:call-template name="Topp"/>
 		<xsl:call-template name="Innhold"/>
-		<xsl:choose>
-			<xsl:when test="//child::*[local-name()=&quot;InformasjonOmForsendelsen&quot;]">
-				<xsl:call-template name="BunnTillegg">
-					<xsl:with-param name="stil" select="$stil"/>
-					<xsl:with-param name="versjon" select="$versjon"/>
-				</xsl:call-template>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:call-template name="Bunn">
-					<xsl:with-param name="stil" select="$stil"/>
-					<xsl:with-param name="versjon" select="$versjon"/>
-				</xsl:call-template>
-			</xsl:otherwise>
-		</xsl:choose>
+		<xsl:call-template name="eh-Footer">
+			<xsl:with-param name="stil" select="$stil"/>
+			<xsl:with-param name="versjon" select="$versjon"/>
+			<xsl:with-param name="VisDokInfoVisSkjul" select="false()"/>
+		</xsl:call-template>
 	</xsl:template>
+
 	<!-- Visning av innhold -->
 	<xsl:template name="Innhold">
 		<div class="{$stil}">
@@ -76,13 +72,13 @@
 				<xsl:for-each select="//mh:MsgInfo/mh:Type">
 					<xsl:call-template name="k-8279"/>&#160;
 				</xsl:for-each>
-				<xsl:for-each select="//child::*[local-name()=&quot;TypeInnholdKonsultasjon&quot;]">-&#160;
+				<xsl:for-each select="//child::*[local-name()='TypeInnholdKonsultasjon']">-&#160;
 					<xsl:choose>
 						<xsl:when test="contains(@S, '9137')"><xsl:call-template name="k-9137"/></xsl:when>
 						<xsl:otherwise><xsl:call-template name="k-dummy"/></xsl:otherwise>
 					</xsl:choose>&#160;
 				</xsl:for-each>
-				<xsl:for-each select="//child::*[local-name()=&quot;TypeInnhold&quot;]">-&#160;
+				<xsl:for-each select="//child::*[local-name()='TypeInnhold']">-&#160;
 					<xsl:choose>
 						<xsl:when test="contains(@S, '9138')"><xsl:call-template name="k-9138"/></xsl:when>
 						<xsl:when test="contains(@S, '9139')"><xsl:call-template name="k-9139"/></xsl:when>
@@ -90,9 +86,9 @@
 						<xsl:otherwise><xsl:call-template name="k-dummy"/></xsl:otherwise>
 					</xsl:choose>&#160;
 				</xsl:for-each>
-				<xsl:if test="//child::*[local-name()=&quot;Forsendelsesstatus&quot;]">
-					<xsl:if test="not(//child::*[local-name()=&quot;Forsendelsesstatus&quot;][@V='N' or @V='X' or @V='O'])">-&#160;
-						<xsl:for-each select="//child::*[local-name()=&quot;Forsendelsesstatus&quot;]">
+				<xsl:if test="//child::*[local-name()='Forsendelsesstatus']">
+					<xsl:if test="not(//child::*[local-name()='Forsendelsesstatus'][@V='N' or @V='X' or @V='O'])">-&#160;
+						<xsl:for-each select="//child::*[local-name()='Forsendelsesstatus']">
 							<xsl:call-template name="k-7309"/>
 						</xsl:for-each>
 					</xsl:if>
@@ -102,149 +98,150 @@
 			<xsl:call-template name="Dokument"/>
 		</div>
 	</xsl:template>
+
 	<!-- Visning av klikkbar overskriftsliste. Ikke synlig ved utskrift -->
 	<xsl:template name="FellesMeny">
 		<div class="NoPrint">
 			<div id="FellesMeny" class="FellesMeny">
 				<ul>
-					<xsl:if test="//child::*[local-name()=&quot;InfoMedisinskDiagnose&quot;]">
+					<xsl:if test="//child::*[local-name()='InfoMedisinskDiagnose']">
 						<li>
 							<a href="#InfoMedisinskDiagnose">Medisinske&#160;diagnoser</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;InfoIPLOSrelevantInformasjon&quot;]">
+					<xsl:if test="//child::*[local-name()='InfoIPLOSrelevantInformasjon']">
 						<li>
 							<a href="#InfoIPLOSrelevantInformasjon">IPLOSrelevant&#160;informasjon</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;MedisinskfagligeOpplysninger&quot;]">
+					<xsl:if test="//child::*[local-name()='MedisinskfagligeOpplysninger']">
 						<li>
 							<a href="#MedisinskfagligeOpplysninger">Medisinskfaglige&#160;opplysninger</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;InfoAndreViktigeOpplysninger&quot;]">
+					<xsl:if test="//child::*[local-name()='InfoAndreViktigeOpplysninger']">
 						<li>
 							<a href="#InfoAndreViktigeOpplysninger">Andre&#160;viktige&#160;opplysninger</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//mh:Content/child::*[local-name()=&quot;Cave&quot;]">
+					<xsl:if test="//mh:Content/child::*[local-name()='Cave']">
 						<li>
 							<a href="#Cave">Cave/allergier</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;Legemiddelinfo&quot;]">
+					<xsl:if test="//child::*[local-name()='Legemiddelinfo']">
 						<li>
 							<a href="#Legemiddelinfo">Legemidler</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;LegemidlerAdministrertVedOverforing&quot;]">
+					<xsl:if test="//child::*[local-name()='LegemidlerAdministrertVedOverforing']">
 						<li>
 							<a href="#LegemidlerAdministrertVedOverforing">Legemidler administrert ved overføring/utskrivning</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;Sykepleierdokumentasjon&quot;]">
+					<xsl:if test="//child::*[local-name()='Sykepleierdokumentasjon']">
 						<li>
 							<a href="#Sykepleierdokumentasjon">Sykepleieopplysninger</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;OpplysningerAndreFaggrupper&quot;]">
+					<xsl:if test="//child::*[local-name()='OpplysningerAndreFaggrupper']">
 						<li>
 							<a href="#OpplysningerAndreFaggrupper">Opplysninger&#160;fra&#160;andre&#160;faggrupper</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;InfoKartleggingFunksjonsniva&quot;]">
+					<xsl:if test="//child::*[local-name()='InfoKartleggingFunksjonsniva']">
 						<li>
 							<a href="#InfoKartleggingFunksjonsniva">Kartlegging&#160;av&#160;funksjonsnivå</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;InfoReservasjon&quot;]">
+					<xsl:if test="//child::*[local-name()='InfoReservasjon']">
 						<li>
 							<a href="#InfoReservasjon">Reservasjoner</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;TjenesteBehov&quot;]">
+					<xsl:if test="//child::*[local-name()='TjenesteBehov']">
 						<li>
 							<a href="#TjenesteBehov">Behov&#160;for&#160;tjenester</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;InfoKontrolltime&quot;]">
+					<xsl:if test="//child::*[local-name()='InfoKontrolltime']">
 						<li>
 							<a href="#InfoKontrolltime">Kontrolltime</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;OrienteringOmDod&quot;] or //child::*[local-name()=&quot;MeldingOmUtskrevetPasient&quot;] or //child::*[local-name()=&quot;MeldingUtskrivningsklarPasient&quot;] or //child::*[local-name()=&quot;AvmeldingUtskrivningsklarPasient&quot;] or //child::*[local-name()=&quot;MeldingInnlagtPasient&quot;]">
-						<xsl:if test="//child::*[local-name()=&quot;TidsfestetHendelse&quot;]">
+					<xsl:if test="//child::*[local-name()='OrienteringOmDod'] or //child::*[local-name()='MeldingOmUtskrevetPasient'] or //child::*[local-name()='MeldingUtskrivningsklarPasient'] or //child::*[local-name()='AvmeldingUtskrivningsklarPasient'] or //child::*[local-name()='MeldingInnlagtPasient']">
+						<xsl:if test="//child::*[local-name()='TidsfestetHendelse']">
 							<li>
 								<a href="#TidsfestetHendelse">Tidsfestet&#160;hendelse</a>
 							</li>
 						</xsl:if>
-						<xsl:if test="//child::*[local-name()=&quot;UtskrevetTil&quot;]">
+						<xsl:if test="//child::*[local-name()='UtskrevetTil']">
 							<li>
 								<a href="#UtskrevetTil">Utskrevet&#160;til</a>
 							</li>
 						</xsl:if>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;InfoInformasjonGitt&quot;]">
+					<xsl:if test="//child::*[local-name()='InfoInformasjonGitt']">
 						<li>
 							<a href="#InfoInformasjonGitt">Informasjon&#160;gitt</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;OpplysningerOmHjelpemidler&quot;]">
+					<xsl:if test="//child::*[local-name()='OpplysningerOmHjelpemidler']">
 						<li>
 							<a href="#OpplysningerOmHjelpemidler">Hjelpemidler</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;OpplysningOpphold&quot;]">
+					<xsl:if test="//child::*[local-name()='OpplysningOpphold']">
 						<li>
 							<a href="#OpplysningOpphold">Opplysninger&#160;om&#160;opphold</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;EksisterendeTjeneste&quot;]">
+					<xsl:if test="//child::*[local-name()='EksisterendeTjeneste']">
 						<li>
 							<a href="#EksisterendeTjeneste">Eksisterende&#160;tjenester</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;InfoAssistertKommunikasjon&quot;]">
+					<xsl:if test="//child::*[local-name()='InfoAssistertKommunikasjon']">
 						<li>
 							<a href="#InfoAssistertKommunikasjon">Assistert&#160;kommunikasjon</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;TilleggsopplysningPasient&quot;]">
+					<xsl:if test="//child::*[local-name()='TilleggsopplysningPasient']">
 						<li>
 							<a href="#TilleggsopplysningPasient">Andre&#160;pasientopplysninger</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;ParorendeForesatt&quot;]">
+					<xsl:if test="//child::*[local-name()='ParorendeForesatt']">
 						<li>
 							<a href="#ParorendeForesatt">Pårørende/foresatte</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//mh:Content/child::*[local-name()=&quot;Notater&quot;]">
+					<xsl:if test="//mh:Content/child::*[local-name()='Notater']">
 						<li>
 							<a href="#AndreNotater">Andre notater</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;TilknyttetEnhet&quot;]">
+					<xsl:if test="//child::*[local-name()='TilknyttetEnhet']">
 						<li>
 							<a href="#TilknyttetEnhet">Kontaktinformasjon&#160;virksomhet</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;KontaktpersonHelsepersonell&quot;]">
+					<xsl:if test="//child::*[local-name()='KontaktpersonHelsepersonell']">
 						<li>
 							<a href="#KontaktpersonHelsepersonell">Kontaktpersoner&#160;helsepersonell</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;AnsvarForRapport&quot;]">
+					<xsl:if test="//child::*[local-name()='AnsvarForRapport']">
 						<li>
 							<a href="#AnsvarForRapport">Ansvar&#160;for&#160;rapport</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;SendtDokument&quot;]">
+					<xsl:if test="//child::*[local-name()='SendtDokument']">
 						<li>
 							<a href="#SendtDokument">Tilknyttet&#160;dokument</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()=&quot;OpplysningerTilSoknad&quot;]">
+					<xsl:if test="//child::*[local-name()='OpplysningerTilSoknad']">
 						<li>
 							<a href="#OpplysningerTilSoknad">Opplysninger&#160;til&#160;søknad</a>
 						</li>
@@ -258,335 +255,337 @@
 			</div>
 		</div>
 	</xsl:template>
+
 	<!-- Visning av vedlagte dokument -->
 	<xsl:template name="Dokument">
 		<!-- Tabell og overskrift for Medisinske diagnoser -->
-		<xsl:if test="//child::*[local-name()=&quot;InfoMedisinskDiagnose&quot;]">
+		<xsl:if test="//child::*[local-name()='InfoMedisinskDiagnose']">
 			<h2 id="InfoMedisinskDiagnose">Medisinske&#160;diagnoser</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;InfoMedisinskDiagnose&quot;]">
-						<xsl:call-template name="InfoMedisinskDiagnose"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='InfoMedisinskDiagnose']">
+					<xsl:call-template name="InfoMedisinskDiagnose"/>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for IPLOSrelevant informasjon -->
-		<xsl:if test="//child::*[local-name()=&quot;InfoIPLOSrelevantInformasjon&quot;]">
+		<xsl:if test="//child::*[local-name()='InfoIPLOSrelevantInformasjon']">
 			<h2 id="InfoIPLOSrelevantInformasjon">IPLOSrelevant&#160;informasjon</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;InfoIPLOSrelevantInformasjon&quot;]">
-						<xsl:call-template name="InfoIPLOSrelevantInformasjon"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='InfoIPLOSrelevantInformasjon']">
+					<xsl:call-template name="InfoIPLOSrelevantInformasjon"/>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Medisinskfaglige opplysninger -->
-		<xsl:if test="//child::*[local-name()=&quot;MedisinskfagligeOpplysninger&quot;]">
+		<xsl:if test="//child::*[local-name()='MedisinskfagligeOpplysninger']">
 			<h2 id="MedisinskfagligeOpplysninger">Medisinskfaglige&#160;opplysninger</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;MedisinskfagligeOpplysninger&quot;]">
-						<xsl:call-template name="MedisinskfagligeOpplysninger"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='MedisinskfagligeOpplysninger']">
+					<xsl:call-template name="MedisinskfagligeOpplysninger"/>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Andre viktige opplysninger -->
-		<xsl:if test="//child::*[local-name()=&quot;InfoAndreViktigeOpplysninger&quot;]">
+		<xsl:if test="//child::*[local-name()='InfoAndreViktigeOpplysninger']">
 			<h2 id="InfoAndreViktigeOpplysninger">Andre&#160;viktige&#160;opplysninger</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;InfoAndreViktigeOpplysninger&quot;]">
-						<xsl:call-template name="InfoAndreViktigeOpplysninger"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='InfoAndreViktigeOpplysninger']">
+					<xsl:call-template name="InfoAndreViktigeOpplysninger"/>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Cave/allergier -->
-		<xsl:if test="//mh:Content/child::*[local-name()=&quot;Cave&quot;]">
+		<xsl:if test="//mh:Content/child::*[local-name()='Cave']">
 			<h2 id="Cave">Cave/allergier</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//mh:Content/child::*[local-name()=&quot;Cave&quot;]">
-						<xsl:call-template name="Cave"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+			<div class="eh-section">
+				<xsl:for-each select="//mh:Content/child::*[local-name()='Cave']">
+					<xsl:call-template name="Cave"/>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Legemidler -->
-		<xsl:if test="//child::*[local-name()=&quot;Legemiddelinfo&quot;]">
+		<xsl:if test="//child::*[local-name()='Legemiddelinfo']">
 			<h2 id="Legemiddelinfo">Legemidler</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;Legemiddelinfo&quot;]">
-						<xsl:call-template name="Legemiddelinfo"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='Legemiddelinfo']">
+					<xsl:call-template name="Legemiddelinfo"/>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Administrerte legemidler -->
-		<xsl:if test="//child::*[local-name()=&quot;LegemidlerAdministrertVedOverforing&quot;]">
+		<xsl:if test="//child::*[local-name()='LegemidlerAdministrertVedOverforing']">
 			<h2 id="LegemidlerAdministrertVedOverforing">Legemidler administrert ved overføring/utskrivning</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;LegemidlerAdministrertVedOverforing&quot;]">
-						<xsl:call-template name="LegemidlerAdministrertVedOverforing"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='LegemidlerAdministrertVedOverforing']">
+					<xsl:call-template name="LegemidlerAdministrertVedOverforing"/>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Sykepleieopplysninger -->
-		<xsl:if test="//child::*[local-name()=&quot;Sykepleierdokumentasjon&quot;]">
+		<xsl:if test="//child::*[local-name()='Sykepleierdokumentasjon']">
 			<h2 id="Sykepleierdokumentasjon">Sykepleieopplysninger</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;Sykepleierdokumentasjon&quot;]">
-						<xsl:call-template name="Sykepleierdokumentasjon"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='Sykepleierdokumentasjon']">
+					<xsl:call-template name="Sykepleierdokumentasjon"/>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Opplysninger fra andre faggrupper -->
-		<xsl:if test="//child::*[local-name()=&quot;OpplysningerAndreFaggrupper&quot;]">
+		<xsl:if test="//child::*[local-name()='OpplysningerAndreFaggrupper']">
 			<h2 id="OpplysningerAndreFaggrupper">Opplysninger&#160;fra&#160;andre&#160;faggrupper</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;OpplysningerAndreFaggrupper&quot;]">
-						<xsl:call-template name="OpplysningerAndreFaggrupper"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='OpplysningerAndreFaggrupper']">
+					<xsl:call-template name="OpplysningerAndreFaggrupper"/>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Kartlegging av funksjonsnivå -->
-		<xsl:if test="//child::*[local-name()=&quot;InfoKartleggingFunksjonsniva&quot;]">
+		<xsl:if test="//child::*[local-name()='InfoKartleggingFunksjonsniva']">
 			<h2 id="InfoKartleggingFunksjonsniva">Kartlegging&#160;av&#160;funksjonsnivå</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;InfoKartleggingFunksjonsniva&quot;]">
-						<xsl:call-template name="InfoKartleggingFunksjonsniva"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='InfoKartleggingFunksjonsniva']">
+					<xsl:call-template name="InfoKartleggingFunksjonsniva"/>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Reservasjoner -->
-		<xsl:if test="//child::*[local-name()=&quot;InfoReservasjon&quot;]">
+		<xsl:if test="//child::*[local-name()='InfoReservasjon']">
 			<h2 id="InfoReservasjon">Reservasjoner</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;InfoReservasjon&quot;]">
-						<xsl:call-template name="InfoReservasjon"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='InfoReservasjon']">
+					<xsl:call-template name="InfoReservasjon"/>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Behov for tjenester -->
-		<xsl:if test="//child::*[local-name()=&quot;TjenesteBehov&quot;]">
-			<h2 id="TjenesteBehov">Behov&#160;for&#160;tjenester</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;TjenesteBehov&quot;]">
-						<xsl:call-template name="TjenesteBehov"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+		<xsl:if test="//child::*[local-name()='TjenesteBehov']">
+			<h2 id="TjenesteBehov">Behov for tjenester</h2>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='TjenesteBehov']">
+					<xsl:call-template name="TjenesteBehov"/>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Kontrolltime -->
-		<xsl:if test="//child::*[local-name()=&quot;InfoKontrolltime&quot;]">
+		<xsl:if test="//child::*[local-name()='InfoKontrolltime']">
 			<h2 id="InfoKontrolltime">Kontrolltime</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;InfoKontrolltime&quot;]">
-						<xsl:call-template name="InfoKontrolltime"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='InfoKontrolltime']">	<!-- TverrfagligEpikrise: maxOccurs="unbounded" -->
+					<xsl:call-template name="InfoKontrolltime"/>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Pasientlogistikk-meldingene -->
-		<xsl:if test="//child::*[local-name()=&quot;OrienteringOmDod&quot;] or //child::*[local-name()=&quot;MeldingOmUtskrevetPasient&quot;] or //child::*[local-name()=&quot;MeldingUtskrivningsklarPasient&quot;] or //child::*[local-name()=&quot;AvmeldingUtskrivningsklarPasient&quot;] or //child::*[local-name()=&quot;MeldingInnlagtPasient&quot;]">
-			<xsl:if test="//child::*[local-name()=&quot;TidsfestetHendelse&quot;]">
-				<h2 id="TidsfestetHendelse">Tidsfestet&#160;hendelse</h2>
-				<table>
-					<tbody>
-						<xsl:for-each select="//child::*[local-name()=&quot;TidsfestetHendelse&quot;]">
+		<xsl:if test="//child::*[local-name()='OrienteringOmDod'] or //child::*[local-name()='MeldingOmUtskrevetPasient'] or //child::*[local-name()='MeldingUtskrivningsklarPasient'] or //child::*[local-name()='AvmeldingUtskrivningsklarPasient'] or //child::*[local-name()='MeldingInnlagtPasient']">
+			<xsl:if test="//child::*[local-name()='TidsfestetHendelse']">
+				<h2 id="TidsfestetHendelse">Tidsfestet hendelse</h2>
+				<div class="eh-section">
+					<xsl:for-each select="//child::*[local-name()='TidsfestetHendelse']"> <!-- maxOccurs="1 eller unbounded" -->
 						<xsl:call-template name="TidsfestetHendelse"/>
-						</xsl:for-each>
-					</tbody>
-				</table>
+					</xsl:for-each>
+				</div>
 			</xsl:if>
-			<xsl:if test="//child::*[local-name()=&quot;UtskrevetTil&quot;]">
-				<h2 id="UtskrevetTil">Utskrevet&#160;til</h2>
-				<table>
-					<tbody>
-						<xsl:for-each select="//child::*[local-name()=&quot;UtskrevetTil&quot;]">
+			<xsl:if test="//child::*[local-name()='UtskrevetTil']">
+				<h2 id="UtskrevetTil">Utskrevet til</h2>
+				<div class="eh-section">
+					<xsl:for-each select="//child::*[local-name()='UtskrevetTil']">			<!-- maxOccurs="1" -->
 						<xsl:call-template name="UtskrevetTil"/>
-						</xsl:for-each>
-					</tbody>
-				</table>
+					</xsl:for-each>
+				</div>
 			</xsl:if>
 		</xsl:if>
 		<!-- Tabell og overskrift for Informasjon gitt -->
-		<xsl:if test="//child::*[local-name()=&quot;InfoInformasjonGitt&quot;]">
-			<h2 id="InfoInformasjonGitt">Informasjon&#160;gitt</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;InfoInformasjonGitt&quot;]">
-						<xsl:call-template name="InfoInformasjonGitt"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+		<xsl:if test="//child::*[local-name()='InfoInformasjonGitt']">
+			<h2 id="InfoInformasjonGitt">Informasjon gitt</h2>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='InfoInformasjonGitt']">		<!-- maxOccurs="unbounded" -->
+					<xsl:call-template name="InfoInformasjonGitt"/>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Hjelpemidler -->
-		<xsl:if test="//child::*[local-name()=&quot;OpplysningerOmHjelpemidler&quot;]">
+		<xsl:if test="//child::*[local-name()='OpplysningerOmHjelpemidler']">
 			<h2 id="OpplysningerOmHjelpemidler">Hjelpemidler</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;OpplysningerOmHjelpemidler&quot;]">
-						<xsl:call-template name="OpplysningerOmHjelpemidler"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='OpplysningerOmHjelpemidler']">	<!-- maxOccurs="1" -->
+					<xsl:call-template name="OpplysningerOmHjelpemidler"/>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Opplysninger om opphold -->
-		<xsl:if test="//child::*[local-name()=&quot;OpplysningOpphold&quot;]">
-			<h2 id="OpplysningOpphold">Opplysninger&#160;om&#160;opphold</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;OpplysningOpphold&quot;]">
-						<xsl:call-template name="OpplysningOpphold"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+		<xsl:if test="//child::*[local-name()='OpplysningOpphold']">
+			<h2 id="OpplysningOpphold">Opplysninger om opphold</h2>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='OpplysningOpphold']">	<!-- maxOccurs="unbounded" -->
+					<xsl:call-template name="OpplysningOpphold">
+						<xsl:with-param name="stripedCss">
+							<xsl:choose>
+								<xsl:when test="boolean(position() mod 2)"></xsl:when>
+								<xsl:otherwise>striped</xsl:otherwise>
+							</xsl:choose>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Eksisterende tjenester -->
-		<xsl:if test="//child::*[local-name()=&quot;EksisterendeTjeneste&quot;]">
-			<h2 id="EksisterendeTjeneste">Eksisterende&#160;tjenester</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;EksisterendeTjeneste&quot;]">
-						<xsl:call-template name="EksisterendeTjeneste"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+		<xsl:if test="//child::*[local-name()='EksisterendeTjeneste']">
+			<h2 id="EksisterendeTjeneste">Eksisterende tjenester</h2>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='EksisterendeTjeneste']">	<!-- maxOccurs="unbounded" -->
+					<xsl:call-template name="EksisterendeTjeneste">
+						<xsl:with-param name="stripedCss">
+							<xsl:choose>
+								<xsl:when test="boolean(position() mod 2)"></xsl:when>
+								<xsl:otherwise>striped</xsl:otherwise>
+							</xsl:choose>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Assistert kommunikasjon -->
-		<xsl:if test="//child::*[local-name()=&quot;InfoAssistertKommunikasjon&quot;]">
-			<h2 id="InfoAssistertKommunikasjon">Assistert&#160;kommunikasjon</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;InfoAssistertKommunikasjon&quot;]">
-						<xsl:call-template name="InfoAssistertKommunikasjon"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+		<xsl:if test="//child::*[local-name()='InfoAssistertKommunikasjon']">
+			<h2 id="InfoAssistertKommunikasjon">Assistert kommunikasjon</h2>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='InfoAssistertKommunikasjon']">	<!-- maxOccurs="1 eller unbounded" -->
+					<xsl:call-template name="InfoAssistertKommunikasjon">
+						<xsl:with-param name="stripedCss">
+							<xsl:choose>
+								<xsl:when test="boolean(position() mod 2)"></xsl:when>
+								<xsl:otherwise>striped</xsl:otherwise>
+							</xsl:choose>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Andre pasientopplysninger -->
-		<xsl:if test="//child::*[local-name()=&quot;TilleggsopplysningPasient&quot;]">
-			<h2 id="TilleggsopplysningPasient">Andre&#160;pasientopplysninger</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;TilleggsopplysningPasient&quot;]">
-						<xsl:call-template name="TilleggsopplysningPasient"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+		<xsl:if test="//child::*[local-name()='TilleggsopplysningPasient']">
+			<h2 id="TilleggsopplysningPasient">Andre pasientopplysninger</h2>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='TilleggsopplysningPasient']">	<!-- maxOccurs="1" -->
+					<xsl:call-template name="TilleggsopplysningPasient"/>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Pårørende/foresatte -->
-		<xsl:if test="//child::*[local-name()=&quot;ParorendeForesatt&quot;]">
+		<xsl:if test="//child::*[local-name()='ParorendeForesatt']">
 			<h2 id="ParorendeForesatt">Pårørende/foresatte</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;ParorendeForesatt&quot;]">
-						<xsl:call-template name="ParorendeForesatt"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='ParorendeForesatt']">		<!-- maxOccurs="unbounded" -->
+					<xsl:call-template name="ParorendeForesatt">
+						<xsl:with-param name="stripedCss">
+							<xsl:choose>
+								<xsl:when test="boolean(position() mod 2)"></xsl:when>
+								<xsl:otherwise>striped</xsl:otherwise>
+							</xsl:choose>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Andre notater -->
-		<xsl:if test="//mh:Content/child::*[local-name()=&quot;Notater&quot;]">
+		<xsl:if test="//mh:Content/child::*[local-name()='Notater']">
 			<h2 id="AndreNotater">Andre notater</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//mh:Content/child::*[local-name()=&quot;Notater&quot;]">
-						<xsl:call-template name="Notater"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+			<div class="eh-section">
+				<xsl:for-each select="//mh:Content/child::*[local-name()='Notater']">		<!-- Content : type="anyType" -->
+					<xsl:call-template name="Notater"/>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Kontaktinformasjon virksomhet -->
-		<xsl:if test="//child::*[local-name()=&quot;TilknyttetEnhet&quot;]">
-			<h2 id="TilknyttetEnhet">Kontaktinformasjon&#160;virksomhet</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;TilknyttetEnhet&quot;]">
-						<xsl:call-template name="TilknyttetEnhet"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+		<xsl:if test="//child::*[local-name()='TilknyttetEnhet']">
+			<h2 id="TilknyttetEnhet">Kontaktinformasjon virksomhet</h2>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='TilknyttetEnhet']">		<!-- maxOccurs="unbounded" -->
+					<xsl:call-template name="TilknyttetEnhet">
+						<xsl:with-param name="stripedCss">
+							<xsl:choose>
+								<xsl:when test="boolean(position() mod 2)"></xsl:when>
+								<xsl:otherwise>striped</xsl:otherwise>
+							</xsl:choose>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Kontaktpersoner helsepersonell -->
-		<xsl:if test="//child::*[local-name()=&quot;KontaktpersonHelsepersonell&quot;]">
-			<h2 id="KontaktpersonHelsepersonell">Kontaktpersoner&#160;helsepersonell</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;KontaktpersonHelsepersonell&quot;]">
-						<xsl:call-template name="KontaktpersonHelsepersonell"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+		<xsl:if test="//child::*[local-name()='KontaktpersonHelsepersonell']">
+			<h2 id="KontaktpersonHelsepersonell">Kontaktpersoner helsepersonell</h2>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='KontaktpersonHelsepersonell']">		<!-- maxOccurs="unbounded" -->
+					<xsl:call-template name="KontaktpersonHelsepersonell">
+						<xsl:with-param name="stripedCss">
+							<xsl:choose>
+								<xsl:when test="boolean(position() mod 2)"></xsl:when>
+								<xsl:otherwise>striped</xsl:otherwise>
+							</xsl:choose>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Ansvar for rapport -->
-		<xsl:if test="//child::*[local-name()=&quot;AnsvarForRapport&quot;]">
-			<h2 id="AnsvarForRapport">Ansvar&#160;for&#160;rapport</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;AnsvarForRapport&quot;]">
-						<xsl:call-template name="AnsvarForRapport"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+		<xsl:if test="//child::*[local-name()='AnsvarForRapport']">
+			<h2 id="AnsvarForRapport">Ansvar for rapport</h2>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='AnsvarForRapport']">			<!-- maxOccurs="unbounded" -->
+					<xsl:call-template name="AnsvarForRapport">
+						<xsl:with-param name="stripedCss">
+							<xsl:choose>
+								<xsl:when test="boolean(position() mod 2)"></xsl:when>
+								<xsl:otherwise>striped</xsl:otherwise>
+							</xsl:choose>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Sendt dokument -->
-		<xsl:if test="//child::*[local-name()=&quot;SendtDokument&quot;]">
-			<h2 id="SendtDokument">Tilknyttet&#160;dokument</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;SendtDokument&quot;]">
-						<xsl:call-template name="SendtDokument"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+		<xsl:if test="//child::*[local-name()='SendtDokument']">
+			<h2 id="SendtDokument">Tilknyttet dokument</h2>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='SendtDokument']">		<!-- maxOccurs="unbounded" -->
+					<xsl:call-template name="SendtDokument">
+						<xsl:with-param name="stripedCss">
+							<xsl:choose>
+								<xsl:when test="boolean(position() mod 2)"></xsl:when>
+								<xsl:otherwise>striped</xsl:otherwise>
+							</xsl:choose>
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<!-- Tabell og overskrift for Opplysninger til søknad -->
-		<xsl:if test="//child::*[local-name()=&quot;OpplysningerTilSoknad&quot;]">
+		<xsl:if test="//child::*[local-name()='OpplysningerTilSoknad']">
 			<h2 id="OpplysningerTilSoknad">Opplysninger&#160;til&#160;søknad</h2>
-			<table>
-				<tbody>
-					<xsl:for-each select="//child::*[local-name()=&quot;OpplysningerTilSoknad&quot;]">
-						<xsl:call-template name="OpplysningerTilSoknad"/>
-					</xsl:for-each>
-				</tbody>
-			</table>
+			<div class="eh-section">
+				<xsl:for-each select="//child::*[local-name()='OpplysningerTilSoknad']">	<!-- maxOccurs="1" -->
+					<xsl:call-template name="OpplysningerTilSoknad"/>
+				</xsl:for-each>
+			</div>
 		</xsl:if>
 		<xsl:if test="count(//mh:RefDoc) &gt; 1">
 			<xsl:for-each select="//mh:RefDoc">
 				<xsl:if test="position() != 1">
 					<h2 id="Vedlegg">Vedlegg</h2>
-					<table>
-						<tbody>
-							<xsl:call-template name="RefDoc"/>
-						</tbody>
-					</table>
+					<div class="eh-section">
+						<xsl:call-template name="eh-RefDoc"/>
+					</div>
 				</xsl:if>
 			</xsl:for-each>
 		</xsl:if>
 	</xsl:template>
+
 	<!-- Template som kalles fra BunnTillegg i meldingshodet. Kan brukes til visning av egenkomponert bunn -->
 	<xsl:template name="EgetBunnTillegg">
-		<xsl:for-each select="//child::*[local-name()=&quot;InformasjonOmForsendelsen&quot;]">
+		<xsl:for-each select="//child::*[local-name()='InformasjonOmForsendelsen']">
 			<xsl:call-template name="InformasjonOmForsendelsen"/>
 		</xsl:for-each>
 	</xsl:template>
-	
+
+	<xsl:template name="Diagnosis-DiagComment-CodedDescr-CodedComment" />
+
 </xsl:stylesheet>
