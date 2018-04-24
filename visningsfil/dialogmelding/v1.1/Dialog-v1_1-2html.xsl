@@ -95,7 +95,7 @@
 					<tbody>
 						<tr>
 							<xsl:for-each select="//mh:Document[position()=1]/mh:ContentDescription">
-								<th>Beskrivelsexxxxxxxxxxxxxxxxxxx</th>
+								<th>Beskrivelse</th>
 								<td><xsl:value-of select="."/></td>
 							</xsl:for-each>
 							<xsl:if test="//dia:SakstypeKodet or //dia:Sakstype">
