@@ -3,9 +3,9 @@
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
 	<Navn>Svarrapportering av medisinske tjenester</Navn>
 	<Versjon>1.4</Versjon>
-    <Identifikator>1: HIS 80822:2014</Identifikator>
-    <Utgitt>1: 02/2014</Utgitt>
-    <Ansvarlig>1: Direktoratet for e-helse</Ansvarlig>
+    <Identifikator>HIS 80822:2014</Identifikator>
+    <Utgitt>02/2014</Utgitt>
+    <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
     <Status>Fastsatt som standard</Status>
 	<MerInformasjon>
 	    <Informasjon>
@@ -18,13 +18,13 @@
         <Profil>
             <ProfilId>1</ProfilId>
             <Beskrivelse>Radiologi</Beskrivelse>
-            <Identifikator>1: HIS 80822:2014</Identifikator>
-	        <Utgitt>1: 02/2014</Utgitt>
-	        <Ansvarlig>1: Direktoratet for e-helse</Ansvarlig>
+            <Identifikator>HIS 80822:2014</Identifikator>
+	        <Utgitt>02/2014</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <Status>Fastsatt som standard</Status>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>1: Svarrapportering av medisinske tjenester v1.4</Beskrivelse>
+	                <Beskrivelse>Svarrapportering av medisinske tjenester v1.4</Beskrivelse>
 		            <Referanse>http://ehelse.no/HIS80822-2014</Referanse>
 		        </Informasjon>
 	        </MerInformasjon>
@@ -32,9 +32,9 @@
         <Profil>
             <ProfilId>2</ProfilId> 
             <Beskrivelse>Patologi</Beskrivelse>
-            <Identifikator>2: HIS 80822:2014</Identifikator>
-	        <Utgitt>2: 02/2014</Utgitt>
-	        <Ansvarlig>2: Direktoratet for e-helse</Ansvarlig>
+            <Identifikator>HIS 80822:2014</Identifikator>
+	        <Utgitt>02/2014</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
 	                <Beskrivelse>2:Svarrapportering av medisinske tjenester v1.4</Beskrivelse>
@@ -45,12 +45,12 @@
         <Profil>
             <ProfilId>3</ProfilId> 
             <Beskrivelse>Immunologi</Beskrivelse>
-            <Identifikator>3: HIS 80822:2014</Identifikator>
-	        <Utgitt>3: 02/2014</Utgitt>
-	        <Ansvarlig>3: Direktoratet for e-helse</Ansvarlig>
+            <Identifikator>HIS 80822:2014</Identifikator>
+	        <Utgitt>02/2014</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>3: Svarrapportering av medisinske tjenester v1.4</Beskrivelse>
+	                <Beskrivelse>Svarrapportering av medisinske tjenester v1.4</Beskrivelse>
 		        <Referanse>http://ehelse.no/HIS80822-2014</Referanse>
 		        </Informasjon>
 		    </MerInformasjon>
@@ -58,12 +58,12 @@
         <Profil>
             <ProfilId>4</ProfilId> 
             <Beskrivelse>Mikrobiologi</Beskrivelse>
-            <Identifikator>4: HIS 80822:2014</Identifikator>
-	        <Utgitt>4: 02/2014</Utgitt>
-	        <Ansvarlig>4: Direktoratet for e-helse</Ansvarlig>
+            <Identifikator>HIS 80822:2014</Identifikator>
+	        <Utgitt>02/2014</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
                 <Informasjon>
-	                <Beskrivelse>4: Svarrapportering av medisinske tjenester v1.4</Beskrivelse>
+	                <Beskrivelse>Svarrapportering av medisinske tjenester v1.4</Beskrivelse>
 		            <Referanse>http://ehelse.no/HIS80822-2014</Referanse>
 		        </Informasjon>
 		    </MerInformasjon>
@@ -71,12 +71,12 @@
         <Profil>
             <ProfilId>5</ProfilId> 
             <Beskrivelse>Medisinsk biokjemi</Beskrivelse>
-            <Identifikator>5: HIS 80822:2014</Identifikator>
-	        <Utgitt>5: 02/2014</Utgitt>
-	        <Ansvarlig>5: Direktoratet for e-helse</Ansvarlig>
+            <Identifikator>HIS 80822:2014</Identifikator>
+	        <Utgitt>02/2014</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>5: Svarrapportering av medisinske tjenester v1.4</Beskrivelse>
+	                <Beskrivelse>Svarrapportering av medisinske tjenester v1.4</Beskrivelse>
 		            <Referanse>http://ehelse.no/HIS80822-2014</Referanse>
 	            </Informasjon>
             </MerInformasjon>
@@ -91,27 +91,27 @@
 		</Kravdokument>
 		<Kravdokument>
 		    <ProfilId>1</ProfilId>
-			<Beskrivelse>Profil: Radiologi (GitLab)</Beskrivelse>
+			<Beskrivelse>Radiologi (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/svarrapport/HIS_1142_2014_Svarrapport-Radiologi.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 		    <ProfilId>2</ProfilId>
-			<Beskrivelse>Profil: Patologi (GitLab)</Beskrivelse>
+			<Beskrivelse>Patologi (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/svarrapport/HIS_1141_2014_Svarrapport-Patologi.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 		    <ProfilId>3</ProfilId>
-			<Beskrivelse>Profil: Immunologi (GitLab)</Beskrivelse>
+			<Beskrivelse>Immunologi (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/svarrapport/HIS_1140_2014_Svarrapport-Immunologi.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 		    <ProfilId>4</ProfilId>
-			<Beskrivelse>Profil: Mikrobiologi (GitLab)</Beskrivelse>
+			<Beskrivelse>Mikrobiologi (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/svarrapport/HIS_1139_2014_Svarrapport-Mikrobiologi.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 		    <ProfilId>5</ProfilId>
-			<Beskrivelse>Profil: Medisinsk biokjemi (GitLab)</Beskrivelse>
+			<Beskrivelse>Medisinsk biokjemi (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/svarrapport/HIS_1138_2014_Svarrapport-MedisinskBiokjemi -korrigert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
