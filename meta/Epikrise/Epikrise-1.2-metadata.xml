@@ -142,15 +142,15 @@
 	<Eksempler>
 		<Eksempel>
 			<ProfilId>0</ProfilId>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-2/epikrise_v1.2_n.xml</Referanse>
+			<Referanse>eksempel/epikrise/Epikrise_v1-2/epikrise_v1.2_n.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 			<ProfilId>0</ProfilId>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-2/epikrise_v1.2_m.xml</Referanse>
+			<Referanse>eksempel/epikrise/Epikrise_v1-2/epikrise_v1.2_m.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 			<ProfilId>0</ProfilId>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-2/epikrise_v1.2_c.xml</Referanse>
+			<Referanse>eksempel/epikrise/Epikrise_v1-2/epikrise_v1.2_c.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
 	<RelaterteFiler>
