@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- -->
-<!-- Dette er en testmelding med fiktive personer -->
+<!-- Dette er en testmelding med fiktive personer --> 
 <!-- -->
 <Message xmlns="http://www.kith.no/xmlstds/labsvar/2012-02-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/labsvar/2012-02-15 svar-v1.4.xsd">
 	<Type V="SVAR_LAB" DN="Svarrapport-Laboratoriemedisin"/>
