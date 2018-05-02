@@ -4,19 +4,18 @@
 	<Navn>Epikrise</Navn>
 	<Versjon>1.2</Versjon>
 	<Identifikator>HIS 80226:2014</Identifikator>
-	<Utgitt>2014-02-01</Utgitt>
-	<Utgiver>Direktoratet for e-helse</Utgiver>
-	
-	<Referansekatalogen>
-		<Beskrivelse>Epikrise 1.2 (HIS 80226:2014)</Beskrivelse>
-		<Referanse>http://ehelse.no/HIS80226-2014</Referanse>
-	</Referansekatalogen>
-	
+	<Utgitt>02/2014</Utgitt>
+	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
-	<ForrigeVersjon>HIS 80226:2006</ForrigeVersjon>
-	
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Epikrise 1.2 (HIS 80226:2014)</Beskrivelse>
+			<Referanse>http://ehelse.no/HIS80226-2014</Referanse>
+		</Informasjon>
+	</MerInformasjon>
 	<Kravdokumenter>
 		<Kravdokument>
+			<ProfilId>0</ProfilId>
 			<Beskrivelse>Epikrise v1.2 (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/epikrise/HIS 80226_2014 Epikrisemelding - korrigert.pdf</Referanse>
 		</Kravdokument>
@@ -142,17 +141,21 @@
 	</Visningsfiler>
 	<Eksempler>
 		<Eksempel>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-2/epikrise_v1.2_n.xml</Referanse>
+			<ProfilId>0</ProfilId>
+			<Referanse>eksempel/epikrise/Epikrise_v1-2/epikrise_v1.2_n.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-2/epikrise_v1.2_m.xml</Referanse>
+			<ProfilId>0</ProfilId>
+			<Referanse>eksempel/epikrise/Epikrise_v1-2/epikrise_v1.2_m.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-2/epikrise_v1.2_c.xml</Referanse>
+			<ProfilId>0</ProfilId>
+			<Referanse>eksempel/epikrise/Epikrise_v1-2/epikrise_v1.2_c.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
 	<RelaterteFiler>
 	<RelatertFil>
+		<ProfilId>0</ProfilId>
 		<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger</Beskrivelse>
 		<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
 	</RelatertFil>
