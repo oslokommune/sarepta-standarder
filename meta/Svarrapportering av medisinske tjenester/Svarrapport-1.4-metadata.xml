@@ -238,87 +238,87 @@
 	<Eksempler>
 	    <Eksempel>
 	        <ProfilId>5</ProfilId>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-4/Svar_biokjemi_v1-4_Ny.xml</Referanse>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_biokjemi_v1-4_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 		    <ProfilId>5</ProfilId>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-4/Svar_biokjemi_v1-4_Endring.xml</Referanse>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_biokjemi_v1-4_Endring.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 		    <ProfilId>5</ProfilId>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-4/Svar_biokjemi_v1-4_Kansellering.xml</Referanse>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_biokjemi_v1-4_Kansellering.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 		    <ProfilId>3</ProfilId>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-4/Svar_immunologi_v1-4_Ny.xml</Referanse>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_immunologi_v1-4_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 		    <ProfilId>3</ProfilId>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-4/Svar_immunologi_v1-4_Endring.xml</Referanse>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_immunologi_v1-4_Endring.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 		    <ProfilId>3</ProfilId>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-4/Svar_immunologi_v1-4_Kansellering.xml</Referanse>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_immunologi_v1-4_Kansellering.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 		    <ProfilId>4</ProfilId>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-4/Svar_mikrobiologi_dyrkning_v1-4_Ny.xml</Referanse>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_mikrobiologi_dyrkning_v1-4_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 		    <ProfilId>4</ProfilId>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-4/Svar_mikrobiologi_virologi_v1-4_Ny.xml</Referanse>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_mikrobiologi_virologi_v1-4_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 		    <ProfilId>4</ProfilId>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-4/Svar_mikrobiologi_gruppert_v1-4_Ny.xml</Referanse>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_mikrobiologi_gruppert_v1-4_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 		    <ProfilId>4</ProfilId>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-4/Svar_mikrobiologi_gruppert_v1-4_Endring.xml</Referanse>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_mikrobiologi_gruppert_v1-4_Endring.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 		    <ProfilId>4</ProfilId>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-4/Svar_mikrobiologi_gruppert_v1-4_Kansellering.xml</Referanse>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_mikrobiologi_gruppert_v1-4_Kansellering.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 		    <ProfilId>2</ProfilId>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-4/Svar_patologi_cytologi_v1-4_Ny.xml</Referanse>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_patologi_cytologi_v1-4_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 		    <ProfilId>2</ProfilId>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-4/Svar_patologi_cytologi_v1-4_Endring.xml</Referanse>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_patologi_cytologi_v1-4_Endring.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 		    <ProfilId>2</ProfilId>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-4/Svar_patologi_cytologi_v1-4_Kansellering.xml</Referanse>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_patologi_cytologi_v1-4_Kansellering.xml</Referanse>
 			</Eksempel>
 		<Eksempel>
 		    <ProfilId>2</ProfilId>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-4/Svar_patologi_histologi_v1-4_Ny.xml</Referanse>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_patologi_histologi_v1-4_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 		    <ProfilId>2</ProfilId>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-4/Svar_patologi_histologi_v1-4_Endring.xml</Referanse>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_patologi_histologi_v1-4_Endring.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 		    <ProfilId>2</ProfilId>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-4/Svar_patologi_histologi_v1-4_Tillegg.xml</Referanse>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_patologi_histologi_v1-4_Tillegg.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 		    <ProfilId>1</ProfilId>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-4/Svar_radiologi_v1-4_Ny.xml</Referanse>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_radiologi_v1-4_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 		    <ProfilId>1</ProfilId>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-4/Svar_radiologi_v1-4_Endring.xml</Referanse>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_radiologi_v1-4_Endring.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 		    <ProfilId>1</ProfilId>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-4/Svar_radiologi_v1-4_Kansellering.xml</Referanse>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_radiologi_v1-4_Kansellering.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 		    <ProfilId>1</ProfilId>
-			<Referanse>eksempel/Svarrapport/Svarrapport-v-1-4/Svar_radiologi_til_kommune_v1-4_Ny.xml</Referanse>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_radiologi_til_kommune_v1-4_Ny.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
 
