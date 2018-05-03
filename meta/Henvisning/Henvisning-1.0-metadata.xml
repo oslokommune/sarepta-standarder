@@ -5,14 +5,32 @@
 	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 80517:2005</Identifikator>
 	<Utgitt>07/2005</Utgitt>
-	<Utgiver>Direktoratet for e-helse</Utgiver>
-	
-	<Referansekatalogen>
-		<Beskrivelse>Henvisningsmelding 1.0 (HIS 80517:2005)</Beskrivelse>
-		<Referanse>http://ehelse.no/HIS80517-2005</Referanse>
-	</Referansekatalogen>	
-	
+	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
+	
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Henvisningsmelding 1.0 (HIS 80517:2005)</Beskrivelse>
+			<Referanse>http://ehelse.no/HIS80517-2005</Referanse>
+		</Informasjon>
+	</MerInformasjon>	
+	
+	<Profiler>
+		<Profil>
+			<ProfilId>1</ProfilId>
+			 <Beskrivelse>Tannhelsetjenesten</Beskrivelse>
+            <Identifikator>HIS 1017:2010</Identifikator>
+	        <Utgitt>02/2010</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <Status>Fastsatt som standard</Status>
+	        <MerInformasjon>
+	            <Informasjon>
+	                <Beskrivelse>Henvisningsmelding 1.0</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS80517-2005</Referanse>
+		        </Informasjon>
+	        </MerInformasjon>
+		</Profil>
+	</Profiler>
 
 	<Kravdokumenter>
 		<Kravdokument>
@@ -20,14 +38,15 @@
 			<Referanse>kravdokument/henvisning/HIS_80517_2005_Henvisning_v1.0 -korrigert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Profil: Tannhelsetjenesten (GitLab)</Beskrivelse>
+			<ProfilId>1</ProfilId>
+			<Beskrivelse>Tannhelsetjenesten (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/henvisning/HIS_1017_2010 XML henvisning Meldingsprofil tannhelse.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
 	
 	<Skjemaer>
 		<Skjema>
-			<Referanse>skjema/henvisning/Henvisning-v1.0.xsd</Referanse>
+			<Referanse>skjema/Henvisning/Henvisning-v1.0.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/Henvisning/2005-07-08</Namespace>
 		</Skjema>
 	</Skjemaer>

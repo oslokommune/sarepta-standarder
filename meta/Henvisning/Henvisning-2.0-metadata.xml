@@ -5,13 +5,46 @@
 	<Versjon>2.0</Versjon>
 	<Identifikator>HIS 80517:2017</Identifikator>
 	<Utgitt>02/2017</Utgitt>
-	<Utgiver>Direktoratet for e-helse</Utgiver>
-	<Referansekatalogen>
-		<Beskrivelse>Henvisningsmelding 2.0 (HIS 80517:2017)</Beskrivelse>
-		<Referanse>https://ehelse.no/standarder-kodeverk-og-referansekatalog/standarder-og-referansekatalog/henvisningsmelding-his-80517-utkast-til-utproving-2017</Referanse>
-	</Referansekatalogen>
+	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
-	<ForrigeVersjon>HIS 80517:2014</ForrigeVersjon>
+		
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Henvisningsmelding 2.0 (HIS 80517:2017)</Beskrivelse>
+			<Referanse>https://ehelse.no/standarder-kodeverk-og-referansekatalog/standarder-og-referansekatalog/henvisningsmelding-his-80517-utkast-til-utproving-2017</Referanse>
+		</Informasjon>
+	</MerInformasjon>
+
+	<Profiler>
+		<Profil>
+			<ProfilId>1</ProfilId>
+			 <Beskrivelse>Henvisning ny tilstand</Beskrivelse>
+            <Identifikator>HIS 1207:2018</Identifikator>
+	        <Utgitt>02/2018</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <Status>Fastsatt som standard</Status>
+	        <MerInformasjon>
+	            <Informasjon>
+	                <Beskrivelse>Henvisningsmelding 2.0 (HIS 80517:2017)</Beskrivelse>
+		            <Referanse>https://ehelse.no/standarder-kodeverk-og-referansekatalog/standarder-og-referansekatalog/henvisningsmelding-his-80517-utkast-til-utproving-2017</Referanse>
+		        </Informasjon>
+	        </MerInformasjon>
+		</Profil>
+		<Profil>
+			<ProfilId>2</ProfilId>
+			 <Beskrivelse>Viderehenvisning</Beskrivelse>
+            <Identifikator>HIS 1208:2018</Identifikator>
+	        <Utgitt>02/2018</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <Status>Fastsatt som standard</Status>
+	        <MerInformasjon>
+	            <Informasjon>
+	                <Beskrivelse>Henvisningsmelding 2.0 (HIS 80517:2017)</Beskrivelse>
+		            <Referanse>https://ehelse.no/standarder-kodeverk-og-referansekatalog/standarder-og-referansekatalog/henvisningsmelding-his-80517-utkast-til-utproving-2017</Referanse>
+		        </Informasjon>
+	        </MerInformasjon>
+		</Profil>
+	</Profiler>
 	
 	
 	
@@ -21,11 +54,13 @@
 			<Referanse>kravdokument/henvisning/HIS_80517_2017 Henvisning 2.0 -korrigert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Profil: Henvisning ny tilstand (GitLab)</Beskrivelse>
+			<ProfilId>1</ProfilId>
+			<Beskrivelse>Henvisning ny tilstand (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/henvisning/HIS_1207-2018 Henvisning ny tilstand.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Profil: Viderehenvisning (GitLab)</Beskrivelse>
+			<ProfilId>2</ProfilId>
+			<Beskrivelse>Viderehenvisning (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/henvisning/HIS_1208-2018-Viderehenvisning.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
