@@ -5,16 +5,16 @@
 	<Versjon>1.1</Versjon>
 	<Identifikator>HIS 80517:2014</Identifikator>
 	<Utgitt>02/2014</Utgitt>
-    <Utgiver>Direktoratet for e-helse</Utgiver>
-    
-	<Referansekatalogen>
-		<Beskrivelse>Henvisningsmelding 1.1 (HIS 80517:2014)</Beskrivelse>
-		<Referanse>http://ehelse.no/HIS80517-2014</Referanse>
-	</Referansekatalogen>
+    <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+    <Status>Fastsatt som standard</Status>
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Henvisningsmelding 1.1 (HIS 80517:2014)</Beskrivelse>
+			<Referanse>http://ehelse.no/HIS80517-2014</Referanse>
+		</Informasjon>
+	</MerInformasjon>
 
-	<Status>Fastsatt som standard</Status>
-
-	<ForrigeVersjon>HIS 80517:2005</ForrigeVersjon>
+	
 	
 	<Kravdokumenter>
 		<Kravdokument>

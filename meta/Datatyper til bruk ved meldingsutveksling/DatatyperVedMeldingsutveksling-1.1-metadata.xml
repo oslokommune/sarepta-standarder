@@ -5,14 +5,17 @@
 	<Versjon>1.1</Versjon>
 	<Identifikator>HIS 80117:2002</Identifikator>
 	<Utgitt>02/2002</Utgitt>
-	<Utgiver>Direktoratet for e-helse</Utgiver>
-	
-	<Referansekatalogen>
-		<Beskrivelse>Standard for Datatyper til bruk ved meldingsutveksling (HIS 80117:2002)</Beskrivelse>
-		<Referanse>http://ehelse.no/HIS80117-2002</Referanse>
-	</Referansekatalogen>
-	
+	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
+	
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Standard for Datatyper til bruk ved meldingsutveksling (HIS 80117:2002)</Beskrivelse>
+			<Referanse>http://ehelse.no/HIS80117-2002</Referanse>
+		</Informasjon>
+	</MerInformasjon>
+	
+	
 
 	<Kravdokumenter>
 		<Kravdokument>
