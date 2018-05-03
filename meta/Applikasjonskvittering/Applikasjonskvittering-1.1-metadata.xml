@@ -5,15 +5,21 @@
 	<Versjon>1.1</Versjon>
 	<Identifikator>HIS 80415:2012</Identifikator>
 	<Utgitt>12/2012</Utgitt>
-	<Utgiver>Direktoratet for e-helse</Utgiver>
-	<Referansekatalogen>
-			<Beskrivelse>Applikasjonskvittering 1.1 (HIS 80415:2012)</Beskrivelse>
-			<Referanse>http://ehelse.no/HIS80415-2012</Referanse>
-	</Referansekatalogen>
-
+	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
 	
-	<ForrigeVersjon>HIS 80415:2004</ForrigeVersjon>
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Applikasjonskvittering 1.1 (HIS 80415:2012)</Beskrivelse>
+			<Referanse>http://ehelse.no/HIS80415-2012</Referanse>
+		</Informasjon>
+		<Informasjon>
+			<Beskrivelse>Applikasjonskvittering 1.1 (HIS 80415:2012)</Beskrivelse>
+			<Referanse>http://ehelse.no/HIS80415-2012</Referanse>
+		</Informasjon>
+		
+			
+	</MerInformasjon>
 	
 	<Kravdokumenter>
 		<Kravdokument>
@@ -24,7 +30,7 @@
 	
 	<Skjemaer>
 		<Skjema>
-			<Referanse>skjema/applikasjonskvittering/AppRec-v1.1.xsd</Referanse>
+			<Referanse>skjema/Applikasjonskvittering/AppRec-v1.1.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/apprec/2012-02-15</Namespace>
 		</Skjema>
 	</Skjemaer>

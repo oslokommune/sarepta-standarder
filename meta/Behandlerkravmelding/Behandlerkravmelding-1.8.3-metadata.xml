@@ -5,14 +5,16 @@
 	<Versjon>1.8.3</Versjon>
 	<Identifikator>BKM</Identifikator>
 	<Utgitt>03/2018</Utgitt>
-	<Utgiver>Helsedirektoratet</Utgiver>
-	
-	<Referansekatalogen>
-		<Beskrivelse>Behandlerkravmelding (BKM)</Beskrivelse>
-		<Referanse>http://ehelse.no/BKM</Referanse>
-	</Referansekatalogen>
-	
+	<Ansvarlig>Helsedirektoratet</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Behandlerkravmelding (BKM)</Beskrivelse>
+			<Referanse>http://ehelse.no/BKM</Referanse>
+		</Informasjon>
+	</MerInformasjon>
+	
+	
 
 	<Kravdokumenter>
 		<Kravdokument>

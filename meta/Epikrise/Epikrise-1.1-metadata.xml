@@ -5,13 +5,17 @@
 	<Versjon>1.1</Versjon>
 	<Identifikator>HIS 80226:2006</Identifikator>
 	<Utgitt>02/2006</Utgitt>
-	<Utgiver>Direktoratet for e-helse</Utgiver>
-	<Referansekatalogen>
-		<Beskrivelse>Epikrise 1.1 (HIS 80226:2006)</Beskrivelse>
-		<Referanse>http://ehelse.no/HIS80226-2006</Referanse>
-	</Referansekatalogen>
-	
+	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
+	
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Epikrise 1.1 (HIS 80226:2006)</Beskrivelse>
+			<Referanse>http://ehelse.no/HIS80226-2006</Referanse>
+		</Informasjon>
+	</MerInformasjon>
+	
+	
 
 	<Kravdokumenter>
 		<Kravdokument>
@@ -146,13 +150,13 @@
 
 	<Eksempler>
 		<Eksempel>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-1/epikrise_v1.1_n.xml</Referanse>
+			<Referanse>eksempel/epikrise/Epikrise_v1-1/epikrise_v1.1_n.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-1/epikrise_v1.1_m.xml</Referanse>
+			<Referanse>eksempel/epikrise/Epikrise_v1-1/epikrise_v1.1_m.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/Epikrise/Epikrise_v1-1/epikrise_v1.1_c.xml</Referanse>
+			<Referanse>eksempel/epikrise/Epikrise_v1-1/epikrise_v1.1_c.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
 <RelaterteFiler>
