@@ -85,8 +85,7 @@
 
 	<Kravdokumenter>
 		<Kravdokument>
-		    <ProfilId>0</ProfilId>
-			<Beskrivelse>Svarrapportering av medisinske tjenester v.1.4 (GitLab)</Beskrivelse>
+		    <Beskrivelse>Svarrapportering av medisinske tjenester v.1.4 (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/svarrapport/HIS_80822_2014 Svarrapportering av medisinske tjenester v1.4 -korrigert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
@@ -323,6 +322,11 @@
 	</Eksempler>
 <RelaterteFiler>
 	<RelatertFil>
+		<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger</Beskrivelse>
+		<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
+	</RelatertFil>
+	<RelatertFil>
+		<ProfilId>0</ProfilId>
 		<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger</Beskrivelse>
 		<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
 	</RelatertFil>
