@@ -30,7 +30,7 @@
 	
 	<Skjemaer>
 		<Skjema>
-			<Referanse>skjema/applikasjonskvittering/AppRec-v1.1.xsd</Referanse>
+			<Referanse>skjema/Applikasjonskvittering/AppRec-v1.1.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/apprec/2012-02-15</Namespace>
 		</Skjema>
 	</Skjemaer>
