@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>          
+<?xml version="1.0" encoding="utf-8"?>            
 <!-- Dato oppdatert: 2018-04-18T13:51:05+02:00-->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:output method="html" encoding="utf-8"/>
