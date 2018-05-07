@@ -15,6 +15,22 @@
 		</Informasjon>
 	</MerInformasjon>
 	
+	<Profiler>
+		<Profil>
+			<ProfilId>1</ProfilId>
+			 <Beskrivelse>Tannhelsetjenesten</Beskrivelse>
+            <Identifikator>HIS 1016:2010</Identifikator>
+	        <Utgitt>02/2010</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <Status>Fastsatt som standard</Status>
+	        <MerInformasjon>
+	            <Informasjon>
+	                <Beskrivelse>Epikrise 1.1 (HIS 80226:2006)</Beskrivelse>
+					<Referanse>http://ehelse.no/HIS80226-2006</Referanse>
+		        </Informasjon>
+	        </MerInformasjon>
+		</Profil>
+	</Profiler>
 	
 
 	<Kravdokumenter>
@@ -23,7 +39,8 @@
 			<Referanse>kravdokument/epikrise/HIS_80226_2006_epikrise_1.1 -korrigert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Profil: Tannhelsetjenesten (GitLab)</Beskrivelse>
+			<ProfilId>1</ProfilId>
+			<Beskrivelse>Tannhelsetjenesten (GitLab)</Beskrivelse>
 			<Referanse>kravdokument/epikrise/HIS_1016_2010 XML epikrise Meldingsprofil tannhelse.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
