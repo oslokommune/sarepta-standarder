@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
-
+    
 Endringslogg
 - 11.04.18: v4.1.8 - Noen endringer i overskrifter. Fikset bug hvor informasjon om nærmeste pårørende ikke ble vist. La til visning av Legemiddelgjennomgang fra poKomponent.
 - 05.01.18: v4.1.7 - Tilpasset til Henvisning v2.0
