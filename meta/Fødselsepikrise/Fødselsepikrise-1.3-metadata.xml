@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>Fødselsepikrise</Navn>
+	<Versjon>1.3</Versjon>
+	<Identifikator>HIS 1045:2012</Identifikator>
+	<Utgitt>11/2012</Utgitt>
+	<Utgiver>Helsedirektoratet</Utgiver>
+
+	<Referansekatalogen>
+		<Beskrivelse>Fødselsepikrise (HIS 1045:2012)</Beskrivelse>
+		<Referanse>https://ehelse.no/fodselsepikrise-his-10452012</Referanse>
+	</Referansekatalogen>
+
+	<Status>Under utvikling</Status>
+
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>Fødselsepikrise Informasjonsmodell og XML meldingsbeskrivelse (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/fødselsepikrise/HIS_1045_2012-Fødselsepikrise_v1.3.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+	
+	<Skjemaer>
+		<Skjema>
+			<Referanse>skjema/fødselsepikrise/FodselBarsel-v1.3.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/FodselBarsel/2012-11-21</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Tverrfaglig epikrise (Utskrivningsrapport, fra standard for PLO-meldinger)</Beskrivelse>
+			<Referanse>skjema/plo/v1.6/TverrfagligEpikrise-v1.6.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/TverrfagligEpikrise/2012-04-01</Namespace>
+		</Skjema>
+	</Skjemaer>
+	
+	<Felleskomponenter>
+		<Felleskomponent>
+			<Beskrivelse>XML-skjema for Hodemelding</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/MsgHead-v1_2.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Felles XML-definisjoner for person, helsepersonell, organisasjon etc</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/felleskomponent1.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Felles datatyper</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Container for Base64-kodet innhold</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>EPJ-fragmenter for journalnotat</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/EPJ-journalnotat-mv.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>EPJ-fragmenter for cave, allergi mv</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/EPJ-cave-mv.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>EPJ-fragmenter for legemiddel</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/EPJ-legemiddel-mv.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>XML-definisjon av metadata som benyttes i EPJ-komponenter</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/EPJ-meta.xsd</Referanse>
+		</Felleskomponent>
+	</Felleskomponenter>
+
+	<Eksempler>
+		<Eksempel>
+			<Referanse>eksempel/fødselsepikrise/Fødselsepikrise_BARN.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/fødselsepikrise/Fødselsepikrise_MOR.xml</Referanse>
+		</Eksempel>
+	</Eksempler>
+
+</StandardMetadata>

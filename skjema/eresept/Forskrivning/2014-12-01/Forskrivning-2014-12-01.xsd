@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+Forskrivning
+2014-12-01
+ -->
+<!--
+Endringer siden 2013-03-25 (?)
+Nytt namespace Forskrivning
+Nytt element typeLegemiddel/SvartTrekant (ERSA 4778)
+Nytt element SortertVirkestoffUtenStyrke (ERSA 5685)
+Element slettet LegemiddelMerkevare/Refvirkestoff (ERSA 5685)
+Nytt element Virkestoff/NavnEngelsk (ERSA 5686)
+Nytt element (referanse) Virkestoff/Refusjon (ERSA 5724)
+Nytt element Markedsforingsinfo/OmpakkerAvEndose (ERSA 5723)
+Nytt element Legemiddeldose/EnhetOrdinering (ERSA 5837)
+-->
+<schema xmlns:fs="http://www.kith.no/xmlstds/eresept/forskrivning/2014-12-01" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kith.no/xmlstds/eresept/forskrivning/2014-12-01" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<element name="Forskrivning">
+		<complexType>
+			<sequence>
+				<element name="Bruksomrade" type="string" minOccurs="0"/>
+				<element name="DosVeiledEnkel" type="string" minOccurs="0"/>
+				<element name="IngenKombinasjon" type="boolean" minOccurs="0"/>
+				<element name="Bruk" type="kith:CS" minOccurs="0"/>
+				<element name="Kortdose" type="kith:CV" minOccurs="0"/>
+				<element ref="fs:AdministreringForskrivning" minOccurs="0"/>
+				<element ref="fs:Dosering" minOccurs="0" maxOccurs="unbounded"/>
+				<choice>
+					<element ref="fs:LegemiddelMerkevare"/>
+					<element ref="fs:Legemiddelpakning"/>
+					<element ref="fs:LegemiddelVirkestoff"/>
+					<element ref="fs:Legemiddelblanding"/>
+					<element ref="fs:Legemiddeldose"/>
+				</choice>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="AdministreringForskrivning">
+		<complexType>
+			<sequence>
+				<element name="AdmVed" type="kith:CS"/>
+				<element name="AdmMate" type="kith:CS"/>
+				<element name="AdmEtterSkjema" type="boolean" minOccurs="0"/>
+				<element name="AdmSkjema" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Refusjon">
+		<complexType>
+			<sequence>
+				<element name="RefRefusjonsgruppe" type="IDREF" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Referanse til refusjonsgruppe</documentation>
+					</annotation>
+				</element>
+				<element name="GyldigFraDato" type="date"/>
+				<element name="ForskrivesTilDato" type="date" minOccurs="0"/>
+				<element name="UtleveresTilDato" type="date" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!--Dosering-->
+	<element name="Dosering">
+		<complexType>
+			<sequence>
+				<element name="Starttidspunkt" type="kith:TS" minOccurs="0"/>
+				<element name="Sluttidspunkt" type="kith:TS" minOccurs="0"/>
+				<element ref="fs:Doseringsregel" minOccurs="0"/>
+				<choice>
+					<element ref="fs:DoseFastTidspunkt" maxOccurs="unbounded"/>
+					<element ref="fs:DoseEtterBehov" maxOccurs="unbounded"/>
+				</choice>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Doseringsregel">
+		<complexType>
+			<sequence>
+				<element name="DoseresEtter" type="kith:CS"/>
+				<element name="Merknad" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<complexType name="typeDose">
+		<sequence>
+			<element name="Mengde" type="kith:PQ"/>
+			<element name="Intervall" type="kith:PQ" minOccurs="0"/>
+			<element ref="fs:Infusjonshastighet" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<element name="Infusjonshastighet">
+		<complexType>
+			<sequence>
+				<element name="Volum" type="kith:PQ"/>
+				<element name="Tidsenhet" type="kith:CS"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="DoseFastTidspunkt">
+		<complexType>
+			<complexContent>
+				<extension base="fs:typeDose">
+					<sequence>
+						<element name="Klokkeslett" type="time" minOccurs="0"/>
+						<element name="Tidsomrade" type="kith:CS" minOccurs="0"/>
+						<element name="GisEksakt" type="boolean"/>
+						<element ref="fs:FastDose" minOccurs="0"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="DoseEtterBehov">
+		<complexType>
+			<complexContent>
+				<extension base="fs:typeDose">
+					<sequence>
+						<element name="DoseDognMaks" type="kith:PQ"/>
+						<element name="DoseTidsromMaks" type="kith:PQ"/>
+						<element name="Tidsrom" type="kith:PQ"/>
+						<element name="DoseIntervallMin" type="kith:PQ"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="FastDose">
+		<complexType>
+			<sequence>
+				<element name="FasteUkedager" type="kith:CS" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="DagerPa" type="int" minOccurs="0"/>
+				<element name="DagerAv" type="int" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!--Legemiddel-->
+	<element name="LegemiddelMerkevare">
+		<complexType>
+			<complexContent>
+				<extension base="fs:typeLegemiddel">
+					<sequence>
+						<element name="Id" type="ID" minOccurs="0"/>
+						<element name="Varenavn" type="string"/>
+						<element name="LegemiddelformLang" type="string" minOccurs="0"/>
+						<element ref="fs:SortertVirkestoffMedStyrke" minOccurs="0" maxOccurs="unbounded"/>
+						<element ref="fs:SortertVirkestoffUtenStyrke" minOccurs="0" maxOccurs="unbounded"/>
+						<element name="Smak" type="kith:CS" minOccurs="0"/>
+						<element ref="fs:ProduktInfo" minOccurs="0"/>
+						<element ref="fs:Reseptgyldighet" minOccurs="0" maxOccurs="unbounded"/>
+						<element ref="fs:Hjelpestoff" minOccurs="0" maxOccurs="unbounded"/>
+						<element ref="fs:Preparatomtaleavsnitt" minOccurs="0" maxOccurs="unbounded"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="Preparatomtaleavsnitt">
+		<complexType>
+			<sequence>
+				<element name="Avsnittoverskrift" type="kith:CS"/>
+				<element ref="fs:Lenke"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Legemiddelpakning">
+		<complexType>
+			<complexContent>
+				<extension base="fs:typeLegemiddel">
+					<sequence>
+						<element name="Id" type="ID" minOccurs="0"/>
+						<element name="Varenr" type="string"/>
+						<element name="Ean" type="string" minOccurs="0" maxOccurs="unbounded">
+							<annotation>
+								<documentation>Strekkode</documentation>
+							</annotation>
+						</element>
+						<element name="IkkeKonservering" type="boolean" minOccurs="0"/>
+						<element name="Oppbevaring" type="kith:CS" minOccurs="0"/>
+						<element ref="fs:Pakningsinfo" minOccurs="0" maxOccurs="unbounded"/>
+						<element ref="fs:PakningsinfoResept" minOccurs="0" maxOccurs="unbounded"/>
+						<element ref="fs:PrisVare" minOccurs="0" maxOccurs="unbounded"/>
+						<element ref="fs:Markedsforingsinfo" minOccurs="0"/>
+						<element ref="fs:Preparatomtaleavsnitt" minOccurs="0" maxOccurs="unbounded"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="PrisVare">
+		<complexType>
+			<sequence>
+				<element name="Type" type="kith:CV"/>
+				<element name="Pris" type="kith:MO"/>
+				<element name="GyldigFraDato" type="date" minOccurs="0"/>
+				<element name="GyldigTilDato" type="date" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ProduktInfo">
+		<complexType>
+			<sequence>
+				<element name="Varseltrekant" type="boolean" minOccurs="0"/>
+				<element name="Referanseprodukt" type="string" minOccurs="0"/>
+				<element name="Vaksinestandard" type="kith:CV" minOccurs="0"/>
+				<element name="Produsent" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Hjelpestoff">
+		<complexType>
+			<sequence>
+				<element name="Navn" type="string"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Reseptgyldighet">
+		<complexType>
+			<sequence>
+				<element name="Kjonn" type="kith:CS" minOccurs="0"/>
+				<element name="Varighet" type="duration"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Markedsforingsinfo">
+		<complexType>
+			<sequence>
+				<element name="VarenrUtgaende" type="string" minOccurs="0"/>
+				<element name="Markedsforingsdato" type="date" minOccurs="0"/>
+				<element name="AvregDato" type="date" minOccurs="0"/>
+				<element name="MidlUtgattDato" type="date" minOccurs="0"/>
+				<element name="OmpakkerAvEndose" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="PakningByttegruppe">
+		<complexType>
+			<sequence>
+				<element name="RefByttegruppe" type="IDREF"/>
+				<element name="GyldigFraDato" type="date" minOccurs="0"/>
+				<element name="GyldigTilDato" type="date" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Pakningsinfo">
+		<complexType>
+			<sequence>
+				<element name="RefLegemiddelMerkevare" type="IDREF"/>
+				<element name="Pakningsstr" type="string"/>
+				<element name="EnhetPakning" type="kith:CV"/>
+				<element name="Pakningstype" type="kith:CV"/>
+				<element name="Multippel" type="int" minOccurs="0"/>
+				<element name="Antall" type="int" minOccurs="0"/>
+				<element name="Mengde" type="decimal"/>
+				<element name="Sortering" type="int" minOccurs="0"/>
+				<element name="DDD" type="kith:PQ" minOccurs="0"/>
+				<element name="Statistikkfaktor" type="decimal" minOccurs="0"/>
+				<element ref="fs:Pakningskomponent" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Pakningskomponent">
+		<complexType>
+			<sequence>
+				<element name="Pakningstype" type="kith:CV"/>
+				<element name="Mengde" type="kith:PQ"/>
+				<element name="Antall" type="int" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="PakningsinfoResept">
+		<complexType>
+			<sequence>
+				<element name="Varenavn" type="string"/>
+				<element name="Pakningsstr" type="string"/>
+				<element name="EnhetPakning" type="kith:CV"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Legemiddeldose">
+		<complexType>
+			<complexContent>
+				<extension base="fs:typeLegemiddel">
+					<sequence>
+						<element name="Id" type="ID"/>
+						<element name="LmrLopenr" type="string" minOccurs="0"/>
+						<element name="Mengde" type="kith:PQ"/>
+						<element name="Pakningstype" type="kith:CV" minOccurs="0"/>
+						<element name="RefLegemiddelMerkevare" type="IDREF"/>
+						<element name="RefPakning" type="IDREF" maxOccurs="unbounded"/>
+						<element ref="fs:Pakningskomponent" minOccurs="0" maxOccurs="unbounded"/>
+						<element name="EnhetOrdinering" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="AdministreringLegemiddel">
+		<complexType>
+			<sequence>
+				<element name="Blandingsveske" type="boolean" minOccurs="0"/>
+				<element name="RefBlandingsveske" type="IDREF" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="Administrasjonsvei" type="kith:CV" maxOccurs="unbounded"/>
+				<element name="KanKnuses" type="kith:CS" minOccurs="0"/>
+				<element name="KanApnes" type="kith:CS" minOccurs="0"/>
+				<element name="Bolus" type="kith:CS" minOccurs="0"/>
+				<element name="InjeksjonshastighetBolus" type="kith:CS" minOccurs="0"/>
+				<element name="Deling" type="kith:CS" minOccurs="0"/>
+				<element name="EnhetDosering" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="Kortdose" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="ForhandsregelInntak" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="BruksomradeEtikett" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<complexType name="typeLegemiddel">
+		<sequence>
+			<element name="Atc" type="kith:CV" minOccurs="0"/>
+			<element name="NavnFormStyrke" type="string"/>
+			<element name="Reseptgruppe" type="kith:CS"/>
+			<element name="LegemiddelformKort" type="kith:CV" minOccurs="0"/>
+			<element name="RefVilkar" type="IDREF" minOccurs="0" maxOccurs="unbounded">
+				<annotation>
+					<documentation>Referanse til vilkår</documentation>
+				</annotation>
+			</element>
+			<element name="Preparattype" type="kith:CS" minOccurs="0"/>
+			<element name="TypeSoknadSlv" type="kith:CS" minOccurs="0"/>
+			<element name="Opioidsoknad" type="boolean" minOccurs="0"/>
+			<element ref="fs:Refusjon" minOccurs="0" maxOccurs="unbounded"/>
+			<element ref="fs:PakningByttegruppe" minOccurs="0"/>
+			<element ref="fs:AdministreringLegemiddel" minOccurs="0"/>
+			<element name="SvartTrekant" type="kith:CV" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<complexType name="typeBestanddel"/>
+	<!--Virkestofforskrivning-->
+	<element name="LegemiddelVirkestoff">
+		<complexType>
+			<complexContent>
+				<extension base="fs:typeLegemiddel">
+					<sequence>
+						<element name="Id" type="ID"/>
+						<element ref="fs:SortertVirkestoffMedStyrke" minOccurs="0" maxOccurs="unbounded"/>
+						<element ref="fs:SortertVirkestoffUtenStyrke" minOccurs="0" maxOccurs="unbounded"/>
+						<element name="RefLegemiddelMerkevare" type="IDREF" minOccurs="0" maxOccurs="unbounded"/>
+						<element name="RefPakning" type="IDREF" minOccurs="0" maxOccurs="unbounded"/>
+						<element name="ForskrivningsenhetResept" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="Virkestoff">
+		<complexType>
+			<sequence>
+				<element name="Id" type="ID"/>
+				<element name="Navn" type="string"/>
+				<element name="NavnEngelsk" type="string" minOccurs="0"/>
+				<element name="RefVirkestoff" type="IDREF" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="fs:Refusjon" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="VirkestoffMedStyrke">
+		<complexType>
+			<sequence>
+				<element name="Id" type="ID"/>
+				<element name="Styrke" type="kith:PQ"/>
+				<element name="StyrkeNevner" type="kith:PQ" minOccurs="0"/>
+				<element name="RefVirkestoff" type="IDREF"/>
+				<element name="AlternativStyrke" type="kith:PQ" minOccurs="0"/>
+				<element name="AlternativStyrkeNevner" type="kith:PQ" minOccurs="0"/>
+				<element name="Styrkeoperator" type="kith:CV"/>
+				<element name="StyrkeOvreVerdi" type="double" minOccurs="0"/>
+				<element name="AtcKombipreparat" type="kith:CV" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="SortertVirkestoffMedStyrke">
+		<complexType>
+			<sequence>
+				<element name="Sortering" type="int"/>
+				<element name="RefVirkestoffMedStyrke" type="IDREF"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="SortertVirkestoffUtenStyrke">
+		<complexType>
+			<sequence>
+				<element name="Sortering" type="int"/>
+				<element name="RefVirkestoff" type="IDREF"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!--Handelsvare-->
+	<element name="MedForbMatr">
+		<complexType>
+			<complexContent>
+				<extension base="fs:typeVare">
+					<sequence>
+						<element ref="fs:BestanddelMatr" minOccurs="0" maxOccurs="unbounded"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="BestanddelMatr">
+		<complexType>
+			<sequence>
+				<element name="Navn" type="string"/>
+				<element name="Materiale" type="string"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Naringsmiddel">
+		<complexType>
+			<complexContent>
+				<extension base="fs:typeVare">
+					<sequence>
+						<element ref="fs:StyrkeFormStoff" minOccurs="0"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="Brystprotese" type="fs:typeVare"/>
+	<complexType name="typeVare">
+		<sequence>
+			<element name="Nr" type="string"/>
+			<element name="Navn" type="string"/>
+			<element ref="fs:ProduktInfoVare" minOccurs="0"/>
+			<element ref="fs:Leverandor" minOccurs="0"/>
+			<element ref="fs:PrisVare" minOccurs="0" maxOccurs="unbounded"/>
+			<element ref="fs:Refusjon" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<element name="ProduktInfoVare">
+		<complexType>
+			<sequence>
+				<element name="ProduktNr" type="string"/>
+				<element name="Volum" type="string" minOccurs="0"/>
+				<element name="EnhetStorrelse" type="kith:CV"/>
+				<element name="AntPerPakning" type="int"/>
+				<element name="RefVilkar" type="IDREF" minOccurs="0" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Referanse til vilkår</documentation>
+					</annotation>
+				</element>
+				<element name="TillattMerMakspris" type="boolean"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Leverandor">
+		<complexType>
+			<sequence>
+				<element name="Navn" type="string"/>
+				<element name="Adresse" type="string"/>
+				<element name="Telefon" type="string"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="StyrkeFormStoff">
+		<complexType>
+			<sequence>
+				<element name="Styrke" type="string" minOccurs="0"/>
+				<element name="Form" type="string" minOccurs="0"/>
+				<element name="Stoff" type="string" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Lenke">
+		<complexType>
+			<sequence>
+				<element name="Beskrivelse" type="string" minOccurs="0"/>
+				<element name="Www" type="kith:URL"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!--Legemiddelblanding-->
+	<element name="Legemiddelblanding">
+		<annotation>
+			<documentation>Benyttes for magistrell forskrivning. </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Navn" type="string"/>
+				<element name="TilbOppl" type="string"/>
+				<element name="Mengde" type="kith:PQ"/>
+				<element name="Legemiddelform" type="kith:CV"/>
+				<element name="BestanddelLegemiddel" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<complexContent>
+							<extension base="fs:typeBestanddel">
+								<sequence>
+									<choice>
+										<element ref="fs:LegemiddelMerkevare"/>
+										<element ref="fs:Legemiddelpakning"/>
+										<element ref="fs:LegemiddelVirkestoff"/>
+									</choice>
+									<choice>
+										<element ref="fs:Utblanding"/>
+										<element ref="fs:MengdeBestanddel"/>
+									</choice>
+								</sequence>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="BestanddelAnnet" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<complexContent>
+							<extension base="fs:typeBestanddel">
+								<sequence>
+									<element name="NavnFormStyrke" type="string"/>
+									<choice>
+										<element ref="fs:Utblanding"/>
+										<element ref="fs:MengdeBestanddel"/>
+										<element ref="fs:Styrke"/>
+									</choice>
+								</sequence>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="BestanddelVirkestoff" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element ref="fs:Virkestoff"/>
+							<choice>
+								<element ref="fs:Styrke"/>
+								<element ref="fs:MengdeBestanddel"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Styrke">
+		<complexType>
+			<sequence>
+				<element name="Teller" type="kith:PQ">
+					<annotation>
+						<documentation>Styrke teller</documentation>
+					</annotation>
+				</element>
+				<element name="Nevner" type="kith:PQ" minOccurs="0">
+					<annotation>
+						<documentation>Styrke nevner</documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Utblanding">
+		<complexType>
+			<sequence>
+				<element name="Adqs" type="kith:CS"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="MengdeBestanddel">
+		<complexType>
+			<sequence>
+				<element name="Mengde" type="kith:PQ"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

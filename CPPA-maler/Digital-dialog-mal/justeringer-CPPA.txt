@@ -1,0 +1,10 @@
+Justere CPP/CPA profilen:
+TransportProtocol - addere AMQP til beskrivelsen
+
+
+Justere AMQP profilen:
+Beskrive hvordan man håndererer sikkerhet (kryptering og signering), apprek og acknowledge i detalj.
+
+
+CPP-malen
+If the ackRequested attribute is not set to "never", then the ReliableMessaging element must be present under the corresponding DocExchange element to provide the necessary Reliable Messaging parameters.

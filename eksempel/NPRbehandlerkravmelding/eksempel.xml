@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v5 rel. 3 U (http://www.xmlspy.com) by Trygdeetaten (Rikstrygdeverket) -->
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd">
+	<MsgInfo>
+		<Type V="POM"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2009-05-13T20:45:30+02:00</GenDate>
+		<MsgId>1b08b3f5-76c1-4560-ae4e-90e04cb0bc70</MsgId>
+		<Sender>
+			<Organisation>
+				<OrganisationName>Ole Olsen</OrganisationName>
+				<Ident>
+					<Id>981793758</Id>
+					<TypeId V="ENH" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Ident>
+					<Id>9644.3</Id>
+					<TypeId V="HER" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Ident>
+					<Id>LEGEEPJ</Id>
+					<TypeId V="EPJ"/>
+				</Ident>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>NAV</OrganisationName>
+				<Ident>
+					<Id>123456789</Id>
+					<TypeId V="ENH" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+			</Organisation>
+		</Receiver>
+	</MsgInfo>
+	<Document>
+		<RefDoc>
+			<MsgType V="XML"/>
+			<MimeType>text/xml</MimeType>
+			<Description>BehandlerKrav NPR</Description>
+			<Content>
+				<Melding fraDatoPeriode="2009-01-15" versjon="47.0.3" meldTelefon="924 15 703" kontPerson="Kjell Hansen" meldRefNr="2009-lev-sys-2.1-001" meldEpost1="kjell.hansen@sykehuset.no" meldEpost2="kjell.hansen@gmail.com" tilDatoPeriode="2009-02-15" uttakDato="2009-02-15" xsi:schemaLocation="http://www.npr.no/xmlstds bkm_078(bkm).xsd" xmlns="http://www.npr.no/xmlstds" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<Institusjon institusjonID="983974678">
+						<Enhet enhetID="1" enhetKode="8151" reshID="101797" enhetLokal="Palliativ pol">
+							<Krav antallRegninger="6" sumKravBelop="398.83">
+								<EnkeltRegning typeTransaksjon="2" kravGrunnlag="1" regningNr="1" TransDatoTid="2009-04-01T09:30:47" episodeID="10" sumBelop="66.83"/>
+								<EnkeltRegning uuid="{3F2504E0-4F89-11D3-9A0C-0305E82C3301}" typeTransaksjon="2" kravGrunnlag="1" regningNr="2" TransDatoTid="2009-04-02T09:30:47" episodeID="11" sumBelop="26.00"/>
+								<EnkeltRegning uuid="{3F2504E0-4F89-11D3-9A0C-0305E82C3301}" typeTransaksjon="4" kravGrunnlag="1" regningNr="2" TransDatoTid="2009-04-02T09:30:47" episodeID="11" sumBelop="26.00"/>
+								<EnkeltRegning uuid="{3F2504E0-4F89-11D3-9A0C-0305E82C3302}" typeTransaksjon="1" kravGrunnlag="1" kodeEgenandel="F" regningNr="3" TransDatoTid="2009-04-02T10:30:51" episodeID="12" sumBelop="306.00"/>
+								<EnkeltRegning uuid="{3F2504E0-4F89-11D3-9A0C-0305E82C3303}" typeTransaksjon="1" kravGrunnlag="1" kodeEgenandel="F" regningNr="4" TransDatoTid="2009-04-03T11:30:55" episodeID="13" sumBelop="312.00"/>
+								<EnkeltRegning uuid="{3F2504E0-4F89-11D3-9A0C-0305E82C3303}" typeTransaksjon="5" kravGrunnlag="1" kodeEgenandel="F" regningNr="4" TransDatoTid="2009-04-03T11:30:55" episodeID="13" sumBelop="312.00"/>
+							</Krav>
+						</Enhet>
+						<Pasient>
+							<PasientEx fornavn="CHRISTOPHER" telefon="99887766" arbeidstager="2" etternavn="COOPER" mellomnavn="HODNELA" kjonn="1">
+								<AltIdent fodselsDato="1972-12-04"/>
+							</PasientEx>
+							<EEA eeaDok="EHIC" eeaCardId="12345678901234567891" eeaId="1122334456458" eeaTrygdekontorNavn="London Social Security Office" eeaTrygdekontorNr="11223344" eeaGyldighetFra="2007-01-01"/>
+							<Henvisningsperiode henvisningsperiodeID="12" henvFraTjeneste="4" trygdenasjon="GB" henvTilTjeneste="1">
+								<HenvisendeInstans henvisendeLege="04127244444"/>
+							</Henvisningsperiode>
+							<Episode episodeID="10" komNrHjem="9900" debitor="1" henvisningsperiodeID="12">
+								<Kontakt kontaktType="1">
+									<Helseperson polUtforende="11"/>
+									<Takst kode="202" antall="1" takstBelop="0.00"/>
+								</Kontakt>
+								<Tilstand tilstNr="0">
+									<Kode kodeVersjon="6" Kodeverk="D" kodeNr="1" kodeVerdi="G969"/>
+								</Tilstand>
+								<Tjeneste>
+									<Tiltak typeTiltak="1">
+										<Prosedyre prosNr="0">
+											<Kode kodeVersjon="2009" Kodeverk="X" kodeNr="1" kodeVerdi="Rg/maar//b/" kodeBelop="66.83"/>
+										</Prosedyre>
+									</Tiltak>
+								</Tjeneste>
+							</Episode>
+						</Pasient>
+						<Pasient>
+							<PasientEx>
+								<Ident typeId="FNR" id="04127244444"/>
+							</PasientEx>
+							<Henvisningsperiode henvisningsperiodeID="21" henvFraTjeneste="4" henvTilTjeneste="1">
+								<HenvisendeInstans henvisendeLege="04127244444"/>
+							</Henvisningsperiode>
+							<Episode episodeID="11" komNrHjem="0301" debitor="1" henvisningsperiodeID="21">
+								<Kontakt kontaktType="1">
+									<Helseperson polUtforende="1"/>
+									<Takst kode="201b" antall="1" takstBelop="0.00"/>
+									<Takst kode="704k" antall="2" takstBelop="13.00"/>
+								</Kontakt>
+							</Episode>
+						</Pasient>
+						<Pasient>
+							<PasientEx>
+								<Ident typeId="FNR" id="04127244444"/>
+							</PasientEx>
+							<Henvisningsperiode henvisningsperiodeID="22" henvFraTjeneste="4" henvTilTjeneste="1">
+								<HenvisendeInstans henvisendeLege="04127255555"/>
+							</Henvisningsperiode>
+							<Episode episodeID="12" komNrHjem="0301" debitor="1" henvisningsperiodeID="22">
+								<Kontakt kontaktType="1">
+									<Helseperson polUtforende="3"/>
+									<Takst kode="201b" antall="1" takstBelop="280.00"/>
+									<Takst kode="704k" antall="2" takstBelop="13.00"/>
+								</Kontakt>
+							</Episode>
+							<Episode episodeID="13" komNrHjem="0301" debitor="1" henvisningsperiodeID="22">
+								<Kontakt kontaktType="1">
+									<Helseperson polUtforende="11"/>
+									<Takst kode="202" antall="1" takstBelop="200.00"/>
+								</Kontakt>
+								<Tilstand tilstNr="0">
+									<Kode kodeVersjon="6" Kodeverk="D" kodeNr="1" kodeVerdi="G969"/>
+								</Tilstand>
+								<Tjeneste>
+									<Tiltak typeTiltak="1">
+										<Prosedyre prosNr="0">
+											<Kode kodeVersjon="2009" Kodeverk="X" kodeNr="1" kodeVerdi="Rg/maar//b/" kodeBelop="66.83"/>
+										</Prosedyre>
+									</Tiltak>
+								</Tjeneste>
+							</Episode>
+						</Pasient>
+					</Institusjon>
+				</Melding>
+			</Content>
+		</RefDoc>
+	</Document>
+	<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+		<SignedInfo>
+			<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+			<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+			<Reference URI="">
+				<Transforms>
+					<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+					<Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+				</Transforms>
+				<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+				<DigestValue>j/GA1lQbxED2v4+6mxDvoDXieM8=</DigestValue>
+			</Reference>
+		</SignedInfo>
+		<SignatureValue>M7RIoXCmRjuqgU2u54D6Hn0IRS9kNNUS0m4EQk+MgpAaX6BiVWXhBQTZdwNpWm2EjzzWoUHGisLmhyXYAyrOXNpof5JN+7ZC/Beiq7O/eCylAlMW34fYLl9CTCZDpBqziI3I9+L/LCVfRqEMQ0/lSMsKJuTV5yofD/dn6cNypF0=</SignatureValue>
+		<KeyInfo>
+			<X509Data>
+				<X509Certificate>MIICRzCCAbCgAwIBAgIDAKjIMA0GCSqGSIb3DQEBBQUAMEIxCzAJBgNVBAYTAk5PMQswCQYDVQQKFAJDQTEmMCQGA1UEAxQdTm9yd2F5IFBvc3QgT3JnYW5pemF0aW9uYWwgQ0EwHhcNMDIxMDMxMTQyMjQ5WhcNMDQxMDMxMTQyMjQ5WjBFMQswCQYDVQQGEwJOTzEaMBgGA1UEChQRUlRWIFRlc3QgYXZzZW5kZXIxGjAYBgNVBAMUEVJUVi1URVNULUFWU0VOREVSMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCFvrIlU0GM76a3RJ5/ZtRXUOKZ/VZOWTC45MmBjRc8HuDqHioimEveNMnVPD5S8Puimi4a0Be/tfTf9DvE07Iz1Yidyg56Z0eoIzSYGqszeuoOXG5ZhcqPseHgvvkZ3JFyAOJ+semoi/fzDV2HsKUlTOPHU5B/+r6Y13BvK+tQQwIDAQABo0gwRjATBgNVHSMEDDAKgAhHZW5LZXlTQzARBgNVHQ4ECgQITfYZ49NYwMUwEQYDVR0gBAowCDAGBgQrdGAIMAkGA1UdEwQCMAAwDQYJKoZIhvcNAQEFBQADgYEAILpZeYP0yHqDzvnmX+Z62VFHsl04ZjO5gmodHFrXDyHZMROmWE5xfxtW/qGESkiAup+PyLuUe1BnbGDGaCkhDKx/aLiHdUKvUV2TF1l33TKbFiiT4NJxrdidl/tqASWq5xx9uSfPrcYuChuV1bNaFz3w0up1xSIJx7v3rRo1iH4=</X509Certificate>
+			</X509Data>
+		</KeyInfo>
+	</Signature>
+</MsgHead>

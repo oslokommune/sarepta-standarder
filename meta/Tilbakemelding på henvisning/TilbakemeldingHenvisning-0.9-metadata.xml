@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>Elektronisk utveksling av tilbakemelding på henvisning</Navn>
+	<Versjon>0.9</Versjon>
+	<Identifikator>HIS 80326:2003</Identifikator>
+	<Utgitt>10/2003</Utgitt>
+	<Utgiver>Direktoratet for e-helse</Utgiver>
+
+	<Referansekatalogen>
+		<Beskrivelse>Elektronisk utveksling av tilbakemelding på henvisning</Beskrivelse>
+		<Referanse>http://ehelse.no/his80326-2003</Referanse>
+	</Referansekatalogen>
+
+	<Status>Til pilotering</Status>
+
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>Elektronisk utveksling av tilbakemelding på henvisning (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/tilbakemeldingPåHenvisning/HIS_80326_2003_Tilbakemelding-på-henvisning.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+
+	<Skjemaer>
+		<Skjema>
+			<Referanse>skjema/tilbakemeldingPåHenvisning/Tilbakemelding-v09.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/reply/2003-10-10</Namespace>
+		</Skjema>
+	</Skjemaer>
+	<Felleskomponenter>
+		<Felleskomponent>
+			<Beskrivelse>Felles datatyper</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
+		</Felleskomponent>
+	</Felleskomponenter>
+
+</StandardMetadata>

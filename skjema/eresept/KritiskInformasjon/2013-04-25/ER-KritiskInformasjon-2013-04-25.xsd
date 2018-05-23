@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.4 og 2.5
+Kritisk Informasjon
+2013-04-25
+ -->
+<!-- 
+Endringer siden 2012-06-11
+Fjernet element: ki:KritiskInformasjon/ki:Allergi/ki:Sannsynlighetsgrad (Sak 3602)
+Fjernet element: ki:KritiskInformasjon/ki:Allergi/ki:Alvorlighetsgrad (Sak 3602)
+Fjernet element/underelementer: ki:KritiskInformasjon/ki:Allergi/ki:AndreOverfolsomhet (Sak 3602)
+Nytt element: ki:Allergi/ki:Avkreftet (Sak 3602)
+Endret kardinalitet: ki:Legemiddelreaksjoner/ki:Atc 0..* -> 0..1
+Nytt element: ki:Legemiddelreaksjoner/ki:Varenavn (Sak 3602)
+Endret datatype: ki:Allergi/ki:Oppdatert date -> dateTime (Sak 3602)
+Endret navn: ki:Legemiddelreaksjoner -> ki:Legemiddelreaksjon
+Endret kardinalitet:  ki:Allergi/ki:Legemiddelreaksjon 0..1 -> 1..1
+
+-->
+<schema xmlns:ki="http://www.kith.no/xmlstds/eresept/ki/2013-04-25" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" targetNamespace="http://www.kith.no/xmlstds/eresept/ki/2013-04-25" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<element name="KritiskInformasjon">
+		<complexType>
+			<sequence>
+				<element ref="ki:Allergi"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Allergi">
+		<annotation>
+			<documentation>Overfølsomhetsreaksjon - allergi</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Reaksjon" type="kith:CV"/>
+				<element name="Kommentar" type="string" minOccurs="0"/>
+				<element name="Oppdatert" type="dateTime"/>
+				<element name="Kilde" type="kith:CV"/>
+				<element ref="ki:Legemiddelreaksjon"/>
+				<element name="Avkreftet" type="boolean" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Legemiddelreaksjon">
+		<complexType>
+			<sequence>
+				<element name="Atc" type="kith:CV" minOccurs="0"/>
+				<element name="Virkestoff" type="string" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="VirkestoffId" type="string" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="MerkevareId" type="string" minOccurs="0"/>
+				<element name="Hjelpestoffreaksjon" type="boolean" minOccurs="0"/>
+				<element name="Varenavn" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:m5="http://www.kith.no/xmlstds/eresept/m5/2006-10-06" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kith.no/xmlstds/eresept/m5/2006-10-06" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<element name="Tilbakekalling">
+		<annotation>
+			<documentation>Sendes av lege for å "slette" en resept fra Reseptbanken.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="ReseptId" type="string">
+					<annotation>
+						<documentation>Angir hvilken resept som skal tilbakekalles fra reseptbanken.</documentation>
+					</annotation>
+				</element>
+				<element name="Merknad" type="string">
+					<annotation>
+						<documentation>Begrunnelse for tilbakekalling av resepten.</documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

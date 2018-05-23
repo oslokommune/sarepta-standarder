@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>Datatyper til bruk ved meldingsutveksling</Navn>
+	<Versjon>1.1</Versjon>
+	<Identifikator>HIS 80117:2002</Identifikator>
+	<Utgitt>02/2002</Utgitt>
+	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	<Status>Fastsatt som standard</Status>
+	
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Standard for Datatyper til bruk ved meldingsutveksling (HIS 80117:2002)</Beskrivelse>
+			<Referanse>http://ehelse.no/HIS80117-2002</Referanse>
+		</Informasjon>
+	</MerInformasjon>
+	
+	
+
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>Datatyper til bruk ved meldingsutveksling (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/DatatyperVedMeldingsutveksling/HIS_80117_2002_Datatyper_v1.1 -korrigert.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+	
+	<Felleskomponenter>
+		<Felleskomponent>
+			<Beskrivelse>Felles datatyper</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
+		</Felleskomponent>
+		
+	</Felleskomponenter>
+	
+
+</StandardMetadata>

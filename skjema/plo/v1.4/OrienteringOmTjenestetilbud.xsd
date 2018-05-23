@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--Versjon 1.4 2008-20-02
+  |	Orientering om tjenestetilbud: Inngår som en del av pleie- og omsorgsmeldingene
+-->
+<!-- Endret 20. februar 2008 (AA)
+  |	Endret namespace til http://www.kith.no/xmlstds/po/OrienteringOmTjenestetilbud/2008-02-20
+  |	poKomponent har blitt revidert og fått nytt namespace http://www.kith.no/xmlstds/po/poKomponent/2008-02-20 
+  | lagt til ny struktur <element ref="po:AssistertKommunikasjon" minOccurs="0" maxOccurs="unbounded"/>
+-->
+<!-- Endret 16.oktober 2007 (JSD)
+  |	Endret namespace til http://www.kith.no/xmlstds/po/OrienteringOmTjenestetilbud/2007-10-16
+  |	poKomponent har blitt revidert og fått nytt namespace http://www.kith.no/xmlstds/po/poKomponent/2007-10-16
+-->
+<!--	Endret 31. mai 2007 (AA)
+  |	Endret namespace til http://www.kith.no/xmlstds/po/OrienteringTjenestetilbud/2007-05-31
+  |	poKomponent har blitt revidert og fått nytt namespace http://www.kith.no/xmlstds/po/poKomponent/2007-05-31
+ 
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:kith="http://www.kith.no/xmlstds" xmlns:p3="http://www.kith.no/xmlstds/po/OrienteringOmTjenestetilbud/2008-02-20" xmlns:po="http://www.kith.no/xmlstds/po/poKomponent/2008-02-20" targetNamespace="http://www.kith.no/xmlstds/po/OrienteringOmTjenestetilbud/2008-02-20" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds/po/poKomponent/2008-02-20" schemaLocation="poKomponent.xsd"/>
+	<!-- LEVEL 1 -->
+	<!-- Class: Orientering om tjenestetilbud -->
+	<element name="OrienteringOmTjenestetilbud">
+		<annotation>
+			<documentation>
+         Denne meldingsanvendelsen benyttes for å orientere om hvilke tjenester pasienten/brukeren mottar fra pleie- og omsorgssektoren.  Formålet er å bidra til økt samarbeid rundt brukeren/pasienten.  For at fastlegen skal ha oversikt over hvilke tjenester pasienten mottar fra pleie- og omsorgstjenesten skal opplysninger om dette sendes til fastlegen ved større endringer. Informasjon skal kun sendes hvis brukeren/pasienten har hjemmesykepleie og praktisk bistand.   Merk: Pasienten kan reservere seg mot at opplysningene sendes til fastlegen.    
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="po:InformasjonOmForsendelsen"/>
+				<element ref="po:TilleggsopplysningPasient" minOccurs="0"/>
+				<element ref="po:ParorendeForesatt" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:KontaktpersonHelsepersonell" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:AnsvarForRapport" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:SendtDokument" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:EksisterendeTjeneste" maxOccurs="unbounded"/>
+				<element ref="po:AssistertKommunikasjon" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

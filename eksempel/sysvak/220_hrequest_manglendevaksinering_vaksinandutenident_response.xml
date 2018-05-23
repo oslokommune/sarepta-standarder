@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MsgHead xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd" xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24">
+  <MsgInfo>
+    <Type V="HENDELSERESPONSE" DN="HENDELSERESPONSE" />
+    <MIGversion>v1.2 2006-05-24</MIGversion>
+    <GenDate>2007-12-18T16:40:08</GenDate>
+    <MsgId>11dae509-978a-4df1-b9b1-bca2cee99de9</MsgId>
+    <ConversationRef>
+      <RefToParent>B107F8CE-E421-4e30-8283-5254C8B64238</RefToParent>
+      <RefToConversation>B107F8CE-E421-4e30-8283-5254C8B64238</RefToConversation>
+    </ConversationRef>
+    <Sender>
+      <Organisation>
+        <OrganisationName>NASJONALT FOLKEHELSEINSTITUTT</OrganisationName>
+        <Ident>
+          <Id>983744516</Id>
+          <TypeId V="ENH" S="2.16.578.1.12.4.1.1.9051" DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" />
+        </Ident>
+      </Organisation>
+    </Sender>
+    <Receiver>
+      <Organisation>
+        <OrganisationName>AVSENDER HELSEENHET</OrganisationName>
+        <Ident>
+          <Id>123456789</Id>
+          <TypeId V="ENH" S="2.16.578.1.12.4.1.1.9051" DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" />
+        </Ident>
+      </Organisation>
+    </Receiver>
+  </MsgInfo>
+  <Document>
+    <RefDoc>
+      <MsgType V="XML" DN="XML instans" />
+      <Content>
+        <HendelseResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.kith.no/xmlstds/sysvak/hendelseresponse/2008-01-01" xsi:schemaLocation="http://www.kith.no/xmlstds/sysvak/hendelseresponse/2008-01-01 HendelseResponse.xsd">
+          <Behandlingsresultat>
+            <HarValideringsFeil xmlns="http://www.kith.no/xmlstds/sysvak">false</HarValideringsFeil>
+            <HarValideringsAdvarsel xmlns="http://www.kith.no/xmlstds/sysvak">false</HarValideringsAdvarsel>
+            <HarValideringsInformasjon xmlns="http://www.kith.no/xmlstds/sysvak">false</HarValideringsInformasjon>
+          </Behandlingsresultat>
+        </HendelseResponse>
+      </Content>
+    </RefDoc>
+  </Document>
+</MsgHead>

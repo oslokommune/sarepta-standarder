@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MsgHead xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd" xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<MsgInfo>
+		<Type DN="Vurdering av arbeidsmulighet / sykmelding" V="SYKMELD"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2013-01-24T09:30:47.0Z</GenDate>
+		<MsgId>ab90ba10-e616-11dc-95ff-0800200c9a66</MsgId>
+		<ProcessingStatus V="T" DN="Opplæring"/>
+		<!-- NAV forventer verdi P - Produksjon her for meldinger som skal sendes i produksjon -->
+		<Sender>
+			<Organisation>
+				<OrganisationName>Køfri sykehus HF</OrganisationName>
+				<Ident>
+					<Id>974744570</Id>
+					<TypeId DN="Organisasjonsnummeret i Enhetsregister" S="2.16.578.1.12.4.1.1.9051" V="ENH"/>
+				</Ident>
+				<Ident>
+					<Id>2358</Id>
+					<TypeId DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Address>
+					<StreetAdr>Hovedgata 3</StreetAdr>
+					<PostalCode>3333</PostalCode>
+					<City>Nesset</City>
+				</Address>
+				<TeleCom>
+					<TeleAddress V="tel:73868000"/>
+				</TeleCom>
+				<Organisation>
+					<OrganisationName>Kirurgisk poliklinikk</OrganisationName>
+					<Ident>
+						<Id>54704</Id>
+						<TypeId DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+					<Ident>
+						<Id>1051</Id>
+						<TypeId DN="Lokal identifikator for institusjoner" S="2.16.578.1.12.4.1.1.9051" V="LIN"/>
+					</Ident>
+					<Address>
+						<StreetAdr>Hovedgata 3</StreetAdr>
+						<PostalCode>3333</PostalCode>
+						<City>Nesset</City>
+					</Address>
+					<TeleCom>
+						<TeleAddress V="tel:99088077"/>
+					</TeleCom>
+				</Organisation>
+				<HealthcareProfessional>
+					<TypeHealthcareProfessional DN="Lege" V="LE"/>
+					<FamilyName>Koman</FamilyName>
+					<GivenName>Magnar</GivenName>
+					<Ident>
+						<Id>9144889</Id>
+						<TypeId DN="Helsepersonellnummer" S="2.16.578.1.12.4.1.1.8116" V="HPR"/>
+					</Ident>
+					<Ident>
+						<Id>04056600324</Id>
+						<TypeId DN="Fødselsnummer" S="2.16.578.1.12.4.1.1.8116" V="FNR"/>
+					</Ident>
+				</HealthcareProfessional>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>NAV DRIFT OG UTVIKLING</OrganisationName>
+				<Ident>
+					<Id>79768</Id>
+					<TypeId DN="HER-id" S="2.16.578.1.12.4.1.1.9051" V="HER"/>
+				</Ident>
+				<Ident>
+					<Id>990983291</Id>
+					<TypeId V="ENH" S="2.16.578.1.12.4.1.1.9051" DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)"/>
+				</Ident>
+			</Organisation>
+		</Receiver>
+		<Patient>
+			<FamilyName>Danser</FamilyName>
+			<GivenName>Line</GivenName>
+			<Ident>
+				<Id>13116900216</Id>
+				<TypeId DN="Fødselsnummer" S="2.16.578.1.12.4.1.1.8116" V="FNR"/>
+			</Ident>
+		</Patient>
+	</MsgInfo>
+	<Document>
+		<RefDoc>
+			<MsgType DN="XML-instans" V="XML"/>
+			<Content>
+				<Sykmelding xsi:schemaLocation="http://www.kith.no/xmlstds/sykmelding/2011-03-04 NAV-Sykmelding-2011-03-04.xsd" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns="http://www.kith.no/xmlstds/sykmelding/2011-03-04" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<Gjelder DN="Første vurdering" V="1"/>
+					<PersonArbeid>
+						<Navn>
+							<Etternavn>Danser</Etternavn>
+							<Fornavn>Line</Fornavn>
+						</Navn>
+						<Fodselsnummer>
+							<fk1:Id>13116900216</fk1:Id>
+							<fk1:TypeId DN="Fødselsnummer" S="2.16.578.1.12.4.1.1.8116" V="FNR"/>
+						</Fodselsnummer>
+						<Telefon>
+							<fk1:TeleAddress V="tel:55555555"/>
+						</Telefon>
+						<FlereArbeidsforhold>false</FlereArbeidsforhold>
+						<NavnFastlege>Magnar Koman</NavnFastlege>
+						<NavKontor>Kongsberg</NavKontor>
+						<Arbeidsforhold>
+							<NavnArbeidsgiver>Gilde</NavnArbeidsgiver>
+							<PrimartArbeidsforhold DN="Ja" V="1"/>
+							<Yrkesbetegnelse>Slakter</Yrkesbetegnelse>
+							<AntallTimer>37.5</AntallTimer>
+							<Stillingsprosent>100</Stillingsprosent>
+						</Arbeidsforhold>
+					</PersonArbeid>
+					<MedisinskVurdering>
+						<Svangerskap>true</Svangerskap>
+						<Ja>
+							<AktivitetMuligFra>2008-02-20</AktivitetMuligFra>
+						</Ja>
+						<Diagnoser>
+							<Diagnose DN="Svangerskap/fødsel plager IKA" S="2.16.578.1.12.4.1.1.7170" V="W29" OT="Svangerskapssymptomer"/>
+							<Sortering>0</Sortering>
+						</Diagnoser>
+					</MedisinskVurdering>
+					<AvventendeSykmelding>
+						<FraDato>2008-02-20</FraDato>
+						<TilDato>2008-03-07</TilDato>
+					</AvventendeSykmelding>
+					<VeiledningArbeidsgiver>
+						<Beskrivelse>Pasienten gravid i 6. måned med forventet temindato 15.05.08. Dersom pasienten kan settes til andre oppgaver som ikke krevet fysiske belastninger, kan muligens sykmelding unngås. Tilrettelegging vil være påkrevd i resten av svangerskapet for å hindre at pasienten må sykmeldes før svangerskapspermisjon. </Beskrivelse>
+						<Tilbakemelding>true</Tilbakemelding>
+					</VeiledningArbeidsgiver>
+					<DatoUnderskrift>2008-05-26</DatoUnderskrift>
+				</Sykmelding>
+			</Content>
+		</RefDoc>
+	</Document>
+	<!-- Eksempel på ds:Signature utelatt -->
+</MsgHead>

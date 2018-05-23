@@ -1,0 +1,2368 @@
+
+(object Petal
+    version    	50
+    _written   	"Rose 8.3.0407.2800"
+    charSet    	0)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"4AEB19A8019C"
+    enforceClosureAutoLoad 	FALSE
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	0
+	gridY      	0
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	3
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"4AEB19A8019E"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"4AEB19A802E4"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"4AEB19A8019D"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"4AEB19A8019F"
+	logical_models 	(list unit_reference_list
+	    (object Class_Category "Elektronisk innrapportering av trekk"
+		quid       	"4AEB1ADA0151"
+		exportControl 	"Public"
+		logical_models 	(list unit_reference_list
+		    (object Class "Hodemelding"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Level"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	""))
+			quid       	"4AEB1F1F00E3"
+			module     	"Component View::AllClasses (subprog spec)"
+			quidu      	"4B01CC160006")
+		    (object Class "Innrapportering trekk"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"InnrapporteringTrekk")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Level"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	""))
+			quid       	"4AEB1F3803E7"
+			stereotype 	"top"
+			visible_modules 	(list dependency_list
+			    (object Dependency_Relationship
+				quid       	"4B28E3F6036F"
+				supplier   	"Logical View::Hodemelding"
+				quidu      	"4B28E3B5007E"))
+			realized_interfaces 	(list realize_rel_list
+			    (object Realize_Relationship
+				quid       	"4B01B82600E1"
+				supplier   	"Logical View::Elektronisk innrapportering av trekk::Hodemelding"
+				quidu      	"4AEB1F1F00E3"))
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "aksjonskode"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"Aksjonskode")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	(value Text 
+|Forslag kodeverk: (kortversjon nødvendig)
+|NY – Skal opprette nytt trekk vedtak i NAV.
+|ENDR – Endring av eksisterende trekk vedtak i NAV.
+|KANS – Kansellerer en periode eller hele trekkvedtaket, styres av periode f.o.m og t.om.
+|OPPH – Setter trekket til opphørt, fremtidige beregninger vil ikke beregne trekk på vedtaket for perioder etter opphørsdato.
+					)))
+				quid       	"4AEB4DA8035B"
+				documentation 	"Ny, endring, kansellering eller opphør"
+				type       	"CS"))
+			module     	"Component View::AllClasses (subprog spec)"
+			quidu      	"4B01CC160006")
+		    (object Class "Identifisering"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"Identifisering")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	""))
+			quid       	"4AEB218002D3"
+			documentation 	
+|Identifisering gjøres ved enten NAVs interne trekk ID eller av kombinasjon av kreditors trekk ID og enten kreditors orgnr. eller kreditor ID TSS.
+|- Ved aksjonskode NY må kreditors trekkvedtak ID være utfylt.
+|- Ved aksjonskode ENDR, KANS eller OPPH må NAVs interne trekk ID være utfylt, evt. kreditors trekk ID hvis ikke NAVs interne trekk ID er mottatt tidligere.
+|- Når både kreditors trekk ID og NAVs interne trekk ID er utfylt er det kun sistnevnte ID som benyttes.
+|
+			
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "kreditors trekk-ID"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"KreditorTrekkId")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"0..1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"4AEB4D7E0310"
+				type       	"string")
+			    (object ClassAttribute "NAVs trekk-ID"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"NAVTrekkId")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"0..1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"4AEB4D8F0373"
+				type       	"string")
+			    (object ClassAttribute "debitors ID"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"DebitorOffnr")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"4B01B3580312"
+				documentation 	"Debitors offnr må alltid fylles ut, dette vil i de fleste tilfeller være en persons fødselsnr, D-nr eller et organisasjonsnr."
+				type       	"Identifikator"
+				quidu      	"43201FF70007"))
+			module     	"Component View::AllClasses (subprog spec)"
+			quidu      	"4B01CC160006")
+		    (object Class "Periode"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"Periode")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	""))
+			quid       	"4B01B38B0254"
+			documentation 	
+|Periode f.o.m. dato må alltid oppgis, dette er dato trekket gjelder fra. Det kan også angis hvor lenge beløpet skal trekkes, dette angis i Periode t.o.m. dato, men denne oppgis ikke hvis trekket skal løpe uten sluttdato. Ved aksjonskode KANS vil Periode f.o.m. dato og Periode t.o.m. dato angi hvilken periode trekket skal kanselleres for, og ved aksjonskode OPPH vil Periode f.o.m. dato angi fra hvilken dato trekket er opphørt.
+|Disse datoene er i forhold til hvilke perioder av ytelsene trekket er gyldig for, og ikke når trekket blir foretatt. F eks kan et trekk kunne trekkes i ytelser for mai, selv om ytelsen blir utbetalt i september. Da vil Periode f.o.m. dato være 01.05.09 og Periode t.o.m. dato være 31.05.09.
+|Viktig å merke seg at alle månedstrekk skal ha Periode f.o.m. dato lik første i måneden trekket første gang skal trekkes og Periode t.o.m. dato skal være den siste i den måneden trekket siste gang skal trekkes.
+|Både Periode t.o.m. dato og Gyldig t.o.m. dato kan forekomme. Periode f.o.m. dato og Periode t.o.m. dato angir hvilken periode trekket skal benyttes, mens Gyldig t.o.m. dato angir når trekket er foreldet. Dvs at trekket ikke vil bli benyttet på etterbetalinger for perioden etter Gyldig t.o.m. dato, selv om Gyldig t.o.m. dato inntreffer før Periode t.o.m. dato.
+			
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "periode f.o.m. dato"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"PeriodeFomDato")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"4B01B3C40371"
+				type       	"date")
+			    (object ClassAttribute "periode t.o.m. dato"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"PeriodeTomDato")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"0..1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"4B01B3CE02C5"
+				type       	"date")
+			    (object ClassAttribute "gyldig t.o.m. dato"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"GyldigTomDato")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"0..1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"4B01B3D80229"
+				documentation 	"I datoen Gyldig t.o.m. dato kan det oppgis hvor lenge trekket er gyldig, beregninger utført etter denne dato vil ikke justere/endre trekket selv om det beregnes for perioder innenfor trekkvedtakets periode. F.eks kan dette være den datoen hvor trekkvedtaket vil være foreldet."
+				type       	"date"))
+			module     	"Component View::AllClasses (subprog spec)"
+			quidu      	"4B01CC160006")
+		    (object Class "Kreditor"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "Kreditor"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	""))
+			quid       	"4B01B43C0261"
+			documentation 	
+|Kreditor identifiseres enten ved Kreditor ID TSS (NAVs interne samhandler ident) eller ved kreditors orgnr sammen med kreditors navn, adresse og kontonr. Kreditor ID TSS er foretrukket. 
+|Hvis NAV ikke kan identifisere kreditor automatisk ved hjelp av kreditors orgnr, navn, adresse og ktonr, vil behandlingen hos NAV måtte gjøres manuelt og saksbehandlingstid må påregnes. 
+|Om Kreditor ID TSS er oppgitt er det den som vil bli brukt. Kreditor ID TSS overstyrer alle kreditor-opplysninger med unntak av KID og referanse som lagres på trekkvedtaket. Dette vil si at for eksempel det ktonr som ligger i TSS blir benyttet i stedet for det ktonr som oppgis i meldingen.
+|Kreditors referanse kan oppgis hvis ønskelig, denne vil komme på trekkoppgjørsliste hvis ikke KID er oppgitt.
+			
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "ID TSS"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"KreditorIdTSS")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"0..1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"4B01B44D0332"
+				type       	"string")
+			    (object ClassAttribute "organisasjonsnr"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"KreditorOrgnr")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"0..1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"4B01B4580237"
+				type       	"Identifikator"
+				quidu      	"43201FF70007")
+			    (object ClassAttribute "navn"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"KreditorNavn")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"0..1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"4B01B46703C6"
+				type       	"string")
+			    (object ClassAttribute "adresse"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"KreditorAdresse")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"0..1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"4B01B4740132"
+				type       	"Adresse"
+				quidu      	"431EAC1E001B")
+			    (object ClassAttribute "referanse"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"KreditorRef")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"0..1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"4B01B47B009B"
+				type       	"string")
+			    (object ClassAttribute "kontonr"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"KreditorKontonr")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"0..1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"4B01B4820043"
+				type       	"string")
+			    (object ClassAttribute "KID"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"KreditorKID")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"0..1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"4B01B48B02C5"
+				type       	"string"))
+			module     	"Component View::AllClasses (subprog spec)"
+			quidu      	"4B01CC160006")
+		    (object Class "Trekk"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "Trekk"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	""))
+			quid       	"4B01B4A202B1"
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "Kode trekktype"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"KodeTrekktype")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	(value Text 
+|Utkast kodeverk:
+|VEDE – Vederlagstrekk, benyttes av kommunene ifm institusjonsopphold
+|FAGF – Fagforeningstrekk
+|KRED – Kreditor trekk
+|PSKT – Påleggstrekk skatt
+|RSOS – Refusjonskrav fra sosialkontor
+|BSKT – Kreditor disponerer
+					)))
+				quid       	"4AEB4DAF01F9"
+				type       	"CS")
+			    (object ClassAttribute "Kode trekk alternativ"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"KodeTrekkAlternativ")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	(value Text 
+|Utkast kodeverk:
+|SALP	- Saldotrekk som trekker oppgitt prosent av ytelsen
+|SALD	- Saldotrekk dagsats, beregnes ihht ytelses perioden
+|SALM - Saldotrekk månedsats
+|LOPP	- Løpende trekk som trekker oppgitt prosent av ytelsen
+|LOPD	- Løpende dagsats, beregnes ihht ytelses perioden
+|LOPM	- Løpende månedsats
+					)))
+				quid       	"4B01B4D503CB"
+				type       	"CS")
+			    (object ClassAttribute "Sats"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"Sats")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"0..1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"4B01B4DC023B"
+				documentation 	"Sats oppgis ihht trekkalternativet dvs i prosent, som dagsats eller månedsbeløp, dette feltet er påkrevd og skal være større enn 0 ved aksjonskode NY og ENDR."
+				type       	"double")
+			    (object ClassAttribute "Saldo"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"Saldo")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	"0..1")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	""))
+				quid       	"4B01B4E0031F"
+				documentation 	"Saldo er påkrevd og skal være større enn 0 når trekkalternativet er et saldotrekk."
+				type       	"MO"))
+			module     	"Component View::AllClasses (subprog spec)"
+			quidu      	"4B01CC160006")
+		    (object Association "$UNNAMED$0"
+			quid       	"4AEB4DDC01F1"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$1"
+				quid       	"4AEB4DDD02D9"
+				supplier   	"Logical View::Elektronisk innrapportering av trekk::Identifisering"
+				quidu      	"4AEB218002D3"
+				client_cardinality 	(value cardinality "1")
+				Containment 	"By Value"
+				is_navigable 	TRUE)
+			    (object Role "$UNNAMED$2"
+				quid       	"4AEB4DDD02E9"
+				supplier   	"Logical View::Elektronisk innrapportering av trekk::Innrapportering trekk"
+				quidu      	"4AEB1F3803E7"
+				client_cardinality 	(value cardinality "1")
+				Containment 	"By Value"
+				is_navigable 	TRUE
+				is_aggregate 	TRUE)))
+		    (object Association "$UNNAMED$3"
+			quid       	"4B01B3EC0322"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$4"
+				quid       	"4B01B3ED0330"
+				supplier   	"Logical View::Elektronisk innrapportering av trekk::Innrapportering trekk"
+				quidu      	"4AEB1F3803E7"
+				client_cardinality 	(value cardinality "1")
+				is_navigable 	TRUE
+				is_aggregate 	TRUE)
+			    (object Role "$UNNAMED$5"
+				quid       	"4B01B3ED0332"
+				supplier   	"Logical View::Elektronisk innrapportering av trekk::Periode"
+				quidu      	"4B01B38B0254"
+				client_cardinality 	(value cardinality "1")
+				Containment 	"By Value"
+				is_navigable 	TRUE)))
+		    (object Association "$UNNAMED$6"
+			quid       	"4B01B5AF01C2"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$7"
+				quid       	"4B01B5B00172"
+				supplier   	"Logical View::Elektronisk innrapportering av trekk::Innrapportering trekk"
+				quidu      	"4AEB1F3803E7"
+				client_cardinality 	(value cardinality "1")
+				is_navigable 	TRUE
+				is_aggregate 	TRUE)
+			    (object Role "$UNNAMED$8"
+				quid       	"4B01B5B00174"
+				supplier   	"Logical View::Elektronisk innrapportering av trekk::Kreditor"
+				quidu      	"4B01B43C0261"
+				client_cardinality 	(value cardinality "1")
+				Containment 	"By Value"
+				is_navigable 	TRUE)))
+		    (object Association "$UNNAMED$9"
+			quid       	"4B01B5B500DE"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$10"
+				quid       	"4B01B5B502B2"
+				supplier   	"Logical View::Elektronisk innrapportering av trekk::Innrapportering trekk"
+				quidu      	"4AEB1F3803E7"
+				client_cardinality 	(value cardinality "1")
+				is_navigable 	TRUE
+				is_aggregate 	TRUE)
+			    (object Role "$UNNAMED$11"
+				quid       	"4B01B5B502B4"
+				supplier   	"Logical View::Elektronisk innrapportering av trekk::Trekk"
+				quidu      	"4B01B4A202B1"
+				client_cardinality 	(value cardinality "1")
+				Containment 	"By Value"
+				is_navigable 	TRUE))))
+		logical_presentations 	(list unit_reference_list
+		    (object ClassDiagram "Main"
+			quid       	"4AEB1F14025B"
+			title      	"Main"
+			zoom       	100
+			max_height 	28350
+			max_width  	21600
+			origin_x   	0
+			origin_y   	0
+			items      	(list diagram_item_list
+			    (object ClassView "Class" "Logical View::Elektronisk innrapportering av trekk::Identifisering" @1
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				location   	(1885, 540)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@1
+				    location   	(1657, 434)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	456
+				    justify    	0
+				    label      	"Identifisering")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4AEB218002D3"
+				width      	474
+				height     	236
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::Elektronisk innrapportering av trekk::Periode" @2
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				location   	(383, 540)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@2
+				    location   	(150, 434)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	466
+				    justify    	0
+				    label      	"Periode")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4B01B38B0254"
+				width      	484
+				height     	236
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::Elektronisk innrapportering av trekk::Kreditor" @3
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				location   	(1142, 1197)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@3
+				    location   	(875, 991)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	534
+				    justify    	0
+				    label      	"Kreditor")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4B01B43C0261"
+				width      	552
+				height     	436
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::Elektronisk innrapportering av trekk::Innrapportering trekk" @4
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(1131, 544)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@4
+				    location   	(912, 510)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	438
+				    justify    	0
+				    label      	"Innrapportering trekk")
+				stereotype 	(object ItemLabel
+				    Parent_View 	@4
+				    location   	(912, 460)
+				    fill_color 	13434879
+				    anchor     	10
+				    nlines     	1
+				    max_width  	438
+				    justify    	0
+				    label      	"<<top>>")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4AEB1F3803E7"
+				width      	456
+				height     	192
+				autoResize 	TRUE)
+			    (object AssociationViewNew "$UNNAMED$0" @5
+				location   	(1503, 544)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				quidu      	"4AEB4DDC01F1"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$1" @6
+					Parent_View 	@5
+					location   	(387, 38)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"4AEB4DDD02D9"
+					client     	@5
+					supplier   	@1
+					vertices   	(list Points
+					    (1503, 544)
+					    (1648, 544))
+					line_style 	3
+					origin_attachment 	(1503, 544)
+					terminal_attachment 	(1648, 544)
+					label      	(object SegLabel @7
+					    Parent_View 	@6
+					    location   	(1633, 491)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"1"
+					    pctDist    	0.900000
+					    height     	54
+					    orientation 	0))
+				    (object RoleView "$UNNAMED$2" @8
+					Parent_View 	@5
+					location   	(387, 38)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"4AEB4DDD02E9"
+					client     	@5
+					supplier   	@4
+					vertices   	(list Points
+					    (1503, 544)
+					    (1359, 544))
+					line_style 	3
+					origin_attachment 	(1503, 544)
+					terminal_attachment 	(1359, 544)
+					label      	(object SegLabel @9
+					    Parent_View 	@8
+					    location   	(1373, 491)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"1"
+					    pctDist    	0.900000
+					    height     	54
+					    orientation 	1))))
+			    (object AssociationViewNew "$UNNAMED$3" @10
+				location   	(764, 544)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				quidu      	"4B01B3EC0322"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$4" @11
+					Parent_View 	@10
+					location   	(502, 0)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"4B01B3ED0330"
+					client     	@10
+					supplier   	@4
+					vertices   	(list Points
+					    (764, 544)
+					    (903, 544))
+					line_style 	3
+					origin_attachment 	(764, 544)
+					terminal_attachment 	(903, 544)
+					label      	(object SegLabel @12
+					    Parent_View 	@11
+					    location   	(888, 598)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"1"
+					    pctDist    	0.900000
+					    height     	54
+					    orientation 	1))
+				    (object RoleView "$UNNAMED$5" @13
+					Parent_View 	@10
+					location   	(502, 0)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"4B01B3ED0332"
+					client     	@10
+					supplier   	@2
+					vertices   	(list Points
+					    (764, 544)
+					    (625, 544))
+					line_style 	3
+					origin_attachment 	(764, 544)
+					terminal_attachment 	(625, 544)
+					label      	(object SegLabel @14
+					    Parent_View 	@13
+					    location   	(640, 598)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"1"
+					    pctDist    	0.900000
+					    height     	54
+					    orientation 	0))))
+			    (object AssociationViewNew "$UNNAMED$6" @15
+				location   	(1131, 809)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				quidu      	"4B01B5AF01C2"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$7" @16
+					Parent_View 	@15
+					location   	(-28, -238)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"4B01B5B00172"
+					client     	@15
+					supplier   	@4
+					vertices   	(list Points
+					    (1131, 809)
+					    (1131, 640))
+					line_style 	3
+					origin_attachment 	(1131, 809)
+					terminal_attachment 	(1131, 640)
+					label      	(object SegLabel @17
+					    Parent_View 	@16
+					    location   	(1180, 664)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"1"
+					    pctDist    	0.857988
+					    height     	49
+					    orientation 	1))
+				    (object RoleView "$UNNAMED$8" @18
+					Parent_View 	@15
+					location   	(-28, -238)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"4B01B5B00174"
+					client     	@15
+					supplier   	@3
+					vertices   	(list Points
+					    (1131, 809)
+					    (1131, 979))
+					line_style 	3
+					origin_attachment 	(1131, 809)
+					terminal_attachment 	(1131, 979)
+					label      	(object SegLabel @19
+					    Parent_View 	@18
+					    location   	(1163, 935)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"1"
+					    pctDist    	0.742969
+					    height     	32
+					    orientation 	0))))
+			    (object ClassView "Class" "Logical View::Elektronisk innrapportering av trekk::Trekk" @20
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				location   	(1867, 1175)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@20
+				    location   	(1631, 1044)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	472
+				    justify    	0
+				    label      	"Trekk")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4B01B4A202B1"
+				width      	490
+				height     	286
+				autoResize 	TRUE)
+			    (object AssociationViewNew "$UNNAMED$9" @21
+				location   	(1571, 825)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				quidu      	"4B01B5B500DE"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$10" @22
+					Parent_View 	@21
+					location   	(416, -765)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"4B01B5B502B2"
+					client     	@21
+					supplier   	@4
+					vertices   	(list Points
+					    (1571, 825)
+					    (1250, 825)
+					    (1250, 640))
+					line_style 	3
+					origin_attachment 	(1571, 825)
+					terminal_attachment 	(1250, 640)
+					label      	(object SegLabel @23
+					    Parent_View 	@22
+					    location   	(1302, 674)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"1"
+					    pctDist    	0.934545
+					    height     	52
+					    orientation 	1))
+				    (object RoleView "$UNNAMED$11" @24
+					Parent_View 	@21
+					location   	(416, -765)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"4B01B5B502B4"
+					client     	@21
+					supplier   	@20
+					vertices   	(list Points
+					    (1571, 825)
+					    (1869, 825)
+					    (1869, 1032))
+					line_style 	3
+					origin_attachment 	(1571, 825)
+					terminal_attachment 	(1869, 1032)
+					label      	(object SegLabel @25
+					    Parent_View 	@24
+					    location   	(1923, 980)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"1"
+					    pctDist    	0.900000
+					    height     	54
+					    orientation 	0))))
+			    (object CategoryView "Logical View::Hodemelding" @26
+				location   	(1128, 175)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@26
+				    location   	(955, 91)
+				    fill_color 	13434879
+				    nlines     	2
+				    max_width  	346
+				    justify    	0
+				    label      	"Hodemelding")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4B28E3B5007E"
+				width      	358
+				height     	180)
+			    (object DependencyView "" @27
+				stereotype 	TRUE
+				quidu      	"4B28E3F6036F"
+				client     	@4
+				supplier   	@26
+				vertices   	(list Points
+				    (1129, 447)
+				    (1128, 265))
+				line_style 	0)))))
+	    (object Class_Category "Felleskomponent 1"
+		is_unit    	TRUE
+		is_loaded  	FALSE
+		file_name  	"C:\\Users\\espens\\Documents\\My Dropbox\\KITH\\Nav Drift og Utvikling\\Maskinell innrapportering av trekk\\Modell\\Felleskomponent1.cat"
+		quid       	"47B56E6702FF")
+	    (object Class_Category "Hodemelding"
+		quid       	"4B28E3B5007E"
+		documentation 	"Hodemelding er beskrevet i KITH-rapport nr. 01/06"
+		exportControl 	"Public"
+		logical_models 	(list unit_reference_list)
+		logical_presentations 	(list unit_reference_list)))
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"4AEB19A802E5"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object CategoryView "Logical View::Elektronisk innrapportering av trekk" @28
+			location   	(284, 271)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@28
+			    location   	(66, 187)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	436
+			    justify    	0
+			    label      	"Elektronisk innrapportering av trekk")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"4AEB1ADA0151"
+			width      	448
+			height     	180)
+		    (object CategoryView "Logical View::Felleskomponent 1" @29
+			location   	(1034, 271)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@29
+			    location   	(812, 180)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	444
+			    justify    	0
+			    label      	"Felleskomponent 1")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"47B56E6702FF"
+			width      	456
+			height     	194)
+		    (object CategoryView "Logical View::Hodemelding" @30
+			location   	(1634, 271)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@30
+			    location   	(1490, 187)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	288
+			    justify    	0
+			    label      	"Hodemelding")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"4B28E3B5007E"
+			width      	300
+			height     	180)))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"4AEB19A8019F"
+	physical_models 	(list unit_reference_list
+	    (object module "AllClasses" "SubType" "Specification"
+		quid       	"4B01CC160006"
+		stereotype 	"Subprogram Specification"
+		language   	""
+		class      	"Logical View::Elektronisk innrapportering av trekk::Hodemelding"
+		quidu      	"4AEB1F1F00E3"
+		class      	"Logical View::Elektronisk innrapportering av trekk::Innrapportering trekk"
+		quidu      	"4AEB1F3803E7"
+		class      	"Logical View::Elektronisk innrapportering av trekk::Identifisering"
+		quidu      	"4AEB218002D3"
+		class      	"Logical View::Elektronisk innrapportering av trekk::Periode"
+		quidu      	"4B01B38B0254"
+		class      	"Logical View::Elektronisk innrapportering av trekk::Kreditor"
+		quidu      	"4B01B43C0261"
+		class      	"Logical View::Elektronisk innrapportering av trekk::Trekk"
+		quidu      	"4B01B4A202B1"
+		class      	"Logical View::Felleskomponent 1::Adresse"
+		quidu      	"431EAC1E001B"
+		class      	"Logical View::Felleskomponent 1::Telekommunikasjon"
+		quidu      	"43201E4602F4"
+		class      	"Logical View::Felleskomponent 1::Identifikator"
+		quidu      	"43201FF70007"))
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"4AEB19A802E3"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list)))
+	category   	"Logical View"
+	quidu      	"4AEB19A8019D")
+    process_structure 	(object Processes
+	quid       	"4AEB19A801A0"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"4AEB19A801A2"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	attributes 	(list Attribute_Set
+	    (object Attribute
+		tool       	"framework"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Model Integrator"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Web Publisher"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Version Control"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"KITH"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"KITH"
+			name       	"NullsOK"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH"
+			name       	"PrimaryKey"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Cardinality"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"RequirementCode"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ComponentType"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ShortName"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Origin"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Status"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Use"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Example"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Comment"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Codes"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ID"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"OrigOrg"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Author"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"PrevVersion"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ValidFrom"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Ordinal"
+			value      	0)
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Tooltip"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"FixedValue"
+			value      	"")))
+	    (object Attribute
+		tool       	"KITH"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"KITH"
+			name       	"RequirementCode"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ShortName"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Status"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Use"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Example"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Comment"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Codes"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Level"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ID"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"OrigOrg"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Author"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"PrevVersion"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ValidFrom"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Ordinal"
+			value      	0)))
+	    (object Attribute
+		tool       	"KITH"
+		name       	"default__Association"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Ordinal"
+			value      	0)))
+	    (object Attribute
+		tool       	"MOF"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"JCR"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"MOF"
+		name       	"default__Category"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"MOF"
+			name       	"uml2mof.hasImplicitReferences"
+			value      	"true")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"uml2mof.clusteredImport"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.supertypes"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_prefix"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_version"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"xmi.namespace"
+			value      	"")))
+	    (object Attribute
+		tool       	"JCR"
+		name       	"default__Category"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JCR"
+			name       	"java_prefix"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"java_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"c_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"versioning.package"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"imported.package"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"merged.package"
+			value      	"")))
+	    (object Attribute
+		tool       	"MOF"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"MOF"
+			name       	"uml2mof.corbaType"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"MOF"
+			name       	"uml2mof.repositoryId"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_version"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"xmi.enumerationUnprefix"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"uml2mof.evaluationPolicy"
+			value      	"deferred")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.constrainedElements"
+			value      	"")))
+	    (object Attribute
+		tool       	"JCR"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JCR"
+			name       	"java_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"c_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"cpp_substitute_type"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"cpp_substitute_base"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"xmi.externalizeOK"
+			value      	"true")))
+	    (object Attribute
+		tool       	"MOF"
+		name       	"default__Role"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.isChangeable"
+			value      	"true")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_version"
+			value      	"")))
+	    (object Attribute
+		tool       	"JCR"
+		name       	"default__Role"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JCR"
+			name       	"java_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"c_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"MOF"
+		name       	"default__Association"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.visibility"
+			value      	"public_vis")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"xmi.force_externalize"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_version"
+			value      	"")))
+	    (object Attribute
+		tool       	"JCR"
+		name       	"default__Association"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JCR"
+			name       	"java_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"c_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"MOF"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.multiplicity"
+			value      	"1")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"uml2mof.isOrdered"
+			value      	"false")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"uml2mof.isUnique"
+			value      	"false")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.isChangeable"
+			value      	"true")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"uml2mof.referencedEnd"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_version"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"xmi.defaultValue"
+			value      	"")))
+	    (object Attribute
+		tool       	"JCR"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JCR"
+			name       	"java_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"c_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"mof.object_name"
+			value      	"false")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"xmi.externalizeOK"
+			value      	"true")))
+	    (object Attribute
+		tool       	"MOF"
+		name       	"default__Operation"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.scope"
+			value      	"instance_level")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.isQuery"
+			value      	"false")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.return.multiplicity"
+			value      	"1")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.return.isOrdered"
+			value      	"false")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.return.isUnique"
+			value      	"false")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_version"
+			value      	"")))
+	    (object Attribute
+		tool       	"JCR"
+		name       	"default__Operation"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JCR"
+			name       	"java_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"c_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"cpp_virtual"
+			value      	"false")))
+	    (object Attribute
+		tool       	"MOF"
+		name       	"default__Param"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"MOF"
+			name       	"uml2mof.multiplicity"
+			value      	"1")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"uml2mof.isOrdered"
+			value      	"false")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"uml2mof.isUnique"
+			value      	"false")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.direction"
+			value      	"in_dir")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_version"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"xmi.defaultValue"
+			value      	"")))
+	    (object Attribute
+		tool       	"JCR"
+		name       	"default__Param"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JCR"
+			name       	"java_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"c_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"JCRMOF"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"UML"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Category"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"useJavaExceptions"
+			value      	"true")
+		    (object Attribute
+			tool       	"UML"
+			name       	"requiredItem"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"requiredItemType"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"DependencyStereotype"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"DependencyName"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"useSeparateDependencies"
+			value      	"true")
+		    (object Attribute
+			tool       	"UML"
+			name       	"exportableUnit"
+			value      	"true")
+		    (object Attribute
+			tool       	"UML"
+			name       	"hasImportedUUIDs"
+			value      	"false")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"useJavaExceptions"
+			value      	"true")
+		    (object Attribute
+			tool       	"UML"
+			name       	"secondaryStereotype"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"requiredItem"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"requiredItemType"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"DependencyStereotype"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"DependencyName"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"useSeparateDependencies"
+			value      	"true")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Role"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"changeability"
+			value      	"changeable")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Association"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"multiplicity"
+			value      	"1")
+		    (object Attribute
+			tool       	"UML"
+			name       	"uml2.isOrdered"
+			value      	"false")
+		    (object Attribute
+			tool       	"UML"
+			name       	"uml2.isUnique"
+			value      	"false")
+		    (object Attribute
+			tool       	"UML"
+			name       	"DependencySupplier"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"DependencyStereotype"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"DependencyName"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"useSeparateDependencies"
+			value      	"true")
+		    (object Attribute
+			tool       	"UML"
+			name       	"changeability"
+			value      	"changeable")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Param"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"direction"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Operation"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"returnDefaultValue"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"MethodLanguage"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"MethodBody"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"useSeparateDependencies"
+			value      	"true")
+		    (object Attribute
+			tool       	"UML"
+			name       	"DependencyName"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Module"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Subsystem"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"exportableUnit"
+			value      	"true")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Link"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__ObjectInstance"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__StateMachine"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__ActivityModel"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__SwimLane"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__UseCase"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"requiredItem"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"requiredItemType"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"DependencyStereotype"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"DependencyName"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"useSeparateDependencies"
+			value      	"true")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__StateTransition"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"SendActionName"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"ActionScriptLanguage"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"ActionScriptBody"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Model"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Dependency"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Generalization"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"JCRUML"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"JMI"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"JMI"
+		name       	"default__Category"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.substituteName"
+			value      	"")
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.packagePrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.methodPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.javaDocs"
+			value      	"")
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.ignoreLifecycle"
+			value      	"")))
+	    (object Attribute
+		tool       	"JMI"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.substituteName"
+			value      	"")
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.javaDocs"
+			value      	"")
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.useObjectType"
+			value      	"")))
+	    (object Attribute
+		tool       	"JMI"
+		name       	"default__Role"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.substituteName"
+			value      	"")))
+	    (object Attribute
+		tool       	"JMI"
+		name       	"default__Association"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.substituteName"
+			value      	"")))
+	    (object Attribute
+		tool       	"JMI"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.substituteName"
+			value      	"")))
+	    (object Attribute
+		tool       	"JMI"
+		name       	"default__Operation"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.substituteName"
+			value      	"")
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.javaDocs"
+			value      	"")))
+	    (object Attribute
+		tool       	"JMI"
+		name       	"default__Param"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.substituteName"
+			value      	"")))
+	    (object Attribute
+		tool       	"MOF14"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"UML14"
+		name       	"HiddenTool"
+		value      	FALSE))
+	quid       	"4AEB19A801A1"))

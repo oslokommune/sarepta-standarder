@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M28 Endring av multidoseansvarlig lege
+2012-06-11
+ -->
+<schema xmlns:m28="http://www.kith.no/xmlstds/eresept/m28/2012-06-11" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:m274="http://www.kith.no/xmlstds/eresept/m274/2012-06-11" targetNamespace="http://www.kith.no/xmlstds/eresept/m28/2012-06-11" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds/eresept/m274/2012-06-11" schemaLocation="ER-M274-2012-06-11.xsd"/>
+	<element name="M28">
+		<complexType>
+			<sequence>
+				<element name="AktivFra" type="date"/>
+				<element ref="m274:Multidoselege"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

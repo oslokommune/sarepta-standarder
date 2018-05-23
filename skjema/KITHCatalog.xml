@@ -24,12 +24,6 @@ Catalog.xsd">
 	<public uri="felleskomponenter/personer-2014-03-28.xsd" publicId="http://www.kith.no/xmlstds/person/2014-03-28" />
 	<public uri="felleskomponenter/iCalendar.xsd" publicId="urn:ietf:params:xml:ns:icalendar-2.0" />
 	<public uri="felleskomponenter/ER-KritiskInformasjon-2013-04-25.xsd" publicId="http://www.kith.no/xmlstds/eresept/ki/2013-04-25" />
-	<public uri="felleskomponenter/EPJEkstrakt.xsd" publicId="http://www.kith.no/xmlstds/epj/EPJEkstrakt/2008-02-20" />
-	<public uri="felleskomponenter/EPJTilleggsinfo.xsd" publicId="http://www.kith.no/xmlstds/epj/EPJTilleggsinfo/2008-02-20" />
-	<public uri="felleskomponenter/EPJ-cave-mv.xsd" publicId="http://www.kith.no/xmlstds/epj/epj1/2008-02-20" />
-	<public uri="felleskomponenter/EPJ-journalnotat-mv.xsd" publicId="http://www.kith.no/xmlstds/epj/epj2/2008-02-20" />
-	<public uri="felleskomponenter/EPJ-legemiddel-mv.xsd" publicId="http://www.kith.no/xmlstds/epj/epj3/2008-02-20" />
-	<public uri="felleskomponenter/EPJ-meta.xsd" publicId="http://www.kith.no/xmlstds/epj/meta/2008-02-20" />
 	
 
 	<!-- dialogmelding -->
@@ -48,6 +42,12 @@ Catalog.xsd">
 	<public uri="plo/v1.31/TverrfagligEpikrise.xsd" publicId="http://www.kith.no/xmlstds/po/TverrfagligEpikrise/2007-10-16" />
 	
 	<!-- PLO-meldinger v1.4 -->
+	<public uri="plo/v1.4/EPJEkstrakt.xsd" publicId="http://www.kith.no/xmlstds/epj/EPJEkstrakt/2008-02-20" />
+	<public uri="plo/v1.4/EPJTilleggsinfo.xsd" publicId="http://www.kith.no/xmlstds/epj/EPJTilleggsinfo/2008-02-20" />
+	<public uri="plo/v1.4/EPJ-cave-mv.xsd" publicId="http://www.kith.no/xmlstds/epj/epj1/2008-02-20" />
+	<public uri="plo/v1.4/EPJ-journalnotat-mv.xsd" publicId="http://www.kith.no/xmlstds/epj/epj2/2008-02-20" />
+	<public uri="plo/v1.4/EPJ-legemiddel-mv.xsd" publicId="http://www.kith.no/xmlstds/epj/epj3/2008-02-20" />
+	<public uri="plo/v1.4/EPJ-meta.xsd" publicId="http://www.kith.no/xmlstds/epj/meta/2008-02-20" />
 	<public uri="plo/v1.4/poKomponent.xsd" publicId="http://www.kith.no/xmlstds/po/poKomponent/2008-02-20" />
 	<public uri="plo/v1.4/Innleggelsesrapport.xsd" publicId="http://www.kith.no/xmlstds/po/Innleggelsesrapport/2008-02-20" />
 	<public uri="plo/v1.4/Konsultasjon.xsd" publicId="http://www.kith.no/xmlstds/po/Konsultasjon/2008-02-20" />

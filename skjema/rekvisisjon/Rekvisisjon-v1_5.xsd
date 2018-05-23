@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Versjon 1.5 2008-12-01
+Endringer fra versjon 1.4 til versjon 1.5:
+- Endret tegnsett til UTF-8
+- Endret namespace til http://www.kith.no/xmlstds/rekvisisjon/2008-12-01
+- Nytt element <element name="ComMethod" type="kith:CS" minOccurs="0"/> under <Requester> og <ServProvider>
+- Nytt element <element name="ServProvId" type="kith:ST" minOccurs="0"/> under <ServReq>
+- Nytt element <element name="IdByServProv" type="kith:ST" minOccurs="0"/> under <AnalysedSubject>
+- Lagt til flere nye elemnet under <RefDoc> for å være kompatibel med Hodemelding, epikrise v1.1 og henvisning v1.0
+- Endret datatype fra for RefDoc/Id fra ST til string for å være kompatibel med MsgHead-v1_2.xsd
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:kith="http://www.kith.no/xmlstds" xmlns:lso="http://www.kith.no/xmlstds/rekvisisjon/2008-12-01" targetNamespace="http://www.kith.no/xmlstds/rekvisisjon/2008-12-01" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="http://www.kith.no/xmlstds/kith.xsd"/>
+	<!-- LEVEL 1 -->
+	<!-- Class: Rekvisisjonsmelding -->
+	<element name="Message">
+		<annotation>
+			<documentation>
+         En melding bestående av en rekvisisjon.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Type" type="kith:CS"/>
+				<element name="MsgVersion" type="kith:ST" minOccurs="0"/>
+				<element name="MIGversion" type="kith:ST"/>
+				<element name="GenDate" type="kith:TS"/>
+				<element name="MsgId" type="kith:ST"/>
+				<element name="Status" type="kith:CS" minOccurs="0"/>
+				<element ref="lso:ServReq" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 2 -->
+	<!-- Class: Rekvisisjon -->
+	<element name="ServReq">
+		<annotation>
+			<documentation>
+         Rekvirering av en medisinsk tjeneste. 
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="ServType" type="kith:CS"/>
+				<element name="IssueDate" type="kith:TS"/>
+				<element name="PaymentCat" type="kith:CS" minOccurs="0"/>
+				<element name="ReqComment" type="kith:ST" minOccurs="0"/>
+				<element name="Ack" type="kith:CS" minOccurs="0"/>
+				<element name="MsgDescr" type="kith:CS"/>
+				<element name="Id" type="kith:ST"/>
+				<element name="ServProvId" type="kith:ST" minOccurs="0"/>
+				<element name="RequestedDateReport" type="kith:TS" minOccurs="0"/>
+				<element name="RequestedPrioReport" type="kith:CS" minOccurs="0"/>
+				<element name="NoReport" type="kith:BL" minOccurs="0"/>
+				<element name="LevelOfDetail" type="kith:ST" minOccurs="0"/>
+				<element name="EscortRequired" type="kith:CS" minOccurs="0"/>
+				<element name="Reservation" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="Permission" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+				<choice>
+					<!-- XOR Rekvisisjon -->
+					<element ref="lso:Patient" minOccurs="0"/>
+					<element ref="lso:Material" minOccurs="0"/>
+					<element ref="lso:Animal" minOccurs="0"/>
+				</choice>
+				<element ref="lso:ServProvider"/>
+				<element ref="lso:Requester"/>
+				<element ref="lso:PaymentResponsible" minOccurs="0"/>
+				<element ref="lso:CopyDest" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="lso:RefDoc" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="lso:ReasonAsText" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="lso:Comment" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="lso:ReqInvestigation" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 3 -->
+	<!-- Class: Kommentar til rekvisisjon -->
+	<element name="Comment">
+		<annotation>
+			<documentation>
+         Rekvirentens kommentar til rekvisisjonen eller andre opplysninger som ikke er begrunnelse for rekvisisjonen med angivelse av type kommentar dette er.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Heading" type="kith:CS" minOccurs="0"/>
+				<element name="TextResultValue" type="kith:ST" minOccurs="0"/>
+				<element name="TextCode" type="kith:CV" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Begrunnelse for rekvisisjon -->
+	<element name="ReasonAsText">
+		<annotation>
+			<documentation>
+         Begrunnelse for rekvisisjonen som fri tekst eller skjemaspesifikke begrunnelser (f.eks. for cytologi).   Strukturerte kliniske opplysninger spesifiseres i klassen "Kliniske opplysninger" .
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Heading" type="kith:CS" minOccurs="0"/>
+				<element name="TextResultValue" type="anyType" minOccurs="0"/>
+				<element name="TextCode" type="kith:CV" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Pasient -->
+	<element name="Patient">
+		<annotation>
+			<documentation>
+         Angir opplysninger om en pasient.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="BasisForHealthServices" type="kith:CS" minOccurs="0"/>
+				<element name="Sex" type="kith:CS" minOccurs="0"/>
+				<element name="DateOfBirth" type="kith:TS" minOccurs="0"/>
+				<element name="DateOfDeath" type="kith:TS" minOccurs="0"/>
+				<element name="Name" type="kith:ST" minOccurs="0"/>
+				<element name="IdByServProvider" type="kith:ST" minOccurs="0"/>
+				<element name="IdByRequester" type="kith:ST" minOccurs="0"/>
+				<element name="OffId" type="kith:ST"/>
+				<element name="TypeOffId" type="kith:CS"/>
+				<element name="Relation" type="kith:CS" minOccurs="0"/>
+				<element ref="lso:ResponsibleHcp" minOccurs="0"/>
+				<element ref="lso:AdmLocation" minOccurs="0"/>
+				<element ref="lso:AdditionalId" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="lso:Address" minOccurs="0"/>
+				<element ref="lso:InfItem" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Dyr -->
+	<element name="Animal">
+		<annotation>
+			<documentation>
+         Benyttes for å identifisere dyret hvis undersøkelsesobjektet er et dyr.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Sex" type="kith:CS" minOccurs="0"/>
+				<element name="Name" type="kith:ST" minOccurs="0"/>
+				<element name="NameOwner" type="kith:ST" minOccurs="0"/>
+				<element name="Species" type="kith:ST" minOccurs="0"/>
+				<element name="IdByServProvider" type="kith:ST" minOccurs="0"/>
+				<element name="IdByRequester" type="kith:ST" minOccurs="0"/>
+				<element name="Relation" type="kith:CS" minOccurs="0"/>
+				<element ref="lso:ResponsibleHcp" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Materiale -->
+	<element name="Material">
+		<annotation>
+			<documentation>
+         Benyttes for å beskrive et materiale hvis undersøkelsesobjektet ikke er en person eller et dyr.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="InvMaterial" type="kith:ST" minOccurs="0"/>
+				<element name="IdByServProvider" type="kith:ST" minOccurs="0"/>
+				<element name="IdByRequester" type="kith:ST" minOccurs="0"/>
+				<element name="Relation" type="kith:CS" minOccurs="0"/>
+				<element ref="lso:ResponsibleHcp" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Rekvirert undersøkelse -->
+	<element name="ReqInvestigation">
+		<annotation>
+			<documentation>
+         Beskriver en ønsket undersøkelse for et spesifikt undersøkelsesobjekt.  
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="ServType" type="kith:CS"/>
+				<element name="Purpose" type="kith:CS" minOccurs="0"/>
+				<element name="ReqDate" type="kith:TS" minOccurs="0"/>
+				<element name="Priority" type="kith:CS" minOccurs="0"/>
+				<element name="Comment" type="kith:ST" minOccurs="0"/>
+				<element ref="lso:Investigation" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="lso:StandingInv" minOccurs="0"/>
+				<element ref="lso:AnalysedSubject" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Henvisende instans -->
+	<element name="Requester">
+		<annotation>
+			<documentation>
+         Helsetjenesteenhet som henviser pasient til undersøkelse eller behandling.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Role" type="kith:CS" minOccurs="0"/>
+				<element name="ComMethod" type="kith:CS" minOccurs="0"/>
+				<element ref="lso:HCP"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Tjenesteyter -->
+	<element name="ServProvider">
+		<annotation>
+			<documentation>
+         Helsetjenesteenhet som yter tjenester i forbindelse med undersøkelse eller behandling av pasient.  
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Role" type="kith:CS" minOccurs="0"/>
+				<element name="ComMethod" type="kith:CS" minOccurs="0"/>
+				<element ref="lso:HCP"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Betalingsansvarlig -->
+	<element name="PaymentResponsible">
+		<annotation>
+			<documentation>
+         Helsetjenesteenhet som er ansvarlig for betalingen.  Benyttes kun når betalingsansvarlig ikke fremgår direkte fra attributtet betalingskategori i klassen Rekvisisjon. 
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Role" type="kith:CS" minOccurs="0"/>
+				<element name="TypeGuarantor" type="kith:ST"/>
+				<element ref="lso:HCP"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Kopimottaker -->
+	<element name="CopyDest">
+		<annotation>
+			<documentation>
+         Helsetjenesteenhet som får eller som skal ha kopi av et dokument eller melding.  En kopimottaker i en henvisnings- eller rekvisisjonsmelding kan både være den som får kopi av den aktuelle henvisningen/rekvisisjonen og den parten som skal ha kopi av den resulterende svarrapporten/epikrisen når denne foreligger.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Role" type="kith:CS" minOccurs="0"/>
+				<element ref="lso:CopyDestRole" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="lso:HCP"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Referert dokument -->
+	<element name="RefDoc">
+		<annotation>
+			<documentation>
+         Referanse/peker til det evt. vedlagte dokumentet. Dokumentet kan ligge direkte inkludert i innhold (Content), som et annet vedlegg i samme sending, eller finnes eksternt.  Når tilsvarende informasjon ligger i eksisterende dokumentet, skal verdiene hentes fra (samsvare med) tilsvarende verdier i dokumentet. Benyttes også for å referere til eventuelt bookingnummer.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="IssueDate" type="kith:TS" minOccurs="0"/>
+				<element name="MsgType" type="kith:CS"/>
+				<element name="Id" type="string" minOccurs="0"/>
+				<element name="MimeType" type="string" minOccurs="0"/>
+				<element name="Description" type="string" minOccurs="0"/>
+				<element name="Compression" type="kith:CS" minOccurs="0"/>
+				<choice>
+					<element name="FileReference" type="anyURI" minOccurs="0"/>
+					<element name="Content" minOccurs="0">
+						<complexType>
+							<complexContent>
+								<restriction base="anyType">
+									<sequence>
+										<any processContents="strict" minOccurs="0" maxOccurs="unbounded"/>
+									</sequence>
+								</restriction>
+							</complexContent>
+						</complexType>
+					</element>
+				</choice>
+				<element ref="lso:Booking" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 4 -->
+	<!-- Class: Klinisk opplysning -->
+	<element name="InfItem">
+		<annotation>
+			<documentation>
+         Opplysninger om en enkelt klinisk opplysning.   Hver enkelt opplysning gir opphav til en egen forekomst av denne klassen (og eventuelle underliggende spesialiseringer).
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="lso:Observation"/>
+				<element name="Type" type="kith:CS"/>
+				<element name="StartDateTime" type="kith:TS" minOccurs="0"/>
+				<element name="EndDateTime" type="kith:TS" minOccurs="0"/>
+				<element name="OrgDate" type="kith:TS" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Undersøkelse -->
+	<element name="Investigation">
+		<annotation>
+			<documentation>
+         Spesifikasjon av en undersøkelse. 
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Id" type="kith:CV" maxOccurs="unbounded"/>
+				<element name="Spec" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="Comment" type="kith:ST" minOccurs="0"/>
+				<element name="Priority" type="kith:CS" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Stående undersøkelse -->
+	<element name="StandingInv">
+		<annotation>
+			<documentation>
+         Opplysninger om en stående ordre vedrørende en enkelt undersøkelse. Dette innebærer at den rekvirerte undersøkelsen gjentas som angitt i attributtene i denne klassen.  Benyttes ikke for patologi eller røntgen.  
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="NumberOfTimes" type="kith:INT" minOccurs="0"/>
+				<element name="ScheduledStart" type="kith:TS" minOccurs="0"/>
+				<element name="ScheduledEnd" type="kith:TS" minOccurs="0"/>
+				<element name="CycleTime" type="kith:ST" minOccurs="0"/>
+				<element name="EndCondition" type="kith:ST" minOccurs="0"/>
+				<element name="Instructions" type="kith:ST" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Ansvarlig Helsetjenesteenhet -->
+	<element name="ResponsibleHcp">
+		<annotation>
+			<documentation>
+         Helsetjenesteenhet som er ansvarlig for behandlingen av en pasient, f.eks. institusjon der pasienten er innlagt.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Role" type="kith:CS" minOccurs="0"/>
+				<element name="Relation" type="kith:CS" minOccurs="0"/>
+				<element ref="lso:HCP"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Kopimottakerrolle -->
+	<element name="CopyDestRole">
+		<annotation>
+			<documentation>
+         Rolle til aktuelle kopimottaker (hvilken type melding/dokument parten skal ha kopi av).
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="MsgType" type="kith:CS"/>
+				<element name="ReqComMethod" type="kith:CS" minOccurs="0"/>
+				<element name="ActComMethod" type="kith:CS" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Oppholdssted -->
+	<element name="AdmLocation">
+		<annotation>
+			<documentation>
+         Institusjon/avdeling hvor et sykehusopphold finner sted. 
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Role" type="kith:CS" minOccurs="0"/>
+				<element name="StartDateTime" type="kith:TS" minOccurs="0"/>
+				<element name="EndDateTime" type="kith:TS" minOccurs="0"/>
+				<element name="AdmCat" type="kith:CS" minOccurs="0"/>
+				<element ref="lso:Location" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Bookingid -->
+	<element name="Booking">
+		<annotation>
+			<documentation>
+         Inneholder informasjon om øverste nivå på den organisatorisk enhet som tilbyr time.  Hvis den organsiatoriske enhet oppgis som en hierarkisk modell (f.eks. institusjon, avdeling, seksjon) skal nivåene under oppgis i klassen "Organisatorisk underenhet".   Informasjon om selve avtalen er knyttet til øverste nivå av organisatorisk enhet. 
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Name" type="kith:ST"/>
+				<element name="Id" type="kith:ST"/>
+				<element name="TypeId" type="kith:ST"/>
+				<element ref="lso:Appointment"/>
+				<element ref="lso:SubOrg" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 5 -->
+	<!-- Class: Annen klinisk opplysning -->
+	<element name="Observation">
+		<annotation>
+			<documentation>
+         Kliniske opplysninger.  Benyttes for å beskrive klinisk diagnose, funn, tidligere relevante undersøkelser, klinisk observasjon etc.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Description" type="anyType" minOccurs="0"/>
+				<element name="Comment" type="kith:ST" minOccurs="0"/>
+				<element name="CodedDescr" type="kith:CV" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Analysert objekt -->
+	<element name="AnalysedSubject">
+		<annotation>
+			<documentation>
+         Opplysninger om og beskrivelse av et prøvemateriale. Dette er vanligvis en prøve som er tatt eller skal tas fra undersøkelsesobjektet, men det kan også være en prøve som er avledet fra denne prøve, f.eks en bakteriekoloni fra den originale prøven eller et røntgenbilde fra pasienten. En prøve kan ha kun én avledet prøve.    Analysert objekt kan spesialiseres til Rekvirert analyseobjekt, Tatt annet objekt eller Tatt prøve.	
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence minOccurs="0">
+				<choice>
+					<element ref="lso:RequestedSubject"/>
+					<element ref="lso:CollectedSample"/>
+					<element ref="lso:CollectedStudyProduct"/>
+				</choice>
+				<element name="Type" type="kith:ST" minOccurs="0"/>
+				<element name="TypeCoded" type="kith:CV" minOccurs="0"/>
+				<element name="IdByRequester" type="kith:ST" minOccurs="0"/>
+				<element name="IdByServProv" type="kith:ST" minOccurs="0"/>
+				<element name="PreservMaterial" type="kith:ST" minOccurs="0"/>
+				<element name="Comment" type="kith:ST" minOccurs="0"/>
+				<element name="AnatomicalOrigin" type="kith:ST" minOccurs="0"/>
+				<element name="Number" type="kith:INT" minOccurs="0"/>
+				<element name="SampleCollInd" type="kith:CS" minOccurs="0"/>
+				<element name="SampleCollProc" type="kith:CV" minOccurs="0"/>
+				<element name="SampleHandling" type="kith:ST" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="lso:SubjectMeasures" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="lso:AnalysedSubject" minOccurs="0"/>
+				<element ref="lso:Pretreatment" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Tatt annet objekt -->
+	<element name="CollectedStudyProduct">
+		<annotation>
+			<documentation>
+         Beskriver et fysisk eller digitalt opptak av informasjon avledet fra en pasient som del av en diagnostisk tjeneste.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Type" type="kith:ST" minOccurs="0"/>
+				<element name="ProducedDate" type="kith:TS" minOccurs="0"/>
+				<element name="RefRelatedProd" type="kith:ST" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Tatt prøve -->
+	<element name="CollectedSample">
+		<annotation>
+			<documentation>
+         Benyttes for å identifisere en prøve som allerede er tatt.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="CollectedDate" type="kith:TS" minOccurs="0"/>
+				<element name="CollectorComment" type="kith:ST" minOccurs="0"/>
+				<element name="CollectorsCommentCoded" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="Logistics" type="kith:ST" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Rekvirert analyseobjekt -->
+	<element name="RequestedSubject">
+		<annotation>
+			<documentation>
+         Opplysninger om objekt som skal samles eller produseres som del av en ønsket undersøkelse.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Priority" type="kith:CS" minOccurs="0"/>
+				<element name="ReqDate" type="kith:TS" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Analysert objekts mål -->
+	<element name="SubjectMeasures">
+		<annotation>
+			<documentation>
+         Benyttes for å angi fysiske egenskaper til det analyserte objektet.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="TypeQuantity" type="kith:ST"/>
+				<element name="Quantity" type="kith:PQ"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Forbehandling -->
+	<element name="Pretreatment">
+		<annotation>
+			<documentation>
+         Spesifiserer forberedende behandling av undersøkelsesobjektet som prøven er tatt for.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Heading" type="kith:CS" minOccurs="0"/>
+				<element name="TextResultValue" type="kith:ST" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Helsetjenesteenhet -->
+	<element name="HCP">
+		<annotation>
+			<documentation>
+         Opplysninger om en helsetjenesteenhet.  En helsetjenesteenhet kan være en institusjon (eventuelt en avdeling ved en institusjon), en aktør (person) i helsevesenet eller en aktør ved en institusjon/avdeling, for eksempl praktiserende lege, sykehus, overlegen ved kirgurgisk avdeling på et sykehus.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<choice>
+					<element ref="lso:Inst"/>
+					<element ref="lso:HCProf"/>
+				</choice>
+				<element name="MedSpeciality" type="kith:CV" minOccurs="0"/>
+				<element ref="lso:Address" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Person i helsevesenet -->
+	<element name="HCProf">
+		<annotation>
+			<documentation>
+         Person i helsevesenet som er involvert direkte eller indirekte i å yte helsetjenester til en pasient.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Type" type="kith:CS" minOccurs="0"/>
+				<element name="Name" type="kith:ST" minOccurs="0"/>
+				<element name="Id" type="kith:ST" minOccurs="0"/>
+				<element name="TypeId" type="kith:CS" minOccurs="0"/>
+				<element ref="lso:AdditionalId" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Lokalitet -->
+	<element name="Location">
+		<annotation>
+			<documentation>
+         Opplysninger om fysisk lokasjon der sykehusoppholdet finner sted.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Type" type="kith:CS" minOccurs="0"/>
+				<element name="Description" type="kith:ST" minOccurs="0"/>
+				<element ref="lso:SubLocation" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="lso:Address" minOccurs="0"/>
+				<element ref="lso:Inst" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Avtale -->
+	<element name="Appointment">
+		<annotation>
+			<documentation>
+         Informasjon om selve avtalen (tidspunkt, ressurs og tjeneste). Denne informasjonen er alltid knyttet til øverste organisatoriske enhet som er oppgitt i klassen "Bookingid".
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="StartDateTime" type="kith:TS"/>
+				<element name="EndDateTime" type="kith:TS"/>
+				<element name="ResourceId" type="kith:ST"/>
+				<element name="Index" type="kith:INT"/>
+				<element name="Service" type="kith:CS"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 6 -->
+	<!-- Class: Institusjon -->
+	<element name="Inst">
+		<annotation>
+			<documentation>
+         Institusjon i helsevesenet
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Name" type="kith:ST" minOccurs="0"/>
+				<element name="Id" type="kith:ST" minOccurs="0"/>
+				<element name="TypeId" type="kith:CS" minOccurs="0"/>
+				<element ref="lso:Dept" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="lso:HCPerson" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="lso:AdditionalId" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Avdeling -->
+	<element name="Dept">
+		<annotation>
+			<documentation>
+         Opplysninger om avdeling.  Forutsetter at institusjon er angitt.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Type" type="kith:CS" minOccurs="0"/>
+				<element name="Name" type="kith:ST" minOccurs="0"/>
+				<element name="Id" type="kith:ST" minOccurs="0"/>
+				<element name="TypeId" type="kith:CS" minOccurs="0"/>
+				<element ref="lso:AdditionalId" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Person i organisasjon -->
+	<element name="HCPerson">
+		<annotation>
+			<documentation>
+         Person i helsevesenett som er del av en institusjon eller avdeling.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Name" type="kith:ST" minOccurs="0"/>
+				<element name="Id" type="kith:ST" minOccurs="0"/>
+				<element name="TypeId" type="kith:CS" minOccurs="0"/>
+				<element ref="lso:AdditionalId" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Sublokalitet -->
+	<element name="SubLocation">
+		<annotation>
+			<documentation>
+         Ytterligere spesifikasjon av aktuelle lokalitet for å angi f.eks. seksjon, sengepost, rom eller seng.  En forekomst av klassen for hver opplysning.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Type" type="kith:CS"/>
+				<element name="Place" type="kith:ST"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Adresse -->
+	<element name="Address">
+		<annotation>
+			<documentation>
+         Adresse.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Type" type="kith:CS"/>
+				<element name="StreetAdr" type="kith:ST" minOccurs="0"/>
+				<element name="PostalCode" type="kith:ST" minOccurs="0"/>
+				<element name="City" type="kith:ST" minOccurs="0"/>
+				<element name="County" type="kith:CS" minOccurs="0"/>
+				<element name="Country" type="kith:CS" minOccurs="0"/>
+				<element name="CityDistr" type="kith:CS" minOccurs="0"/>
+				<element name="TeleAddress" type="kith:URL" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Organisatorisk underenhet -->
+	<element name="SubOrg">
+		<complexType>
+			<sequence minOccurs="0">
+				<element name="Name" type="kith:ST"/>
+				<element name="Id" type="kith:ST"/>
+				<element name="TypeId" type="kith:ST"/>
+				<element ref="lso:SubOrg" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 7 -->
+	<!-- Class: Alternativ Id -->
+	<element name="AdditionalId">
+		<annotation>
+			<documentation>
+         Annen identifikasjon av organisatorisk enhet som denne er eller har vært kjent under.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Id" type="kith:ST"/>
+				<element name="Type" type="kith:CS"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

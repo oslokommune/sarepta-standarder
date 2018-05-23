@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>Behandlerkravmelding</Navn>
+	<Versjon>1.8.3</Versjon>
+	<Identifikator>BKM</Identifikator>
+	<Utgitt>03/2018</Utgitt>
+	<Ansvarlig>Helsedirektoratet</Ansvarlig>
+	<Status>Fastsatt som standard</Status>
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Behandlerkravmelding (BKM)</Beskrivelse>
+			<Referanse>http://ehelse.no/BKM</Referanse>
+		</Informasjon>
+	</MerInformasjon>
+	
+	
+
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>Behandlerkravmelding (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/Behandlerkravmelding/Behandlerkrav versjon 1.8.3.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Endringslogg for behandlerkravmelding (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/Behandlerkravmelding/Endringslogg for behandlerkrav.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+	<Skjemaer>
+		<Skjema>
+			<Referanse>skjema/Behandlerkravmelding/Behandlerkrav.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/bkm/2006-12-20</Namespace>
+		</Skjema>
+	</Skjemaer>
+	<Eksempler>
+		<Eksempel>
+			<Referanse>eksempel/Behandlerkravmelding/Behandlerkrav 1.78 LOM eksempel.xml</Referanse>
+		</Eksempel>
+	</Eksempler>
+</StandardMetadata>

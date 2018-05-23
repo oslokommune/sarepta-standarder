@@ -1,0 +1,6251 @@
+
+(object Petal
+    version    	50
+    _written   	"Rose 8.3.0407.2800"
+    charSet    	0)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"4AEB19A8019C"
+    enforceClosureAutoLoad 	FALSE
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	0
+	gridY      	0
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	3
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"4AEB19A8019E"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"4AEB19A802E4"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"4AEB19A8019D"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"4AEB19A8019F"
+	logical_models 	(list unit_reference_list
+	    (object Class_Category "Felleskomponent 1 v1.1"
+		is_unit    	TRUE
+		is_loaded  	FALSE
+		file_name  	"C:\\Users\\espens\\Documents\\My Dropbox\\KITH\\NAV Bistand elektronisk samhandling\\Modell\\Felleskomponent1 v1.1.cat"
+		quid       	"47B56E6702FF")
+	    (object Class_Category "Hodemelding"
+		quid       	"4B28E3B5007E"
+		documentation 	"Hodemelding er beskrevet i KITH-rapport nr. 01/06"
+		exportControl 	"Public"
+		logical_models 	(list unit_reference_list)
+		logical_presentations 	(list unit_reference_list))
+	    (object Class_Category "TOKT felleskomponenter"
+		quid       	"4B2B3DD20336"
+		exportControl 	"Public"
+		logical_models 	(list unit_reference_list
+		    (object Class "Abonnementstatus-type"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "AbonnementStatusType")))
+			quid       	"4B2B3F8C01B4"
+			stereotype 	"complexType"
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "statuskode"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Statuskode")))
+				quid       	"4B2B3FAA0331"
+				documentation 	"Abonnementstatus har en av følgende verdier: Aktiv, Inaktiv, Ingen data. "
+				type       	"CS")
+			    (object ClassAttribute "sist endret"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "0..1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "SistEndret")))
+				quid       	"4B2B3FD0003B"
+				documentation 	"Tidspunkt når abonnementet er opprettet eller sist endret."
+				type       	"dateTime")
+			    (object ClassAttribute "slutt dato"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "0..1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "SluttDato")))
+				quid       	"4B2B3FEF038C"
+				documentation 	"Dersom abonnementet er inaktivt sier sluttdato når abonnementet er avsluttet."
+				type       	"date"))
+			module     	"Component View::NAV-EBREV-2010-02-01.xsd"
+			quidu      	"4B2B75A2022F"
+			module     	"Component View::NAV-Pasientliste-2010-02-01.xsd"
+			quidu      	"4B61929902E1"
+			abstract   	TRUE))
+		logical_presentations 	(list unit_reference_list
+		    (object ClassDiagram "TOKT felleskomponenter"
+			quid       	"4B2B3F87004B"
+			title      	"TOKT felleskomponenter"
+			zoom       	100
+			max_height 	28350
+			max_width  	21600
+			origin_x   	0
+			origin_y   	0
+			items      	(list diagram_item_list
+			    (object ClassView "Class" "Logical View::TOKT felleskomponenter::Abonnementstatus-type" @1
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(312, 222)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	TRUE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@1
+				    location   	(69, 194)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	486
+				    justify    	0
+				    label      	"Abonnementstatus-type")
+				stereotype 	(object ItemLabel
+				    Parent_View 	@1
+				    location   	(69, 144)
+				    fill_color 	13434879
+				    anchor     	10
+				    nlines     	1
+				    max_width  	486
+				    justify    	0
+				    label      	"<<complexType>>")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4B2B3F8C01B4"
+				width      	504
+				height     	180
+				annotation 	8
+				autoResize 	TRUE)
+			    (object NoteView @2
+				location   	(1131, 218)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@2
+				    location   	(834, 62)
+				    fill_color 	13434879
+				    nlines     	6
+				    max_width  	559
+				    label      	"Realiseres i både NAV-EBREV-2010-02-01.xsd og NAV-Pasientliste-2010-02-01.xsd av praktiske årsaker")
+				fill_color 	13434879
+				width      	619
+				height     	325)
+			    (object AttachView "" @3
+				stereotype 	TRUE
+				client     	@1
+				supplier   	@2
+				vertices   	(list Points
+				    (564, 220)
+				    (821, 219))
+				line_style 	0)))))
+	    (object Class_Category "NAV Ebrev"
+		quid       	"4B2B50F60045"
+		exportControl 	"Public"
+		logical_models 	(list unit_reference_list
+		    (object Class_Category "Ebrev samhandleradresser"
+			quid       	"4B2B3DB701C0"
+			exportControl 	"Public"
+			logical_models 	(list unit_reference_list
+			    (object Class "Ebrev samhandleradresser"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "EbrevSamhandlerAdresser")))
+				quid       	"4B2B3E0D015D"
+				documentation 	"Svarmelding på HentSamhandlerAdresser. "
+				visible_modules 	(list dependency_list
+				    (object Dependency_Relationship
+					quid       	"4B2B423E00FA"
+					supplier   	"Logical View::Hodemelding"
+					quidu      	"4B28E3B5007E"))
+				module     	"Component View::NAV-EBREV-2010-02-01.xsd"
+				quidu      	"4B2B75A2022F")
+			    (object Class "Organisasjonsenhet"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Organisasjonsenhet")))
+				quid       	"4B2B3E3801E0"
+				documentation 	"En Samhandler kan ha en eller  flere avdelinger eller praksiser. Et Ebrev abonnement knyttes til en organisasjonsenhet med TSSID "
+				used_nodes 	(list uses_relationship_list
+				    (object Uses_Relationship
+					quid       	"4B2B405A0047"
+					supplier   	"Logical View::TOKT felleskomponenter::Abonnementstatus-type"
+					quidu      	"4B2B3F8C01B4"))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "organisasjonsnavn"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Orgnavn")))
+					quid       	"4B2B3E900231"
+					documentation 	"Navn på avdeling eller praksis. "
+					type       	"string")
+				    (object ClassAttribute "TSS-id"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "TSSId")))
+					quid       	"4B2B3EA8015D"
+					documentation 	"En ekstern id i Nav's samhandlersystem. Alle som samhandler med Nav  er registret   "
+					type       	"string")
+				    (object ClassAttribute "HER-id"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "0..1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "HerId")))
+					quid       	"4B2B3EB00379"
+					documentation 	"Løsningen er forberedt for bruk av HER-id. "
+					type       	"string")
+				    (object ClassAttribute "aktiv abonnement"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "AktivtAbonnement")))
+					quid       	"4B2B3EBB0106"
+					documentation 	"True når det er aktivt abonnement. "
+					type       	"boolean")
+				    (object ClassAttribute "abonnementstatus"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "0..1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "AbonnementStatus")))
+					quid       	"4B2B3EC7018B"
+					documentation 	"Dersom det  finens et aktivt abonnement vil AbonnementStatus inkluderes i meldingen. "
+					type       	"Abonnementstatus-type"
+					quidu      	"4B2B3F8C01B4")
+				    (object ClassAttribute "adresse"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "1..*"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Adresse")))
+					quid       	"4B2B3EDD021F"
+					documentation 	"En eller flere adresser som er registrert på organisasjonsenheten.  Adressen er inkludert for å nærmere identifisere organisasjonsenheten."
+					type       	"Adresse"
+					quidu      	"431EAC1E001B"))
+				module     	"Component View::NAV-EBREV-2010-02-01.xsd"
+				quidu      	"4B2B75A2022F")
+			    (object Association "$UNNAMED$0"
+				quid       	"4B2B3E7401EF"
+				roles      	(list role_list
+				    (object Role "$UNNAMED$1"
+					quid       	"4B2B3E7500C9"
+					supplier   	"Logical View::NAV Ebrev::Ebrev samhandleradresser::Ebrev samhandleradresser"
+					quidu      	"4B2B3E0D015D"
+					Containment 	"By Value"
+					is_aggregate 	TRUE)
+				    (object Role "$UNNAMED$2"
+					quid       	"4B2B3E7500CB"
+					supplier   	"Logical View::NAV Ebrev::Ebrev samhandleradresser::Organisasjonsenhet"
+					quidu      	"4B2B3E3801E0"
+					client_cardinality 	(value cardinality "1..*")
+					Containment 	"By Value"))))
+			logical_presentations 	(list unit_reference_list
+			    (object ClassDiagram "Ebrev samhandleradresser"
+				quid       	"4B2B3E1E02DB"
+				title      	"Ebrev samhandleradresser"
+				zoom       	100
+				max_height 	28350
+				max_width  	21600
+				origin_x   	0
+				origin_y   	0
+				items      	(list diagram_item_list
+				    (object ClassView "Class" "Logical View::NAV Ebrev::Ebrev samhandleradresser::Ebrev samhandleradresser" @4
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(511, 706)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@4
+					    location   	(235, 655)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	552
+					    justify    	0
+					    label      	"Ebrev samhandleradresser")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B2B3E0D015D"
+					width      	570
+					height     	126
+					annotation 	8
+					autoResize 	TRUE)
+				    (object ClassView "Class" "Logical View::NAV Ebrev::Ebrev samhandleradresser::Organisasjonsenhet" @5
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(539, 1130)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@5
+					    location   	(106, 949)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	866
+					    justify    	0
+					    label      	"Organisasjonsenhet")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B2B3E3801E0"
+					width      	884
+					height     	386
+					annotation 	8
+					autoResize 	TRUE)
+				    (object AssociationViewNew "$UNNAMED$0" @6
+					location   	(506, 852)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					quidu      	"4B2B3E7401EF"
+					roleview_list 	(list RoleViews
+					    (object RoleView "$UNNAMED$1" @7
+						Parent_View 	@6
+						location   	(-128, -170)
+						stereotype 	TRUE
+						quidu      	"4B2B3E7500C9"
+						client     	@6
+						supplier   	@4
+						vertices   	(list Points
+						    (506, 852)
+						    (506, 768))
+						line_style 	3
+						origin_attachment 	(506, 852)
+						terminal_attachment 	(506, 768))
+					    (object RoleView "$UNNAMED$2" @8
+						Parent_View 	@6
+						location   	(-128, -170)
+						font       	(object Font
+						    size       	10
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						stereotype 	TRUE
+						quidu      	"4B2B3E7500CB"
+						client     	@6
+						supplier   	@5
+						vertices   	(list Points
+						    (506, 852)
+						    (506, 937))
+						line_style 	3
+						origin_attachment 	(506, 852)
+						terminal_attachment 	(506, 937)
+						label      	(object SegLabel @9
+						    Parent_View 	@8
+						    location   	(556, 923)
+						    font       	(object Font
+							size       	10
+							face       	"Arial"
+							bold       	FALSE
+							italics    	FALSE
+							underline  	FALSE
+							strike     	FALSE
+							color      	0
+							default_color 	TRUE)
+						    anchor     	2
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	15
+						    justify    	0
+						    label      	"1..*"
+						    pctDist    	0.832117
+						    height     	50
+						    orientation 	0))))
+				    (object ClassView "Class" "Logical View::TOKT felleskomponenter::Abonnementstatus-type" @10
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(1532, 1127)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	TRUE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@10
+					    location   	(1289, 1071)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	486
+					    justify    	0
+					    label      	"Abonnementstatus-type")
+					stereotype 	(object ItemLabel
+					    Parent_View 	@10
+					    location   	(1289, 1021)
+					    fill_color 	13434879
+					    anchor     	10
+					    nlines     	1
+					    max_width  	486
+					    justify    	0
+					    label      	"<<complexType>>")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B2B3F8C01B4"
+					width      	504
+					height     	236
+					annotation 	8
+					autoResize 	TRUE)
+				    (object UsesView "" @11
+					stereotype 	TRUE
+					quidu      	"4B2B405A0047"
+					client     	@5
+					supplier   	@10
+					vertices   	(list Points
+					    (981, 1128)
+					    (1279, 1127))
+					line_style 	0)
+				    (object CategoryView "Logical View::Hodemelding" @12
+					location   	(506, 325)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@12
+					    location   	(333, 241)
+					    fill_color 	13434879
+					    nlines     	2
+					    max_width  	346
+					    justify    	0
+					    label      	"Hodemelding")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B28E3B5007E"
+					width      	358
+					height     	180)
+				    (object DependencyView "" @13
+					stereotype 	TRUE
+					quidu      	"4B2B423E00FA"
+					client     	@4
+					supplier   	@12
+					vertices   	(list Points
+					    (506, 643)
+					    (506, 415))
+					line_style 	3
+					origin_attachment 	(506, 643)
+					terminal_attachment 	(506, 415))))))
+		    (object Class_Category "Ebrev forespørsel"
+			quid       	"4AEB1ADA0151"
+			exportControl 	"Public"
+			logical_models 	(list unit_reference_list
+			    (object Class "Ebrev parametertype"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "EbrevParamType")))
+				quid       	"4B2B397C03CD"
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "Identifikasjon"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Ident")))
+					quid       	"4B2B399F03D3"
+					documentation 	"Samhandlers fødselsnummer( FNR) eller annen id skal alltid oppgis. "
+					type       	"Identifikator"
+					quidu      	"43201FF70007")
+				    (object ClassAttribute "TSS-id"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "0..1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "TSSId")))
+					quid       	"4B2B3A060365"
+					documentation 	"TSS id som returnert i svaret  fra HentSamhandlerAdresser skal oppgis."
+					type       	"string")
+				    (object ClassAttribute "HER-id"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "0..1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "HerId")))
+					quid       	"4B2B3A490081"
+					documentation 	"Meldingen er forberedt for HerId, men HerId er foreløpig ikke tatt i bruk."
+					type       	"string"))
+				module     	"Component View::NAV-EBREV-2010-02-01.xsd"
+				quidu      	"4B2B75A2022F"
+				abstract   	TRUE)
+			    (object Class "Ebrev forespørsel"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "EbrevForesporsel")))
+				quid       	"4B2B3A9A024D"
+				visible_modules 	(list dependency_list
+				    (object Dependency_Relationship
+					quid       	"4B2B3B990016"
+					supplier   	"Logical View::Hodemelding"
+					quidu      	"4B28E3B5007E"))
+				module     	"Component View::NAV-EBREV-2010-02-01.xsd"
+				quidu      	"4B2B75A2022F")
+			    (object Class "Hent samhandleradresser"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "HentSamhandlerAdresser")))
+				quid       	"4B2B3AD001A5"
+				documentation 	"Forespørsel om alle samhandlers adresser for alle registrerte avdelinger/praksiser. Returnerer med meldingen EbrevSamhandlerAdresser"
+				used_nodes 	(list uses_relationship_list
+				    (object Uses_Relationship
+					quid       	"4B6BF65C00F5"
+					supplier   	"Logical View::Felleskomponent 1 v1.1::Identifikator"
+					quidu      	"43201FF70007"))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "Identifikasjon"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	(value Text 
+|FNR/DNR/HPR/HNR brukes for helsepersonell
+|ENH brukes for organisasjoner
+						))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Ident"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Codes"
+						value      	(value Text "")))
+					quid       	"4B2B3BB8038C"
+					documentation 	"Identifikasjon. "
+					type       	"Identifikator"
+					quidu      	"43201FF70007"))
+				module     	"Component View::NAV-EBREV-2010-02-01.xsd"
+				quidu      	"4B2B75A2022F")
+			    (object Class "Start abonnement"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "StartAbonnement")))
+				quid       	"4B2B3ADC03A1"
+				documentation 	"Forspørsel om start av Abonnement på en organisasjonsenhet (avdeling/praksis) identifisert med en TSSId som oppgitt i EbrevSamhandlerAdresser. Svarer med en EbrevAbonnentStatus melding "
+				superclasses 	(list inheritance_relationship_list
+				    (object Inheritance_Relationship
+					quid       	"4B2B3B3601E5"
+					supplier   	"Logical View::NAV Ebrev::Ebrev forespørsel::Ebrev parametertype"
+					quidu      	"4B2B397C03CD"))
+				module     	"Component View::NAV-EBREV-2010-02-01.xsd"
+				quidu      	"4B2B75A2022F")
+			    (object Class "Stopp abonnement"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "StoppAbonnement")))
+				quid       	"4B2B3AFD0358"
+				documentation 	"Forspørsel om stopp av Abonnement på en organisasjonsenhet (avdeling/praksis) identifisert med en TSSId som oppgitt i EbrevSamhandlerAdresser. Svarer med en EbrevAbonnentStatus melding "
+				superclasses 	(list inheritance_relationship_list
+				    (object Inheritance_Relationship
+					quid       	"4B2B3B3803C8"
+					supplier   	"Logical View::NAV Ebrev::Ebrev forespørsel::Ebrev parametertype"
+					quidu      	"4B2B397C03CD"))
+				module     	"Component View::NAV-EBREV-2010-02-01.xsd"
+				quidu      	"4B2B75A2022F")
+			    (object Class "Hent abonnementstatus"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "HentAbonnementStatus")))
+				quid       	"4B2B3B0402A3"
+				documentation 	"Forspørsel om abonnement status på en organisasjonsenhet (avdeling/praksis) identifisert med en TSSId som oppgitt i EbrevSamhandlerAdresser. Svarer med en EbrevAbonnentStatus melding "
+				superclasses 	(list inheritance_relationship_list
+				    (object Inheritance_Relationship
+					quid       	"4B2B3B3B0106"
+					supplier   	"Logical View::NAV Ebrev::Ebrev forespørsel::Ebrev parametertype"
+					quidu      	"4B2B397C03CD"))
+				module     	"Component View::NAV-EBREV-2010-02-01.xsd"
+				quidu      	"4B2B75A2022F")
+			    (object Class "Test Ebrev"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "TestEbrev")))
+				quid       	"4B2B3B0F0208"
+				documentation 	"Forspørsel om å få tilsendt ett testbrev til en organisasjonsenhet (avdeling/praksis) identifisert med en TSSId som det abonneres på. Svarer umidelbart med en applikasjonskvittering. Deretter følger et test dokumentasynkront  i en egen melding"
+				superclasses 	(list inheritance_relationship_list
+				    (object Inheritance_Relationship
+					quid       	"4B2B3C1F00D8"
+					supplier   	"Logical View::NAV Ebrev::Ebrev forespørsel::Ebrev parametertype"
+					quidu      	"4B2B397C03CD"))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "Pasientens fødselsnummer"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "0..1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "PasientFnr")))
+					quid       	"4B2B3C2A02E5"
+					documentation 	"Når pasientens fødselsnummer (PasientFnr) er oppgitt vil testbrevet påføres pasientens fødselsnummer i retur og kan angis i pasientens Journal. "
+					type       	"string"))
+				module     	"Component View::NAV-EBREV-2010-02-01.xsd"
+				quidu      	"4B2B75A2022F")
+			    (object Association "$UNNAMED$3"
+				quid       	"4B2B3C7C0107"
+				roles      	(list role_list
+				    (object Role "$UNNAMED$4"
+					quid       	"4B2B3C7D0056"
+					supplier   	"Logical View::NAV Ebrev::Ebrev forespørsel::Ebrev forespørsel"
+					quidu      	"4B2B3A9A024D"
+					is_aggregate 	TRUE)
+				    (object Role "$UNNAMED$5"
+					quid       	"4B2B3C7D0058"
+					supplier   	"Logical View::NAV Ebrev::Ebrev forespørsel::Hent samhandleradresser"
+					quidu      	"4B2B3AD001A5"
+					client_cardinality 	(value cardinality "1")
+					Containment 	"By Value"))
+				Constraints 	"XOR A")
+			    (object Association "$UNNAMED$6"
+				quid       	"4B2B3C7E03C5"
+				roles      	(list role_list
+				    (object Role "$UNNAMED$7"
+					quid       	"4B2B3C7F0224"
+					supplier   	"Logical View::NAV Ebrev::Ebrev forespørsel::Ebrev forespørsel"
+					quidu      	"4B2B3A9A024D"
+					Containment 	"By Value"
+					is_aggregate 	TRUE)
+				    (object Role "$UNNAMED$8"
+					quid       	"4B2B3C7F0226"
+					supplier   	"Logical View::NAV Ebrev::Ebrev forespørsel::Start abonnement"
+					quidu      	"4B2B3ADC03A1"
+					client_cardinality 	(value cardinality "1")
+					Containment 	"By Value"))
+				Constraints 	"XOR A")
+			    (object Association "$UNNAMED$9"
+				quid       	"4B2B3C81003A"
+				roles      	(list role_list
+				    (object Role "$UNNAMED$10"
+					quid       	"4B2B3C81026C"
+					supplier   	"Logical View::NAV Ebrev::Ebrev forespørsel::Ebrev forespørsel"
+					quidu      	"4B2B3A9A024D"
+					Containment 	"By Value"
+					is_aggregate 	TRUE)
+				    (object Role "$UNNAMED$11"
+					quid       	"4B2B3C81026E"
+					supplier   	"Logical View::NAV Ebrev::Ebrev forespørsel::Stopp abonnement"
+					quidu      	"4B2B3AFD0358"
+					client_cardinality 	(value cardinality "1")
+					Containment 	"By Value"))
+				Constraints 	"XOR A")
+			    (object Association "$UNNAMED$12"
+				quid       	"4B2B3C830045"
+				roles      	(list role_list
+				    (object Role "$UNNAMED$13"
+					quid       	"4B2B3C830154"
+					supplier   	"Logical View::NAV Ebrev::Ebrev forespørsel::Ebrev forespørsel"
+					quidu      	"4B2B3A9A024D"
+					Containment 	"By Value"
+					is_aggregate 	TRUE)
+				    (object Role "$UNNAMED$14"
+					quid       	"4B2B3C830156"
+					supplier   	"Logical View::NAV Ebrev::Ebrev forespørsel::Hent abonnementstatus"
+					quidu      	"4B2B3B0402A3"
+					client_cardinality 	(value cardinality "1")
+					Containment 	"By Value"))
+				Constraints 	"XOR A")
+			    (object Association "$UNNAMED$15"
+				quid       	"4B2B3C8500A3"
+				roles      	(list role_list
+				    (object Role "$UNNAMED$16"
+					quid       	"4B2B3C85027A"
+					supplier   	"Logical View::NAV Ebrev::Ebrev forespørsel::Ebrev forespørsel"
+					quidu      	"4B2B3A9A024D"
+					Containment 	"By Value"
+					is_aggregate 	TRUE)
+				    (object Role "$UNNAMED$17"
+					quid       	"4B2B3C85027D"
+					supplier   	"Logical View::NAV Ebrev::Ebrev forespørsel::Test Ebrev"
+					quidu      	"4B2B3B0F0208"
+					client_cardinality 	(value cardinality "1")
+					Containment 	"By Value"))
+				Constraints 	"XOR A"))
+			logical_presentations 	(list unit_reference_list
+			    (object ClassDiagram "Ebrev forespørsel"
+				quid       	"4AEB1F14025B"
+				title      	"Ebrev forespørsel"
+				zoom       	100
+				max_height 	28350
+				max_width  	21600
+				origin_x   	0
+				origin_y   	0
+				items      	(list diagram_item_list
+				    (object CategoryView "Logical View::Hodemelding" @14
+					location   	(1417, 159)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@14
+					    location   	(1246, 75)
+					    fill_color 	13434879
+					    nlines     	2
+					    max_width  	342
+					    justify    	0
+					    label      	"Hodemelding")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B28E3B5007E"
+					width      	354
+					height     	180)
+				    (object ClassView "Class" "Logical View::NAV Ebrev::Ebrev forespørsel::Ebrev parametertype" @15
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(1484, 1691)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	TRUE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@15
+					    location   	(1222, 1585)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	524
+					    justify    	0
+					    label      	"Ebrev parametertype")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B2B397C03CD"
+					width      	542
+					height     	236
+					annotation 	8
+					autoResize 	TRUE)
+				    (object ClassView "Class" "Logical View::NAV Ebrev::Ebrev forespørsel::Hent samhandleradresser" @16
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(371, 1159)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@16
+					    location   	(104, 1103)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	534
+					    justify    	0
+					    label      	"Hent samhandleradresser")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B2B3AD001A5"
+					width      	552
+					height     	136
+					annotation 	8
+					autoResize 	TRUE)
+				    (object ClassView "Class" "Logical View::NAV Ebrev::Ebrev forespørsel::Start abonnement" @17
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(937, 1141)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@17
+					    location   	(751, 1090)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	372
+					    justify    	0
+					    label      	"Start abonnement")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B2B3ADC03A1"
+					width      	390
+					height     	126
+					annotation 	8
+					autoResize 	TRUE)
+				    (object ClassView "Class" "Logical View::NAV Ebrev::Ebrev forespørsel::Stopp abonnement" @18
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(1424, 1140)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@18
+					    location   	(1227, 1089)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	394
+					    justify    	0
+					    label      	"Stopp abonnement")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B2B3AFD0358"
+					width      	412
+					height     	126
+					annotation 	8
+					autoResize 	TRUE)
+				    (object ClassView "Class" "Logical View::NAV Ebrev::Ebrev forespørsel::Hent abonnementstatus" @19
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(1949, 1134)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@19
+					    location   	(1707, 1083)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	484
+					    justify    	0
+					    label      	"Hent abonnementstatus")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B2B3B0402A3"
+					width      	502
+					height     	126
+					annotation 	8
+					autoResize 	TRUE)
+				    (object InheritTreeView "" @20
+					location   	(1484, 1381)
+					fill_color 	13434879
+					supplier   	@15
+					vertices   	(list Points
+					    (1484, 1381)
+					    (1484, 1573)))
+				    (object InheritView "" @21
+					stereotype 	TRUE
+					quidu      	"4B2B3B3601E5"
+					client     	@17
+					supplier   	@15
+					vertices   	(list Points
+					    (1000, 1204)
+					    (1000, 1381))
+					line_style 	3
+					origin_attachment 	(1000, 1204)
+					terminal_attachment 	(1000, 1381)
+					drawSupplier 	@20)
+				    (object InheritView "" @22
+					stereotype 	TRUE
+					quidu      	"4B2B3B3803C8"
+					client     	@18
+					supplier   	@15
+					vertices   	(list Points
+					    (1490, 1202)
+					    (1490, 1381))
+					line_style 	3
+					origin_attachment 	(1490, 1202)
+					terminal_attachment 	(1490, 1381)
+					drawSupplier 	@20)
+				    (object InheritView "" @23
+					stereotype 	TRUE
+					quidu      	"4B2B3B3B0106"
+					client     	@19
+					supplier   	@15
+					vertices   	(list Points
+					    (1949, 1197)
+					    (1949, 1381))
+					line_style 	3
+					origin_attachment 	(1949, 1197)
+					terminal_attachment 	(1949, 1381)
+					drawSupplier 	@20)
+				    (object ClassView "Class" "Logical View::NAV Ebrev::Ebrev forespørsel::Ebrev forespørsel" @24
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(1441, 478)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@24
+					    location   	(1256, 427)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	370
+					    justify    	0
+					    label      	"Ebrev forespørsel")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B2B3A9A024D"
+					width      	388
+					height     	126
+					annotation 	8
+					autoResize 	TRUE)
+				    (object DependencyView "" @25
+					stereotype 	TRUE
+					quidu      	"4B2B3B990016"
+					client     	@24
+					supplier   	@14
+					vertices   	(list Points
+					    (1438, 415)
+					    (1438, 249))
+					line_style 	3
+					origin_attachment 	(1438, 415)
+					terminal_attachment 	(1438, 249))
+				    (object AssociationViewNew "$UNNAMED$3" @26
+					location   	(503, 487)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					quidu      	"4B2B3C7C0107"
+					label      	(object SegLabel @27
+					    Parent_View 	@26
+					    location   	(503, 547)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	300
+					    justify    	0
+					    label      	"{XOR A}"
+					    pctDist    	0.500000
+					    height     	60
+					    orientation 	1)
+					roleview_list 	(list RoleViews
+					    (object RoleView "$UNNAMED$4" @28
+						Parent_View 	@26
+						location   	(144, -435)
+						stereotype 	TRUE
+						quidu      	"4B2B3C7D0056"
+						client     	@26
+						supplier   	@24
+						vertices   	(list Points
+						    (503, 487)
+						    (1247, 487))
+						line_style 	3
+						origin_attachment 	(503, 487)
+						terminal_attachment 	(1247, 487))
+					    (object RoleView "$UNNAMED$5" @29
+						Parent_View 	@26
+						location   	(144, -435)
+						font       	(object Font
+						    size       	10
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						stereotype 	TRUE
+						quidu      	"4B2B3C7D0058"
+						client     	@26
+						supplier   	@16
+						vertices   	(list Points
+						    (503, 487)
+						    (363, 487)
+						    (363, 1091))
+						line_style 	3
+						origin_attachment 	(503, 487)
+						terminal_attachment 	(363, 1091)
+						label      	(object SegLabel @30
+						    Parent_View 	@29
+						    location   	(421, 1028)
+						    font       	(object Font
+							size       	10
+							face       	"Arial"
+							bold       	FALSE
+							italics    	FALSE
+							underline  	FALSE
+							strike     	FALSE
+							color      	0
+							default_color 	TRUE)
+						    anchor     	2
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	15
+						    justify    	0
+						    label      	"1"
+						    pctDist    	0.915110
+						    height     	58
+						    orientation 	0))))
+				    (object AssociationViewNew "$UNNAMED$6" @31
+					location   	(1137, 800)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					quidu      	"4B2B3C7E03C5"
+					label      	(object SegLabel @32
+					    Parent_View 	@31
+					    location   	(1137, 860)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	300
+					    justify    	0
+					    label      	"{XOR A}"
+					    pctDist    	0.500000
+					    height     	60
+					    orientation 	1)
+					roleview_list 	(list RoleViews
+					    (object RoleView "$UNNAMED$7" @33
+						Parent_View 	@31
+						location   	(208, -88)
+						stereotype 	TRUE
+						quidu      	"4B2B3C7F0224"
+						client     	@31
+						supplier   	@24
+						vertices   	(list Points
+						    (1137, 800)
+						    (1289, 800)
+						    (1289, 541))
+						line_style 	3
+						origin_attachment 	(1137, 800)
+						terminal_attachment 	(1289, 541))
+					    (object RoleView "$UNNAMED$8" @34
+						Parent_View 	@31
+						location   	(208, -88)
+						font       	(object Font
+						    size       	10
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						stereotype 	TRUE
+						quidu      	"4B2B3C7F0226"
+						client     	@31
+						supplier   	@17
+						vertices   	(list Points
+						    (1137, 800)
+						    (1005, 800)
+						    (1005, 1078))
+						line_style 	3
+						origin_attachment 	(1137, 800)
+						terminal_attachment 	(1005, 1078)
+						label      	(object SegLabel @35
+						    Parent_View 	@34
+						    location   	(1059, 1036)
+						    font       	(object Font
+							size       	10
+							face       	"Arial"
+							bold       	FALSE
+							italics    	FALSE
+							underline  	FALSE
+							strike     	FALSE
+							color      	0
+							default_color 	TRUE)
+						    anchor     	2
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	15
+						    justify    	0
+						    label      	"1"
+						    pctDist    	0.900000
+						    height     	54
+						    orientation 	0))))
+				    (object AssociationViewNew "$UNNAMED$9" @36
+					location   	(1438, 809)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					quidu      	"4B2B3C81003A"
+					label      	(object SegLabel @37
+					    Parent_View 	@36
+					    location   	(1438, 869)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	300
+					    justify    	0
+					    label      	"{XOR A}"
+					    pctDist    	0.500000
+					    height     	60
+					    orientation 	1)
+					roleview_list 	(list RoleViews
+					    (object RoleView "$UNNAMED$10" @38
+						Parent_View 	@36
+						location   	(22, -78)
+						stereotype 	TRUE
+						quidu      	"4B2B3C81026C"
+						client     	@36
+						supplier   	@24
+						vertices   	(list Points
+						    (1438, 809)
+						    (1438, 541))
+						line_style 	3
+						origin_attachment 	(1438, 809)
+						terminal_attachment 	(1438, 541))
+					    (object RoleView "$UNNAMED$11" @39
+						Parent_View 	@36
+						location   	(22, -78)
+						font       	(object Font
+						    size       	10
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						stereotype 	TRUE
+						quidu      	"4B2B3C81026E"
+						client     	@36
+						supplier   	@18
+						vertices   	(list Points
+						    (1438, 809)
+						    (1438, 1077))
+						line_style 	3
+						origin_attachment 	(1438, 809)
+						terminal_attachment 	(1438, 1077)
+						label      	(object SegLabel @40
+						    Parent_View 	@39
+						    location   	(1492, 1049)
+						    font       	(object Font
+							size       	10
+							face       	"Arial"
+							bold       	FALSE
+							italics    	FALSE
+							underline  	FALSE
+							strike     	FALSE
+							color      	0
+							default_color 	TRUE)
+						    anchor     	2
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	15
+						    justify    	0
+						    label      	"1"
+						    pctDist    	0.900000
+						    height     	54
+						    orientation 	0))))
+				    (object AssociationViewNew "$UNNAMED$12" @41
+					location   	(1765, 803)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					quidu      	"4B2B3C830045"
+					label      	(object SegLabel @42
+					    Parent_View 	@41
+					    location   	(1765, 863)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	300
+					    justify    	0
+					    label      	"{XOR A}"
+					    pctDist    	0.500000
+					    height     	60
+					    orientation 	1)
+					roleview_list 	(list RoleViews
+					    (object RoleView "$UNNAMED$13" @43
+						Parent_View 	@41
+						location   	(-176, -78)
+						stereotype 	TRUE
+						quidu      	"4B2B3C830154"
+						client     	@41
+						supplier   	@24
+						vertices   	(list Points
+						    (1765, 803)
+						    (1582, 803)
+						    (1582, 541))
+						line_style 	3
+						origin_attachment 	(1765, 803)
+						terminal_attachment 	(1582, 541))
+					    (object RoleView "$UNNAMED$14" @44
+						Parent_View 	@41
+						location   	(-176, -78)
+						font       	(object Font
+						    size       	10
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						stereotype 	TRUE
+						quidu      	"4B2B3C830156"
+						client     	@41
+						supplier   	@19
+						vertices   	(list Points
+						    (1765, 803)
+						    (1941, 803)
+						    (1941, 1071))
+						line_style 	3
+						origin_attachment 	(1765, 803)
+						terminal_attachment 	(1941, 1071)
+						label      	(object SegLabel @45
+						    Parent_View 	@44
+						    location   	(1995, 1027)
+						    font       	(object Font
+							size       	10
+							face       	"Arial"
+							bold       	FALSE
+							italics    	FALSE
+							underline  	FALSE
+							strike     	FALSE
+							color      	0
+							default_color 	TRUE)
+						    anchor     	2
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	15
+						    justify    	0
+						    label      	"1"
+						    pctDist    	0.900000
+						    height     	54
+						    orientation 	0))))
+				    (object ClassView "Class" "Logical View::NAV Ebrev::Ebrev forespørsel::Test Ebrev" @46
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(2670, 1147)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@46
+					    location   	(2331, 1091)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	678
+					    justify    	0
+					    label      	"Test Ebrev")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B2B3B0F0208"
+					width      	696
+					height     	136
+					annotation 	8
+					autoResize 	TRUE)
+				    (object InheritView "" @47
+					stereotype 	TRUE
+					quidu      	"4B2B3C1F00D8"
+					client     	@46
+					supplier   	@15
+					vertices   	(list Points
+					    (2601, 1215)
+					    (2601, 1381))
+					line_style 	3
+					origin_attachment 	(2601, 1215)
+					terminal_attachment 	(2601, 1381)
+					drawSupplier 	@20)
+				    (object AssociationViewNew "$UNNAMED$15" @48
+					location   	(2431, 478)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					quidu      	"4B2B3C8500A3"
+					label      	(object SegLabel @49
+					    Parent_View 	@48
+					    location   	(2431, 538)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	300
+					    justify    	0
+					    label      	"{XOR A}"
+					    pctDist    	0.500000
+					    height     	60
+					    orientation 	1)
+					roleview_list 	(list RoleViews
+					    (object RoleView "$UNNAMED$16" @50
+						Parent_View 	@48
+						location   	(-207, -427)
+						stereotype 	TRUE
+						quidu      	"4B2B3C85027A"
+						client     	@48
+						supplier   	@24
+						vertices   	(list Points
+						    (2431, 478)
+						    (1635, 478))
+						line_style 	3
+						origin_attachment 	(2431, 478)
+						terminal_attachment 	(1635, 478))
+					    (object RoleView "$UNNAMED$17" @51
+						Parent_View 	@48
+						location   	(-207, -427)
+						font       	(object Font
+						    size       	10
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						stereotype 	TRUE
+						quidu      	"4B2B3C85027D"
+						client     	@48
+						supplier   	@46
+						vertices   	(list Points
+						    (2431, 478)
+						    (2626, 478)
+						    (2626, 1079))
+						line_style 	3
+						origin_attachment 	(2431, 478)
+						terminal_attachment 	(2626, 1079)
+						label      	(object SegLabel @52
+						    Parent_View 	@51
+						    location   	(2681, 1019)
+						    font       	(object Font
+							size       	10
+							face       	"Arial"
+							bold       	FALSE
+							italics    	FALSE
+							underline  	FALSE
+							strike     	FALSE
+							color      	0
+							default_color 	TRUE)
+						    anchor     	2
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	15
+						    justify    	0
+						    label      	"1"
+						    pctDist    	0.924609
+						    height     	55
+						    orientation 	0))))
+				    (object ClassView "Class" "Logical View::Felleskomponent 1 v1.1::Identifikator" @53
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(375, 1640)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@53
+					    location   	(153, 1536)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	444
+					    justify    	0
+					    label      	"Identifikator")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"43201FF70007"
+					width      	462
+					height     	232
+					annotation 	8
+					autoResize 	TRUE)
+				    (object UsesView "" @54
+					stereotype 	TRUE
+					quidu      	"4B6BF65C00F5"
+					client     	@16
+					supplier   	@53
+					vertices   	(list Points
+					    (371, 1227)
+					    (374, 1523))
+					line_style 	0)))))
+		    (object Class_Category "Ebrev abonnementstatus"
+			quid       	"4B2B3DA602DD"
+			exportControl 	"Public"
+			logical_models 	(list unit_reference_list
+			    (object Class "Ebrev abonnementstatus"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "EbrevAbonnementStatus")))
+				quid       	"4B2B408402E4"
+				documentation 	"Statusmelding på Ebrev abonnement. "
+				visible_modules 	(list dependency_list
+				    (object Dependency_Relationship
+					quid       	"4B2B40B60271"
+					supplier   	"Logical View::Hodemelding"
+					quidu      	"4B28E3B5007E"))
+				used_nodes 	(list uses_relationship_list
+				    (object Uses_Relationship
+					quid       	"4B2B40AF0193"
+					supplier   	"Logical View::TOKT felleskomponenter::Abonnementstatus-type"
+					quidu      	"4B2B3F8C01B4"))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "status"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Status")))
+					quid       	"4B2B40920210"
+					type       	"Abonnementstatus-type"
+					quidu      	"4B2B3F8C01B4"))
+				module     	"Component View::NAV-EBREV-2010-02-01.xsd"
+				quidu      	"4B2B75A2022F"))
+			logical_presentations 	(list unit_reference_list
+			    (object ClassDiagram "Ebrev abonnementstatus"
+				quid       	"4B2B407801ED"
+				title      	"Ebrev abonnementstatus"
+				zoom       	100
+				max_height 	28350
+				max_width  	21600
+				origin_x   	0
+				origin_y   	0
+				items      	(list diagram_item_list
+				    (object ClassView "Class" "Logical View::NAV Ebrev::Ebrev abonnementstatus::Ebrev abonnementstatus" @55
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(483, 615)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@55
+					    location   	(163, 559)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	640
+					    justify    	0
+					    label      	"Ebrev abonnementstatus")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B2B408402E4"
+					width      	658
+					height     	136
+					annotation 	8
+					autoResize 	TRUE)
+				    (object ClassView "Class" "Logical View::TOKT felleskomponenter::Abonnementstatus-type" @56
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(1417, 619)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	TRUE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@56
+					    location   	(1174, 563)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	486
+					    justify    	0
+					    label      	"Abonnementstatus-type")
+					stereotype 	(object ItemLabel
+					    Parent_View 	@56
+					    location   	(1174, 513)
+					    fill_color 	13434879
+					    anchor     	10
+					    nlines     	1
+					    max_width  	486
+					    justify    	0
+					    label      	"<<complexType>>")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B2B3F8C01B4"
+					width      	504
+					height     	236
+					annotation 	8
+					autoResize 	TRUE)
+				    (object UsesView "" @57
+					stereotype 	TRUE
+					quidu      	"4B2B40AF0193"
+					client     	@55
+					supplier   	@56
+					vertices   	(list Points
+					    (812, 615)
+					    (1165, 615))
+					line_style 	3
+					origin_attachment 	(812, 615)
+					terminal_attachment 	(1165, 615))
+				    (object CategoryView "Logical View::Hodemelding" @58
+					location   	(500, 178)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@58
+					    location   	(327, 94)
+					    fill_color 	13434879
+					    nlines     	2
+					    max_width  	346
+					    justify    	0
+					    label      	"Hodemelding")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B28E3B5007E"
+					width      	358
+					height     	180)
+				    (object DependencyView "" @59
+					stereotype 	TRUE
+					quidu      	"4B2B40B60271"
+					client     	@55
+					supplier   	@58
+					vertices   	(list Points
+					    (500, 547)
+					    (500, 268))
+					line_style 	3
+					origin_attachment 	(500, 547)
+					terminal_attachment 	(500, 268)))))))
+		logical_presentations 	(list unit_reference_list
+		    (object ClassDiagram "NAV Ebrev"
+			quid       	"4B7287BB01A9"
+			title      	"NAV Ebrev"
+			zoom       	100
+			max_height 	28350
+			max_width  	21600
+			origin_x   	0
+			origin_y   	0
+			items      	(list diagram_item_list
+			    (object CategoryView "Logical View::NAV Ebrev::Ebrev abonnementstatus" @60
+				location   	(290, 237)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@60
+				    location   	(109, 153)
+				    fill_color 	13434879
+				    nlines     	2
+				    max_width  	362
+				    justify    	0
+				    label      	"Ebrev abonnementstatus")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4B2B3DA602DD"
+				width      	374
+				height     	180)
+			    (object CategoryView "Logical View::NAV Ebrev::Ebrev forespørsel" @61
+				location   	(744, 240)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@61
+				    location   	(600, 156)
+				    fill_color 	13434879
+				    nlines     	2
+				    max_width  	288
+				    justify    	0
+				    label      	"Ebrev forespørsel")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4AEB1ADA0151"
+				width      	300
+				height     	180)
+			    (object CategoryView "Logical View::NAV Ebrev::Ebrev samhandleradresser" @62
+				location   	(1228, 243)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@62
+				    location   	(1032, 159)
+				    fill_color 	13434879
+				    nlines     	2
+				    max_width  	392
+				    justify    	0
+				    label      	"Ebrev samhandleradresser")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4B2B3DB701C0"
+				width      	404
+				height     	180)
+			    (object CategoryView "Logical View::TOKT felleskomponenter" @63
+				location   	(284, 581)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@63
+				    location   	(111, 497)
+				    fill_color 	13434879
+				    nlines     	2
+				    max_width  	346
+				    justify    	0
+				    label      	"TOKT felleskomponenter")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4B2B3DD20336"
+				width      	358
+				height     	180)))))
+	    (object Class_Category "NAV Pasientliste"
+		quid       	"4B2B51480159"
+		exportControl 	"Public"
+		logical_models 	(list unit_reference_list
+		    (object Class "Pasientliste parameter-type"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "PasientlisteParamType")))
+			quid       	"4B2B51AA000C"
+			documentation 	"En gjenbrukbar klasse som benyttets til forespørselparameter"
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "fødselsnummer lege"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "FnrLege")))
+				quid       	"4B2B51B700F6"
+				documentation 	"Legens fødselsnummer sammen med kommunenr identifiserer en fastlegeliste. "
+				type       	"string")
+			    (object ClassAttribute "kommunenummer"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "KommuneNr")))
+				quid       	"4B2B51C802D5"
+				documentation 	"Identifiserer i hvilken kommune legen er fastlege. "
+				type       	"string")
+			    (object ClassAttribute "format"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "0..1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Format")))
+				quid       	"4B2B51D0029F"
+				documentation 	"Format kan være enten filformat eller strukturert XML format. PI =PasientInformasjon = Strukturert XML, eller  DI = Diskettformat = flatfilformat med tegnsett MSDOS codepage 865  "
+				type       	"CS"))
+			module     	"Component View::NAV-Pasientliste-2010-02-01.xsd"
+			quidu      	"4B61929902E1"
+			abstract   	TRUE)
+		    (object Association "$UNNAMED$18"
+			quid       	"4B2B52DD0323"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$19"
+				quid       	"4B2B52DE0110"
+				supplier   	"Logical View::NAV Pasientliste::Pasientliste forespørsel::Pasientliste forespørsel"
+				quidu      	"4B2B524F008C"
+				Containment 	"By Value"
+				is_aggregate 	TRUE)
+			    (object Role "$UNNAMED$20"
+				quid       	"4B2B52DE0112"
+				supplier   	"Logical View::NAV Pasientliste::Pasientliste forespørsel::Hent pasientliste"
+				quidu      	"4B2B528500A6"
+				client_cardinality 	(value cardinality "1")
+				Containment 	"By Value"))
+			Constraints 	"XOR A")
+		    (object Association "$UNNAMED$21"
+			quid       	"4B2B52DF039C"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$22"
+				quid       	"4B2B52E001B8"
+				supplier   	"Logical View::NAV Pasientliste::Pasientliste forespørsel::Pasientliste forespørsel"
+				quidu      	"4B2B524F008C"
+				Containment 	"By Value"
+				is_aggregate 	TRUE)
+			    (object Role "$UNNAMED$23"
+				quid       	"4B2B52E001BA"
+				supplier   	"Logical View::NAV Pasientliste::Pasientliste forespørsel::Start abonnement"
+				quidu      	"4B2B529601C8"
+				client_cardinality 	(value cardinality "1")
+				Containment 	"By Value"))
+			Constraints 	"XOR A")
+		    (object Association "$UNNAMED$24"
+			quid       	"4B2B52E5017C"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$25"
+				quid       	"4B2B52E60091"
+				supplier   	"Logical View::NAV Pasientliste::Pasientliste forespørsel::Pasientliste forespørsel"
+				quidu      	"4B2B524F008C"
+				Containment 	"By Value"
+				is_aggregate 	TRUE)
+			    (object Role "$UNNAMED$26"
+				quid       	"4B2B52E60093"
+				supplier   	"Logical View::NAV Pasientliste::Pasientliste forespørsel::Stopp abonnement"
+				quidu      	"4B2B52AA0180"
+				client_cardinality 	(value cardinality "1")
+				Containment 	"By Value"))
+			Constraints 	"XOR A")
+		    (object Association "$UNNAMED$27"
+			quid       	"4B2B52E703E5"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$28"
+				quid       	"4B2B52E80129"
+				supplier   	"Logical View::NAV Pasientliste::Pasientliste forespørsel::Pasientliste forespørsel"
+				quidu      	"4B2B524F008C"
+				Containment 	"By Value"
+				is_aggregate 	TRUE)
+			    (object Role "$UNNAMED$29"
+				quid       	"4B2B52E8012B"
+				supplier   	"Logical View::NAV Pasientliste::Pasientliste forespørsel::Hent abonnementstatus"
+				quidu      	"4B2B52BC0241"
+				client_cardinality 	(value cardinality "1")
+				Containment 	"By Value"))
+			Constraints 	"XOR A")
+		    (object Class_Category "Pasientliste forespørsel"
+			quid       	"4B2B540202AE"
+			exportControl 	"Public"
+			logical_models 	(list unit_reference_list
+			    (object Class "Pasientliste forespørsel"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "PasientlisteForesporsel")))
+				quid       	"4B2B524F008C"
+				documentation 	"En Pasintlisteforesporsel kan inneholde en av 4 forskjellige forspørsler. "
+				visible_modules 	(list dependency_list
+				    (object Dependency_Relationship
+					quid       	"4B2B527900CC"
+					supplier   	"Logical View::Hodemelding"
+					quidu      	"4B28E3B5007E"))
+				module     	"Component View::NAV-Pasientliste-2010-02-01.xsd"
+				quidu      	"4B61929902E1")
+			    (object Class "Stopp abonnement"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "StoppAbonnement")))
+				quid       	"4B2B52AA0180"
+				documentation 	"Forespørselen benyttes for å stoppe månedlig utsending av elektronisk pasientliste. Forespørselen svarer med en PasientListeAbonnentStatus. "
+				superclasses 	(list inheritance_relationship_list
+				    (object Inheritance_Relationship
+					quid       	"4B2B52B4037F"
+					supplier   	"Logical View::NAV Pasientliste::Pasientliste parameter-type"
+					quidu      	"4B2B51AA000C"))
+				module     	"Component View::NAV-Pasientliste-2010-02-01.xsd"
+				quidu      	"4B61929902E1")
+			    (object Class "Start abonnement"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "StartAbonnement")))
+				quid       	"4B2B529601C8"
+				documentation 	"Forespørselen benyttes til å starte et abonnement på elektronisk utsending av fastlegens pasientliste.  Listen sendes ut månedlig. Forespørselen svarer med en PasientListeAbonnentStatus . "
+				superclasses 	(list inheritance_relationship_list
+				    (object Inheritance_Relationship
+					quid       	"4B2B52A7000E"
+					supplier   	"Logical View::NAV Pasientliste::Pasientliste parameter-type"
+					quidu      	"4B2B51AA000C"))
+				module     	"Component View::NAV-Pasientliste-2010-02-01.xsd"
+				quidu      	"4B61929902E1")
+			    (object Class "Hent pasientliste"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "HentPasientliste")))
+				quid       	"4B2B528500A6"
+				documentation 	"Forespørsel om umiddelbar tilsending av en pasientliste. Denne meldingen kan benyttes dersom man ønsker en oppdatert liste umiddelbart etter start av abonnement.  Forespøselen svarer med en Apprec som betyr at forespørsel mottatt og Pasientlisten sendes snarest. Pasientlisten sendes asynkront som en Pasientliste-melding."
+				superclasses 	(list inheritance_relationship_list
+				    (object Inheritance_Relationship
+					quid       	"4B2B5293018D"
+					supplier   	"Logical View::NAV Pasientliste::Pasientliste parameter-type"
+					quidu      	"4B2B51AA000C"))
+				module     	"Component View::NAV-Pasientliste-2010-02-01.xsd"
+				quidu      	"4B61929902E1")
+			    (object Class "Hent abonnementstatus"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "HentAbonnementStatus")))
+				quid       	"4B2B52BC0241"
+				documentation 	"Forespørselen benyttes for å hente status på abonnementet. Forespørselen svarer med en PasientListeAbonnentStatus."
+				superclasses 	(list inheritance_relationship_list
+				    (object Inheritance_Relationship
+					quid       	"4B2B52C80107"
+					supplier   	"Logical View::NAV Pasientliste::Pasientliste parameter-type"
+					quidu      	"4B2B51AA000C"))
+				module     	"Component View::NAV-Pasientliste-2010-02-01.xsd"
+				quidu      	"4B61929902E1"))
+			logical_presentations 	(list unit_reference_list
+			    (object ClassDiagram "Pasientliste forespørsel"
+				quid       	"4B2B517A02FF"
+				title      	"Pasientliste forespørsel"
+				zoom       	100
+				max_height 	28350
+				max_width  	21600
+				origin_x   	0
+				origin_y   	0
+				items      	(list diagram_item_list
+				    (object ClassView "Class" "Logical View::NAV Pasientliste::Pasientliste parameter-type" @64
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(1231, 1578)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	TRUE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@64
+					    location   	(925, 1443)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	613
+					    justify    	0
+					    label      	"Pasientliste parameter-type")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B2B51AA000C"
+					width      	631
+					height     	294
+					annotation 	8
+					autoResize 	TRUE)
+				    (object CategoryView "Logical View::Hodemelding" @65
+					location   	(1098, 181)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@65
+					    location   	(925, 97)
+					    fill_color 	13434879
+					    nlines     	2
+					    max_width  	346
+					    justify    	0
+					    label      	"Hodemelding")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B28E3B5007E"
+					width      	358
+					height     	180)
+				    (object ClassView "Class" "Logical View::NAV Pasientliste::Pasientliste forespørsel::Hent pasientliste" @66
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(269, 958)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@66
+					    location   	(83, 906)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	372
+					    justify    	0
+					    label      	"Hent pasientliste")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B2B528500A6"
+					width      	390
+					height     	128
+					annotation 	8
+					autoResize 	TRUE)
+				    (object ClassView "Class" "Logical View::NAV Pasientliste::Pasientliste forespørsel::Start abonnement" @67
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(825, 955)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@67
+					    location   	(639, 903)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	372
+					    justify    	0
+					    label      	"Start abonnement")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B2B529601C8"
+					width      	390
+					height     	128
+					annotation 	8
+					autoResize 	TRUE)
+				    (object ClassView "Class" "Logical View::NAV Pasientliste::Pasientliste forespørsel::Stopp abonnement" @68
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(1378, 946)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@68
+					    location   	(1180, 894)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	396
+					    justify    	0
+					    label      	"Stopp abonnement")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B2B52AA0180"
+					width      	414
+					height     	128
+					annotation 	8
+					autoResize 	TRUE)
+				    (object InheritTreeView "" @69
+					location   	(1231, 1189)
+					fill_color 	13434879
+					supplier   	@64
+					vertices   	(list Points
+					    (1231, 1189)
+					    (1231, 1431)))
+				    (object InheritView "" @70
+					stereotype 	TRUE
+					quidu      	"4B2B5293018D"
+					client     	@66
+					supplier   	@64
+					vertices   	(list Points
+					    (333, 1022)
+					    (333, 1189))
+					line_style 	3
+					origin_attachment 	(333, 1022)
+					terminal_attachment 	(333, 1189)
+					drawSupplier 	@69)
+				    (object InheritView "" @71
+					stereotype 	TRUE
+					quidu      	"4B2B52A7000E"
+					client     	@67
+					supplier   	@64
+					vertices   	(list Points
+					    (825, 1019)
+					    (825, 1189))
+					line_style 	3
+					origin_attachment 	(825, 1019)
+					terminal_attachment 	(825, 1189)
+					drawSupplier 	@69)
+				    (object InheritView "" @72
+					stereotype 	TRUE
+					quidu      	"4B2B52B4037F"
+					client     	@68
+					supplier   	@64
+					vertices   	(list Points
+					    (1378, 1010)
+					    (1378, 1189))
+					line_style 	3
+					origin_attachment 	(1378, 1010)
+					terminal_attachment 	(1378, 1189)
+					drawSupplier 	@69)
+				    (object ClassView "Class" "Logical View::NAV Pasientliste::Pasientliste forespørsel::Pasientliste forespørsel" @73
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(1105, 532)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@73
+					    location   	(848, 480)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	514
+					    justify    	0
+					    label      	"Pasientliste forespørsel")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B2B524F008C"
+					width      	532
+					height     	128
+					annotation 	8
+					autoResize 	TRUE)
+				    (object DependencyView "" @74
+					stereotype 	TRUE
+					quidu      	"4B2B527900CC"
+					client     	@73
+					supplier   	@65
+					vertices   	(list Points
+					    (1097, 468)
+					    (1097, 271))
+					line_style 	3
+					origin_attachment 	(1097, 468)
+					terminal_attachment 	(1097, 271))
+				    (object AssociationViewNew "$UNNAMED$18" @75
+					location   	(375, 540)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					quidu      	"4B2B52DD0323"
+					label      	(object SegLabel @76
+					    Parent_View 	@75
+					    location   	(375, 600)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	300
+					    justify    	0
+					    label      	"{XOR A}"
+					    pctDist    	0.500000
+					    height     	60
+					    orientation 	1)
+					roleview_list 	(list RoleViews
+					    (object RoleView "$UNNAMED$19" @77
+						Parent_View 	@75
+						location   	(-10, -607)
+						stereotype 	TRUE
+						quidu      	"4B2B52DE0110"
+						client     	@75
+						supplier   	@73
+						vertices   	(list Points
+						    (375, 540)
+						    (839, 540))
+						line_style 	3
+						origin_attachment 	(375, 540)
+						terminal_attachment 	(839, 540))
+					    (object RoleView "$UNNAMED$20" @78
+						Parent_View 	@75
+						location   	(-10, -607)
+						font       	(object Font
+						    size       	10
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						stereotype 	TRUE
+						quidu      	"4B2B52DE0112"
+						client     	@75
+						supplier   	@66
+						vertices   	(list Points
+						    (375, 540)
+						    (265, 540)
+						    (265, 894))
+						line_style 	3
+						origin_attachment 	(375, 540)
+						terminal_attachment 	(265, 894)
+						label      	(object SegLabel @79
+						    Parent_View 	@78
+						    location   	(319, 848)
+						    font       	(object Font
+							size       	10
+							face       	"Arial"
+							bold       	FALSE
+							italics    	FALSE
+							underline  	FALSE
+							strike     	FALSE
+							color      	0
+							default_color 	TRUE)
+						    anchor     	2
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	15
+						    justify    	0
+						    label      	"1"
+						    pctDist    	0.900000
+						    height     	54
+						    orientation 	0))))
+				    (object AssociationViewNew "$UNNAMED$21" @80
+					location   	(929, 743)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					quidu      	"4B2B52DF039C"
+					label      	(object SegLabel @81
+					    Parent_View 	@80
+					    location   	(841, 800)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	300
+					    justify    	0
+					    label      	"{XOR A}"
+					    pctDist    	-0.966667
+					    height     	57
+					    orientation 	1)
+					roleview_list 	(list RoleViews
+					    (object RoleView "$UNNAMED$22" @82
+						Parent_View 	@80
+						location   	(-12, -401)
+						stereotype 	TRUE
+						quidu      	"4B2B52E001B8"
+						client     	@80
+						supplier   	@73
+						vertices   	(list Points
+						    (929, 743)
+						    (929, 596))
+						line_style 	3
+						origin_attachment 	(929, 743)
+						terminal_attachment 	(929, 596))
+					    (object RoleView "$UNNAMED$23" @83
+						Parent_View 	@80
+						location   	(-12, -401)
+						font       	(object Font
+						    size       	10
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						stereotype 	TRUE
+						quidu      	"4B2B52E001BA"
+						client     	@80
+						supplier   	@67
+						vertices   	(list Points
+						    (929, 743)
+						    (929, 891))
+						line_style 	3
+						origin_attachment 	(929, 743)
+						terminal_attachment 	(929, 891)
+						label      	(object SegLabel @84
+						    Parent_View 	@83
+						    location   	(983, 875)
+						    font       	(object Font
+							size       	10
+							face       	"Arial"
+							bold       	FALSE
+							italics    	FALSE
+							underline  	FALSE
+							strike     	FALSE
+							color      	0
+							default_color 	TRUE)
+						    anchor     	2
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	15
+						    justify    	0
+						    label      	"1"
+						    pctDist    	0.900000
+						    height     	54
+						    orientation 	0))))
+				    (object AssociationViewNew "$UNNAMED$24" @85
+					location   	(1272, 738)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					quidu      	"4B2B52E5017C"
+					label      	(object SegLabel @86
+					    Parent_View 	@85
+					    location   	(1360, 753)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	300
+					    justify    	0
+					    label      	"{XOR A}"
+					    pctDist    	1.966667
+					    height     	15
+					    orientation 	1)
+					roleview_list 	(list RoleViews
+					    (object RoleView "$UNNAMED$25" @87
+						Parent_View 	@85
+						location   	(-222, -397)
+						stereotype 	TRUE
+						quidu      	"4B2B52E60091"
+						client     	@85
+						supplier   	@73
+						vertices   	(list Points
+						    (1272, 738)
+						    (1272, 596))
+						line_style 	3
+						origin_attachment 	(1272, 738)
+						terminal_attachment 	(1272, 596))
+					    (object RoleView "$UNNAMED$26" @88
+						Parent_View 	@85
+						location   	(-222, -397)
+						font       	(object Font
+						    size       	10
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						stereotype 	TRUE
+						quidu      	"4B2B52E60093"
+						client     	@85
+						supplier   	@68
+						vertices   	(list Points
+						    (1272, 738)
+						    (1272, 881))
+						line_style 	3
+						origin_attachment 	(1272, 738)
+						terminal_attachment 	(1272, 881)
+						label      	(object SegLabel @89
+						    Parent_View 	@88
+						    location   	(1326, 866)
+						    font       	(object Font
+							size       	10
+							face       	"Arial"
+							bold       	FALSE
+							italics    	FALSE
+							underline  	FALSE
+							strike     	FALSE
+							color      	0
+							default_color 	TRUE)
+						    anchor     	2
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	15
+						    justify    	0
+						    label      	"1"
+						    pctDist    	0.900000
+						    height     	54
+						    orientation 	0))))
+				    (object ClassView "Class" "Logical View::NAV Pasientliste::Pasientliste forespørsel::Hent abonnementstatus" @90
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(1954, 939)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@90
+					    location   	(1666, 887)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	576
+					    justify    	0
+					    label      	"Hent abonnementstatus")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B2B52BC0241"
+					width      	594
+					height     	128
+					annotation 	8
+					autoResize 	TRUE)
+				    (object InheritView "" @91
+					stereotype 	TRUE
+					quidu      	"4B2B52C80107"
+					client     	@90
+					supplier   	@64
+					vertices   	(list Points
+					    (1954, 1003)
+					    (1954, 1189))
+					line_style 	3
+					origin_attachment 	(1954, 1003)
+					terminal_attachment 	(1954, 1189)
+					drawSupplier 	@69)
+				    (object AssociationViewNew "$UNNAMED$27" @92
+					location   	(1790, 545)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					quidu      	"4B2B52E703E5"
+					label      	(object SegLabel @93
+					    Parent_View 	@92
+					    location   	(1790, 605)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	300
+					    justify    	0
+					    label      	"{XOR A}"
+					    pctDist    	0.500000
+					    height     	60
+					    orientation 	1)
+					roleview_list 	(list RoleViews
+					    (object RoleView "$UNNAMED$28" @94
+						Parent_View 	@92
+						location   	(-280, -583)
+						stereotype 	TRUE
+						quidu      	"4B2B52E80129"
+						client     	@92
+						supplier   	@73
+						vertices   	(list Points
+						    (1790, 545)
+						    (1371, 545))
+						line_style 	3
+						origin_attachment 	(1790, 545)
+						terminal_attachment 	(1371, 545))
+					    (object RoleView "$UNNAMED$29" @95
+						Parent_View 	@92
+						location   	(-280, -583)
+						font       	(object Font
+						    size       	10
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						stereotype 	TRUE
+						quidu      	"4B2B52E8012B"
+						client     	@92
+						supplier   	@90
+						vertices   	(list Points
+						    (1790, 545)
+						    (1879, 545)
+						    (1879, 875))
+						line_style 	3
+						origin_attachment 	(1790, 545)
+						terminal_attachment 	(1879, 875)
+						label      	(object SegLabel @96
+						    Parent_View 	@95
+						    location   	(1933, 833)
+						    font       	(object Font
+							size       	10
+							face       	"Arial"
+							bold       	FALSE
+							italics    	FALSE
+							underline  	FALSE
+							strike     	FALSE
+							color      	0
+							default_color 	TRUE)
+						    anchor     	2
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	15
+						    justify    	0
+						    label      	"1"
+						    pctDist    	0.900000
+						    height     	54
+						    orientation 	0))))))))
+		    (object Class_Category "Pasientliste"
+			quid       	"4B2B54B4027E"
+			exportControl 	"Public"
+			logical_models 	(list unit_reference_list
+			    (object Class "Pasientliste"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Pasientliste")))
+				quid       	"4B2B55060002"
+				documentation 	"Pasientliste sendes ut månedlig til alle fastleger som abonnerer på tjeneste. Kan også sendes ut umiddelbart etter en HentPasientliste-forespørsel. "
+				visible_modules 	(list dependency_list
+				    (object Dependency_Relationship
+					quid       	"4B2B552F0062"
+					supplier   	"Logical View::Hodemelding"
+					quidu      	"4B28E3B5007E"))
+				used_nodes 	(list uses_relationship_list
+				    (object Uses_Relationship
+					quid       	"4B2B5A9D0379"
+					supplier   	"Logical View::NAV Pasientliste::Pasientliste::Pasient"
+					quidu      	"4B2B55ED00ED"
+					supplier_cardinality 	(value cardinality "0..*")))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "listetype"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "ListeType")))
+					quid       	"4B2B553E021D"
+					documentation 	"LE = Liste med lege, LU = Liste uten lege (LU er ikke i bruk ennå, men definert for senere bruk). Standard er LE"
+					type       	"CS")
+				    (object ClassAttribute "gjelder måned"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "GjelderManed")))
+					quid       	"4B2B554F00D6"
+					documentation 	"Hvilken måned listen gjelder for 1- 12"
+					type       	"nonNegativeInteger")
+				    (object ClassAttribute "liste fra og med dato"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "ListeFOMDato")))
+					quid       	"4B2B555F0395"
+					documentation 	"FOM dato listen gjelder for.  Dette er den første i måneden."
+					type       	"date")
+				    (object ClassAttribute "liste til og med dato"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "ListeTOMDato")))
+					quid       	"4B2B556E020E"
+					documentation 	"TOM dato listen gjelder for. Den siste i måneden."
+					type       	"date")
+				    (object ClassAttribute "fastlegens fødselsnummer"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "0..1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "FnrLege")))
+					quid       	"4B2B557C00D6"
+					documentation 	"Fødselsnummer til fastlegen. "
+					type       	"string")
+				    (object ClassAttribute "listenummer"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "ListeNr")))
+					quid       	"4B2B55860287"
+					documentation 	"Listenrummer for liste uten lege (for senere bruk)."
+					type       	"string")
+				    (object ClassAttribute "legens navn"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "0..1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "LegeNavn")))
+					quid       	"4B2B55900198"
+					documentation 	"Legens navn. "
+					type       	"string")
+				    (object ClassAttribute "kommune"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Kommune"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Example"
+						value      	(value Text 
+|V="0418" DN="Nord-Odal"
+						))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Codes"
+						value      	(value Text "3402 Kommunenummer")))
+					quid       	"4B2B559D0211"
+					documentation 	"Kommunen hvor legen har fastlegeavtale."
+					type       	"CS")
+				    (object ClassAttribute "antall pasienter"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Antall")))
+					quid       	"4B2B55AE0101"
+					documentation 	"Antall pasienter i listen. "
+					type       	"nonNegativeInteger")
+				    (object ClassAttribute "format"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Format")))
+					quid       	"4B2B55C301E2"
+					documentation 	"Beskriver på hvilket format Pasientlisten returneres. Verdiene er PI =PasientInformasjon = Strukturert XML, eller  DI = Diskettformat = flatfilformat med tegnsett MSDOS codepage 865 . "
+					type       	"CS")
+				    (object ClassAttribute "diskettformat"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "0..1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Diskettformat"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	(value Text "Valg mellom enten Diskettformat eller Pasienter. ")))
+					quid       	"4B2B56080285"
+					documentation 	"Diskettformat. For beskrivelse av innholde, se avsnitt X Diskettformat"
+					type       	"base64Binary")
+				    (object ClassAttribute "pasienter"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "0..1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Pasienter"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	(value Text "Valg mellom enten Diskettformat eller Pasienter. ")))
+					quid       	"4B2B561C025D"
+					documentation 	"Pasienter. "
+					type       	"Pasient"
+					quidu      	"4B2B55ED00ED"))
+				module     	"Component View::NAV-Pasientliste-2010-02-01.xsd"
+				quidu      	"4B61929902E1")
+			    (object Class "Pasient"
+				quid       	"4B2B55ED00ED"
+				used_nodes 	(list uses_relationship_list
+				    (object Uses_Relationship
+					quid       	"4B700A1E0187"
+					supplier   	"Logical View::Felleskomponent 1 v1.1::Person"
+					quidu      	"4B2B7350018C"))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "pasient fra og med dato"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "PasientFOMDato")))
+					quid       	"4B2B56610028"
+					documentation 	"Fra og med dato (når pasient kom til lege). "
+					type       	"date")
+				    (object ClassAttribute "pasient til og med dato"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "0..1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "PasientTOMDato")))
+					quid       	"4B2B566D0011"
+					documentation 	"Til og med dato (når pasient slutter/bytter/dør og avslutter praksis hos denne legen). "
+					type       	"date")
+				    (object ClassAttribute "endringskode"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "0..1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Endringskode"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	(value Text "Kode settes i forhold til siste forespørsel eller datointervall som er oppgitt i forespørsel.")))
+					quid       	"4B2B567801AA"
+					documentation 	
+|Om pasient starter eller avslutter praksis.
+|Kodeverk: 
+|A Avgang
+|T Tilgang
+					
+					type       	"CS")
+				    (object ClassAttribute "avgangsårsak"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "0..1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Avgangsarsak"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	(value Text 
+|Kodeverk:
+|PF Flyttet annen kommune
+|PU Utmeldt av ordningen
+|FR Legen har redusert praksis
+|FA Legen har avslutta praksis
+|PO Ordinært legebytte
+|OP Fødselsnr er opphørt
+|PL Flytta ut av landet
+|PD Død
+|PA Annen årsak
+						)))
+					quid       	"4B2B568300AB"
+					documentation 	"Årsak til at pasienten utgår fra listen. "
+					type       	"CS")
+				    (object ClassAttribute "NAV-kontor"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "NAVkontor")))
+					quid       	"4B2B568E0393"
+					type       	"string")
+				    (object ClassAttribute "fødselsnummer hovedperson"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "0..1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "FnrHovedperson")))
+					quid       	"4B2B569E0073"
+					documentation 	"ESS: Hva er en hovedperson? Hvis barn står på moren?"
+					type       	"string")
+				    (object ClassAttribute "person"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Person")))
+					quid       	"4B2B56AE0344"
+					type       	"Person"
+					quidu      	"4B2B7350018C"))
+				module     	"Component View::NAV-Pasientliste-2010-02-01.xsd"
+				quidu      	"4B61929902E1"
+				module     	"Component View::felleskomponent1.xsd"
+				quidu      	"4B2B759603B9"))
+			logical_presentations 	(list unit_reference_list
+			    (object ClassDiagram "Pasientliste"
+				quid       	"4B2B54F4018A"
+				title      	"Pasientliste"
+				zoom       	100
+				max_height 	28350
+				max_width  	21600
+				origin_x   	0
+				origin_y   	0
+				items      	(list diagram_item_list
+				    (object ClassView "Class" "Logical View::NAV Pasientliste::Pasientliste::Pasientliste" @97
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(445, 828)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@97
+					    location   	(89, 497)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	712
+					    justify    	0
+					    label      	"Pasientliste")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B2B55060002"
+					width      	730
+					height     	686
+					annotation 	8
+					autoResize 	TRUE)
+				    (object CategoryView "Logical View::Hodemelding" @98
+					location   	(487, 179)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@98
+					    location   	(314, 95)
+					    fill_color 	13434879
+					    nlines     	2
+					    max_width  	346
+					    justify    	0
+					    label      	"Hodemelding")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B28E3B5007E"
+					width      	358
+					height     	180)
+				    (object DependencyView "" @99
+					stereotype 	TRUE
+					quidu      	"4B2B552F0062"
+					client     	@97
+					supplier   	@98
+					vertices   	(list Points
+					    (443, 485)
+					    (443, 269))
+					line_style 	3
+					origin_attachment 	(443, 485)
+					terminal_attachment 	(443, 269))
+				    (object ClassView "Class" "Logical View::NAV Pasientliste::Pasientliste::Pasient" @100
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(1521, 853)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@100
+					    location   	(1167, 647)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	708
+					    justify    	0
+					    label      	"Pasient")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B2B55ED00ED"
+					width      	726
+					height     	436
+					annotation 	8
+					autoResize 	TRUE)
+				    (object UsesView "" @101
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					quidu      	"4B2B5A9D0379"
+					client     	@97
+					supplier   	@100
+					vertices   	(list Points
+					    (810, 853)
+					    (1158, 853))
+					line_style 	3
+					origin_attachment 	(810, 853)
+					terminal_attachment 	(1158, 853))))))
+		    (object Class_Category "Pasientliste abonnementstatus"
+			quid       	"4B2B54BF00F7"
+			exportControl 	"Public"
+			logical_models 	(list unit_reference_list
+			    (object Class "Pasientliste abonnementstatus"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "PasientlisteAbonnementStatus")))
+				quid       	"4B2B75C800CB"
+				visible_modules 	(list dependency_list
+				    (object Dependency_Relationship
+					quid       	"4B2B75D8017D"
+					supplier   	"Logical View::Hodemelding"
+					quidu      	"4B28E3B5007E"))
+				used_nodes 	(list uses_relationship_list
+				    (object Uses_Relationship
+					quid       	"4B2B761F0199"
+					supplier   	"Logical View::TOKT felleskomponenter::Abonnementstatus-type"
+					quidu      	"4B2B3F8C01B4"))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "status"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Status")))
+					quid       	"4B2B75FB006B"
+					type       	"Abonnementstatus-type"
+					quidu      	"4B2B3F8C01B4")
+				    (object ClassAttribute "format"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "0..1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Format")))
+					quid       	"4B2B765A0310"
+					documentation 	"Format kan være enten filformat eller strukturert XML format. PI =PasientInformasjon = Strukturert XML, eller  DI = Diskettformat = flatfilformat med tegnsett MSDOS codepage 865  "
+					type       	"CS")
+				    (object ClassAttribute "kanal"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Cardinality"
+						value      	(value Text "0..1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Kanal")))
+					quid       	"4B2B766402F1"
+					documentation 	
+|Kanal = Distribusjonsform
+|EL = Elektronisk 
+|DI = Diskett
+|LI = Papirliste
+					
+					type       	"CS"))
+				module     	"Component View::NAV-Pasientliste-2010-02-01.xsd"
+				quidu      	"4B61929902E1"))
+			logical_presentations 	(list unit_reference_list
+			    (object ClassDiagram "Pasientliste abonnementstatus"
+				quid       	"4B2B54FC03E1"
+				title      	"Pasientliste abonnementstatus"
+				zoom       	100
+				max_height 	28350
+				max_width  	21600
+				origin_x   	0
+				origin_y   	0
+				items      	(list diagram_item_list
+				    (object ClassView "Class" "Logical View::NAV Pasientliste::Pasientliste abonnementstatus::Pasientliste abonnementstatus" @102
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(470, 693)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@102
+					    location   	(115, 587)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	710
+					    justify    	0
+					    label      	"Pasientliste abonnementstatus")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B2B75C800CB"
+					width      	728
+					height     	236
+					annotation 	8
+					autoResize 	TRUE)
+				    (object CategoryView "Logical View::Hodemelding" @103
+					location   	(465, 199)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@103
+					    location   	(292, 115)
+					    fill_color 	13434879
+					    nlines     	2
+					    max_width  	346
+					    justify    	0
+					    label      	"Hodemelding")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B28E3B5007E"
+					width      	358
+					height     	180)
+				    (object DependencyView "" @104
+					stereotype 	TRUE
+					quidu      	"4B2B75D8017D"
+					client     	@102
+					supplier   	@103
+					vertices   	(list Points
+					    (465, 575)
+					    (465, 289))
+					line_style 	3
+					origin_attachment 	(465, 575)
+					terminal_attachment 	(465, 289))
+				    (object ClassView "Class" "Logical View::TOKT felleskomponenter::Abonnementstatus-type" @105
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(1410, 702)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	TRUE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@105
+					    location   	(1167, 646)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	486
+					    justify    	0
+					    label      	"Abonnementstatus-type")
+					stereotype 	(object ItemLabel
+					    Parent_View 	@105
+					    location   	(1167, 596)
+					    fill_color 	13434879
+					    anchor     	10
+					    nlines     	1
+					    max_width  	486
+					    justify    	0
+					    label      	"<<complexType>>")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"4B2B3F8C01B4"
+					width      	504
+					height     	236
+					annotation 	8
+					autoResize 	TRUE)
+				    (object UsesView "" @106
+					stereotype 	TRUE
+					quidu      	"4B2B761F0199"
+					client     	@102
+					supplier   	@105
+					vertices   	(list Points
+					    (834, 696)
+					    (1158, 696))
+					line_style 	3
+					origin_attachment 	(834, 696)
+					terminal_attachment 	(1158, 696)))))))
+		logical_presentations 	(list unit_reference_list
+		    (object ClassDiagram "Main"
+			quid       	"4B2B54A90096"
+			title      	"Main"
+			zoom       	100
+			max_height 	28350
+			max_width  	21600
+			origin_x   	0
+			origin_y   	0
+			items      	(list diagram_item_list
+			    (object CategoryView "Logical View::NAV Pasientliste::Pasientliste forespørsel" @107
+				location   	(278, 272)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@107
+				    location   	(134, 188)
+				    fill_color 	13434879
+				    nlines     	2
+				    max_width  	288
+				    justify    	0
+				    label      	"Pasientliste forespørsel")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4B2B540202AE"
+				width      	300
+				height     	180)
+			    (object CategoryView "Logical View::NAV Pasientliste::Pasientliste" @108
+				location   	(734, 278)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@108
+				    location   	(590, 194)
+				    fill_color 	13434879
+				    nlines     	2
+				    max_width  	288
+				    justify    	0
+				    label      	"Pasientliste")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4B2B54B4027E"
+				width      	300
+				height     	180)
+			    (object CategoryView "Logical View::NAV Pasientliste::Pasientliste abonnementstatus" @109
+				location   	(1183, 281)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@109
+				    location   	(1006, 197)
+				    fill_color 	13434879
+				    nlines     	2
+				    max_width  	354
+				    justify    	0
+				    label      	"Pasientliste abonnementstatus")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4B2B54BF00F7"
+				width      	366
+				height     	180)
+			    (object ClassView "Class" "Logical View::NAV Pasientliste::Pasientliste parameter-type" @110
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(421, 690)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	TRUE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@110
+				    location   	(143, 584)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	556
+				    justify    	0
+				    label      	"Pasientliste parameter-type")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4B2B51AA000C"
+				width      	574
+				height     	236
+				annotation 	8
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::TOKT felleskomponenter::Abonnementstatus-type" @111
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(1100, 728)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	TRUE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@111
+				    location   	(857, 672)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	486
+				    justify    	0
+				    label      	"Abonnementstatus-type")
+				stereotype 	(object ItemLabel
+				    Parent_View 	@111
+				    location   	(857, 622)
+				    fill_color 	13434879
+				    anchor     	10
+				    nlines     	1
+				    max_width  	486
+				    justify    	0
+				    label      	"<<complexType>>")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4B2B3F8C01B4"
+				width      	504
+				height     	236
+				annotation 	8
+				autoResize 	TRUE)))))
+	    (object Class_Category "NAV Fastlege"
+		quid       	"4B2B51640052"
+		exportControl 	"Public"
+		logical_models 	(list unit_reference_list
+		    (object Class "Fastlege forespørsel"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "FastlegeForesporsel")))
+			quid       	"4B618D53026E"
+			visible_modules 	(list dependency_list
+			    (object Dependency_Relationship
+				quid       	"4B619060038D"
+				supplier   	"Logical View::Hodemelding"
+				quidu      	"4B28E3B5007E"))
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "pasientens fødselsnummer"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "PasientFnr")))
+				quid       	"4B618DCB0085"
+				documentation 	"Pasientens fødselsnummer. "
+				type       	"string"))
+			module     	"Component View::NAV-Fastlege-2010-02-01.xsd"
+			quidu      	"4B618E230031")
+		    (object Class "Fastlege svar"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "FastlegeSvar")))
+			quid       	"4B618D6602FC"
+			visible_modules 	(list dependency_list
+			    (object Dependency_Relationship
+				quid       	"4B6190670063"
+				supplier   	"Logical View::Hodemelding"
+				quidu      	"4B28E3B5007E"))
+			used_nodes 	(list uses_relationship_list
+			    (object Uses_Relationship
+				quid       	"4B61905A0001"
+				supplier   	"Logical View::Felleskomponent 1 v1.1::Helsepersonell"
+				quidu      	"4B2B736801C3"))
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "kommune"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Kommune"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	(value Text "3402 Kommunenummer"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|V="0418" DN="Nord-Odal"
+					)))
+				quid       	"4B618ECE0230"
+				documentation 	"Kommunen fastlegen har avtale. "
+				type       	"CS")
+			    (object ClassAttribute "legekontorets navn"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "0..1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "LegekontorNavn")))
+				quid       	"4B618F6C017F"
+				documentation 	"Navn på legepraksis/-kontor."
+				type       	"string")
+			    (object ClassAttribute "legekontorets organisasjonsnumer"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "0..1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "LegekontorOrgNr")))
+				quid       	"4B618FA602CB"
+				documentation 	"Organisasjonsnumemr fra Brønnøysundregisteret."
+				type       	"string")
+			    (object ClassAttribute "lege"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "0..1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Lege")))
+				quid       	"4B6190200336"
+				documentation 	"Informasjon om legen på KITH's HealthCareProfessional format. "
+				type       	"Helsepersonell"
+				quidu      	"4B2B736801C3"))
+			module     	"Component View::NAV-Fastlege-2010-02-01.xsd"
+			quidu      	"4B618E230031"))
+		logical_presentations 	(list unit_reference_list
+		    (object ClassDiagram "NAV Fastlege"
+			quid       	"4B2B74970370"
+			title      	"NAV Fastlege"
+			zoom       	100
+			max_height 	28350
+			max_width  	21600
+			origin_x   	0
+			origin_y   	0
+			items      	(list diagram_item_list
+			    (object ClassView "Class" "Logical View::NAV Fastlege::Fastlege forespørsel" @112
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(448, 765)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@112
+				    location   	(109, 709)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	678
+				    justify    	0
+				    label      	"Fastlege forespørsel")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4B618D53026E"
+				width      	696
+				height     	136
+				annotation 	8
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::NAV Fastlege::Fastlege svar" @113
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(1408, 675)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@113
+				    location   	(1000, 544)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	816
+				    justify    	0
+				    label      	"Fastlege svar")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4B618D6602FC"
+				width      	834
+				height     	286
+				annotation 	8
+				autoResize 	TRUE)
+			    (object CategoryView "Logical View::Hodemelding" @114
+				location   	(515, 196)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@114
+				    location   	(342, 112)
+				    fill_color 	13434879
+				    nlines     	2
+				    max_width  	346
+				    justify    	0
+				    label      	"Hodemelding")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4B28E3B5007E"
+				width      	358
+				height     	180)
+			    (object ClassView "Class" "Logical View::Felleskomponent 1 v1.1::Helsepersonell" @115
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(1408, 1184)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@115
+				    location   	(1125, 1080)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	566
+				    justify    	0
+				    label      	"Helsepersonell")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4B2B736801C3"
+				width      	584
+				height     	232
+				annotation 	8
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::Felleskomponent 1 v1.1::Person_a" @116
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(1437, 1764)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	TRUE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@116
+				    location   	(1037, 1510)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	800
+				    justify    	0
+				    label      	"Person_a")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4B2B6FDC0081"
+				width      	818
+				height     	532
+				annotation 	8
+				autoResize 	TRUE)
+			    (object InheritView "" @117
+				stereotype 	TRUE
+				quidu      	"4B2B736F0222"
+				client     	@115
+				supplier   	@116
+				vertices   	(list Points
+				    (1406, 1300)
+				    (1406, 1497))
+				line_style 	3
+				origin_attachment 	(1406, 1300)
+				terminal_attachment 	(1406, 1497))
+			    (object UsesView "" @118
+				stereotype 	TRUE
+				quidu      	"4B61905A0001"
+				client     	@113
+				supplier   	@115
+				vertices   	(list Points
+				    (1406, 818)
+				    (1406, 1068))
+				line_style 	3
+				origin_attachment 	(1406, 818)
+				terminal_attachment 	(1406, 1068))
+			    (object DependencyView "" @119
+				stereotype 	TRUE
+				quidu      	"4B619060038D"
+				client     	@112
+				supplier   	@114
+				vertices   	(list Points
+				    (466, 697)
+				    (466, 286))
+				line_style 	3
+				origin_attachment 	(466, 697)
+				terminal_attachment 	(466, 286))
+			    (object DependencyView "" @120
+				stereotype 	TRUE
+				quidu      	"4B6190670063"
+				client     	@113
+				supplier   	@114
+				vertices   	(list Points
+				    (991, 596)
+				    (553, 596)
+				    (553, 286))
+				line_style 	3
+				origin_attachment 	(991, 596)
+				terminal_attachment 	(553, 286))))))
+	    (object Class_Category "NAV Egenandel"
+		quid       	"4B2B516D03A2"
+		exportControl 	"Public"
+		logical_models 	(list unit_reference_list
+		    (object Class "Egenandel parameter-type"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "EgenandelParamType")))
+			quid       	"4B5D97790342"
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "fødselsnummer borger"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "BorgerFnr")))
+				quid       	"4B5D97B20382"
+				type       	"string")
+			    (object ClassAttribute "dato"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Dato")))
+				quid       	"4B5D97C7005C"
+				type       	"date"))
+			module     	"Component View::NAV-Egenandel-2010-02-01.xsd"
+			quidu      	"4B5D99E200CD"
+			abstract   	TRUE)
+		    (object Class "Forespørsel om egenandel"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	(value Text ""))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "EgenandelForesporsel")))
+			quid       	"4B5D97ED0195"
+			documentation 	"Forespørsel om egenandel. "
+			visible_modules 	(list dependency_list
+			    (object Dependency_Relationship
+				quid       	"4B5D995C0004"
+				supplier   	"Logical View::Hodemelding"
+				quidu      	"4B28E3B5007E"))
+			used_nodes 	(list uses_relationship_list
+			    (object Uses_Relationship
+				quid       	"4B5D994C0037"
+				supplier   	"Logical View::NAV Egenandel::Egenandel parameter-type"
+				quidu      	"4B5D97790342"))
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "har borger frikort"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "HarBorgerFrikort"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	(value Text "")))
+				quid       	"4B5D980D032E"
+				documentation 	"Forespørsel om borger har frikort. "
+				type       	"Egenandel parameter-type"
+				quidu      	"4B5D97790342")
+			    (object ClassAttribute "har borger egenandelfritak"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "HarBorgerEgenandelfritak"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	(value Text "")))
+				quid       	"4B5D981F01EC"
+				documentation 	"Forespørsel om borger skal betale egenadel på helsetjenester, oppgitt fødselsnummer og dato for behandlingen. "
+				type       	"Egenandel parameter-type"
+				quidu      	"4B5D97790342"))
+			module     	"Component View::NAV-Egenandel-2010-02-01.xsd"
+			quidu      	"4B5D99E200CD")
+		    (object Class "Svar på forespørsel om egenandel."
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "EgenandelSvar")))
+			quid       	"4B5D97FB00E0"
+			documentation 	"Svar på forespørsel om egenandel. "
+			visible_modules 	(list dependency_list
+			    (object Dependency_Relationship
+				quid       	"4B5D995E0065"
+				supplier   	"Logical View::Hodemelding"
+				quidu      	"4B28E3B5007E"))
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "status"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Status"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	(value Text ""))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	(value Text 
+|0 Ingen data
+|1 Ja
+					)))
+				quid       	"4B5D98B9025B"
+				documentation 	
+|Svaret er "Ja" eller "Ingen data".
+|
+|Dersom Borger har reservert seg mot utlevering av informasjon er svaret ingen data. Dette er det samme svaret som når grunnlag for fritak mangler
+				
+				type       	"CS")
+			    (object ClassAttribute "svarmelding"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Svarmelding")))
+				quid       	"4B5D98CB030C"
+				documentation 	"En tekst som beskriver hvordan svaret skal tolkes av behandler. "
+				type       	"string"))
+			module     	"Component View::NAV-Egenandel-2010-02-01.xsd"
+			quidu      	"4B5D99E200CD")
+		    (object Class "Mengdeforespørsel om egenandel"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "EgenandelMengdeForesporsel")))
+			quid       	"4CAAD61402C9"
+			visible_modules 	(list dependency_list
+			    (object Dependency_Relationship
+				quid       	"4CAAD9860175"
+				supplier   	"Logical View::Hodemelding"
+				quidu      	"4B28E3B5007E"))
+			used_nodes 	(list uses_relationship_list
+			    (object Uses_Relationship
+				quid       	"4CAAD7E40333"
+				supplier   	"Logical View::NAV Egenandel::Egenandel parameter-type"
+				quidu      	"4B5D97790342"))
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "har borger frikort"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "HarBorgerFrikort"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	(value Text "")))
+				quid       	"4CAAD63201B2"
+				documentation 	"Forespørsel om borger har frikort. "
+				type       	"Egenandel parameter-type"
+				quidu      	"4B5D97790342")))
+		    (object Class "Svar på mengdeforespørsel om egenandel"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "EgenandelMengdeSvar")))
+			quid       	"4CAAD7BC00EB"
+			documentation 	"Svar på mengdeforespørsel om egenandel. "
+			visible_modules 	(list dependency_list
+			    (object Dependency_Relationship
+				quid       	"4CAAD98B004D"
+				supplier   	"Logical View::Hodemelding"
+				quidu      	"4B28E3B5007E")))
+		    (object Class "Har borger frikort svar"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "HarBorgerFrikortSvar")))
+			quid       	"4CAAD86D00A3"
+			documentation 	"Enkeltresultat på mengdeforespørsel om egenandel. "
+			superclasses 	(list inheritance_relationship_list
+			    (object Inheritance_Relationship
+				quid       	"4CAC48990137"
+				supplier   	"Logical View::NAV Egenandel::Egenandel parameter-type"
+				quidu      	"4B5D97790342"))
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "status"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Status"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	(value Text ""))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	(value Text 
+|0 Ingen data
+|1 Ja
+					)))
+				quid       	"4CAADA1E0125"
+				documentation 	
+|Svaret er "Ja" eller "Ingen data".
+|
+|Dersom Borger har reservert seg mot utlevering av informasjon er svaret ingen data. Dette er det samme svaret som når grunnlag for fritak mangler
+				
+				type       	"CS")
+			    (object ClassAttribute "svarmelding"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Cardinality"
+					value      	(value Text "1"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Svarmelding")))
+				quid       	"4CAADA1502ED"
+				documentation 	"En tekst som beskriver hvordan svaret skal tolkes av behandler. "
+				type       	"string")))
+		    (object Association "$UNNAMED$30"
+			quid       	"4CAAD957034E"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$31"
+				quid       	"4CAAD95801B3"
+				supplier   	"Logical View::NAV Egenandel::Svar på mengdeforespørsel om egenandel"
+				quidu      	"4CAAD7BC00EB"
+				Containment 	"By Value"
+				is_aggregate 	TRUE)
+			    (object Role "$UNNAMED$32"
+				quid       	"4CAAD95801B5"
+				supplier   	"Logical View::NAV Egenandel::Har borger frikort svar"
+				quidu      	"4CAAD86D00A3"
+				client_cardinality 	(value cardinality "1..*")
+				Containment 	"By Value"))))
+		logical_presentations 	(list unit_reference_list
+		    (object ClassDiagram "NAV Egenandel"
+			quid       	"4B2B74A201CA"
+			title      	"NAV Egenandel"
+			zoom       	100
+			max_height 	28350
+			max_width  	21600
+			origin_x   	0
+			origin_y   	0
+			items      	(list diagram_item_list
+			    (object ClassView "Class" "Logical View::NAV Egenandel::Egenandel parameter-type" @121
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(425, 1212)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	TRUE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@121
+				    location   	(128, 1131)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	594
+				    justify    	0
+				    label      	"Egenandel parameter-type")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4B5D97790342"
+				compartment 	(object Compartment
+				    Parent_View 	@121
+				    location   	(128, 1192)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	TRUE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    icon_style 	"Icon"
+				    fill_color 	16777215
+				    anchor     	2
+				    nlines     	2
+				    max_width  	606)
+				width      	612
+				height     	186
+				annotation 	8
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::NAV Egenandel::Forespørsel om egenandel" @122
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(584, 196)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@122
+				    location   	(64, 115)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	1040
+				    justify    	0
+				    label      	"Forespørsel om egenandel")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4B5D97ED0195"
+				compartment 	(object Compartment
+				    Parent_View 	@122
+				    location   	(64, 176)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    icon_style 	"Icon"
+				    fill_color 	16777215
+				    anchor     	2
+				    nlines     	2
+				    max_width  	1038)
+				width      	1058
+				height     	186
+				annotation 	8
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::NAV Egenandel::Svar på forespørsel om egenandel." @123
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(719, 573)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@123
+				    location   	(356, 492)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	726
+				    justify    	0
+				    label      	"Svar på forespørsel om egenandel.")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4B5D97FB00E0"
+				compartment 	(object Compartment
+				    Parent_View 	@123
+				    location   	(356, 553)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    icon_style 	"Icon"
+				    fill_color 	16777215
+				    anchor     	2
+				    nlines     	2
+				    max_width  	409)
+				width      	744
+				height     	186
+				annotation 	8
+				autoResize 	TRUE)
+			    (object CategoryView "Logical View::Hodemelding" @124
+				location   	(1436, 206)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@124
+				    location   	(1263, 122)
+				    fill_color 	13434879
+				    nlines     	2
+				    max_width  	346
+				    justify    	0
+				    label      	"Hodemelding")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"4B28E3B5007E"
+				width      	358
+				height     	180)
+			    (object ClassView "Class" "Logical View::NAV Egenandel::Mengdeforespørsel om egenandel" @125
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(1480, 870)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@125
+				    location   	(1046, 814)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	868
+				    justify    	0
+				    label      	"Mengdeforespørsel om egenandel")
+				icon_style 	"Icon"
+				fill_color 	8454016
+				quidu      	"4CAAD61402C9"
+				compartment 	(object Compartment
+				    Parent_View 	@125
+				    location   	(1046, 875)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    icon_style 	"Icon"
+				    fill_color 	13434879
+				    anchor     	2
+				    nlines     	1
+				    max_width  	866)
+				width      	886
+				height     	136
+				annotation 	8
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::NAV Egenandel::Svar på mengdeforespørsel om egenandel" @126
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(2239, 193)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@126
+				    location   	(1818, 142)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	842
+				    justify    	0
+				    label      	"Svar på mengdeforespørsel om egenandel")
+				icon_style 	"Icon"
+				fill_color 	8454016
+				quidu      	"4CAAD7BC00EB"
+				width      	860
+				height     	126
+				annotation 	8
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::NAV Egenandel::Har borger frikort svar" @127
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(2299, 1190)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@127
+				    location   	(2075, 1109)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	448
+				    justify    	0
+				    label      	"Har borger frikort svar")
+				icon_style 	"Icon"
+				fill_color 	8454016
+				quidu      	"4CAAD86D00A3"
+				compartment 	(object Compartment
+				    Parent_View 	@127
+				    location   	(2075, 1170)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    icon_style 	"Icon"
+				    fill_color 	13434879
+				    anchor     	2
+				    nlines     	2
+				    max_width  	409)
+				width      	466
+				height     	186
+				annotation 	8
+				autoResize 	TRUE)
+			    (object AssociationViewNew "$UNNAMED$30" @128
+				location   	(2204, 675)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				quidu      	"4CAAD957034E"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$31" @129
+					Parent_View 	@128
+					location   	(-1230, -578)
+					stereotype 	TRUE
+					quidu      	"4CAAD95801B3"
+					client     	@128
+					supplier   	@126
+					vertices   	(list Points
+					    (2204, 675)
+					    (2204, 255))
+					line_style 	3
+					origin_attachment 	(2204, 675)
+					terminal_attachment 	(2204, 255))
+				    (object RoleView "$UNNAMED$32" @130
+					Parent_View 	@128
+					location   	(-1230, -578)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					quidu      	"4CAAD95801B5"
+					client     	@128
+					supplier   	@127
+					vertices   	(list Points
+					    (2204, 675)
+					    (2204, 1096))
+					line_style 	3
+					origin_attachment 	(2204, 675)
+					terminal_attachment 	(2204, 1096)
+					label      	(object SegLabel @131
+					    Parent_View 	@130
+					    location   	(2260, 971)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"1..*"
+					    pctDist    	0.704403
+					    height     	56
+					    orientation 	0))))
+			    (object DependencyView "" @132
+				stereotype 	TRUE
+				quidu      	"4B5D995C0004"
+				client     	@122
+				supplier   	@124
+				vertices   	(list Points
+				    (1113, 191)
+				    (1256, 191))
+				line_style 	3
+				origin_attachment 	(1113, 191)
+				terminal_attachment 	(1256, 191))
+			    (object UsesView "" @133
+				stereotype 	TRUE
+				quidu      	"4B5D994C0037"
+				client     	@122
+				supplier   	@121
+				vertices   	(list Points
+				    (244, 289)
+				    (244, 1119))
+				line_style 	3
+				origin_attachment 	(244, 289)
+				terminal_attachment 	(244, 1119))
+			    (object DependencyView "" @134
+				stereotype 	TRUE
+				quidu      	"4B5D995E0065"
+				client     	@123
+				supplier   	@124
+				vertices   	(list Points
+				    (1091, 559)
+				    (1341, 559)
+				    (1341, 296))
+				line_style 	3
+				origin_attachment 	(1091, 559)
+				terminal_attachment 	(1341, 296))
+			    (object DependencyView "" @135
+				stereotype 	TRUE
+				quidu      	"4CAAD98B004D"
+				client     	@126
+				supplier   	@124
+				vertices   	(list Points
+				    (1809, 203)
+				    (1615, 203))
+				line_style 	3
+				origin_attachment 	(1809, 203)
+				terminal_attachment 	(1615, 203))
+			    (object UsesView "" @136
+				stereotype 	TRUE
+				quidu      	"4CAAD7E40333"
+				client     	@125
+				supplier   	@121
+				vertices   	(list Points
+				    (1037, 843)
+				    (575, 843)
+				    (575, 1119))
+				line_style 	3
+				origin_attachment 	(1037, 843)
+				terminal_attachment 	(575, 1119))
+			    (object InheritView "" @137
+				stereotype 	TRUE
+				quidu      	"4CAC48990137"
+				client     	@127
+				supplier   	@121
+				vertices   	(list Points
+				    (2066, 1216)
+				    (731, 1216))
+				line_style 	3
+				origin_attachment 	(2066, 1216)
+				terminal_attachment 	(731, 1216))
+			    (object DependencyView "" @138
+				stereotype 	TRUE
+				quidu      	"4CAAD9860175"
+				client     	@125
+				supplier   	@124
+				vertices   	(list Points
+				    (1441, 802)
+				    (1441, 296))
+				line_style 	3
+				origin_attachment 	(1441, 802)
+				terminal_attachment 	(1441, 296)))))))
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"4AEB19A802E5"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object CategoryView "Logical View::NAV Ebrev::Ebrev forespørsel" @139
+			location   	(210, 264)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@139
+			    location   	(51, 180)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	318
+			    justify    	0
+			    label      	"Ebrev forespørsel")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"4AEB1ADA0151"
+			width      	330
+			height     	180)
+		    (object CategoryView "Logical View::Felleskomponent 1 v1.1" @140
+			location   	(660, 264)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@140
+			    location   	(516, 180)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	288
+			    justify    	0
+			    label      	"Felleskomponent 1 v1.1")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"47B56E6702FF"
+			width      	300
+			height     	180)
+		    (object CategoryView "Logical View::Hodemelding" @141
+			location   	(1110, 264)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@141
+			    location   	(966, 180)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	288
+			    justify    	0
+			    label      	"Hodemelding")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"4B28E3B5007E"
+			width      	300
+			height     	180)
+		    (object CategoryView "Logical View::NAV Ebrev::Ebrev abonnementstatus" @142
+			location   	(1710, 264)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@142
+			    location   	(1529, 180)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	362
+			    justify    	0
+			    label      	"Ebrev abonnementstatus")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"4B2B3DA602DD"
+			width      	374
+			height     	180)
+		    (object CategoryView "Logical View::NAV Ebrev::Ebrev samhandleradresser" @143
+			location   	(2310, 264)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@143
+			    location   	(2114, 180)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	392
+			    justify    	0
+			    label      	"Ebrev samhandleradresser")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"4B2B3DB701C0"
+			width      	404
+			height     	180)
+		    (object CategoryView "Logical View::TOKT felleskomponenter" @144
+			location   	(2910, 264)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@144
+			    location   	(2738, 180)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	344
+			    justify    	0
+			    label      	"TOKT felleskomponenter")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"4B2B3DD20336"
+			width      	356
+			height     	180)
+		    (object CategoryView "Logical View::NAV Ebrev" @145
+			location   	(3360, 264)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@145
+			    location   	(3216, 180)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	288
+			    justify    	0
+			    label      	"NAV Ebrev")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"4B2B50F60045"
+			width      	300
+			height     	180)))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"4AEB19A8019F"
+	physical_models 	(list unit_reference_list
+	    (object module "AllClasses" "SubType" "Specification"
+		quid       	"4B01CC160006"
+		stereotype 	"Subprogram Specification"
+		language   	""
+		class      	"Logical View::Felleskomponent 1 v1.1::Adresse"
+		quidu      	"431EAC1E001B"
+		class      	"Logical View::Felleskomponent 1 v1.1::Telekommunikasjon"
+		quidu      	"43201E4602F4"
+		class      	"Logical View::Felleskomponent 1 v1.1::Identifikator"
+		quidu      	"43201FF70007"
+		class      	"Logical View::Felleskomponent 1 v1.1::Person_a"
+		quidu      	"4B2B6FDC0081"
+		class      	"Logical View::Felleskomponent 1 v1.1::Person"
+		quidu      	"4B2B7350018C"
+		class      	"Logical View::Felleskomponent 1 v1.1::Helsepersonell"
+		quidu      	"4B2B736801C3"
+		class      	"Logical View::Felleskomponent 1 v1.1::Organisasjon"
+		quidu      	"4B2B74E00044")
+	    (object module "felleskomponent1.xsd" "NotAModuleType" "NotAModulePart"
+		quid       	"4B2B759603B9"
+		stereotype 	""
+		visible_modules 	(list dependency_list
+		    (object Module_Visibility_Relationship
+			quid       	"4B61922D0259"
+			label      	"import"
+			supplier   	"Component View::kith.xsd"
+			quidu      	"4B61921F02AB"
+			supplier_is_spec 	TRUE))
+		language   	""
+		class      	"Logical View::NAV Pasientliste::Pasientliste::Pasient"
+		quidu      	"4B2B55ED00ED"
+		class      	"Logical View::Felleskomponent 1 v1.1::Person_a"
+		quidu      	"4B2B6FDC0081"
+		class      	"Logical View::Felleskomponent 1 v1.1::Person"
+		quidu      	"4B2B7350018C")
+	    (object module "NAV-EBREV-2010-02-01.xsd" "NotAModuleType" "NotAModulePart"
+		quid       	"4B2B75A2022F"
+		stereotype 	""
+		visible_modules 	(list dependency_list
+		    (object Module_Visibility_Relationship
+			quid       	"4B6C0D680161"
+			label      	"Import"
+			supplier   	"Component View::kith.xsd"
+			quidu      	"4B61921F02AB"
+			supplier_is_spec 	TRUE)
+		    (object Module_Visibility_Relationship
+			quid       	"4B6C0D6D00DA"
+			label      	"Import"
+			supplier   	"Component View::felleskomponent1.xsd"
+			quidu      	"4B2B759603B9"
+			supplier_is_spec 	TRUE))
+		language   	""
+		class      	"Logical View::TOKT felleskomponenter::Abonnementstatus-type"
+		quidu      	"4B2B3F8C01B4"
+		class      	"Logical View::NAV Ebrev::Ebrev abonnementstatus::Ebrev abonnementstatus"
+		quidu      	"4B2B408402E4"
+		class      	"Logical View::NAV Ebrev::Ebrev forespørsel::Ebrev forespørsel"
+		quidu      	"4B2B3A9A024D"
+		class      	"Logical View::NAV Ebrev::Ebrev forespørsel::Ebrev parametertype"
+		quidu      	"4B2B397C03CD"
+		class      	"Logical View::NAV Ebrev::Ebrev forespørsel::Hent abonnementstatus"
+		quidu      	"4B2B3B0402A3"
+		class      	"Logical View::NAV Ebrev::Ebrev forespørsel::Hent samhandleradresser"
+		quidu      	"4B2B3AD001A5"
+		class      	"Logical View::NAV Ebrev::Ebrev forespørsel::Start abonnement"
+		quidu      	"4B2B3ADC03A1"
+		class      	"Logical View::NAV Ebrev::Ebrev forespørsel::Stopp abonnement"
+		quidu      	"4B2B3AFD0358"
+		class      	"Logical View::NAV Ebrev::Ebrev forespørsel::Test Ebrev"
+		quidu      	"4B2B3B0F0208"
+		class      	"Logical View::NAV Ebrev::Ebrev samhandleradresser::Ebrev samhandleradresser"
+		quidu      	"4B2B3E0D015D"
+		class      	"Logical View::NAV Ebrev::Ebrev samhandleradresser::Organisasjonsenhet"
+		quidu      	"4B2B3E3801E0")
+	    (object module "NAV-Egenandel-2010-02-01.xsd" "NotAModuleType" "NotAModulePart"
+		quid       	"4B5D99E200CD"
+		stereotype 	""
+		visible_modules 	(list dependency_list
+		    (object Module_Visibility_Relationship
+			quid       	"4B619243002F"
+			label      	"import"
+			supplier   	"Component View::kith.xsd"
+			quidu      	"4B61921F02AB"
+			supplier_is_spec 	TRUE))
+		language   	""
+		class      	"Logical View::NAV Egenandel::Egenandel parameter-type"
+		quidu      	"4B5D97790342"
+		class      	"Logical View::NAV Egenandel::Forespørsel om egenandel"
+		quidu      	"4B5D97ED0195"
+		class      	"Logical View::NAV Egenandel::Svar på forespørsel om egenandel."
+		quidu      	"4B5D97FB00E0")
+	    (object module "NAV-Fastlege-2010-02-01.xsd" "NotAModuleType" "NotAModulePart"
+		quid       	"4B618E230031"
+		stereotype 	""
+		visible_modules 	(list dependency_list
+		    (object Module_Visibility_Relationship
+			quid       	"4B6192520029"
+			label      	"import"
+			supplier   	"Component View::felleskomponent1.xsd"
+			quidu      	"4B2B759603B9"
+			supplier_is_spec 	TRUE)
+		    (object Module_Visibility_Relationship
+			quid       	"4B6C0D5301C9"
+			label      	"Import"
+			supplier   	"Component View::kith.xsd"
+			quidu      	"4B61921F02AB"
+			supplier_is_spec 	TRUE))
+		language   	""
+		class      	"Logical View::NAV Fastlege::Fastlege forespørsel"
+		quidu      	"4B618D53026E"
+		class      	"Logical View::NAV Fastlege::Fastlege svar"
+		quidu      	"4B618D6602FC")
+	    (object module "kith.xsd" "NotAModuleType" "NotAModulePart"
+		quid       	"4B61921F02AB"
+		stereotype 	""
+		language   	"")
+	    (object module "NAV-Pasientliste-2010-02-01.xsd" "NotAModuleType" "NotAModulePart"
+		quid       	"4B61929902E1"
+		stereotype 	""
+		visible_modules 	(list dependency_list
+		    (object Module_Visibility_Relationship
+			quid       	"4B6192C000FA"
+			label      	"import"
+			supplier   	"Component View::kith.xsd"
+			quidu      	"4B61921F02AB"
+			supplier_is_spec 	TRUE)
+		    (object Module_Visibility_Relationship
+			quid       	"4B6192EB0021"
+			label      	"import"
+			supplier   	"Component View::felleskomponent1.xsd"
+			quidu      	"4B2B759603B9"
+			supplier_is_spec 	TRUE))
+		language   	""
+		class      	"Logical View::TOKT felleskomponenter::Abonnementstatus-type"
+		quidu      	"4B2B3F8C01B4"
+		class      	"Logical View::NAV Pasientliste::Pasientliste::Pasient"
+		quidu      	"4B2B55ED00ED"
+		class      	"Logical View::NAV Pasientliste::Pasientliste::Pasientliste"
+		quidu      	"4B2B55060002"
+		class      	"Logical View::NAV Pasientliste::Pasientliste abonnementstatus::Pasientliste abonnementstatus"
+		quidu      	"4B2B75C800CB"
+		class      	"Logical View::NAV Pasientliste::Pasientliste forespørsel::Hent abonnementstatus"
+		quidu      	"4B2B52BC0241"
+		class      	"Logical View::NAV Pasientliste::Pasientliste forespørsel::Hent pasientliste"
+		quidu      	"4B2B528500A6"
+		class      	"Logical View::NAV Pasientliste::Pasientliste forespørsel::Pasientliste forespørsel"
+		quidu      	"4B2B524F008C"
+		class      	"Logical View::NAV Pasientliste::Pasientliste forespørsel::Start abonnement"
+		quidu      	"4B2B529601C8"
+		class      	"Logical View::NAV Pasientliste::Pasientliste forespørsel::Stopp abonnement"
+		quidu      	"4B2B52AA0180"
+		class      	"Logical View::NAV Pasientliste::Pasientliste parameter-type"
+		quidu      	"4B2B51AA000C"))
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"4AEB19A802E3"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object ModView "Component View::NAV-EBREV-2010-02-01.xsd" "NotAModuleType" "NotAModulePart" @146
+			location   	(362, 208)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@146
+			    location   	(275, 183)
+			    fill_color 	13434879
+			    anchor_loc 	3
+			    nlines     	2
+			    max_width  	327
+			    label      	"NAV-EBREV-2010-02-01.xsd")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"4B2B75A2022F"
+			width      	590
+			autoResize 	TRUE
+			width      	590
+			height     	162)
+		    (object ModView "Component View::NAV-Egenandel-2010-02-01.xsd" "NotAModuleType" "NotAModulePart" @147
+			location   	(2612, 534)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@147
+			    location   	(2532, 509)
+			    fill_color 	13434879
+			    anchor_loc 	3
+			    nlines     	2
+			    max_width  	303
+			    label      	"NAV-Egenandel-2010-02-01.xsd")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"4B5D99E200CD"
+			width      	546
+			autoResize 	TRUE
+			width      	546
+			height     	162)
+		    (object ModView "Component View::NAV-Fastlege-2010-02-01.xsd" "NotAModuleType" "NotAModulePart" @148
+			location   	(1262, 208)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@148
+			    location   	(1173, 183)
+			    fill_color 	13434879
+			    anchor_loc 	3
+			    nlines     	2
+			    max_width  	335
+			    label      	"NAV-Fastlege-2010-02-01.xsd")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"4B618E230031"
+			width      	604
+			autoResize 	TRUE
+			width      	604
+			height     	162)
+		    (object ModView "Component View::felleskomponent1.xsd" "NotAModuleType" "NotAModulePart" @149
+			location   	(1037, 534)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@149
+			    location   	(981, 509)
+			    fill_color 	13434879
+			    anchor_loc 	3
+			    nlines     	2
+			    max_width  	208
+			    label      	"felleskomponent1.xsd")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"4B2B759603B9"
+			width      	374
+			autoResize 	TRUE
+			width      	374
+			height     	162)
+		    (object ModView "Component View::kith.xsd" "NotAModuleType" "NotAModulePart" @150
+			location   	(1487, 867)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@150
+			    location   	(1438, 840)
+			    fill_color 	13434879
+			    anchor_loc 	3
+			    nlines     	2
+			    max_width  	181
+			    label      	"kith.xsd")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"4B61921F02AB"
+			width      	325
+			height     	175
+			autoResize 	TRUE
+			width      	325
+			height     	175)
+		    (object ModVisView "import" @151
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@151
+			    location   	(1253, 696)
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"import")
+			stereotype 	TRUE
+			quidu      	"4B61922D0259"
+			client     	@149
+			supplier   	@150
+			vertices   	(list Points
+			    (1141, 612)
+			    (1365, 780))
+			line_style 	0)
+		    (object ModVisView "import" @152
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@152
+			    location   	(1996, 714)
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"import")
+			stereotype 	TRUE
+			quidu      	"4B619243002F"
+			client     	@147
+			supplier   	@150
+			vertices   	(list Points
+			    (2347, 610)
+			    (1644, 818))
+			line_style 	0)
+		    (object ModVisView "import" @153
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@153
+			    location   	(1141, 370)
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"import")
+			stereotype 	TRUE
+			quidu      	"4B6192520029"
+			client     	@148
+			supplier   	@149
+			vertices   	(list Points
+			    (1195, 286)
+			    (1088, 454))
+			line_style 	0)
+		    (object ModView "Component View::NAV-Pasientliste-2010-02-01.xsd" "NotAModuleType" "NotAModulePart" @154
+			location   	(2162, 208)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@154
+			    location   	(2049, 183)
+			    fill_color 	13434879
+			    anchor_loc 	3
+			    nlines     	2
+			    max_width  	427
+			    label      	"NAV-Pasientliste-2010-02-01.xsd")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"4B61929902E1"
+			width      	770
+			autoResize 	TRUE
+			width      	770
+			height     	162)
+		    (object ModVisView "import" @155
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@155
+			    location   	(1819, 533)
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"import")
+			stereotype 	TRUE
+			quidu      	"4B6192C000FA"
+			client     	@154
+			supplier   	@150
+			vertices   	(list Points
+			    (2070, 286)
+			    (1568, 780))
+			line_style 	0)
+		    (object ModVisView "import" @156
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@156
+			    location   	(1544, 383)
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"import")
+			stereotype 	TRUE
+			quidu      	"4B6192EB0021"
+			client     	@154
+			supplier   	@149
+			vertices   	(list Points
+			    (1871, 286)
+			    (1217, 479))
+			line_style 	0)
+		    (object ModVisView "Import" @157
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@157
+			    location   	(1470, 510)
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"Import")
+			stereotype 	TRUE
+			quidu      	"4B6C0D5301C9"
+			client     	@148
+			supplier   	@150
+			vertices   	(list Points
+			    (1311, 286)
+			    (1487, 534)
+			    (1487, 780))
+			line_style 	0)
+		    (object ModVisView "Import" @158
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@158
+			    location   	(725, 641)
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"Import")
+			stereotype 	TRUE
+			quidu      	"4B6C0D680161"
+			client     	@146
+			supplier   	@150
+			vertices   	(list Points
+			    (362, 286)
+			    (362, 534)
+			    (1326, 818))
+			line_style 	0)
+		    (object ModVisView "Import" @159
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@159
+			    location   	(699, 370)
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"Import")
+			stereotype 	TRUE
+			quidu      	"4B6C0D6D00DA"
+			client     	@146
+			supplier   	@149
+			vertices   	(list Points
+			    (526, 286)
+			    (871, 454))
+			line_style 	0))))
+	category   	"Logical View"
+	quidu      	"4AEB19A8019D")
+    process_structure 	(object Processes
+	quid       	"4AEB19A801A0"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"4AEB19A801A2"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	attributes 	(list Attribute_Set
+	    (object Attribute
+		tool       	"framework"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Model Integrator"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Web Publisher"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Version Control"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"KITH"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"KITH"
+			name       	"NullsOK"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH"
+			name       	"PrimaryKey"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Cardinality"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"RequirementCode"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ComponentType"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ShortName"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Origin"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Status"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Use"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Example"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Comment"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Codes"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ID"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"OrigOrg"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Author"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"PrevVersion"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ValidFrom"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Ordinal"
+			value      	0)
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Tooltip"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"FixedValue"
+			value      	"")))
+	    (object Attribute
+		tool       	"KITH"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"KITH"
+			name       	"RequirementCode"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ShortName"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Status"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Use"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Example"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Comment"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Codes"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Level"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ID"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"OrigOrg"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Author"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"PrevVersion"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ValidFrom"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Ordinal"
+			value      	0)))
+	    (object Attribute
+		tool       	"KITH"
+		name       	"default__Association"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Ordinal"
+			value      	0)))
+	    (object Attribute
+		tool       	"MOF"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"JCR"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"MOF"
+		name       	"default__Category"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"MOF"
+			name       	"uml2mof.hasImplicitReferences"
+			value      	"true")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"uml2mof.clusteredImport"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.supertypes"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_prefix"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_version"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"xmi.namespace"
+			value      	"")))
+	    (object Attribute
+		tool       	"JCR"
+		name       	"default__Category"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JCR"
+			name       	"java_prefix"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"java_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"c_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"versioning.package"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"imported.package"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"merged.package"
+			value      	"")))
+	    (object Attribute
+		tool       	"MOF"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"MOF"
+			name       	"uml2mof.corbaType"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"MOF"
+			name       	"uml2mof.repositoryId"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_version"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"xmi.enumerationUnprefix"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"uml2mof.evaluationPolicy"
+			value      	"deferred")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.constrainedElements"
+			value      	"")))
+	    (object Attribute
+		tool       	"JCR"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JCR"
+			name       	"java_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"c_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"cpp_substitute_type"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"cpp_substitute_base"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"xmi.externalizeOK"
+			value      	"true")))
+	    (object Attribute
+		tool       	"MOF"
+		name       	"default__Role"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.isChangeable"
+			value      	"true")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_version"
+			value      	"")))
+	    (object Attribute
+		tool       	"JCR"
+		name       	"default__Role"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JCR"
+			name       	"java_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"c_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"MOF"
+		name       	"default__Association"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.visibility"
+			value      	"public_vis")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"xmi.force_externalize"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_version"
+			value      	"")))
+	    (object Attribute
+		tool       	"JCR"
+		name       	"default__Association"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JCR"
+			name       	"java_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"c_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"MOF"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.multiplicity"
+			value      	"1")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"uml2mof.isOrdered"
+			value      	"false")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"uml2mof.isUnique"
+			value      	"false")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.isChangeable"
+			value      	"true")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"uml2mof.referencedEnd"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_version"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"xmi.defaultValue"
+			value      	"")))
+	    (object Attribute
+		tool       	"JCR"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JCR"
+			name       	"java_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"c_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"mof.object_name"
+			value      	"false")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"xmi.externalizeOK"
+			value      	"true")))
+	    (object Attribute
+		tool       	"MOF"
+		name       	"default__Operation"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.scope"
+			value      	"instance_level")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.isQuery"
+			value      	"false")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.return.multiplicity"
+			value      	"1")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.return.isOrdered"
+			value      	"false")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.return.isUnique"
+			value      	"false")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_version"
+			value      	"")))
+	    (object Attribute
+		tool       	"JCR"
+		name       	"default__Operation"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JCR"
+			name       	"java_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"c_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"cpp_virtual"
+			value      	"false")))
+	    (object Attribute
+		tool       	"MOF"
+		name       	"default__Param"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"MOF"
+			name       	"uml2mof.multiplicity"
+			value      	"1")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"uml2mof.isOrdered"
+			value      	"false")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"uml2mof.isUnique"
+			value      	"false")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"rose2mof.direction"
+			value      	"in_dir")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"mof.idl_version"
+			value      	"")
+		    (object Attribute
+			tool       	"MOF"
+			name       	"xmi.defaultValue"
+			value      	"")))
+	    (object Attribute
+		tool       	"JCR"
+		name       	"default__Param"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JCR"
+			name       	"java_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"c_substitute_name"
+			value      	"")
+		    (object Attribute
+			tool       	"JCR"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"JCRMOF"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"UML"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Category"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"useJavaExceptions"
+			value      	"true")
+		    (object Attribute
+			tool       	"UML"
+			name       	"requiredItem"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"requiredItemType"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"DependencyStereotype"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"DependencyName"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"useSeparateDependencies"
+			value      	"true")
+		    (object Attribute
+			tool       	"UML"
+			name       	"exportableUnit"
+			value      	"true")
+		    (object Attribute
+			tool       	"UML"
+			name       	"hasImportedUUIDs"
+			value      	"false")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"useJavaExceptions"
+			value      	"true")
+		    (object Attribute
+			tool       	"UML"
+			name       	"secondaryStereotype"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"requiredItem"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"requiredItemType"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"DependencyStereotype"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"DependencyName"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"useSeparateDependencies"
+			value      	"true")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Role"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"changeability"
+			value      	"changeable")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Association"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"multiplicity"
+			value      	"1")
+		    (object Attribute
+			tool       	"UML"
+			name       	"uml2.isOrdered"
+			value      	"false")
+		    (object Attribute
+			tool       	"UML"
+			name       	"uml2.isUnique"
+			value      	"false")
+		    (object Attribute
+			tool       	"UML"
+			name       	"DependencySupplier"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"DependencyStereotype"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"DependencyName"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"useSeparateDependencies"
+			value      	"true")
+		    (object Attribute
+			tool       	"UML"
+			name       	"changeability"
+			value      	"changeable")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Param"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"direction"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Operation"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"returnDefaultValue"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"MethodLanguage"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"MethodBody"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"useSeparateDependencies"
+			value      	"true")
+		    (object Attribute
+			tool       	"UML"
+			name       	"DependencyName"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Module"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Subsystem"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"exportableUnit"
+			value      	"true")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Link"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__ObjectInstance"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__StateMachine"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__ActivityModel"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__SwimLane"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__UseCase"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"requiredItem"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"requiredItemType"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"DependencyStereotype"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"DependencyName"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"useSeparateDependencies"
+			value      	"true")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__StateTransition"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"SendActionName"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"ActionScriptLanguage"
+			value      	"")
+		    (object Attribute
+			tool       	"UML"
+			name       	"ActionScriptBody"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Model"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Dependency"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"UML"
+		name       	"default__Generalization"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"UML"
+			name       	"uuid"
+			value      	"")))
+	    (object Attribute
+		tool       	"JCRUML"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"JMI"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"JMI"
+		name       	"default__Category"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.substituteName"
+			value      	"")
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.packagePrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.methodPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.javaDocs"
+			value      	"")
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.ignoreLifecycle"
+			value      	"")))
+	    (object Attribute
+		tool       	"JMI"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.substituteName"
+			value      	"")
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.javaDocs"
+			value      	"")
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.useObjectType"
+			value      	"")))
+	    (object Attribute
+		tool       	"JMI"
+		name       	"default__Role"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.substituteName"
+			value      	"")))
+	    (object Attribute
+		tool       	"JMI"
+		name       	"default__Association"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.substituteName"
+			value      	"")))
+	    (object Attribute
+		tool       	"JMI"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.substituteName"
+			value      	"")))
+	    (object Attribute
+		tool       	"JMI"
+		name       	"default__Operation"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.substituteName"
+			value      	"")
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.javaDocs"
+			value      	"")))
+	    (object Attribute
+		tool       	"JMI"
+		name       	"default__Param"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"JMI"
+			name       	"javax.jmi.substituteName"
+			value      	"")))
+	    (object Attribute
+		tool       	"MOF14"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"UML14"
+		name       	"HiddenTool"
+		value      	FALSE))
+	quid       	"4AEB19A801A1"))
