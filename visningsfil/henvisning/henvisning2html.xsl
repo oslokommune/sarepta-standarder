@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
-    
+
 Endringslogg
+- 03.05.18: v4.1.9 - Bugfix hvor informasjon ang. KontaktpersonHelspersonell ikke ble vist
 - 11.04.18: v4.1.8 - Noen endringer i overskrifter. Fikset bug hvor informasjon om nærmeste pårørende ikke ble vist. La til visning av Legemiddelgjennomgang fra poKomponent.
 - 05.01.18: v4.1.7 - Tilpasset til Henvisning v2.0
 - 20.06.17: v4.1.6 - Fjernt skillelinje under Helstjenesteenheter for avd. på samme. Erstattet hairspace med puncspace som mellomromtegn.
@@ -44,7 +45,7 @@ Forfatter:
 	<xsl:variable name="std-col" select="8"/>
 	<xsl:variable name="std-td" select="100"/>
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'henvisning v.uavhengig - v4.1.8 '"/>
+	<xsl:variable name="versjon" select="'henvisning v.uavhengig - v4.1.9 '"/>
 
 	<xsl:variable name="VisOvrigHelsetjenesteInfoVisSkjul" select="true()"/>
 	<xsl:variable name="VisDokInfoVisSkjul" select="true()"/>
@@ -315,7 +316,7 @@ Forfatter:
 				<xsl:with-param name="position" select="position()"/>
 			</xsl:call-template>
 
-			<!-- Overskrift og tabell for henvisningen -->
+			<!-- Overskrift for henvisningen -->
 			<h1>
 				<xsl:choose>
 					<xsl:when test="namespace-uri() = 'http://ehelse.no/xmlstds/henvisning/2017-11-30'">
@@ -326,21 +327,17 @@ Forfatter:
 							</xsl:choose>
 						</xsl:for-each>					
 					</xsl:when>
-					<xsl:otherwise>
-						Henvisning&#160;-&#160;<xsl:for-each select="child::*[local-name()='MsgDescr']">
+					<xsl:otherwise>Henvisning&#160;-&#160;<xsl:for-each select="child::*[local-name()='MsgDescr']">
 							<xsl:call-template name="k-8455"/>
-							</xsl:for-each>
+						</xsl:for-each>
 					</xsl:otherwise>
 				</xsl:choose>
 
-				<xsl:for-each select="child::*[local-name()='ServType'][@V!='N']">&#160;-
-					<span style="color: {$color};">
+				<xsl:for-each select="child::*[local-name()='ServType'][@V!='N']">&#160;-<span style="color: {$color};">
 						<xsl:call-template name="k-7309"/>
 					</span>
 				</xsl:for-each>
-				<xsl:for-each select="child::*[local-name()='ReqServ']/child::*[local-name()='ServType'][@V!='N']">
-					&#160;Status&#160;rekvirert&#160;tjeneste:&#160;-
-					<span style="color: {$color2};">
+				<xsl:for-each select="child::*[local-name()='ReqServ']/child::*[local-name()='ServType'][@V!='N']">&#160;Status&#160;rekvirert&#160;tjeneste:&#160;-<span style="color: {$color2};">
 						<xsl:call-template name="k-7309"/>
 					</span>
 				</xsl:for-each>
@@ -353,7 +350,7 @@ Forfatter:
 					<xsl:when test="//child::*[local-name()='ServReq']/child::*[local-name()='ReqComment']"> <!-- v1.0 og v1.1 -->
 						<div class="eh-row-4">
 							<span class="eh-label">Kommentar</span>
-					    	<div class="eh-col-1 eh-last-child">
+					    	<div class="eh-col-4 eh-last-child">
 						    	<span class="eh-field">
 							    	<xsl:call-template name="line-breaks">
 								    	<xsl:with-param name="text" select="//child::*[local-name()='ServReq']/child::*[local-name()='ReqComment']"/>
@@ -365,7 +362,7 @@ Forfatter:
 					<xsl:otherwise>
 						<xsl:if test="//child::*[local-name()='ReqComment']">
 							<div class="eh-row-4">
-								<div class="eh-col-1 eh-last-child">
+								<div class="eh-col-4 eh-last-child">
 									<span class="eh-label">Kommentar</span>
 									<span class="eh-field">
 										<xsl:call-template name="line-breaks">
@@ -381,7 +378,7 @@ Forfatter:
 					
 			</div>
 
-			<!-- Overskrift og tabell for Diagnoser -->
+			<!-- Overskrift for Diagnoser -->
 			<xsl:if test="child::*[local-name()='Diagnosis'] or child::*[local-name()='ReasonAsText'][child::*[local-name()='Heading']/@V='DIAG'] or //child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='H' or child::*[local-name()='Type']/@V='B']">
 				<xsl:variable name="id10">
 					<xsl:value-of select="concat('Diagnosis',$position)"/>
@@ -411,7 +408,7 @@ Forfatter:
 				</div>
 			</xsl:if>
 
-			<!-- Overskrift og tabell for CAVE og NB-opplysninger -->
+			<!-- Overskrift for CAVE og NB-opplysninger -->
 			<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='CAVE' or child::*[local-name()='Type']/@V='NB']">
 
 				<xsl:variable name="id20">
@@ -440,7 +437,7 @@ Forfatter:
 				</div>
 			</xsl:if>
 
-			<!-- Overskrift og tabell for Aktuell problemstilling -->
+			<!-- Overskrift for Aktuell problemstilling -->
 			<xsl:if test="//child::*[local-name()='ReasonAsText'][child::*[local-name()='Heading']/@V='PROB'] or //child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='SYMP' or child::*[local-name()='Type']/@V='PROG' or child::*[local-name()='Type']/@V='SM']">
 				<xsl:variable name="id30">
 					<xsl:value-of select="concat('PROB',$position)"/>
@@ -467,7 +464,7 @@ Forfatter:
 					</xsl:for-each>
 				</div>
 			</xsl:if>
-			<!-- Overskrift og tabell for Andre relevante tilstander -->
+			<!-- Overskrift for Andre relevante tilstander -->
 			<xsl:if test="//child::*[local-name()='ReasonAsText'][child::*[local-name()='Heading']/@V='ART']">
 				<xsl:variable name="id35">
 					<xsl:value-of select="concat('ART',$position)"/>
@@ -481,7 +478,7 @@ Forfatter:
 				</div>
 			</xsl:if>
 
-			<!-- Overskrift og tabell for Forventet utredning/behandling -->
+			<!-- Overskrift for Forventet utredning/behandling -->
 			<xsl:if test="child::*[local-name()='ReasonAsText'][child::*[local-name()='Heading']/@V='UTRED']">
 				<xsl:variable name="id40">
 					<xsl:value-of select="concat('UTRED',$position)"/>
@@ -495,7 +492,7 @@ Forfatter:
 				</div>
 			</xsl:if>
 
-			<!-- Overskrift og tabell for Kliniske opplysninger -->
+			<!-- Overskrift for Kliniske opplysninger -->
 			<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='OPPL']">
 				<xsl:variable name="id50">
 					<xsl:value-of select="concat('OPPL',$position)"/>
@@ -518,7 +515,7 @@ Forfatter:
 				</div>
 			</xsl:if>
 
-			<!-- Overskrift og tabell for Gynekologiske opplysninger -->
+			<!-- Overskrift for Gynekologiske opplysninger -->
 			<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='GOPL' or child::*[local-name()='Type']/@V='GBEH']">
 				<xsl:variable name="id60">
 					<xsl:value-of select="concat('GOPL',$position)"/>
@@ -542,7 +539,7 @@ Forfatter:
 				</div>
 			</xsl:if>
 
-			<!-- Overskrift og tabell for Spesialistvurdering -->
+			<!-- Overskrift for Spesialistvurdering -->
 			<xsl:if test="child::*[local-name()='ReasonAsText'][child::*[local-name()='Heading']/@V='SVU']">
 				<xsl:variable name="id70">
 					<xsl:value-of select="concat('SVU',$position)"/>
@@ -555,7 +552,7 @@ Forfatter:
 				</div>
 			</xsl:if>
 
-			<!-- Overskrift og tabell for Vurdering -->
+			<!-- Overskrift for Vurdering -->
 			<xsl:if test="child::*[local-name()='ReasonAsText'][child::*[local-name()='Heading']/@V='VU']">
 				<xsl:variable name="id80">
 					<xsl:value-of select="concat('VU',$position)"/>
@@ -568,7 +565,7 @@ Forfatter:
 				</div>
 			</xsl:if>
 
-			<!-- Overskrift og tabell for Annen begrunnelse for henvisningen -->
+			<!-- Overskrift for Annen begrunnelse for henvisningen -->
 			<xsl:if test="child::*[local-name()='ReasonAsText'][child::*[local-name()='Heading']/@V='BG' or child::*[local-name()='Heading']/@V='BUP-BM' or child::*[local-name()='Heading']/@V='BUP-HG' or child::*[local-name()='Heading']/@V='KF' or child::*[local-name()='Heading']/@V='MAAL' or child::*[local-name()='Heading']/@V='MU' or child::*[local-name()='Heading']/@V='RU' or child::*[local-name()='Heading']/@V='UP' or not(child::*[local-name()='Heading'])]">
 				<xsl:variable name="id90">
 					<xsl:value-of select="concat('Annen',$position)"/>
@@ -583,7 +580,7 @@ Forfatter:
 
 			</xsl:if>
 
-			<!-- Overskrift og tabell for Sykehistorie -->
+			<!-- Overskrift for Sykehistorie -->
 			<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='ANAM' or child::*[local-name()='Type']/@V='TB' or child::*[local-name()='Type']/@V='US']">
 				<xsl:variable name="id100">
 					<xsl:value-of select="concat('ANAM',$position)"/>
@@ -605,7 +602,7 @@ Forfatter:
 				</div>
 			</xsl:if>
 
-			<!-- Overskrift og tabell for Funn/undersøkelsesresultat -->
+			<!-- Overskrift for Funn/undersøkelsesresultat -->
 			<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='FUNN'] or child::*[local-name()='ReasonAsText'][child::*[local-name()='Heading']/@V='FU']">
 				<xsl:variable name="id110">
 					<xsl:value-of select="concat('ResultItem',$position)"/>
@@ -647,7 +644,7 @@ Forfatter:
 				</div>
 			</xsl:if>
 
-			<!-- Overskrift og tabell for Prosedyrer -->
+			<!-- Overskrift for Prosedyrer -->
 			<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='OPIN' or child::*[local-name()='Type']/@V='MPRS' or child::*[local-name()='Type']/@V='PRS']">
 				<xsl:variable name="id120">
 					<xsl:value-of select="concat('OPIN',$position)"/>
@@ -672,7 +669,7 @@ Forfatter:
 				</div>
 			</xsl:if>
 
-			<!-- Overskrift og tabell for Forløp og behandling -->
+			<!-- Overskrift for Forløp og behandling -->
 			<xsl:if test="child::*[local-name()='ReasonAsText'][child::*[local-name()='Heading']/@V='FO']">
 				<xsl:variable name="id130">
 					<xsl:value-of select="concat('FO',$position)"/>
@@ -685,7 +682,7 @@ Forfatter:
 				</div>
 			</xsl:if>
 
-			<!-- Overskrift og tabell for Funksjonsnivå/hjelpetiltak -->
+			<!-- Overskrift for Funksjonsnivå/hjelpetiltak -->
 			<xsl:if test="child::*[local-name()='ReasonAsText'][child::*[local-name()='Heading']/@V='HJ']">
 				<xsl:variable name="id140">
 					<xsl:value-of select="concat('HJ',$position)"/>
@@ -698,7 +695,7 @@ Forfatter:
 				</div>
 			</xsl:if>
 
-			<!-- Overskrift og tabell for Legemiddelopplysninger -->
+			<!-- Overskrift for Legemiddelopplysninger -->
 			<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='MEDB'] or child::*[local-name()='Legemiddelgjennomgang']">
 				<xsl:variable name="id150">
 					<xsl:value-of select="concat('Medication',$position)"/>
@@ -802,7 +799,7 @@ Forfatter:
 				</div>
 			</xsl:if>
 
-			<!-- Overskrift og tabell for Familie/sosialt -->
+			<!-- Overskrift for Familie/sosialt -->
 			<xsl:if test="child::*[local-name()='ReasonAsText'][child::*[local-name()='Heading']/@V='FA']">
 				<xsl:variable name="id160">
 					<xsl:value-of select="concat('FA',$position)"/>
@@ -815,7 +812,7 @@ Forfatter:
 				</div>
 			</xsl:if>
 
-			<!-- Overskrift og tabell for Informasjon til pasient/pårørende -->
+			<!-- Overskrift for Informasjon til pasient/pårørende -->
 			<xsl:if test="child::*[local-name()='ReasonAsText'][child::*[local-name()='Heading']/@V='IP']">
 				<xsl:variable name="id170">
 					<xsl:value-of select="concat('IP',$position)"/>
@@ -828,7 +825,7 @@ Forfatter:
 				</div>
 			</xsl:if>
 
-			<!-- Overskrift og tabell for Sykemelding -->
+			<!-- Overskrift for Sykemelding -->
 			<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='SYKM']">
 				<xsl:variable name="id180">
 					<xsl:value-of select="concat('SYKM',$position)"/>
@@ -851,7 +848,7 @@ Forfatter:
 				</div>
 			</xsl:if>
 			  <!-- Pakkeforløp -->
-		    <!-- Overskrift og tabell for pakkeforløp -->
+		    <!-- Overskrift for pakkeforløp -->
 			<xsl:if test="child::*[local-name()='Pakkeforlop']">
 				<xsl:variable name="id185">
 					<xsl:value-of select="concat('Pakkeforlop',$position)"/>
@@ -879,7 +876,7 @@ Forfatter:
 				</xsl:for-each>	
 			</div>
 			</xsl:if>
-			<!-- Overskrift og tabell for Kommentarer -->
+			<!-- Overskrift for Kommentarer -->
 			<xsl:if test="child::*[local-name()='Comment']">
 				<xsl:variable name="id190">
 					<xsl:value-of select="concat('Comment',$position)"/>
@@ -933,7 +930,7 @@ Forfatter:
 			<xsl:choose>
 				<xsl:when test="namespace-uri() = 'http://ehelse.no/xmlstds/henvisning/2017-11-30'">
 					<!--  v2.0 -->
-					<!-- Overskrift og tabell for pasientopplysninger  -->
+					<!-- Overskrift for pasientopplysninger  -->
 					<xsl:if test="child::*[local-name()='PatientPrecaution'] or child::*[local-name()='BasisForHealthServices'] or child::*[local-name()='TilleggsopplysningPasient'] or ancestor::*[local-name()='Consent'] or child::*[local-name()='ParorendeForesatt'] or child::*[local-name()='InfoAssistertKommunikasjon'] or child::*[local-name()='PasientrelatertKontaktperson']">
 						<xsl:variable name="id200"><xsl:value-of select="concat('PatientInformation',$position)"/></xsl:variable>
 						<h2 id="{$id200}">Pasientopplysninger</h2>
@@ -943,7 +940,7 @@ Forfatter:
 					</xsl:if>
 
 
-					<!-- Overskrift og tabell for Kontaktopplysninger -->
+					<!-- Overskrift for Kontaktopplysninger -->
 					<xsl:if test="child::*[local-name()='TilknyttetEnhet'] or child::*[local-name()='KontaktpersonHelsepersonell'] or child::*[local-name()='AnsvarForRapport']">
 						<xsl:variable name="id210"><xsl:value-of select="concat('PatRelHCP',$position)"/></xsl:variable>
 						<h2 id="{$id210}">Kontaktopplysninger</h2>
@@ -961,7 +958,7 @@ Forfatter:
 				<xsl:otherwise>
 					<!--  v1.0, v1.1 -->
 
-					<!-- Overskrift og tabell for Pasient -->
+					<!-- Overskrift for Pasient -->
 					<xsl:for-each select="child::*[local-name()='Patient']">
 						<xsl:if test="child::*[local-name()='PatientPrecaution'] or child::*[local-name()='BasisForHealthServices'] or child::*[local-name()='Sex'] or child::*[local-name()='DateOfBirth'] or child::*[local-name()='PatientPrecaution'] or child::*[local-name()='AssistertKommunikasjon'] or child::*[local-name()='ParorendeForesatt'] or child::*[local-name()='ContactPerson'] or child::*[local-name()='PatRelInst'] or child::*[local-name()='Consent'] or child::*[local-name()='AdditionalId'] or child::*[local-name()='NeedTranslator'] or child::*[local-name()='CareSituation']">
 							<xsl:variable name="id200">
@@ -974,7 +971,7 @@ Forfatter:
 						</xsl:if>
 					</xsl:for-each>
 
-					<!-- Overskrift og tabell for Kontaktopplysninger -->
+					<!-- Overskrift for Kontaktopplysninger -->
 					<xsl:if test="child::*[local-name()='Patient']/child::*[local-name()='PatRelHCP']">
 						<xsl:variable name="id210">
 							<xsl:value-of select="concat('PatRelHCP',$position)"/>
@@ -995,7 +992,7 @@ Forfatter:
 				</xsl:otherwise>
 			</xsl:choose>
 
-			<!-- Overskrift og tabell for henvisning mellom helseforetak -->
+			<!-- Overskrift for henvisning mellom helseforetak -->
 			<xsl:if test="child::*[local-name()='VurderingAvHenvisning']">
 				<xsl:variable name="id215"><xsl:value-of select="concat('vurderingHenvisning',$position)"/></xsl:variable>
 				<h2 id="{$id215}">Rettighetsvurdering</h2>
@@ -1006,7 +1003,7 @@ Forfatter:
 				</div>
 			</xsl:if>
 
-			<!-- Overskrift og tabell for vedlegg -->
+			<!-- Overskrift for vedlegg -->
 			<xsl:if test="child::*[local-name()='RefDoc'] or count(//mh:RefDoc) &gt; 1">
 				<xsl:variable name="id220">
 					<xsl:value-of select="concat('RefDoc',$position)"/>
@@ -1313,13 +1310,11 @@ Forfatter:
 	</xsl:template>
 
 	<xsl:template name="Diagnosis">
-		<div  class="eh-row-5">
-			<div class="eh-col-1 eh-last-child">
+		<div  class="eh-row-4">
+			<div class="eh-col-1">
 				<span class="eh-label">
 					<xsl:value-of select="child::*[local-name()='Concept']/@V"/>&#160;
-
 					<xsl:if test="contains(child::*[local-name()='Concept']/@S, '7170')">(ICPC)</xsl:if>
-
 					<xsl:if test="contains(child::*[local-name()='Concept']/@S, '7110')">(ICD-10)</xsl:if>
 				</span>
 				<span class="eh-field">
@@ -1328,18 +1323,19 @@ Forfatter:
 							<xsl:call-template name="k-dummy"/>
 						</xsl:for-each>
 					</xsl:if>
-
-					<xsl:if test="child::*[local-name()='Modifier']"> <!-- maxOccurs="unbounded" -->
-						<xsl:for-each select="child::*[local-name()='Modifier']/child::*[local-name()='Name']">
-							<br/>
-							<span class="eh-strong">
-								<xsl:call-template name="k-7305"/>
-							</span>
-							&#160;<xsl:value-of select="../child::*[local-name()='Value']/@V"/>&#160;-&#160;<xsl:value-of select="../child::*[local-name()='Value']/@DN"/>
-						</xsl:for-each>
-					</xsl:if>
 				</span>
 			</div>
+			<xsl:if test="child::*[local-name()='Modifier']"> <!-- maxOccurs="unbounded" -->
+				<div class="eh-col-3 eh-last-child">
+					<xsl:for-each select="child::*[local-name()='Modifier']/child::*[local-name()='Name']">
+						<span class="eh-label"><xsl:call-template name="k-7305"/></span>
+						<span class="eh-field">
+							&#160;<xsl:value-of select="../child::*[local-name()='Value']/@V"/>&#160;-&#160;<xsl:value-of select="../child::*[local-name()='Value']/@DN"/>
+						</span>
+						<br/>
+					</xsl:for-each>
+				</div>
+			</xsl:if>
 		</div>
 	</xsl:template>
 
@@ -1646,7 +1642,14 @@ Forfatter:
 						<xsl:for-each select="child::*[local-name()='PatientPrecaution']"> <!-- maxOccurs="unbounded" -->
 							<xsl:value-of select="child::*[local-name()='Precaution']"/>
 							<xsl:if test="child::*[local-name()='StartDateTime'] or child::*[local-name()='EndDateTime']">
-								(<xsl:if test="child::*[local-name()='StartDateTime']"><xsl:call-template name="skrivUtTS"><xsl:with-param name="oppgittTid" select="child::*[local-name()='StartDateTime']/@V"/><xsl:with-param name="useNormalSpaceSeparator" select="true()"/></xsl:call-template></xsl:if>&#160;-&#160;<xsl:if test="child::*[local-name()='EndDateTime']"><xsl:call-template name="skrivUtTS"><xsl:with-param name="oppgittTid" select="child::*[local-name()='EndDateTime']/@V"/></xsl:call-template></xsl:if>)
+								<xsl:choose>
+									<xsl:when test="child::*[local-name()='StartDateTime']/@V or child::*[local-name()='EndDateTime']/@V"> <!-- kith:TS -->
+										(<xsl:if test="child::*[local-name()='StartDateTime']"><xsl:call-template name="skrivUtTS"><xsl:with-param name="oppgittTid" select="child::*[local-name()='StartDateTime']/@V"/><xsl:with-param name="useNormalSpaceSeparator" select="true()"/></xsl:call-template></xsl:if>&#160;-&#160;<xsl:if test="child::*[local-name()='EndDateTime']"><xsl:call-template name="skrivUtTS"><xsl:with-param name="oppgittTid" select="child::*[local-name()='EndDateTime']/@V"/></xsl:call-template></xsl:if>)
+									</xsl:when>
+									<xsl:otherwise> <!-- dateTime, date, etc. -->
+										(<xsl:if test="child::*[local-name()='StartDateTime']"><xsl:call-template name="skrivUtTS"><xsl:with-param name="oppgittTid" select="child::*[local-name()='StartDateTime']"/><xsl:with-param name="useNormalSpaceSeparator" select="true()"/></xsl:call-template></xsl:if>&#160;-&#160;<xsl:if test="child::*[local-name()='EndDateTime']"><xsl:call-template name="skrivUtDateTime"><xsl:with-param name="oppgittTid" select="child::*[local-name()='EndDateTime']"/></xsl:call-template></xsl:if>)
+									</xsl:otherwise>
+								</xsl:choose>
 							</xsl:if>
 							<xsl:if test="position()!=last()">,&#160;</xsl:if>
 						</xsl:for-each>
@@ -2277,10 +2280,20 @@ Forfatter:
 					<div class="eh-col-1 eh-field">
 						<span class="eh-label xs">Starttidspunkt</span>
 						<span class="eh-text">
-							<xsl:call-template name="skrivUtTS">
-								<xsl:with-param name="oppgittTid" select="child::*[local-name()='StartDateTime']"/>
-								<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
-							</xsl:call-template>
+							<xsl:choose>
+								<xsl:when test="child::*[local-name()='StartDateTime']/@V"> <!-- kith:TS -->
+									<xsl:call-template name="skrivUtTS">
+										<xsl:with-param name="oppgittTid" select="child::*[local-name()='StartDateTime']/@V"/>
+										<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+									</xsl:call-template>
+								</xsl:when>
+								<xsl:otherwise> <!-- dateTime, date etc. -->
+									<xsl:call-template name="skrivUtTS">
+										<xsl:with-param name="oppgittTid" select="child::*[local-name()='StartDateTime']"/>
+										<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+									</xsl:call-template>
+								</xsl:otherwise>
+							</xsl:choose>
 						</span>
 					</div>
 				</xsl:if>
@@ -2288,10 +2301,20 @@ Forfatter:
 					<div class="eh-col-1 eh-field">
 						<span class="eh-label xs">Sluttidspunkt</span>
 						<span class="eh-text">
-							<xsl:call-template name="skrivUtTS">
-								<xsl:with-param name="oppgittTid" select="child::*[local-name()='EndDateTime']"/>
-								<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
-							</xsl:call-template>
+							<xsl:choose>
+								<xsl:when test="child::*[local-name()='EndDateTime']/@V"> <!-- kith:TS -->
+									<xsl:call-template name="skrivUtTS">
+										<xsl:with-param name="oppgittTid" select="child::*[local-name()='EndDateTime']/@V"/>
+										<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+									</xsl:call-template>
+								</xsl:when>
+								<xsl:otherwise> <!-- dateTime, date etc. -->
+									<xsl:call-template name="skrivUtTS">
+										<xsl:with-param name="oppgittTid" select="child::*[local-name()='EndDateTime']"/>
+										<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+									</xsl:call-template>
+								</xsl:otherwise>
+							</xsl:choose>
 						</span>
 					</div>
 				</xsl:if>
@@ -2944,15 +2967,13 @@ Forfatter:
 				</div>
 			</div>
 		</xsl:for-each>
-		<xsl:for-each select="child::*[local-name()='KontaktPersonHelsepersonell']">
+		<xsl:for-each select="child::*[local-name()='KontaktpersonHelsepersonell']">
 			<div class="eh-row-4">
 				<div  class="eh-col-1">
 					<span class="eh-label">Tilknyttet helseperson</span>
 					<span class="eh-field">
 						<xsl:for-each select="child::*[local-name()='Kontaktperson']">
-							<xsl:for-each select="child::*[local-name()='HealthcareProfessional']">
-								<xsl:call-template name="HealthcareProfessional"/>
-							</xsl:for-each>
+							<xsl:call-template name="HealthcareProfessional"/>
 						</xsl:for-each>
 					</span>
 				</div>
@@ -3529,10 +3550,20 @@ Forfatter:
 				<div class="eh-col-1">
 					<span class="eh-label">Utstedt</span>
 					<span class="eh-field">
-						<xsl:call-template name="skrivUtTS">
-							<xsl:with-param name="oppgittTid" select="child::*[local-name()='IssueDate']"/>
-							<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
-						</xsl:call-template>
+						<xsl:choose>
+							<xsl:when test="child::*[local-name()='IssueDate']/@V"> <!-- kith:TS -->
+								<xsl:call-template name="skrivUtTS">
+									<xsl:with-param name="oppgittTid" select="child::*[local-name()='IssueDate']/@V"/>
+									<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+								</xsl:call-template>
+							</xsl:when>
+							<xsl:otherwise> <!-- dateTime, date etc. -->
+								<xsl:call-template name="skrivUtTS">
+									<xsl:with-param name="oppgittTid" select="child::*[local-name()='IssueDate']"/>
+									<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+								</xsl:call-template>
+							</xsl:otherwise>
+						</xsl:choose>
 					</span>
 				</div>
 			</xsl:if>

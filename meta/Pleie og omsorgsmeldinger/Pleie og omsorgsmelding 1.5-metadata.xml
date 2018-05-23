@@ -5,81 +5,189 @@
 	<Versjon>1.5</Versjon>
 	<Identifikator>HIS 80704:2009</Identifikator>
 	<Utgitt>09/2009</Utgitt>
-	<Utgiver>Direktoratet for e-helse</Utgiver>
-
-	<Referansekatalogen>
-		<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten v1.5</Beskrivelse>
-		<Referanse>https://ehelse.no/Sider/Standard-for-elektronisk-kommunikasjon-med-pleie--og-omsorgstjenesten--Informasjonsmodell-og-XML-meldingsbeskrivelse-–-HIS-.aspx</Referanse>
-	</Referansekatalogen>
-
+	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
+	
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten v1.5</Beskrivelse>
+			<Referanse>https://ehelse.no/Sider/Standard-for-elektronisk-kommunikasjon-med-pleie--og-omsorgstjenesten--Informasjonsmodell-og-XML-meldingsbeskrivelse-–-HIS-.aspx</Referanse>
+		</Informasjon>
+	</MerInformasjon>
 
-	<ErstattetAv>HIS80709:2014</ErstattetAv>
+	<Profiler>
+        <Profil>
+            <ProfilId>1</ProfilId>
+            <Beskrivelse>Innleggelsesrapport</Beskrivelse>
+            <Identifikator>HIS 1143:2009</Identifikator>
+	        <Utgitt>09/2009</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <Status>Fastsatt som standard</Status>
+	        <MerInformasjon>
+	            <Informasjon>
+	                <Beskrivelse>Pleie og omsorgsmelding: Innleggelsesrapport v1.5</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS1143-2009</Referanse>
+		        </Informasjon>
+	        </MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>2</ProfilId> 
+            <Beskrivelse>Helseopplysninger</Beskrivelse>
+            <Identifikator>HIS 1144:2009</Identifikator>
+	        <Utgitt>09/2009</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+	            <Informasjon>
+	                <Beskrivelse>Pleie- og omsorgsmelding: Helseopplysninger v1.5</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS1144-2009</Referanse>
+		        </Informasjon>  
+	        </MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>3</ProfilId> 
+            <Beskrivelse>Helseopplysninger til lege</Beskrivelse>
+            <Identifikator>HIS 1145:2009</Identifikator>
+	        <Utgitt>09/2009</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+	            <Informasjon>
+	                <Beskrivelse>Pleie- og omsorgsmelding: Helseopplysninger til lege v1.5</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS1145-2009</Referanse>
+		        </Informasjon>  
+	        </MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>4</ProfilId> 
+            <Beskrivelse>Orientering om tjenestetilbud</Beskrivelse>
+            <Identifikator>HIS 1146:2009</Identifikator>
+	        <Utgitt>09/2009</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+	            <Informasjon>
+	                <Beskrivelse>Pleie- og omsorgsmelding: Orientering om tjenestetilbud v1.5</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS1146-2009</Referanse>
+		        </Informasjon>  
+	        </MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>5</ProfilId> 
+            <Beskrivelse>Medisinske opplysninger</Beskrivelse>
+            <Identifikator>HIS 1147:2009</Identifikator>
+	        <Utgitt>09/2009</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+	            <Informasjon>
+	                <Beskrivelse>Pleie- og omsorgsmelding: Medisinske opplysninger v1.5</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS1147-2009</Referanse>
+		        </Informasjon>  
+	        </MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>6</ProfilId> 
+            <Beskrivelse>Utskrivningsrapport</Beskrivelse>
+            <Identifikator>HIS 1148:2009</Identifikator>
+	        <Utgitt>09/2009</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+	            <Informasjon>
+	                <Beskrivelse>Pleie- og omsorgsmelding: Utskrivningsrapport v1.5</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS1148-2009</Referanse>
+		        </Informasjon>  
+	        </MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>7</ProfilId> 
+            <Beskrivelse>Pasientlogistikkmeldinger</Beskrivelse>
+            <Identifikator>HIS 1149:2009</Identifikator>
+	        <Utgitt>09/2009</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+	            <Informasjon>
+	                <Beskrivelse>Pleie- og omsorgsmelding: Pasientlogistikkmeldinger v1.5</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS1149-2009</Referanse>
+		        </Informasjon>  
+	        </MerInformasjon>
+        </Profil>
+    </Profiler>
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten v1.5 (GitLab)</Beskrivelse>
+			<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten v1.5 (PDF)</Beskrivelse>
 			<Referanse>kravdokument/plo/HIS_80704_2009 Pleie- og omsorgsmeldinger 1.5 -korrigert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Profil: Innleggelsesrapport (GitLab)</Beskrivelse>
+			<ProfilId>1</ProfilId>
+			<Beskrivelse>Innleggelsesrapport (PDF)</Beskrivelse>
 			<Referanse>kravdokument/plo/HIS_1143_2009_PLO-innleggelsesrapport.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Profil: Helseopplysninger (GitLab)</Beskrivelse>
+			<ProfilId>2</ProfilId>
+			<Beskrivelse>Helseopplysninger (PDF)</Beskrivelse>
 			<Referanse>kravdokument/plo/HIS_1144_2009_PLO-helseopplysninger.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Profil: Helseopplysninger til lege (GitLab)</Beskrivelse>
+			<ProfilId>3</ProfilId> 
+			<Beskrivelse>Helseopplysninger til lege (PDF)</Beskrivelse>
 			<Referanse>kravdokument/plo/HIS_1145_2009_PLO-helseopplysningerLege.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Profil: Orientering om tjenestetilbud (GitLab)</Beskrivelse>
+			<ProfilId>4</ProfilId> 
+			<Beskrivelse>Orientering om tjenestetilbud (PDF)</Beskrivelse>
 			<Referanse>kravdokument/plo/HIS_1146_2009_PLO-orienteringTjenestetilbud.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Profil: Medisinske opplysninger (GitLab)</Beskrivelse>
+			<ProfilId>5</ProfilId> 
+			<Beskrivelse>Medisinske opplysninger (PDF)</Beskrivelse>
 			<Referanse>kravdokument/plo/HIS_1147_2009_PLO-medisinskeOpplysninger.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Profil: Utskrivningsrapport (GitLab)</Beskrivelse>
+			<ProfilId>6</ProfilId> 
+			<Beskrivelse>Utskrivningsrapport (PDF)</Beskrivelse>
 			<Referanse>kravdokument/plo/HIS_1148_2009_PLO-utskrivningsrapport.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Profil: Pasientlogistikkmeldinger (GitLab)</Beskrivelse>
+			<ProfilId>7</ProfilId> 
+			<Beskrivelse>Pasientlogistikkmeldinger (PDF)</Beskrivelse>
 			<Referanse>kravdokument/plo/HIS_1149_2009_PLO-pasientlogistikkmeldinger.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
 
 	<Skjemaer>
 		<Skjema>
-			<Referanse>skjema/plo/v1.5/HelseopplysningerTilLege-v1.5.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/po/HelseopplysningerTilLege/2009-06-30</Namespace>
-		</Skjema>
-		<Skjema>
-			<Referanse>skjema/plo/v1.5/HelseopplysningerVedSoknad-v1.5.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/po/HelseopplysningerVedSoknad/2009-06-30</Namespace>
-		</Skjema>
-		<Skjema>
+			<ProfilId>1</ProfilId>
 			<Referanse>skjema/plo/v1.5/Innleggelsesrapport-v1.5.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/po/Innleggelsesrapport/2009-06-30</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/plo/v1.5/MedisinskeOpplysninger-v1.5.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/po/MedisinskeOpplysninger/2009-06-30</Namespace>
+			<ProfilId>2</ProfilId>
+			<Referanse>skjema/plo/v1.5/HelseopplysningerVedSoknad-v1.5.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/HelseopplysningerVedSoknad/2009-06-30</Namespace>
 		</Skjema>
 		<Skjema>
+			<ProfilId>3</ProfilId> 	
+			<Referanse>skjema/plo/v1.5/HelseopplysningerTilLege-v1.5.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/HelseopplysningerTilLege/2009-06-30</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>4</ProfilId> 
 			<Referanse>skjema/plo/v1.5/OrienteringOmTjenestetilbud-v1.5.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/po/OrienteringOmTjenestetilbud/2009-06-30</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/plo/v1.5/Pasientlogistikk-v1.5.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/po/Pasientlogistikk/2009-06-30</Namespace>
+			<ProfilId>5</ProfilId> 
+			<Referanse>skjema/plo/v1.5/MedisinskeOpplysninger-v1.5.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/MedisinskeOpplysninger/2009-06-30</Namespace>
 		</Skjema>
 		<Skjema>
+			<ProfilId>6</ProfilId> 
 			<Beskrivelse>Utskrivningsrapport (Skjemaet og rotelementet heter TverrfagligEpikrise)</Beskrivelse>
 			<Referanse>skjema/plo/v1.5/TverrfagligEpikrise-v1.5.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/po/TverrfagligEpikrise/2009-06-30</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>7</ProfilId> 
+			<Referanse>skjema/plo/v1.5/Pasientlogistikk-v1.5.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/Pasientlogistikk/2009-06-30</Namespace>
 		</Skjema>
 		<Skjema>
 			<Referanse>skjema/plo/v1.5/MeldingFravar-v1.5.xsd</Referanse>
@@ -218,60 +326,80 @@
 	</Visningsfiler>
 	<Eksempler>
 		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Helseopplysninger_til_lege-v1_5/Helseopplysninger_til_lege_v1-5_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Helseopplysninger_til_lege-v1_5/Helseopplysninger_til_lege_v1-5_Kansellering.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Helseopplysninger_ved_soknad-v1_5/Helseopplysninger_ved_soknad_Oppdatert_v1-5_Endring1.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Helseopplysninger_ved_soknad-v1_5/Helseopplysninger_ved_soknad_Oppdatert_v1-5_Endring2.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Helseopplysninger_ved_soknad-v1_5/Helseopplysninger_ved_soknad_Varsel_v1-5_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/plo/1_5/Innleggelsesrapport-v1_5/Innleggelsesrapport_v1-5_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/plo/1_5/Innleggelsesrapport-v1_5/Innleggelsesrapport_v1-5_Endring.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/plo/1_5/Innleggelsesrapport-v1_5/Innleggelsesrapport_v1-5_Kansellering.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Medisinske_opplysninger-v1_5/Medisinske_opplysninger_v1-5_Ny.xml</Referanse>
+			<ProfilId>2</ProfilId>
+			<Referanse>eksempel/plo/1_5/Helseopplysninger_ved_soknad-v1_5/Helseopplysninger_ved_soknad_Oppdatert_v1-5_Endring1.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/plo/1_5/Medisinske_opplysninger-v1_5/Medisinske_opplysninger_v1-5_Kansellering.xml</Referanse>
+			<ProfilId>2</ProfilId>
+			<Referanse>eksempel/plo/1_5/Helseopplysninger_ved_soknad-v1_5/Helseopplysninger_ved_soknad_Oppdatert_v1-5_Endring2.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>2</ProfilId>
+			<Referanse>eksempel/plo/1_5/Helseopplysninger_ved_soknad-v1_5/Helseopplysninger_ved_soknad_Varsel_v1-5_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>3</ProfilId>
+			<Referanse>eksempel/plo/1_5/Helseopplysninger_til_lege-v1_5/Helseopplysninger_til_lege_v1-5_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>3</ProfilId>
+			<Referanse>eksempel/plo/1_5/Helseopplysninger_til_lege-v1_5/Helseopplysninger_til_lege_v1-5_Kansellering.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>4</ProfilId> 
 			<Referanse>eksempel/plo/1_5/Orientering_om_tjenestetilbud-v1_5/Orientering_om_tjenestetilbud_v1-5_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>4</ProfilId> 
 			<Referanse>eksempel/plo/1_5/Orientering_om_tjenestetilbud-v1_5/Orientering_om_tjenestetilbud_v1-5_Kansellering.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>5</ProfilId> 
+			<Referanse>eksempel/plo/1_5/Medisinske_opplysninger-v1_5/Medisinske_opplysninger_v1-5_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>5</ProfilId> 
+			<Referanse>eksempel/plo/1_5/Medisinske_opplysninger-v1_5/Medisinske_opplysninger_v1-5_Kansellering.xml</Referanse>
+		</Eksempel>
+		
+		<Eksempel>
+			<ProfilId>7</ProfilId> 
 			<Referanse>eksempel/plo/1_5/Pasientlogistikk_dodsfall-v1_5/Pasientlogistikk_Avmelding_av_utskrivningsklar_pasient_v1-5_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>7</ProfilId>
 			<Referanse>eksempel/plo/1_5/Pasientlogistikk_dodsfall-v1_5/Pasientlogistikk_Innlagt_pasient_v1-5_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>7</ProfilId>
 			<Referanse>eksempel/plo/1_5/Pasientlogistikk_dodsfall-v1_5/Pasientlogistikk_Innlagt_pasient_v1-5_Kansellering.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>7</ProfilId>
 			<Referanse>eksempel/plo/1_5/Pasientlogistikk_dodsfall-v1_5/Pasientlogistikk_Melding_om_utskrevet_pasient_v1-5_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>7</ProfilId>
 			<Referanse>eksempel/plo/1_5/Pasientlogistikk_dodsfall-v1_5/Pasientlogistikk_Orientering_om_dodsfall_v1-5_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>7</ProfilId>
 			<Referanse>eksempel/plo/1_5/Pasientlogistikk_dodsfall-v1_5/Pasientlogistikk_Orientering_om_dodsfall_v1-5_Kansellering.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>7</ProfilId>
 			<Referanse>eksempel/plo/1_5/Pasientlogistikk_dodsfall-v1_5/Pasientlogistikk_Utskrivningsklar_pasient_v1-5_Ny.xml</Referanse>
 		</Eksempel>
 	</Eksempler>

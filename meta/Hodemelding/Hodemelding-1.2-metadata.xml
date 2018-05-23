@@ -5,18 +5,20 @@
 	<Versjon>1.2</Versjon>
 	<Identifikator>HIS 80601:2006</Identifikator>
 	<Utgitt>05/2006</Utgitt>
-	<Utgiver>Direktoratet for e-helse</Utgiver>
-	
-	<Referansekatalogen>
-		<Beskrivelse>Standard for hodemelding (HIS 80601:2006)</Beskrivelse>
-		<Referanse>http://ehelse.no/HIS80601-2006</Referanse>
-	</Referansekatalogen>
-	
+	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Standard for hodemelding (HIS 80601:2006)</Beskrivelse>
+			<Referanse>http://ehelse.no/HIS80601-2006</Referanse>
+		</Informasjon>
+	</MerInformasjon>
+	
+	
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Hodemelding (GitLab)</Beskrivelse>
+			<Beskrivelse>Hodemelding (PDF)</Beskrivelse>
 			<Referanse>kravdokument/hodemelding/HIS_80601_2006-Hodemelding-v12 -korrigert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>

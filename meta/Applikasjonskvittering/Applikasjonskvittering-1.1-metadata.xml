@@ -7,23 +7,16 @@
 	<Utgitt>12/2012</Utgitt>
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
-	
 	<MerInformasjon>
 		<Informasjon>
 			<Beskrivelse>Applikasjonskvittering 1.1 (HIS 80415:2012)</Beskrivelse>
 			<Referanse>http://ehelse.no/HIS80415-2012</Referanse>
 		</Informasjon>
-		<Informasjon>
-			<Beskrivelse>Applikasjonskvittering 1.1 (HIS 80415:2012)</Beskrivelse>
-			<Referanse>http://ehelse.no/HIS80415-2012</Referanse>
-		</Informasjon>
-		
-			
 	</MerInformasjon>
 	
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Applikasjonskvittering v1.1 (GitLab)</Beskrivelse>
+			<Beskrivelse>Applikasjonskvittering v1.1 (PDF)</Beskrivelse>
 			<Referanse>kravdokument/applikasjonskvittering/HIS 80415_2012 AppRec v1.1 -korrigert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>

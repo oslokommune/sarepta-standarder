@@ -753,58 +753,6 @@
 								</tr>
 							</xsl:if>
 						</xsl:if>
-						<tr>
-							<th>Reseptklasse A eller B</th>
-						</tr>
-						<xsl:if test="m2:ReseptklasseAB/m2:HoyesteDogndose/@V">
-							<tr>
-								<td>Høyeste døgndose &#160;
-									<xsl:value-of select="m2:ReseptklasseAB/m2:HoyesteDogndose/@V"/>&#160;<xsl:value-of select="m2:ReseptklasseAB/m2:HoyesteDogndose/@U"/>
-								</td>
-							</tr>
-						</xsl:if>
-						<xsl:if test="m2:ReseptklasseAB/m2:Behandlingsplan">
-							<tr>
-								<td width="25%">
-									<xsl:choose>
-										<xsl:when test="m2:ReseptklasseAB/m2:Behandlingsplan/@V = '1'">
-											<input type="checkbox" disabled="disabled" checked="checked">Behandlingsplan</input>
-										</xsl:when>
-										<xsl:otherwise>
-											<input type="checkbox" disabled="disabled">Behandlingsplan</input>
-										</xsl:otherwise>
-									</xsl:choose>
-								</td>	
-							</tr>	
-						</xsl:if>
-						<xsl:if test="m2:ReseptklasseAB/m2:AvhengihetsfareVurdert">
-							<tr>
-								<td width="25%">
-									<xsl:choose>
-										<xsl:when test="m2:ReseptklasseAB/m2:AvhengihetsfareVurdert/@V = '1'">
-											<input type="checkbox" disabled="disabled" checked="checked">Avhengighetsfare vurdert</input>
-										</xsl:when>
-										<xsl:otherwise>
-											<input type="checkbox" disabled="disabled">Avhengighetsfare vurdert</input>
-										</xsl:otherwise>
-									</xsl:choose>
-								</td>	
-							</tr>	
-						</xsl:if>
-						<xsl:if test="m2:ReseptklasseAB/m2:Smerteanalyse">
-							<tr>
-								<td width="25%">
-									<xsl:choose>
-										<xsl:when test="m2:ReseptklasseAB/m2:Smerteanalyse/@V = '1'">
-											<input type="checkbox" disabled="disabled" checked="checked">Smerteanalyse foretatt</input>
-										</xsl:when>
-										<xsl:otherwise>
-											<input type="checkbox" disabled="disabled">Smerteanalyse foretatt</input>
-										</xsl:otherwise>
-									</xsl:choose>
-								</td>	
-							</tr>	
-						</xsl:if>
 					</xsl:if>
 				</xsl:if>
 			</tbody>

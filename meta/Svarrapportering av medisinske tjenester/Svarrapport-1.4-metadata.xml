@@ -3,114 +3,115 @@
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
 	<Navn>Svarrapportering av medisinske tjenester</Navn>
 	<Versjon>1.4</Versjon>
-    <Identifikator>HIS 80822:2014</Identifikator>
-    <Utgitt>02/2014</Utgitt>
-    <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
-    <Status>Fastsatt som standard</Status>
+	<Identifikator>HIS 80822:2014</Identifikator>
+	<Utgitt>02/2014</Utgitt>
+	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	<Status>Fastsatt som standard</Status>
 	<MerInformasjon>
-	    <Informasjon>
-	        <Beskrivelse>Svarrapportering av medisinske tjenester v1.4</Beskrivelse>
-		    <Referanse>http://ehelse.no/HIS80822-2014</Referanse>
+		<Informasjon>
+			<Beskrivelse>Svarrapportering av medisinske tjenester v1.4</Beskrivelse>
+			<Referanse>http://ehelse.no/HIS80822-2014</Referanse>
 		</Informasjon>
 	</MerInformasjon>
-	        
-    <Profiler>
+	
+	 <Profiler>
         <Profil>
             <ProfilId>1</ProfilId>
             <Beskrivelse>Radiologi</Beskrivelse>
-            <Identifikator>HIS 80822:2014</Identifikator>
+            <Identifikator>HIS 1142:2014</Identifikator>
 	        <Utgitt>02/2014</Utgitt>
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <Status>Fastsatt som standard</Status>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Svarrapportering av medisinske tjenester v1.4</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS80822-2014</Referanse>
+	                <Beskrivelse>Svarrapport: radiologi v1.4</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS1142-2014</Referanse>
 		        </Informasjon>
 	        </MerInformasjon>
         </Profil>
         <Profil>
             <ProfilId>2</ProfilId> 
             <Beskrivelse>Patologi</Beskrivelse>
-            <Identifikator>HIS 80822:2014</Identifikator>
+            <Identifikator>HIS 1141:2014</Identifikator>
 	        <Utgitt>02/2014</Utgitt>
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>2:Svarrapportering av medisinske tjenester v1.4</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS80822-2014</Referanse>
+	                <Beskrivelse>Svarrapport: patologi v1.4</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS1141-2014</Referanse>
 		        </Informasjon>  
 	        </MerInformasjon>
         </Profil>
         <Profil>
             <ProfilId>3</ProfilId> 
             <Beskrivelse>Immunologi</Beskrivelse>
-            <Identifikator>HIS 80822:2014</Identifikator>
+            <Identifikator>HIS 1140:2014</Identifikator>
 	        <Utgitt>02/2014</Utgitt>
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Svarrapportering av medisinske tjenester v1.4</Beskrivelse>
-		        <Referanse>http://ehelse.no/HIS80822-2014</Referanse>
+	                <Beskrivelse>Svarrapportering: immunologi v1.4</Beskrivelse>
+		        <Referanse>http://ehelse.no/HIS1140-2014</Referanse>
 		        </Informasjon>
 		    </MerInformasjon>
         </Profil>
         <Profil>
             <ProfilId>4</ProfilId> 
             <Beskrivelse>Mikrobiologi</Beskrivelse>
-            <Identifikator>HIS 80822:2014</Identifikator>
+            <Identifikator>HIS 1139:2014</Identifikator>
 	        <Utgitt>02/2014</Utgitt>
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
                 <Informasjon>
-	                <Beskrivelse>Svarrapportering av medisinske tjenester v1.4</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS80822-2014</Referanse>
+	                <Beskrivelse>Svarrapportering: mikrobiologi v1.4</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS1139-2014</Referanse>
 		        </Informasjon>
 		    </MerInformasjon>
         </Profil>
         <Profil>
             <ProfilId>5</ProfilId> 
             <Beskrivelse>Medisinsk biokjemi</Beskrivelse>
-            <Identifikator>HIS 80822:2014</Identifikator>
+            <Identifikator>HIS 1138:2014</Identifikator>
 	        <Utgitt>02/2014</Utgitt>
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Svarrapportering av medisinske tjenester v1.4</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS80822-2014</Referanse>
+	                <Beskrivelse>Svarrapportering: medisinsk biokjemi v1.4</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS1138-2014</Referanse>
 	            </Informasjon>
             </MerInformasjon>
         </Profil>
     </Profiler>
 
+
 	<Kravdokumenter>
 		<Kravdokument>
-		    <Beskrivelse>Svarrapportering av medisinske tjenester v.1.4 (GitLab)</Beskrivelse>
+			<Beskrivelse>Svarrapportering av medisinske tjenester v.1.4 (PDF)</Beskrivelse>
 			<Referanse>kravdokument/svarrapport/HIS_80822_2014 Svarrapportering av medisinske tjenester v1.4 -korrigert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-		    <ProfilId>1</ProfilId>
-			<Beskrivelse>Radiologi (GitLab)</Beskrivelse>
+			<ProfilId>1</ProfilId>
+			<Beskrivelse>Radiologi (PDF)</Beskrivelse>
 			<Referanse>kravdokument/svarrapport/HIS_1142_2014_Svarrapport-Radiologi.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-		    <ProfilId>2</ProfilId>
-			<Beskrivelse>Patologi (GitLab)</Beskrivelse>
+			<ProfilId>2</ProfilId>
+			<Beskrivelse>Patologi (PDF)</Beskrivelse>
 			<Referanse>kravdokument/svarrapport/HIS_1141_2014_Svarrapport-Patologi.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-		    <ProfilId>3</ProfilId>
-			<Beskrivelse>Immunologi (GitLab)</Beskrivelse>
+			<ProfilId>3</ProfilId>
+			<Beskrivelse>Immunologi (PDF)</Beskrivelse>
 			<Referanse>kravdokument/svarrapport/HIS_1140_2014_Svarrapport-Immunologi.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-		    <ProfilId>4</ProfilId>
-			<Beskrivelse>Mikrobiologi (GitLab)</Beskrivelse>
+			<ProfilId>4</ProfilId>
+			<Beskrivelse>Mikrobiologi (PDF)</Beskrivelse>
 			<Referanse>kravdokument/svarrapport/HIS_1139_2014_Svarrapport-Mikrobiologi.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-		    <ProfilId>5</ProfilId>
-			<Beskrivelse>Medisinsk biokjemi (GitLab)</Beskrivelse>
+			<ProfilId>5</ProfilId>
+			<Beskrivelse>Medisinsk biokjemi (PDF)</Beskrivelse>
 			<Referanse>kravdokument/svarrapport/HIS_1138_2014_Svarrapport-MedisinskBiokjemi -korrigert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
@@ -235,100 +236,104 @@
 	</Visningsfiler>
 	
 	<Eksempler>
-	    <Eksempel>
-	        <ProfilId>5</ProfilId>
-			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_biokjemi_v1-4_Ny.xml</Referanse>
-		</Eksempel>
 		<Eksempel>
-		    <ProfilId>5</ProfilId>
-			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_biokjemi_v1-4_Endring.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-		    <ProfilId>5</ProfilId>
-			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_biokjemi_v1-4_Kansellering.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-		    <ProfilId>3</ProfilId>
-			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_immunologi_v1-4_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-		    <ProfilId>3</ProfilId>
-			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_immunologi_v1-4_Endring.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-		    <ProfilId>3</ProfilId>
-			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_immunologi_v1-4_Kansellering.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-		    <ProfilId>4</ProfilId>
-			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_mikrobiologi_dyrkning_v1-4_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-		    <ProfilId>4</ProfilId>
-			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_mikrobiologi_virologi_v1-4_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-		    <ProfilId>4</ProfilId>
-			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_mikrobiologi_gruppert_v1-4_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-		    <ProfilId>4</ProfilId>
-			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_mikrobiologi_gruppert_v1-4_Endring.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-		    <ProfilId>4</ProfilId>
-			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_mikrobiologi_gruppert_v1-4_Kansellering.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-		    <ProfilId>2</ProfilId>
-			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_patologi_cytologi_v1-4_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-		    <ProfilId>2</ProfilId>
-			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_patologi_cytologi_v1-4_Endring.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-		    <ProfilId>2</ProfilId>
-			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_patologi_cytologi_v1-4_Kansellering.xml</Referanse>
-			</Eksempel>
-		<Eksempel>
-		    <ProfilId>2</ProfilId>
-			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_patologi_histologi_v1-4_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-		    <ProfilId>2</ProfilId>
-			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_patologi_histologi_v1-4_Endring.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-		    <ProfilId>2</ProfilId>
-			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_patologi_histologi_v1-4_Tillegg.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-		    <ProfilId>1</ProfilId>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_radiologi_v1-4_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-		    <ProfilId>1</ProfilId>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_radiologi_v1-4_Endring.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-		    <ProfilId>1</ProfilId>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_radiologi_v1-4_Kansellering.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-		    <ProfilId>1</ProfilId>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_radiologi_til_kommune_v1-4_Ny.xml</Referanse>
 		</Eksempel>
+		<Eksempel>
+			<ProfilId>2</ProfilId>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_patologi_cytologi_v1-4_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>2</ProfilId>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_patologi_cytologi_v1-4_Endring.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>2</ProfilId>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_patologi_cytologi_v1-4_Kansellering.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>2</ProfilId>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_patologi_histologi_v1-4_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>2</ProfilId>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_patologi_histologi_v1-4_Endring.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>2</ProfilId>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_patologi_histologi_v1-4_Tillegg.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>3</ProfilId>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_immunologi_v1-4_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>3</ProfilId>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_immunologi_v1-4_Endring.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>3</ProfilId>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_immunologi_v1-4_Kansellering.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>4</ProfilId>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_mikrobiologi_dyrkning_v1-4_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>4</ProfilId>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_mikrobiologi_virologi_v1-4_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>4</ProfilId>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_mikrobiologi_gruppert_v1-4_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>4</ProfilId>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_mikrobiologi_gruppert_v1-4_Endring.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>4</ProfilId>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_mikrobiologi_gruppert_v1-4_Kansellering.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>5</ProfilId>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_biokjemi_v1-4_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>5</ProfilId>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_biokjemi_v1-4_Endring.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>5</ProfilId>
+			<Referanse>eksempel/svarrapport/Svarrapport-v-1-4/Svar_biokjemi_v1-4_Kansellering.xml</Referanse>
+		</Eksempel>
+		
+		
+		
+		
 	</Eksempler>
-<RelaterteFiler>
-	<RelatertFil>
-		<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger</Beskrivelse>
-		<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
-	</RelatertFil>
-	<RelatertFil>
-		<ProfilId>0</ProfilId>
-		<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger</Beskrivelse>
-		<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
-	</RelatertFil>
-</RelaterteFiler>	
+	
+	<RelaterteFiler>
+		<RelatertFil>
+			<Beskrivelse>Retningslinjer for bruk av standardene for Rekvisisjon av medisinske tjenester og Svarrapportering av medisinske tjenester</Beskrivelse>
+			<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1102_2014_Retningslinjer for bruk av rekvisisjon og svarrapport HISD - 1102-2014.pdf</Referanse>
+		</RelatertFil>
+		<RelatertFil>
+			<Beskrivelse>Bruk av Norsk laboratoriekodeverk (NLK) i rekvirering og svarrapportering av medisinske tjenester</Beskrivelse>
+			<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1101_2015_NLK - Teknisk veileder v.2.0.pdf</Referanse>
+		</RelatertFil>
+	</RelaterteFiler>
 </StandardMetadata>
