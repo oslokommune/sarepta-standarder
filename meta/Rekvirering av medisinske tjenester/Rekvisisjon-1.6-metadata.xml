@@ -5,26 +5,59 @@
 	<Versjon>1.6</Versjon>
 	<Identifikator>HIS 80821:2014</Identifikator>
 	<Utgitt>02/2014</Utgitt>
-	<Utgiver>Direktoratet for e-helse</Utgiver>
-
-	<Referansekatalogen>
-		<Beskrivelse>Rekvirering av medisinske tjenester v1.6</Beskrivelse>
-		<Referanse>http://ehelse.no/HIS80821-2014</Referanse>
-	</Referansekatalogen>
-
+	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Rekvirering av medisinske tjenester v1.6</Beskrivelse>
+			<Referanse>http://ehelse.no/HIS80821-2014</Referanse>
+		</Informasjon>
+	</MerInformasjon>
+	
+	<Profiler>
+		<Profil>
+			<ProfilId>1</ProfilId>
+			<Beskrivelse>Radiologi</Beskrivelse>
+			<Identifikator>HIS 1175:2014</Identifikator>
+			<Utgitt>02/2014</Utgitt>
+			<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+			<Status>Fastsatt som standard</Status>
+			<MerInformasjon>
+	            <Informasjon>
+	                <Beskrivelse>Rekvisisjon: radiologi v1.6</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS1175-2014</Referanse>
+		        </Informasjon>
+	        </MerInformasjon>
+		</Profil>
+		<Profil>
+			<ProfilId>2</ProfilId>
+			<Beskrivelse>Laboratoriemedisin</Beskrivelse>
+			<Identifikator>HIS 1160:2014</Identifikator>
+			<Utgitt>02/2014</Utgitt>
+			<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+			<Status>Fastsatt som standard</Status>
+			<MerInformasjon>
+	            <Informasjon>
+	                <Beskrivelse>Rekvisisjon: laboratoriemedisin v1.6</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS1160-2014</Referanse>
+		        </Informasjon>
+	        </MerInformasjon>
+		</Profil>
+	</Profiler>
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Rekvirering av medisinske tjenester v1.6 (GitLab)</Beskrivelse>
+			<Beskrivelse>Rekvirering av medisinske tjenester v1.6 (PDF)</Beskrivelse>
 			<Referanse>kravdokument/rekvisisjon/HIS_80821_2014 Rekvirering av medisinske tjenester v1.6 -korrigert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Profil: Radiologi (GitLab)</Beskrivelse>
+			<ProfilId>1</ProfilId>
+			<Beskrivelse>Radiologi (PDF)</Beskrivelse>
 			<Referanse>kravdokument/rekvisisjon/HIS_1175_2014_Rekvisisjon-radiologi.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Profil: Laboratoriemedisin (Gitlab)</Beskrivelse>
+			<ProfilId>2</ProfilId>
+			<Beskrivelse>Laboratoriemedisin (PDF)</Beskrivelse>
 			<Referanse>kravdokument/rekvisisjon/HIS_1160_2014_Rekvisisjon-laboratoriemedisin -korrigert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
@@ -150,25 +183,43 @@
 	
 	<Eksempler>
 		<Eksempel>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-6/Rekvisisjon_radiologi_enkel_v1-6_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-6/Rekvisisjon_radiologi_enkel_v1-6_Endring.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-6/Rekvisisjon_radiologi_enkel_v1-6_Kansellering.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-6/Rekvisisjon_radiologi_enkel_fra_kommune_v1-6_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-6/Rekvisisjon_radiologi-MR-v1-6_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-6/Rekvisisjon_radiologi-MR-v1-6_Endring.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-6/Rekvisisjon_radiologi-MR-v1-6_Kansellering.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
+	
+	<RelaterteFiler>
+		<RelatertFil>
+			<Beskrivelse>Retningslinjer for bruk av standardene for Rekvisisjon av medisinske tjenester og Svarrapportering av medisinske tjenester</Beskrivelse>
+			<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1102_2014_Retningslinjer for bruk av rekvisisjon og svarrapport HISD - 1102-2014.pdf</Referanse>
+		</RelatertFil>
+		<RelatertFil>
+			<Beskrivelse>Bruk av Norsk laboratoriekodeverk (NLK) i rekvirering og svarrapportering av medisinske tjenester</Beskrivelse>
+			<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1101_2015_NLK - Teknisk veileder v.2.0.pdf</Referanse>
+		</RelatertFil>
+	</RelaterteFiler>
 </StandardMetadata>

@@ -20,6 +20,12 @@ Catalog.xsd">
 	<uri name="http://www.kith.no/xmlstds/person/2014-03-28" uri="felleskomponenter/personer-2014-03-28.xsd"/>
 	<uri name="urn:ietf:params:xml:ns:icalendar-2.0" uri="felleskomponenter/iCalendar.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/ki/2013-04-25" uri="felleskomponenter/ER-KritiskInformasjon-2013-04-25.xsd"/>
+	<uri name="http://www.kith.no/xmlstds/epj/EPJEkstrakt/2008-02-20" uri="felleskomponenter/EPJEkstrakt.xsd"/>
+	<uri name="http://www.kith.no/xmlstds/epj/EPJTilleggsinfo/2008-02-20" uri="felleskomponenter/EPJTilleggsinfo.xsd"/>
+	<uri name="http://www.kith.no/xmlstds/epj/epj1/2008-02-20" uri="felleskomponenter/EPJ-cave-mv.xsd"/>
+	<uri name="http://www.kith.no/xmlstds/epj/epj2/2008-02-20" uri="felleskomponenter/EPJ-journalnotat-mv.xsd"/>
+	<uri name="http://www.kith.no/xmlstds/epj/epj3/2008-02-20" uri="felleskomponenter/EPJ-legemiddel-mv.xsd"/>
+	<uri name="http://www.kith.no/xmlstds/epj/meta/2008-02-20" uri="felleskomponenter/EPJ-meta.xsd"/>
 	<!-- dialogmelding -->
 	<uri name="http://www.kith.no/xmlstds/dialog/2006-10-11" uri="dialogmelding/2006-10-11/dialogmelding.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/dialog/2013-01-23" uri="dialogmelding/2013-01-23/dialogmelding-v1.1.xsd"/>
@@ -34,12 +40,7 @@ Catalog.xsd">
 	<uri name="http://www.kith.no/xmlstds/po/Pasientlogistikk/2007-10-16" uri="plo/v1.31/Pasientlogistikk.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/po/TverrfagligEpikrise/2007-10-16" uri="plo/v1.31/TverrfagligEpikrise.xsd"/>
 	<!-- PLO-meldinger v1.4 -->
-	<uri name="http://www.kith.no/xmlstds/epj/EPJEkstrakt/2008-02-20" uri="plo/v1.4/EPJEkstrakt.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/epj/EPJTilleggsinfo/2008-02-20" uri="plo/v1.4/EPJTilleggsinfo.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/epj/epj1/2008-02-20" uri="plo/v1.4/EPJ-cave-mv.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/epj/epj2/2008-02-20" uri="plo/v1.4/EPJ-journalnotat-mv.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/epj/epj3/2008-02-20" uri="plo/v1.4/EPJ-legemiddel-mv.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/epj/meta/2008-02-20" uri="plo/v1.4/EPJ-meta.xsd"/>
+	
 	<uri name="http://www.kith.no/xmlstds/po/poKomponent/2008-02-20" uri="plo/v1.4/poKomponent.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/po/Innleggelsesrapport/2008-02-20" uri="plo/v1.4/Innleggelsesrapport.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/po/Konsultasjon/2008-02-20" uri="plo/v1.4/Konsultasjon.xsd"/>
