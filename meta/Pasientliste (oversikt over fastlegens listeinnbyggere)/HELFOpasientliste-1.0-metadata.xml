@@ -5,18 +5,19 @@
 	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 1023:2010</Identifikator>
 	<Utgitt>02/2010</Utgitt>
-	<Utgiver>Helsedirektoratet</Utgiver>
-
-	<Referansekatalogen>
-		<Beskrivelse>Pasientliste (HIS 1023:2010)</Beskrivelse>
-		<Referanse>http://ehelse.no/HIS1023-2010</Referanse>
-	</Referansekatalogen>
-
+	<Ansvarlig>Helsedirektoratet</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Pasientliste (HIS 1023:2010)</Beskrivelse>
+			<Referanse>http://ehelse.no/HIS1023-2010</Referanse>
+		</Informasjon>
+	</MerInformasjon>
 
+	
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Pasientliste (GitLab)</Beskrivelse>
+			<Beskrivelse>Pasientliste (PDF)</Beskrivelse>
 			<Referanse>kravdokument/HELFOPasientliste/HIS_1023_2010_NAV-Pasientliste 2010-02-01.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>

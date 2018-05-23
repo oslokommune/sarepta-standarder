@@ -13,10 +13,10 @@
 			<Referanse>http://ehelse.no/HIS80226-2014</Referanse>
 		</Informasjon>
 	</MerInformasjon>
+	
 	<Kravdokumenter>
 		<Kravdokument>
-			<ProfilId>0</ProfilId>
-			<Beskrivelse>Epikrise v1.2 (GitLab)</Beskrivelse>
+			<Beskrivelse>Epikrise v1.2 (PDF)</Beskrivelse>
 			<Referanse>kravdokument/epikrise/HIS 80226_2014 Epikrisemelding - korrigert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
@@ -141,22 +141,28 @@
 	</Visningsfiler>
 	<Eksempler>
 		<Eksempel>
-			<ProfilId>0</ProfilId>
 			<Referanse>eksempel/epikrise/Epikrise_v1-2/epikrise_v1.2_n.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<ProfilId>0</ProfilId>
 			<Referanse>eksempel/epikrise/Epikrise_v1-2/epikrise_v1.2_m.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<ProfilId>0</ProfilId>
 			<Referanse>eksempel/epikrise/Epikrise_v1-2/epikrise_v1.2_c.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
+	
 	<RelaterteFiler>
 		<RelatertFil>
 			<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger</Beskrivelse>
 			<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
 		</RelatertFil>
-	</RelaterteFiler>		
+		<RelatertFil>
+			<Beskrivelse>Notat: Den gode epikrise - minstekrav til medisinskfaglig innhold ved sending HISD 1033:2010 (PDF)</Beskrivelse>
+			<Referanse>relaterteFiler/epikrise/HISD_1033_2010 Epikrise-Minimumskrav-2011-03-29.pdf</Referanse>
+		</RelatertFil>
+		<RelatertFil>
+			<Beskrivelse>Prinsipper for utskrift av epikrise HISD 80715:2007 (PDF)</Beskrivelse>
+			<Referanse>relaterteFiler/epikrise/HISD_80715_2007_UtskriftMal-Epikrise.pdf</Referanse>
+		</RelatertFil>
+	</RelaterteFiler>
 </StandardMetadata>

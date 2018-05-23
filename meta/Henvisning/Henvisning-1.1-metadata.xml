@@ -7,6 +7,7 @@
 	<Utgitt>02/2014</Utgitt>
     <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
     <Status>Fastsatt som standard</Status>
+    
 	<MerInformasjon>
 		<Informasjon>
 			<Beskrivelse>Henvisningsmelding 1.1 (HIS 80517:2014)</Beskrivelse>
@@ -15,10 +16,11 @@
 	</MerInformasjon>
 
 	
+
 	
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Henvisning v1.1 (GitLab)</Beskrivelse>
+			<Beskrivelse>Henvisning v1.1 (PDF)</Beskrivelse>
 			<Referanse>kravdokument/henvisning/HIS_80517_2014_Henvisning_v1-1 -korrigert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
@@ -161,10 +163,11 @@
 			<Referanse>eksempel/Henvisning/Henvisning_v1-1/henvisning_v1.1_c.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
+	
 	<RelaterteFiler>
-	<RelatertFil>
-		<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger</Beskrivelse>
-		<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
-	</RelatertFil>
-</RelaterteFiler>	
+		<RelatertFil>
+			<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger</Beskrivelse>
+			<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
+		</RelatertFil>
+	</RelaterteFiler>	
 </StandardMetadata>
