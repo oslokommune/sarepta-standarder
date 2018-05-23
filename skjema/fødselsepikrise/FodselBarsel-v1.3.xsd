@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:kith="http://www.kith.no/xmlstds" xmlns:fb="http://www.kith.no/xmlstds/FodselBarsel/2012-11-21" xmlns:epj2="http://www.kith.no/xmlstds/epj/epj2/2008-02-20" targetNamespace="http://www.kith.no/xmlstds/FodselBarsel/2012-11-21" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/epj/epj2/2008-02-20" schemaLocation="EPJ-journalnotat-mv.xsd"/>
+	<element name="MedisinskeOpplysningerFodselOgBarsel">
+		<annotation>
+			<documentation>
+				EPJ sak, ID: 50120 Denne samlesaken benyttes for å samle de medisinske opplysningene vedrørende somatiske og psykiatriske observasjoner og undersøkelse/behandling som skal føres inn i journalen.
+			</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="fb:HelseundersokelseAvKvinneOgBarn" minOccurs="1" maxOccurs="1"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Barneundersokelse">
+		<annotation>
+			<documentation>
+				Basert på EPJ fragmenttype, ID: 5036
+			</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Fodselstidspunkt" type="kith:TS" minOccurs="0" maxOccurs="1"/>
+				<element name="Levestatus" type="kith:CV" minOccurs="0" maxOccurs="1"/>
+				<element name="Kjonn" type="kith:CV" minOccurs="0" maxOccurs="1"/>
+				<element name="ApgarScore" type="integer" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="FodselsVekt" type="integer" minOccurs="0" maxOccurs="1"/>
+				<element name="FodselsLengde" type="integer" minOccurs="0" maxOccurs="1"/>
+				<element name="FodselsHodeomkrets" type="integer" minOccurs="0" maxOccurs="1"/>
+				<element name="Horselsscreening" type="kith:CV" minOccurs="0" maxOccurs="1"/>
+				<element name="HorselsscreeningNormaleFunn" type="kith:CV" minOccurs="0" maxOccurs="1"/>
+				<element name="NyfodtscreeningMedfodtStoffskiftesykdommer" type="kith:CV" minOccurs="0" maxOccurs="1"/>
+				<element name="MerknaderScreening" type="string" minOccurs="0" maxOccurs="1"/>
+				<element name="OrganundersokelseNormaleFunn" type="kith:CV" minOccurs="0" maxOccurs="1"/>
+				<element name="MerknaderOrganundersokelser" type="string" minOccurs="0" maxOccurs="1"/>
+				<element name="Modenhetsbedommelse" type="string" minOccurs="0" maxOccurs="1"/>
+				<element name="UkomplisertForlopEtterFodselen" type="kith:CV" minOccurs="0" maxOccurs="1"/>
+				<element name="Merknader" type="string" minOccurs="0" maxOccurs="1"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="OpplysningerFraTidligereSvangerskap">
+		<complexType>
+			<sequence>
+				<element ref="fb:TidligereSvangerskap" minOccurs="0" maxOccurs="1"/>
+				<element ref="epj2:GenereltJournalnotat" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="NotatHelseundersokelse">
+		<annotation>
+			<documentation>
+				Basert på EPJ dokumenttype: Notat helseundersøkelse ID: 10081 Denne dokumenttypen kan benyttes ved alle former for løpende dokumentasjon hvor det ikke finnes egne, mer spesialiserte, dokumenttyper som den som fører journalen vurderer som bedre egnet. Dokumenttypen kan også benyttes til legers dokumentasjon av undersøkelse, behandling mv. og det er inkludert et sett av mer spesialiserte fragmenter til slikt bruk.
+			</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="fb:OpplysningerOmFodselen" minOccurs="0" maxOccurs="1"/>
+				<element ref="fb:BarnetsLeieVedFodselstidspunktet" minOccurs="0" maxOccurs="1"/>
+				<element ref="fb:EpisiotomiRifter" minOccurs="0" maxOccurs="1"/>
+				<element ref="fb:BarselforlopMor" minOccurs="0" maxOccurs="1"/>
+				<element ref="fb:Barnet" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="BarselforlopMor">
+		<annotation>
+			<documentation>
+				Nytt EPJ fragment laget ifm. fødselsepikrise.
+			</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="UkomplisertBarselforlop" type="kith:CV" minOccurs="0" maxOccurs="1"/>
+				<element name="KomplikasjonerBarselforlop" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="BarselforlopMerknader" type="string" minOccurs="0" maxOccurs="1"/>
+				<element name="Amming" type="kith:CV" minOccurs="0" maxOccurs="1"/>
+				<element name="Ammehjelpemidler" type="kith:CV" minOccurs="0" maxOccurs="1"/>
+				<element name="AmmingMerknader" type="string" minOccurs="0" maxOccurs="1"/>
+				<element ref="fb:Utreise" minOccurs="0" maxOccurs="1"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Barnet">
+		<annotation>
+			<documentation>
+				Basert på EPJ dokument, ID: 5119
+			</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="fb:BarselforlopBarn" minOccurs="0" maxOccurs="1"/>
+				<element ref="fb:Barneundersokelse" minOccurs="0" maxOccurs="1"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="HelseundersokelseAvKvinneOgBarn">
+		<annotation>
+			<documentation>
+				Basert på EPJ sak, ID: 30000 Denne sakstypen inneholder alle dokumenter som omhandler helseundersøkelser av kvinne og barn.
+			</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="fb:NotatHelseundersokelse" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="fb:OpplysningerFraTidligereSvangerskap" minOccurs="0" maxOccurs="1"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="OpplysningerOmFodselen">
+		<annotation>
+			<documentation>
+				Basert på EPJ fragmenttype, ID: 5113 Fragmenter av denne typen benyttes for å registrere opplysninger om fødselen.
+			</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Fodselsstart" type="kith:CV" minOccurs="0" maxOccurs="1"/>
+				<element name="ForlosendeInngrep" type="kith:CV" minOccurs="0" maxOccurs="1"/>
+				<element name="Pluralitet" type="kith:CV" minOccurs="0" maxOccurs="1"/>
+				<element name="AntallBarn" type="integer" minOccurs="0" maxOccurs="1"/>
+				<element name="Svangerskapslengde" type="string" minOccurs="0" maxOccurs="1"/>
+				<element name="Blodning" type="integer" minOccurs="0" maxOccurs="1"/>
+				<element name="Merknader" type="string" minOccurs="0" maxOccurs="1"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="EpisiotomiRifter">
+		<annotation>
+			<documentation>
+				Basert på EPJ fragmenttype: Episiotomi/rifter/rupturer ID: 5110 Fragmenter av denne typen benyttes for å registrere pasientens episiotomi/rifter/rupturer.  
+			</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Episiotomi" type="kith:CV" minOccurs="0" maxOccurs="1"/>
+				<element name="Rifter" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="BarnetsLeieVedFodselstidspunktet">
+		<annotation>
+			<documentation>
+				Basert på EPJ fragmenttype: ID: 5102 Fragmenter av denne typen benyttes for å registrere presentasjonsleiet.
+			</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Leie" type="kith:CV" minOccurs="0" maxOccurs="1"/>
+				<element name="Merknader" type="string" minOccurs="0" maxOccurs="1"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="BarselforlopBarn">
+		<annotation>
+			<documentation>
+				Nytt EPJ fragment laget ifm. fødselsepikrise.
+			</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="LavesteVektUnderOpphold" type="integer" minOccurs="0" maxOccurs="1"/>
+				<element name="LavesteVektDato" type="kith:TS" minOccurs="0" maxOccurs="1"/>
+				<element name="VektVedUtreise" type="integer" minOccurs="0" maxOccurs="1"/>
+				<element name="HodeomkretsUnderOpphold" type="integer" minOccurs="0" maxOccurs="1"/>
+				<element name="HodeomkretsDato" type="kith:TS" minOccurs="0" maxOccurs="1"/>
+				<element name="LengdemaalUnderOpphold" type="integer" minOccurs="0" maxOccurs="1"/>
+				<element name="LengdemaalDato" type="kith:TS" minOccurs="0" maxOccurs="1"/>
+				<element name="Ernaering" type="kith:CV" minOccurs="0" maxOccurs="1"/>
+				<element name="Dieproblem" type="kith:CV" minOccurs="0" maxOccurs="1"/>
+				<element name="ErnaeringMerknader" type="string" minOccurs="0" maxOccurs="1"/>
+				<element name="AvtalteTiltak" type="string" minOccurs="0" maxOccurs="1"/>
+				<element name="TiltakDato" type="kith:TS" minOccurs="0" maxOccurs="1"/>
+				<element ref="fb:Utreise" minOccurs="0" maxOccurs="1"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Utreise">
+		<annotation>
+			<documentation>
+				Nytt EPJ fragment laget ifm. fødselsepikrise.
+			</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Utreisedato" type="kith:TS" minOccurs="0" maxOccurs="1"/>
+				<element name="MorOgBarnSkrevetUtSammen" type="kith:CV" minOccurs="0" maxOccurs="1"/>
+				<element name="UtskrevetTil" type="kith:CV" minOccurs="0" maxOccurs="1"/>
+				<element name="OverflyttetTilAnnenEnhet" type="string" minOccurs="0" maxOccurs="1"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="TidligereSvangerskap">
+		<annotation>
+			<documentation>
+				Basert på EPJ fragmenttype, ID: 5082 Inneholder informasjon om tidligere svangerskap.
+			</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="LevendeFodteBarn" type="int" minOccurs="0" maxOccurs="1"/>
+				<element name="Dodfodte" type="int" minOccurs="0" maxOccurs="1"/>
+				<element name="DodEtterFodsel" type="int" minOccurs="0" maxOccurs="1"/>
+				<element name="TidligereSvangerskapMerknad" type="string" minOccurs="0" maxOccurs="1"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

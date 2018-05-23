@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M9.12 Nedlasting av legemidler i bruk
+2014-01-21
+ -->
+<!-- 
+Endringer siden v2.5 2013-10-08
+Endret kardinalitet m912:M912/m912:Multidosepasient 0..* -> 1..1 (ERSA-sak 5527)
+Nytt element: m912:M912/m912:Multidosepasient/m912:RefMsgId (ERSA-sak 5526)
+Fjernet element: m912:M912/m912:Multidosepasient/m912:LasteResepter (ERSA-sak 5487)
+-->
+<schema xmlns:m912="http://www.kith.no/xmlstds/eresept/m912/2014-01-21" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:m274="http://www.kith.no/xmlstds/eresept/m274/2012-06-11" xmlns:m92="http://www.kith.no/xmlstds/eresept/m92/2013-10-08" targetNamespace="http://www.kith.no/xmlstds/eresept/m912/2014-01-21" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/eresept/m274/2012-06-11" schemaLocation="ER-M274-2012-06-11.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/eresept/m92/2013-10-08" schemaLocation="../R1408-eResept-M9.1-4-2014-04-07/ER-M92-2013-10-08.xsd"/>
+	<element name="M912">
+		<annotation>
+			<documentation>Nedlasting av varer i bruk</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Multidosepasient">
+					<complexType>
+						<sequence>
+							<element name="Fnr" type="string"/>
+							<element name="RefMsgId" type="string" minOccurs="0"/>
+							<element ref="m274:Multidoselege" minOccurs="0"/>
+							<element ref="m274:Multidoseapotek" minOccurs="0"/>
+							<element ref="m92:Reseptinfo" minOccurs="0" maxOccurs="unbounded"/>
+							<element name="VarerIBrukB64" type="base64Binary" minOccurs="0" maxOccurs="3"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	Valideringsmeldingene er et kodeverk av feilmeldinger, advarsler og informasjonsmeldinger som SYSVAK kan returnerer i sine svarmeldinger. 
+	Det gjøres oppmerksom på at dette kodeverket kan endres og utvides etter behov og det bør ikke implementeres sterke koblinger til kodeverket.
+-->
+<!--Her skal kun innholdet i hver enkelt valideringskode endres. Nye koder skal først opprettes i xsd-skjemaet (Valideringskode.xsd) før de legges inn her-->
+<!--Alle template baserte valideringskoder skal ha klammer ({}) i beskrivelsen. -->
+<!--Alle valideringskoder som ikke er merket med  <SkalPubliseresEksternt>false</SkalPubliseresEksternt> vil offentliggjøres på kith.no -->
+
+<!-- ENDRINGSLOGG
+
+20080121 (keau) - Lagt til F109
+20080305 (keau) - Lagt til A105
+20080306 (keau) - Lagt til F110
+20080325 (keau) - Lagt til F111
+20080331 (keau) - Lagt til I105
+20080520 (keau) - Lagt til A106
+20110620 (habj) - Tatt bort advarsler og Infomeldinger, se issue 1348
+20121010 (habj) - Lagt til F112
+-->
+
+<Valideringskode xmlns="http://tempuri.org/Valideringskoder.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://tempuri.org/Valideringskoder.xsd
+	  C:\development\Fhi.Sysvak\Main\Source\Common\Fhi.Sysvak.Common\Valideringskode.xsd">
+	<!-- *** FEILMELDINGER *** -->
+	<F000>
+		<Kode>F000</Kode>
+		<KodeType>Feil</KodeType>
+		<Beskrivelse>Meldingen er ikke akseptert av SYSVAK. Den har feil struktur eller er uleselig. Kontakt systemleverandør om feilen vedvarer.</Beskrivelse>
+		<ErTemplateBasert>false</ErTemplateBasert>
+		<Context>XML validerer ikke</Context>
+	</F000>
+	<F001>
+		<Kode>F001</Kode>
+		<KodeType>Feil</KodeType>
+		<Beskrivelse>Angitt kode '{0}' er en ugyldig kode for kodeverket '{1}'</Beskrivelse>
+		<ErTemplateBasert>true</ErTemplateBasert>
+		<Context>Hendelseregistrering</Context>
+	</F001>
+	<F102>
+		<Kode>F102</Kode>
+		<KodeType>Feil</KodeType>
+		<Beskrivelse>Angitt konsultasjonsdato er tidligere enn fødselsdato. Registreringen er ikke akseptert av SYSVAK.</Beskrivelse>
+		<ErTemplateBasert>false</ErTemplateBasert>
+		<Context>Hendelseregistrering</Context>
+		<Felt>Konsultasjonsdato</Felt>
+	</F102>
+	<F103>
+		<Kode>F103</Kode>
+		<KodeType>Feil</KodeType>
+		<Beskrivelse>Angitt registreringsdato er etter at SYSVAK mottok og forsøkte å opprette registreringen. Registreringen er ikke akseptert av SYSVAK.</Beskrivelse>
+		<ErTemplateBasert>false</ErTemplateBasert>
+		<Context>Hendelseregistrering</Context>
+		<Felt>Registreringsdato</Felt>
+	</F103>
+	<F104>
+		<Kode>F104</Kode>
+		<KodeType>Feil</KodeType>
+		<Beskrivelse>Angitt konsultasjonsdato er senere i tid enn angitt registreringsdato. Registreringen er ikke akseptert av SYSVAK.</Beskrivelse>
+		<ErTemplateBasert>false</ErTemplateBasert>
+		<Context>Hendelsesregistrering</Context>
+		<Felt>Konsultasjonsdato</Felt>
+	</F104>
+	<F105>
+		<Kode>F105</Kode>
+		<KodeType>Feil</KodeType>
+		<Beskrivelse>Angitt fødselsnummer/d-nummer for vaksinanden danner ikke et gyldig nummer. Registreringen er ikke akseptert av SYSVAK.</Beskrivelse>
+		<ErTemplateBasert>false</ErTemplateBasert>
+		<Context>Hendelsesregistrering</Context>
+		<Felt>Fødselsnummer/D-nummer/DUF-nummer</Felt>
+	</F105>
+	<F106>
+		<Kode>F106</Kode>
+		<KodeType>Feil</KodeType>
+		<Beskrivelse>Vaksinanden mangler fullstendig fødselsnummer/d-nummer. Dokumentasjon eller omsorgsperson må være angitt. Registreringen er ikke akseptert av SYSVAK.</Beskrivelse>
+		<ErTemplateBasert>false</ErTemplateBasert>
+		<Context>Opprettelse av vaksinand uten fødselsnummer/d-nummer</Context>
+	</F106>
+	<F107>
+		<Kode>F107</Kode>
+		<KodeType>Feil</KodeType>
+		<Beskrivelse>Vaksinanden er angitt med hjelpenummer i fødselsnummer feltet. Vaksinanden kan opprettes med fødselsdato hvis dokumentasjon eller omsorgsperson angis. Registreringen er ikke akseptert av SYSVAK.</Beskrivelse>
+		<ErTemplateBasert>false</ErTemplateBasert>
+		<Context>Hendelsesregistrering</Context>
+		<Felt>Vaksinandidentifikasjon</Felt>
+	</F107>
+	<F109>
+		<Kode>F109</Kode>
+		<KodeType>Feil</KodeType>
+		<Beskrivelse>Angitt preparat samsvarer ikke med vaksinekoden</Beskrivelse>
+		<ErTemplateBasert>false</ErTemplateBasert>
+		<Context>Hendelsesregistrering</Context>
+		<Felt>Preparat</Felt>
+	</F109>
+	<F110>
+		<Kode>F110</Kode>
+		<KodeType>Feil</KodeType>
+		<Beskrivelse>Angitt fødselsdato for vaksinanden er etter at SYSVAK mottok registreringen. Registreringen er ikke akseptert av SYSVAK.</Beskrivelse>
+		<ErTemplateBasert>false</ErTemplateBasert>
+		<Context>Hendelseregistrering (og opprettelse av PUF via Intranet)</Context>
+		<Felt>Fødselsdato</Felt>
+	</F110>
+	<F111>
+		<Kode>F111</Kode>
+		<KodeType>Feil</KodeType>
+		<Beskrivelse>Angitt konsultasjonsdato er senere enn vaksinanden sin dødsdato. Registreringen er ikke akseptert av SYSVAK.</Beskrivelse>
+		<ErTemplateBasert>false</ErTemplateBasert>
+		<Context>Hendelseregistrering</Context>
+		<Felt>Konsultasjonsdato</Felt>
+	</F111>
+  <F112>
+    <Kode>F112</Kode>
+    <KodeType>Feil</KodeType>
+    <Beskrivelse>Oppgitt fødselsnummer/d-nummer for omsorgsperson er ugyldig eller mangler. Registreringen er ikke akseptert av SYSVAK.</Beskrivelse>
+    <ErTemplateBasert>false</ErTemplateBasert>
+    <Context>Opprettelse av vaksinand uten fødselsnummer/d-nummer</Context>
+  </F112>
+	<F801>
+		<Kode>F801</Kode>
+		<KodeType>Feil</KodeType>
+		<Beskrivelse>Angitt dato i fødselsintervallet ('født fra og med'/'født til og med') for vaksinanden er ugyldig. Søket er avbrutt og ingen vaksinander er returnert.</Beskrivelse>
+		<ErTemplateBasert>false</ErTemplateBasert>
+		<Context>Søk etter vaksinander</Context>
+	</F801>
+	<F802>
+		<Kode>F802</Kode>
+		<KodeType>Feil</KodeType>
+		<Beskrivelse>Angitt dato i fødselsintervallet ('født fra og med'/'født til og med') for vaksinanden er ugyldig. Måned (mm) må være oppgitt hvis dag (dd) er oppgitt. Søket er avbrutt og ingen vaksinander er returnert.</Beskrivelse>
+		<ErTemplateBasert>false</ErTemplateBasert>
+		<Context>Søk etter vaksinander</Context>
+	</F802>
+	<F803>
+		<Kode>F803</Kode>
+		<KodeType>Feil</KodeType>
+		<Beskrivelse>Angitt årstall i fødselsintervallet ('født fra og med'/'født til og med') for vaksinanden må være mellom 1800 og 2300. Søket er avbrutt og ingen vaksinander er returnert.</Beskrivelse>
+		<ErTemplateBasert>false</ErTemplateBasert>
+		<Context>Søk etter vaksinander</Context>
+	</F803>
+	<F999>
+		<Kode>F999</Kode>
+		<KodeType>Feil</KodeType>
+		<Beskrivelse>[Udefinert feilkode fra SYSVAK]</Beskrivelse>
+		<ErTemplateBasert>true</ErTemplateBasert>
+		<Context>Udefinert</Context>
+	</F999>
+	<!-- *** ADVARSELMELDINGER *** -->
+	<A101>
+		<Kode>A101</Kode>
+		<KodeType>Advarsel</KodeType>
+		<Beskrivelse>Vaksinasjonen er ikke utført på stedet. Dokumentasjon for vaksinasjonen bør angis.</Beskrivelse>
+		<ErTemplateBasert>false</ErTemplateBasert>
+		<Context>Hendelsesregistrering (ikke sletting av hendelse)</Context>
+		<Felt>Dokumentasjon</Felt>
+	</A101>
+	<A105>
+		<Kode>A105</Kode>
+		<KodeType>Advarsel</KodeType>
+		<Beskrivelse>Angitt kode '{0}' har opphørt for kodeverket '{1}'. Er denne koden korrekt?</Beskrivelse>
+		<ErTemplateBasert>true</ErTemplateBasert>
+		<Context>Hendelsesregistrering (ikke sletting av hendelse)</Context>
+	</A105>
+	<A801>
+		<Kode>A801</Kode>
+		<KodeType>Advarsel</KodeType>
+		<Beskrivelse>Angitt fødselsintervall ('født fra og med'/'født til og med') for vaksinanden er inkonsistent. 'Født fra og med' er etter 'Født til og med'. Søket vil ikke returnere noen vaksinander.</Beskrivelse>
+		<ErTemplateBasert>false</ErTemplateBasert>
+		<Context>Søk etter vaksinander</Context>
+	</A801>
+	<A802>
+		<Kode>A802</Kode>
+		<KodeType>Advarsel</KodeType>
+		<Beskrivelse>Søket ga treff på mer enn {0} personer. Bare de {0} første personene er returnert i søkeresultatet.</Beskrivelse>
+		<ErTemplateBasert>true</ErTemplateBasert>
+		<Context>Søk etter vaksinander</Context>
+	</A802>
+	<A999>
+		<Kode>A999</Kode>
+		<KodeType>Advarsel</KodeType>
+		<Beskrivelse>[Udefinert advarselkode fra SYSVAK]</Beskrivelse>
+		<ErTemplateBasert>true</ErTemplateBasert>
+		<Context>Udefinert</Context>
+	</A999>
+	<!-- *** INFORMASJONSMELDINGER *** -->
+	<I101>
+		<Kode>I101</Kode>
+		<KodeType>Informasjon</KodeType>
+		<Beskrivelse>Hendelsen er registrert tidligere. Eventuelle endringer er oppdatert.</Beskrivelse>
+		<ErTemplateBasert>false</ErTemplateBasert>
+		<Context>Hendelsesregistrering</Context>
+	</I101>
+	<I102>
+		<Kode>I102</Kode>
+		<KodeType>Informasjon</KodeType>
+		<Beskrivelse>Fødselsnummerer/d-nummeret finnes ikke i folkeregisteret ved FHI. Vaksinanden vil bli registrert med fullstendig fødselsnummer/d-nummer når folkeregisteret oppdateres.</Beskrivelse>
+		<ErTemplateBasert>false</ErTemplateBasert>
+		<Context>Hendelsesregistrering</Context>
+		<Felt>Fødselsnummer</Felt>
+	</I102>
+	<I103>
+		<Kode>I103</Kode>
+		<KodeType>Informasjon</KodeType>
+		<Beskrivelse>Søket ga treff på flere personer. Vaksinasjonsstatus er ikke inkludert for noen av personene, men utleveres ved søk på hver enkelt person.</Beskrivelse>
+		<ErTemplateBasert>false</ErTemplateBasert>
+		<Context>Søk etter vaksinander</Context>
+	</I103>
+	<I104>
+		<Kode>I104</Kode>
+		<KodeType>Informasjon</KodeType>
+		<Beskrivelse>Hendelsen ble registrert uten fullstendig fødselsnummer/d-nummer. Registreringen er oppdatert med følgende fødselsnummer/d-nummer: {0}</Beskrivelse>
+		<ErTemplateBasert>true</ErTemplateBasert>
+		<Context>Hendelsesregistrering</Context>
+	</I104>
+	<I105>
+		<Kode>I105</Kode>
+		<KodeType>Informasjon</KodeType>
+		<Beskrivelse>Personen er allerede registrert uten fullstendig fødselsnummer/d-nummer. Oppdater fødselsnummer/d-nummer hvis tilgjengelig.</Beskrivelse>
+		<ErTemplateBasert>true</ErTemplateBasert>
+		<Context>Opprettelse av PUF via web</Context>
+	</I105>
+  <I106>
+		<Kode>I106</Kode>
+		<KodeType>Informasjon</KodeType>
+		<Beskrivelse>Hendelsen ble mottatt med feil i DUF-nummer format. SYSVAK har rettet formatet i forkant av videre behandling. Det korrekte formatet er: {0}. Det anbefales at journalen oppdateres med dette nummer.</Beskrivelse>
+		<ErTemplateBasert>true</ErTemplateBasert>
+		<Context>Hendelsesregistrering</Context>
+	</I106>
+	<I999>
+		<Kode>I999</Kode>
+		<KodeType>Informasjon</KodeType>
+		<Beskrivelse>[Udefinert informasjonskode fra SYSVAK]</Beskrivelse>
+		<ErTemplateBasert>true</ErTemplateBasert>
+		<Context>Udefinert</Context>
+	</I999>
+</Valideringskode>

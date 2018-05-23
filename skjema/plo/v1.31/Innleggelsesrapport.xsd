@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--Versjon 1.31 2007-10-16
+  |	Innleggelsesrapport: Inngår som en del av pleie- og omsorgsmeldingene
+-->
+<!-- Endret 16.oktober 2007 (JSD)
+  |	Endret namespace til http://www.kith.no/xmlstds/po/Innleggelsesrapport/2007-10-16
+  |	poKomponent har blitt revidert og fått nytt namespace http://www.kith.no/xmlstds/po/poKomponent/2007-10-16
+-->
+<!-- Endret 31. mai 2007 (AA)
+  |	Endret namespace til http://www.kith.no/xmlstds/po/Innleggelsesrapport/2007-05-31
+  |	poKomponent har blitt revidert og fått nytt namespace http://www.kith.no/xmlstds/po/poKomponent/2007-05-31
+  |	Endret navn på det refererte elementet InfoViktigeOpplysninger til InfoAndreViktigeOpplysninger
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:kith="http://www.kith.no/xmlstds" xmlns:p7="http://www.kith.no/xmlstds/po/Innleggelsesrapport/2007-10-16" xmlns:po="http://www.kith.no/xmlstds/po/poKomponent/2007-10-16" targetNamespace="http://www.kith.no/xmlstds/po/Innleggelsesrapport/2007-10-16" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds/po/poKomponent/2007-10-16" schemaLocation="poKomponent.xsd"/>
+	<!-- LEVEL 1 -->
+	<!-- Class: Innleggelsesrapport -->
+	<element name="Innleggelsesrapport">
+		<annotation>
+			<documentation>
+         Sendes fra pleie- og omsorgstjenesten ved innleggelse i sykehus.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="po:InformasjonOmForsendelsen"/>
+				<element ref="po:TilleggsopplysningPasient" minOccurs="0"/>
+				<element ref="po:ParorendeForesatt" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:KontaktpersonHelsepersonell" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:AnsvarForRapport" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:SendtDokument" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:InfoMedisinskDiagnose" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:MedisinskfagligeOpplysninger" minOccurs="0"/>
+				<element ref="po:InfoLegemidlerIBruk" minOccurs="0"/>
+				<element ref="po:InfoKartleggingFunksjonsniva" minOccurs="0"/>
+				<element ref="po:InfoAndreViktigeOpplysninger" minOccurs="0"/>
+				<element ref="po:Sykepleierdokumentasjon" minOccurs="0"/>
+				<element ref="po:OpplysningerAndreFaggrupper" minOccurs="0"/>
+				<element ref="po:OpplysningerOmHjelpemidler" minOccurs="0"/>
+				<element ref="po:InfoAssistertKommunikasjon" minOccurs="0"/>
+				<element ref="po:InfoReservasjon" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:InfoInformasjonGitt" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

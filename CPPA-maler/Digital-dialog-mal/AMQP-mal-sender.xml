@@ -1,0 +1,1679 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Endret 2015-07-02 (TTR)
+      - La inn dialogmelding v1.2, SimplePart, Packaging og CollaborationRoles
+	 Endret 2015-11-23 (KM)
+	  - Opprettet SimplePart elementer for følgende XSD-er:
+	    - iCalendar.xsd (iCalendar v2.0)
+		- Pasientrelasjon-2014-03-28.xsd
+		- ER-M1-2010-05-01.xsd (M1 v2.4)
+		- personer-2014-03-28.xsd
+		- helsepersonell-2014-03-28
+	  - Opprettet følgende Package elementer:
+	    - package_timereservasjon_v1p2
+		- package_timeonske_v1p2
+		- package_eKonsultasjon_v1p2
+		- package_eKontakt_v1p2
+		- package_reseptfornyelse_v1p2
+		- package_digitalbruker_v1p2
+		- package_test_v1p2
+	  - Opprettet følgende ProcessSpecification elementer:
+	    - Dialog_Innbygger_Timereservasjon v1.2
+		- Dialog_Innbygger_Timeonske v1.2
+		- Dialog_Innbygger_Ekonsultasjon v1.2
+		- Dialog_Innbygger_Ekontakt v1.2
+		- Dialog_Innbygger_Reseptfornyelse v1.2
+		- Dialog_Innbygger_Digitalbruker v1.2
+		- Dialog_Innbygger_Test v1.2
+  Endret 2016-09-02 (JES)
+    - La inn Dialog_Innbygger_Koordinator v 1.0
+  Endret 2016-09-02 (JES)
+    - La inn Dialog_Innbygger_HL7_Dokumentnotifikasjon v 1.0
+    - La inn Dialog_Innbygger_Finn_Dokumenter v 1.0
+    - La inn Dialog_Innbygger_Hent_Dokumenter v 1.0
+  Endret 2017-02-03 (KVL)
+	- Opprettet SimplePart elementer for følgende XSD-er:
+	    - TjenesteOversiktv1.0.xsd
+	- Opprettet følgende Package elementer:
+	    - package_tjenesteoversikt_v1p0
+	- Opprettet følgende ProcessSpecification elementer:
+	    - Dialog_Innbygger_TjenesteOversikt v1.0
+   Endret 2017-12-13 (KPS)
+	- Endret fra 1.1 til 1.0 i version attributt for processpecification Dialog_Innbygger_Hreg_Innsyn_Utlevering
+	- Endret Dialog_Innbygger_Reservasjon 1.0 -> Personvern_Innbygger_Reservasjon 1.0	
+	- La inn CollaborationRole DIALOG INNBYGGER HELSEREGISTER v1.1
+	- La inn CollaborationRole DIALOG_INNBYGGER_MELDINGSFORMIDLING v0.8 og tilhørende packages og simple parts
+   Endret 2018-01-02 (SVECHR)
+    - Lagt til ny versjon av PVK replikeringsmelding til register for Reservasjon:  Personvern_Innbygger_Reservasjon 1.2
+    - Lagt til ny melding fra PVK for replikering av Tilgangsbegrensninger til et register: Personvern_Innbygger_Tilgangsbegrensning 1.0
+   Endret 2018-01-11 (SVECHR)
+    - Lagt til ny melding fra PVK for replikering av Samtykke til et register: Personvern_Innbygger_Samtykke 1.0
+-->
+<tns:CollaborationProtocolProfile xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:tns="http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" tns:cppid="UNIKCPPID" tns:version="string" xsi:schemaLocation="http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd cpp-cpa-2_0.xsd">
+	<tns:PartyInfo tns:partyName="PARTYNAME" tns:defaultMshChannelId="asyncAMQPChannelC1" tns:defaultMshPackageId="package_dialogmld_v1p1">
+		<tns:PartyId tns:type="HER">HERID</tns:PartyId>
+		<tns:PartyId tns:type="ENH">ORGNR</tns:PartyId>
+		<tns:PartyId tns:type="orgnummer">ORGNR</tns:PartyId>
+		<tns:PartyRef xlink:href="https://www.helsedirektoratet.no/about.html" xlink:type="simple"/>
+		<!-- Collaboration roles Digital dialog -->
+		<tns:CollaborationRole> <!-- CollaborationRole DIALOG_INNBYGGER_OPPGAVE v1.1 -->
+			<tns:ProcessSpecification tns:name="Dialog_Innbygger_Oppgave" tns:version="1.1" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Oppgave.xml" xlink:type="simple" tns:uuid="8219068F-AC9D-46FF-88E0-115ADD617025"/>
+			<tns:Role tns:name="DIALOG_INNBYGGER_OPPGAVEsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_OPPGAVEsender" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">S-DIALOG_INNBYGGER_OPPGAVE</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_OPPGAVE" tns:id="Dialog_Innbygger_Oppgave_Sending_Asynk1" tns:packageId="package_oppgave_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_OPPGAVE" tns:id="Dialog_Innbygger_Oppgave_Sending_Synk1" tns:packageId="package_oppgave_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Oppgave_A001" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_OPPGAVE" tns:id="Dialog_Innbygger_Oppgave_Mottak_Asynk1" tns:packageId="package_oppgave_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_OPPGAVE" tns:id="Dialog_Innbygger_Oppgave_Mottak_Synk1" tns:packageId="package_oppgave_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Oppgave_A002" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+
+		<tns:CollaborationRole> <!-- CollaborationRole DIALOG_INNBYGGER_TIMER v1.0 -->
+			<tns:ProcessSpecification tns:name="Dialog_Innbygger_Timer" tns:version="1.1" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Timer.xml" xlink:type="simple" tns:uuid="00D94DA5-D03F-447A-941A-AF2CB1B98ECE"/>
+			<tns:Role tns:name="DIALOG_INNBYGGER_TIMERsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_TIMERsender" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">S-DIALOG_INNBYGGER_TIMER</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_TIMER" tns:id="Dialog_Innbygger_Timer_Sending_Asynk1" tns:packageId="package_timer_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_TIMER" tns:id="Dialog_Innbygger_Timer_Sending_Synk1" tns:packageId="package_timer_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Timer_A001" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_TIMER" tns:id="Dialog_Innbygger_Timer_Mottak_Asynk1" tns:packageId="package_timer_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_TIMER" tns:id="Dialog_Innbygger_Timer_Mottak_Synk1" tns:packageId="package_timer_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Timer_A002" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole> <!-- CollaborationRole DIALOG_INNBYGGER_TIMERESERVASJON v1.1 -->
+			<tns:ProcessSpecification tns:name="Dialog_Innbygger_Timereservasjon" tns:version="1.1" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Timereservasjon.xml" xlink:type="simple" tns:uuid="7B68B3C8-ADCF-495D-98E1-F2BB1151516E"/>
+			<tns:Role tns:name="DIALOG_INNBYGGER_TIMERESERVASJONsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_TIMERESERVASJONsender" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">S-DIALOG_INNBYGGER_TIMERESERVASJON</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_TIMERESERVASJON" tns:id="Dialog_Innbygger_Timereservasjon_Sending_Asynk1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_TIMERESERVASJON" tns:id="Dialog_Innbygger_Timereservasjon_Sending_Synk1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Timereservasjon_A001" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_TIMERESERVASJON" tns:id="Dialog_Innbygger_Timereservasjon_Mottak_Asynk1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_TIMERESERVASJON" tns:id="Dialog_Innbygger_Timereservasjon_Mottak_Synk1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Timereservasjon_A002" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole> <!-- CollaborationRole DIALOG_INNBYGGER_TIMERESERVASJON v1.2 -->
+			<tns:ProcessSpecification tns:name="Dialog_Innbygger_Timereservasjon" tns:version="1.2" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Timereservasjon.xml" xlink:type="simple" tns:uuid="7B68B3C8-ADCF-495D-98E1-F2BB1151516E"/>
+			<tns:Role tns:name="DIALOG_INNBYGGER_TIMERESERVASJONsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_TIMERESERVASJONsender" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">S-DIALOG_INNBYGGER_TIMERESERVASJON</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_TIMERESERVASJON" tns:id="Dialog_Innbygger_Timereservasjon_Sending_Asynk2" tns:packageId="package_timereservasjon_v1p2" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_TIMERESERVASJON" tns:id="Dialog_Innbygger_Timereservasjon_Sending_Synk2" tns:packageId="package_timereservasjon_v1p2" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Timereservasjon_A003" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_TIMERESERVASJON" tns:id="Dialog_Innbygger_Timereservasjon_Mottak_Asynk2" tns:packageId="package_timereservasjon_v1p2" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_TIMERESERVASJON" tns:id="Dialog_Innbygger_Timereservasjon_Mottak_Synk2" tns:packageId="package_timereservasjon_v1p2" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Timereservasjon_A004" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole> <!-- CollaborationRole Timeønske v1.1 -->
+			<tns:ProcessSpecification tns:name="Dialog_Innbygger_Timeonske" tns:version="1.1" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Timeonske.xml" xlink:type="simple" tns:uuid="19D6208C-A348-44EE-9A08-270D083C1186"/>
+			<tns:Role tns:name="DIALOG_INNBYGGER_TIMEONSKEsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_TIMEONSKEsender" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">S-DIALOG_INNBYGGER_TIMEONSKE</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_TIMEONSKE" tns:id="Dialog_Innbygger_Timeonske_Sending1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Timeonske_A001" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_TIMEONSKE" tns:id="Dialog_Innbygger_Timeonske_Mottak1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Timeonske_A002" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole> <!-- CollaborationRole Timeønske v1.2 -->
+			<tns:ProcessSpecification tns:name="Dialog_Innbygger_Timeonske" tns:version="1.2" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Timeonske.xml" xlink:type="simple" tns:uuid="19D6208C-A348-44EE-9A08-270D083C1186"/>
+			<tns:Role tns:name="DIALOG_INNBYGGER_TIMEONSKEsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_TIMEONSKEsender" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">S-DIALOG_INNBYGGER_TIMEONSKE</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_TIMEONSKE" tns:id="Dialog_Innbygger_Timeonske_Sending2" tns:packageId="package_timeonske_v1p2" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Timeonske_A003" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_TIMEONSKE" tns:id="Dialog_Innbygger_Timeonske_Mottak2" tns:packageId="package_timeonske_v1p2" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Timeonske_A004" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole> <!-- CollaborationRole eKonsultasjon v1.1 -->
+			<tns:ProcessSpecification tns:name="Dialog_Innbygger_Ekonsultasjon" tns:version="1.1" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Ekonsultasjon.xml" xlink:type="simple" tns:uuid="FB6A0156-7EEA-4AE3-AED3-C3A15D916A1C"/>
+			<tns:Role tns:name="DIALOG_INNBYGGER_EKONSULTASJONsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_EKONSULTASJONsender" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">S-DIALOG_INNBYGGER_EKONSULTASJON</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_EKONSULTASJON" tns:id="Dialog_Innbygger_Ekonsultasjon_Sending1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Ekonsultasjon_A001" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_EKONSULTASJON" tns:id="Dialog_Innbygger_Ekonsultasjon_Mottak1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Ekonsultasjon_A002" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole> <!-- CollaborationRole eKonsultasjon v1.2 -->
+			<tns:ProcessSpecification tns:name="Dialog_Innbygger_Ekonsultasjon" tns:version="1.2" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Ekonsultasjon.xml" xlink:type="simple" tns:uuid="FB6A0156-7EEA-4AE3-AED3-C3A15D916A1C"/>
+			<tns:Role tns:name="DIALOG_INNBYGGER_EKONSULTASJONsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_EKONSULTASJONsender" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">S-DIALOG_INNBYGGER_EKONSULTASJON</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_EKONSULTASJON" tns:id="Dialog_Innbygger_Ekonsultasjon_Sending2" tns:packageId="package_eKonsultasjon_v1p2" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Ekonsultasjon_A003" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_EKONSULTASJON" tns:id="Dialog_Innbygger_Ekonsultasjon_Mottak2" tns:packageId="package_eKonsultasjon_v1p2" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Ekonsultasjon_A004" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole> <!-- CollaborationRole eKontakt v1.1 -->
+			<tns:ProcessSpecification tns:name="Dialog_Innbygger_Ekontakt" tns:version="1.1" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Ekontakt.xml" xlink:type="simple" tns:uuid="819B8F8F-54C0-4A67-929D-9EFD0FA32EEA"/>
+			<tns:Role tns:name="DIALOG_INNBYGGER_EKONTAKTsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_EKONTAKTsender" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">S-DIALOG_INNBYGGER_EKONTAKT</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_EKONTAKT" tns:id="Dialog_Innbygger_Ekontakt_Sending1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Ekontakt_A001" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_EKONTAKT" tns:id="Dialog_Innbygger_Ekontakt_Mottak1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Ekontakt_A002" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole> <!-- CollaborationRole eKontakt v1.2 -->
+			<tns:ProcessSpecification tns:name="Dialog_Innbygger_Ekontakt" tns:version="1.2" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Ekontakt.xml" xlink:type="simple" tns:uuid="819B8F8F-54C0-4A67-929D-9EFD0FA32EEA"/>
+			<tns:Role tns:name="DIALOG_INNBYGGER_EKONTAKTsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_EKONTAKTsender" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">S-DIALOG_INNBYGGER_EKONTAKT</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_EKONTAKT" tns:id="Dialog_Innbygger_Ekontakt_Sending2" tns:packageId="package_eKontakt_v1p2" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Ekontakt_A003" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_EKONTAKT" tns:id="Dialog_Innbygger_Ekontakt_Mottak2" tns:packageId="package_eKontakt_v1p2" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Ekontakt_A004" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole> <!-- CollaborationRole Hreg_Innsyn_Helseopplysninger v1.0 -->
+			<tns:ProcessSpecification tns:name="Dialog_Innbygger_Hreg_Innsyn_Helseopplysninger" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Hreg_Innsyn_Helseopplysninger.xml" xlink:type="simple" tns:uuid="03088AAA-A5DC-4A1B-9895-3139354C27E4"/>
+			<tns:Role tns:name="DIALOG_INNBYGGER_HREG_INNSYN_HELSEOPPLYSNINGERsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_HREG_INNSYN_HELSEOPPLYSNINGERsender" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">S-DIALOG_INNBYGGER_HREG_INNSYN_HELSEOPPLYSNINGER</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_HREG_INNSYN_HELSEOPPLYSNINGER" tns:id="Dialog_Innbygger_Hreg_Innsyn_Helseopplysninger_Sending1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Hreg_Innsyn_Helseopplysninger_A001" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_HREG_INNSYN_HELSEOPPLYSNINGER" tns:id="Dialog_Innbygger_Hreg_Innsyn_Helseopplysninger_Mottak1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Hreg_Innsyn_Helseopplysninger_A002" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole> <!-- CollaborationRole Hreg_Innsyn_Utlevering  v1.0 -->
+				<tns:ProcessSpecification tns:name="Dialog_Innbygger_Hreg_Innsyn_Utlevering" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Hreg_Innsyn_Utlevering.xml" xlink:type="simple" tns:uuid="D78B17D6-2379-4F7E-9E57-77A50EF31A03"/>
+				<tns:Role tns:name="DIALOG_INNBYGGER_HREG_INNSYN_UTLEVERINGsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_HREG_INNSYN_UTLEVERINGsender" xlink:type="simple"/>
+				<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+				<tns:ServiceBinding>
+					<tns:Service tns:type="string">S-DIALOG_INNBYGGER_HREG_INNSYN_UTLEVERING</tns:Service>
+					<tns:CanSend>
+						<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_HREG_INNSYN_UTLEVERING" tns:id="Dialog_Innbygger_Hreg_Innsyn_Utlevering_Sending1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+							<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+							<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+						</tns:ThisPartyActionBinding>
+					</tns:CanSend>
+					<tns:CanSend>
+						<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Hreg_Innsyn_Utlevering_A001" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+							<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+							<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+						</tns:ThisPartyActionBinding>
+					</tns:CanSend>
+					<tns:CanReceive>
+						<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_HREG_INNSYN_UTLEVERING" tns:id="Dialog_Innbygger_Hreg_Innsyn_Utlevering_Mottak1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+							<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+							<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+						</tns:ThisPartyActionBinding>
+					</tns:CanReceive>
+					<tns:CanReceive>
+						<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Hreg_Innsyn_Utlevering_A002" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+							<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+							<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+						</tns:ThisPartyActionBinding>
+					</tns:CanReceive>
+				</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole> <!-- CollaborationRole Hreg_Melde_Feil v1.0 -->
+			<tns:ProcessSpecification tns:name="Dialog_Innbygger_Hreg_Melde_Feil" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Hreg_Melde_Feil.xml" xlink:type="simple" tns:uuid="1830AC8F-1BA0-42D4-8D49-FAE4B668BAEB"/>
+			<tns:Role tns:name="DIALOG_INNBYGGER_HREG_MELDE_FEILsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_HREG_MELDE_FEILsender" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">S-DIALOG_INNBYGGER_HREG_MELDE_FEIL</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_HREG_MELDE_FEIL" tns:id="Dialog_Innbygger_Hreg_Melde_Feil_Sending1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Hreg_Melde_Feil_A001" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_HREG_MELDE_FEIL" tns:id="Dialog_Innbygger_Hreg_Melde_Feil_Mottak1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Hreg_Melde_Feil_A002" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole> <!-- CollaborationRole Reseptfornyelse 1.1 -->
+			<tns:ProcessSpecification tns:name="Dialog_Innbygger_Reseptfornyelse" tns:version="1.1" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Reseptfornyelse.xml" xlink:type="simple" tns:uuid="7EC87F84-1C8B-46CA-9112-11C74B6CB522"/>
+			<tns:Role tns:name="DIALOG_INNBYGGER_RESEPTFORNYELSEsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_RESEPTFORNYELSEsender" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">S-DIALOG_INNBYGGER_RESEPTFORNYELSE</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_RESEPTFORNYELSE" tns:id="Dialog_Innbygger_Reseptfornyelse_Sending1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Reseptfornyelse_A001" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_RESEPTFORNYELSE" tns:id="Dialog_Innbygger_Reseptfornyelse_Mottak1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Reseptfornyelse_A002" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole> <!-- CollaborationRole Reseptfornyelse 1.2 -->
+			<tns:ProcessSpecification tns:name="Dialog_Innbygger_Reseptfornyelse" tns:version="1.2" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Reseptfornyelse.xml" xlink:type="simple" tns:uuid="7EC87F84-1C8B-46CA-9112-11C74B6CB522"/>
+			<tns:Role tns:name="DIALOG_INNBYGGER_RESEPTFORNYELSEsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_RESEPTFORNYELSEsender" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">S-DIALOG_INNBYGGER_RESEPTFORNYELSE</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_RESEPTFORNYELSE" tns:id="Dialog_Innbygger_Reseptfornyelse_Sending2" tns:packageId="package_reseptfornyelse_v1p2" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Reseptfornyelse_A003" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_RESEPTFORNYELSE" tns:id="Dialog_Innbygger_Reseptfornyelse_Mottak2" tns:packageId="package_reseptfornyelse_v1p2" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Reseptfornyelse_A004" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole> <!-- CollaborationRole DIGITALBRUKER v1.1 -->
+			<tns:ProcessSpecification tns:name="Dialog_Innbygger_Digitalbruker" tns:version="1.1" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Digitalbruker.xml" xlink:type="simple" tns:uuid="2075C7E3-A2E1-40F7-9CC1-52E2AADF4E93"/>
+			<tns:Role tns:name="DIALOG_INNBYGGER_DIGITALBRUKERsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_DIGITALBRUKERsender" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">S-DIALOG_INNBYGGER_DIGITALBRUKER</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_DIGITALBRUKER" tns:id="Dialog_Innbygger_Digitalbruker_Sending1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Digitalbruker_A001" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_DIGITALBRUKER" tns:id="Dialog_Innbygger_Digitalbruker_Mottak1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Digitalbruker_A002" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole> <!-- CollaborationRole DIGITALBRUKER v1.2 -->
+			<tns:ProcessSpecification tns:name="Dialog_Innbygger_Digitalbruker" tns:version="1.2" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Digitalbruker.xml" xlink:type="simple" tns:uuid="2075C7E3-A2E1-40F7-9CC1-52E2AADF4E93"/>
+			<tns:Role tns:name="DIALOG_INNBYGGER_DIGITALBRUKERsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_DIGITALBRUKERsender" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">S-DIALOG_INNBYGGER_DIGITALBRUKER</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_DIGITALBRUKER" tns:id="Dialog_Innbygger_Digitalbruker_Sending2" tns:packageId="package_digitalbruker_v1p2" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Digitalbruker_A003" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_DIGITALBRUKER" tns:id="Dialog_Innbygger_Digitalbruker_Mottak2" tns:packageId="package_digitalbruker_v1p2" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Digitalbruker_A004" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole> <!-- CollaborationRole DIALOG_INNBYGGER_TEST v1.1 -->
+			<tns:ProcessSpecification tns:name="Dialog_Innbygger_Test" tns:version="1.1" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Test.xml" xlink:type="simple" tns:uuid="A28BCD40-CCA5-48F0-92CD-C95EA6A70EDE"/>
+			<tns:Role tns:name="DIALOG_INNBYGGER_TESTsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_TESTsender" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">S-DIALOG_INNBYGGER_TEST</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_TEST" tns:id="Dialog_Innbygger_Test_Sending_Synk1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_TEST" tns:id="Dialog_Innbygger_Test_Mottak_Synk1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole> <!-- CollaborationRole DIALOG_INNBYGGER_TEST v1.2 -->
+			<tns:ProcessSpecification tns:name="Dialog_Innbygger_Test" tns:version="1.2" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Test.xml" xlink:type="simple" tns:uuid="A28BCD40-CCA5-48F0-92CD-C95EA6A70EDE"/>
+			<tns:Role tns:name="DIALOG_INNBYGGER_TESTsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_TESTsender" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">S-DIALOG_INNBYGGER_TEST</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_TEST" tns:id="Dialog_Innbygger_Test_Sending_Synk2" tns:packageId="package_test_v1p2" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_TEST" tns:id="Dialog_Innbygger_Test_Mottak_Synk2" tns:packageId="package_test_v1p2" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+		<tns:CollaborationRole> <!-- CollaborationRole DIALOG_INNBYGGER_KOORDINATOR v1.0 -->
+			<tns:ProcessSpecification tns:name="Dialog_Innbygger_Koordinator" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Koordinator.xml" xlink:type="simple" tns:uuid="09F91D2E-2515-4381-85D7-51D51C2FED9A"/>
+			<tns:Role tns:name="DIALOG_INNBYGGER_KOORDINATORsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_KOORDINATORsender" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">S-DIALOG_INNBYGGER_KOORDINATOR</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_KOORDINATOR" tns:id="Dialog_Innbygger_Koordinator_Sending_Asynk1" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_KOORDINATOR" tns:id="Dialog_Innbygger_Koordinator_Sending_Synk1" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Koordinator_A001" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_KOORDINATOR" tns:id="Dialog_Innbygger_Koordinator_Mottak_Asynk1" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_KOORDINATOR" tns:id="Dialog_Innbygger_Koordinator_Mottak_Synk1" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+				<tns:CanReceive>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Koordinator_A002" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanReceive>
+			</tns:ServiceBinding>
+		</tns:CollaborationRole>
+    <tns:CollaborationRole>
+      <!-- CollaborationRole DIALOG_INNBYGGER_HL7_DOKUMENTNOTIFIKASJON v1.0 -->
+      <tns:ProcessSpecification tns:name="Dialog_Innbygger_HL7_Dokumentnotifikasjon" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_HL7_Dokumentnotifikasjon.xml" xlink:type="simple" tns:uuid="9E6265F8-9DCC-46CD-B6C7-4E55BCC63BE9"/>
+      <tns:Role tns:name="DIALOG_INNBYGGER_HL7_DOKUMENTNOTIFIKASJONsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_HL7_DOKUMENTNOTIFIKASJONsender" xlink:type="simple"/>
+      <tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+      <tns:ServiceBinding>
+        <tns:Service tns:type="string">S-DIALOG_INNBYGGER_HL7_DOKUMENTNOTIFIKASJON</tns:Service>
+        <tns:CanSend>
+          <tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_HL7_DOKUMENTNOTIFIKASJON" tns:id="Dialog_Innbygger_HL7_Dokumentnotifikasjon_Sending_Asynk1" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanSend>
+        <tns:CanSend>
+          <tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_HL7_DOKUMENTNOTIFIKASJON" tns:id="Dialog_Innbygger_HL7_Dokumentnotifikasjon_Sending_Synk1" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanSend>
+        <tns:CanReceive>
+          <tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_HL7_DOKUMENTNOTIFIKASJON" tns:id="Dialog_Innbygger_HL7_Dokumentnotifikasjon_Mottak_Asynk1" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanReceive>
+        <tns:CanReceive>
+          <tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_HL7_DOKUMENTNOTIFIKASJON" tns:id="Dialog_Innbygger_HL7_Dokumentnotifikasjon_Mottak_Synk1" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanReceive>
+      </tns:ServiceBinding>
+    </tns:CollaborationRole>
+    <tns:CollaborationRole>
+      <!-- CollaborationRole DIALOG_INNBYGGER_FINN_DOKUMENTER v1.0 -->
+      <tns:ProcessSpecification tns:name="Dialog_Innbygger_Finn_Dokumenter" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Finn_Dokumenter.xml" xlink:type="simple" tns:uuid="2266D2E2-54B2-4989-91FB-A322A4237E87"/>
+      <tns:Role tns:name="DIALOG_INNBYGGER_FINN_DOKUMENTERsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_FINN_DOKUMENTERsender" xlink:type="simple"/>
+      <tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+      <tns:ServiceBinding>
+        <tns:Service tns:type="string">S-DIALOG_INNBYGGER_FINN_DOKUMENTER</tns:Service>
+        <tns:CanSend>
+          <tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_FINN_DOKUMENTER" tns:id="Dialog_Innbygger_Finn_Dokumenter_Sending_Asynk1" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanSend>
+        <tns:CanSend>
+          <tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_FINN_DOKUMENTER" tns:id="Dialog_Innbygger_Finn_Dokumenter_Sending_Synk1" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanSend>
+        <tns:CanReceive>
+          <tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_FINN_DOKUMENTER" tns:id="Dialog_Innbygger_Finn_Dokumenter_Mottak_Asynk1" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanReceive>
+        <tns:CanReceive>
+          <tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_FINN_DOKUMENTER" tns:id="Dialog_Innbygger_Finn_Dokumenter_Mottak_Synk1" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanReceive>
+      </tns:ServiceBinding>
+    </tns:CollaborationRole>
+    <tns:CollaborationRole>
+      <!-- CollaborationRole DIALOG_INNBYGGER_HENT_DOKUMENTER v1.0 -->
+      <tns:ProcessSpecification tns:name="Dialog_Innbygger_Hent_Dokumenter" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Hent_Dokumenter.xml" xlink:type="simple" tns:uuid="077D2487-D4DC-465E-8ACA-C561E001939E"/>
+      <tns:Role tns:name="DIALOG_INNBYGGER_HENT_DOKUMENTERsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_HENT_DOKUMENTERsender" xlink:type="simple"/>
+      <tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+      <tns:ServiceBinding>
+        <tns:Service tns:type="string">S-DIALOG_INNBYGGER_HENT_DOKUMENTER</tns:Service>
+        <tns:CanSend>
+          <tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_HENT_DOKUMENTER" tns:id="Dialog_Innbygger_Hent_Dokumenter_Sending_Asynk1" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanSend>
+        <tns:CanSend>
+          <tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_HENT_DOKUMENTER" tns:id="Dialog_Innbygger_Hent_Dokumenter_Sending_Synk1" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanSend>
+        <tns:CanReceive>
+          <tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_HENT_DOKUMENTER" tns:id="Dialog_Innbygger_Hent_Dokumenter_Mottak_Asynk1" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanReceive>
+        <tns:CanReceive>
+          <tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_HENT_DOKUMENTER" tns:id="Dialog_Innbygger_Hent_Dokumenter_Mottak_Synk1" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanReceive>
+      </tns:ServiceBinding>
+    </tns:CollaborationRole>
+	<tns:CollaborationRole> <!-- Personvern_Innbygger_Reservasjon v1.0 -->
+		<tns:ProcessSpecification tns:name="Personvern_Innbygger_Reservasjon" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Personvern_Innbygger_Reservasjon.xml" xlink:type="simple" tns:uuid="03709861-8072-4eef-b558-53b3805b4b5c"/>
+		<tns:Role tns:name="PERSONVERN_INNBYGGER_RESERVASJONsender" xlink:href="http://www.helsedirektoratet.no/processes#PERSONVERN_INNBYGGER_RESERVASJONsender" xlink:type="simple"/>
+		<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+		<tns:ServiceBinding>
+			<tns:Service tns:type="string">S-PERSONVERN_INNBYGGER_RESERVASJON</tns:Service>
+			<tns:CanSend>
+				<tns:ThisPartyActionBinding tns:action="PERSONVERN_INNBYGGER_RESERVASJON" tns:id="Personvern_Innbygger_Reservasjon_Sending_Asynk1" tns:packageId="package_reservasjonmld_v1p0" xlink:type="simple">
+					<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+					<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+				</tns:ThisPartyActionBinding>
+			</tns:CanSend>
+			<tns:CanSend>
+				<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Personvern_Innbygger_Reservasjon_A001" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+					<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+					<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+				</tns:ThisPartyActionBinding>
+			</tns:CanSend>
+			<tns:CanReceive>
+				<tns:ThisPartyActionBinding tns:action="PERSONVERN_INNBYGGER_RESERVASJON" tns:id="Personvern_Innbygger_Reservasjon_Mottak_Asynk1" tns:packageId="package_reservasjonmld_v1p0" xlink:type="simple">
+					<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+					<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+				</tns:ThisPartyActionBinding>
+			</tns:CanReceive>
+			<tns:CanReceive>
+				<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Personvern_Innbygger_Reservasjon_A002" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+					<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+					<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+				</tns:ThisPartyActionBinding>
+			</tns:CanReceive>
+		</tns:ServiceBinding>
+	</tns:CollaborationRole>
+	<tns:CollaborationRole> <!-- Personvern_Innbygger_Reservasjon v1.2 -->
+		<tns:ProcessSpecification tns:name="Personvern_Innbygger_Reservasjon" tns:version="1.2" xlink:href="http://www.helsedirektoratet.no/processes/Personvern_Innbygger_Reservasjon.xml" xlink:type="simple" tns:uuid="572ca17e-82d6-4f25-93ca-69693c3da17a"/>
+			<tns:Role tns:name="PERSONVERN_INNBYGGER_RESERVASJONsender" xlink:href="http://www.helsedirektoratet.no/processes#PERSONVERN_INNBYGGER_RESERVASJONsender" xlink:type="simple"/>
+			<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+			<tns:ServiceBinding>
+				<tns:Service tns:type="string">S-PERSONVERN_INNBYGGER_RESERVASJON</tns:Service>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="PERSONVERN_INNBYGGER_RESERVASJON" tns:id="Personvern_Innbygger_Reservasjon_Sending_Asynk2" tns:packageId="package_reservasjonmld_v1p2" xlink:type="simple">
+						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+					</tns:ThisPartyActionBinding>
+				</tns:CanSend>
+				<tns:CanSend>
+					<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Personvern_Innbygger_Reservasjon_A003" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+					<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+					<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+				</tns:ThisPartyActionBinding>
+			</tns:CanSend>
+			<tns:CanReceive>
+				<tns:ThisPartyActionBinding tns:action="PERSONVERN_INNBYGGER_RESERVASJON" tns:id="Personvern_Innbygger_Reservasjon_Mottak_Asynk2" tns:packageId="package_reservasjonmld_v1p2" xlink:type="simple">
+					<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+					<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+				</tns:ThisPartyActionBinding>
+			</tns:CanReceive>
+			<tns:CanReceive>
+				<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Personvern_Innbygger_Reservasjon_A004" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+					<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+					<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+				</tns:ThisPartyActionBinding>
+			</tns:CanReceive>
+		</tns:ServiceBinding>
+	</tns:CollaborationRole>	
+
+		<tns:CollaborationRole> <!-- Personvern_Innbygger_Tilgangsbegrensning -->
+			<tns:ProcessSpecification tns:name="Personvern_Innbygger_Tilgangsbegrensning" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Personvern_Innbygger_Tilgangsbegrensning.xml" xlink:type="simple" tns:uuid="ee5df301-77ae-4910-8c60-abdbebf99f04"/>
+			<tns:Role tns:name="PERSONVERN_INNBYGGER_TILGANGSBEGRENSNINGsender" xlink:href="http://www.helsedirektoratet.no/processes#PERSONVERN_INNBYGGER_TILGANGSBEGRENSNINGsender" xlink:type="simple"/>
+		<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+		<tns:ServiceBinding>
+			<tns:Service tns:type="string">S-PERSONVERN_INNBYGGER_TILGANGSBEGRENSNING</tns:Service>
+			<tns:CanSend>
+				<tns:ThisPartyActionBinding tns:action="PERSONVERN_INNBYGGER_TILGANGSBEGRENSNING" tns:id="Personvern_Innbygger_Tilgangsbegrensning_Sending_Asynk1" tns:packageId="package_tilgangsbegrensningmld_v1p0" xlink:type="simple">
+					<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+					<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+				</tns:ThisPartyActionBinding>
+			</tns:CanSend>
+			<tns:CanSend>
+				<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Personvern_Innbygger_Tilgangsbegrensning_A001" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+					<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+					<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+				</tns:ThisPartyActionBinding>
+			</tns:CanSend>
+			<tns:CanReceive>
+				<tns:ThisPartyActionBinding tns:action="PERSONVERN_INNBYGGER_TILGANGSBEGRENSNING" tns:id="Personvern_Innbygger_Tilgangsbegrensning_Mottak_Asynk1" tns:packageId="package_tilgangsbegrensningmld_v1p0" xlink:type="simple">
+					<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+					<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+				</tns:ThisPartyActionBinding>
+			</tns:CanReceive>
+			<tns:CanReceive>
+				<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Personvern_Innbygger_Tilgangsbegrensning_A002" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+					<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+					<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+				</tns:ThisPartyActionBinding>
+			</tns:CanReceive>
+		</tns:ServiceBinding>
+	</tns:CollaborationRole>
+	<tns:CollaborationRole> <!-- Personvern_Innbygger_Samtykke -->
+		<tns:ProcessSpecification tns:name="Personvern_Innbygger_Samtykke" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Personvern_Innbygger_Samtykke.xml" xlink:type="simple" tns:uuid="d70ce153-1641-44d1-a2ae-064377e58145"/>
+		<tns:Role tns:name="PERSONVERN_INNBYGGER_SAMTYKKEsender" xlink:href="http://www.helsedirektoratet.no/processes#PERSONVERN_INNBYGGER_SAMTYKKEsender" xlink:type="simple"/>
+		<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+		<tns:ServiceBinding>
+			<tns:Service tns:type="string">S-PERSONVERN_INNBYGGER_SAMTYKKE</tns:Service>
+			<tns:CanSend>
+				<tns:ThisPartyActionBinding tns:action="PERSONVERN_INNBYGGER_SAMTYKKE" tns:id="Personvern_Innbygger_Samtykke_Sending_Asynk1" tns:packageId="package_samtykkemld_v1p0" xlink:type="simple">
+					<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+					<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+				</tns:ThisPartyActionBinding>
+			</tns:CanSend>
+			<tns:CanSend>
+				<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Personvern_Innbygger_Samtykke_A001" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+					<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+					<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+				</tns:ThisPartyActionBinding>
+			</tns:CanSend>
+			<tns:CanReceive>
+				<tns:ThisPartyActionBinding tns:action="PERSONVERN_INNBYGGER_SAMTYKKE" tns:id="Personvern_Innbygger_Samtykke_Mottak_Asynk1" tns:packageId="package_samtykkemld_v1p0" xlink:type="simple">
+					<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+					<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+				</tns:ThisPartyActionBinding>
+			</tns:CanReceive>
+			<tns:CanReceive>
+				<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Personvern_Innbygger_Samtykke_A002" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+					<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+					<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+				</tns:ThisPartyActionBinding>
+			</tns:CanReceive>
+		</tns:ServiceBinding>
+	</tns:CollaborationRole>
+	<tns:CollaborationRole>
+      <!-- CollaborationRole DIALOG_INNBYGGER_TJENESTEOVERSIKT v1.0 -->
+      <tns:ProcessSpecification tns:name="Dialog_Innbygger_TjenesteOversikt" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_TjensesteOversikt.xml" xlink:type="simple" tns:uuid="d5953faa-6a33-4941-9ecf-cff8987f51e8"/>
+      <tns:Role tns:name="Tjenestetilbyder" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_TJENESTEOVERSIKTreceiver" xlink:type="simple"/>
+      <tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+      <tns:ServiceBinding>
+        <tns:Service tns:type="string">S-DIALOG_INNBYGGER_TJENESTEOVERSIKT</tns:Service>
+        <tns:CanSend>
+          <tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_TJENESTEOVERSIKT" tns:id="Dialog_Innbygger_TjenesteOversikt_Sending_Asynk1" tns:packageId="package_tjenesteoversikt_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanSend>
+		<tns:CanReceive>
+			<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_TjenesteOversikt_A002" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+				<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+				<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+			</tns:ThisPartyActionBinding>
+		</tns:CanReceive> 
+	  </tns:ServiceBinding>
+    </tns:CollaborationRole>
+    <tns:CollaborationRole>
+      <!-- CollaborationRole DIALOG_INNBYGGER_HELSEPERSONELL v1.0 -->
+      <tns:ProcessSpecification tns:name="Dialog_Innbygger_Helsepersonell" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Helsepersonell.xml" xlink:type="simple" tns:uuid="9F58ED9F-A0BF-4FDB-85EA-B7B30262DD02"/>
+      <tns:Role tns:name="DIALOG_INNBYGGER_HELSEPERSONELLsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_HELSEPERSONELLsender" xlink:type="simple"/>
+      <tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+      <tns:ServiceBinding>
+        <tns:Service tns:type="string">S-DIALOG_INNBYGGER_HELSEPERSONELL</tns:Service>
+        <tns:CanSend>
+          <tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_HELSEPERSONELL" tns:id="Dialog_Innbygger_Helsepersonell_Sending_Asynk1" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanSend>
+        <tns:CanSend>
+          <tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Helsepersonell_A001" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanSend>
+        <tns:CanReceive>
+          <tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_HELSEPERSONELL" tns:id="Dialog_Innbygger_Helsepersonell_Mottak_Asynk1" tns:packageId="package_dialogmld_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanReceive>
+        <tns:CanReceive>
+          <tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Helsepersonell_A002" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanReceive>
+      </tns:ServiceBinding>
+    </tns:CollaborationRole>
+    <tns:CollaborationRole>
+      <!-- CollaborationRole NOTIFIKASJON_INNBYGGER_TIME v1.0 -->
+      <tns:ProcessSpecification tns:name="Notifikasjon_Innbygger_time" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Notifikasjon_Innbygger_time.xml" xlink:type="simple" tns:uuid="F060E219-B4DF-44F7-9AB4-3D1781CE64A1"/>
+      <tns:Role tns:name="NOTIFIKASJON_INNBYGGER_TIMEsender" xlink:href="http://www.helsedirektoratet.no/processes#NOTIFIKASJON_INNBYGGER_TIMEsender" xlink:type="simple"/>
+      <tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+      <tns:ServiceBinding>
+        <tns:Service tns:type="string">S-NOTIFIKASJON_INNBYGGER_TIME</tns:Service>
+        <tns:CanSend>
+          <tns:ThisPartyActionBinding tns:action="NOTIFIKASJON_INNBYGGER_TIME" tns:id="Notifikasjon_Innbygger_time_Sending_Asynk1" tns:packageId="package_notifikasjon_innbygger_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanSend>
+        <tns:CanSend>
+          <tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Notifikasjon_Innbygger_time_A001" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanSend>
+        <tns:CanReceive>
+          <tns:ThisPartyActionBinding tns:action="NOTIFIKASJON_INNBYGGER_TIME" tns:id="Notifikasjon_Innbygger_time_Mottak_Asynk1" tns:packageId="package_notifikasjon_innbygger_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanReceive>
+        <tns:CanReceive>
+          <tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Notifikasjon_Innbygger_time_A002" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanReceive>
+      </tns:ServiceBinding>
+    </tns:CollaborationRole>
+    <!-- end CollaborationRole -->
+    <tns:CollaborationRole>
+      <!-- CollaborationRole NOTIFIKASJON_INNBYGGER_HENVISNING v1.0 -->
+      <tns:ProcessSpecification tns:name="Notifikasjon_Innbygger_henvisning" tns:version="1.0" xlink:href="http://www.helsedirektoratet.no/processes/Notifikasjon_Innbygger_henvisning.xml" xlink:type="simple" tns:uuid="04434A10-D243-44DF-8B9D-8E6CCB0EF6B7"/>
+      <tns:Role tns:name="NOTIFIKASJON_INNBYGGER_HENVISNINGsender" xlink:href="http://www.helsedirektoratet.no/processes#NOTIFIKASJON_INNBYGGER_HENVISNINGsender" xlink:type="simple"/>
+      <tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+      <tns:ServiceBinding>
+        <tns:Service tns:type="string">S-NOTIFIKASJON_INNBYGGER_HENVISNING</tns:Service>
+        <tns:CanSend>
+          <tns:ThisPartyActionBinding tns:action="NOTIFIKASJON_INNBYGGER_HENVISNING" tns:id="Notifikasjon_Innbygger_henvisning_Sending_Asynk1" tns:packageId="package_notifikasjon_innbygger_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanSend>
+        <tns:CanSend>
+          <tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Notifikasjon_Innbygger_henvisning_A001" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanSend>
+        <tns:CanReceive>
+          <tns:ThisPartyActionBinding tns:action="NOTIFIKASJON_INNBYGGER_HENVISNING" tns:id="Notifikasjon_Innbygger_henvisning_Mottak_Asynk1" tns:packageId="package_notifikasjon_innbygger_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanReceive>
+        <tns:CanReceive>
+          <tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Notifikasjon_Innbygger_henvisning_A002" tns:packageId="package_apprec_v1p0" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanReceive>
+      </tns:ServiceBinding>
+    </tns:CollaborationRole>
+    <!-- end CollaborationRole -->
+	 <tns:CollaborationRole>
+	 <!-- CollaborationRole DIALOG_INNBYGGER_HELSEREGISTER v1.1 -->
+      <tns:ProcessSpecification tns:name="Dialog_Innbygger_Helseregister" tns:version="1.1" xlink:type="simple" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Helseregister.xml" tns:uuid="DFBB4F61-8B08-477B-B495-A0E2FA1D5BA9" />
+      <tns:Role tns:name="DIALOG_INNBYGGER_HELSEREGISTERsender" xlink:type="simple" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_HELSEREGISTERsender" />
+      <tns:ApplicationCertificateRef tns:certId="default_crypt_cert" />
+      <tns:ServiceBinding>
+        <tns:Service tns:type="string">S-DIALOG_INNBYGGER_HELSEREGISTER</tns:Service>
+        <tns:CanSend>
+          <tns:ThisPartyActionBinding tns:id="Dialog_Innbygger_Helseregister_Sending_Asynk1" tns:action="DIALOG_INNBYGGER_HELSEREGISTER" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isNonRepudiationRequired="true" tns:isNonRepudiationReceiptRequired="true" tns:isConfidential="none" tns:isAuthenticated="none" tns:isTamperProof="none" tns:isAuthorizationRequired="false" tns:isIntelligibleCheckRequired="false" tns:timeToPerform="P180M" />
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanSend>
+        <tns:CanSend>
+          <tns:ThisPartyActionBinding tns:id="Dialog_Innbygger_Helseregister_Sending_Synk1" tns:action="DIALOG_INNBYGGER_HELSEREGISTER" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isNonRepudiationRequired="true" tns:isNonRepudiationReceiptRequired="true" tns:isConfidential="none" tns:isAuthenticated="none" tns:isTamperProof="none" tns:isAuthorizationRequired="false" tns:isIntelligibleCheckRequired="false" tns:timeToPerform="P180M" />
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanSend>
+        <tns:CanSend>
+          <tns:ThisPartyActionBinding tns:id="Dialog_Innbygger_Helseregister_A001" tns:action="APPREC" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isNonRepudiationRequired="true" tns:isNonRepudiationReceiptRequired="true" tns:isConfidential="none" tns:isAuthenticated="none" tns:isTamperProof="none" tns:isAuthorizationRequired="false" tns:isIntelligibleCheckRequired="false" tns:timeToPerform="P180M" />
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanSend>
+        <tns:CanReceive>
+          <tns:ThisPartyActionBinding tns:id="Dialog_Innbygger_Helseregister_Mottak_Asynk1" tns:action="DIALOG_INNBYGGER_HELSEREGISTER" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isNonRepudiationRequired="true" tns:isNonRepudiationReceiptRequired="true" tns:isConfidential="none" tns:isAuthenticated="none" tns:isTamperProof="none" tns:isAuthorizationRequired="false" tns:isIntelligibleCheckRequired="false" tns:timeToPerform="P180M" />
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanReceive>
+        <tns:CanReceive>
+          <tns:ThisPartyActionBinding tns:id="Dialog_Innbygger_Helseregister_Mottak_Synk1" tns:action="DIALOG_INNBYGGER_HELSEREGISTER" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isNonRepudiationRequired="true" tns:isNonRepudiationReceiptRequired="true" tns:isConfidential="none" tns:isAuthenticated="none" tns:isTamperProof="none" tns:isAuthorizationRequired="false" tns:isIntelligibleCheckRequired="false" tns:timeToPerform="P180M" />
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanReceive>
+        <tns:CanReceive>
+          <tns:ThisPartyActionBinding tns:id="Dialog_Innbygger_Helseregister_A002" tns:action="APPREC" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+            <tns:BusinessTransactionCharacteristics tns:isNonRepudiationRequired="true" tns:isNonRepudiationReceiptRequired="true" tns:isConfidential="none" tns:isAuthenticated="none" tns:isTamperProof="none" tns:isAuthorizationRequired="false" tns:isIntelligibleCheckRequired="false" tns:timeToPerform="P180M" />
+            <tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+          </tns:ThisPartyActionBinding>
+        </tns:CanReceive>
+      </tns:ServiceBinding>
+    </tns:CollaborationRole>
+	<!-- end CollaborationRole -->
+	<tns:CollaborationRole> 
+	<!-- CollaborationRole DIALOG_INNBYGGER_MELDINGSFORMIDLING v0.8 -->
+		<tns:ProcessSpecification tns:name="Dialog_Innbygger_Meldingsformidling" tns:version="0.8" xlink:href="http://www.helsedirektoratet.no/processes/Dialog_Innbygger_Meldingsformidling.xml" xlink:type="simple" tns:uuid="FCC50CD7-32CD-4952-83E3-246C72B2ADAC"/>
+		<tns:Role tns:name="DIALOG_INNBYGGER_MELDINGSFORMIDLINGsender" xlink:href="http://www.helsedirektoratet.no/processes#DIALOG_INNBYGGER_MELDINGSFORMIDLINGsender" xlink:type="simple"/>
+		<tns:ApplicationCertificateRef tns:certId="default_crypt_cert"/>
+		<tns:ServiceBinding>
+			<tns:Service tns:type="string">S-DIALOG_INNBYGGER_MELDINGSFORMIDLING</tns:Service>
+			<tns:CanSend>
+				<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_MELDINGSFORMIDLING" tns:id="Dialog_Innbygger_Meldingsformidling_Sending_Asynk1" tns:packageId="package_meldingsformidling_v0p8" xlink:type="simple">
+					<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+					<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+				</tns:ThisPartyActionBinding>
+			</tns:CanSend>
+			<tns:CanSend>
+				<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_MELDINGSFORMIDLING" tns:id="Dialog_Innbygger_Meldingsformidling_Sending_Synk1" tns:packageId="package_meldingsformidling_v0p8" xlink:type="simple">
+					<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+					<tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
+				</tns:ThisPartyActionBinding>
+			</tns:CanSend>
+			<tns:CanSend>
+				<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Meldingsformidling_A001" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+					<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+					<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+				</tns:ThisPartyActionBinding>
+			</tns:CanSend>
+			<tns:CanReceive>
+				<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_MELDINGSFORMIDLING" tns:id="Dialog_Innbygger_Meldingsformidling_Mottak_Asynk1" tns:packageId="package_meldingsformidling_v0p8" xlink:type="simple">
+					<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+					<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+				</tns:ThisPartyActionBinding>
+			</tns:CanReceive>
+			<tns:CanReceive>
+				<tns:ThisPartyActionBinding tns:action="DIALOG_INNBYGGER_MELDINGSFORMIDLING" tns:id="Dialog_Innbygger_Meldingsformidling_Mottak_Synk1" tns:packageId="package_meldingsformidling_v0p8" xlink:type="simple">
+					<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+					<tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
+				</tns:ThisPartyActionBinding>
+			</tns:CanReceive>
+			<tns:CanReceive>
+				<tns:ThisPartyActionBinding tns:action="APPREC" tns:id="Dialog_Innbygger_Meldingsformidling_A002" tns:packageId="package_apprec_v1p1" xlink:type="simple">
+					<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
+					<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
+				</tns:ThisPartyActionBinding>
+			</tns:CanReceive>
+		</tns:ServiceBinding>
+	</tns:CollaborationRole>
+    <tns:Certificate tns:certId="default_sign_cert">
+			<ds:KeyInfo>
+				<ds:X509Data>
+					<!--	<ds:X509Certificate>${cpp.certificate.nonrep}</ds:X509Certificate>  -->
+					<ds:X509Certificate>NONREPSERTIFIKATIB64</ds:X509Certificate>
+				</ds:X509Data>
+			</ds:KeyInfo>
+		</tns:Certificate>
+		<tns:Certificate tns:certId="default_crypt_cert">
+			<ds:KeyInfo>
+				<ds:X509Data>
+					<!--				<ds:X509Certificate>${cpp.certificate.crypt}</ds:X509Certificate>  -->
+					<ds:X509Certificate>CONFIDSERTIFIKATIB64</ds:X509Certificate>
+				</ds:X509Data>
+			</ds:KeyInfo>
+		</tns:Certificate>
+		<tns:Certificate tns:certId="default_ssl_cert">
+			<ds:KeyInfo>
+				<ds:X509Data>
+					<!--				<ds:X509Certificate>${cpp.certificate.ssl}</ds:X509Certificate>  -->
+					<ds:X509Certificate>SSLSERTIFIKATB64</ds:X509Certificate>
+				</ds:X509Data>
+			</ds:KeyInfo>
+		</tns:Certificate>
+		<tns:SecurityDetails tns:securityId="trustAnchorsAndPolicy"/>
+
+		<!-- AMQP Delivery channels -->
+		<tns:DeliveryChannel tns:channelId="asyncAMQPChannelC1" tns:transportId="transportAsyncAMQP" tns:docExchangeId="docexchange_async_amqp">
+			<tns:MessagingCharacteristics tns:syncReplyMode="none" tns:ackRequested="never" tns:ackSignatureRequested="never" tns:duplicateElimination="never"/>
+		</tns:DeliveryChannel>
+		<tns:DeliveryChannel tns:channelId="syncAMQPChannelC2" tns:transportId="transportSyncAMQP" tns:docExchangeId="docexchange_sync_amqp">
+			<tns:MessagingCharacteristics tns:syncReplyMode="mshSignalsOnly" tns:ackRequested="never" tns:ackSignatureRequested="never" tns:duplicateElimination="never"/>
+		</tns:DeliveryChannel>
+
+		<!-- AMQP transport, synkron og asynkrone endepunkt NB! ingen kryptert tunnel -->
+		<tns:Transport tns:transportId="transportAsyncAMQP">
+			<tns:TransportSender>
+				<tns:TransportProtocol tns:version="1.0">AMQP</tns:TransportProtocol>
+			</tns:TransportSender>
+			<tns:TransportReceiver>
+				<tns:TransportProtocol tns:version="1.0">AMQP</tns:TransportProtocol>
+				<tns:Endpoint tns:uri="async:fqdn/namespace/queue_name" tns:type="allPurpose"></tns:Endpoint>
+			</tns:TransportReceiver>
+		</tns:Transport>
+		<tns:Transport tns:transportId="transportSyncAMQP">
+			<tns:TransportSender>
+				<tns:TransportProtocol tns:version="1.0">AMQP</tns:TransportProtocol>
+			</tns:TransportSender>
+			<tns:TransportReceiver>
+				<tns:TransportProtocol tns:version="1.0">AMQP</tns:TransportProtocol>
+				<tns:Endpoint tns:uri="sync:fqdn/namespace/queue_name" tns:type="allPurpose"></tns:Endpoint>
+			</tns:TransportReceiver>
+		</tns:Transport>
+
+		<!-- AMQP DocExchange, forteller hvordan Nonrep skal håndteres -->
+		<tns:DocExchange tns:docExchangeId="docexchange_async_amqp">
+			<tns:ebXMLSenderBinding tns:version="2.0">
+				<tns:SenderNonRepudiation>
+					<tns:NonRepudiationProtocol>http://www.w3.org/2000/09/xmldsig#</tns:NonRepudiationProtocol>
+					<tns:HashFunction>http://www.w3.org/2000/09/xmldsig#sha1</tns:HashFunction>
+					<tns:SignatureAlgorithm tns:oid="1.2.840.113549.1.1.5" tns:w3c="http://www.w3.org/2000/09/xmldsig#rsa-sha1">RSA-SHA1</tns:SignatureAlgorithm>
+					<tns:SigningCertificateRef tns:certId="default_sign_cert"/>
+				</tns:SenderNonRepudiation>
+			</tns:ebXMLSenderBinding>
+			<tns:ebXMLReceiverBinding tns:version="2.0">
+				<tns:ReceiverNonRepudiation>
+					<tns:NonRepudiationProtocol>http://www.w3.org/2000/09/xmldsig#</tns:NonRepudiationProtocol>
+					<tns:HashFunction>http://www.w3.org/2000/09/xmldsig#sha1</tns:HashFunction>
+					<tns:SignatureAlgorithm tns:oid="1.2.840.113549.1.1.5" tns:w3c="http://www.w3.org/2000/09/xmldsig#rsa-sha1">RSA-SHA1</tns:SignatureAlgorithm>
+				</tns:ReceiverNonRepudiation>
+			</tns:ebXMLReceiverBinding>
+		</tns:DocExchange>
+		<tns:DocExchange tns:docExchangeId="docexchange_sync_amqp">
+			<tns:ebXMLSenderBinding tns:version="2.0">
+				<tns:SenderNonRepudiation>
+					<tns:NonRepudiationProtocol>http://www.w3.org/2000/09/xmldsig#</tns:NonRepudiationProtocol>
+					<tns:HashFunction>http://www.w3.org/2000/09/xmldsig#sha1</tns:HashFunction>
+					<tns:SignatureAlgorithm tns:oid="1.2.840.113549.1.1.5" tns:w3c="http://www.w3.org/2000/09/xmldsig#rsa-sha1">RSA-SHA1</tns:SignatureAlgorithm>
+					<tns:SigningCertificateRef tns:certId="default_sign_cert"/>
+				</tns:SenderNonRepudiation>
+			</tns:ebXMLSenderBinding>
+			<tns:ebXMLReceiverBinding tns:version="2.0">
+				<tns:ReceiverNonRepudiation>
+					<tns:NonRepudiationProtocol>http://www.w3.org/2000/09/xmldsig#</tns:NonRepudiationProtocol>
+					<tns:HashFunction>http://www.w3.org/2000/09/xmldsig#sha1</tns:HashFunction>
+					<tns:SignatureAlgorithm tns:oid="1.2.840.113549.1.1.5" tns:w3c="http://www.w3.org/2000/09/xmldsig#rsa-sha1">RSA-SHA1</tns:SignatureAlgorithm>
+				</tns:ReceiverNonRepudiation>
+			</tns:ebXMLReceiverBinding>
+		</tns:DocExchange>
+	</tns:PartyInfo>
+
+  <!-- Start: SimplePart elements  -->
+	<tns:SimplePart tns:id="message_dialogmld_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="dialogmelding-v1.0.xsd" tns:version="1.0">http://www.kith.no/xmlstds/dialog/2006-10-11</tns:NamespaceSupported>
+	</tns:SimplePart>
+
+	<tns:SimplePart tns:id="message_dialogmld_v1p1" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="dialogmelding-1.1.xsd" tns:version="1.1">http://www.kith.no/xmlstds/dialog/2013-01-23</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_reservasjonmld_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="reservasjon-v1.0.xsd" tns:version="1.0">http://www.kith.no/xmlstds/reservasjon/2016-12</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<!-- 2018-01-02, ny versjon 1.2, SVECHR  -->
+	<tns:SimplePart tns:id="message_reservasjonmld_v1p2" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="reservasjon-v1.2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/reservasjon/2016-12</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<!-- 2018-01-02, ny melding v1.0 SVECHR  -->
+	<tns:SimplePart tns:id="message_tilgangsbegrensningmld_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="tilgangsbegrensning-v1.0.xsd" tns:version="1.0">http://www.kith.no/xmlstds/tilgangsbegrensning/2018-1</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<!-- 2018-01-11, ny melding v1.0 SVECHR  -->
+	<tns:SimplePart tns:id="message_samtykkemld_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="samtykke-v1.0.xsd" tns:version="1.0">http://www.kith.no/xmlstds/samtykke/2018-1</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_iCalendar_v2p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="iCalendar.xsd" tns:version="2.0">urn:ietf:params:xml:ns:icalendar-2.0</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_iCalendar_v2p0_referral_extension_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="iCalendar-DigitalDialogSpesialist-extensions.xsd" tns:version="1.0">urn:ietf:params:xml:ns:icalendar-2.0</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_pasientrelasjon_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="Pasientrelasjon-2014-03-28.xsd" tns:version="1.0">http://www.kith.no/xmlstds/pasientrelasjon/2014-03-28</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_eResept_v2p4" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="ER-M1-2010-05-01.xsd" tns:version="2.4">http://www.kith.no/xmlstds/eresept/m1/2010-05-01</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_personer_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="personer-2014-03-28.xsd" tns:version="1.0">http://www.kith.no/xmlstds/person/2014-03-28</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_helsepersonell_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="helsepersonell-2015-05-04.xsd" tns:version="1.0">http://www.kith.no/xmlstds/helsepersonell/2015-05-04</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_fhir_v1p02" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="fhir-single.xsd" tns:version="1.02">http://hl7.org/fhir</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_map_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="map.xsd" tns:version="1.0">http://tempuri.org/xmlstds/Map/2016-06-20</tns:NamespaceSupported>
+	</tns:SimplePart>
+
+	<tns:SimplePart tns:id="message_apprec_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="AppRec-v1-2004-11-21.xsd" tns:version="1.0">http://www.kith.no/xmlstds/apprec/2004-11-21</tns:NamespaceSupported>
+	</tns:SimplePart>
+
+	<tns:SimplePart tns:id="message_apprec_v1p1" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="AppRec-v1_1.xsd" tns:version="1.1">http://www.kith.no/xmlstds/apprec/2012-02-15</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_tjenesteoversikt_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="tjenesteoversiktv1.0.xsd" tns:version="1.0">http://www.helsedirektoratet.no/xmlstds/tjenesteoversikt</tns:NamespaceSupported>
+	</tns:SimplePart>
+  	<tns:SimplePart tns:id="message_notifikasjon_innbygger_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MsgHead-v1_2.xsd" tns:version="1.2">http://www.kith.no/xmlstds/msghead/2006-05-24</tns:NamespaceSupported>
+		<tns:NamespaceSupported tns:location="fhir-single.xsd" tns:version="3.0.1">http://hl7.org/fhir</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_meldingtilinnbygger_v0p8" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="MeldingTilInnbygger-2017-02-22.xsd" tns:version="1.0">http://www.kith.no/xmlstds/meldingtilinnbygger/2017-02-22</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<tns:SimplePart tns:id="message_base64container_v1p0" tns:mimetype="application/xml">
+		<tns:NamespaceSupported tns:location="kith-base64.xsd" tns:version="1.0">http://www.kith.no/xmlstds/base64container</tns:NamespaceSupported>
+	</tns:SimplePart>
+	<!-- End: SimplePart elements  -->
+
+	<!-- Start: Digital Dialog packages v0.8 -->
+	<tns:Packaging tns:id="package_meldingsformidling_v0p8">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_meldingsformidling_dialogmld_v1p1" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_dialogmld_v1p1" />
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_meldingtilinnbygger_v0p8" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_meldingtilinnbygger_v0p8" />
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_base64container_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_base64container_v1p0" />
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_meldingsformidling_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="enc_meldingsformidling_dialogmld_v1p1" />
+				<tns:Constituent tns:idref="enc_meldingtilinnbygger_v0p8" />
+				<tns:Constituent tns:idref="enc_base64container_v1p0" tns:minOccurs="0" tns:maxOccurs="100" />
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<!-- End: Digital Dialog packages v0.8 -->	
+	
+	<!-- Start: Digital Dialog packages v1.0 -->
+	<tns:Packaging tns:id="package_oppgave_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_oppgave_dialogmld_v1p1" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_dialogmld_v1p1" />
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_oppgave_map_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_map_v1p0" />
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_oppgave_fhir_v1p02" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_fhir_v1p02" />
+			</tns:Encapsulation>
+			
+			<tns:Composite tns:id="request_msg_oppgave_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="enc_oppgave_dialogmld_v1p1" />
+				<tns:Constituent tns:idref="enc_oppgave_map_v1p0" />
+				<tns:Constituent tns:idref="enc_oppgave_fhir_v1p02" tns:minOccurs="0" tns:maxOccurs="1" />
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+
+	<tns:Packaging tns:id="package_timer_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_timer_dialogmld_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_dialogmld_v1p0" />
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_timer_iCalendar_v2p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_iCalendar_v2p0" />
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_timer_iCalendar_v2p0_referral_extension_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_iCalendar_v2p0_referral_extension_v1p0" />
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_timer_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="enc_timer_dialogmld_v1p0" />
+				<tns:Constituent tns:idref="enc_timer_iCalendar_v2p0" tns:minOccurs="0" tns:maxOccurs="1"/>
+				<tns:Constituent tns:idref="enc_timer_iCalendar_v2p0_referral_extension_v1p0" tns:minOccurs="0" tns:maxOccurs="1" />
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_dialogmld_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_dialogmld_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_dialogmld_v1p0" />
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_dialogmld_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="enc_dialogmld_v1p0" />
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	
+	<tns:Packaging tns:id="package_reservasjonmld_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_reservasjonmld_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_reservasjonmld_v1p0" />
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_reservasjonmld_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="enc_reservasjonmld_v1p0" />
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<!-- 2018-01-02, Ny versjon 1.2, SVECHR -->	
+	<tns:Packaging tns:id="package_reservasjonmld_v1p2">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_reservasjonmld_v1p2" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_reservasjonmld_v1p2" />
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_reservasjonmld_v1p2" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="enc_reservasjonmld_v1p2" />
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<!-- 2018-01-02, Ny melding - Tilgangsbegrensninger, SVECHR -->	
+	<tns:Packaging tns:id="package_tilgangsbegrensningmld_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_tilgangsbegrensningmld_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_tilgangsbegrensningmld_v1p0" />
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_tilgangsbegrensningmld_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="enc_tilgangsbegrensningmld_v1p0" />
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<!-- 2018-01-11, Ny melding - Samtykke, SVECHR -->	
+	<tns:Packaging tns:id="package_samtykkemld_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_samtykkemld_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_samtykkemld_v1p0" />
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_samtykkemld_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="enc_samtykkemld_v1p0" />
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<tns:Packaging tns:id="package_notifikasjon_innbygger_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_notifikasjon_innbygger_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_notifikasjon_innbygger_v1p0" />
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_notifikasjon_innbygger_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="enc_notifikasjon_innbygger_v1p0" />
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	
+		
+  <!-- End: Digital Dialog packages v1.0 -->
+
+	<!-- Start: Digital Dialog packages v1.1 -->
+	<tns:Packaging tns:id="package_dialogmld_v1p1">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_dialogmld_v1p1" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_dialogmld_v1p1" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_dialogmld_v1p1" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="enc_dialogmld_v1p1" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<!-- End: Digital Dialog packages v1.1 -->
+	
+	<!-- Start: Digital Dialog packages v1.2 -->
+	<tns:Packaging tns:id="package_timereservasjon_v1p2">
+		<tns:ProcessingCapabilities tns:parse="true" tns:generate="true" />
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_timereservasjon_dialogmld_v1p1" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_dialogmld_v1p1" />
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_timereservasjon_iCalendar_v2p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_iCalendar_v2p0" />
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_timereservasjon_pasientrelasjon_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_pasientrelasjon_v1p0" />
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_timereservasjon_helsepersonell_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_helsepersonell_v1p0" />
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_timereservasjon_v1p2" tns:mimetype="multipart/related" tns:mimeparameters="type=text/xml">
+				<tns:Constituent tns:idref="enc_timereservasjon_dialogmld_v1p1" />
+				<tns:Constituent tns:idref="enc_timereservasjon_iCalendar_v2p0" tns:minOccurs="0" tns:maxOccurs="1" />
+				<tns:Constituent tns:idref="enc_timereservasjon_pasientrelasjon_v1p0" tns:minOccurs="0" tns:maxOccurs="1" />
+				<tns:Constituent tns:idref="enc_timereservasjon_helsepersonell_v1p0" tns:minOccurs="0" tns:maxOccurs="1" />
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+
+	<tns:Packaging tns:id="package_timeonske_v1p2">
+		<tns:ProcessingCapabilities tns:parse="true" tns:generate="true" />
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_timeonske_dialogmld_v1p1" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_dialogmld_v1p1" />
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_timeonske_iCalendar_v2p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_iCalendar_v2p0" />
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_timeonske_pasientrelasjon_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_pasientrelasjon_v1p0" />
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_timeonske_helsepersonell_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_helsepersonell_v1p0" />
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_timeonske_v1p2" tns:mimetype="multipart/related" tns:mimeparameters="type=text/xml">
+				<tns:Constituent tns:idref="enc_timeonske_dialogmld_v1p1" />
+				<tns:Constituent tns:idref="enc_timeonske_iCalendar_v2p0" tns:minOccurs="0" tns:maxOccurs="1" />
+				<tns:Constituent tns:idref="enc_timeonske_pasientrelasjon_v1p0" tns:minOccurs="0" tns:maxOccurs="1" />
+				<tns:Constituent tns:idref="enc_timeonske_helsepersonell_v1p0" tns:minOccurs="0" tns:maxOccurs="1" />
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+
+	<tns:Packaging tns:id="package_eKonsultasjon_v1p2">
+		<tns:ProcessingCapabilities tns:parse="true" tns:generate="true" />
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_eKonsultasjon_dialogmld_v1p1" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_dialogmld_v1p1" />
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_eKonsultasjon_pasientrelasjon_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_pasientrelasjon_v1p0" />
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_eKonsultasjon_v1p2" tns:mimetype="multipart/related" tns:mimeparameters="type=text/xml">
+				<tns:Constituent tns:idref="enc_eKonsultasjon_dialogmld_v1p1" />
+				<tns:Constituent tns:idref="enc_eKonsultasjon_pasientrelasjon_v1p0" tns:minOccurs="0" tns:maxOccurs="1" />
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+
+	<tns:Packaging tns:id="package_eKontakt_v1p2">
+		<tns:ProcessingCapabilities tns:parse="true" tns:generate="true" />
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_eKontakt_dialogmld_v1p1" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_dialogmld_v1p1" />
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_eKontakt_pasientrelasjon_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_pasientrelasjon_v1p0" />
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_eKontakt_v1p2" tns:mimetype="multipart/related" tns:mimeparameters="type=text/xml">
+				<tns:Constituent tns:idref="enc_eKontakt_dialogmld_v1p1" />
+				<tns:Constituent tns:idref="enc_eKontakt_pasientrelasjon_v1p0" tns:minOccurs="0" tns:maxOccurs="1" />
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+
+	<tns:Packaging tns:id="package_reseptfornyelse_v1p2">
+		<tns:ProcessingCapabilities tns:parse="true" tns:generate="true" />
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_reseptfornyelse_dialogmld_v1p1" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_dialogmld_v1p1" />
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_reseptfornyelse_eResept_v2p4" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_eResept_v2p4" />
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_reseptfornyelse_pasientrelasjon_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_pasientrelasjon_v1p0" />
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_reseptfornyelse_v1p2" tns:mimetype="multipart/related" tns:mimeparameters="type=text/xml">
+				<tns:Constituent tns:idref="enc_reseptfornyelse_dialogmld_v1p1" />
+				<tns:Constituent tns:idref="enc_reseptfornyelse_eResept_v2p4" tns:minOccurs="0" tns:maxOccurs="100" />
+				<tns:Constituent tns:idref="enc_reseptfornyelse_pasientrelasjon_v1p0" tns:minOccurs="0" tns:maxOccurs="1" />
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+
+	<tns:Packaging tns:id="package_digitalbruker_v1p2">
+		<tns:ProcessingCapabilities tns:parse="true" tns:generate="true" />
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_digitalbruker_dialogmld_v1p1" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_dialogmld_v1p1" />
+			</tns:Encapsulation>
+			<tns:Encapsulation tns:id="enc_digitalbruker_personer_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_personer_v1p0" />
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_digitalbruker_v1p2" tns:mimetype="multipart/related" tns:mimeparameters="type=text/xml">
+				<tns:Constituent tns:idref="enc_digitalbruker_dialogmld_v1p1" />
+				<tns:Constituent tns:idref="enc_digitalbruker_personer_v1p0" tns:minOccurs="0" tns:maxOccurs="1" />
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+
+	<tns:Packaging tns:id="package_test_v1p2">
+		<tns:ProcessingCapabilities tns:parse="true" tns:generate="true" />
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_test_dialogmld_v1p1" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_dialogmld_v1p1" />
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_test_v1p2" tns:mimetype="multipart/related" tns:mimeparameters="type=text/xml">
+				<tns:Constituent tns:idref="enc_test_dialogmld_v1p1" />
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+	<!-- End: Digital Dialog packages v1.2 -->
+
+	<tns:Packaging tns:id="package_apprec_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_apprec_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_apprec_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_apprec_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="enc_apprec_v1p0" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+
+	<tns:Packaging tns:id="package_apprec_v1p1">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_apprec_v1p1" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_apprec_v1p1" tns:excludedFromSignature="false"/>
+			</tns:Encapsulation>
+			<tns:Composite tns:id="msg_apprec_v1p1" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="enc_apprec_v1p1" tns:excludedFromSignature="false"/>
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>
+
+	<tns:Packaging tns:id="package_tjenesteoversikt_v1p0">
+		<tns:ProcessingCapabilities tns:generate="true" tns:parse="true"/>
+		<tns:CompositeList>
+			<tns:Encapsulation tns:id="enc_tjenesteoversikt_v1p0" tns:mimetype="application/pkcs7-mime" tns:mimeparameters="smime-type=&quot;enveloped-data&quot;">
+				<tns:Constituent tns:idref="message_tjenesteoversikt_v1p0" />
+			</tns:Encapsulation>
+			<tns:Composite tns:id="request_msg_tjenesteoversikt_v1p0" tns:mimeparameters="type=text/xml" tns:mimetype="multipart/related">
+				<tns:Constituent tns:idref="enc_tjenesteoversikt_v1p0" />
+			</tns:Composite>
+		</tns:CompositeList>
+	</tns:Packaging>	
+
+	<tns:Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+		<Signature>
+			<SignedInfo>
+				<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+				<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+				<Reference URI="">
+					<Transforms>
+						<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+						<Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+					</Transforms>
+					<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+					<DigestValue/>
+				</Reference>
+			</SignedInfo>
+			<SignatureValue/>
+		</Signature>
+	</tns:Signature>
+	<tns:Comment xml:lang="no">Skal erstatte tidligere CPA med cpaid XXXXXX</tns:Comment>
+</tns:CollaborationProtocolProfile>

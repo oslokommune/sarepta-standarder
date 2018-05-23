@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MsgHead xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd" xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<MsgInfo>
+		<Type DN="Vurdering av arbeidsmulighet / sykmelding" V="SYKMELD"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2013-01-24T09:30:47.0Z</GenDate>
+		<MsgId>ab90ba10-e616-11dc-95ff-0800200c9a66</MsgId>
+		<ProcessingStatus V="T" DN="Opplæring"/> <!-- NAV forventer verdi P - Produksjon her for meldinger som skal sendes i produksjon -->
+     		<Sender>
+        			<Organisation>
+          				<OrganisationName>Kattskinnet tannlegesenter</OrganisationName>
+				<Ident>
+					<Id>56704</Id>
+					<TypeId DN="HER-id" S="2.16.578.1.12.4.1.1.9051" V="HER"/>
+				</Ident>
+				<Ident>
+					<Id>971318864</Id>
+					<TypeId DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" S="2.16.578.1.12.4.1.1.9051" V="ENH"/>
+				</Ident>
+				<Address>
+					<StreetAdr>Dreyfushammars 23</StreetAdr>
+					<PostalCode>8012</PostalCode>
+					<City>Bodø</City>
+				</Address>
+				<TeleCom>
+					<TeleAddress V="tel:75589889"/>
+				</TeleCom>
+				<HealthcareProfessional>
+					<TypeHealthcareProfessional DN="Tannlege" V="TL"/>
+					<FamilyName>September</FamilyName>
+					<GivenName>August</GivenName>
+					<Ident>
+						<Id>20086600138</Id>
+						<TypeId DN="Fødselsnummer" S="2.16.578.1.12.4.1.1.8116" V="FNR"/>
+					</Ident>
+					<Ident>
+						<Id>9144897</Id>
+						<TypeId DN="HER-id" S="2.16.578.1.12.4.1.1.8116" V="HER"/>
+					</Ident>					
+				</HealthcareProfessional>
+       			 </Organisation>
+      		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>NAV DRIFT OG UTVIKLING</OrganisationName>
+				<Ident>
+					<Id>79768</Id>
+					<TypeId DN="HER-id" S="2.16.578.1.12.4.1.1.9051" V="HER"/>
+				</Ident>
+				<Ident>
+					<Id>990983291</Id>
+					<TypeId V="ENH" S="2.16.578.1.12.4.1.1.9051" DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)"/>
+				</Ident>
+			</Organisation>
+		</Receiver>
+		<Patient>
+			<FamilyName>Danser</FamilyName>
+			<GivenName>Line</GivenName>
+			<Ident>
+				<Id>13116900216</Id>
+				<TypeId DN="Fødselsnummer" S="2.16.578.1.12.4.1.1.8116" V="FNR"/>
+			</Ident>
+		</Patient>
+	</MsgInfo>
+	<Document>
+		<RefDoc>
+			<MsgType DN="XML-instans" V="XML"/>
+			<Content>
+				<Sykmelding xsi:schemaLocation="http://www.kith.no/xmlstds/sykmelding/2011-03-04 NAV-Sykmelding-2011-03-04.xsd" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns="http://www.kith.no/xmlstds/sykmelding/2011-03-04" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<Gjelder DN="Første vurdering" V="1"/>
+					<PersonArbeid>
+						<Navn>
+							<Etternavn>Danser</Etternavn>
+							<Fornavn>Line</Fornavn>
+						</Navn>
+						<Fodselsnummer>
+							<fk1:Id>13116900216</fk1:Id>
+							<fk1:TypeId DN="Fødselsnummer" S="2.16.578.1.12.4.1.1.8116" V="FNR"/>
+						</Fodselsnummer>
+						<Telefon>
+							<fk1:TeleAddress V="tel:55555555"/>
+						</Telefon>
+						<FlereArbeidsforhold>false</FlereArbeidsforhold>
+						<NavnFastlege>Magnar Koman</NavnFastlege>
+						<NavKontor>Kongsberg</NavKontor>
+						<Arbeidsforhold>
+							<NavnArbeidsgiver>Gilde</NavnArbeidsgiver>
+							<PrimartArbeidsforhold DN="Ja" V="1"/>
+							<Yrkesbetegnelse>Slakter</Yrkesbetegnelse>
+							<AntallTimer>37.5</AntallTimer>
+							<Stillingsprosent>100</Stillingsprosent>
+						</Arbeidsforhold>
+					</PersonArbeid>
+					<MedisinskVurdering>
+						<Svangerskap>true</Svangerskap>
+						<Ja>
+							<AktivitetMuligFra>2008-02-20</AktivitetMuligFra>
+						</Ja>
+						<Diagnoser>
+							<Diagnose DN="Rotfylling og kirurgisk inngrep" S="2.16.578.1.12.4.1.1.7170" V="A99" OT="Helseproblem/sykdom IKA"/>
+							<Sortering>0</Sortering>
+						</Diagnoser>
+					</MedisinskVurdering>
+					<AvventendeSykmelding>
+						<FraDato>2008-02-20</FraDato>
+						<TilDato>2008-03-07</TilDato>
+					</AvventendeSykmelding>
+					<VeiledningArbeidsgiver>
+						<Beskrivelse>Komplikasjoner etter rotfylling og kirurgisk inngrep. </Beskrivelse>
+						<Tilbakemelding>true</Tilbakemelding>
+					</VeiledningArbeidsgiver>
+					<DatoUnderskrift>2008-05-26</DatoUnderskrift>
+				</Sykmelding>
+			</Content>
+		</RefDoc>
+	</Document>
+	<!-- Eksempel på ds:Signature utelatt -->
+</MsgHead>

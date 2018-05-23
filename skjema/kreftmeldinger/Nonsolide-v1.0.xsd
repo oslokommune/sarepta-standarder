@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Generated on 03-05-2003  01:11:18 at KITH -->
+<!-- XML-Schema level supported is specified by W3C -->
+<!-- http://www.w3.org/2001/XMLSchema -->
+<!-- -->
+<!-- Skjema dekker opplysninger i "Melding til kreftregisteret: Non-solide svulster" -->
+<!-- File name: Nonsolide-v1.0.xsd -->
+<!-- Version: "v1.0 2004-12-16" -->
+<!-- -->
+<!-- Change Log -->
+<!--	Modified 16. des 2004 (ALB) -->
+<!-- Old file name: nonsolide-v0.98.xsd -->
+<!-- Nytt element: opBeskrivelse (under Melding/NonSolideSvulster/Behandling/PrimBeh) -->
+<!-- Fjernet element: MsgVersion -->
+<!-- Følgende elementer er gjort valgfrie: pasAnsvLege, hprNrPasAnsvLege, startDato, straleBeh, cytostatBeh, annenBeh, ytterligereBeh,  -->
+<!-- Diagnose, SykdomsKat, Sykdomstegn, Legekontakt, UtbredelseN, SykdomLok, -->
+<!-- BasisDiagnose, BasisN, Behandling, PrimBeh, PrimBehN, Opplysninger -->
+<!-- Følgende elementer er gjort obligatoriske: MsgVersion, MIGversion, GenDate, MsgId, InstId, avd, AvdId -->
+<!-- Alle elementer som det tidligere ikke har blitt angitt noen lengde på (de som er av type varchar i oversikten over Kreftregisterets databasefelter), skal begrenses -->
+<!-- til 255 tegn. Det nye elementet opBeskrivelse og elementet opplysning (underelement til Tilleggsopplysning) skal kunne ha fri lengde. -->
+<!-- Change log nonsolide-v0.98.xsd  finished -->
+<!-- -->
+<!--	Modified 24. mars 2003 (ALB) -->
+<!-- Old file name: nonsolide-v0.97.xsd -->
+<!-- Endret navn fra Legeoppl til Legeopplysninger -->
+<!-- Elementet Tilleggsopplysninger er gjort valgfritt -->
+<!-- Elementet kirBeh (under PrimBeh) er gjort valgfritt -->
+<!-- Fjernet hvilkeUs (under BasisDiagnose) -->
+<!-- Change log nonsolide-v0.97.xsd  finished -->
+<!-- -->
+<!--	Modified 13. mars 2003 (AA) -->
+<!-- Old file name: nonsolide_v096.xsd -->
+<!-- Toppelementet "Message" er endret tilbake til "Melding" -->
+<!-- Elementet Type er flyttet under NonSolideSvulster, endret til typeMeld, minOccurs=1-->
+<!-- MIGversion, GenDate og MsgId har endret minOccurs fra 1 til 0 -->
+<!-- Nye frivillige elementer under BehInst: InstId, TypeInstId, AvdId, TypeAvdId -->
+<!-- Nytt frivillig element under BasisDiagnose: hvilkeUs - benyttes dog ikke lenger for non-solide svulster -->
+<!-- Change log brystkreft_v096.xsd  finished-->
+<!-- -->
+<!--	Modified 5. mars 2003 (AA) -->
+<!-- Old file name: nonsolide_v014.xsd -->
+<!-- Included change log and administrative information as comments in top of the Schema -->
+<!-- targetNamespace is changed to targetNamespace="http://www.kith.no/xmlstds/nonsolide in the header  -->
+<!-- xmlns:kre is changed to xmlns:kre="http://www.kith.no/xmlstds/nonsolide"  in the header -->
+<!-- Top element "Melding" is changed to "Message" -->
+<!-- Element typeMeld is changed to Type -->
+<!-- New elements in Message with other new elements below in the hierarky: MsgVersion, MIGversion, GenDate, MsgId, CopyDest,ServProvider, Reciever -->
+<!-- Element hvilkenUs (in BasisDiagnose) is removed -->
+<!-- Change log nonsolide_v014.xsd  finished-->
+<!-- -->
+<schema targetNamespace="http://www.kith.no/xmlstds/nonsolide" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:kith="http://www.kith.no/xmlstds" xmlns:kre="http://www.kith.no/xmlstds/nonsolide">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="kith.xsd"/>
+	<!-- LEVEL 1 -->
+	<!-- Class: Melding -->
+	<annotation>
+		<documentation>
+      Opplysninger om meldingen som utveksles mellom avsender og mottaker.
+   </documentation>
+	</annotation>
+	<element name="Melding">
+		<complexType>
+			<sequence>
+				<element name="MIGversion" type="kith:ST"/>
+				<element name="GenDate" type="kith:TS"/>
+				<element name="MsgId" type="kith:ST"/>
+				<element ref="kre:NonSolideSvulster"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 2 -->
+	<!-- Class: Non-solide svulster -->
+	<element name="NonSolideSvulster">
+		<complexType>
+			<sequence>
+				<element name="typeMeld" type="kith:CS"/>
+				<element ref="kre:Pasient"/>
+				<element ref="kre:BehInst"/>
+				<element ref="kre:DiagnoseTid"/>
+				<element ref="kre:Diagnose" minOccurs="0"/>
+				<element ref="kre:Sykdomstegn" minOccurs="0"/>
+				<element ref="kre:UtbredelseN" minOccurs="0"/>
+				<element ref="kre:SykdomLok" minOccurs="0"/>
+				<element ref="kre:BasisDiagnose" minOccurs="0"/>
+				<element ref="kre:Behandling" minOccurs="0"/>
+				<element ref="kre:Opplysninger" minOccurs="0"/>
+				<element ref="kre:Tilleggsopplysninger" minOccurs="0"/>
+				<element ref="kre:Legeopplysninger"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 3 -->
+	<!-- Class: Sykdommens utbredelse på diagnosetidspunktet N -->
+	<element name="UtbredelseN">
+		<complexType>
+			<sequence>
+				<element name="stadiumLymfom" type="kith:ST" minOccurs="0"/>
+				<element name="stadiumMyelom" type="kith:ST" minOccurs="0"/>
+				<element name="KLL" type="kith:CS" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Basis for kreftdiagnosen -->
+	<annotation>
+		<documentation>
+      De diagnostiske prosedyrer som danner grunnlaget for diagnosen, avkrysses. For undersøkelser utført i laboratorium angis år, preparatnummer og laboratorium.
+   </documentation>
+	</annotation>
+	<element name="BasisDiagnose">
+		<complexType>
+			<sequence>
+				<element ref="kre:BasisN" minOccurs="0"/>
+				<element name="bildeDiag" type="kith:BL" minOccurs="0"/>
+				<element name="cytAr" type="kith:ST" minOccurs="0"/>
+				<element name="cytPrepNr" type="kith:ST" minOccurs="0"/>
+				<element name="cytLab" type="kith:ST" minOccurs="0"/>
+				<element name="histAr" type="kith:ST" minOccurs="0"/>
+				<element name="histPrepNr" type="kith:ST" minOccurs="0"/>
+				<element name="histLab" type="kith:ST" minOccurs="0"/>
+				<element name="histAr2" type="kith:ST" minOccurs="0"/>
+				<element name="histPrepNr2" type="kith:ST" minOccurs="0"/>
+				<element name="histLab2" type="kith:ST" minOccurs="0"/>
+				<element name="obdAr" type="kith:ST" minOccurs="0"/>
+				<element name="obdNr" type="kith:ST" minOccurs="0"/>
+				<element name="obdLab" type="kith:ST" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Diagnose -->
+	<annotation>
+		<documentation>
+      Når feltene for morfologisk diagnose (evt. Sykdomskategori og morfologisk undergruppe) er utfylt er "sikkerCancer" ikke obligatorisk. Hvis morfologi-feltene ikke kan fylles ut er "sikkerCancer" obligatorisk (og kan ikke være tom). 
+   </documentation>
+	</annotation>
+	<element name="Diagnose">
+		<complexType>
+			<sequence>
+				<element ref="kre:SykdomsKat" minOccurs="0"/>
+				<element name="sikkerCancer" type="kith:BL" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Sykdommens lokalisasjon -->
+	<annotation>
+		<documentation>
+      Angir sykdommens lokalisasjon/debutorgan. Velg én av de fire mulighetene.
+   </documentation>
+	</annotation>
+	<element name="SykdomLok">
+		<complexType>
+			<sequence>
+				<element name="lymfeknute" type="kith:BL" minOccurs="0"/>
+				<element name="lymfeRegion" type="kith:ST" minOccurs="0"/>
+				<element name="benmarg" type="kith:BL" minOccurs="0"/>
+				<element name="annetOrgan" type="kith:BL" minOccurs="0"/>
+				<element name="hvilketOrgan" type="kith:ST" minOccurs="0"/>
+				<element name="ukjent" type="kith:BL" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Tilleggsopplysninger -->
+	<annotation>
+		<documentation>
+      Dersom uttømmende informasjon om sykdommen ikke kan gis, ønskes oppgitt hvor denne kan innhentes, f.eks. dersom pasienten er henvist til annen avdeling for utredning og/eller behandling.
+   </documentation>
+	</annotation>
+	<element name="Tilleggsopplysninger">
+		<complexType>
+			<sequence>
+				<element name="opplysninger" type="kith:ST" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Pasient -->
+	<annotation>
+		<documentation>
+      Opplysninger om pasienten ligger i klassene Pasient og Postadresse i EPJ-meldingen.
+   </documentation>
+	</annotation>
+	<element name="Pasient">
+		<complexType>
+			<sequence>
+				<element name="fodselsNr" type="kith:ST"/>
+				<element name="navn" type="kith:ST"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Behandlingsinstitusjon -->
+	<annotation>
+		<documentation>
+      Pasientopplysninger tilknyttet behandlingsinstitusjon. Institusjonens navn legges i EPJ-meldingen.
+   </documentation>
+	</annotation>
+	<element name="BehInst">
+		<complexType>
+			<sequence>
+				<element name="inst" type="kith:ST"/>
+				<element name="InstId" type="kith:ST"/>
+				<element name="TypeInstId" type="kith:CS" minOccurs="0"/>
+				<element name="avd" type="kith:ST"/>
+				<element name="AvdId" type="kith:ST"/>
+				<element name="TypeAvdId" type="kith:CS" minOccurs="0"/>
+				<element name="opphold" type="kith:CS" minOccurs="0"/>
+				<element name="dato" type="kith:TS" minOccurs="0"/>
+				<element name="status" type="kith:CS" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Legeopplysninger -->
+	<element name="Legeopplysninger">
+		<complexType>
+			<sequence>
+				<element name="datoMeldt" type="kith:TS"/>
+				<element name="pasAnsvLege" type="kith:ST" minOccurs="0"/>
+				<element name="hprNrPasAnsvLege" type="kith:ST" minOccurs="0"/>
+				<element name="meldtAv" type="kith:ST"/>
+				<element name="hprNrMeldtAv" type="kith:ST"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Behandling -->
+	<element name="Behandling">
+		<complexType>
+			<sequence>
+				<element name="primBehMaal" type="kith:CS" minOccurs="0"/>
+				<element ref="kre:PrimBeh" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Opplysninger -->
+	<annotation>
+		<documentation>
+      Opplysninger som registreres hvis ikke pasienten motsetter seg det.
+   </documentation>
+	</annotation>
+	<element name="Opplysninger">
+		<complexType>
+			<sequence>
+				<element name="royker" type="kith:CS" minOccurs="0"/>
+				<element name="yrke" type="kith:ST" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Sykdomstegn -->
+	<element name="Sykdomstegn">
+		<complexType>
+			<sequence>
+				<element ref="kre:Legekontakt" minOccurs="0"/>
+				<element name="datoForsteSymptom" type="kith:TS" minOccurs="0"/>
+				<element name="arveligDisp" type="kith:CS" minOccurs="0"/>
+				<element name="typeArveligDisp" type="kith:ST" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Diagnosetidspunkt -->
+	<annotation>
+		<documentation>
+      Tidspunktet diagnosen forelå.
+   </documentation>
+	</annotation>
+	<element name="DiagnoseTid">
+		<complexType>
+			<sequence>
+				<element name="dato" type="kith:TS"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 4 -->
+	<!-- Class: Basis N -->
+	<element name="BasisN">
+		<complexType>
+			<sequence>
+				<element name="benmargUtstryk" type="kith:BL" minOccurs="0"/>
+				<element name="blodUtstryk" type="kith:BL" minOccurs="0"/>
+				<element name="benmargBiopsi" type="kith:BL" minOccurs="0"/>
+				<element name="immunTyping" type="kith:BL" minOccurs="0"/>
+				<element name="cytogenetiskUs" type="kith:BL" minOccurs="0"/>
+				<element name="spinalUs" type="kith:BL" minOccurs="0"/>
+				<element name="dnaRnaKromosom" type="kith:BL" minOccurs="0"/>
+				<element name="serumUrin" type="kith:BL" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Sykdomskategori -->
+	<element name="SykdomsKat">
+		<complexType>
+			<sequence>
+				<element name="sykdomsKat" type="kith:CS" minOccurs="0"/>
+				<element name="morfUnderGr" type="kith:ST" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Sykdomstegn, legekontakt -->
+	<element name="Legekontakt">
+		<complexType>
+			<sequence>
+				<element name="symptomer" type="kith:BL" minOccurs="0"/>
+				<element name="screening" type="kith:BL" minOccurs="0"/>
+				<element name="hvilkeSymptom" type="kith:ST" minOccurs="0"/>
+				<element name="datoLegeSokt" type="kith:TS" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Primærbehandling -->
+	<annotation>
+		<documentation>
+      Solide og non-solide svulster.
+   </documentation>
+	</annotation>
+	<element name="PrimBeh">
+		<complexType>
+			<sequence>
+				<element name="startDato" type="kith:TS" minOccurs="0"/>
+				<element name="ingenPrimBeh" type="kith:BL" minOccurs="0"/>
+				<element name="kirBeh" type="kith:BL" minOccurs="0"/>
+				<element name="hvilkenKirBeh" type="kith:ST" minOccurs="0"/>
+				<element name="opMetode" type="kith:ST" minOccurs="0"/>
+				<element name="opBeskrivelse" type="kith:ST" minOccurs="0"/>
+				<element name="straleBeh" type="kith:BL" minOccurs="0"/>
+				<element name="cytostatBeh" type="kith:BL" minOccurs="0"/>
+				<element name="annenBeh" type="kith:BL" minOccurs="0"/>
+				<element name="hvilkenAnnenBeh" type="kith:ST" minOccurs="0"/>
+				<element name="ytterligereBeh" type="kith:BL" minOccurs="0"/>
+				<element name="hvilkenYtterligereBeh" type="kith:ST" minOccurs="0"/>
+				<element name="hvilkenInst" type="kith:ST" minOccurs="0"/>
+				<element ref="kre:PrimBehN" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 5 -->
+	<!-- Class: Primærbehandling N -->
+	<element name="PrimBehN">
+		<complexType>
+			<sequence>
+				<element name="sykdomsfri" type="kith:CS" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M9.22 Endrede multidosepasienter
+2013-10-14
+ -->
+<!--
+Arbeidsutkast ny melding
+-->
+<schema xmlns:m922="http://www.kith.no/xmlstds/eresept/m922/2013-10-15" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kith.no/xmlstds/eresept/m922/2013-10-15" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<element name="M922">
+		<complexType>
+			<choice>
+				<element name="Fnr" type="string" maxOccurs="unbounded"/>
+				<element name="IngenEndring" type="boolean"/>
+			</choice>
+		</complexType>
+	</element>
+</schema>

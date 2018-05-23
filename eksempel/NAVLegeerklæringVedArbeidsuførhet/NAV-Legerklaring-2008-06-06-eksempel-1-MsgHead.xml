@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MsgHead xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd" xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<MsgInfo>
+		<Type DN="Legerklæring ved arbeidsuførhet" V="LEGEERKL"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2003-10-01T09:30:47.0Z</GenDate>
+		<MsgId>e3e7da10-015a-11dd-95ff-0800200c9a66</MsgId>
+		<Sender>
+			<Organisation>
+				<OrganisationName>Vindern Legesenter</OrganisationName>
+				<Ident>
+					<Id>123456789</Id>
+					<TypeId DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" S="2.16.578.1.12.4.1.1.8116.9051" V="ENH"/>
+				</Ident>
+				<Address>
+					<StreetAdr>Vindernveien 2</StreetAdr>
+					<PostalCode>0373</PostalCode>
+					<City>Oslo</City>
+				</Address>
+				<TeleCom>
+					<TeleAddress V="tel:12345678"/>
+				</TeleCom>
+				<HealthcareProfessional>
+					<FamilyName>Sax</FamilyName>
+					<GivenName>Agaton</GivenName>
+					<Ident>
+						<Id>01118200388</Id>
+						<TypeId DN="Fødselsnummer" S="2.16.578.1.12.4.1.1.8116" V="FNR"/>
+					</Ident>
+				</HealthcareProfessional>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>NAV</OrganisationName>
+				<Ident>
+					<Id>??</Id>
+					<TypeId DN="Identifikator fra Helsetjenesteenhetsregisteret (HER-id)" S="2.16.578.1.12.4.1.1.8116.9051" V="HER"/>
+				</Ident>
+			</Organisation>
+		</Receiver>
+	</MsgInfo>
+	<Document>
+		<RefDoc>
+			<MsgType DN="XML-instans" V="XML"/>
+			<Content>
+				<Legeerklaring xmlns="http://www.kith.no/xmlstds/legeerklaring/2008-06-06" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/legeerklaring/2008-06-06 NAV-Legeerklaring-2008-06-06.xsd">
+					<LegeerklaringGjelder typeLegeerklaring="4"/>
+					<Pasientopplysninger flereArbeidsforhold="2">
+						<Pasient fodselsnummer="05056800214" trygdekontor="Vindern">
+							<Navn>
+								<Etternavn>Røverdatter</Etternavn>
+								<Fornavn>Ronja</Fornavn>
+							</Navn>
+							<Arbeidsforhold primartArbeidsforhold="1">
+								<Virksomhet virksomhetsBetegnelse="Gaustad Sykehus">
+									<VirksomhetsAdr adressetype="RES">
+										<PostalAddress>
+											<StreetAddress>Forskningsveien 1</StreetAddress>
+											<PostalCode>0314</PostalCode>
+											<City>Oslo</City>
+										</PostalAddress>
+									</VirksomhetsAdr>
+								</Virksomhet>
+								<Yrkesbetegnelse>Konsulent</Yrkesbetegnelse>
+							</Arbeidsforhold>
+							<PersonAdr adressetype="H">
+								<PostalAddress>
+									<StreetAddress>Holmenveien 6</StreetAddress>
+									<PostalCode>0374</PostalCode>
+									<City>Oslo</City>
+									<Country>no</Country>
+								</PostalAddress>
+							</PersonAdr>
+						</Pasient>
+					</Pasientopplysninger>
+					<PlanUtredBehandle>
+						<IkkeVidereBehandling>Krefttypen kan ikke behandles</IkkeVidereBehandling>
+					</PlanUtredBehandle>
+					<DiagnoseArbeidsuforhet>
+						<DiagnoseKodesystem kodesystem="1">
+							<Enkeltdiagnose kodeverdi="R84" sortering="0" diagnose="Svulst ondartet bronkier/lunger"/>
+						</DiagnoseKodesystem>
+						<VurderingYrkesskade borVurderes="2"/>
+						<StatusPresens>04120&#13;&#10;Stor tumor venstre lunge. Ikke indikasjon for operasjon.&#13;&#10;&#13;&#10;Strålebehandling er gitt som smertestillende.&#13;&#10;Dårlig prognose.</StatusPresens>
+						<SymptomerBehandling>Påvist lungekreft
+Gjennomgått strålebehandling.</SymptomerBehandling>
+					</DiagnoseArbeidsuforhet>
+					<ForslagTiltak tiltak="2">
+						<Opplysninger/>
+						<BegrunnelseIkkeTiltak>Uhelbredelig kreft.</BegrunnelseIkkeTiltak>
+					</ForslagTiltak>
+					<VurderingFunksjonsevne>
+						<Arbeidssituasjon arbeidssituasjon="1"/>
+						<VurderingArbeidsevne gjenopptaArbeid="2" taAnnetArbeid="2">
+							<IkkeGjore>Alt.</IkkeGjore>
+						</VurderingArbeidsevne>
+					</VurderingFunksjonsevne>
+					<Prognose bedreArbeidsevne="2">
+						<AntattVarighet>Vraig.</AntattVarighet>
+						<VarighetFunksjonsnedsettelse>Varig.</VarighetFunksjonsnedsettelse>
+						<VarighetNedsattArbeidsevne>Varig.</VarighetNedsattArbeidsevne>
+					</Prognose>
+					<ForbeholdLegeerklaring tilbakeholdInnhold="1">
+						<BorTilbakeholdes>Prognosen.</BorTilbakeholdes>
+					</ForbeholdLegeerklaring>
+				</Legeerklaring>
+			</Content>
+		</RefDoc>
+	</Document>
+	<!-- Eksempel på ds:Signature utelatt -->
+</MsgHead>

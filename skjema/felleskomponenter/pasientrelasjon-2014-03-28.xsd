@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Endret 28. mars 2014 (MA):
+	- Endret namespace: http://www.kith.no/xmlstds/pasientrelasjon/2014-03-28
+	- Endret tegnsett fra "ISO-8859-1" til "UTF-8"-->
+<schema xmlns:pr="http://www.kith.no/xmlstds/pasientrelasjon/2014-03-28" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" targetNamespace="http://www.kith.no/xmlstds/pasientrelasjon/2014-03-28" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="felleskomponent1.xsd"/>
+	<!-- LEVEL 1 -->
+	<!-- Class: Person -->
+	<element name="Pasientrelasjon">
+		<annotation>
+			<documentation>
+         Dokumentasjon av relasjon til pasient.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Person" type="fk1:Person" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="Relasjon" type="kith:CV" minOccurs="0" maxOccurs="1"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

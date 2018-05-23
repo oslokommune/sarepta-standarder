@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M24.5 Informasjon om flytting av samtykker
+2013-10-15
+-->
+<!--
+Abeidsutkast til ny melding
+-->
+<schema xmlns:m245="http://www.kith.no/xmlstds/eresept/m245/2013-10-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" targetNamespace="http://www.kith.no/xmlstds/eresept/m245/2013-10-15" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<element name="SamtykkeFlyttingInfo">
+		<annotation>
+			<documentation>Informasjon til gammel HER-id hvis det er overført pasientsamtykker. </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="HerIdNy" type="string">
+					<annotation>
+						<documentation>HER-id der samtykker er flyttet til. </documentation>
+					</annotation>
+				</element>
+				<element name="HprNr" type="string">
+					<annotation>
+						<documentation>Den flyttende legens HPR-nummer. </documentation>
+					</annotation>
+				</element>
+				<element name="FnrPasient" type="string" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Pasienters fødselsnumre.</documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

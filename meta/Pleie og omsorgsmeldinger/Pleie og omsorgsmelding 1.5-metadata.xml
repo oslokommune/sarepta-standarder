@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>Pleie- og omsorgsmeldinger</Navn>
+	<Versjon>1.5</Versjon>
+	<Identifikator>HIS 80704:2009</Identifikator>
+	<Utgitt>09/2009</Utgitt>
+	<Utgiver>Direktoratet for e-helse</Utgiver>
+
+	<Referansekatalogen>
+		<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten v1.5</Beskrivelse>
+		<Referanse>https://ehelse.no/Sider/Standard-for-elektronisk-kommunikasjon-med-pleie--og-omsorgstjenesten--Informasjonsmodell-og-XML-meldingsbeskrivelse-–-HIS-.aspx</Referanse>
+	</Referansekatalogen>
+
+	<Status>Fastsatt som standard</Status>
+
+	<ErstattetAv>HIS80709:2014</ErstattetAv>
+
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten v1.5 (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/plo/HIS_80704_2009 Pleie- og omsorgsmeldinger 1.5 -korrigert.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Profil: Innleggelsesrapport (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/plo/HIS_1143_2009_PLO-innleggelsesrapport.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Profil: Helseopplysninger (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/plo/HIS_1144_2009_PLO-helseopplysninger.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Profil: Helseopplysninger til lege (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/plo/HIS_1145_2009_PLO-helseopplysningerLege.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Profil: Orientering om tjenestetilbud (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/plo/HIS_1146_2009_PLO-orienteringTjenestetilbud.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Profil: Medisinske opplysninger (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/plo/HIS_1147_2009_PLO-medisinskeOpplysninger.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Profil: Utskrivningsrapport (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/plo/HIS_1148_2009_PLO-utskrivningsrapport.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Profil: Pasientlogistikkmeldinger (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/plo/HIS_1149_2009_PLO-pasientlogistikkmeldinger.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+
+	<Skjemaer>
+		<Skjema>
+			<Referanse>skjema/plo/v1.5/HelseopplysningerTilLege-v1.5.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/HelseopplysningerTilLege/2009-06-30</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/plo/v1.5/HelseopplysningerVedSoknad-v1.5.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/HelseopplysningerVedSoknad/2009-06-30</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/plo/v1.5/Innleggelsesrapport-v1.5.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/Innleggelsesrapport/2009-06-30</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/plo/v1.5/MedisinskeOpplysninger-v1.5.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/MedisinskeOpplysninger/2009-06-30</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/plo/v1.5/OrienteringOmTjenestetilbud-v1.5.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/OrienteringOmTjenestetilbud/2009-06-30</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/plo/v1.5/Pasientlogistikk-v1.5.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/Pasientlogistikk/2009-06-30</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Utskrivningsrapport (Skjemaet og rotelementet heter TverrfagligEpikrise)</Beskrivelse>
+			<Referanse>skjema/plo/v1.5/TverrfagligEpikrise-v1.5.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/TverrfagligEpikrise/2009-06-30</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/plo/v1.5/MeldingFravar-v1.5.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/MeldingFravar/2009-06-30</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Komponenter som gjenbrukes i flere ulike Pleie- og omsorgsmeldinger</Beskrivelse>
+			<Referanse>skjema/plo/v1.5/poKomponent-v1.5.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/poKomponent/2009-06-30</Namespace>
+		</Skjema>
+	</Skjemaer>
+
+	<Felleskomponenter>
+		<Felleskomponent>
+			<Beskrivelse>XML-skjema for Hodemelding</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/MsgHead-v1_2.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Felles XML-definisjoner for person, helsepersonell, organisasjon etc</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/felleskomponent1.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Felles datatyper</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Container for Base64-kodet innhold</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>EPJ-fragmenter for journalnotat</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/EPJ-journalnotat-mv.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>EPJ-fragmenter for cave, allergi mv</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/EPJ-cave-mv.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>EPJ-fragmenter for legemiddel</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/EPJ-legemiddel-mv.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>XML-definisjon av metadata som benyttes i EPJ-komponenter</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/EPJ-meta.xsd</Referanse>
+		</Felleskomponent>
+	</Felleskomponenter>
+
+	<Visningsfiler>
+		<Visningsfil>
+			<Referanse>visningsfil/plo/v1.6 eller lavere/plo2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Felleskomponent for alle visningsfiler: smooth-visning.css</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/smooth-visning.css</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Felleskomponent for alle visningsfiler: eh-komponent2.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/eh-komponent2.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Felleskomponent for alle visningsfiler: KITH-visning.css</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/KITH-visning.css</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: base64decoder.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/base64decoder.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: base64-konverterer.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/base64-konverterer.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler:cave2html.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/cave2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler:datamap.xml</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/datamap.xml</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: EPJ-cave2html.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/EPJ-cave2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: EPJ-journalnotat2html.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/EPJ-journalnotat2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: EPJ-legemiddel2html.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/EPJ-legemiddel2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: funksjoner.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/funksjoner.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: journalnotat2html.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/journalnotat2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: kodeverk.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/kodeverk.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: kodeverk2template.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/kodeverk2template.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: kritiskInfo2html-v2.5.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/kritiskInfo2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: legemiddel2html.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/legemiddel2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: meldingshode2html.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/meldingshode2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: poKomponent2html.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/poKomponent2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler (Fra SourceForge): date-time.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/SourceForge/date-time.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler (Fra SourceForge): stdlib.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/SourceForge/stdlib.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler (Fra SourceForge): string.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
+		</Visningsfil>
+	</Visningsfiler>
+	<Eksempler>
+		<Eksempel>
+			<Referanse>eksempel/plo/1_5/Helseopplysninger_til_lege-v1_5/Helseopplysninger_til_lege_v1-5_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/plo/1_5/Helseopplysninger_til_lege-v1_5/Helseopplysninger_til_lege_v1-5_Kansellering.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/plo/1_5/Helseopplysninger_ved_soknad-v1_5/Helseopplysninger_ved_soknad_Oppdatert_v1-5_Endring1.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/plo/1_5/Helseopplysninger_ved_soknad-v1_5/Helseopplysninger_ved_soknad_Oppdatert_v1-5_Endring2.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/plo/1_5/Helseopplysninger_ved_soknad-v1_5/Helseopplysninger_ved_soknad_Varsel_v1-5_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/plo/1_5/Innleggelsesrapport-v1_5/Innleggelsesrapport_v1-5_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/plo/1_5/Innleggelsesrapport-v1_5/Innleggelsesrapport_v1-5_Endring.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/plo/1_5/Innleggelsesrapport-v1_5/Innleggelsesrapport_v1-5_Kansellering.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/plo/1_5/Medisinske_opplysninger-v1_5/Medisinske_opplysninger_v1-5_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/plo/1_5/Medisinske_opplysninger-v1_5/Medisinske_opplysninger_v1-5_Kansellering.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/plo/1_5/Orientering_om_tjenestetilbud-v1_5/Orientering_om_tjenestetilbud_v1-5_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/plo/1_5/Orientering_om_tjenestetilbud-v1_5/Orientering_om_tjenestetilbud_v1-5_Kansellering.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/plo/1_5/Pasientlogistikk_dodsfall-v1_5/Pasientlogistikk_Avmelding_av_utskrivningsklar_pasient_v1-5_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/plo/1_5/Pasientlogistikk_dodsfall-v1_5/Pasientlogistikk_Innlagt_pasient_v1-5_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/plo/1_5/Pasientlogistikk_dodsfall-v1_5/Pasientlogistikk_Innlagt_pasient_v1-5_Kansellering.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/plo/1_5/Pasientlogistikk_dodsfall-v1_5/Pasientlogistikk_Melding_om_utskrevet_pasient_v1-5_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/plo/1_5/Pasientlogistikk_dodsfall-v1_5/Pasientlogistikk_Orientering_om_dodsfall_v1-5_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/plo/1_5/Pasientlogistikk_dodsfall-v1_5/Pasientlogistikk_Orientering_om_dodsfall_v1-5_Kansellering.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/plo/1_5/Pasientlogistikk_dodsfall-v1_5/Pasientlogistikk_Utskrivningsklar_pasient_v1-5_Ny.xml</Referanse>
+		</Eksempel>
+	</Eksempler>
+	<RelaterteFiler>
+	<RelatertFil>
+		<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger</Beskrivelse>
+		<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
+	</RelatertFil>
+</RelaterteFiler>	
+</StandardMetadata>

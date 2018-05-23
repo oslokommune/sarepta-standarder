@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -->
+<!-- Dette er en testmelding med fiktive personer -->
+<!-- -->
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd">
+	<MsgInfo>
+		<Type V="ORIENTERING_TJENESTETILBUD" DN="Orientering om tjenestetilbud"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2018-01-31T11:35:33</GenDate>
+		<MsgId>c9454120-068b-11e8-b566-0800200c9a66</MsgId>
+		<Sender>
+			<Organisation>
+				<OrganisationName>Alvdal Kommune</OrganisationName>
+				<Ident>
+					<Id>99387</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Organisation>
+					<OrganisationName>Saksbehandling</OrganisationName>
+					<Ident>
+						<Id>5078</Id>
+						<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</Organisation>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>Kattskinnet legesenter</OrganisationName>
+				<Ident>
+					<Id>91096</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<HealthcareProfessional>
+					<FamilyName>September</FamilyName>
+					<GivenName>August</GivenName>
+					<Ident>
+						<Id>91100</Id>
+						<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.8116"/>
+					</Ident>
+				</HealthcareProfessional>
+			</Organisation>
+		</Receiver>
+		<Patient>
+			<FamilyName>Gundersen</FamilyName>
+			<GivenName>Roland</GivenName>
+			<DateOfBirth>1965-07-15</DateOfBirth>
+			<Sex V="1" DN="Mann"/>
+			<Ident>
+				<Id>15076500565</Id>
+				<TypeId V="FNR" DN="Fødselsnummer" S="2.16.578.1.12.4.1.1.8116"/>
+			</Ident>
+			<Address>
+				<Type V="H" DN="Bostedsadresse"/>
+				<StreetAdr>Flåklypa 31</StreetAdr>
+				<PostalCode>2560</PostalCode>
+				<City>Alvdal</City>
+			</Address>
+			<TeleCom>
+				<TypeTelecom V="HP" DN="Hovedtelefon"/>
+				<TeleAddress V="tel:+4762481001"/>
+			</TeleCom>
+		</Patient>
+	</MsgInfo>
+	<Document>
+		<RefDoc>
+			<IssueDate V="2018-01-31T11:23:22"/>
+			<MsgType V="XML" DN="XML-instans"/>
+			<Content>
+				<p3:OrienteringOmTjenestetilbud xsi:schemaLocation="http://www.kith.no/xmlstds/po/OrienteringOmTjenestetilbud/2012-04-01 OrienteringOmTjenestetilbud-v1.6.xsd" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:p3="http://www.kith.no/xmlstds/po/OrienteringOmTjenestetilbud/2012-04-01" xmlns="http://www.kith.no/xmlstds/po/poKomponent/2012-04-01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<InformasjonOmForsendelsen>
+						<Forsendelsesstatus V="N" DN="Ny"/>
+					</InformasjonOmForsendelsen>
+					<AnsvarForRapport>
+						<AnsvarligRapport>
+							<fk1:TypeHealthcareProfessional V="SP" DN="Sykepleier"/>
+							<fk1:RoleToPatient V="9" DN="Primærkontakt" S="2.16.578.1.12.4.1.1.9034"/>
+							<fk1:FamilyName>Omsorg</fk1:FamilyName>
+							<fk1:GivenName>Gunn</fk1:GivenName>
+							<fk1:Ident>
+								<fk1:Id>9876543</fk1:Id>
+								<fk1:TypeId V="HPR" DN="HPR-nummer" S="2.16.578.1.12.4.1.1.8116"/>
+							</fk1:Ident>
+							<fk1:TeleCom>
+								<fk1:TeleAddress V="tel:77626660"/>
+							</fk1:TeleCom>
+						</AnsvarligRapport>
+						<GodkjentDato>2018-01-31</GodkjentDato>
+					</AnsvarForRapport>
+					<EksisterendeTjeneste>
+						<IPLOStjenestetype V="1" DN="[Hjemmetjenester:] Praktisk bistand: daglige gjøremål" S="2.16.578.1.12.4.1.1.9151"/>
+						<BetegnelseTjeneste>Rengjøring av bolig</BetegnelseTjeneste>
+						<PrivatTjeneste>false</PrivatTjeneste>
+						<AntallEnheter>2</AntallEnheter>
+						<Enhet>timer hver fredag</Enhet>
+						<Startdato>2017-03-15</Startdato>
+					</EksisterendeTjeneste>
+					<EksisterendeTjeneste>
+						<IPLOStjenestetype V="5" DN="[Hjemmetjenester:] Matombringing" S="2.16.578.1.12.4.1.1.9151"/>
+						<PrivatTjeneste>false</PrivatTjeneste>
+						<AntallEnheter>0.5</AntallEnheter>
+						<Enhet>time hver dag</Enhet>
+						<Startdato>2017-01-01</Startdato>
+					</EksisterendeTjeneste>
+					<EksisterendeTjeneste>
+						<IPLOStjenestetype V="7" DN="[Hjemmetjenester:] Avlastning - utenfor institusjon" S="2.16.578.1.12.4.1.1.9151"/>
+						<PrivatTjeneste>false</PrivatTjeneste>
+						<AntallEnheter>5</AntallEnheter>
+						<Enhet>timer hver uke</Enhet>						
+						<Startdato>2017-01-03</Startdato>
+					</EksisterendeTjeneste>
+					<EksisterendeTjeneste>
+						<IPLOStjenestetype V="15" DN="[Hjemmetjenester:] Helsetjenester i hjemmet" S="2.16.578.1.12.4.1.1.9151"/>
+						<BetegnelseTjeneste>Dusj hver mandag</BetegnelseTjeneste>
+						<PrivatTjeneste>false</PrivatTjeneste>
+						<AntallEnheter>1</AntallEnheter>
+						<Enhet>timer hver uke</Enhet>						
+						<Startdato>2017-01-03</Startdato>
+					</EksisterendeTjeneste>
+				</p3:OrienteringOmTjenestetilbud>
+			</Content>
+		</RefDoc>
+	</Document>
+</MsgHead>

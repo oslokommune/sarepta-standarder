@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Generated on 09-12-2007  09:52:34 at KITH -->
+<!-- XML-Schema level supported is specified by W3C -->
+<!-- http://www.w3.org/2001/XMLSchema -->
+<!--	Endret 12. aug 2008 (MA)
+  | Endret datatype på attributtet RefTilSamtykke fra "ID" til "string"
+  | Endret datatype på attributtet ReferanseID fra "ID" til "string"
+  | Endret datatype på attributtet EPJKomponentId fra "ID" til "string"
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:kith="http://www.kith.no/xmlstds" xmlns:KjeAdm="http://www.kith.no/xmlstds/kjernejournaladm/2007-06-07" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" targetNamespace="http://www.kith.no/xmlstds/kjernejournaladm/2007-06-07" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="felleskomponent1.xsd"/>
+	<!-- LEVEL 1 -->
+	<!-- Class: Kjernejournaladminstrasjon -->
+	<element name="Kjernejournaladminstrasjon">
+		<annotation>
+			<documentation>
+         En instans av denne meldingen kan inneholde informasjon om å:  1. Opprette en ny kjernejournal  2. Slette en eksisterende kjernejournal  3. Oppdatere innholdet i en kjernejournal  4. Overføring av statuslogg fra kjernejournalen  5. Varsel om oppdatering i kjernejournalen  6. Fjerne dokumenter fra postkassen til kjernejournalen
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<choice>
+					<element ref="KjeAdm:OpprettKjernejournal"/>
+					<element ref="KjeAdm:Statuslogg"/>
+					<element ref="KjeAdm:SamtykkeTilUtleveringAvJournalopplysninger"/>
+					<element ref="KjeAdm:VarselOmOppdatering"/>
+					<element ref="KjeAdm:SlettKjernejournal"/>
+					<element ref="KjeAdm:FjernDokument"/>
+				</choice>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 2 -->
+	<!-- Class: Opprett ny kjernejournal -->
+	<element name="OpprettKjernejournal">
+		<annotation>
+			<documentation>
+         Oppretter en kjernejournal for aktuell pasient.
+      </documentation>
+		</annotation>
+		<complexType/>
+	</element>
+	<!-- Class: Fjern dokumenter -->
+	<element name="FjernDokument">
+		<annotation>
+			<documentation>
+         Fjerner et dokument som ligger i postkassen i kjernejournalen.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="KjeAdm:ReferertEPJ_komponent" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Statuslogg -->
+	<element name="Statuslogg">
+		<complexType>
+			<sequence>
+				<element ref="KjeAdm:Logginformasjon" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Slett kjernejournal -->
+	<element name="SlettKjernejournal">
+		<annotation>
+			<documentation>
+         Sletter kjernejournalen med alt innhold for den pasient som er angitt i Hodemeldingen.
+      </documentation>
+		</annotation>
+		<complexType/>
+	</element>
+	<!-- Class: Samtykke til utlevering av journalopplysninger -->
+	<element name="SamtykkeTilUtleveringAvJournalopplysninger">
+		<annotation>
+			<documentation>
+         Dokumenter av denne typen benyttes for å registrere de samtykker pasienten eller dennes representant har gitt vedrørende utlevering av journalopplysninger.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="KjeAdm:Samtykke"/>
+				<element ref="KjeAdm:ReferanseSamtykke"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Varsel om oppdatering -->
+	<element name="VarselOmOppdatering">
+		<annotation>
+			<documentation>
+         Inneholder informasjon om at kjernejournalen er blitt oppdatert med ny informasjon.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="KjeAdm:Logginformasjon" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 3 -->
+	<!-- Class: Logginformasjon -->
+	<element name="Logginformasjon">
+		<annotation>
+			<documentation>
+         Inneholder logginformasjon om de forespørsler og utleveringer som er gjort, og eveneuelle mislykkede forsøk på utleveringer eller oppdateringer av kjernejournalen.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Hendelseskode" type="kith:CV" minOccurs="0"/>
+				<element name="TypeForesporsel" type="kith:CV" minOccurs="0"/>
+				<element name="SvarKodet" type="kith:CV" minOccurs="0"/>
+				<element name="SvarFritekst" type="string" minOccurs="0"/>
+				<element name="Merknad" type="string" minOccurs="0"/>
+				<element name="TidspunktForHendelse" type="dateTime"/>
+				<element name="RefTilSamtykke" type="string" minOccurs="0"/>
+				<element ref="KjeAdm:ReferertEPJ_komponent" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="KjeAdm:ReferertInformasjonskategori" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="KjeAdm:Utforer" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Samtykke -->
+	<element name="Samtykke">
+		<annotation>
+			<documentation>
+         Et fragment av denne typen benyttes for å registrere informasjon om et enkelt samtykke.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="GyldighetForSamtykke" type="kith:CS" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="GjelderTil" type="dateTime" minOccurs="0"/>
+				<element name="NaermereOmGyldighet" type="string" minOccurs="0"/>
+				<element ref="KjeAdm:SamtykkeGittAv" minOccurs="0"/>
+				<element ref="KjeAdm:SamtykkeTrukketTilbake" minOccurs="0"/>
+				<element ref="KjeAdm:SamtykkeTilgangVedTiltak" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="KjeAdm:SamtykkeTilgangForTjenesteyter" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="KjeAdm:SamtykkeOmfatter" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Referanse til samtykke -->
+	<element name="ReferanseSamtykke">
+		<annotation>
+			<documentation>
+         Referanse til opplysninger om samtykke til utlevering.  Merk: Denne opplysningen vil etter hvert bli erstattet med metadata til det aktuelle EPJ-dokumentet.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="ReferanseID" type="string"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 4 -->
+	<!-- Class: Samtykke trukket tilbake -->
+	<element name="SamtykkeTrukketTilbake">
+		<annotation>
+			<documentation>
+         Dersom et samtykke trekkes tilbake skal det EPJ-dokument som inneholder samtykke oppdateres med en instans av dette fragmentet.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="PersonId" type="fk1:Person" minOccurs="0"/>
+				<element name="TrukketTilbakeTidspunkt" type="dateTime" minOccurs="0"/>
+				<element name="Merknad" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<complexType name="Person">
+		<!-- You are Refer to a Model Class as an Attribute type.  -->
+	</complexType>
+	<!-- Class: Samtykke gitt av -->
+	<element name="SamtykkeGittAv">
+		<annotation>
+			<documentation>
+         Dersom samtykket er gitt av en annen enn pasienten selv, skal dette registreres her.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Person" type="fk1:Person" minOccurs="0"/>
+				<element name="Merknad" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Element Person written before    -->
+	<!-- Class: Samtykke tilgang for tjenesteyter -->
+	<element name="SamtykkeTilgangForTjenesteyter">
+		<annotation>
+			<documentation>
+         Denne klassen benyttes til å knytte et samtykke om tilgang til journalopplysninger opp mot den/de Tjenesteyter(e) som skal gis tilgang.  Dersom samtykket også er knyttet opp mot et eller flere besluttede tiltak, gjelder samtykket kun for tjenesteutførelser relatert til disse konkrete tiltakene.   Er  samtykket ikke knyttet opp mot noe besluttet tiltak, gjelder samtykket alle tiltak hvor tjenesteyteren er kvalifisert til å delta.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="GjelderTjenesteyter" type="fk1:HealthcareProfessional" minOccurs="0"/>
+				<element name="GjelderTjenesteytereIEnhet" type="fk1:Organisation" minOccurs="0"/>
+				<element name="GjelderKategoriTjenesteyter" type="kith:CV" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<complexType name="HealthcareProfessional">
+		<!-- Type is unknown. Have to be defined manually -->
+	</complexType>
+	<complexType name="Organisation">
+		<!-- Type is unknown. Have to be defined manually -->
+	</complexType>
+	<!-- Class: Samtykke tilgang ved tiltak -->
+	<element name="SamtykkeTilgangVedTiltak">
+		<annotation>
+			<documentation>
+         Denne fragmenttypen benyttes for å registrere at det er gitt samtykke til tilgang til journalopplysninger i forbindelse med gjennomføring av et Besluttet Tiltak, eventuelt alle Besluttede Tiltak av en bestemt type. 
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="GjelderTiltak" type="KjeAdm:R-BT" minOccurs="0"/>
+				<element name="GjelderTiltakstype" type="kith:CV" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<complexType name="R-BT">
+		<!-- Type is unknown. Have to be defined manually -->
+	</complexType>
+	<!-- Class: Samtykke omfatter -->
+	<element name="SamtykkeOmfatter">
+		<annotation>
+			<documentation>
+         Denne fragmenttypen benytter for å angi hvilke opplysninger samtykket gjelder i form av en referanse til en EPJ sak eller et EPJ dokument. Dersom det her angis at samtykke gjelder en EPJ sak, omfatter dette alle EPJ dokumenter som inngår i saken.   Dersom det her ikke angitt noen avgrensning for samtykket, gjelder det for de deler av journalen som ut fra generelle kriterier anses som relevante ut fra den aktuelle Tjenesteyterens rolle. (De konkrete tilgangsrettighetene vil her følge direkte ut fra rollen.)  Merk: Dersom samtykket er relatert til et bestemt Samtykkekrav (angitt i fragmenttypen Samtykke Iht. Krav), gjelder samtykket for den delmengden av de sperrede opplysningene som sammenfaller med det som er angitt i fragment av denne typen. Er det ikke angitt noen avgrensning, gjelder samtykket alle de opplysningene som er sperret av det aktuelle samtykkekravet..
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="KjeAdm:ReferertEPJ_komponent" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="KjeAdm:ReferertInformasjonskategori" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 5 -->
+	<!-- Class: Referert Informasjonskategori -->
+	<element name="ReferertInformasjonskategori">
+		<annotation>
+			<documentation>
+         Denne fragmenttypen benyttes til å registrere EPJ komponenttyper som skal refereres f.eks. i forbindelse med et samtykke eller et krav om sperring av journalopplysninger.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Informasjonskategori" type="kith:CV" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Utfører -->
+	<element name="Utforer">
+		<complexType>
+			<sequence minOccurs="0">
+				<element name="Virksomhet" type="fk1:Organisation"/>
+				<element name="Tjenesteyter" type="fk1:HealthcareProfessional" minOccurs="0"/>
+				<element ref="KjeAdm:Utforer" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Element Organisation written before    -->
+	<!-- Element HealthcareProfessional written before    -->
+	<!-- Class: Referert EPJ-komponent -->
+	<element name="ReferertEPJ_komponent">
+		<annotation>
+			<documentation>
+         Denne fragmenttypen benyttes til å registrere referanse til EPJ saker og EPJ dokumenter som skal refereres f.eks. i forbindelse med et samtykke eller et krav om sperring av journalopplysninger.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="EPJKomponentId" type="string"/>
+				<element ref="KjeAdm:ReferertInformasjonskategori" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

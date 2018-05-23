@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -->
+<!-- Dette er en testmelding med fiktive personer -->
+<!-- -->
+<Message xmlns="http://www.kith.no/xmlstds/rekvisisjon/2008-12-01" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/rekvisisjon/2008-12-01 Rekvisisjon-v1_5.xsd">
+	<!-- -->
+	<!-- Enkel røntgenrekvisisjon (uten diagnose)  -->
+	<!-- -->
+	<Type V="R" DN="Rekvisisjon"/>
+	<MIGversion>v1.5 2008-12-01</MIGversion>
+	<GenDate V="2018-01-09T14:25:35"/>
+	<MsgId>39774bc0-f785-11e7-8f1a-0800200c9a66</MsgId>
+	<ServReq>
+		<ServType V="M" DN="Endring"/>
+		<IssueDate V="2018-01-09T13:45:00"/>
+		<PaymentCat V="1" DN="Ordinær pasient"/>
+		<ReqComment>Endring: La til kode for intravenøs kontrast</ReqComment>
+		<MsgDescr V="CT" DN="Computertomografi"/>
+		<Id>984350c0-3fc1-11de-8a39-0800200c9a66</Id>
+		<RequestedPrioReport V="NORM" DN="Normal"/>
+		<Patient>
+			<Name>Telokk, Gry</Name>
+			<OffId>12057900499</OffId>
+			<TypeOffId V="FNR" DN="Fødselsnummer"/>
+			<ResponsibleHcp>
+				<Relation V="REK" DN="Rekvirent"/>
+				<HCP>
+					<HCProf>
+						<Type V="LE" DN="Lege" />
+						<Name>Rita Lin</Name>
+						<Id>9144900</Id>
+						<TypeId V="HPR" DN="HPR-nummer"/>
+					</HCProf>
+					<Address>
+						<Type V="WP" DN="Arbeidsadresse"/>
+						<TeleAddress V="tel:12345678"/>
+					</Address>
+				</HCP>
+			</ResponsibleHcp>
+			<Address>
+				<Type V="H" DN="Bostedsadresse"/>
+				<StreetAdr>Lungegaardsbakken13</StreetAdr>
+				<PostalCode>5020</PostalCode>
+				<City>Bergen</City>
+			</Address>
+			<InfItem>
+				<Observation>
+					<CodedDescr V="NOGR" S="2.16.578.1.12.4.1.1.8217" DN="Ikke gravid"/>
+				</Observation>
+				<Type V="OPPL" DN="Klinisk opplysning"/>
+			</InfItem>
+		</Patient>
+		<ServProvider>
+			<HCP>
+				<Inst>
+					<Name>ST OLAVS HOSPITAL HF</Name>
+					<Id>59</Id>
+					<TypeId V="HER" DN="HER-id"/>
+					<Dept>
+						<Name>Bildediagnostikk</Name> 
+						<Id>91120</Id>
+						<TypeId V="HER" DN="HER-id"/>
+					</Dept>
+				</Inst>
+			</HCP>
+		</ServProvider>
+		<Requester>
+			<HCP>
+				<Inst>
+					<Name>Kattskinnet legesenter</Name>
+					<Id>91096</Id>
+					<TypeId V="HER" DN="HER-id"/>
+					<HCPerson>
+						<Name>August September</Name>
+						<Id>91100</Id>
+						<TypeId V="HER" DN="HER-id"/>
+					</HCPerson>
+				</Inst>
+			</HCP>
+		</Requester>
+		<ReasonAsText>
+			<Heading V="PROB" DN="Aktuell problemstilling"/>
+			<TextResultValue>Magebesvær, ønsker at det tas en CT av hals, toraks og abdomen med intravenøs kontrast</TextResultValue>
+		</ReasonAsText>
+		<Comment>
+			<TextCode V="1" S="2.16.578.1.12.4.1.1.8274" DN="Tillatelse"/>
+		</Comment>
+		<ReqInvestigation>
+			<ServType V="M" DN="Endring"/>
+			<Investigation>
+				<Id V="SSP0AD" S="2.16.578.1.12.4.1.1.7270" DN="CT Hals, toraks og abdomen"/>
+				<Spec V="ZTX0EA" S="2.16.578.1.12.4.1.1.7270" DN="Intravenøs kontrast"/>
+			</Investigation>
+		</ReqInvestigation>
+	</ServReq>
+</Message>
