@@ -185,27 +185,27 @@
 	<Eksempler>
 		<Eksempel>
 			<ProfilId>1</ProfilId>
-			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-5/Rekvisisjon_radiologi_enkel_v1-5_Ny.xml</Referanse>
+			<Referanse>eksempel/rekvisisjon/Rekvisisjon-v-1-5/Rekvisisjon_radiologi_enkel_v1-5_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 			<ProfilId>1</ProfilId>
-			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-5/Rekvisisjon_radiologi_enkel_v1-5_Endring.xml</Referanse>
+			<Referanse>eksempel/rekvisisjon/Rekvisisjon-v-1-5/Rekvisisjon_radiologi_enkel_v1-5_Endring.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 			<ProfilId>1</ProfilId>
-			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-5/Rekvisisjon_radiologi_enkel_v1-5_Kansellering.xml</Referanse>
+			<Referanse>eksempel/rekvisisjon/Rekvisisjon-v-1-5/Rekvisisjon_radiologi_enkel_v1-5_Kansellering.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 			<ProfilId>1</ProfilId>
-			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-5/Rekvisisjon_radiologi-MR-v1.5_Ny.xml</Referanse>
+			<Referanse>eksempel/rekvisisjon/Rekvisisjon-v-1-5/Rekvisisjon_radiologi-MR-v1.5_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 			<ProfilId>1</ProfilId>
-			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-5/Rekvisisjon_radiologi-MR-v1.5_Endring.xml</Referanse>
+			<Referanse>eksempel/rekvisisjon/Rekvisisjon-v-1-5/Rekvisisjon_radiologi-MR-v1.5_Endring.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 			<ProfilId>1</ProfilId>
-			<Referanse>eksempel/Rekvisisjon/Rekvisisjon-v-1-5/Rekvisisjon_radiologi-MR-v1.5_Kansellering.xml</Referanse>
+			<Referanse>eksempel/rekvisisjon/Rekvisisjon-v-1-5/Rekvisisjon_radiologi-MR-v1.5_Kansellering.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
 	

@@ -171,13 +171,13 @@
 	</Visningsfiler>
 	<Eksempler>
 		<Eksempel>
-			<Referanse>eksempel/Dialogmelding/Dialogmelding-v1-0/Dialogmelding_avvik_v1-0.xml</Referanse>
+			<Referanse>eksempel/dialogmelding/Dialogmelding-v1-0/Dialogmelding_avvik_v1-0.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/Dialogmelding/Dialogmelding-v1-0/Dialogmelding_foresporsel_PLO_v1-0.xml</Referanse>
+			<Referanse>eksempel/dialogmelding/Dialogmelding-v1-0/Dialogmelding_foresporsel_PLO_v1-0.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/Dialogmelding/Dialogmelding-v1-0/Dialogmelding_svar_foresporsel_PLO_v1-0.xml</Referanse>
+			<Referanse>eksempel/dialogmelding/Dialogmelding-v1-0/Dialogmelding_svar_foresporsel_PLO_v1-0.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
 	
