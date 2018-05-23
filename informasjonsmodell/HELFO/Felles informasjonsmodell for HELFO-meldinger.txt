@@ -1,5 +1,0 @@
-Informasjonsmodellen er felles for følgende meldinger:
-* HIS 1024:2010 Forespørsel og svar om egenandel
-* HIS 1022:2010 Pasentens fastlegeliste
-* HIS 1023:2010 Fastlegeliste
-* Ebrev
