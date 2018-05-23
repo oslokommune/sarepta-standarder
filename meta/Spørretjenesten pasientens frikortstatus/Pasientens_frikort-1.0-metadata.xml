@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>Spørretjenesten pasientens frikortstatus</Navn>
+	<Versjon>1.0</Versjon>
+	<Identifikator>HIS 1024:2017</Identifikator>
+	<Utgitt>01/2017</Utgitt>
+	<Utgiver>Helsedirektoratet</Utgiver>
+   	<Referansekatalogen>
+		<Beskrivelse>Spørretjenesten pasientens frikortstatus</Beskrivelse>
+		<Referanse>http://ehelse.no/HIS1024-2017</Referanse>
+	</Referansekatalogen>
+	<Status>Fastsatt som standard</Status>
+	<Kravdokumenter>
+	    <Kravdokument>
+			<Beskrivelse>Spørretjenesten pasientens frikortstatus (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/HELFO/HIS_1024_2017_Spørretjenesten pasientens frikortstatus__20170703.pdf</Referanse>
+		</Kravdokument>
+	 </Kravdokumenter>
+
+	<Skjemaer>
+		<Skjema>
+			<Referanse>skjema/HELFO/NAV-Egenandel-2016-06-10.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/nav/egenandel/2016-06-10</Namespace>                  
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/HELFO/NAV-Egenandel-Kodeverk-2016-06-10.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/nav/egenandel/kodeverk/2016-06-10</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/HELFO/NAV-EgenandelMengde-2016-06-10.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/nav/egenandelmengde/2016-06-10</Namespace>
+		</Skjema>
+	</Skjemaer>
+	
+	<Felleskomponenter>
+		<Felleskomponent>
+			<Beskrivelse>XML-skjema for Hodemelding</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/MsgHead-v1_2.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Felles XML-definisjoner for person, helsepersonell, organisasjon etc</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/felleskomponent1.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Felles datatyper</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
+		</Felleskomponent>
+	</Felleskomponenter>
+
+</StandardMetadata>

@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M30 FEST
+2014-12-01
+ -->
+<!--
+Endringer siden 2013-10-08
+Nytt namespace Forskrivning
+Ny katalog: KatOrdineringVirkestoff (ERSA 5837)
+-->
+<schema xmlns:m30="http://www.kith.no/xmlstds/eresept/m30/2014-12-01" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fs="http://www.kith.no/xmlstds/eresept/forskrivning/2014-12-01" targetNamespace="http://www.kith.no/xmlstds/eresept/m30/2014-12-01" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/eresept/forskrivning/2014-12-01" schemaLocation="../felles/Forskrivning-2014-12-01.xsd"/>
+	<element name="FEST">
+		<complexType>
+			<sequence>
+				<element name="HentetDato" type="dateTime"/>
+				<element name="GyldigFradatoHelfo" type="date" minOccurs="0"/>
+				<element ref="m30:KatLegemiddelMerkevare" minOccurs="0"/>
+				<element ref="m30:KatLegemiddelpakning" minOccurs="0"/>
+				<element ref="m30:KatVirkestoff" minOccurs="0"/>
+				<element ref="m30:KatOrdineringVirkestoff" minOccurs="0"/>
+				<element ref="m30:KatLegemiddelVirkestoff" minOccurs="0"/>
+				<element ref="m30:KatHandelsvare" minOccurs="0"/>
+				<element ref="m30:KatDiagnose" minOccurs="0"/>
+				<element ref="m30:KatRefusjon" minOccurs="0"/>
+				<element ref="m30:KatVilkar" minOccurs="0"/>
+				<element ref="m30:KatVarselSlv" minOccurs="0"/>
+				<element ref="m30:KatKodeverk" minOccurs="0"/>
+				<element ref="m30:KatByttegruppe" minOccurs="0"/>
+				<element ref="m30:KatLegemiddeldose" minOccurs="0"/>
+				<element ref="m30:KatInteraksjon" minOccurs="0"/>
+				<element ref="m30:KatStrDosering" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<complexType name="typeEnkeltoppforingFest">
+		<sequence>
+			<element name="Id" type="ID"/>
+			<element name="Tidspunkt" type="dateTime"/>
+			<element name="Status" type="kith:CS"/>
+		</sequence>
+	</complexType>
+	<!--Kataloger-->
+	<element name="KatLegemiddelMerkevare">
+		<annotation>
+			<documentation>Katalog legemiddel merkevare</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="OppfLegemiddelMerkevare" minOccurs="0" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Oppført medisinsk produkt</documentation>
+					</annotation>
+					<complexType>
+						<complexContent>
+							<extension base="m30:typeEnkeltoppforingFest">
+								<sequence minOccurs="0">
+									<element ref="fs:LegemiddelMerkevare"/>
+								</sequence>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="KatHandelsvare">
+		<annotation>
+			<documentation>Katalog handelsvare</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="OppfHandelsvare" minOccurs="0" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Oppført handelsvare</documentation>
+					</annotation>
+					<complexType>
+						<complexContent>
+							<extension base="m30:typeEnkeltoppforingFest">
+								<choice minOccurs="0">
+									<element ref="fs:Brystprotese"/>
+									<element ref="fs:MedForbMatr"/>
+									<element ref="fs:Naringsmiddel"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="KatVirkestoff">
+		<annotation>
+			<documentation>Katalog virkestoff</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="OppfVirkestoff" minOccurs="0" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Oppført virkestoff</documentation>
+					</annotation>
+					<complexType>
+						<complexContent>
+							<extension base="m30:typeEnkeltoppforingFest">
+								<choice minOccurs="0">
+									<element ref="fs:Virkestoff"/>
+									<element ref="fs:VirkestoffMedStyrke"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="KatLegemiddelVirkestoff">
+		<annotation>
+			<documentation>Katalog legemiddel virkestoff</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="OppfLegemiddelVirkestoff" minOccurs="0" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Oppført legemiddel virkestoff</documentation>
+					</annotation>
+					<complexType>
+						<complexContent>
+							<extension base="m30:typeEnkeltoppforingFest">
+								<sequence minOccurs="0">
+									<element ref="fs:LegemiddelVirkestoff"/>
+								</sequence>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="KatOrdineringVirkestoff">
+		<annotation>
+			<documentation>Katalog ordinasjon virkestoff</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="OppfOrdineringVirkestoff" minOccurs="0" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Oppført ordinasjon virkestoff</documentation>
+					</annotation>
+					<complexType>
+						<complexContent>
+							<extension base="m30:typeEnkeltoppforingFest">
+								<sequence minOccurs="0">
+									<element name="OrdineringVirkestoff">
+										<complexType>
+											<sequence>
+												<element name="Id" type="ID"/>
+												<element name="NavnVirkestoffOrdinering" type="string"/>
+												<element name="LegemiddelformKort" type="kith:CV"/>
+												<element name="Reseptgruppe" type="kith:CS"/>
+												<element name="RefByttegruppe" type="IDREF" minOccurs="0"/>
+												<element name="EnhetOrdinering" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+												<element name="Atc" type="kith:CV" minOccurs="0"/>
+												<element ref="fs:AdministreringLegemiddel" minOccurs="0"/>
+												<element name="SvartTrekant" type="kith:CV" minOccurs="0"/>
+												<element name="RefLegemiddelVirkestoff" type="IDREF" maxOccurs="unbounded"/>
+												<element name="RefLegemiddelDose" type="IDREF" maxOccurs="unbounded"/>
+											</sequence>
+										</complexType>
+									</element>
+								</sequence>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="KatLegemiddelpakning">
+		<annotation>
+			<documentation>Katalog legemiddelpakning merkevare</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="OppfLegemiddelpakning" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<complexContent>
+							<extension base="m30:typeEnkeltoppforingFest">
+								<sequence minOccurs="0">
+									<element ref="fs:Legemiddelpakning"/>
+								</sequence>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="KatVarselSlv">
+		<annotation>
+			<documentation>Katalog Varsel fra SLV</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="OppfVarselSlv" minOccurs="0" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Oppført Varsel fra SLV</documentation>
+					</annotation>
+					<complexType>
+						<complexContent>
+							<extension base="m30:typeEnkeltoppforingFest">
+								<sequence minOccurs="0">
+									<element ref="m30:VarselSlv"/>
+								</sequence>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="KatRefusjon">
+		<annotation>
+			<documentation>Katalog refusjon</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="OppfRefusjon" minOccurs="0" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Oppført refusjon</documentation>
+					</annotation>
+					<complexType>
+						<complexContent>
+							<extension base="m30:typeEnkeltoppforingFest">
+								<sequence minOccurs="0">
+									<element ref="m30:Refusjonshjemmel"/>
+								</sequence>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="KatVilkar">
+		<annotation>
+			<documentation>Katalog vilkår</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="OppfVilkar" minOccurs="0" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Oppført vilkår</documentation>
+					</annotation>
+					<complexType>
+						<complexContent>
+							<extension base="m30:typeEnkeltoppforingFest">
+								<sequence minOccurs="0">
+									<element ref="m30:Vilkar"/>
+								</sequence>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="KatKodeverk">
+		<annotation>
+			<documentation>Katalog kodeverk</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="OppfKodeverk" minOccurs="0" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Oppført kodeverk</documentation>
+					</annotation>
+					<complexType>
+						<complexContent>
+							<extension base="m30:typeEnkeltoppforingFest">
+								<sequence minOccurs="0">
+									<element ref="m30:Info"/>
+									<element ref="m30:Element" maxOccurs="unbounded"/>
+								</sequence>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="KatByttegruppe">
+		<annotation>
+			<documentation>Katalog byttegruppe</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="OppfByttegruppe" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<complexContent>
+							<extension base="m30:typeEnkeltoppforingFest">
+								<sequence minOccurs="0">
+									<element ref="m30:Byttegruppe"/>
+								</sequence>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="KatLegemiddeldose">
+		<annotation>
+			<documentation>Katalog legemiddeldose</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="OppfLegemiddeldose" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<complexContent>
+							<extension base="m30:typeEnkeltoppforingFest">
+								<sequence minOccurs="0">
+									<element ref="fs:Legemiddeldose"/>
+								</sequence>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="KatDiagnose">
+		<annotation>
+			<documentation>Katalog diagnose</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="OppfDiagnose" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<complexContent>
+							<extension base="m30:typeEnkeltoppforingFest">
+								<sequence minOccurs="0">
+									<element ref="m30:Diagnose"/>
+								</sequence>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="KatInteraksjon">
+		<annotation>
+			<documentation>Katalog interaksjon</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="OppfInteraksjon" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<complexContent>
+							<extension base="m30:typeEnkeltoppforingFest">
+								<choice minOccurs="0">
+									<element ref="m30:Interaksjon"/>
+									<element ref="m30:InteraksjonIkkeVurdert"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="KatStrDosering">
+		<annotation>
+			<documentation>Katalog strukturert dosering</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="OppfStrDosering" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<complexContent>
+							<extension base="m30:typeEnkeltoppforingFest">
+								<sequence minOccurs="0">
+									<element ref="m30:Kortdose"/>
+								</sequence>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<!--Diagnose-->
+	<element name="Diagnose">
+		<annotation>
+			<documentation>Diagnose</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Id" type="ID"/>
+				<element name="Diagnosekode" type="kith:CV"/>
+				<element name="Bruksomrade" type="string" minOccurs="0"/>
+				<element ref="m30:Behandling" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Behandling">
+		<annotation>
+			<documentation>Behandling</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Beskrivelse" type="string" minOccurs="0"/>
+				<element ref="m30:Legemiddelforslag" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Legemiddelforslag">
+		<annotation>
+			<documentation>Legemiddelforslag</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="VirkestoffnavnForm" type="string"/>
+				<element name="RefLegemiddelVirkestoff" type="IDREF" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="RefLegemiddelMerkevare" type="IDREF" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="Oppmerksomhet" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="m30:Doseringsforslag" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Doseringsforslag">
+		<annotation>
+			<documentation>Doseringsforslag</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Behandlingsfase" type="kith:CS" minOccurs="0"/>
+				<element name="MinTidForrigeDosering" type="duration" minOccurs="0"/>
+				<element name="Varighet" type="duration" minOccurs="0"/>
+				<element ref="m30:Doseringsregel" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="m30:GodkjentNormaldose" maxOccurs="unbounded"/>
+				<element ref="m30:GodkjentMaksimaldose" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Doseringsregel">
+		<annotation>
+			<documentation>Doseringsregel</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="DoseresEtter" type="kith:CS"/>
+				<element name="OvreGrense" type="decimal" minOccurs="0"/>
+				<element name="NedreGrense" type="decimal" minOccurs="0"/>
+				<element name="Enhet" type="kith:CV"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="GodkjentNormaldose">
+		<annotation>
+			<documentation>Godkjent normaldose</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="OvreNormaldose" type="decimal"/>
+				<element name="NedreNormaldose" type="decimal"/>
+				<element name="Enhet" type="kith:CV"/>
+				<element name="MinAntDoser" type="int" minOccurs="0"/>
+				<element name="MaksAntDoser" type="int" minOccurs="0"/>
+				<element name="Periode" type="kith:CV"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="GodkjentMaksimaldose">
+		<annotation>
+			<documentation>Godkjent maksimaldose</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Maksimaldose" type="decimal"/>
+				<element name="Enhet" type="kith:CV"/>
+				<element name="Periode" type="kith:CV"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!--Refusjon-->
+	<element name="Refusjonshjemmel">
+		<annotation>
+			<documentation>Refusjonshjemmel</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Refusjonshjemmel" type="kith:CV"/>
+				<element name="KreverVarekobling" type="boolean"/>
+				<element name="KreverVedtak" type="boolean"/>
+				<element ref="m30:Refusjonsgruppe" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Refusjonsgruppe">
+		<annotation>
+			<documentation>Refusjonsgruppe</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Id" type="ID"/>
+				<element name="GruppeNr" type="kith:CV"/>
+				<element name="Atc" type="kith:CV" minOccurs="0"/>
+				<element name="KreverRefusjonskode" type="boolean"/>
+				<element name="RefusjonsberettighetBruk" type="string" minOccurs="0"/>
+				<element name="RefVilkar" type="IDREF" minOccurs="0" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Referanse vilkår (refusjonsberettighet bruk)</documentation>
+					</annotation>
+				</element>
+				<element ref="m30:Refusjonskode" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Refusjonskode">
+		<annotation>
+			<documentation>Refusjonskode</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Refusjonskode" type="kith:CV"/>
+				<element name="Underterm" type="string" minOccurs="0"/>
+				<element name="GyldigFraDato" type="date"/>
+				<element name="ForskrivesTilDato" type="date" minOccurs="0"/>
+				<element name="UtleveresTilDato" type="date" minOccurs="0"/>
+				<element ref="m30:Refusjonsvilkar" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Refusjonsvilkar">
+		<annotation>
+			<documentation>Refusjonsvilkår</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="RefVilkar" type="IDREF"/>
+				<element name="FraDato" type="date"/>
+				<element name="TilDato" type="date" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!--Vilkår-->
+	<element name="Vilkar">
+		<annotation>
+			<documentation>Vilkår</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Id" type="ID">
+					<annotation>
+						<documentation>Vilkårs-id</documentation>
+					</annotation>
+				</element>
+				<element name="VilkarNr" type="string" minOccurs="0"/>
+				<element name="Gruppe" type="kith:CV">
+					<annotation>
+						<documentation>Vilkårsgruppe</documentation>
+					</annotation>
+				</element>
+				<element name="GjelderFor" type="kith:CS"/>
+				<element name="Tekst" type="string">
+					<annotation>
+						<documentation>Vilkårstekst</documentation>
+					</annotation>
+				</element>
+				<element name="GyldigFraDato" type="date" minOccurs="0"/>
+				<element name="GyldigTilDato" type="date" minOccurs="0"/>
+				<element ref="m30:StrukturertVilkar" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="StrukturertVilkar">
+		<annotation>
+			<documentation>Strukturert vilkår</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Type" type="kith:CV"/>
+				<choice>
+					<element name="VerdiTekst" type="string" maxOccurs="unbounded"/>
+					<element name="VerdiKodet" type="kith:CV" maxOccurs="unbounded"/>
+				</choice>
+			</sequence>
+		</complexType>
+	</element>
+	<!--Kodeverk-->
+	<element name="Info">
+		<complexType>
+			<sequence>
+				<element name="Id" type="kith:oid"/>
+				<element name="Betegnelse" type="string"/>
+				<element name="Kortnavn" type="string"/>
+				<element name="AnsvarligUtgiver" type="string"/>
+				<element name="Merknad" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Element">
+		<complexType>
+			<sequence>
+				<element name="Id" type="ID"/>
+				<element name="ParentId" type="IDREF" minOccurs="0"/>
+				<element name="Kode" type="string"/>
+				<element ref="m30:Term" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Term">
+		<complexType>
+			<sequence>
+				<element name="Term" type="string"/>
+				<element name="BeskrivelseTerm" type="string" minOccurs="0"/>
+				<element name="Sprak" type="kith:CS" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!--Varsel fra SLV-->
+	<element name="VarselSlv">
+		<complexType>
+			<sequence>
+				<element name="Type" type="kith:CV"/>
+				<element name="Overskrift" type="string"/>
+				<element name="Varseltekst" type="string"/>
+				<element name="Visningsregel" type="kith:CV" maxOccurs="unbounded"/>
+				<element name="KodetInfo" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="FraDato" type="date"/>
+				<element ref="fs:Lenke" minOccurs="0"/>
+				<element name="Referanseelement" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element name="Klasse" type="kith:CS"/>
+							<element name="RefElement" type="IDREF" maxOccurs="unbounded"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<!--Byttegruppe-->
+	<element name="Byttegruppe">
+		<complexType>
+			<sequence>
+				<element name="Id" type="ID"/>
+				<element name="Kode" type="kith:CS"/>
+				<element name="MerknadTilByttbarhet" type="boolean"/>
+				<element name="BeskrivelseByttbarhet" type="string" minOccurs="0"/>
+				<element name="GyldigFraDato" type="date" minOccurs="0"/>
+				<element name="GyldigTilDato" type="date" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!--Interaksjon-->
+	<element name="Interaksjon">
+		<complexType>
+			<sequence>
+				<element name="Id" type="ID"/>
+				<element name="Relevans" type="kith:CS"/>
+				<element name="Situasjonskriterium" type="string" minOccurs="0"/>
+				<element name="KliniskKonsekvens" type="string"/>
+				<element name="Interaksjonsmekanisme" type="string" minOccurs="0"/>
+				<element name="Kildegrunnlag" type="kith:CS"/>
+				<element name="Handtering" type="string" minOccurs="0"/>
+				<element name="Visningsregel" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="Referanse" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element name="Kilde" type="string"/>
+							<element name="Lenke" type="kith:URL" minOccurs="0"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element ref="m30:Substansgruppe" minOccurs="2" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="InteraksjonIkkeVurdert">
+		<complexType>
+			<sequence>
+				<element name="Atc" type="kith:CV"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Substansgruppe">
+		<complexType>
+			<sequence>
+				<element name="Navn" type="string" minOccurs="0"/>
+				<element name="Substans" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element name="Substans" type="string"/>
+							<element name="Atc" type="kith:CV" minOccurs="0"/>
+							<element name="RefVirkestoff" type="IDREF" minOccurs="0" maxOccurs="unbounded"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<!--Strukturert dosering-->
+	<element name="Kortdose">
+		<complexType>
+			<sequence>
+				<element name="Kortdose" type="kith:CV"/>
+				<element name="BeskrivelseTerm" type="string"/>
+				<element ref="m30:Legemiddelforbruk" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Legemiddelforbruk">
+		<complexType>
+			<sequence>
+				<element name="Lopenr" type="int"/>
+				<element name="Mengde" type="decimal"/>
+				<element name="Periode" type="duration"/>
+				<element name="Iterasjoner" type="int" minOccurs="0"/>
+				<element ref="fs:Dosering" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

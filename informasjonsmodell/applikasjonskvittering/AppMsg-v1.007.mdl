@@ -1,0 +1,5713 @@
+
+(object Petal
+    version    	50
+    _written   	"Rose 8.2.0311.2600"
+    charSet    	0)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"3D32D73E01CF"
+    enforceClosureAutoLoad 	FALSE
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	FALSE
+	gridX      	16
+	gridY      	16
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	1
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"3D32D73E01D1"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"3D32D7410102"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"3D32D73E01D0"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"3D32D73E01ED"
+	logical_models 	(list unit_reference_list
+	    (object Class_Category "Application Receipt"
+		quid       	"3DABAEF8019C"
+		documentation 	"Applikasjonsvittering."
+		exportControl 	"Public"
+		logical_models 	(list unit_reference_list
+		    (object Class "Application Receipt"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "AppRec"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	(value Text ""))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	""))
+			quid       	"3D32ED9E03CE"
+			documentation 	"Applikasjonsmelding"
+			stereotype 	"top"
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "message type"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "MsgType"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Level"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text "M"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	(value Text "Kode for Applikasjonskvittering skal inn her. Dette vil alltid være APPREC."))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text "APPREC"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	(value Text ""))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	(value Text "")))
+				quid       	"3D32EEBA00CF"
+				documentation 	"Meldingens funksjon. "
+				type       	"CS")
+			    (object ClassAttribute "implemented version"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"MIGVersion")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Level"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"M")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	(value Text ""))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|"v0.9.006 2003-09-05"
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	(value Text 
+|Feltet inneholder identifikasjon av benyttet implementasjonsguide på formen "vn ccyy-mm-dd".
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	""))
+				quid       	"3DAC00B801D7"
+				documentation 	"Spesifikasjon av benyttet implementasjon av meldingen. (Versjonsnummer til implementasjonsguide som er benyttet for implementeringen)."
+				type       	"ST")
+			    (object ClassAttribute "software name"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "SoftwareName"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text "O")))
+				quid       	"41A47F7500EA"
+				documentation 	"Navn på programvaren som sender/genererer applikasjonsmeldingen. "
+				type       	"ST")
+			    (object ClassAttribute "software version"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "SoftwareVersion"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text "O"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text "1.0"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	(value Text "Frivillig, men det kan være praktisk for mottaker. Bør kunne loggføres. "))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	""))
+				quid       	"3EE9CE6201C0"
+				documentation 	"Versjon av programvaren som sender/genererer applikasjonsmeldingen. "
+				type       	"ST")
+			    (object ClassAttribute "generated"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"GenDate")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Level"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"M")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text "2003-09-05T12:00:00Z"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	""))
+				quid       	"3DAC00E602C5"
+				documentation 	"Tidspunkt for generering av meldingen angitt med dato og klokkeslett."
+				type       	"TS")
+			    (object ClassAttribute "id"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Id"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Level"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text "M"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	(value Text "Unik ID. Det foreslås å bruke UUID."))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text "4c661458-c412-4c14-baae-7b096f64f6e7"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	""))
+				quid       	"3D9C1431008A"
+				documentation 	"Entydig referansenummer for meldingen."
+				type       	"ST")
+			    (object ClassAttribute "status"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Status"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text "M"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	(value Text 
+|Kodeverk:
+|1 OK
+|2 Avvist
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	(value Text ""))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	(value Text "Statusen kan enten være 'OK' eller 'Avvist'. Hvis 'OK' skal det ikke sendes noen feilmeldinger. Ved 'Avvist' kan man ha med ingen eller flere feilmeldinger (error)."))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text "1")))
+				quid       	"3E816CEA0337"
+				documentation 	"Status for det opprinnelig innsendte dokumentet hos mottaker."
+				type       	"CS")
+			    (object ClassAttribute "error"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Error"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text "O"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	(value Text "Feilkoder er i prinsippet frivillig, men alle meldingstyper som benytter applikasjonsmeldingen bør ha et eget kodeverk for feilmeldinger som evt. skal presenteres for bruker. De generelle feilmeldingene er tekniske, og skal ikke vises bruker. Hvert kodeverk skal ha en OID, og kan kombineres med hverandre. "))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	(value Text ""))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text "T02"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	(value Text 
+|Generelle feilmeldingskoder:
+|T01 Ikke XML / ikke 'well formed' / uleselig
+|T02 XML validerer ikke
+|T99 Annet
+|S01 Feil på signatur
+|S02 Ugyldig sertifikat
+|S03 Tilbaketrukket sertifikat
+|S99 Annet
+					)))
+				quid       	"3E816A990027"
+				documentation 	"Feilkode og beskrivelse."
+				type       	"SET<CV>"))
+			module     	"Component View::AppRec"
+			quidu      	"3D4E48AE002F")
+		    (object Class "Original message identification"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"OriginalMsgId")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"Gyldige meldingskoder finnes på TODO"))
+			quid       	"3D36CB780157"
+			documentation 	"Benyttes for å referere til hvilken melding dette er et svar på. "
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "original message type"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "MsgType"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Level"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text "M"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	(value Text "Gyldige meldingskoder fåes av KITH."))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text "ESMA"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	(value Text ""))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	(value Text "")))
+				quid       	"3D36CBBA0212"
+				documentation 	"Meldingstypen applikasjonsmeldingen er et svar på."
+				type       	"CS")
+			    (object ClassAttribute "issue date and time of message"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"IssueDate")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Level"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text "M"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	(value Text "Tilsvarer GenDate i meldingshoder."))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|2003-09-05T09:23:21Z
+|
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	""))
+				quid       	"3D9C137703C1"
+				documentation 	"Tidspunkt for utstedelse av dokument/melding angitt med dato og klokkeslett."
+				type       	"TS")
+			    (object ClassAttribute "identification of message by sender"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Id"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Level"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text "M"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	(value Text "Identifikasjonen er vedlagt litt forskjellige på meldingstypene, men som regel heter feltet MsgId eller lignende. "))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text "ab2135d2-de00-11d7-902e-00007980d665"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	""))
+				quid       	"3D9C13AD0206"
+				documentation 	"Den opprinnelige avsenders identifikasjon av dokument/melding. "
+				type       	"ST"))
+			module     	"Component View::AppRec"
+			quidu      	"3D4E48AE002F")
+		    (object Association "$UNNAMED$0"
+			quid       	"3E6759C001FD"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$1"
+				quid       	"3E6759C001FE"
+				supplier   	"Logical View::Application Receipt::Application Receipt"
+				quidu      	"3D32ED9E03CE"
+				client_cardinality 	(value cardinality "1")
+				Containment 	"By Value"
+				is_aggregate 	TRUE)
+			    (object Role "$UNNAMED$2"
+				quid       	"3E6759C001FF"
+				supplier   	"Logical View::Application Receipt::Original message identification"
+				quidu      	"3D36CB780157"
+				client_cardinality 	(value cardinality "1")
+				Containment 	"By Value")))
+		    (object Association "$UNNAMED$3"
+			quid       	"41A1BCBF00EB"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$4"
+				quid       	"41A1BCBF0236"
+				supplier   	"Logical View::HTE pakke::Mottaker"
+				quidu      	"383D30B002FA"
+				client_cardinality 	(value cardinality "1")
+				Containment 	"By Value")
+			    (object Role "$UNNAMED$5"
+				quid       	"41A1BCBF0240"
+				supplier   	"Logical View::Application Receipt::Application Receipt"
+				quidu      	"3D32ED9E03CE"
+				client_cardinality 	(value cardinality "1")
+				Containment 	"By Value"
+				is_aggregate 	TRUE)))
+		    (object Association "$UNNAMED$6"
+			quid       	"41A1BCC00382"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$7"
+				quid       	"41A1BCC100DA"
+				supplier   	"Logical View::HTE pakke::Sender"
+				quidu      	"382AAA4400F5"
+				client_cardinality 	(value cardinality "1")
+				Containment 	"By Value")
+			    (object Role "$UNNAMED$8"
+				quid       	"41A1BCC100E4"
+				supplier   	"Logical View::Application Receipt::Application Receipt"
+				quidu      	"3D32ED9E03CE"
+				client_cardinality 	(value cardinality "1")
+				Containment 	"By Value"
+				is_aggregate 	TRUE))))
+		logical_presentations 	(list unit_reference_list
+		    (object ClassDiagram "Applikasjonskvittering"
+			quid       	"3D3E79CE0009"
+			title      	"Applikasjonskvittering"
+			zoom       	100
+			max_height 	28350
+			max_width  	21600
+			origin_x   	0
+			origin_y   	0
+			items      	(list diagram_item_list
+			    (object ClassView "Class" "Logical View::Application Receipt::Original message identification" @1
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(512, 976)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@1
+				    location   	(113, 872)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	798
+				    justify    	0
+				    label      	"Original message identification")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"3D36CB780157"
+				width      	816
+				height     	232
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::HTE pakke::Mottaker" @2
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				location   	(1455, 522)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@2
+				    location   	(1347, 467)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	216
+				    justify    	0
+				    label      	"Mottaker")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"383D30B002FA"
+				width      	234
+				height     	134
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::HTE pakke::Sender" @3
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				location   	(1445, 234)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@3
+				    location   	(1348, 179)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	194
+				    justify    	0
+				    label      	"Sender")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"382AAA4400F5"
+				width      	212
+				height     	134
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::Application Receipt::Application Receipt" @4
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(448, 320)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@4
+				    location   	(200, 115)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	496
+				    justify    	0
+				    label      	"Application Receipt")
+				stereotype 	(object ItemLabel
+				    Parent_View 	@4
+				    location   	(200, 66)
+				    fill_color 	13434879
+				    anchor     	10
+				    nlines     	1
+				    max_width  	496
+				    justify    	0
+				    label      	"<<top>>")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"3D32ED9E03CE"
+				width      	514
+				height     	532
+				autoResize 	TRUE)
+			    (object AssociationViewNew "$UNNAMED$0" @5
+				location   	(475, 722)
+				stereotype 	TRUE
+				quidu      	"3E6759C001FD"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$2" @6
+					Parent_View 	@5
+					location   	(-21, 322)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object SegLabel @7
+					    Parent_View 	@6
+					    location   	(434, 831)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    hidden     	TRUE
+					    anchor     	1
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	450
+					    justify    	0
+					    label      	""
+					    pctDist    	0.800000
+					    height     	42
+					    orientation 	1)
+					stereotype 	TRUE
+					quidu      	"3E6759C001FF"
+					client     	@5
+					supplier   	@1
+					line_style 	3
+					origin_attachment 	(475, 722)
+					terminal_attachment 	(475, 859)
+					label      	(object SegLabel @8
+					    Parent_View 	@6
+					    location   	(423, 826)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"1"
+					    pctDist    	0.769841
+					    height     	53
+					    orientation 	1))
+				    (object RoleView "$UNNAMED$1" @9
+					Parent_View 	@5
+					location   	(-21, 322)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					label      	(object SegLabel @10
+					    Parent_View 	@9
+					    location   	(517, 614)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    hidden     	TRUE
+					    anchor     	1
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	450
+					    justify    	0
+					    label      	""
+					    pctDist    	0.800000
+					    height     	42
+					    orientation 	1)
+					stereotype 	TRUE
+					quidu      	"3E6759C001FE"
+					client     	@5
+					supplier   	@4
+					line_style 	3
+					origin_attachment 	(475, 722)
+					terminal_attachment 	(475, 586)
+					label      	(object SegLabel @11
+					    Parent_View 	@9
+					    location   	(423, 601)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"1"
+					    pctDist    	0.892473
+					    height     	53
+					    orientation 	0))))
+			    (object AssociationViewNew "$UNNAMED$3" @12
+				location   	(1021, 522)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				quidu      	"41A1BCBF00EB"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$4" @13
+					Parent_View 	@12
+					location   	(573, 202)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"41A1BCBF0236"
+					client     	@12
+					supplier   	@2
+					line_style 	3
+					origin_attachment 	(1021, 522)
+					terminal_attachment 	(1338, 522)
+					label      	(object SegLabel @14
+					    Parent_View 	@13
+					    location   	(1306, 576)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"1"
+					    pctDist    	0.900000
+					    height     	54
+					    orientation 	1))
+				    (object RoleView "$UNNAMED$5" @15
+					Parent_View 	@12
+					location   	(573, 202)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"41A1BCBF0240"
+					client     	@12
+					supplier   	@4
+					line_style 	3
+					origin_attachment 	(1021, 522)
+					terminal_attachment 	(705, 522)
+					label      	(object SegLabel @16
+					    Parent_View 	@15
+					    location   	(738, 576)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"1"
+					    pctDist    	0.900000
+					    height     	54
+					    orientation 	0))))
+			    (object AssociationViewNew "$UNNAMED$6" @17
+				location   	(1022, 234)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				quidu      	"41A1BCC00382"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$7" @18
+					Parent_View 	@17
+					location   	(574, -86)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"41A1BCC100DA"
+					client     	@17
+					supplier   	@3
+					line_style 	3
+					origin_attachment 	(1022, 234)
+					terminal_attachment 	(1339, 234)
+					label      	(object SegLabel @19
+					    Parent_View 	@18
+					    location   	(1307, 288)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"1"
+					    pctDist    	0.900000
+					    height     	54
+					    orientation 	1))
+				    (object RoleView "$UNNAMED$8" @20
+					Parent_View 	@17
+					location   	(574, -86)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"41A1BCC100E4"
+					client     	@17
+					supplier   	@4
+					line_style 	3
+					origin_attachment 	(1022, 234)
+					terminal_attachment 	(705, 234)
+					label      	(object SegLabel @21
+					    Parent_View 	@20
+					    location   	(737, 288)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"1"
+					    pctDist    	0.900000
+					    height     	54
+					    orientation 	0))))))))
+	    (object Class_Category "HTE pakke"
+		quid       	"3948EBC400F0"
+		visible_categories 	(list visibility_relationship_list
+		    (object Visibility_Relationship
+			quid       	"3C06933D0014"
+			supplier   	"Logical View::Henvisning::Meldings pakke"
+			quidu      	"3974443A02B2")
+		    (object Visibility_Relationship
+			quid       	"3C06934B0000"
+			supplier   	"Logical View::Henvisning::Klinisk opplysning pakke"
+			quidu      	"3948E86F01CC")
+		    (object Visibility_Relationship
+			quid       	"3C0693610033"
+			supplier   	"Logical View::Henvisning::Rekvirert tjeneste pakke"
+			quidu      	"3962FD4B0212")
+		    (object Visibility_Relationship
+			quid       	"3C06937901B4"
+			supplier   	"Logical View::Henvisning::Pasient-pakke"
+			quidu      	"3948D43A0280"))
+		exportControl 	"Public"
+		logical_models 	(list unit_reference_list
+		    (object Class "Helsetjenesteenhet"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"HCP")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	"Privatpraktiserende lege, sykehus, overlegen ved kirurgisk avdeling på et sykehus.")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	(value Text ""))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	"M"))
+			quid       	"382E5A90000E"
+			documentation 	
+|Opplysninger om en helsetjenesteenhet.
+|En helsetjenesteenhet kan være en institusjon (eventuelt en avdeling ved en institusjon), en aktør (person) i helsevesenet eller en aktør ved en institusjon/avdeling.
+			
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "Medisinsk spesialitet"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "MedSpeciality"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|Medisinsk spesialitet (id = 9081)
+|I henhold til legeforeningens kodeverk for medisinsk spesialitet.
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	(value Text ""))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	(value Text ""))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"O")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Level"
+					value      	""))
+				quid       	"38E0AA43016D"
+				documentation 	
+|Kode for medisinsk spesialitet for aktuelle helsetjenesteenhet. 
+|En helsetjenesteenhet kan ha flere medisinske spesialiteter, men kun den som er av interesse i den gitte sammenhengen tas med her.
+				
+				type       	"CV"
+				exportControl 	"Public"))
+			module     	"Component View::AppRec"
+			quidu      	"3D4E48AE002F")
+		    (object Class "Person i helsevesenet"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"HCProf")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	(value Text ""))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	(value Text ""))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"Utførende helsepersonell")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	"O"))
+			quid       	"382E5B0603BB"
+			documentation 	"Person i helsevesenet som er involvert direkte eller indirekte i å yte helsetjenester til en pasient."
+			superclasses 	(list inheritance_relationship_list
+			    (object Inheritance_Relationship
+				quid       	"3833FEF001EC"
+				supplier   	"Logical View::HTE pakke::Helsetjenesteenhet"
+				quidu      	"382E5A90000E"))
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "Type helseprofesjon"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"Type")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	(value Text 
+|Kodeverk: Kategori helsepersonell
+|AA: Ambulansearbeider 
+|AT: Apotektekniker
+|AU: Audiograf
+|BI: Bioingeniør
+|ET: Ergoterapeut
+|FA: Farmasøyt
+|FO: Fotterapeut
+|FT: Fysioterapeut
+|HE: Helsesekretær
+|HP: Hjelpepleier
+|HS: Helsesøster
+|JO: Jordmor
+|KE: Klinisk ernæringsfysiolog
+|KI: Kiropraktor
+|LE: Lege
+|MT: Manuellterapeut
+|OA: Omsorgsarbeider
+|OI: Ortopedingeniør
+|OP: Optiker
+|OR: Ortoptist
+|PE: Perfusjonist
+|PS: Psykolog
+|RA: Radiograf
+|SP: Sykepleier
+|TH: Tannhelsesekretær
+|TL: Tannlege
+|TP: Tannpleier
+|TT: Tanntekniker
+|VE: Veterinær
+|VP: Vernepleier
+|XX: Annet
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"O")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Level"
+					value      	""))
+				quid       	"38DF56790228"
+				documentation 	"Profesjon for aktuelle person i helsevesenet."
+				type       	"CS"
+				exportControl 	"Public")
+			    (object ClassAttribute "Navn"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"Name")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|"Ole Olsen", "Lege Per Nilsen"
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"O")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	""))
+				quid       	"3963093602EE"
+				documentation 	
+|Navn på person. 
+|Navnet presenteres som en samlet streng for presentasjon (i motsetning til navn på pasient).
+				
+				type       	"ST"
+				exportControl 	"Public")
+			    (object ClassAttribute "Id"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"Id")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Level"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"O")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text ""))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"3DB5B6AD009C"
+				documentation 	
+|Identifikator for personen.
+|HPR-nummer skal benyttes i de fleste sammenhenger.
+|Må benyttes sammen med "Type id".
+				
+				type       	"ST"
+				exportControl 	"Public")
+			    (object ClassAttribute "Type Id"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"TypeId")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Level"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text "O"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|Kodeverdier:
+|HPR: Off. identifikator for helsepersonell (HPR-nummer)
+|LOP: Lokal identifikator for helsepersonell
+|HER: HER-id (Helsetjenesteenhetsregister)
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"3DB5B6B200CC"
+				documentation 	
+|Kode for type identifikator for personen.
+|Må angis dersom "Id" er angitt.
+				
+				type       	"CS"
+				exportControl 	"Public"))
+			module     	"Component View::AppRec"
+			quidu      	"3D4E48AE002F")
+		    (object Class "HTErolle"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "HcpPointer"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	"Rekvirent, tjenesteyter, kopimottaker")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	"M"))
+			quid       	"382AAC25009C"
+			documentation 	"Helsetjenesteenhet i en gitt rolle."
+			module     	"Component View::AppRec"
+			quidu      	"3D4E48AE002F"
+			abstract   	TRUE)
+		    (object Class "Institusjon"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"Inst")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	"Sykehus, apotek, legepraksis")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	"O"))
+			quid       	"382E5B1203E0"
+			documentation 	"Institusjon i helsevesenet."
+			superclasses 	(list inheritance_relationship_list
+			    (object Inheritance_Relationship
+				quid       	"3833FEF5006D"
+				supplier   	"Logical View::HTE pakke::Helsetjenesteenhet"
+				quidu      	"382E5A90000E"))
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "Navn"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"Name")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|"St. Olavs hospital", "Universitetssykehuset i nord-Norge"
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"O")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	""))
+				quid       	"38DF574B022A"
+				documentation 	"Navn på institusjon angitt som offisielt navn. "
+				type       	"ST"
+				exportControl 	"Public")
+			    (object ClassAttribute "Id"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Id"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Level"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text "O"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|Kodeverdier:
+|ENH: Off. identifikator for institusjoner (enhetsregisteret)
+|LIN: Lokal identifikator for institusjoner
+|APO: Apotekenes identifikasjonsnummer
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"3DB5B64B00FD"
+				documentation 	
+|Identifikator for institusjonen.
+|Må benyttes sammen med "Type id".
+				
+				type       	"ST"
+				exportControl 	"Public")
+			    (object ClassAttribute "Type Id"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "TypeId"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text "O"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|Kodeverdier:
+|ENH: Off. identifikator for institusjoner (enhetsregisteret)
+|LIN: Lokal identifikator for institusjoner
+|APO: Apotekenes identifikasjonsnummer
+|HER: HER-id (Helsetjenesteenhetsregister)
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	""))
+				quid       	"3DB5B6530004"
+				documentation 	
+|Kode for type identifikator.
+|Må angis dersom "Id" er angitt.
+				
+				type       	"CS"
+				exportControl 	"Public"))
+			module     	"Component View::AppRec"
+			quidu      	"3D4E48AE002F")
+		    (object Class "Sender"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "Sender"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	(value Text "M")))
+			quid       	"382AAA4400F5"
+			superclasses 	(list inheritance_relationship_list
+			    (object Inheritance_Relationship
+				quid       	"3C7E1F7A004B"
+				supplier   	"Logical View::HTE pakke::HTErolle"
+				quidu      	"382AAC25009C"))
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "Rolle"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"Role")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|I henhold til kodeverk for rolle til helsetjenesteenhet:
+|REQ: Rekvirent
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text "O"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Level"
+					value      	""))
+				quid       	"3969D1DD0168"
+				documentation 	"Kode for aktuelle rolle til en helsetjenesteenhet."
+				type       	"CS"
+				exportControl 	"Public"))
+			module     	"Component View::AppRec"
+			quidu      	"3D4E48AE002F")
+		    (object Class "Mottaker"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "Reciever"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	(value Text "M")))
+			quid       	"383D30B002FA"
+			superclasses 	(list inheritance_relationship_list
+			    (object Inheritance_Relationship
+				quid       	"3C7E1F75024C"
+				supplier   	"Logical View::HTE pakke::HTErolle"
+				quidu      	"382AAC25009C"))
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "Rolle"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Role"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	(value Text ""))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text "SPR: Tjenesteyter"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text "O")))
+				quid       	"3DF5A13900B7"
+				documentation 	"Kode for aktuelle rolle til en helsetjenesteenhet."
+				type       	"CS"
+				exportControl 	"Public"))
+			module     	"Component View::AppRec"
+			quidu      	"3D4E48AE002F")
+		    (object Class "Avdeling"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"Dept")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	(value Text ""))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	"Kirurgisk avdeling")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	"O"))
+			quid       	"396309840050"
+			documentation 	
+|Opplysninger om avdeling.
+|Forutsetter at institusjon er angitt.
+			
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "Type"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Type"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text "O")))
+				quid       	"3DC7709A0259"
+				documentation 	
+|Kode for type avdeling (sengeavdeling, serviceavdeling etc.).
+|Benyttes foreløpig ikke.
+				
+				type       	"CS"
+				exportControl 	"Public")
+			    (object ClassAttribute "Navn"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"Name")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|"Kirurgisk avdeling"
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"O")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	""))
+				quid       	"3963099901C2"
+				documentation 	"Navn på avdeling angitt som offisielt navn. "
+				type       	"ST"
+				exportControl 	"Public")
+			    (object ClassAttribute "Id"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"Id")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Level"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"O")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"3DB5B686028A"
+				documentation 	
+|Identifikator for avdelingen.
+|Må benyttes sammen med "Type id".
+				
+				type       	"ST"
+				exportControl 	"Public")
+			    (object ClassAttribute "Type Id"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"TypeId")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Level"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"O")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|Kodeverdier:
+|AVD: Off. identifikator for avdelinger
+|LAV: Lokal identifikator for avdelinger
+|HER: HER-id (Helsetjenesteenhetsregister)
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"3DB5B68B00F6"
+				documentation 	
+|Kode for type identifikator.
+|Må angis dersom "Id" er angitt.
+				
+				type       	"CS"
+				exportControl 	"Public"))
+			module     	"Component View::AppRec"
+			quidu      	"3D4E48AE002F")
+		    (object Class "Person i organisasjon"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	(value Text "HCPerson"))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	(value Text ""))
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	"O")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	""))
+			quid       	"3C7E2D57026B"
+			documentation 	"Person i helsevesenet som er del av en institusjon eller avdeling."
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "Navn"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Name"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Level"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text "O"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"3C7E2D570275"
+				documentation 	"Navn på person i organisasjon."
+				type       	"ST"
+				exportControl 	"Public")
+			    (object ClassAttribute "Id"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"Id")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Level"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"O")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"3DB5B669038C"
+				documentation 	
+|Identifikator for personen.
+|Må benyttes sammen med "Type id".
+				
+				type       	"ST"
+				exportControl 	"Public")
+			    (object ClassAttribute "Type Id"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"TypeId")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Level"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"O")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|Kodeverdier:
+|HPR: Off. identifikator for helsepersonell (HPR-nummer)
+|LOP: Lokal identifikator for helsepersonell
+|HER: HER-id (Helsetjenesteenhetsregister)
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"3DB5B66E01F8"
+				documentation 	
+|Kode for type identifikator.
+|Må angis dersom "Id" er angitt.
+				
+				type       	"CS"
+				exportControl 	"Public"))
+			module     	"Component View::AppRec"
+			quidu      	"3D4E48AE002F")
+		    (object Class "Alternativ Id"
+			quid       	"41BEB4E4030B"
+			documentation 	"Annen identifikasjon av organisatorisk enhet som denne er eller har vært kjent under."
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "Id"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Id"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text "M")))
+				quid       	"41BEB4EA024B"
+				documentation 	"Alternativ identifikasjon. "
+				type       	"ST")
+			    (object ClassAttribute "Type"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Type"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text "M"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	(value Text 
+|AVD: Off. identifikator for avdelinger
+|LAV: Lokal identifikator for avdelinger
+|HER: HER-id (Helsetjenesteenhetsregister)
+|BER: BER-id (Identifikator fra Basisenhetsregisteret)
+|LID: Lokal identifikator
+|HPR: Off. identifikator for helsepersonell (HPR-nr)
+|LOP: Lokal identifikator for helsepersonell
+					)))
+				quid       	"41BEB4F50305"
+				documentation 	"Kode for type alternativ ID."
+				type       	"CS")))
+		    (object Association "$UNNAMED$9"
+			quid       	"3C7E2CB30070"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$10"
+				quid       	"3C7E2CB303A6"
+				supplier   	"Logical View::HTE pakke::Avdeling"
+				quidu      	"396309840050"
+				client_cardinality 	(value cardinality "0..*")
+				Containment 	"By Value")
+			    (object Role "$UNNAMED$11"
+				quid       	"3C7E2CB4000E"
+				supplier   	"Logical View::HTE pakke::Institusjon"
+				quidu      	"382E5B1203E0"
+				Containment 	"By Value"
+				is_aggregate 	TRUE)))
+		    (object Association "$UNNAMED$12"
+			quid       	"3C7E2DE40029"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$13"
+				quid       	"3C7E2DE401A5"
+				supplier   	"Logical View::HTE pakke::Person i organisasjon"
+				quidu      	"3C7E2D57026B"
+				client_cardinality 	(value cardinality "0..*")
+				Containment 	"By Value")
+			    (object Role "$UNNAMED$14"
+				quid       	"3C7E2DE40209"
+				supplier   	"Logical View::HTE pakke::Institusjon"
+				quidu      	"382E5B1203E0"
+				Containment 	"By Value"
+				is_aggregate 	TRUE)))
+		    (object Association "$UNNAMED$15"
+			quid       	"3D1B319D01C6"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$16"
+				quid       	"3D1B319E011D"
+				supplier   	"Logical View::HTE pakke::Helsetjenesteenhet"
+				quidu      	"382E5A90000E"
+				client_cardinality 	(value cardinality "1")
+				Containment 	"By Value"
+				is_navigable 	TRUE)
+			    (object Role "$UNNAMED$17"
+				quid       	"3D1B319E0127"
+				supplier   	"Logical View::HTE pakke::HTErolle"
+				quidu      	"382AAC25009C"
+				is_navigable 	TRUE
+				is_aggregate 	TRUE)))
+		    (object Association "$UNNAMED$18"
+			quid       	"41A1BD3E0184"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$19"
+				quid       	"41A1BD3E02D9"
+				supplier   	"Logical View::Pakke for gjenbrukte klasser::Adresse"
+				quidu      	"38E07ECB01EE"
+				client_cardinality 	(value cardinality "0..1")
+				Containment 	"By Value")
+			    (object Role "$UNNAMED$20"
+				quid       	"41A1BD3E02E3"
+				supplier   	"Logical View::HTE pakke::Helsetjenesteenhet"
+				quidu      	"382E5A90000E"
+				client_cardinality 	(value cardinality "1")
+				Containment 	"By Value"
+				is_aggregate 	TRUE)))
+		    (object Association "$UNNAMED$21"
+			quid       	"41BEB59F01B5"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$22"
+				quid       	"41BEB59F0346"
+				supplier   	"Logical View::HTE pakke::Alternativ Id"
+				quidu      	"41BEB4E4030B"
+				client_cardinality 	(value cardinality "0..*")
+				Containment 	"By Value")
+			    (object Role "$UNNAMED$23"
+				quid       	"41BEB59F0348"
+				supplier   	"Logical View::HTE pakke::Avdeling"
+				quidu      	"396309840050"
+				client_cardinality 	(value cardinality "1")
+				Containment 	"By Value"
+				is_aggregate 	TRUE)))
+		    (object Association "$UNNAMED$24"
+			quid       	"41BEB5A401E5"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$25"
+				quid       	"41BEB5A5002D"
+				supplier   	"Logical View::HTE pakke::Alternativ Id"
+				quidu      	"41BEB4E4030B"
+				client_cardinality 	(value cardinality "0..*")
+				Containment 	"By Value")
+			    (object Role "$UNNAMED$26"
+				quid       	"41BEB5A5002F"
+				supplier   	"Logical View::HTE pakke::Institusjon"
+				quidu      	"382E5B1203E0"
+				client_cardinality 	(value cardinality "1")
+				Containment 	"By Value"
+				is_aggregate 	TRUE)))
+		    (object Association "$UNNAMED$27"
+			quid       	"41BEB5A800E6"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$28"
+				quid       	"41BEB5A80259"
+				supplier   	"Logical View::HTE pakke::Alternativ Id"
+				quidu      	"41BEB4E4030B"
+				client_cardinality 	(value cardinality "0..*")
+				Containment 	"By Value")
+			    (object Role "$UNNAMED$29"
+				quid       	"41BEB5A80263"
+				supplier   	"Logical View::HTE pakke::Person i organisasjon"
+				quidu      	"3C7E2D57026B"
+				client_cardinality 	(value cardinality "1")
+				Containment 	"By Value"
+				is_aggregate 	TRUE)))
+		    (object Association "$UNNAMED$30"
+			quid       	"41C0137600B4"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$31"
+				quid       	"41C0137603B8"
+				supplier   	"Logical View::HTE pakke::Alternativ Id"
+				quidu      	"41BEB4E4030B"
+				client_cardinality 	(value cardinality "0..*")
+				Containment 	"By Value")
+			    (object Role "$UNNAMED$32"
+				quid       	"41C0137603BA"
+				supplier   	"Logical View::HTE pakke::Person i helsevesenet"
+				quidu      	"382E5B0603BB"
+				client_cardinality 	(value cardinality "1")
+				Containment 	"By Value"
+				is_aggregate 	TRUE))))
+		logical_presentations 	(list unit_reference_list
+		    (object ClassDiagram "Helsetjenesteenhet"
+			quid       	"3948EC2E019A"
+			title      	"Helsetjenesteenhet"
+			zoom       	100
+			max_height 	28350
+			max_width  	21600
+			origin_x   	0
+			origin_y   	324
+			items      	(list diagram_item_list
+			    (object ClassView "Class" "Logical View::HTE pakke::Mottaker" @22
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(389, 145)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	3
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@22
+				    location   	(286, 90)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	206
+				    justify    	0
+				    label      	"Mottaker")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"383D30B002FA"
+				compartment 	(object Compartment
+				    Parent_View 	@22
+				    location   	(286, 150)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	3
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    icon_style 	"Icon"
+				    fill_color 	16777215
+				    anchor     	2
+				    nlines     	1
+				    max_width  	170)
+				width      	224
+				height     	134
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::HTE pakke::Sender" @23
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(708, 150)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	3
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@23
+				    location   	(611, 95)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	194
+				    justify    	0
+				    label      	"Sender")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"382AAA4400F5"
+				compartment 	(object Compartment
+				    Parent_View 	@23
+				    location   	(611, 155)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	3
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    icon_style 	"Icon"
+				    fill_color 	16777215
+				    anchor     	2
+				    nlines     	1
+				    max_width  	170)
+				width      	212
+				height     	134
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::HTE pakke::HTErolle" @24
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(541, 566)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	3
+				    bold       	FALSE
+				    italics    	TRUE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@24
+				    location   	(428, 516)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	226
+				    justify    	0
+				    label      	"HTErolle")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"382AAC25009C"
+				width      	244
+				height     	124
+				autoResize 	TRUE)
+			    (object InheritTreeView "" @25
+				location   	(541, 332)
+				fill_color 	13434879
+				supplier   	@24
+				vertices   	(list Points
+				    (541, 332)
+				    (541, 504)))
+			    (object InheritView "" @26
+				stereotype 	TRUE
+				quidu      	"3C7E1F75024C"
+				client     	@22
+				supplier   	@24
+				line_style 	3
+				origin_attachment 	(405, 212)
+				terminal_attachment 	(405, 332)
+				drawSupplier 	@25)
+			    (object InheritView "" @27
+				stereotype 	TRUE
+				quidu      	"3C7E1F7A004B"
+				client     	@23
+				supplier   	@24
+				line_style 	3
+				origin_attachment 	(695, 216)
+				terminal_attachment 	(695, 332)
+				drawSupplier 	@25)
+			    (object ClassView "Class" "Logical View::Pakke for gjenbrukte klasser::Adresse" @28
+				ShowCompartmentStereotypes 	TRUE
+				SuppressAttribute 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(1625, 874)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@28
+				    location   	(1318, 824)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	614
+				    justify    	0
+				    label      	"Adresse")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"38E07ECB01EE"
+				width      	632
+				height     	124
+				annotation 	8
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::HTE pakke::Helsetjenesteenhet" @29
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(573, 886)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	3
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@29
+				    location   	(321, 831)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	504
+				    justify    	0
+				    label      	"Helsetjenesteenhet")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"382E5A90000E"
+				compartment 	(object Compartment
+				    Parent_View 	@29
+				    location   	(321, 891)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	3
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    icon_style 	"Icon"
+				    fill_color 	16777215
+				    anchor     	2
+				    nlines     	1
+				    max_width  	426)
+				width      	522
+				height     	134
+				autoResize 	TRUE)
+			    (object AssociationViewNew "$UNNAMED$15" @30
+				location   	(550, 722)
+				stereotype 	TRUE
+				quidu      	"3D1B319D01C6"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$16" @31
+					Parent_View 	@30
+					location   	(374, 210)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"3D1B319E011D"
+					client     	@30
+					supplier   	@29
+					line_style 	3
+					origin_attachment 	(550, 722)
+					terminal_attachment 	(550, 818)
+					label      	(object SegLabel @32
+					    Parent_View 	@31
+					    location   	(587, 779)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"1"
+					    pctDist    	0.594203
+					    height     	37
+					    orientation 	0))
+				    (object RoleView "$UNNAMED$17" @33
+					Parent_View 	@30
+					location   	(374, 210)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"3D1B319E0127"
+					client     	@30
+					supplier   	@24
+					line_style 	3
+					origin_attachment 	(550, 722)
+					terminal_attachment 	(550, 627))))
+			    (object AssociationViewNew "$UNNAMED$18" @34
+				location   	(1071, 874)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				quidu      	"41A1BD3E0184"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$19" @35
+					Parent_View 	@34
+					location   	(489, -73)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"41A1BD3E02D9"
+					client     	@34
+					supplier   	@28
+					line_style 	3
+					origin_attachment 	(1071, 874)
+					terminal_attachment 	(1309, 874)
+					label      	(object SegLabel @36
+					    Parent_View 	@35
+					    location   	(1239, 921)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"0..1"
+					    pctDist    	0.710614
+					    height     	47
+					    orientation 	1))
+				    (object RoleView "$UNNAMED$20" @37
+					Parent_View 	@34
+					location   	(489, -73)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"41A1BD3E02E3"
+					client     	@34
+					supplier   	@29
+					line_style 	3
+					origin_attachment 	(1071, 874)
+					terminal_attachment 	(834, 874)
+					label      	(object SegLabel @38
+					    Parent_View 	@37
+					    location   	(859, 928)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"1"
+					    pctDist    	0.900000
+					    height     	54
+					    orientation 	0))))
+			    (object InheritTreeView "" @39
+				location   	(573, 1097)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	3
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				fill_color 	13434879
+				supplier   	@29
+				vertices   	(list Points
+				    (573, 1097)
+				    (573, 953)))
+			    (object ClassView "Class" "Logical View::HTE pakke::Institusjon" @40
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(873, 1351)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	3
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@40
+				    location   	(752, 1247)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	242
+				    justify    	0
+				    label      	"Institusjon")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"382E5B1203E0"
+				compartment 	(object Compartment
+				    Parent_View 	@40
+				    location   	(752, 1307)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	3
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    icon_style 	"Icon"
+				    fill_color 	16777215
+				    anchor     	2
+				    nlines     	3
+				    max_width  	212)
+				width      	260
+				height     	232
+				autoResize 	TRUE)
+			    (object InheritView "" @41
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	3
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				quidu      	"3833FEF5006D"
+				client     	@40
+				supplier   	@29
+				line_style 	3
+				origin_attachment 	(847, 1235)
+				terminal_attachment 	(847, 1097)
+				drawSupplier 	@39)
+			    (object ClassView "Class" "Logical View::HTE pakke::Person i organisasjon" @42
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				location   	(935, 1779)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@42
+				    location   	(677, 1675)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	516
+				    justify    	0
+				    label      	"Person i organisasjon")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"3C7E2D57026B"
+				compartment 	(object Compartment
+				    Parent_View 	@42
+				    location   	(677, 1735)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    icon_style 	"Icon"
+				    fill_color 	16777215
+				    anchor     	2
+				    nlines     	3
+				    max_width  	212)
+				width      	534
+				height     	232
+				autoResize 	TRUE)
+			    (object AssociationViewNew "$UNNAMED$12" @43
+				location   	(858, 1564)
+				stereotype 	TRUE
+				quidu      	"3C7E2DE40029"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$13" @44
+					Parent_View 	@43
+					location   	(106, 364)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					quidu      	"3C7E2DE401A5"
+					client     	@43
+					supplier   	@42
+					line_style 	3
+					origin_attachment 	(858, 1564)
+					terminal_attachment 	(858, 1662)
+					label      	(object SegLabel @45
+					    Parent_View 	@44
+					    location   	(806, 1638)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	66
+					    justify    	0
+					    label      	"0..*"
+					    pctDist    	0.762846
+					    height     	53
+					    orientation 	1))
+				    (object RoleView "$UNNAMED$14" @46
+					Parent_View 	@43
+					location   	(106, 364)
+					stereotype 	TRUE
+					quidu      	"3C7E2DE40209"
+					client     	@43
+					supplier   	@40
+					line_style 	3
+					origin_attachment 	(858, 1564)
+					terminal_attachment 	(858, 1466))))
+			    (object ClassView "Class" "Logical View::HTE pakke::Avdeling" @47
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(1571, 1353)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	3
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@47
+				    location   	(1450, 1225)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	242
+				    justify    	0
+				    label      	"Avdeling")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"396309840050"
+				compartment 	(object Compartment
+				    Parent_View 	@47
+				    location   	(1450, 1285)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	3
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    icon_style 	"Icon"
+				    fill_color 	16777215
+				    anchor     	2
+				    nlines     	4
+				    max_width  	212)
+				width      	260
+				height     	280
+				autoResize 	TRUE)
+			    (object AssociationViewNew "$UNNAMED$9" @48
+				location   	(1222, 1329)
+				stereotype 	TRUE
+				quidu      	"3C7E2CB30070"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$10" @49
+					Parent_View 	@48
+					location   	(358, 129)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					quidu      	"3C7E2CB303A6"
+					client     	@48
+					supplier   	@47
+					line_style 	3
+					origin_attachment 	(1222, 1329)
+					terminal_attachment 	(1441, 1329)
+					label      	(object SegLabel @50
+					    Parent_View 	@49
+					    location   	(1349, 1276)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	66
+					    justify    	0
+					    label      	"0..*"
+					    pctDist    	0.582418
+					    height     	54
+					    orientation 	0))
+				    (object RoleView "$UNNAMED$11" @51
+					Parent_View 	@48
+					location   	(358, 129)
+					stereotype 	TRUE
+					quidu      	"3C7E2CB4000E"
+					client     	@48
+					supplier   	@40
+					line_style 	3
+					origin_attachment 	(1222, 1329)
+					terminal_attachment 	(1003, 1329))))
+			    (object ClassView "Class" "Logical View::HTE pakke::Alternativ Id" @52
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				location   	(949, 2204)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@52
+				    location   	(805, 2125)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	288
+				    justify    	0
+				    label      	"Alternativ Id")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"41BEB4E4030B"
+				compartment 	(object Compartment
+				    Parent_View 	@52
+				    location   	(805, 2185)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    icon_style 	"Icon"
+				    fill_color 	13434879
+				    anchor     	2
+				    nlines     	2
+				    max_width  	174)
+				width      	306
+				height     	182
+				autoResize 	TRUE)
+			    (object AssociationViewNew "$UNNAMED$24" @53
+				location   	(1308, 1731)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				quidu      	"41BEB5A401E5"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$25" @54
+					Parent_View 	@53
+					location   	(399, 397)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"41BEB5A5002D"
+					client     	@53
+					supplier   	@52
+					vertices   	(list Points
+					    (1308, 1731)
+					    (1308, 2137)
+					    (1102, 2137))
+					line_style 	3
+					origin_attachment 	(1308, 1731)
+					terminal_attachment 	(1102, 2137)
+					label      	(object SegLabel @55
+					    Parent_View 	@54
+					    location   	(1149, 2110)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"0..*"
+					    pctDist    	0.923825
+					    height     	28
+					    orientation 	1))
+				    (object RoleView "$UNNAMED$26" @56
+					Parent_View 	@53
+					location   	(399, 397)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"41BEB5A5002F"
+					client     	@53
+					supplier   	@40
+					vertices   	(list Points
+					    (1308, 1731)
+					    (1308, 1425)
+					    (1003, 1425))
+					line_style 	3
+					origin_attachment 	(1308, 1731)
+					terminal_attachment 	(1003, 1425)
+					label      	(object SegLabel @57
+					    Parent_View 	@56
+					    location   	(1064, 1372)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"1"
+					    pctDist    	0.900000
+					    height     	54
+					    orientation 	1))))
+			    (object AssociationViewNew "$UNNAMED$27" @58
+				location   	(827, 2003)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				quidu      	"41BEB5A800E6"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$28" @59
+					Parent_View 	@58
+					location   	(-149, 275)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"41BEB5A80259"
+					client     	@58
+					supplier   	@52
+					line_style 	3
+					origin_attachment 	(827, 2003)
+					terminal_attachment 	(827, 2112)
+					label      	(object SegLabel @60
+					    Parent_View 	@59
+					    location   	(881, 2071)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"0..*"
+					    pctDist    	0.623853
+					    height     	54
+					    orientation 	0))
+				    (object RoleView "$UNNAMED$29" @61
+					Parent_View 	@58
+					location   	(-149, 275)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"41BEB5A80263"
+					client     	@58
+					supplier   	@42
+					line_style 	3
+					origin_attachment 	(827, 2003)
+					terminal_attachment 	(827, 1894)
+					label      	(object SegLabel @62
+					    Parent_View 	@61
+					    location   	(881, 1906)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"1"
+					    pctDist    	0.900000
+					    height     	54
+					    orientation 	1))))
+			    (object AssociationViewNew "$UNNAMED$21" @63
+				location   	(1551, 2086)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				quidu      	"41BEB59F01B5"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$22" @64
+					Parent_View 	@63
+					location   	(1170, 736)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"41BEB59F0346"
+					client     	@63
+					supplier   	@52
+					vertices   	(list Points
+					    (1551, 2086)
+					    (1551, 2231)
+					    (1102, 2231))
+					line_style 	3
+					origin_attachment 	(1551, 2086)
+					terminal_attachment 	(1102, 2231)
+					label      	(object SegLabel @65
+					    Parent_View 	@64
+					    location   	(1165, 2261)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"0..*"
+					    pctDist    	0.893333
+					    height     	30
+					    orientation 	0))
+				    (object RoleView "$UNNAMED$23" @66
+					Parent_View 	@63
+					location   	(1170, 736)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"41BEB59F0348"
+					client     	@63
+					supplier   	@47
+					line_style 	3
+					origin_attachment 	(1551, 2086)
+					terminal_attachment 	(1551, 1493)
+					label      	(object SegLabel @67
+					    Parent_View 	@66
+					    location   	(1605, 1553)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"1"
+					    pctDist    	0.900000
+					    height     	54
+					    orientation 	1))))
+			    (object ClassView "Class" "Logical View::HTE pakke::Person i helsevesenet" @68
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(381, 1350)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	3
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@68
+				    location   	(129, 1222)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	504
+				    justify    	0
+				    label      	"Person i helsevesenet")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"382E5B0603BB"
+				compartment 	(object Compartment
+				    Parent_View 	@68
+				    location   	(129, 1282)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	3
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    icon_style 	"Icon"
+				    fill_color 	16777215
+				    anchor     	2
+				    nlines     	4
+				    max_width  	436)
+				width      	522
+				height     	280
+				autoResize 	TRUE)
+			    (object InheritView "" @69
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	3
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				quidu      	"3833FEF001EC"
+				client     	@68
+				supplier   	@29
+				line_style 	3
+				origin_attachment 	(319, 1210)
+				terminal_attachment 	(319, 1097)
+				drawSupplier 	@39)
+			    (object AssociationViewNew "$UNNAMED$30" @70
+				location   	(314, 2083)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				quidu      	"41C0137600B4"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$31" @71
+					Parent_View 	@70
+					location   	(-67, 733)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"41C0137603B8"
+					client     	@70
+					supplier   	@52
+					vertices   	(list Points
+					    (314, 2083)
+					    (314, 2194)
+					    (796, 2194))
+					line_style 	3
+					origin_attachment 	(314, 2083)
+					terminal_attachment 	(796, 2194)
+					label      	(object SegLabel @72
+					    Parent_View 	@71
+					    location   	(744, 2232)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"0..*"
+					    pctDist    	0.914716
+					    height     	38
+					    orientation 	1))
+				    (object RoleView "$UNNAMED$32" @73
+					Parent_View 	@70
+					location   	(-67, 733)
+					font       	(object Font
+					    size       	10
+					    face       	"Arial"
+					    bold       	FALSE
+					    italics    	FALSE
+					    underline  	FALSE
+					    strike     	FALSE
+					    color      	0
+					    default_color 	TRUE)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"41C0137603BA"
+					client     	@70
+					supplier   	@68
+					line_style 	3
+					origin_attachment 	(314, 2083)
+					terminal_attachment 	(314, 1490)
+					label      	(object SegLabel @74
+					    Parent_View 	@73
+					    location   	(368, 1550)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    anchor     	2
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	15
+					    justify    	0
+					    label      	"1"
+					    pctDist    	0.900000
+					    height     	54
+					    orientation 	1))))))))
+	    (object Class_Category "Pakke for gjenbrukte klasser"
+		quid       	"41A1BC5C01E3"
+		exportControl 	"Public"
+		logical_models 	(list unit_reference_list
+		    (object Class "Adresse"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"KITH"
+				name       	"ShortName"
+				value      	"Address")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Use"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Example"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Comment"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Codes"
+				value      	"")
+			    (object Attribute
+				tool       	"KITH"
+				name       	"Status"
+				value      	"O"))
+			quid       	"38E07ECB01EE"
+			documentation 	"Adresse."
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "Type"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"Type")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	(value Text 
+|Vanligvis skal folkeregisteradressen oppgis for privatpersoner.
+|For privatpersoner skal bostedsadresse kun oppgis hvis den er ulik Folkeregisteradressen.
+|
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|Kodeverdier:
+|H: Bostedsadresse
+|HP: Folkeregisteradresse
+|PST: Postadresse
+|WP:  Arbeidsplassadresse
+|TMP: Midlertidig adresse
+|RES: Besøksadresse
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	(value Text ""))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text "M"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Level"
+					value      	""))
+				quid       	"38E07EF7029C"
+				documentation 	
+|Kode for type adresse.
+|For pasienter benyttes bostedsadresse (H). 
+|Hvis folkeregisteradressen er ulik bostedsadressen skal folkeregisteradressen oppgis (HP). Denne benyttes til innkallingsadressen dersom denne er ulik folkeregisteradressen.
+|For organisasjoner benyttes postadresse (PST).
+				
+				type       	"CS"
+				exportControl 	"Public")
+			    (object ClassAttribute "Gateadresse"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"StreetAdr")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|"Storgaten 5"
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"O")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	""))
+				quid       	"38E09DA503D6"
+				documentation 	"Gateadresse."
+				type       	"ST"
+				exportControl 	"Public")
+			    (object ClassAttribute "Postnummer"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"PostalCode")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|"5001"
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"O")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	""))
+				quid       	"38E09DF9021E"
+				documentation 	"Postnummer."
+				type       	"ST"
+				exportControl 	"Public")
+			    (object ClassAttribute "Poststed"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"City")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|"Bergen"
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"O")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	""))
+				quid       	"38E09E0803B0"
+				documentation 	"Poststed."
+				type       	"ST"
+				exportControl 	"Public")
+			    (object ClassAttribute "Fylke/kommune"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"County")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|"1201"
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"O"))
+				quid       	"38E09E1103E5"
+				documentation 	"Angivelse av kode for fylke og/eller kommune i henhold til SSB's kodeverk for fylkes/kommunenr."
+				type       	"CS"
+				exportControl 	"Public")
+			    (object ClassAttribute "Land"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"Country")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	(value Text ""))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|"DK"
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"O")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	""))
+				quid       	"38E09E240342"
+				documentation 	
+|Kode for land iht. ISO 3166.
+|Benyttes vanligvis kun for adresser i utlandet.
+				
+				type       	"CS"
+				exportControl 	"Public")
+			    (object ClassAttribute "Bydel"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"CityDistr")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text ""))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"O")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Level"
+					value      	""))
+				quid       	"38E09DDE026F"
+				documentation 	"Kode for angivelse av administrativ del av by i henhold til lokale kodeverk."
+				type       	"CS"
+				exportControl 	"Public")
+			    (object ClassAttribute "Telekommunikasjon"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "TeleAddress"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	(value Text 
+|"tel: +4712345678" (Telefonnummer)
+|"mailto:test.lege@testlegeontor.no" (Edi-adresse)
+					))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Origin"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"O")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Level"
+					value      	""))
+				quid       	"38E0A2630269"
+				documentation 	"Telekommunikasjonsadresse inkludert type."
+				type       	"SET<URL>"
+				exportControl 	"Public"))
+			module     	"Component View::AppRec"
+			quidu      	"3D4E48AE002F"))
+		logical_presentations 	(list unit_reference_list)))
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"3D32D741013D"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object CategoryView "Logical View::HTE pakke" @75
+			location   	(671, 246)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@75
+			    location   	(527, 162)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	288
+			    justify    	0
+			    label      	"HTE pakke")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"3948EBC400F0"
+			width      	300
+			height     	180)
+		    (object CategoryView "Logical View::Application Receipt" @76
+			location   	(266, 246)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@76
+			    location   	(122, 162)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	288
+			    justify    	0
+			    label      	"Application Receipt")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"3DABAEF8019C"
+			width      	300
+			height     	180)
+		    (object CategoryView "Logical View::Pakke for gjenbrukte klasser" @77
+			location   	(1126, 246)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@77
+			    location   	(947, 162)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	358
+			    justify    	0
+			    label      	"Pakke for gjenbrukte klasser")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"41A1BC5C01E3"
+			width      	370
+			height     	180)))
+	    (object ClassDiagram "Full"
+		quid       	"41A5DD950350"
+		title      	"Full"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	119
+		origin_y   	1717
+		items      	(list diagram_item_list
+		    (object ClassView "Class" "Logical View::HTE pakke::HTErolle" @78
+			ShowCompartmentStereotypes 	TRUE
+			SuppressAttribute 	TRUE
+			SuppressOperation 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(457, 903)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	3
+			    bold       	FALSE
+			    italics    	TRUE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@78
+			    location   	(310, 854)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	294
+			    justify    	0
+			    label      	"HTErolle")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"382AAC25009C"
+			width      	312
+			height     	122
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::Pakke for gjenbrukte klasser::Adresse" @79
+			ShowCompartmentStereotypes 	TRUE
+			SuppressAttribute 	TRUE
+			SuppressOperation 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1270, 1219)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@79
+			    location   	(964, 1169)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	612
+			    justify    	0
+			    label      	"Adresse")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"38E07ECB01EE"
+			width      	630
+			height     	124
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::HTE pakke::Helsetjenesteenhet" @80
+			ShowCompartmentStereotypes 	TRUE
+			SuppressAttribute 	TRUE
+			SuppressOperation 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(487, 1213)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	3
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@80
+			    location   	(277, 1164)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	420
+			    justify    	0
+			    label      	"Helsetjenesteenhet")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"382E5A90000E"
+			width      	438
+			height     	122
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$15" @81
+			location   	(464, 1057)
+			stereotype 	TRUE
+			quidu      	"3D1B319D01C6"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$16" @82
+				Parent_View 	@81
+				location   	(288, 545)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"3D1B319E011D"
+				client     	@81
+				supplier   	@80
+				line_style 	3
+				origin_attachment 	(464, 1057)
+				terminal_attachment 	(464, 1152)
+				label      	(object SegLabel @83
+				    Parent_View 	@82
+				    location   	(501, 1112)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"1"
+				    pctDist    	0.594203
+				    height     	37
+				    orientation 	0))
+			    (object RoleView "$UNNAMED$17" @84
+				Parent_View 	@81
+				location   	(288, 545)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"3D1B319E0127"
+				client     	@81
+				supplier   	@78
+				line_style 	3
+				origin_attachment 	(464, 1057)
+				terminal_attachment 	(464, 963))))
+		    (object AssociationViewNew "$UNNAMED$18" @85
+			location   	(830, 1224)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			quidu      	"41A1BD3E0184"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$19" @86
+				Parent_View 	@85
+				location   	(248, 277)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"41A1BD3E02D9"
+				client     	@85
+				supplier   	@79
+				line_style 	3
+				origin_attachment 	(830, 1224)
+				terminal_attachment 	(955, 1224)
+				label      	(object SegLabel @87
+				    Parent_View 	@86
+				    location   	(912, 1264)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"0..1"
+				    pctDist    	0.656000
+				    height     	40
+				    orientation 	1))
+			    (object RoleView "$UNNAMED$20" @88
+				Parent_View 	@85
+				location   	(248, 277)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"41A1BD3E02E3"
+				client     	@85
+				supplier   	@80
+				line_style 	3
+				origin_attachment 	(830, 1224)
+				terminal_attachment 	(706, 1224)
+				label      	(object SegLabel @89
+				    Parent_View 	@88
+				    location   	(719, 1278)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"1"
+				    pctDist    	0.900000
+				    height     	54
+				    orientation 	0))))
+		    (object ClassView "Class" "Logical View::Application Receipt::Original message identification" @90
+			ShowCompartmentStereotypes 	TRUE
+			SuppressAttribute 	TRUE
+			SuppressOperation 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1260, 204)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@90
+			    location   	(905, 155)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	710
+			    justify    	0
+			    label      	"Original message identification")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"3D36CB780157"
+			width      	728
+			height     	122
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::HTE pakke::Mottaker" @91
+			ShowCompartmentStereotypes 	TRUE
+			SuppressAttribute 	TRUE
+			SuppressOperation 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(632, 574)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	3
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@91
+			    location   	(477, 525)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	310
+			    justify    	0
+			    label      	"Mottaker")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"383D30B002FA"
+			width      	328
+			height     	122
+			annotation 	8
+			autoResize 	TRUE)
+		    (object InheritView "" @92
+			stereotype 	TRUE
+			quidu      	"3C7E1F75024C"
+			client     	@91
+			supplier   	@78
+			line_style 	3
+			origin_attachment 	(559, 634)
+			terminal_attachment 	(559, 842))
+		    (object ClassView "Class" "Logical View::Application Receipt::Application Receipt" @93
+			ShowCompartmentStereotypes 	TRUE
+			SuppressAttribute 	TRUE
+			SuppressOperation 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(399, 190)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@93
+			    location   	(165, 162)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	468
+			    justify    	0
+			    label      	"Application Receipt")
+			stereotype 	(object ItemLabel
+			    Parent_View 	@93
+			    location   	(165, 113)
+			    fill_color 	13434879
+			    anchor     	10
+			    nlines     	1
+			    max_width  	468
+			    justify    	0
+			    label      	"<<top>>")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"3D32ED9E03CE"
+			width      	486
+			height     	178
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$0" @94
+			location   	(769, 203)
+			stereotype 	TRUE
+			quidu      	"3E6759C001FD"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$2" @95
+				Parent_View 	@94
+				location   	(273, -197)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @96
+				    Parent_View 	@95
+				    location   	(870, 245)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    hidden     	TRUE
+				    anchor     	1
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	450
+				    justify    	0
+				    label      	""
+				    pctDist    	0.800000
+				    height     	42
+				    orientation 	1)
+				stereotype 	TRUE
+				quidu      	"3E6759C001FF"
+				client     	@94
+				supplier   	@90
+				line_style 	3
+				origin_attachment 	(769, 203)
+				terminal_attachment 	(896, 203)
+				label      	(object SegLabel @97
+				    Parent_View 	@95
+				    location   	(866, 256)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"1"
+				    pctDist    	0.769841
+				    height     	53
+				    orientation 	1))
+			    (object RoleView "$UNNAMED$1" @98
+				Parent_View 	@94
+				location   	(273, -197)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @99
+				    Parent_View 	@98
+				    location   	(668, 162)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    hidden     	TRUE
+				    anchor     	1
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	450
+				    justify    	0
+				    label      	""
+				    pctDist    	0.800000
+				    height     	42
+				    orientation 	1)
+				stereotype 	TRUE
+				quidu      	"3E6759C001FE"
+				client     	@94
+				supplier   	@93
+				line_style 	3
+				origin_attachment 	(769, 203)
+				terminal_attachment 	(642, 203)
+				label      	(object SegLabel @100
+				    Parent_View 	@98
+				    location   	(657, 256)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"1"
+				    pctDist    	0.892473
+				    height     	53
+				    orientation 	0))))
+		    (object AssociationViewNew "$UNNAMED$3" @101
+			location   	(510, 396)
+			stereotype 	TRUE
+			quidu      	"41A1BCBF00EB"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$5" @102
+				Parent_View 	@101
+				location   	(72, -879)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @103
+				    Parent_View 	@102
+				    location   	(469, 302)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    hidden     	TRUE
+				    anchor     	1
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	450
+				    justify    	0
+				    label      	""
+				    pctDist    	0.800000
+				    height     	42
+				    orientation 	0)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"41A1BCBF0240"
+				client     	@101
+				supplier   	@93
+				line_style 	3
+				origin_attachment 	(510, 396)
+				terminal_attachment 	(510, 279)
+				label      	(object SegLabel @104
+				    Parent_View 	@102
+				    location   	(560, 318)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"1"
+				    pctDist    	0.666667
+				    height     	50
+				    orientation 	1))
+			    (object RoleView "$UNNAMED$4" @105
+				Parent_View 	@101
+				location   	(72, -879)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @106
+				    Parent_View 	@105
+				    location   	(469, 490)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    hidden     	TRUE
+				    anchor     	1
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	450
+				    justify    	0
+				    label      	""
+				    pctDist    	0.800000
+				    height     	42
+				    orientation 	1)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"41A1BCBF0236"
+				client     	@101
+				supplier   	@91
+				line_style 	3
+				origin_attachment 	(510, 396)
+				terminal_attachment 	(510, 513)
+				label      	(object SegLabel @107
+				    Parent_View 	@105
+				    location   	(564, 501)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"1"
+				    pctDist    	0.900000
+				    height     	54
+				    orientation 	0))))
+		    (object ClassView "Class" "Logical View::HTE pakke::Sender" @108
+			ShowCompartmentStereotypes 	TRUE
+			SuppressAttribute 	TRUE
+			SuppressOperation 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(262, 571)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	3
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@108
+			    location   	(107, 522)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	310
+			    justify    	0
+			    label      	"Sender")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"382AAA4400F5"
+			width      	328
+			height     	122
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$6" @109
+			location   	(265, 394)
+			stereotype 	TRUE
+			quidu      	"41A1BCC00382"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$8" @110
+				Parent_View 	@109
+				location   	(-745, -841)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @111
+				    Parent_View 	@110
+				    location   	(224, 302)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    hidden     	TRUE
+				    anchor     	1
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	450
+				    justify    	0
+				    label      	""
+				    pctDist    	0.800000
+				    height     	42
+				    orientation 	0)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"41A1BCC100E4"
+				client     	@109
+				supplier   	@93
+				line_style 	3
+				origin_attachment 	(265, 394)
+				terminal_attachment 	(265, 279)
+				label      	(object SegLabel @112
+				    Parent_View 	@110
+				    location   	(319, 309)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"1"
+				    pctDist    	0.741379
+				    height     	54
+				    orientation 	1))
+			    (object RoleView "$UNNAMED$7" @113
+				Parent_View 	@109
+				location   	(-745, -841)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @114
+				    Parent_View 	@113
+				    location   	(224, 486)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    hidden     	TRUE
+				    anchor     	1
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	450
+				    justify    	0
+				    label      	""
+				    pctDist    	0.800000
+				    height     	42
+				    orientation 	1)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"41A1BCC100DA"
+				client     	@109
+				supplier   	@108
+				line_style 	3
+				origin_attachment 	(265, 394)
+				terminal_attachment 	(265, 509)
+				label      	(object SegLabel @115
+				    Parent_View 	@113
+				    location   	(319, 497)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"1"
+				    pctDist    	0.900000
+				    height     	54
+				    orientation 	0))))
+		    (object InheritView "" @116
+			stereotype 	TRUE
+			quidu      	"3C7E1F7A004B"
+			client     	@108
+			supplier   	@78
+			line_style 	3
+			origin_attachment 	(387, 631)
+			terminal_attachment 	(387, 841))
+		    (object ClassView "Class" "Logical View::HTE pakke::Institusjon" @117
+			ShowCompartmentStereotypes 	TRUE
+			SuppressAttribute 	TRUE
+			SuppressOperation 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(408, 1757)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	3
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@117
+			    location   	(253, 1708)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	310
+			    justify    	0
+			    label      	"Institusjon")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"382E5B1203E0"
+			width      	328
+			height     	122
+			annotation 	8
+			autoResize 	TRUE)
+		    (object InheritView "" @118
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	3
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			quidu      	"3833FEF5006D"
+			client     	@117
+			supplier   	@80
+			line_style 	3
+			origin_attachment 	(440, 1696)
+			terminal_attachment 	(440, 1273))
+		    (object ClassView "Class" "Logical View::HTE pakke::Person i organisasjon" @119
+			ShowCompartmentStereotypes 	TRUE
+			SuppressAttribute 	TRUE
+			SuppressOperation 	TRUE
+			IncludeAttribute 	TRUE
+			location   	(478, 2036)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@119
+			    location   	(215, 1987)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	526
+			    justify    	0
+			    label      	"Person i organisasjon")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"3C7E2D57026B"
+			width      	544
+			height     	122
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$12" @120
+			location   	(426, 1895)
+			stereotype 	TRUE
+			quidu      	"3C7E2DE40029"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$13" @121
+				Parent_View 	@120
+				location   	(-326, 695)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				quidu      	"3C7E2DE401A5"
+				client     	@120
+				supplier   	@119
+				line_style 	3
+				origin_attachment 	(426, 1895)
+				terminal_attachment 	(426, 1974)
+				label      	(object SegLabel @122
+				    Parent_View 	@121
+				    location   	(370, 1944)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	66
+				    justify    	0
+				    label      	"0..*"
+				    pctDist    	0.630252
+				    height     	57
+				    orientation 	1))
+			    (object RoleView "$UNNAMED$14" @123
+				Parent_View 	@120
+				location   	(-326, 695)
+				stereotype 	TRUE
+				quidu      	"3C7E2DE40209"
+				client     	@120
+				supplier   	@117
+				line_style 	3
+				origin_attachment 	(426, 1895)
+				terminal_attachment 	(426, 1817))))
+		    (object ClassView "Class" "Logical View::HTE pakke::Avdeling" @124
+			ShowCompartmentStereotypes 	TRUE
+			SuppressAttribute 	TRUE
+			SuppressOperation 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1134, 1764)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	3
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@124
+			    location   	(979, 1715)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	310
+			    justify    	0
+			    label      	"Avdeling")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"396309840050"
+			width      	328
+			height     	122
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$9" @125
+			location   	(771, 1769)
+			stereotype 	TRUE
+			quidu      	"3C7E2CB30070"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$10" @126
+				Parent_View 	@125
+				location   	(-93, 569)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				quidu      	"3C7E2CB303A6"
+				client     	@125
+				supplier   	@124
+				line_style 	3
+				origin_attachment 	(771, 1769)
+				terminal_attachment 	(970, 1769)
+				label      	(object SegLabel @127
+				    Parent_View 	@126
+				    location   	(887, 1716)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	66
+				    justify    	0
+				    label      	"0..*"
+				    pctDist    	0.582418
+				    height     	54
+				    orientation 	0))
+			    (object RoleView "$UNNAMED$11" @128
+				Parent_View 	@125
+				location   	(-93, 569)
+				stereotype 	TRUE
+				quidu      	"3C7E2CB4000E"
+				client     	@125
+				supplier   	@117
+				line_style 	3
+				origin_attachment 	(771, 1769)
+				terminal_attachment 	(572, 1769))))
+		    (object ClassView "Class" "Logical View::HTE pakke::Person i helsevesenet" @129
+			ShowCompartmentStereotypes 	TRUE
+			SuppressAttribute 	TRUE
+			SuppressOperation 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1298, 1502)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	3
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@129
+			    location   	(1027, 1453)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	542
+			    justify    	0
+			    label      	"Person i helsevesenet")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"382E5B0603BB"
+			width      	560
+			height     	122
+			annotation 	8
+			autoResize 	TRUE)
+		    (object InheritView "" @130
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	3
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			quidu      	"3833FEF001EC"
+			client     	@129
+			supplier   	@80
+			vertices   	(list Points
+			    (1018, 1526)
+			    (614, 1526)
+			    (614, 1274))
+			line_style 	3
+			origin_attachment 	(1018, 1526)
+			terminal_attachment 	(614, 1274))
+		    (object ClassView "Class" "Logical View::HTE pakke::Alternativ Id" @131
+			ShowCompartmentStereotypes 	TRUE
+			SuppressAttribute 	TRUE
+			SuppressOperation 	TRUE
+			IncludeAttribute 	TRUE
+			location   	(1420, 2046)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@131
+			    location   	(1286, 2004)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	268
+			    justify    	0
+			    label      	"Alternativ Id")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"41BEB4E4030B"
+			width      	286
+			height     	108
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$24" @132
+			location   	(942, 1895)
+			stereotype 	TRUE
+			quidu      	"41BEB5A401E5"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$26" @133
+				Parent_View 	@132
+				location   	(-321, 1057)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @134
+				    Parent_View 	@133
+				    location   	(551, 1854)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    hidden     	TRUE
+				    anchor     	1
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	450
+				    justify    	0
+				    label      	""
+				    pctDist    	0.800000
+				    height     	42
+				    orientation 	1)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"41BEB5A5002F"
+				client     	@132
+				supplier   	@117
+				vertices   	(list Points
+				    (942, 1895)
+				    (530, 1895)
+				    (530, 1818))
+				line_style 	3
+				origin_attachment 	(942, 1895)
+				terminal_attachment 	(530, 1818)
+				label      	(object SegLabel @135
+				    Parent_View 	@133
+				    location   	(477, 1867)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"1"
+				    pctDist    	0.900000
+				    height     	54
+				    orientation 	0))
+			    (object RoleView "$UNNAMED$25" @136
+				Parent_View 	@132
+				location   	(-321, 1057)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @137
+				    Parent_View 	@136
+				    location   	(1332, 1854)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    hidden     	TRUE
+				    anchor     	1
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	450
+				    justify    	0
+				    label      	""
+				    pctDist    	0.800000
+				    height     	42
+				    orientation 	0)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"41BEB5A5002D"
+				client     	@132
+				supplier   	@131
+				vertices   	(list Points
+				    (942, 1895)
+				    (1333, 1895)
+				    (1333, 1992))
+				line_style 	3
+				origin_attachment 	(942, 1895)
+				terminal_attachment 	(1333, 1992)
+				label      	(object SegLabel @138
+				    Parent_View 	@136
+				    location   	(1409, 1967)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"0..*"
+				    pctDist    	0.948771
+				    height     	76
+				    orientation 	0))))
+		    (object AssociationViewNew "$UNNAMED$27" @139
+			location   	(1013, 2023)
+			stereotype 	TRUE
+			quidu      	"41BEB5A800E6"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$29" @140
+				Parent_View 	@139
+				location   	(-250, 1185)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @141
+				    Parent_View 	@140
+				    location   	(804, 1982)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    hidden     	TRUE
+				    anchor     	1
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	450
+				    justify    	0
+				    label      	""
+				    pctDist    	0.800000
+				    height     	42
+				    orientation 	1)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"41BEB5A80263"
+				client     	@139
+				supplier   	@119
+				line_style 	3
+				origin_attachment 	(1013, 2023)
+				terminal_attachment 	(750, 2023)
+				label      	(object SegLabel @142
+				    Parent_View 	@140
+				    location   	(776, 2077)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"1"
+				    pctDist    	0.900000
+				    height     	54
+				    orientation 	0))
+			    (object RoleView "$UNNAMED$28" @143
+				Parent_View 	@139
+				location   	(-250, 1185)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @144
+				    Parent_View 	@143
+				    location   	(1224, 1982)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    hidden     	TRUE
+				    anchor     	1
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	450
+				    justify    	0
+				    label      	""
+				    pctDist    	0.800000
+				    height     	42
+				    orientation 	0)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"41BEB5A80259"
+				client     	@139
+				supplier   	@131
+				vertices   	(list Points
+				    (1013, 2023)
+				    (1013, 1992)
+				    (1277, 1992))
+				line_style 	3
+				origin_attachment 	(1013, 2023)
+				terminal_attachment 	(1277, 1992)
+				label      	(object SegLabel @145
+				    Parent_View 	@143
+				    location   	(1250, 2077)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"0..*"
+				    pctDist    	0.900000
+				    height     	54
+				    orientation 	1))))
+		    (object AssociationViewNew "$UNNAMED$21" @146
+			location   	(1444, 1827)
+			stereotype 	TRUE
+			quidu      	"41BEB59F01B5"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$23" @147
+				Parent_View 	@146
+				location   	(181, 989)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @148
+				    Parent_View 	@147
+				    location   	(1340, 1726)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    hidden     	TRUE
+				    anchor     	1
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	450
+				    justify    	0
+				    label      	""
+				    pctDist    	0.800000
+				    height     	42
+				    orientation 	1)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"41BEB59F0348"
+				client     	@146
+				supplier   	@124
+				vertices   	(list Points
+				    (1444, 1827)
+				    (1444, 1767)
+				    (1298, 1767))
+				line_style 	3
+				origin_attachment 	(1444, 1827)
+				terminal_attachment 	(1298, 1767)
+				label      	(object SegLabel @149
+				    Parent_View 	@147
+				    location   	(1319, 1821)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"1"
+				    pctDist    	0.900000
+				    height     	54
+				    orientation 	0))
+			    (object RoleView "$UNNAMED$22" @150
+				Parent_View 	@146
+				location   	(181, 989)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @151
+				    Parent_View 	@150
+				    location   	(1486, 1959)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    hidden     	TRUE
+				    anchor     	1
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	450
+				    justify    	0
+				    label      	""
+				    pctDist    	0.800000
+				    height     	42
+				    orientation 	0)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"41BEB59F0346"
+				client     	@146
+				supplier   	@131
+				line_style 	3
+				origin_attachment 	(1444, 1827)
+				terminal_attachment 	(1444, 1992)
+				label      	(object SegLabel @152
+				    Parent_View 	@150
+				    location   	(1296, 1964)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"0..*"
+				    pctDist    	0.830303
+				    height     	148
+				    orientation 	1))))
+		    (object AssociationViewNew "$UNNAMED$30" @153
+			location   	(1538, 1777)
+			stereotype 	TRUE
+			quidu      	"41C0137600B4"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$32" @154
+				Parent_View 	@153
+				location   	(275, 939)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @155
+				    Parent_View 	@154
+				    location   	(1580, 1607)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    hidden     	TRUE
+				    anchor     	1
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	450
+				    justify    	0
+				    label      	""
+				    pctDist    	0.800000
+				    height     	42
+				    orientation 	1)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"41C0137603BA"
+				client     	@153
+				supplier   	@129
+				vertices   	(list Points
+				    (1538, 1777)
+				    (1548, 1777)
+				    (1548, 1563))
+				line_style 	3
+				origin_attachment 	(1538, 1777)
+				terminal_attachment 	(1548, 1563)
+				label      	(object SegLabel @156
+				    Parent_View 	@154
+				    location   	(1485, 1584)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"1"
+				    pctDist    	0.900000
+				    height     	54
+				    orientation 	0))
+			    (object RoleView "$UNNAMED$31" @157
+				Parent_View 	@153
+				location   	(275, 939)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @158
+				    Parent_View 	@157
+				    location   	(1580, 1949)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    hidden     	TRUE
+				    anchor     	1
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	450
+				    justify    	0
+				    label      	""
+				    pctDist    	0.800000
+				    height     	42
+				    orientation 	0)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"41C0137603B8"
+				client     	@153
+				supplier   	@131
+				line_style 	3
+				origin_attachment 	(1538, 1777)
+				terminal_attachment 	(1538, 1992)
+				label      	(object SegLabel @159
+				    Parent_View 	@157
+				    location   	(1499, 1961)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"0..*"
+				    pctDist    	0.862559
+				    height     	40
+				    orientation 	1))))))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"3D32D73E01ED"
+	physical_models 	(list unit_reference_list
+	    (object module "AppRec" "NotAModuleType" "NotAModulePart"
+		quid       	"3D4E48AE002F"
+		documentation 	"XML-melding"
+		stereotype 	""
+		language   	""
+		class      	"Logical View::Application Receipt::Application Receipt"
+		quidu      	"3D32ED9E03CE"
+		class      	"Logical View::Application Receipt::Original message identification"
+		quidu      	"3D36CB780157"
+		class      	"Logical View::HTE pakke::Sender"
+		quidu      	"382AAA4400F5"
+		class      	"Logical View::HTE pakke::HTErolle"
+		quidu      	"382AAC25009C"
+		class      	"Logical View::HTE pakke::Helsetjenesteenhet"
+		quidu      	"382E5A90000E"
+		class      	"Logical View::HTE pakke::Mottaker"
+		quidu      	"383D30B002FA"
+		class      	"Logical View::HTE pakke::Institusjon"
+		quidu      	"382E5B1203E0"
+		class      	"Logical View::Pakke for gjenbrukte klasser::Adresse"
+		quidu      	"38E07ECB01EE"
+		class      	"Logical View::HTE pakke::Avdeling"
+		quidu      	"396309840050"
+		class      	"Logical View::HTE pakke::Person i organisasjon"
+		quidu      	"3C7E2D57026B"
+		class      	"Logical View::HTE pakke::Person i helsevesenet"
+		quidu      	"382E5B0603BB"))
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"3D32D7410101"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list)))
+	category   	"Logical View"
+	quidu      	"41A1B412011B")
+    process_structure 	(object Processes
+	quid       	"3D32D73E01EE"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"3D32D73E01F0"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	attributes 	(list Attribute_Set
+	    (object Attribute
+		tool       	"DDL"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"DDL"
+		name       	"default__Project"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"DDL"
+			name       	"Directory"
+			value      	"AUTO GENERATE")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"DataBase"
+			value      	("DataBaseSet" 800))
+		    (object Attribute
+			tool       	"DDL"
+			name       	"DataBaseSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"DDL"
+				name       	"ANSI"
+				value      	800)
+			    (object Attribute
+				tool       	"DDL"
+				name       	"Oracle"
+				value      	801)
+			    (object Attribute
+				tool       	"DDL"
+				name       	"SQLServer"
+				value      	802)
+			    (object Attribute
+				tool       	"DDL"
+				name       	"Sybase"
+				value      	803)
+			    (object Attribute
+				tool       	"DDL"
+				name       	"Watcom"
+				value      	804)))
+		    (object Attribute
+			tool       	"DDL"
+			name       	"PrimaryKeyColumnName"
+			value      	"Id")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"PrimaryKeyColumnType"
+			value      	"NUMBER(5)")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"ViewName"
+			value      	"V_")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"TableName"
+			value      	"T_")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"InheritSuffix"
+			value      	"_V")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"DropClause"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"BaseViews"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"DDLScriptFilename"
+			value      	"DDL1.SQL")))
+	    (object Attribute
+		tool       	"DDL"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"DDL"
+			name       	"ColumnType"
+			value      	"VARCHAR")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"Length"
+			value      	"")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"NullsOK"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"PrimaryKey"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"Unique"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"CompositeUnique"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"CheckConstraint"
+			value      	"")))
+	    (object Attribute
+		tool       	"DDL"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Model Integrator"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Web Publisher"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Version Control"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"KITH"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ShortName"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Status"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Use"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Example"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Comment"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Codes"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Level"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ID"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"OrigOrg"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Author"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"PrevVersion"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ValidFrom"
+			value      	"")))
+	    (object Attribute
+		tool       	"KITH"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ShortName"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Origin"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Status"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Use"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Example"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Comment"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Codes"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ID"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"OrigOrg"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Author"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"PrevVersion"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ValidFrom"
+			value      	"")))
+	    (object Attribute
+		tool       	"Format Wizard"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"framework"
+		name       	"HiddenTool"
+		value      	FALSE))
+	quid       	"3D32D73E01EF"))

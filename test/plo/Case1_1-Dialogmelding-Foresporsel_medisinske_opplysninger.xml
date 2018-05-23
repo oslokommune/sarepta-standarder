@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Eksempel på bruk av hodemeldingen sammen med dialogmeldingen -->
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd">
+	<MsgInfo>
+		<Type V="DIALOG_FORESPORSEL" DN="Forespørsel"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2008-04-16T09:30:47.0Z</GenDate>
+		<MsgId>e93d2f30-df37-11de-8a39-0800200c9a66</MsgId>
+		<Sender>
+			<Organisation>
+				<OrganisationName>Gammeltun Sykehjem</OrganisationName>
+				<Ident>
+					<Id>999888777</Id>
+					<TypeId V="ENH" DN="Organisasjonsnummeret i Enhetsregister" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Ident>
+					<Id>99887</Id>
+					<TypeId V="HER" DN="Identifikator fra Helsetjenesteenhetsregisteret (HER-id)" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>Kattskinnet legesenter</OrganisationName>
+				<Ident>
+					<Id>971318864</Id>
+					<TypeId V="ENH" DN="Organisasjonsnummeret i Enhetsregister" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<HealthcareProfessional>
+					<FamilyName>September</FamilyName>
+					<GivenName>August</GivenName>
+					<Ident>
+						<Id>9144897</Id>
+						<TypeId V="HER" DN="Identifikator fra Helsetjenesteenhetsregisteret (HER-id)" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</HealthcareProfessional>
+			</Organisation>
+		</Receiver>
+		<Patient>
+			<FamilyName>Gundersen</FamilyName>
+			<GivenName>Unni</GivenName>
+			<Ident>
+				<Id>15072500552</Id>
+				<TypeId V="FNR" DN="Fødselsnummer" S="2.16.578.1.12.4.1.1.8116"/>
+			</Ident>
+			<Address>
+				<Type V="H" DN="Bostedsadresse"/>
+				<StreetAdr>Flåklypa 31</StreetAdr>
+				<PostalCode>2560</PostalCode>
+				<City>Alvdal</City>
+			</Address>
+			<TeleCom>
+				<TypeTelecom V="HP" DN="Hovedtelefon"/>
+				<TeleAddress V="tel:+4762481001"/>
+			</TeleCom>
+			<TeleCom>
+				<TypeTelecom V="MC" DN="Mobiltelefon"/>
+				<TeleAddress V="tel:+4790091001"/>
+			</TeleCom>
+		</Patient>
+	</MsgInfo>
+	<Document>
+		<ContentDescription>Forespørsel </ContentDescription>
+		<Consent V="1" DN="Ja" S="2.16.578.1.12.4.1.1.3109"/>
+		<RefDoc>
+			<IssueDate V="2005-11-17T09:30:47.0Z"/>
+			<MsgType V="XML" DN="XML-instans"/>
+			<Content>
+				<Dialogmelding xmlns="http://www.kith.no/xmlstds/dialog/2006-10-11" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/dialog/2006-10-11 dialogmelding.xsd">
+					<Foresporsel>
+						<TypeForesp V="1" DN="Helseopplysninger" S="2.16.578.1.12.4.1.1.9152"/>
+						<Sporsmal>Pasienten er tildelt korttidsopphold på Tunet sykehjem 03.03.07 -  28.03.07. I den forbindelse ber vi om at det blir sendt oppdaterte medisinske opplysninger til sykehjemslegen på sykehjemmet. &#13;&#10;&#13;&#10; Samtykke:&#13;&#10;Dekkes av samtykke i søknad.</Sporsmal>
+						<Formål DN="Helsehjelp til pasient som har journal" V="2" S="2.16.578.1.12.4.1.1.9068"/>
+					</Foresporsel>
+				</Dialogmelding>
+			</Content>
+		</RefDoc>
+	</Document>
+</MsgHead>

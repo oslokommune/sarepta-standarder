@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -->
+<!-- Dette er en testmelding med fiktive personer -->
+<!-- -->
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd">
+	<MsgInfo>
+		<Type V="DIALOG_FORESPORSEL" DN="Forespørsel"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2018-01-24T10:23:32</GenDate>
+		<MsgId>f0f88210-0111-11e8-8f1a-0800200c9a66</MsgId>
+		<Sender>
+			<Organisation>
+				<OrganisationName>Alvdal Kommune</OrganisationName>
+				<Ident>
+					<Id>99387</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Organisation>
+					<OrganisationName>Sykepleietjeneste</OrganisationName>
+					<Ident>
+						<Id>5078</Id>
+						<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</Organisation>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>Kattskinnet legesenter</OrganisationName>
+				<Ident>
+					<Id>91096</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<HealthcareProfessional>
+					<FamilyName>Lin</FamilyName>
+					<GivenName>Rita</GivenName>
+					<Ident>
+						<Id>91101</Id>
+						<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</HealthcareProfessional>
+			</Organisation>
+		</Receiver>
+		<Patient>
+			<FamilyName>Danser</FamilyName>
+			<GivenName>Line</GivenName>
+			<DateOfBirth>1969-11-13</DateOfBirth>
+			<Sex V="2" DN="Kvinne"/>
+			<Ident>
+				<Id>13116900216</Id>
+				<TypeId V="FNR" DN="Fødselsnummer" S="2.16.578.1.12.4.1.1.8116"/>
+			</Ident>
+		</Patient>
+	</MsgInfo>
+	<Document>
+		<RefDoc>
+			<IssueDate V="2018-01-24T10:10:47"/>
+			<MsgType V="XML" DN="XML-instans"/>
+			<Content>
+				<Dialogmelding xmlns="http://www.kith.no/xmlstds/dialog/2006-10-11" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/dialog/2006-10-11 dialogmelding.xsd">
+					<Foresporsel>
+						<TypeForesp V="99" DN="Annen henvendelse" S="2.16.578.1.12.4.1.1.9152"/>
+						<Sporsmal>Pas går snart tom for cetirizin 10mg tabl og amlodipin 5mg tbl. Ber om fornyelse av resept.</Sporsmal>
+						<RollerRelatertNotat>
+							<RoleToPatient DN="Primærkontakt" V="9" S="2.16.578.1.12.4.1.1.9034"/>
+							<HealthcareProfessional>
+								<TypeHealthcareProfessional DN="Sykepleier" V="SP"/>
+								<FamilyName>Omsorg</FamilyName>
+								<GivenName>Gunn</GivenName>
+								<Ident>
+									<fk1:Id>9876543</fk1:Id>
+									<fk1:TypeId V="HPR" DN="HPR-nummer" S="2.16.578.1.12.4.1.1.8116" />  
+								</Ident>
+								<TeleCom>
+									<fk1:TeleAddress V="tel:72727272"></fk1:TeleAddress>
+								</TeleCom>
+							</HealthcareProfessional>
+						</RollerRelatertNotat>
+					</Foresporsel>
+				</Dialogmelding>
+			</Content>
+		</RefDoc>
+	</Document>
+</MsgHead>

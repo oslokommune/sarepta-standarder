@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+NAV Egenandelsspørring
+Versjon 2
+2016-06-10
+-->
+<xs:schema
+		xmlns:kith="http://www.kith.no/xmlstds"
+		xmlns:kode="http://www.kith.no/xmlstds/nav/egenandel/kodeverk/2016-06-10"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		xmlns="http://www.kith.no/xmlstds/nav/egenandel/2016-06-10"
+		targetNamespace="http://www.kith.no/xmlstds/nav/egenandel/2016-06-10"
+		elementFormDefault="qualified"
+		attributeFormDefault="unqualified">
+
+	<xs:import namespace="http://www.kith.no/xmlstds" schemaLocation="kith.xsd"/>
+	<xs:import namespace="http://www.kith.no/xmlstds/nav/egenandel/kodeverk/2016-06-10" schemaLocation="NAV-Egenandel-Kodeverk-2016-06-10.xsd"/>
+
+	<xs:element name="EgenandelForesporselV2">
+		<xs:complexType>
+			<xs:choice>
+
+				<xs:element name="HarBorgerFrikort" type="FrikortParamType">
+					<xs:annotation>
+						<xs:documentation>Forespørsel om Borger har frikort.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+
+				<xs:element name="HarBorgerEgenandelfritak" type="EgenandelfritakParamType">
+					<xs:annotation>
+						<xs:documentation>Forespørsel om borger skal betale egenadel på helsetjenester, oppgitt fødselsnummer og dato for behandlingen</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="EgenandelSvarV2">
+		<xs:complexType>
+			<xs:sequence>
+
+				<xs:element name="Status" type="kith:CS">
+					<xs:annotation>
+						<xs:documentation>Svaret er Ja eller ingen data. Dersom Borger har reservert seg mot utlevering av frikortopplysninger er svaret ingen datat.  Dette er det samme svaret som når frikortgrensen ikke er oppnådd.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+
+				<xs:element name="Svarmelding" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>En tekst som beskriver hvordan svaret skal tolkes av behandler</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="FrikortParamType">
+		<xs:complexContent>
+			<xs:extension base="EgenandelfritakParamType">
+				<xs:sequence>
+					<xs:element name="TjenestetypeKode" type="kode:TjenestetypeKode" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="EgenandelfritakParamType">
+		<xs:sequence>
+			<xs:element name="BorgerFnr" type="xs:string"/>
+			<xs:element name="Dato" type="xs:date"/>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

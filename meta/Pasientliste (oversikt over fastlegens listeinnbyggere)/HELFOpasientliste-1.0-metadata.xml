@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>Fastlegeliste (oversikt over fastlegens listeinnbyggere)</Navn>
+	<Versjon>1.0</Versjon>
+	<Identifikator>HIS 1023:2010</Identifikator>
+	<Utgitt>02/2010</Utgitt>
+	<Utgiver>Helsedirektoratet</Utgiver>
+
+	<Referansekatalogen>
+		<Beskrivelse>Pasientliste (HIS 1023:2010)</Beskrivelse>
+		<Referanse>http://ehelse.no/HIS1023-2010</Referanse>
+	</Referansekatalogen>
+
+	<Status>Fastsatt som standard</Status>
+
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>Pasientliste (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/HELFOPasientliste/HIS_1023_2010_NAV-Pasientliste 2010-02-01.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+
+	<Skjemaer>
+		<Skjema>
+			<Referanse>skjema/HELFOPasientliste/NAV-Pasientliste-2010-02-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/nav/pasientliste/2010-02-01</Namespace>
+		</Skjema>
+	</Skjemaer>
+
+	<Felleskomponenter>
+		<Felleskomponent>
+			<Beskrivelse>XML-skjema for Hodemelding</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/MsgHead-v1_2.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Felles XML-definisjoner for person, helsepersonell, organisasjon etc</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/felleskomponent1.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Felles datatyper</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
+		</Felleskomponent>
+	</Felleskomponenter>
+
+</StandardMetadata>

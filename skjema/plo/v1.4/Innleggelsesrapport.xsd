@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Endret 2. juli 2008 (MA)
+  |	Endret kardinalitet på epj3:Legemiddelinfo" fra <minOccurs="0"> til <minOccurs="0" maxOccurs="unbounded">
+  | La til elementet "po:EksisterendeTjeneste"
+-->
+<!--Versjon 1.4 2008-01-28
+  |	Innleggelsesrapport: Inngår som en del av pleie- og omsorgsmeldingene
+-->
+<!-- Endret 20. februar 2008 (AA)
+  |	Endret namespace til http://www.kith.no/xmlstds/po/Innleggelsesrapport/2008-02-20
+  |	poKomponent har blitt revidert og fått nytt namespace http://www.kith.no/xmlstds/po/poKomponent/2008-02-20
+  |  endret referanse fra ref="po:LegemidlerBruk" til ref="epj3:Legemiddelinfo"
+  | Endret kardinalitet på po:InfoAssistertKommunikasjon fra 0..1 til 0..*
+  | Legemiddelinfo er dokumentert i separat XML Schema (EPJ-legemiddel-mv.xsd)
+-->
+<!-- Endret 16.oktober 2007 (JSD)
+  |	Endret namespace til http://www.kith.no/xmlstds/po/Innleggelsesrapport/2007-10-16
+  |	poKomponent har blitt revidert og fått nytt namespace http://www.kith.no/xmlstds/po/poKomponent/2007-10-16
+-->
+<!-- Endret 31. mai 2007 (AA)
+  |	Endret namespace til http://www.kith.no/xmlstds/po/Innleggelsesrapport/2007-05-31
+  |	poKomponent har blitt revidert og fått nytt namespace http://www.kith.no/xmlstds/po/poKomponent/2007-05-31
+  |	Endret navn på det refererte elementet InfoViktigeOpplysninger til InfoAndreViktigeOpplysninger
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:kith="http://www.kith.no/xmlstds" xmlns:p7="http://www.kith.no/xmlstds/po/Innleggelsesrapport/2008-02-20" xmlns:po="http://www.kith.no/xmlstds/po/poKomponent/2008-02-20" xmlns:epj3="http://www.kith.no/xmlstds/epj/epj3/2008-02-20" targetNamespace="http://www.kith.no/xmlstds/po/Innleggelsesrapport/2008-02-20" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds/po/poKomponent/2008-02-20" schemaLocation="poKomponent.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/epj/epj3/2008-02-20" schemaLocation="EPJ-legemiddel-mv.xsd"/>
+	<!-- LEVEL 1 -->
+	<!-- Class: Innleggelsesrapport -->
+	<element name="Innleggelsesrapport">
+		<annotation>
+			<documentation>
+         Sendes fra pleie- og omsorgstjenesten ved innleggelse i sykehus.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="po:InformasjonOmForsendelsen"/>
+				<element ref="po:TilleggsopplysningPasient" minOccurs="0"/>
+				<element ref="po:ParorendeForesatt" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:KontaktpersonHelsepersonell" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:AnsvarForRapport" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:SendtDokument" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:InfoMedisinskDiagnose" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:MedisinskfagligeOpplysninger" minOccurs="0"/>
+				<element ref="epj3:Legemiddelinfo" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:EksisterendeTjeneste" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:InfoKartleggingFunksjonsniva" minOccurs="0"/>
+				<element ref="po:InfoAndreViktigeOpplysninger" minOccurs="0"/>
+				<element ref="po:Sykepleierdokumentasjon" minOccurs="0"/>
+				<element ref="po:OpplysningerAndreFaggrupper" minOccurs="0"/>
+				<element ref="po:OpplysningerOmHjelpemidler" minOccurs="0"/>
+				<element ref="po:InfoAssistertKommunikasjon" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:InfoReservasjon" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="po:InfoInformasjonGitt" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

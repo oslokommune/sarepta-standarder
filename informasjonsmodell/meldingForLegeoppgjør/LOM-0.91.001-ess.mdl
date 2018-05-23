@@ -1,0 +1,4230 @@
+
+(object Petal
+    version    	43
+    _written   	"Rose 6.5.9232.10"
+    charSet    	0)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"3EF7526D0194"
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	16
+	gridY      	16
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	1
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"3EF7526D01A9"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"3EF752700117"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"3EF7526D01A8"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"3EF7526D01AA"
+	logical_models 	(list unit_reference_list
+	    (object Association "$UNNAMED$0"
+		quid       	"3EF7574E02EE"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$1"
+			quid       	"3EF7574F01A5"
+			supplier   	"Logical View::Legeregning::Hode::Legeregning"
+			quidu      	"3EF756FE02AD"
+			is_aggregate 	TRUE)
+		    (object Role "$UNNAMED$2"
+			quid       	"3EF7574F01AF"
+			supplier   	"Logical View::Legeregning::Hode::Krav"
+			quidu      	"3EF7574701CC"
+			Containment 	"By Value")))
+	    (object Association "$UNNAMED$3"
+		quid       	"3EF7581C00F6"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$4"
+			quid       	"3EF7581C03B3"
+			supplier   	"Logical View::Legeregning::Hode::Legeregning"
+			quidu      	"3EF756FE02AD"
+			Containment 	"By Value"
+			is_aggregate 	TRUE)
+		    (object Role "$UNNAMED$5"
+			quid       	"3EF7581C03B4"
+			supplier   	"Logical View::Legeregning::Enkeltregning::Enkeltregning"
+			quidu      	"3EF758110335"
+			Containment 	"By Value")))
+	    (object Association "$UNNAMED$6"
+		quid       	"3EF7597C02BE"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$7"
+			quid       	"3EF7597D03E2"
+			supplier   	"Logical View::Legeregning::Enkeltregning::Enkeltregning"
+			quidu      	"3EF758110335"
+			is_aggregate 	TRUE)
+		    (object Role "$UNNAMED$8"
+			quid       	"3EF7597E0004"
+			supplier   	"Logical View::Legeregning::Enkeltregning::Behandling"
+			quidu      	"3EF7596F037E"
+			Containment 	"By Value")))
+	    (object Association "$UNNAMED$9"
+		quid       	"3F0EBD0B01D8"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$10"
+			quid       	"3F0EBD0C000D"
+			supplier   	"Logical View::Legeregning::Helsetjenesteenhet::Institusjon"
+			quidu      	"3C5526B800D2"
+			Containment 	"By Value"
+			is_aggregate 	TRUE)
+		    (object Role "$UNNAMED$11"
+			quid       	"3F0EBD0C0017"
+			supplier   	"Logical View::Legeregning::Gjenbrukbare klasser::Adresse"
+			quidu      	"3D4A6D840123"
+			Containment 	"By Value")))
+	    (object Association "$UNNAMED$12"
+		quid       	"3EF75C930334"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$13"
+			quid       	"3EF75C940209"
+			supplier   	"Logical View::Legeregning::Hode::Legeregning"
+			quidu      	"3EF756FE02AD"
+			is_aggregate 	TRUE)
+		    (object Role "$UNNAMED$14"
+			quid       	"3EF75C94020A"
+			supplier   	"Logical View::Legeregning::Hode::Praksis"
+			quidu      	"3EF75C8300EC"
+			Containment 	"By Value")))
+	    (object Class_Category "Legeregning"
+		quid       	"3F150E690251"
+		exportControl 	"Public"
+		logical_models 	(list unit_reference_list
+		    (object Association "$UNNAMED$15"
+			quid       	"3F680D1900AD"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$16"
+				quid       	"3F680D1902B5"
+				supplier   	"Logical View::Legeregning::Hode::Legeregning"
+				quidu      	"3EF756FE02AD"
+				Containment 	"By Value"
+				is_aggregate 	TRUE)
+			    (object Role "$UNNAMED$17"
+				quid       	"3F680D1902BF"
+				supplier   	"Logical View::Legeregning::Hode::Digital signatur"
+				quidu      	"3F4CBE0B0014"
+				Containment 	"By Value")))
+		    (object Class_Category "Hode"
+			quid       	"3EF75297037F"
+			visible_categories 	(list visibility_relationship_list
+			    (object Visibility_Relationship
+				quid       	"3F4CADBD02C0"
+				supplier   	"Logical View::Legeregning"
+				quidu      	"3F150E690251"))
+			exportControl 	"Public"
+			logical_models 	(list unit_reference_list
+			    (object Class "Legeregning"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Legeregning"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"3EF756FE02AD"
+				documentation 	"Melding for legeoppgjør - Legeregning. Opplysninger om meldingen som utveksles mellom avsender og mottaker."
+				stereotype 	"top"
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "Type melding"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	"Type")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "M"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	(value Text ""))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Example"
+						value      	(value Text ""))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	(value Text ""))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Codes"
+						value      	(value Text "LOM Legeoppgjørsmelding"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Level"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ValidFrom"
+						value      	(value Text "")))
+					quid       	"398049FF0032"
+					documentation 	"Spesifikasjon av benyttet meldingstype."
+					type       	"CS"
+					exportControl 	"Public")
+				    (object ClassAttribute "Versjon av implementering"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	"MIGversion")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	"M")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Example"
+						value      	(value Text 
+|"v0.9.005 2003-08-28"
+						))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	(value Text ""))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Codes"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Level"
+						value      	""))
+					quid       	"39804A2400F0"
+					documentation 	
+|Spesifikasjon av benyttet implementasjon av meldingen. 
+|Feltet inneholder identifikasjon av benyttet implementasjonsguide som er benyttet for implementeringen på formen "vn ccyy-mm-dd".
+					
+					type       	"ST"
+					exportControl 	"Public")
+				    (object ClassAttribute "Genereringstidspunkt"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	"GenDate")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Codes"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	"M")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Example"
+						value      	(value Text 
+|2003-09-01T15:00:00
+|
+						))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	(value Text ""))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Level"
+						value      	""))
+					quid       	"3A02DC340028"
+					documentation 	"Tidspunkt for generering av meldingen angitt med dato og klokkeslett. Dette tidspunktet kan være forskjellig fra tidspunktet for sending av meldingen."
+					type       	"dateTime"
+					exportControl 	"Public")
+				    (object ClassAttribute "Id"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	"MsgId")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Codes"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Level"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	"M")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	(value Text "Identifikasjonen skal være unik. Det anbefales å bruke UUID."))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Example"
+						value      	(value Text "b22cea8f-7257-4e15-911b-b3d6a32cdaa1"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	(value Text "")))
+					quid       	"3D8B64A50188"
+					documentation 	"Avsenders unike identifikasjon av meldingen."
+					type       	"ST"
+					exportControl 	"Public"))
+				module     	"Component View::Legeregning"
+				quidu      	"3F0E8BE50373")
+			    (object Class "Krav"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Krav"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	""))
+				quid       	"3EF7574701CC"
+				documentation 	"Informasjon om krav."
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "Antall regninger"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "AntallRegninger"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	(value Text "RTV"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "M"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	(value Text "")))
+					quid       	"3F0E8ABC013B"
+					documentation 	"Samlet antall innsendte regninger."
+					type       	"INT")
+				    (object ClassAttribute "Sum krav samlet"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "SumKravSamlet"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	(value Text "RTV"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "M"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	(value Text ""))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	(value Text "Myntenhet skal være 'NOK'.")))
+					quid       	"3F0E8AC702DC"
+					documentation 	"Samlet krav for innsendte regninger."
+					type       	"MO"))
+				module     	"Component View::Legeregning"
+				quidu      	"3F0E8BE50373")
+			    (object Class "Praksis"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Praksis")))
+				quid       	"3EF75C8300EC"
+				documentation 	"Informasjon om behandlerens praksissted."
+				superclasses 	(list inheritance_relationship_list
+				    (object Inheritance_Relationship
+					quid       	"3F0EBEE401C4"
+					supplier   	"Logical View::Legeregning::Helsetjenesteenhet::Institusjon"
+					quidu      	"3C5526B800D2"))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "Kommune"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "KommuneNr"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	(value Text "RTV"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "M"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	(value Text "Kommunenummer er Statistisk Sentralbyrås offisielle liste over kommunenummer hvor de to første siffer inneholder fylkesnummer og de to siste kommunenummer innen fylket. Det skal alltid være fire siffer og plasseres i 'V', mens kommunenavner er frivillig og plasseres i 'DN'."))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Example"
+						value      	(value Text "0719 Andebu")))
+					quid       	"3F561B9503C5"
+					documentation 	"Kommunen praksisen er lokalisert i, representeres ved SSBs kodedverk for fylkes-/kommunenummer. Rikstrygdeverket bruker denne informasjonen til fordeling og statistikk."
+					type       	"CS"))
+				module     	"Component View::Legeregning"
+				quidu      	"3F0E8BE50373")
+			    (object Class "Digital signatur"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Signature"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	(value Text "M"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	(value Text "Det benyttes XML Digital Signature (XMLDsig) i en XML-basert melding. Se implementasjonsbeskrivelsen.")))
+				quid       	"3F4CBE0B0014"
+				documentation 	"Personlig digital signatur ved hjelp av PKI-løsning."
+				module     	"Component View::Legeregning"
+				quidu      	"3F0E8BE50373"))
+			logical_presentations 	(list unit_reference_list
+			    (object ClassDiagram "Hode"
+				quid       	"3F0E896A0153"
+				title      	"Hode"
+				zoom       	100
+				max_height 	28350
+				max_width  	21600
+				origin_x   	0
+				origin_y   	0
+				items      	(list diagram_item_list
+				    (object ClassView "Class" "Logical View::Legeregning::Gjenbrukbare klasser::Adresse" @1
+					ShowCompartmentStereotypes 	TRUE
+					SuppressAttribute 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					location   	(928, 1264)
+					label      	(object ItemLabel
+					    Parent_View 	@1
+					    location   	(834, 1223)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	188
+					    justify    	0
+					    label      	"Adresse")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"3D4A6D840123"
+					width      	206
+					height     	107
+					autoResize 	TRUE)
+				    (object ClassView "Class" "Logical View::Legeregning::Helsetjenesteenhet::Institusjon" @2
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					location   	(928, 944)
+					font       	(object Font
+					    italics    	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@2
+					    location   	(712, 838)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	432
+					    justify    	0
+					    label      	"Institusjon")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"3C5526B800D2"
+					width      	450
+					height     	236
+					autoResize 	TRUE)
+				    (object AssociationViewNew "$UNNAMED$9" @3
+					location   	(928, 1136)
+					stereotype 	TRUE
+					quidu      	"3F0EBD0B01D8"
+					roleview_list 	(list RoleViews
+					    (object RoleView "$UNNAMED$11" @4
+						Parent_View 	@3
+						location   	(480, -208)
+						label      	(object SegLabel @5
+						    Parent_View 	@4
+						    location   	(887, 1196)
+						    hidden     	TRUE
+						    anchor     	1
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	450
+						    justify    	0
+						    label      	""
+						    pctDist    	0.800000
+						    height     	42
+						    orientation 	1)
+						stereotype 	TRUE
+						quidu      	"3F0EBD0C0017"
+						client     	@3
+						supplier   	@1
+						line_style 	3
+						origin_attachment 	(928, 1136)
+						terminal_attachment 	(928, 1211))
+					    (object RoleView "$UNNAMED$10" @6
+						Parent_View 	@3
+						location   	(480, -208)
+						label      	(object SegLabel @7
+						    Parent_View 	@6
+						    location   	(887, 1077)
+						    hidden     	TRUE
+						    anchor     	1
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	450
+						    justify    	0
+						    label      	""
+						    pctDist    	0.800000
+						    height     	42
+						    orientation 	0)
+						stereotype 	TRUE
+						quidu      	"3F0EBD0C000D"
+						client     	@3
+						supplier   	@2
+						line_style 	3
+						origin_attachment 	(928, 1136)
+						terminal_attachment 	(928, 1062))))
+				    (object ClassView "Class" "Logical View::Legeregning::Hode::Krav" @8
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					location   	(1696, 224)
+					label      	(object ItemLabel
+					    Parent_View 	@8
+					    location   	(1491, 143)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	410
+					    justify    	0
+					    label      	"Krav")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"3EF7574701CC"
+					width      	428
+					height     	186
+					autoResize 	TRUE)
+				    (object ClassView "Class" "Logical View::Legeregning::Hode::Praksis" @9
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					location   	(896, 608)
+					label      	(object ItemLabel
+					    Parent_View 	@9
+					    location   	(755, 552)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	282
+					    justify    	0
+					    label      	"Praksis")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"3EF75C8300EC"
+					width      	300
+					height     	136
+					autoResize 	TRUE)
+				    (object InheritView "" @10
+					stereotype 	TRUE
+					quidu      	"3F0EBEE401C4"
+					client     	@9
+					supplier   	@2
+					line_style 	3
+					origin_attachment 	(906, 675)
+					terminal_attachment 	(906, 826))
+				    (object ClassView "Class" "Logical View::Legeregning::Hode::Digital signatur" @11
+					ShowCompartmentStereotypes 	TRUE
+					SuppressAttribute 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					location   	(256, 224)
+					label      	(object ItemLabel
+					    Parent_View 	@11
+					    location   	(89, 183)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	334
+					    justify    	0
+					    label      	"Digital signatur")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"3F4CBE0B0014"
+					width      	352
+					height     	107
+					autoResize 	TRUE)
+				    (object ClassView "Class" "Logical View::Legeregning::Hode::Legeregning" @12
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					location   	(912, 224)
+					label      	(object ItemLabel
+					    Parent_View 	@12
+					    location   	(616, 115)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	592
+					    justify    	0
+					    label      	"Legeregning")
+					stereotype 	(object ItemLabel
+					    Parent_View 	@12
+					    location   	(616, 65)
+					    fill_color 	13434879
+					    anchor     	10
+					    nlines     	1
+					    max_width  	592
+					    justify    	0
+					    label      	"<<top>>")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"3EF756FE02AD"
+					width      	610
+					height     	342
+					autoResize 	TRUE)
+				    (object AssociationViewNew "$UNNAMED$0" @13
+					location   	(1349, 205)
+					stereotype 	TRUE
+					quidu      	"3EF7574E02EE"
+					roleview_list 	(list RoleViews
+					    (object RoleView "$UNNAMED$2" @14
+						Parent_View 	@13
+						location   	(149, -403)
+						label      	(object SegLabel @15
+						    Parent_View 	@14
+						    location   	(1454, 247)
+						    hidden     	TRUE
+						    anchor     	1
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	450
+						    justify    	0
+						    label      	""
+						    pctDist    	0.800000
+						    height     	42
+						    orientation 	1)
+						stereotype 	TRUE
+						quidu      	"3EF7574F01AF"
+						client     	@13
+						supplier   	@8
+						line_style 	3
+						origin_attachment 	(1349, 205)
+						terminal_attachment 	(1482, 205))
+					    (object RoleView "$UNNAMED$1" @16
+						Parent_View 	@13
+						location   	(149, -403)
+						label      	(object SegLabel @17
+						    Parent_View 	@16
+						    location   	(1243, 247)
+						    hidden     	TRUE
+						    anchor     	1
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	450
+						    justify    	0
+						    label      	""
+						    pctDist    	0.800000
+						    height     	42
+						    orientation 	0)
+						stereotype 	TRUE
+						quidu      	"3EF7574F01A5"
+						client     	@13
+						supplier   	@12
+						line_style 	3
+						origin_attachment 	(1349, 205)
+						terminal_attachment 	(1217, 205))))
+				    (object AssociationViewNew "$UNNAMED$12" @18
+					location   	(897, 467)
+					stereotype 	TRUE
+					quidu      	"3EF75C930334"
+					roleview_list 	(list RoleViews
+					    (object RoleView "$UNNAMED$14" @19
+						Parent_View 	@18
+						location   	(-303, -141)
+						label      	(object SegLabel @20
+						    Parent_View 	@19
+						    location   	(939, 525)
+						    hidden     	TRUE
+						    anchor     	1
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	450
+						    justify    	0
+						    label      	""
+						    pctDist    	0.800000
+						    height     	42
+						    orientation 	0)
+						stereotype 	TRUE
+						quidu      	"3EF75C94020A"
+						client     	@18
+						supplier   	@9
+						line_style 	3
+						origin_attachment 	(897, 467)
+						terminal_attachment 	(897, 540))
+					    (object RoleView "$UNNAMED$13" @21
+						Parent_View 	@18
+						location   	(-303, -141)
+						label      	(object SegLabel @22
+						    Parent_View 	@21
+						    location   	(939, 409)
+						    hidden     	TRUE
+						    anchor     	1
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	450
+						    justify    	0
+						    label      	""
+						    pctDist    	0.800000
+						    height     	42
+						    orientation 	1)
+						stereotype 	TRUE
+						quidu      	"3EF75C940209"
+						client     	@18
+						supplier   	@12
+						line_style 	3
+						origin_attachment 	(897, 467)
+						terminal_attachment 	(897, 395))))
+				    (object AssociationViewNew "$UNNAMED$15" @23
+					location   	(519, 209)
+					stereotype 	TRUE
+					quidu      	"3F680D1900AD"
+					roleview_list 	(list RoleViews
+					    (object RoleView "$UNNAMED$17" @24
+						Parent_View 	@23
+						location   	(-89, -223)
+						label      	(object SegLabel @25
+						    Parent_View 	@24
+						    location   	(450, 251)
+						    hidden     	TRUE
+						    anchor     	1
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	450
+						    justify    	0
+						    label      	""
+						    pctDist    	0.800000
+						    height     	42
+						    orientation 	0)
+						stereotype 	TRUE
+						quidu      	"3F680D1902BF"
+						client     	@23
+						supplier   	@11
+						line_style 	3
+						origin_attachment 	(519, 209)
+						terminal_attachment 	(432, 209))
+					    (object RoleView "$UNNAMED$16" @26
+						Parent_View 	@23
+						location   	(-89, -223)
+						label      	(object SegLabel @27
+						    Parent_View 	@26
+						    location   	(589, 251)
+						    hidden     	TRUE
+						    anchor     	1
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	450
+						    justify    	0
+						    label      	""
+						    pctDist    	0.800000
+						    height     	42
+						    orientation 	1)
+						stereotype 	TRUE
+						quidu      	"3F680D1902B5"
+						client     	@23
+						supplier   	@12
+						line_style 	3
+						origin_attachment 	(519, 209)
+						terminal_attachment 	(607, 209))))))))
+		    (object Class_Category "Enkeltregning"
+			quid       	"3EF752CE00FD"
+			visible_categories 	(list visibility_relationship_list
+			    (object Visibility_Relationship
+				quid       	"3F4CADBF0287"
+				supplier   	"Logical View::Legeregning"
+				quidu      	"3F150E690251"))
+			exportControl 	"Public"
+			logical_models 	(list unit_reference_list
+			    (object Class "Enkeltregning"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Enkeltregning"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	""))
+				quid       	"3EF758110335"
+				documentation 	"Enkeltregning for en behandling. En legeregning kan inneholde mange enkeltregninger."
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "Regning løpenummer"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"DDL"
+						name       	"Length"
+						value      	(value Text "10"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "RegningNr"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	(value Text "RTV"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "M"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	(value Text "Løpenummeret skal starte på 0 i begynnelse av hver måned. Det er derfor viktig at en samleregning kun inneholder enkeltregninger fra samme måned."))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Author"
+						value      	(value Text ""))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	""))
+					quid       	"3EF75302015C"
+					documentation 	"Løpenummer"
+					type       	"INT"
+					Containment 	"By Value")
+				    (object ClassAttribute "Dato og klokkeslett"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "DatoTid"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	(value Text "RTV"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "M"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Codes"
+						value      	""))
+					quid       	"3EF7539403AB"
+					documentation 	"Dato og klokkeslett for konsultasjonen/behandlingen"
+					type       	"TS")
+				    (object ClassAttribute "Medisinsk behandlingskode"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "MedisinskBehandling"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	(value Text ""))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Codes"
+						value      	(value Text 
+|1 Normaloppgjør
+|2 Legevakt
+|3 Helsestasjon 
+|4 Fastlønnet lege 
+|5 Legeerklæring
+|6 Spesialist
+						))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "M")))
+					quid       	"3EF754000175"
+					documentation 	"Kode for type medisinsk behandling."
+					type       	"CS")
+				    (object ClassAttribute "Annet"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Annet"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	(value Text "RTV"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "O"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	(value Text "Fylles ut ved krav eller behov.")))
+					quid       	"3EF75A480376"
+					documentation 	"Fri tekst, kommentar til enkeltregningen."
+					type       	"ST"))
+				module     	"Component View::Legeregning"
+				quidu      	"3F0E8BE50373")
+			    (object Class "Behandling"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Behandling"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	(value Text 
+|1 ICPC-1
+|2 ICD-10
+					)))
+				quid       	"3EF7596F037E"
+				documentation 	"Informasjon om den enkelte behandling som ligger til grunn for enkeltregningen."
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "Kode egenandel"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "KodeEgenandel"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	(value Text "RTV"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "O"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	(value Text ""))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Codes"
+						value      	(value Text 
+|A Smittefarlig sykdom
+|B Barn under 7 år
+|F Frikort (forevist)
+|H Pasientens tilstand er til hinder for avkreving av egenandel
+|I Innsatte i fengsel/sikringsanstalt
+|M Militær
+|P Krigspensjonist
+|S Svangerskap
+|U Under 18 år psykiatrisk behandling
+|Y Yrkesskade
+						)))
+					quid       	"3F0E9F640239"
+					documentation 	"Kode for grunn til særskilt egenandel."
+					type       	"CS")
+				    (object ClassAttribute "Diagnose"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Diagnose"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	(value Text "RTV"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "O"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	(value Text ""))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	(value Text "Hvilket kodeverk som er benyttes bestemmes av OIDen i 'S'-attributtet.")))
+					quid       	"3F0E9D900182"
+					documentation 	"Diagnosen(e) behandleren setter."
+					type       	"SET<CV>"))
+				module     	"Component View::Legeregning"
+				quidu      	"3F0E8BE50373"
+				cardinality 	(value Cardinality "1..6"))
+			    (object Class "Takst"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	(value Text ""))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Takst"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	""))
+				quid       	"3F0E9DDB03CF"
+				documentation 	"Informasjon om takster som er brukt."
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "Kode"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "TakstKode"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "M"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	(value Text "RTV")))
+					quid       	"3F4DB924021A"
+					documentation 	"Rikstrygdeverkets takstkoder."
+					type       	"CS")
+				    (object ClassAttribute "Verdi"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "TakstVerdi"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	(value Text "RTV"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "M"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	(value Text "Verdi for valutafeltet skal være norske kroner (NOK). Verdien her er enhetsverdien på en gitt takst.")))
+					quid       	"3F0E9DE9032F"
+					documentation 	"Taksten for arbeidet."
+					type       	"MO")
+				    (object ClassAttribute "Antall"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "TakstAntall"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	(value Text "RTV"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "M"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	(value Text "Standardverdi = 1")))
+					quid       	"3F0E9DEF0373"
+					documentation 	"Antall ganger en takst skal repeteres."
+					type       	"INT"))
+				module     	"Component View::Legeregning"
+				quidu      	"3F0E8BE50373")
+			    (object Class "Sum krav"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "SumKrav"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	""))
+				quid       	"3F0EA24B022E"
+				documentation 	"Summering av alle krav."
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "Egenandel honorar"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "EgenandelHonorar"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	(value Text "RTV"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "O")))
+					quid       	"3F0EA29803DD"
+					documentation 	"Refusjon for egenandel."
+					type       	"MO")
+				    (object ClassAttribute "Refusjon"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Refusjon"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	(value Text "RTV"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "M")))
+					quid       	"3F0EA2A10191"
+					documentation 	"Refusjon for hele regningskortet."
+					type       	"MO")
+				    (object ClassAttribute "Betalt av pasient"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "BetAvPasient"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	(value Text "RTV"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "O")))
+					quid       	"3F0EA2A90110"
+					documentation 	"Beløp pasient har betalt, som ikke er dekket av egne takster."
+					type       	"MO"))
+				module     	"Component View::Legeregning"
+				quidu      	"3F0E8BE50373")
+			    (object Association "$UNNAMED$18"
+				quid       	"3F0E9E2502E5"
+				roles      	(list role_list
+				    (object Role "$UNNAMED$19"
+					quid       	"3F0E9E26014C"
+					supplier   	"Logical View::Legeregning::Enkeltregning::Behandling"
+					quidu      	"3EF7596F037E"
+					Containment 	"By Value"
+					is_aggregate 	TRUE)
+				    (object Role "$UNNAMED$20"
+					quid       	"3F0E9E26014D"
+					supplier   	"Logical View::Legeregning::Enkeltregning::Takst"
+					quidu      	"3F0E9DDB03CF"
+					Containment 	"By Value")))
+			    (object Association "$UNNAMED$21"
+				quid       	"3F0E9F170347"
+				roles      	(list role_list
+				    (object Role "$UNNAMED$22"
+					quid       	"3F0E9F170348"
+					supplier   	"Logical View::Legeregning::Pasient::Pasient"
+					quidu      	"383D30CE028F"
+					Containment 	"By Value")
+				    (object Role "$UNNAMED$23"
+					quid       	"3F0E9F170349"
+					supplier   	"Logical View::Legeregning::Enkeltregning::Enkeltregning"
+					quidu      	"3EF758110335"
+					Containment 	"By Value"
+					is_aggregate 	TRUE)))
+			    (object Association "$UNNAMED$24"
+				quid       	"3F0E9F170351"
+				roles      	(list role_list
+				    (object Role "$UNNAMED$25"
+					quid       	"3F0E9F170352"
+					supplier   	"Logical View::Legeregning::Pasient::Pasient"
+					quidu      	"383D30CE028F"
+					Containment 	"By Value"
+					is_aggregate 	TRUE)
+				    (object Role "$UNNAMED$26"
+					quid       	"3F0E9F170353"
+					supplier   	"Logical View::Legeregning::Gjenbrukbare klasser::Adresse"
+					quidu      	"3D4A6D840123"
+					Containment 	"By Value")))
+			    (object Association "$UNNAMED$27"
+				quid       	"3F0EA26E038C"
+				roles      	(list role_list
+				    (object Role "$UNNAMED$28"
+					quid       	"3F0EA26F03C0"
+					supplier   	"Logical View::Legeregning::Enkeltregning::Behandling"
+					quidu      	"3EF7596F037E"
+					Containment 	"By Value"
+					is_aggregate 	TRUE)
+				    (object Role "$UNNAMED$29"
+					quid       	"3F0EA26F03CA"
+					supplier   	"Logical View::Legeregning::Enkeltregning::Sum krav"
+					quidu      	"3F0EA24B022E"
+					Containment 	"By Value"))))
+			logical_presentations 	(list unit_reference_list
+			    (object ClassDiagram "Enkeltregning"
+				quid       	"3EF7538203CD"
+				title      	"Enkeltregning"
+				zoom       	100
+				max_height 	28350
+				max_width  	21600
+				origin_x   	0
+				origin_y   	63
+				items      	(list diagram_item_list
+				    (object ClassView "Class" "Logical View::Legeregning::Gjenbrukbare klasser::Adresse" @28
+					ShowCompartmentStereotypes 	TRUE
+					SuppressAttribute 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					location   	(294, 1328)
+					label      	(object ItemLabel
+					    Parent_View 	@28
+					    location   	(201, 1287)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	186
+					    justify    	0
+					    label      	"Adresse")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"3D4A6D840123"
+					width      	204
+					height     	107
+					autoResize 	TRUE)
+				    (object ClassView "Class" "Logical View::Legeregning::Pasient::Pasient" @29
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					location   	(336, 800)
+					label      	(object ItemLabel
+					    Parent_View 	@29
+					    location   	(103, 569)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	466
+					    justify    	0
+					    label      	"Pasient")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"383D30CE028F"
+					width      	484
+					height     	486
+					autoResize 	TRUE)
+				    (object AssociationViewNew "$UNNAMED$24" @30
+					location   	(287, 1158)
+					stereotype 	TRUE
+					quidu      	"3F0E9F170351"
+					roleview_list 	(list RoleViews
+					    (object RoleView "$UNNAMED$26" @31
+						Parent_View 	@30
+						location   	(-81, 38)
+						label      	(object SegLabel @32
+						    Parent_View 	@31
+						    location   	(246, 1250)
+						    hidden     	TRUE
+						    anchor     	1
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	450
+						    justify    	0
+						    label      	""
+						    pctDist    	0.800000
+						    height     	42
+						    orientation 	1)
+						stereotype 	TRUE
+						quidu      	"3F0E9F170353"
+						client     	@30
+						supplier   	@28
+						line_style 	3
+						origin_attachment 	(287, 1158)
+						terminal_attachment 	(287, 1274))
+					    (object RoleView "$UNNAMED$25" @33
+						Parent_View 	@30
+						location   	(-81, 38)
+						label      	(object SegLabel @34
+						    Parent_View 	@33
+						    location   	(246, 1066)
+						    hidden     	TRUE
+						    anchor     	1
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	450
+						    justify    	0
+						    label      	""
+						    pctDist    	0.800000
+						    height     	42
+						    orientation 	0)
+						stereotype 	TRUE
+						quidu      	"3F0E9F170352"
+						client     	@30
+						supplier   	@29
+						line_style 	3
+						origin_attachment 	(287, 1158)
+						terminal_attachment 	(287, 1042))))
+				    (object ClassView "Class" "Logical View::Legeregning::Enkeltregning::Enkeltregning" @35
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					location   	(336, 224)
+					label      	(object ItemLabel
+					    Parent_View 	@35
+					    location   	(37, 93)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	598
+					    justify    	0
+					    label      	"Enkeltregning")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"3EF758110335"
+					compartment 	(object Compartment
+					    Parent_View 	@35
+					    location   	(37, 154)
+					    icon_style 	"Icon"
+					    fill_color 	16777215
+					    anchor     	2
+					    nlines     	4
+					    max_width  	594)
+					width      	616
+					height     	286
+					autoResize 	TRUE)
+				    (object AssociationViewNew "$UNNAMED$21" @36
+					location   	(275, 461)
+					stereotype 	TRUE
+					quidu      	"3F0E9F170347"
+					roleview_list 	(list RoleViews
+					    (object RoleView "$UNNAMED$22" @37
+						Parent_View 	@36
+						location   	(-541, -339)
+						label      	(object SegLabel @38
+						    Parent_View 	@37
+						    location   	(234, 537)
+						    hidden     	TRUE
+						    anchor     	1
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	450
+						    justify    	0
+						    label      	""
+						    pctDist    	0.800000
+						    height     	42
+						    orientation 	1)
+						stereotype 	TRUE
+						quidu      	"3F0E9F170348"
+						client     	@36
+						supplier   	@29
+						line_style 	3
+						origin_attachment 	(275, 461)
+						terminal_attachment 	(275, 556))
+					    (object RoleView "$UNNAMED$23" @39
+						Parent_View 	@36
+						location   	(-541, -339)
+						label      	(object SegLabel @40
+						    Parent_View 	@39
+						    location   	(234, 385)
+						    hidden     	TRUE
+						    anchor     	1
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	450
+						    justify    	0
+						    label      	""
+						    pctDist    	0.800000
+						    height     	42
+						    orientation 	0)
+						stereotype 	TRUE
+						quidu      	"3F0E9F170349"
+						client     	@36
+						supplier   	@35
+						line_style 	3
+						origin_attachment 	(275, 461)
+						terminal_attachment 	(275, 366))))
+				    (object ClassView "Class" "Logical View::Legeregning::Enkeltregning::Takst" @41
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					location   	(1120, 768)
+					label      	(object ItemLabel
+					    Parent_View 	@41
+					    location   	(1018, 662)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	204
+					    justify    	0
+					    label      	"Takst")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"3F0E9DDB03CF"
+					compartment 	(object Compartment
+					    Parent_View 	@41
+					    location   	(1018, 723)
+					    icon_style 	"Icon"
+					    fill_color 	16777215
+					    anchor     	2
+					    nlines     	3
+					    max_width  	200)
+					width      	222
+					height     	236
+					autoResize 	TRUE)
+				    (object ClassView "Class" "Logical View::Legeregning::Enkeltregning::Behandling" @42
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					location   	(1104, 208)
+					label      	(object ItemLabel
+					    Parent_View 	@42
+					    location   	(907, 127)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	394
+					    justify    	0
+					    label      	"Behandling")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"3EF7596F037E"
+					compartment 	(object Compartment
+					    Parent_View 	@42
+					    location   	(907, 188)
+					    icon_style 	"Icon"
+					    fill_color 	16777215
+					    anchor     	2
+					    nlines     	2
+					    max_width  	391)
+					width      	412
+					height     	186
+					autoResize 	TRUE)
+				    (object AssociationViewNew "$UNNAMED$6" @43
+					location   	(771, 208)
+					stereotype 	TRUE
+					quidu      	"3EF7597C02BE"
+					roleview_list 	(list RoleViews
+					    (object RoleView "$UNNAMED$8" @44
+						Parent_View 	@43
+						location   	(-45, -592)
+						label      	(object SegLabel @45
+						    Parent_View 	@44
+						    location   	(872, 250)
+						    hidden     	TRUE
+						    anchor     	1
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	450
+						    justify    	0
+						    label      	""
+						    pctDist    	0.800000
+						    height     	42
+						    orientation 	1)
+						stereotype 	TRUE
+						quidu      	"3EF7597E0004"
+						client     	@43
+						supplier   	@42
+						line_style 	3
+						origin_attachment 	(771, 208)
+						terminal_attachment 	(898, 208))
+					    (object RoleView "$UNNAMED$7" @46
+						Parent_View 	@43
+						location   	(-45, -592)
+						label      	(object SegLabel @47
+						    Parent_View 	@46
+						    location   	(670, 250)
+						    hidden     	TRUE
+						    anchor     	1
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	450
+						    justify    	0
+						    label      	""
+						    pctDist    	0.800000
+						    height     	42
+						    orientation 	0)
+						stereotype 	TRUE
+						quidu      	"3EF7597D03E2"
+						client     	@43
+						supplier   	@35
+						line_style 	3
+						origin_attachment 	(771, 208)
+						terminal_attachment 	(644, 208))))
+				    (object AssociationViewNew "$UNNAMED$18" @48
+					location   	(1116, 475)
+					stereotype 	TRUE
+					quidu      	"3F0E9E2502E5"
+					roleview_list 	(list RoleViews
+					    (object RoleView "$UNNAMED$19" @49
+						Parent_View 	@48
+						location   	(-388, -869)
+						stereotype 	TRUE
+						quidu      	"3F0E9E26014C"
+						client     	@48
+						supplier   	@42
+						line_style 	3
+						origin_attachment 	(1116, 475)
+						terminal_attachment 	(1116, 301))
+					    (object RoleView "$UNNAMED$20" @50
+						Parent_View 	@48
+						location   	(-388, -869)
+						stereotype 	TRUE
+						quidu      	"3F0E9E26014D"
+						client     	@48
+						supplier   	@41
+						line_style 	3
+						origin_attachment 	(1116, 475)
+						terminal_attachment 	(1116, 650))))
+				    (object ClassView "Class" "Logical View::Legeregning::Enkeltregning::Sum krav" @51
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					location   	(1824, 208)
+					label      	(object ItemLabel
+					    Parent_View 	@51
+					    location   	(1602, 102)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	444
+					    justify    	0
+					    label      	"Sum krav")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"3F0EA24B022E"
+					compartment 	(object Compartment
+					    Parent_View 	@51
+					    location   	(1602, 163)
+					    icon_style 	"Icon"
+					    fill_color 	16777215
+					    anchor     	2
+					    nlines     	3
+					    max_width  	441)
+					width      	462
+					height     	236
+					autoResize 	TRUE)
+				    (object AssociationViewNew "$UNNAMED$27" @52
+					location   	(1451, 208)
+					stereotype 	TRUE
+					quidu      	"3F0EA26E038C"
+					roleview_list 	(list RoleViews
+					    (object RoleView "$UNNAMED$28" @53
+						Parent_View 	@52
+						location   	(-421, -1216)
+						stereotype 	TRUE
+						quidu      	"3F0EA26F03C0"
+						client     	@52
+						supplier   	@42
+						line_style 	3
+						origin_attachment 	(1451, 208)
+						terminal_attachment 	(1310, 208))
+					    (object RoleView "$UNNAMED$29" @54
+						Parent_View 	@52
+						location   	(-421, -1216)
+						stereotype 	TRUE
+						quidu      	"3F0EA26F03CA"
+						client     	@52
+						supplier   	@51
+						line_style 	3
+						origin_attachment 	(1451, 208)
+						terminal_attachment 	(1593, 208))))))))
+		    (object Class_Category "Helsetjenesteenhet"
+			quid       	"3D32DDFA0100"
+			documentation 	"This subsystem provides details of the healthcare persons and organisations that send or receive messages or have other roles within this domain."
+			visible_categories 	(list visibility_relationship_list
+			    (object Visibility_Relationship
+				quid       	"3DAC0376032C"
+				supplier   	"Logical View::7.4 Message subsystem"
+				quidu      	"3DABAEF8019C")
+			    (object Visibility_Relationship
+				quid       	"3F4CADC30232"
+				supplier   	"Logical View::Legeregning::Hode"
+				quidu      	"3EF75297037F"))
+			exportControl 	"Public"
+			logical_models 	(list unit_reference_list
+			    (object Class "Institusjon"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	"Inst")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	""))
+				quid       	"3C5526B800D2"
+				documentation 	"Benyttes for å representere en helseinstitusjon."
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "Navn"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Name"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "O"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	""))
+					quid       	"3C7B49AA0236"
+					documentation 	
+|Navn på helsetjenesteenhet oppgis alltid ustrukturert.
+|
+					
+					type       	"ST")
+				    (object ClassAttribute "Identifikasjon"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	"Id")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Codes"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	"O")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Example"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	(value Text 
+|For institusjoner benyttes fortrinnsvis enhetsregister, alternativt lokalt kodeverk for institusjoner.
+|
+|
+						))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Level"
+						value      	""))
+					quid       	"3C5526A101C0"
+					documentation 	"Offisiell identifikasjon av en institusjon"
+					type       	"ST")
+				    (object ClassAttribute "Type identifikasjon"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "TypeId"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Codes"
+						value      	(value Text ""))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Level"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "O"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Example"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	(value Text 
+|Kodeverk: Type identifikator-s3
+|ENH  Organisasjonsnummer (enhetsregisteret)
+|LIN  Lokal identifikator for institusjoner
+|APO Apotekenes identifikasjonsnummer 
+|
+						)))
+					quid       	"3D9C09EB03B3"
+					documentation 	"Type identifikasjon"
+					type       	"CS"))
+				module     	"Component View::NPM"
+				quidu      	"3D4E48AE002F"
+				module     	"Component View::Legeregning"
+				quidu      	"3F0E8BE50373"
+				abstract   	TRUE
+				persistence 	"Persistent"))
+			logical_presentations 	(list unit_reference_list
+			    (object ClassDiagram "Healthcare agent subsystem"
+				quid       	"3D58F30B02BE"
+				title      	"Healthcare agent subsystem"
+				zoom       	100
+				max_height 	28350
+				max_width  	21600
+				origin_x   	19
+				origin_y   	0
+				items      	(list diagram_item_list
+				    (object ClassView "Class" "Logical View::Legeregning::Gjenbrukbare klasser::Adresse" @55
+					ShowCompartmentStereotypes 	TRUE
+					SuppressAttribute 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					location   	(262, 568)
+					label      	(object ItemLabel
+					    Parent_View 	@55
+					    location   	(64, 519)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	396
+					    justify    	0
+					    label      	"Adresse")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"3D4A6D840123"
+					width      	414
+					height     	122
+					annotation 	8
+					autoResize 	TRUE)
+				    (object ClassView "Class" "Logical View::Legeregning::Helsetjenesteenhet::Institusjon" @56
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					location   	(256, 160)
+					font       	(object Font
+					    italics    	TRUE)
+					label      	(object ItemLabel
+					    Parent_View 	@56
+					    location   	(40, 54)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	432
+					    justify    	0
+					    label      	"Institusjon")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"3C5526B800D2"
+					width      	450
+					height     	236
+					autoResize 	TRUE)
+				    (object AssociationViewNew "$UNNAMED$9" @57
+					location   	(262, 392)
+					stereotype 	TRUE
+					quidu      	"3F0EBD0B01D8"
+					roleview_list 	(list RoleViews
+					    (object RoleView "$UNNAMED$11" @58
+						Parent_View 	@57
+						location   	(-906, -376)
+						label      	(object SegLabel @59
+						    Parent_View 	@58
+						    location   	(304, 484)
+						    hidden     	TRUE
+						    anchor     	1
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	450
+						    justify    	0
+						    label      	""
+						    pctDist    	0.800000
+						    height     	42
+						    orientation 	0)
+						stereotype 	TRUE
+						quidu      	"3F0EBD0C0017"
+						client     	@57
+						supplier   	@55
+						line_style 	3
+						origin_attachment 	(262, 392)
+						terminal_attachment 	(262, 507))
+					    (object RoleView "$UNNAMED$10" @60
+						Parent_View 	@57
+						location   	(-906, -376)
+						label      	(object SegLabel @61
+						    Parent_View 	@60
+						    location   	(304, 300)
+						    hidden     	TRUE
+						    anchor     	1
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	450
+						    justify    	0
+						    label      	""
+						    pctDist    	0.800000
+						    height     	42
+						    orientation 	1)
+						stereotype 	TRUE
+						quidu      	"3F0EBD0C000D"
+						client     	@57
+						supplier   	@56
+						line_style 	3
+						origin_attachment 	(262, 392)
+						terminal_attachment 	(262, 277))))))))
+		    (object Class_Category "Pasient"
+			quid       	"3948D43A0280"
+			visible_categories 	(list visibility_relationship_list
+			    (object Visibility_Relationship
+				quid       	"3C0692ED0181"
+				supplier   	"Logical View::Epikrise og henvisning::Klinisk opplysning pakke"
+				quidu      	"3948E86F01CC")
+			    (object Visibility_Relationship
+				quid       	"3F4CADC70238"
+				supplier   	"Logical View::Legeregning::Enkeltregning"
+				quidu      	"3EF752CE00FD"))
+			exportControl 	"Public"
+			logical_models 	(list unit_reference_list
+			    (object Class "Pasient"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Pasient"))
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Use"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Example"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Comment"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Codes"
+					value      	"")
+				    (object Attribute
+					tool       	"KITH"
+					name       	"Status"
+					value      	"M"))
+				quid       	"383D30CE028F"
+				documentation 	"Opplysninger om pasienten."
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "Sosialt kjønn"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	"Sex")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	"Må fylles ut hvis Offisiell pasientid (fødselsnummer) ikke er fylt ut. Hvis Offisiell pasientid er fylt ut, er det ikke nødvendig å ha med dette feltet.")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Example"
+						value      	(value Text ""))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Codes"
+						value      	(value Text 
+|1 Mann
+|2 Kvinne
+|9 Ukjent
+						))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	"O")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Level"
+						value      	""))
+					quid       	"38E9E65F02F7"
+					documentation 	"Kode for personens kjønn iht. ISO 5218."
+					type       	"CS"
+					exportControl 	"Public")
+				    (object ClassAttribute "Fornavn"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Fornavn"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "O"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Example"
+						value      	""))
+					quid       	"3F0E9CC20136"
+					documentation 	"Alle fornavn."
+					type       	"ST")
+				    (object ClassAttribute "Mellomnavn"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Mellomnavn"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "O")))
+					quid       	"3F0E9CCC027B"
+					documentation 	"Eventuelle mellomnavn."
+					type       	"ST")
+				    (object ClassAttribute "Etternavn"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Etternavn"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "O")))
+					quid       	"3F0E9CD100AB"
+					documentation 	"Etternavn"
+					type       	"ST")
+				    (object ClassAttribute "Type identifikasjon"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	"Type")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Codes"
+						value      	(value Text 
+|FNR Fødselsnummer
+|DNR D-nummer
+|HNR H-nummer (offisielt tildelt)
+|LOC Lokalt generert hjelpenummer
+|EEA EØS-nummer
+|FDATO Fødselsdato
+|999 Ukjent
+						))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Level"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	"M")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Example"
+						value      	(value Text ""))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	""))
+					quid       	"3D8F5B1500C8"
+					documentation 	"Type offisiell pasientidentifikasjon."
+					type       	"CS"
+					exportControl 	"Public")
+				    (object ClassAttribute "Identifikasjon"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	"Id")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Codes"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Level"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	"M")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	"Hvis ikke Offisiell pasientid kan fylles ut, MÅ Sosialt kjønn og Fødselsdato fylles ut. ")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Example"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	""))
+					quid       	"3D8F5B10031A"
+					documentation 	
+|Pasientidentifikasjon, 11 siffer.
+|Vanligvis fødselsnummer, men kan være D-nummer eller offisielt H-nummer hvis fødselsnummer ikke finnes.
+|Skal benyttes sammen med "Type id".
+					
+					type       	"ST"
+					exportControl 	"Public")
+				    (object ClassAttribute "Konvesjonslandkode"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Konvesjonsland"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	(value Text ""))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	(value Text ""))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "O"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Example"
+						value      	(value Text 
+|"NO", "DK", "UK"
+						))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	(value Text "Kode for land iht ISO 3166.")))
+					quid       	"3F0E9A35030D"
+					documentation 	"Kode for statsborgerskap til pasient."
+					type       	"CS")
+				    (object ClassAttribute "Arbeidstager i Norge"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Arbeidstager"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	(value Text "RTV"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "O"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	(value Text "ESS: Det eksisterer kodeverk, mulig å bruke bool"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Codes"
+						value      	(value Text "ArbeidstagerNorge"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	(value Text "kodet")))
+					quid       	"3F0E9AE300A1"
+					documentation 	"Ikke bosatt i Norge, men arbeidstaker i Norge."
+					type       	"CS"))
+				module     	"Component View::Henvisning-fase1"
+				quidu      	"3DB258700382"
+				module     	"Component View::Legeregning"
+				quidu      	"3F0E8BE50373"))
+			logical_presentations 	(list unit_reference_list
+			    (object ClassDiagram "Pasient"
+				quid       	"3948D5C9003C"
+				title      	"Pasient"
+				zoom       	100
+				max_height 	28350
+				max_width  	21600
+				origin_x   	0
+				origin_y   	6
+				items      	(list diagram_item_list
+				    (object ClassView "Class" "Logical View::Legeregning::Gjenbrukbare klasser::Adresse" @62
+					ShowCompartmentStereotypes 	TRUE
+					SuppressAttribute 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(288, 848)
+					label      	(object ItemLabel
+					    Parent_View 	@62
+					    location   	(41, 798)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	494
+					    justify    	0
+					    label      	"Adresse")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"3D4A6D840123"
+					width      	512
+					height     	124
+					annotation 	8)
+				    (object ClassView "Class" "Logical View::Legeregning::Pasient::Pasient" @63
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					IncludeOperation 	TRUE
+					location   	(288, 272)
+					font       	(object Font
+					    charSet    	3)
+					label      	(object ItemLabel
+					    Parent_View 	@63
+					    location   	(55, 41)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	466
+					    justify    	0
+					    label      	"Pasient")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"383D30CE028F"
+					compartment 	(object Compartment
+					    Parent_View 	@63
+					    location   	(55, 102)
+					    font       	(object Font
+						charSet    	3)
+					    icon_style 	"Icon"
+					    fill_color 	16777215
+					    anchor     	2
+					    nlines     	8
+					    max_width  	463)
+					width      	484
+					height     	486
+					autoResize 	TRUE)
+				    (object AssociationViewNew "$UNNAMED$24" @64
+					location   	(284, 650)
+					stereotype 	TRUE
+					quidu      	"3F0E9F170351"
+					roleview_list 	(list RoleViews
+					    (object RoleView "$UNNAMED$26" @65
+						Parent_View 	@64
+						location   	(-132, 250)
+						label      	(object SegLabel @66
+						    Parent_View 	@65
+						    location   	(326, 758)
+						    hidden     	TRUE
+						    anchor     	1
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	450
+						    justify    	0
+						    label      	""
+						    pctDist    	0.800000
+						    height     	42
+						    orientation 	0)
+						stereotype 	TRUE
+						quidu      	"3F0E9F170353"
+						client     	@64
+						supplier   	@62
+						line_style 	3
+						origin_attachment 	(284, 650)
+						terminal_attachment 	(284, 786))
+					    (object RoleView "$UNNAMED$25" @67
+						Parent_View 	@64
+						location   	(-132, 250)
+						label      	(object SegLabel @68
+						    Parent_View 	@67
+						    location   	(326, 542)
+						    hidden     	TRUE
+						    anchor     	1
+						    anchor_loc 	1
+						    nlines     	1
+						    max_width  	450
+						    justify    	0
+						    label      	""
+						    pctDist    	0.800000
+						    height     	42
+						    orientation 	1)
+						stereotype 	TRUE
+						quidu      	"3F0E9F170352"
+						client     	@64
+						supplier   	@63
+						line_style 	3
+						origin_attachment 	(284, 650)
+						terminal_attachment 	(284, 515))))))))
+		    (object Class_Category "Gjenbrukbare klasser"
+			quid       	"3F2F75C503A6"
+			exportControl 	"Public"
+			logical_models 	(list unit_reference_list
+			    (object Class "Adresse"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"KITH"
+					name       	"ShortName"
+					value      	(value Text "Address")))
+				quid       	"3D4A6D840123"
+				documentation 	"Adresseinformasjon"
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "Type"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Type"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	(value Text 
+|Kodeverdier:
+|H Bostedsadresse (hvis annet enn folkeregisteradressen)
+|HP Folkeregisteradresse
+|PST postadresse
+|WP Arbeidsadresse
+|INV Faktureringsadresse
+						))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Level"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	"O")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Example"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Codes"
+						value      	""))
+					quid       	"3D4A6DA4026A"
+					documentation 	"Kode for type adresse"
+					type       	"CS")
+				    (object ClassAttribute "Gateadresse"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "StreetAdr"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Level"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	"O")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Example"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Codes"
+						value      	""))
+					quid       	"3D4A6DB20351"
+					documentation 	"Gate/veiadresse og nummer eller stedsnavn."
+					type       	"ST")
+				    (object ClassAttribute "Postnummer"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "PostalCode"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Level"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	"O")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Example"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Codes"
+						value      	""))
+					quid       	"3D4A6DC2001F"
+					documentation 	"Postnummer."
+					type       	"ST")
+				    (object ClassAttribute "Poststed"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "City"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Level"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	"O")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Example"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Codes"
+						value      	""))
+					quid       	"3D4A6DCC02C2"
+					documentation 	"Sted."
+					type       	"ST")
+				    (object ClassAttribute "Fylke/kommune"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "County"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	(value Text "O")))
+					quid       	"3F68137F0243"
+					documentation 	"Angivelse av kode for fylke og/eller kommune i henhold til SSBs kodeverk for fylke-/kommunenummer."
+					type       	"ST")
+				    (object ClassAttribute "Land"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	(value Text "Country"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	(value Text "ISO 3166"))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Level"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	"O")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Example"
+						value      	(value Text 
+|"NO"
+						))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Codes"
+						value      	""))
+					quid       	"3D4A6DE4035E"
+					documentation 	"Kode for land iht ISO 3166"
+					type       	"CS")
+				    (object ClassAttribute "Telekommunikasjon"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"KITH"
+						name       	"ShortName"
+						value      	"Telecom")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Origin"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Level"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Status"
+						value      	"O")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Use"
+						value      	(value Text 
+|RFC 2896
+|http://www.isi.edu/in-notes/rfc2806.txt
+						))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Example"
+						value      	(value Text 
+|tlf:22067985
+|fax:+4773598611
+|mailto:test.lege@legekontor.no
+						))
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Comment"
+						value      	"")
+					    (object Attribute
+						tool       	"KITH"
+						name       	"Codes"
+						value      	""))
+					quid       	"3DAA875A01FC"
+					documentation 	"Kommunikasjonsnummer eller kommunikasjonsadresse."
+					type       	"SET<URL>"))
+				module     	"Component View::NPM"
+				quidu      	"3D4E48AE002F"
+				module     	"Component View::Legeregning"
+				quidu      	"3F0E8BE50373"))
+			logical_presentations 	(list unit_reference_list
+			    (object ClassDiagram "Gjenbrukbare klasser"
+				quid       	"3F2F75F701D1"
+				title      	"Gjenbrukbare klasser"
+				zoom       	100
+				max_height 	28350
+				max_width  	21600
+				origin_x   	0
+				origin_y   	0
+				items      	(list diagram_item_list
+				    (object ClassView "Class" "Logical View::Legeregning::Gjenbrukbare klasser::Adresse" @69
+					ShowCompartmentStereotypes 	TRUE
+					SuppressOperation 	TRUE
+					IncludeAttribute 	TRUE
+					location   	(352, 272)
+					label      	(object ItemLabel
+					    Parent_View 	@69
+					    location   	(49, 66)
+					    fill_color 	13434879
+					    nlines     	1
+					    max_width  	606
+					    justify    	0
+					    label      	"Adresse")
+					icon_style 	"Icon"
+					fill_color 	13434879
+					quidu      	"3D4A6D840123"
+					width      	624
+					height     	436
+					autoResize 	TRUE))))))
+		logical_presentations 	(list unit_reference_list
+		    (object ClassDiagram "Oversikt"
+			quid       	"3EF75615021C"
+			title      	"Oversikt"
+			zoom       	100
+			max_height 	28350
+			max_width  	21600
+			origin_x   	0
+			origin_y   	0
+			items      	(list diagram_item_list
+			    (object ClassView "Class" "Logical View::Legeregning::Helsetjenesteenhet::Institusjon" @70
+				ShowCompartmentStereotypes 	TRUE
+				SuppressAttribute 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				ShowOperationSignature 	TRUE
+				location   	(320, 880)
+				font       	(object Font
+				    italics    	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@70
+				    location   	(133, 830)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	374
+				    justify    	0
+				    label      	"Institusjon")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"3C5526B800D2"
+				width      	392
+				height     	124
+				annotation 	8
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::Legeregning::Enkeltregning::Takst" @71
+				ShowCompartmentStereotypes 	TRUE
+				SuppressAttribute 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				ShowOperationSignature 	TRUE
+				location   	(1856, 256)
+				label      	(object ItemLabel
+				    Parent_View 	@71
+				    location   	(1706, 206)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	300
+				    justify    	0
+				    label      	"Takst")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"3F0E9DDB03CF"
+				width      	318
+				height     	124
+				annotation 	8
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::Legeregning::Enkeltregning::Sum krav" @72
+				ShowCompartmentStereotypes 	TRUE
+				SuppressAttribute 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				ShowOperationSignature 	TRUE
+				location   	(1856, 880)
+				label      	(object ItemLabel
+				    Parent_View 	@72
+				    location   	(1706, 830)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	300
+				    justify    	0
+				    label      	"Sum krav")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"3F0EA24B022E"
+				width      	318
+				height     	124
+				annotation 	8
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::Legeregning::Gjenbrukbare klasser::Adresse" @73
+				ShowCompartmentStereotypes 	TRUE
+				SuppressAttribute 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				ShowOperationSignature 	TRUE
+				location   	(912, 880)
+				label      	(object ItemLabel
+				    Parent_View 	@73
+				    location   	(714, 830)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	396
+				    justify    	0
+				    label      	"Adresse")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"3D4A6D840123"
+				width      	414
+				height     	124
+				annotation 	8
+				autoResize 	TRUE)
+			    (object AssociationViewNew "$UNNAMED$9" @74
+				location   	(610, 870)
+				stereotype 	TRUE
+				quidu      	"3F0EBD0B01D8"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$10" @75
+					Parent_View 	@74
+					location   	(-846, -1082)
+					stereotype 	TRUE
+					quidu      	"3F0EBD0C000D"
+					client     	@74
+					supplier   	@70
+					line_style 	3
+					origin_attachment 	(610, 870)
+					terminal_attachment 	(516, 870))
+				    (object RoleView "$UNNAMED$11" @76
+					Parent_View 	@74
+					location   	(-846, -1082)
+					stereotype 	TRUE
+					quidu      	"3F0EBD0C0017"
+					client     	@74
+					supplier   	@73
+					line_style 	3
+					origin_attachment 	(610, 870)
+					terminal_attachment 	(705, 870))))
+			    (object ClassView "Class" "Logical View::Legeregning::Enkeltregning::Behandling" @77
+				ShowCompartmentStereotypes 	TRUE
+				SuppressAttribute 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				ShowOperationSignature 	TRUE
+				location   	(1888, 528)
+				label      	(object ItemLabel
+				    Parent_View 	@77
+				    location   	(1738, 478)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	300
+				    justify    	0
+				    label      	"Behandling")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"3EF7596F037E"
+				width      	318
+				height     	124
+				annotation 	8
+				autoResize 	TRUE)
+			    (object AssociationViewNew "$UNNAMED$18" @78
+				location   	(1859, 392)
+				stereotype 	TRUE
+				quidu      	"3F0E9E2502E5"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$20" @79
+					Parent_View 	@78
+					location   	(-717, -616)
+					label      	(object SegLabel @80
+					    Parent_View 	@79
+					    location   	(1901, 333)
+					    hidden     	TRUE
+					    anchor     	1
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	450
+					    justify    	0
+					    label      	""
+					    pctDist    	0.800000
+					    height     	42
+					    orientation 	1)
+					stereotype 	TRUE
+					quidu      	"3F0E9E26014D"
+					client     	@78
+					supplier   	@71
+					line_style 	3
+					origin_attachment 	(1859, 392)
+					terminal_attachment 	(1859, 318))
+				    (object RoleView "$UNNAMED$19" @81
+					Parent_View 	@78
+					location   	(-717, -616)
+					label      	(object SegLabel @82
+					    Parent_View 	@81
+					    location   	(1901, 451)
+					    hidden     	TRUE
+					    anchor     	1
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	450
+					    justify    	0
+					    label      	""
+					    pctDist    	0.800000
+					    height     	42
+					    orientation 	0)
+					stereotype 	TRUE
+					quidu      	"3F0E9E26014C"
+					client     	@78
+					supplier   	@77
+					line_style 	3
+					origin_attachment 	(1859, 392)
+					terminal_attachment 	(1859, 466))))
+			    (object AssociationViewNew "$UNNAMED$27" @83
+				location   	(1859, 703)
+				stereotype 	TRUE
+				quidu      	"3F0EA26E038C"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$29" @84
+					Parent_View 	@83
+					location   	(-717, -305)
+					label      	(object SegLabel @85
+					    Parent_View 	@84
+					    location   	(1818, 793)
+					    hidden     	TRUE
+					    anchor     	1
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	450
+					    justify    	0
+					    label      	""
+					    pctDist    	0.800000
+					    height     	42
+					    orientation 	1)
+					stereotype 	TRUE
+					quidu      	"3F0EA26F03CA"
+					client     	@83
+					supplier   	@72
+					line_style 	3
+					origin_attachment 	(1859, 703)
+					terminal_attachment 	(1859, 817))
+				    (object RoleView "$UNNAMED$28" @86
+					Parent_View 	@83
+					location   	(-717, -305)
+					label      	(object SegLabel @87
+					    Parent_View 	@86
+					    location   	(1818, 613)
+					    hidden     	TRUE
+					    anchor     	1
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	450
+					    justify    	0
+					    label      	""
+					    pctDist    	0.800000
+					    height     	42
+					    orientation 	0)
+					stereotype 	TRUE
+					quidu      	"3F0EA26F03C0"
+					client     	@83
+					supplier   	@77
+					line_style 	3
+					origin_attachment 	(1859, 703)
+					terminal_attachment 	(1859, 589))))
+			    (object ClassView "Class" "Logical View::Legeregning::Pasient::Pasient" @88
+				ShowCompartmentStereotypes 	TRUE
+				SuppressAttribute 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				ShowOperationSignature 	TRUE
+				location   	(1424, 880)
+				label      	(object ItemLabel
+				    Parent_View 	@88
+				    location   	(1321, 830)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	206
+				    justify    	0
+				    label      	"Pasient")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"383D30CE028F"
+				width      	224
+				height     	124
+				annotation 	8
+				autoResize 	TRUE)
+			    (object AssociationViewNew "$UNNAMED$24" @89
+				location   	(1215, 876)
+				stereotype 	TRUE
+				quidu      	"3F0E9F170351"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$26" @90
+					Parent_View 	@89
+					location   	(-577, 108)
+					label      	(object SegLabel @91
+					    Parent_View 	@90
+					    location   	(1139, 835)
+					    hidden     	TRUE
+					    anchor     	1
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	450
+					    justify    	0
+					    label      	""
+					    pctDist    	0.800000
+					    height     	42
+					    orientation 	1)
+					stereotype 	TRUE
+					quidu      	"3F0E9F170353"
+					client     	@89
+					supplier   	@73
+					line_style 	3
+					origin_attachment 	(1215, 876)
+					terminal_attachment 	(1119, 876))
+				    (object RoleView "$UNNAMED$25" @92
+					Parent_View 	@89
+					location   	(-577, 108)
+					label      	(object SegLabel @93
+					    Parent_View 	@92
+					    location   	(1292, 835)
+					    hidden     	TRUE
+					    anchor     	1
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	450
+					    justify    	0
+					    label      	""
+					    pctDist    	0.800000
+					    height     	42
+					    orientation 	0)
+					stereotype 	TRUE
+					quidu      	"3F0E9F170352"
+					client     	@89
+					supplier   	@88
+					line_style 	3
+					origin_attachment 	(1215, 876)
+					terminal_attachment 	(1312, 876))))
+			    (object ClassView "Class" "Logical View::Legeregning::Hode::Krav" @94
+				ShowCompartmentStereotypes 	TRUE
+				SuppressAttribute 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				ShowOperationSignature 	TRUE
+				location   	(1040, 272)
+				label      	(object ItemLabel
+				    Parent_View 	@94
+				    location   	(953, 222)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	174
+				    justify    	0
+				    label      	"Krav")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"3EF7574701CC"
+				width      	192
+				height     	124
+				annotation 	8
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::Legeregning::Hode::Praksis" @95
+				ShowCompartmentStereotypes 	TRUE
+				SuppressAttribute 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				ShowOperationSignature 	TRUE
+				location   	(320, 608)
+				label      	(object ItemLabel
+				    Parent_View 	@95
+				    location   	(233, 558)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	174
+				    justify    	0
+				    label      	"Praksis")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"3EF75C8300EC"
+				width      	192
+				height     	124
+				annotation 	8
+				autoResize 	TRUE)
+			    (object InheritView "" @96
+				stereotype 	TRUE
+				quidu      	"3F0EBEE401C4"
+				client     	@95
+				supplier   	@70
+				line_style 	3
+				origin_attachment 	(320, 670)
+				terminal_attachment 	(320, 818))
+			    (object ClassView "Class" "Logical View::Legeregning::Enkeltregning::Enkeltregning" @97
+				ShowCompartmentStereotypes 	TRUE
+				SuppressAttribute 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				ShowOperationSignature 	TRUE
+				location   	(1392, 528)
+				label      	(object ItemLabel
+				    Parent_View 	@97
+				    location   	(1242, 478)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	300
+				    justify    	0
+				    label      	"Enkeltregning")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"3EF758110335"
+				width      	318
+				height     	124
+				annotation 	8
+				autoResize 	TRUE)
+			    (object AssociationViewNew "$UNNAMED$6" @98
+				location   	(1640, 531)
+				stereotype 	TRUE
+				quidu      	"3EF7597C02BE"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$7" @99
+					Parent_View 	@98
+					location   	(-808, -781)
+					stereotype 	TRUE
+					quidu      	"3EF7597D03E2"
+					client     	@98
+					supplier   	@97
+					line_style 	3
+					origin_attachment 	(1640, 531)
+					terminal_attachment 	(1551, 531))
+				    (object RoleView "$UNNAMED$8" @100
+					Parent_View 	@98
+					location   	(-808, -781)
+					stereotype 	TRUE
+					quidu      	"3EF7597E0004"
+					client     	@98
+					supplier   	@77
+					line_style 	3
+					origin_attachment 	(1640, 531)
+					terminal_attachment 	(1729, 531))))
+			    (object AssociationViewNew "$UNNAMED$21" @101
+				location   	(1431, 704)
+				stereotype 	TRUE
+				quidu      	"3F0E9F170347"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$23" @102
+					Parent_View 	@101
+					location   	(-361, -64)
+					label      	(object SegLabel @103
+					    Parent_View 	@102
+					    location   	(1390, 614)
+					    hidden     	TRUE
+					    anchor     	1
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	450
+					    justify    	0
+					    label      	""
+					    pctDist    	0.800000
+					    height     	42
+					    orientation 	0)
+					stereotype 	TRUE
+					quidu      	"3F0E9F170349"
+					client     	@101
+					supplier   	@97
+					line_style 	3
+					origin_attachment 	(1431, 704)
+					terminal_attachment 	(1431, 590))
+				    (object RoleView "$UNNAMED$22" @104
+					Parent_View 	@101
+					location   	(-361, -64)
+					label      	(object SegLabel @105
+					    Parent_View 	@104
+					    location   	(1390, 794)
+					    hidden     	TRUE
+					    anchor     	1
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	450
+					    justify    	0
+					    label      	""
+					    pctDist    	0.800000
+					    height     	42
+					    orientation 	1)
+					stereotype 	TRUE
+					quidu      	"3F0E9F170348"
+					client     	@101
+					supplier   	@88
+					line_style 	3
+					origin_attachment 	(1431, 704)
+					terminal_attachment 	(1431, 818))))
+			    (object ClassView "Class" "Logical View::Legeregning::Hode::Legeregning" @106
+				ShowCompartmentStereotypes 	TRUE
+				SuppressAttribute 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				ShowOperationSignature 	TRUE
+				location   	(352, 224)
+				label      	(object ItemLabel
+				    Parent_View 	@106
+				    location   	(49, 108)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	607
+				    justify    	0
+				    label      	"Legeregning")
+				stereotype 	(object ItemLabel
+				    Parent_View 	@106
+				    location   	(49, 58)
+				    fill_color 	13434879
+				    anchor     	10
+				    nlines     	1
+				    max_width  	607
+				    justify    	0
+				    label      	"<<top>>")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"3EF756FE02AD"
+				width      	625
+				height     	356
+				annotation 	8)
+			    (object AssociationViewNew "$UNNAMED$0" @107
+				location   	(804, 272)
+				stereotype 	TRUE
+				quidu      	"3EF7574E02EE"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$1" @108
+					Parent_View 	@107
+					location   	(-956, -160)
+					stereotype 	TRUE
+					quidu      	"3EF7574F01A5"
+					client     	@107
+					supplier   	@106
+					line_style 	3
+					origin_attachment 	(804, 272)
+					terminal_attachment 	(664, 272))
+				    (object RoleView "$UNNAMED$2" @109
+					Parent_View 	@107
+					location   	(-956, -160)
+					stereotype 	TRUE
+					quidu      	"3EF7574F01AF"
+					client     	@107
+					supplier   	@94
+					line_style 	3
+					origin_attachment 	(804, 272)
+					terminal_attachment 	(944, 272))))
+			    (object AssociationViewNew "$UNNAMED$12" @110
+				location   	(306, 473)
+				stereotype 	TRUE
+				quidu      	"3EF75C930334"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$13" @111
+					Parent_View 	@110
+					location   	(-782, -663)
+					stereotype 	TRUE
+					quidu      	"3EF75C940209"
+					client     	@110
+					supplier   	@106
+					line_style 	3
+					origin_attachment 	(306, 473)
+					terminal_attachment 	(306, 401))
+				    (object RoleView "$UNNAMED$14" @112
+					Parent_View 	@110
+					location   	(-782, -663)
+					stereotype 	TRUE
+					quidu      	"3EF75C94020A"
+					client     	@110
+					supplier   	@95
+					line_style 	3
+					origin_attachment 	(306, 473)
+					terminal_attachment 	(306, 545))))
+			    (object AssociationViewNew "$UNNAMED$3" @113
+				location   	(827, 531)
+				stereotype 	TRUE
+				quidu      	"3EF7581C00F6"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$4" @114
+					Parent_View 	@113
+					location   	(-1045, 83)
+					stereotype 	TRUE
+					quidu      	"3EF7581C03B3"
+					client     	@113
+					supplier   	@106
+					vertices   	(list Points
+					    (827, 531)
+					    (550, 531)
+					    (550, 402))
+					line_style 	3
+					origin_attachment 	(827, 531)
+					terminal_attachment 	(550, 402))
+				    (object RoleView "$UNNAMED$5" @115
+					Parent_View 	@113
+					location   	(-1045, 83)
+					stereotype 	TRUE
+					quidu      	"3EF7581C03B4"
+					client     	@113
+					supplier   	@97
+					line_style 	3
+					origin_attachment 	(827, 531)
+					terminal_attachment 	(1233, 531))))
+			    (object ClassView "Class" "Logical View::Legeregning::Hode::Digital signatur" @116
+				ShowCompartmentStereotypes 	TRUE
+				SuppressAttribute 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				ShowOperationSignature 	TRUE
+				location   	(1120, 96)
+				label      	(object ItemLabel
+				    Parent_View 	@116
+				    location   	(958, 46)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	324
+				    justify    	0
+				    label      	"Digital signatur")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"3F4CBE0B0014"
+				width      	342
+				height     	124
+				annotation 	8
+				autoResize 	TRUE)
+			    (object AssociationViewNew "$UNNAMED$15" @117
+				location   	(806, 106)
+				stereotype 	TRUE
+				quidu      	"3F680D1900AD"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$16" @118
+					Parent_View 	@117
+					location   	(566, -326)
+					stereotype 	TRUE
+					quidu      	"3F680D1902B5"
+					client     	@117
+					supplier   	@106
+					line_style 	3
+					origin_attachment 	(806, 106)
+					terminal_attachment 	(664, 106))
+				    (object RoleView "$UNNAMED$17" @119
+					Parent_View 	@117
+					location   	(566, -326)
+					stereotype 	TRUE
+					quidu      	"3F680D1902BF"
+					client     	@117
+					supplier   	@116
+					line_style 	3
+					origin_attachment 	(806, 106)
+					terminal_attachment 	(949, 106))))))
+		    (object ClassDiagram "Full ny"
+			quid       	"3F73F355026F"
+			title      	"Full ny"
+			zoom       	100
+			max_height 	28350
+			max_width  	21600
+			origin_x   	0
+			origin_y   	0
+			items      	(list diagram_item_list
+			    (object ClassView "Class" "Logical View::Legeregning::Helsetjenesteenhet::Institusjon" @120
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				location   	(336, 1264)
+				font       	(object Font
+				    italics    	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@120
+				    location   	(120, 1158)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	432
+				    justify    	0
+				    label      	"Institusjon")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"3C5526B800D2"
+				compartment 	(object Compartment
+				    Parent_View 	@120
+				    location   	(120, 1219)
+				    icon_style 	"Icon"
+				    fill_color 	16777215
+				    anchor     	2
+				    nlines     	3
+				    max_width  	428)
+				width      	450
+				height     	236
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::Legeregning::Enkeltregning::Takst" @121
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				location   	(1568, 1424)
+				label      	(object ItemLabel
+				    Parent_View 	@121
+				    location   	(1466, 1318)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	204
+				    justify    	0
+				    label      	"Takst")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"3F0E9DDB03CF"
+				width      	222
+				height     	236
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::Legeregning::Enkeltregning::Sum krav" @122
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				location   	(2288, 1424)
+				label      	(object ItemLabel
+				    Parent_View 	@122
+				    location   	(2066, 1318)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	444
+				    justify    	0
+				    label      	"Sum krav")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"3F0EA24B022E"
+				width      	462
+				height     	236
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::Legeregning::Gjenbrukbare klasser::Adresse" @123
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				location   	(688, 1904)
+				label      	(object ItemLabel
+				    Parent_View 	@123
+				    location   	(385, 1698)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	606
+				    justify    	0
+				    label      	"Adresse")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"3D4A6D840123"
+				width      	624
+				height     	436
+				autoResize 	TRUE)
+			    (object AssociationViewNew "$UNNAMED$9" @124
+				location   	(436, 1533)
+				stereotype 	TRUE
+				quidu      	"3F0EBD0B01D8"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$10" @125
+					Parent_View 	@124
+					location   	(-1020, -419)
+					stereotype 	TRUE
+					quidu      	"3F0EBD0C000D"
+					client     	@124
+					supplier   	@120
+					line_style 	3
+					origin_attachment 	(436, 1533)
+					terminal_attachment 	(436, 1381))
+				    (object RoleView "$UNNAMED$11" @126
+					Parent_View 	@124
+					location   	(-1020, -419)
+					stereotype 	TRUE
+					quidu      	"3F0EBD0C0017"
+					client     	@124
+					supplier   	@123
+					line_style 	3
+					origin_attachment 	(436, 1533)
+					terminal_attachment 	(436, 1686))))
+			    (object ClassView "Class" "Logical View::Legeregning::Enkeltregning::Behandling" @127
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				location   	(1936, 1088)
+				label      	(object ItemLabel
+				    Parent_View 	@127
+				    location   	(1739, 1007)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	394
+				    justify    	0
+				    label      	"Behandling")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"3EF7596F037E"
+				width      	412
+				height     	186
+				autoResize 	TRUE)
+			    (object AssociationViewNew "$UNNAMED$18" @128
+				location   	(1570, 1161)
+				stereotype 	TRUE
+				quidu      	"3F0E9E2502E5"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$20" @129
+					Parent_View 	@128
+					location   	(-1006, 153)
+					label      	(object SegLabel @130
+					    Parent_View 	@129
+					    location   	(1529, 1277)
+					    hidden     	TRUE
+					    anchor     	1
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	450
+					    justify    	0
+					    label      	""
+					    pctDist    	0.800000
+					    height     	42
+					    orientation 	1)
+					stereotype 	TRUE
+					quidu      	"3F0E9E26014D"
+					client     	@128
+					supplier   	@121
+					line_style 	3
+					origin_attachment 	(1570, 1161)
+					terminal_attachment 	(1570, 1306))
+				    (object RoleView "$UNNAMED$19" @131
+					Parent_View 	@128
+					location   	(-1006, 153)
+					label      	(object SegLabel @132
+					    Parent_View 	@131
+					    location   	(1686, 1060)
+					    hidden     	TRUE
+					    anchor     	1
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	450
+					    justify    	0
+					    label      	""
+					    pctDist    	0.800000
+					    height     	42
+					    orientation 	0)
+					stereotype 	TRUE
+					quidu      	"3F0E9E26014C"
+					client     	@128
+					supplier   	@127
+					vertices   	(list Points
+					    (1570, 1161)
+					    (1570, 1101)
+					    (1730, 1101))
+					line_style 	3
+					origin_attachment 	(1570, 1161)
+					terminal_attachment 	(1730, 1101))))
+			    (object AssociationViewNew "$UNNAMED$27" @133
+				location   	(2289, 1146)
+				stereotype 	TRUE
+				quidu      	"3F0EA26E038C"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$29" @134
+					Parent_View 	@133
+					location   	(-287, 138)
+					label      	(object SegLabel @135
+					    Parent_View 	@134
+					    location   	(2248, 1274)
+					    hidden     	TRUE
+					    anchor     	1
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	450
+					    justify    	0
+					    label      	""
+					    pctDist    	0.800000
+					    height     	42
+					    orientation 	1)
+					stereotype 	TRUE
+					quidu      	"3F0EA26F03CA"
+					client     	@133
+					supplier   	@122
+					line_style 	3
+					origin_attachment 	(2289, 1146)
+					terminal_attachment 	(2289, 1306))
+				    (object RoleView "$UNNAMED$28" @136
+					Parent_View 	@133
+					location   	(-287, 138)
+					label      	(object SegLabel @137
+					    Parent_View 	@136
+					    location   	(2184, 1128)
+					    hidden     	TRUE
+					    anchor     	1
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	450
+					    justify    	0
+					    label      	""
+					    pctDist    	0.800000
+					    height     	42
+					    orientation 	0)
+					stereotype 	TRUE
+					quidu      	"3F0EA26F03C0"
+					client     	@133
+					supplier   	@127
+					vertices   	(list Points
+					    (2289, 1146)
+					    (2289, 1086)
+					    (2142, 1086))
+					line_style 	3
+					origin_attachment 	(2289, 1146)
+					terminal_attachment 	(2142, 1086))))
+			    (object ClassView "Class" "Logical View::Legeregning::Pasient::Pasient" @138
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				location   	(992, 1072)
+				label      	(object ItemLabel
+				    Parent_View 	@138
+				    location   	(759, 841)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	466
+				    justify    	0
+				    label      	"Pasient")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"383D30CE028F"
+				width      	484
+				height     	486
+				autoResize 	TRUE)
+			    (object AssociationViewNew "$UNNAMED$24" @139
+				location   	(823, 1500)
+				stereotype 	TRUE
+				quidu      	"3F0E9F170351"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$26" @140
+					Parent_View 	@139
+					location   	(-969, 732)
+					label      	(object SegLabel @141
+					    Parent_View 	@140
+					    location   	(782, 1648)
+					    hidden     	TRUE
+					    anchor     	1
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	450
+					    justify    	0
+					    label      	""
+					    pctDist    	0.800000
+					    height     	42
+					    orientation 	1)
+					stereotype 	TRUE
+					quidu      	"3F0E9F170353"
+					client     	@139
+					supplier   	@123
+					line_style 	3
+					origin_attachment 	(823, 1500)
+					terminal_attachment 	(823, 1685))
+				    (object RoleView "$UNNAMED$25" @142
+					Parent_View 	@139
+					location   	(-969, 732)
+					label      	(object SegLabel @143
+					    Parent_View 	@142
+					    location   	(782, 1352)
+					    hidden     	TRUE
+					    anchor     	1
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	450
+					    justify    	0
+					    label      	""
+					    pctDist    	0.800000
+					    height     	42
+					    orientation 	0)
+					stereotype 	TRUE
+					quidu      	"3F0E9F170352"
+					client     	@139
+					supplier   	@138
+					line_style 	3
+					origin_attachment 	(823, 1500)
+					terminal_attachment 	(823, 1315))))
+			    (object ClassView "Class" "Logical View::Legeregning::Hode::Krav" @144
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				location   	(1184, 496)
+				label      	(object ItemLabel
+				    Parent_View 	@144
+				    location   	(979, 415)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	410
+				    justify    	0
+				    label      	"Krav")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"3EF7574701CC"
+				compartment 	(object Compartment
+				    Parent_View 	@144
+				    location   	(979, 476)
+				    icon_style 	"Icon"
+				    fill_color 	16777215
+				    anchor     	2
+				    nlines     	2
+				    max_width  	406)
+				width      	428
+				height     	186
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::Legeregning::Hode::Praksis" @145
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				location   	(336, 896)
+				label      	(object ItemLabel
+				    Parent_View 	@145
+				    location   	(195, 840)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	282
+				    justify    	0
+				    label      	"Praksis")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"3EF75C8300EC"
+				compartment 	(object Compartment
+				    Parent_View 	@145
+				    location   	(195, 901)
+				    icon_style 	"Icon"
+				    fill_color 	16777215
+				    anchor     	2
+				    nlines     	1
+				    max_width  	278)
+				width      	300
+				height     	136
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Logical View::Legeregning::Enkeltregning::Enkeltregning" @146
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				location   	(1872, 288)
+				label      	(object ItemLabel
+				    Parent_View 	@146
+				    location   	(1573, 157)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	598
+				    justify    	0
+				    label      	"Enkeltregning")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"3EF758110335"
+				width      	616
+				height     	286
+				autoResize 	TRUE)
+			    (object AssociationViewNew "$UNNAMED$6" @147
+				location   	(1914, 713)
+				stereotype 	TRUE
+				quidu      	"3EF7597C02BE"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$7" @148
+					Parent_View 	@147
+					location   	(-534, -599)
+					stereotype 	TRUE
+					quidu      	"3EF7597D03E2"
+					client     	@147
+					supplier   	@146
+					line_style 	3
+					origin_attachment 	(1914, 713)
+					terminal_attachment 	(1914, 431))
+				    (object RoleView "$UNNAMED$8" @149
+					Parent_View 	@147
+					location   	(-534, -599)
+					stereotype 	TRUE
+					quidu      	"3EF7597E0004"
+					client     	@147
+					supplier   	@127
+					line_style 	3
+					origin_attachment 	(1914, 713)
+					terminal_attachment 	(1914, 995))))
+			    (object AssociationViewNew "$UNNAMED$21" @150
+				location   	(1676, 901)
+				stereotype 	TRUE
+				quidu      	"3F0E9F170347"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$23" @151
+					Parent_View 	@150
+					location   	(-116, 133)
+					label      	(object SegLabel @152
+					    Parent_View 	@151
+					    location   	(1695, 538)
+					    hidden     	TRUE
+					    anchor     	1
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	450
+					    justify    	0
+					    label      	""
+					    pctDist    	0.800000
+					    height     	42
+					    orientation 	0)
+					stereotype 	TRUE
+					quidu      	"3F0E9F170349"
+					client     	@150
+					supplier   	@146
+					vertices   	(list Points
+					    (1676, 901)
+					    (1736, 901)
+					    (1736, 431))
+					line_style 	3
+					origin_attachment 	(1676, 901)
+					terminal_attachment 	(1736, 431))
+				    (object RoleView "$UNNAMED$22" @153
+					Parent_View 	@150
+					location   	(-116, 133)
+					label      	(object SegLabel @154
+					    Parent_View 	@153
+					    location   	(1322, 860)
+					    hidden     	TRUE
+					    anchor     	1
+					    anchor_loc 	1
+					    nlines     	1
+					    max_width  	450
+					    justify    	0
+					    label      	""
+					    pctDist    	0.800000
+					    height     	42
+					    orientation 	1)
+					stereotype 	TRUE
+					quidu      	"3F0E9F170348"
+					client     	@150
+					supplier   	@138
+					line_style 	3
+					origin_attachment 	(1676, 901)
+					terminal_attachment 	(1234, 901))))
+			    (object ClassView "Class" "Logical View::Legeregning::Hode::Legeregning" @155
+				ShowCompartmentStereotypes 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				location   	(336, 336)
+				label      	(object ItemLabel
+				    Parent_View 	@155
+				    location   	(36, 89)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	600
+				    justify    	0
+				    label      	"Legeregning")
+				stereotype 	(object ItemLabel
+				    Parent_View 	@155
+				    location   	(36, 39)
+				    fill_color 	13434879
+				    anchor     	10
+				    nlines     	1
+				    max_width  	600
+				    justify    	0
+				    label      	"<<top>>")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"3EF756FE02AD"
+				compartment 	(object Compartment
+				    Parent_View 	@155
+				    location   	(36, 150)
+				    icon_style 	"Icon"
+				    fill_color 	16777215
+				    anchor     	2
+				    nlines     	4
+				    max_width  	596)
+				width      	618
+				height     	618)
+			    (object AssociationViewNew "$UNNAMED$0" @156
+				location   	(807, 485)
+				stereotype 	TRUE
+				quidu      	"3EF7574E02EE"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$1" @157
+					Parent_View 	@156
+					location   	(-953, 53)
+					stereotype 	TRUE
+					quidu      	"3EF7574F01A5"
+					client     	@156
+					supplier   	@155
+					line_style 	3
+					origin_attachment 	(807, 485)
+					terminal_attachment 	(645, 485))
+				    (object RoleView "$UNNAMED$2" @158
+					Parent_View 	@156
+					location   	(-953, 53)
+					stereotype 	TRUE
+					quidu      	"3EF7574F01AF"
+					client     	@156
+					supplier   	@144
+					line_style 	3
+					origin_attachment 	(807, 485)
+					terminal_attachment 	(970, 485))))
+			    (object AssociationViewNew "$UNNAMED$12" @159
+				location   	(317, 736)
+				stereotype 	TRUE
+				quidu      	"3EF75C930334"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$13" @160
+					Parent_View 	@159
+					location   	(-771, -400)
+					stereotype 	TRUE
+					quidu      	"3EF75C940209"
+					client     	@159
+					supplier   	@155
+					line_style 	3
+					origin_attachment 	(317, 736)
+					terminal_attachment 	(317, 645))
+				    (object RoleView "$UNNAMED$14" @161
+					Parent_View 	@159
+					location   	(-771, -400)
+					stereotype 	TRUE
+					quidu      	"3EF75C94020A"
+					client     	@159
+					supplier   	@145
+					line_style 	3
+					origin_attachment 	(317, 736)
+					terminal_attachment 	(317, 827))))
+			    (object AssociationViewNew "$UNNAMED$3" @162
+				location   	(1104, 263)
+				stereotype 	TRUE
+				quidu      	"3EF7581C00F6"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$4" @163
+					Parent_View 	@162
+					location   	(-768, -185)
+					stereotype 	TRUE
+					quidu      	"3EF7581C03B3"
+					client     	@162
+					supplier   	@155
+					line_style 	3
+					origin_attachment 	(1104, 263)
+					terminal_attachment 	(645, 263))
+				    (object RoleView "$UNNAMED$5" @164
+					Parent_View 	@162
+					location   	(-768, -185)
+					stereotype 	TRUE
+					quidu      	"3EF7581C03B4"
+					client     	@162
+					supplier   	@146
+					line_style 	3
+					origin_attachment 	(1104, 263)
+					terminal_attachment 	(1564, 263))))
+			    (object ClassView "Class" "Logical View::Legeregning::Hode::Digital signatur" @165
+				ShowCompartmentStereotypes 	TRUE
+				SuppressAttribute 	TRUE
+				SuppressOperation 	TRUE
+				IncludeAttribute 	TRUE
+				location   	(1184, 112)
+				label      	(object ItemLabel
+				    Parent_View 	@165
+				    location   	(1022, 71)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	324
+				    justify    	0
+				    label      	"Digital signatur")
+				icon_style 	"Icon"
+				fill_color 	13434879
+				quidu      	"3F4CBE0B0014"
+				width      	342
+				height     	107
+				autoResize 	TRUE)
+			    (object AssociationViewNew "$UNNAMED$15" @166
+				location   	(829, 104)
+				stereotype 	TRUE
+				quidu      	"3F680D1900AD"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$16" @167
+					Parent_View 	@166
+					location   	(589, -328)
+					stereotype 	TRUE
+					quidu      	"3F680D1902B5"
+					client     	@166
+					supplier   	@155
+					line_style 	3
+					origin_attachment 	(829, 104)
+					terminal_attachment 	(645, 104))
+				    (object RoleView "$UNNAMED$17" @168
+					Parent_View 	@166
+					location   	(589, -328)
+					stereotype 	TRUE
+					quidu      	"3F680D1902BF"
+					client     	@166
+					supplier   	@165
+					line_style 	3
+					origin_attachment 	(829, 104)
+					terminal_attachment 	(1013, 104))))
+			    (object InheritView "" @169
+				stereotype 	TRUE
+				quidu      	"3F0EBEE401C4"
+				client     	@145
+				supplier   	@120
+				line_style 	3
+				origin_attachment 	(336, 964)
+				terminal_attachment 	(336, 1146)))))))
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"3EF752700152"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object CategoryView "Logical View::Legeregning::Hode" @170
+			location   	(256, 592)
+			label      	(object ItemLabel
+			    Parent_View 	@170
+			    location   	(88, 508)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	336
+			    justify    	0
+			    label      	"Hode")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"3EF75297037F"
+			width      	348
+			height     	180)
+		    (object CategoryView "Logical View::Legeregning::Enkeltregning" @171
+			location   	(752, 592)
+			label      	(object ItemLabel
+			    Parent_View 	@171
+			    location   	(584, 508)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	336
+			    justify    	0
+			    label      	"Enkeltregning")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"3EF752CE00FD"
+			width      	348
+			height     	180)
+		    (object CategoryView "Logical View::Legeregning::Helsetjenesteenhet" @172
+			location   	(272, 992)
+			label      	(object ItemLabel
+			    Parent_View 	@172
+			    location   	(104, 908)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	336
+			    justify    	0
+			    label      	"Helsetjenesteenhet")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"3D32DDFA0100"
+			width      	348
+			height     	180)
+		    (object CategoryView "Logical View::Legeregning::Pasient" @173
+			location   	(752, 992)
+			label      	(object ItemLabel
+			    Parent_View 	@173
+			    location   	(584, 908)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	336
+			    justify    	0
+			    label      	"Pasient")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"3948D43A0280"
+			width      	348
+			height     	180)
+		    (object CategoryView "Logical View::Legeregning" @174
+			location   	(480, 176)
+			label      	(object ItemLabel
+			    Parent_View 	@174
+			    location   	(336, 92)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	288
+			    justify    	0
+			    label      	"Legeregning")
+			icon_style 	"Icon"
+			fill_color 	13434879
+			quidu      	"3F150E690251"
+			width      	300
+			height     	180)
+		    (object ImportView "" @175
+			stereotype 	TRUE
+			quidu      	"3F4CADBF0287"
+			client     	@171
+			supplier   	@174
+			line_style 	0)
+		    (object ImportView "" @176
+			stereotype 	TRUE
+			quidu      	"3F4CADC70238"
+			client     	@173
+			supplier   	@171
+			line_style 	0)
+		    (object ImportView "" @177
+			stereotype 	TRUE
+			quidu      	"3F4CADC30232"
+			client     	@172
+			supplier   	@170
+			line_style 	0)
+		    (object ImportView "" @178
+			stereotype 	TRUE
+			quidu      	"3F4CADBD02C0"
+			client     	@170
+			supplier   	@174
+			line_style 	0)))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"3EF7526D01AA"
+	physical_models 	(list unit_reference_list
+	    (object module "Legeregning" "NotAModuleType" "NotAModulePart"
+		quid       	"3F0E8BE50373"
+		stereotype 	""))
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"3EF752700116"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    process_structure 	(object Processes
+	quid       	"3EF7526D01AB"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"3EF7526D01BC"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	attributes 	(list Attribute_Set
+	    (object Attribute
+		tool       	"DDL"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"DDL"
+		name       	"default__Project"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"DDL"
+			name       	"Directory"
+			value      	"AUTO GENERATE")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"DataBase"
+			value      	("DataBaseSet" 800))
+		    (object Attribute
+			tool       	"DDL"
+			name       	"DataBaseSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"DDL"
+				name       	"ANSI"
+				value      	800)
+			    (object Attribute
+				tool       	"DDL"
+				name       	"Oracle"
+				value      	801)
+			    (object Attribute
+				tool       	"DDL"
+				name       	"SQLServer"
+				value      	802)
+			    (object Attribute
+				tool       	"DDL"
+				name       	"Sybase"
+				value      	803)
+			    (object Attribute
+				tool       	"DDL"
+				name       	"Watcom"
+				value      	804)))
+		    (object Attribute
+			tool       	"DDL"
+			name       	"PrimaryKeyColumnName"
+			value      	"Id")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"PrimaryKeyColumnType"
+			value      	"NUMBER(5)")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"ViewName"
+			value      	"V_")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"TableName"
+			value      	"T_")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"InheritSuffix"
+			value      	"_V")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"DropClause"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"BaseViews"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"DDLScriptFilename"
+			value      	"DDL1.SQL")))
+	    (object Attribute
+		tool       	"DDL"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"DDL"
+			name       	"ColumnType"
+			value      	"VARCHAR")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"Length"
+			value      	"")
+		    (object Attribute
+			tool       	"DDL"
+			name       	"NullsOK"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"PrimaryKey"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"Unique"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"CompositeUnique"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"DDL"
+			name       	"CheckConstraint"
+			value      	"")))
+	    (object Attribute
+		tool       	"DDL"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Model Integrator"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Web Publisher"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Version Control"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"KITH"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ShortName"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Status"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Use"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Example"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Comment"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Codes"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Level"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ID"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"OrigOrg"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Author"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"PrevVersion"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ValidFrom"
+			value      	"")))
+	    (object Attribute
+		tool       	"KITH"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ShortName"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Origin"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Status"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Use"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Example"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Comment"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Codes"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ID"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"OrigOrg"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"Author"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"PrevVersion"
+			value      	"")
+		    (object Attribute
+			tool       	"KITH"
+			name       	"ValidFrom"
+			value      	""))))
+	quid       	"3EF7526D01AC"))

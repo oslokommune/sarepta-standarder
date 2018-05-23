@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 rel. 3 sp1 (http://www.altova.com) by Espen Stranger Seland (KITH) -->
+<!-- eResept M1 v1.6 2007-09-01 -->
+<!-- Endringer siden eResept M1 v1.5 2007-06-01 rev 0 -->
+<!-- Nytt element Fornavn 0..1 string -->
+<!-- Nytt element Etternavn 0..1 string -->
+<!-- Nytt element Adresse 0..1 Address -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- eResept M1 v1.5 2007-06-01 rev 0 -->
+<!-- Endringer fra versjon 1.0 2006-10-06: -->
+<!-- Nytt element RefNr -->
+<schema xmlns:m21="http://www.kith.no/xmlstds/eresept/m21/2007-09-01" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" targetNamespace="http://www.kith.no/xmlstds/eresept/m21/2007-09-01" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="../felles/felleskomponent1.xsd"/>
+	<element name="Ekspederingsanmodning">
+		<annotation>
+			<documentation>Melding fra reseptbank til en spesifisert utleverer om at utlevereren skal hente ned en resept med oppgit resept-id for ekspedering og forsendelse. </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="ReseptId" type="string">
+					<annotation>
+						<documentation>ID til resepten som forsendelsesanmodningen gjelder.</documentation>
+					</annotation>
+				</element>
+				<element name="MetodeUtlevering" type="kith:CS">
+					<annotation>
+						<documentation>Tilsvarer metode for utlevering under ekspederingsinstruks i en resept. </documentation>
+					</annotation>
+				</element>
+				<element name="RefNr" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Referansenummer. </documentation>
+					</annotation>
+				</element>
+				<element name="Fornavn" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Fornavnet på den personen som mottar forsendelsen (pasient/verge/kontaktperson i kommunehelsetjenesten med mer). </documentation>
+					</annotation>
+				</element>
+				<element name="Etternavn" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Etternavnet på den personen som mottar forsendelsen (pasient/verge/kontaktperson i kommunehelsetjenesten med mer).</documentation>
+					</annotation>
+				</element>
+				<element name="Adresse" type="fk1:Address" minOccurs="0">
+					<annotation>
+						<documentation>Adressen forsendelsen skal sendes til</documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

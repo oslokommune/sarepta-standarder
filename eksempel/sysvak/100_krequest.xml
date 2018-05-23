@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Opprettet 20080101  -->
+<!--  Meldingen er en forespørsel etter kodeverk som eksisterer i SYSVAK.  -->
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd">
+	<MsgInfo>
+		<Type V="KODEVERKREQUEST" DN="KODEVERKREQUEST"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2007-12-14T14:00:04</GenDate>
+		<MsgId>6F06DE00-59A6-4265-AA95-F48DAE3407B6</MsgId>
+		<Sender>
+			<Organisation>
+				<OrganisationName>AVSENDER HELSEENHET</OrganisationName>
+				<Ident>
+					<Id>123456789</Id>
+					<TypeId S="2.16.578.1.12.4.1.1.9051" V="ENH" DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" />
+				</Ident>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>NASJONALT FOLKEHELSEINSTITUTT</OrganisationName>
+				<Ident>
+					<Id>983744516</Id>
+					<TypeId S="2.16.578.1.12.4.1.1.9051" V="ENH" DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" />
+				</Ident>
+			</Organisation>
+		</Receiver>
+	</MsgInfo>
+	<Document>
+		<RefDoc>
+			<MsgType V="XML" DN="XML instans"/>
+			<Content>
+				<KodeverkRequest xmlns="http://www.kith.no/xmlstds/sysvak/kodeverkrequest/2008-01-01" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/sysvak/kodeverkrequest/2008-01-01 KodeverkRequest.xsd">
+					<KodeverkType>Bydel</KodeverkType>
+					<KodeverkType>Kjonn</KodeverkType>
+					<KodeverkType>VaksinandDokumentasjonTypeId</KodeverkType>
+					<KodeverkType>HelseenhetTypeId</KodeverkType>
+					<KodeverkType>VaksinasjonDokumentasjonTypeId</KodeverkType>
+					<KodeverkType>Vaksine</KodeverkType>
+					<KodeverkType>Preparat</KodeverkType>
+					<KodeverkType>ArsakTilManglendeVaksinering</KodeverkType>
+					<KodeverkType>Varighet</KodeverkType>
+				</KodeverkRequest>
+			</Content>
+		</RefDoc>
+	</Document>
+</MsgHead>

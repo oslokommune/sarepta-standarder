@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Opprettet 20080101  -->
+<!--  Meldingen er standard vaksinasjonsregistrering for en vaksinand med et fødselsnummer  -->
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd">
+	<MsgInfo>
+		<Type V="HENDELSEREQUEST" DN="HENDELSEREQUEST"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2007-12-14T14:00:07</GenDate>
+		<MsgId>E903DDFC-94B1-4f10-9C10-3C35CED68C2A</MsgId>
+		<Sender>
+			<Organisation>
+				<OrganisationName>AVSENDER HELSEENHET</OrganisationName>
+				<Ident>
+					<Id>123456789</Id>
+					<TypeId S="2.16.578.1.12.4.1.1.9051" V="ENH" DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" />
+				</Ident>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>NASJONALT FOLKEHELSEINSTITUTT</OrganisationName>
+				<Ident>
+					<Id>983744516</Id>
+					<TypeId S="2.16.578.1.12.4.1.1.9051" V="ENH" DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" />
+				</Ident>
+			</Organisation>
+		</Receiver>
+	</MsgInfo>
+	<Document>
+		<RefDoc>
+			<MsgType V="XML" DN="XML instans"/>
+			<Content>
+				<HendelseRequest xmlns="http://www.kith.no/xmlstds/sysvak/hendelserequest/2008-01-01" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:kith="http://www.kith.no/xmlstds" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:sysvak="http://www.kith.no/xmlstds/sysvak" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/sysvak/hendelserequest/2008-01-01 HendelseRequest.xsd">
+					<Vaksinand>
+						<VaksinandIdent>
+							<fk1:Id>15076500565</fk1:Id>
+							<fk1:TypeId V="FNR" DN="Fødselsnummer" S="2.16.578.1.12.4.1.1.8327" />
+						</VaksinandIdent>
+					</Vaksinand>
+					<Hendelse>
+						<Vaksinasjon>
+							<sysvak:HendelseAksjon>Registrering</sysvak:HendelseAksjon>
+							<sysvak:Konsultasjonsdato>2004-08-13</sysvak:Konsultasjonsdato>
+							<sysvak:Registreringsdato>2004-08-13T15:00:00</sysvak:Registreringsdato>
+							<sysvak:Vaksine V="DIF01" DN="Difteri (toksoid)" S="2.16.578.1.12.4.1.1.9501" />
+							<sysvak:RegistrerendeHelseenhet>
+								<fk1:Id>971318864</fk1:Id>
+								<fk1:TypeId V="ENH" DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" S="2.16.578.1.12.4.1.1.9051" />
+							</sysvak:RegistrerendeHelseenhet>
+							<sysvak:ErVaksinasjonSattPaStedet>true</sysvak:ErVaksinasjonSattPaStedet>
+							<sysvak:Preparat V="DIF01_001" DN="Difterivaccine til primærvaksinasjon - SSI" S="2.16.578.1.12.4.1.1.9554" />
+							<sysvak:Batchnummer>A20CA385A</sysvak:Batchnummer>
+						</Vaksinasjon>
+					</Hendelse>
+				</HendelseRequest>
+			</Content>
+		</RefDoc>
+	</Document>
+</MsgHead>

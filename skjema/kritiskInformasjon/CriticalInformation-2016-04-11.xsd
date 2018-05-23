@@ -1,0 +1,219 @@
+<schema xmlns:ci="http://www.ehelse.no/xmlstds/criticalinformation/2016-04-11" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:cic="http://www.ehelse.no/xmlstds/criticalinformation/common/2016-04-11" xmlns:cia="http://www.ehelse.no/xmlstds/criticalinformation/adversereactions/2016-04-11" targetNamespace="http://www.ehelse.no/xmlstds/criticalinformation/2016-04-11" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="felleskomponent1.xsd"/>
+	<import namespace="http://www.ehelse.no/xmlstds/criticalinformation/adversereactions/2016-04-11" schemaLocation="AdverseReactions-2016-04-11.xsd"/>
+	<import namespace="http://www.ehelse.no/xmlstds/criticalinformation/common/2016-04-11" schemaLocation="CriticalInformationCommon-2016-04-11.xsd"/>
+	<element name="CriticalInformation">
+		<complexType>
+			<sequence>
+				<element ref="cia:AdverseReactions" minOccurs="0" maxOccurs="1"/>
+				<element ref="ci:AnaestheticProblems" minOccurs="0" maxOccurs="1"/>
+				<element ref="ci:MedicalConditionsAlerts" minOccurs="0" maxOccurs="1"/>
+				<element ref="ci:TreatmentsAndImplants" minOccurs="0" maxOccurs="1"/>
+				<element ref="ci:DeviationFromGuidelines" minOccurs="0" maxOccurs="1"/>
+				<element ref="ci:InfectiousDiseases" minOccurs="0" maxOccurs="1"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- ************************************* Anaesthetic Problems (Komplikasjoner ved anestesi) ************************************* -->
+	<complexType name="AnaestheticProblemBaseType" abstract="true">
+		<complexContent>
+			<extension base="cic:CommonBaseType">
+				<sequence>
+					<element ref="cic:SourceOfInformation" minOccurs="1" maxOccurs="1"/>
+					<element name="Note" type="string" minOccurs="0" maxOccurs="1"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="AnaestheticProblems">
+		<complexType>
+			<sequence>
+				<element ref="cic:VerifiedNoKnown" minOccurs="0" maxOccurs="1"/>
+				<element ref="ci:IntubationProblem" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="ci:OtherAnaestheticProblem" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="IntubationProblem">
+		<complexType>
+			<complexContent>
+				<extension base="ci:AnaestheticProblemBaseType">
+					<sequence>
+						<choice>
+							<element name="GradingOfAnatomicalAccess" type="kith:CV" minOccurs="1" maxOccurs="1"/>
+							<element name="OtherProblem" type="string" minOccurs="1" maxOccurs="1"/>
+						</choice>
+						<element name="MaskVentilationPossible" type="kith:CV" minOccurs="1" maxOccurs="1"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="OtherAnaestheticProblem">
+		<complexType>
+			<complexContent>
+				<extension base="ci:AnaestheticProblemBaseType">
+					<sequence>
+						<element name="Problem" type="string" minOccurs="1" maxOccurs="1"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<!-- ************************************* Medical Conditions Alerts (Kritiske medisinske tilstander) ************************************* -->
+	<complexType name="MedicalConditionsBaseType" abstract="true">
+		<complexContent>
+			<extension base="cic:CommonBaseType">
+				<sequence>
+					<element ref="cic:SourceOfInformation" minOccurs="1" maxOccurs="1"/>
+					<element name="Note" type="string" minOccurs="0" maxOccurs="1"/>
+					<choice>
+						<element name="ReasonCoded" type="kith:CV" minOccurs="1" maxOccurs="1"/>
+						<element name="ReasonText" type="string" minOccurs="1" maxOccurs="1"/>
+					</choice>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="MedicalConditionsAlerts">
+		<complexType>
+			<sequence>
+				<element ref="cic:VerifiedNoKnown" minOccurs="0" maxOccurs="1"/>
+				<element ref="ci:MedicalDiagnosisCoded" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="ci:MedicalDiagnosisText" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="MedicalDiagnosisCoded">
+		<complexType>
+			<complexContent>
+				<extension base="ci:MedicalConditionsBaseType">
+					<sequence>
+						<element name="DiagnosisCode" type="kith:CV" minOccurs="1" maxOccurs="1"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="MedicalDiagnosisText">
+		<complexType>
+			<complexContent>
+				<extension base="ci:MedicalConditionsBaseType">
+					<sequence>
+						<element name="DiagnosisText" type="string" minOccurs="1" maxOccurs="1"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<!-- ************************************* Treatments And Implants (Behandling og implantat) ************************************* -->
+	<complexType name="TreatmentsAndImplantsBaseType" abstract="true">
+		<complexContent>
+			<extension base="cic:CommonBaseType">
+				<sequence>
+					<element ref="cic:SourceOfInformation" minOccurs="1" maxOccurs="1"/>
+					<element name="Description" type="string" minOccurs="0" maxOccurs="1"/>
+					<element name="Note" type="string" minOccurs="0" maxOccurs="1"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="TreatmentsAndImplants">
+		<complexType>
+			<sequence>
+				<element ref="cic:VerifiedNoKnown" minOccurs="0" maxOccurs="1"/>
+				<element ref="ci:Treatment" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="ci:Implant" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Treatment">
+		<complexType>
+			<complexContent>
+				<extension base="ci:TreatmentsAndImplantsBaseType">
+					<sequence>
+						<element name="Treatment" type="kith:CV" minOccurs="1" maxOccurs="1"/>
+						<element name="EndOfTreatmentDate" type="date" minOccurs="0" maxOccurs="1"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="Implant">
+		<complexType>
+			<complexContent>
+				<extension base="ci:TreatmentsAndImplantsBaseType">
+					<sequence>
+						<element name="Implant" type="kith:CV" minOccurs="1" maxOccurs="1"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<!-- ************************************* Deviation From Guidelines (Endring i behandlingsrutine) ************************************* -->
+	<complexType name="DeviationFromGuidelinesBaseType" abstract="true">
+		<complexContent>
+			<extension base="cic:CommonBaseType">
+				<sequence>
+					<element name="Note" type="string" minOccurs="0" maxOccurs="1"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="DeviationFromGuidelines">
+		<complexType>
+			<sequence>
+				<element ref="cic:VerifiedNoKnown" minOccurs="0" maxOccurs="1"/>
+				<element ref="ci:AdvanceDirective" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="ci:RestrictionOfLifeProlongingTreatment" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="RestrictionOfLifeProlongingTreatment">
+		<complexType>
+			<complexContent>
+				<extension base="ci:DeviationFromGuidelinesBaseType">
+					<sequence>
+						<element name="ValidUntil" type="date" minOccurs="1" maxOccurs="1"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="AdvanceDirective">
+		<complexType>
+			<complexContent>
+				<extension base="ci:DeviationFromGuidelinesBaseType">
+					<sequence>
+						<element name="TreatmentProtocolChange" type="kith:CV" minOccurs="1" maxOccurs="1"/>
+						<element name="Specification" type="string" minOccurs="0" maxOccurs="1"/>
+						<element name="ValidUntil" type="date" minOccurs="0" maxOccurs="1"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<!-- ************************************* Infectious Diseases (Smitte) ************************************* -->
+	<element name="InfectiousDiseases">
+		<complexType>
+			<sequence>
+				<element ref="cic:VerifiedNoKnown" minOccurs="0" maxOccurs="1"/>
+				<element ref="ci:InfectiousDisease" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="InfectiousDisease">
+		<complexType>
+			<complexContent>
+				<extension base="cic:CommonBaseType">
+					<sequence>
+						<element ref="cic:SourceOfInformation" minOccurs="1" maxOccurs="1"/>
+						<element name="Disease" type="kith:CV" minOccurs="1" maxOccurs="1"/>
+						<element name="ValidUntil" type="date" minOccurs="0" maxOccurs="1"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+</schema>

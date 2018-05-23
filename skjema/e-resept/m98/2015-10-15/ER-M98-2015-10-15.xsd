@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M9.8 Utleveringer på resept
+2015-10-15
+ -->
+<schema xmlns:m98="http://www.kith.no/xmlstds/eresept/m98/2015-10-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kith.no/xmlstds/eresept/m98/2015-10-15" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<element name="M98">
+		<complexType>
+			<choice>
+				<element name="IngenResept" type="boolean"/>
+				<element name="AntallUteveringer" type="int"/>
+			</choice>
+		</complexType>
+	</element>
+</schema>

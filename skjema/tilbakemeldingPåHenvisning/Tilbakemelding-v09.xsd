@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) at KITH -->
+<!-- Generated on 10-13-2003  14:15:08 at KITH -->
+<!-- XML-Schema level supported is specified by W3C -->
+<!-- http://www.w3.org/2001/XMLSchema -->
+<!-- -->
+<!-- Skjema dekker opplysninger i "Tilbakemelding på henvisning" -->
+<!-- File name: Tilbakemelding-v0.9.xsd -->
+<!-- Version: "v0.9 2003-10-10" -->
+<schema targetNamespace="http://www.kith.no/xmlstds/reply/2003-10-10" xmlns:rep="http://www.kith.no/xmlstds/reply/2003-10-10" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="http://www.kith.no/xmlstds/kith.xsd"/>
+	<!-- LEVEL 1 -->
+	<!-- Class: Tilbakemeldingsmelding -->
+	<annotation>
+		<documentation>
+      En melding bestående av en tilbakemelding.
+   </documentation>
+	</annotation>
+	<element name="Message">
+		<complexType>
+			<sequence>
+				<element name="Type" type="kith:CS"/>
+				<element name="MsgVersion" type="kith:ST" minOccurs="0"/>
+				<element name="MIGversion" type="kith:ST"/>
+				<element name="GenDate" type="kith:TS"/>
+				<element name="MsgId" type="kith:ST"/>
+				<element ref="rep:ServRprt"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 2 -->
+	<!-- Class: Tilbakemelding -->
+	<annotation>
+		<documentation>
+      Tilbakemelding fra en spesialist eller annen helsetjenesteenhet som svar på en henvisning.
+   </documentation>
+	</annotation>
+	<element name="ServRprt">
+		<complexType>
+			<sequence>
+				<element name="ServType" type="kith:CS"/>
+				<element name="IssueDate" type="kith:TS"/>
+				<element name="Ack" type="kith:CS" minOccurs="0"/>
+				<element name="MsgDescr" type="kith:ST"/>
+				<element name="ServProvId" type="kith:ST" minOccurs="0"/>
+				<element ref="rep:ServReq" maxOccurs="unbounded"/>
+				<element ref="rep:Comment"/>
+				<element ref="rep:Patient"/>
+				<element ref="rep:ServProvider"/>
+				<element ref="rep:CopyDest" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="rep:Requester"/>
+				<element ref="rep:RelServProvider" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 3 -->
+	<!-- Class: Tjenesteyter -->
+	<annotation>
+		<documentation>
+      Helsetjenesteenhet som yter tjenester i forbindelse med undersøkelse eller behandling av pasient.
+   </documentation>
+	</annotation>
+	<element name="ServProvider">
+		<complexType>
+			<sequence>
+				<element name="Role" type="kith:CS" minOccurs="0"/>
+				<element ref="rep:HCP"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Kommentar til hendelsen -->
+	<annotation>
+		<documentation>
+      Selve den tekstlige beskrivelsen for den aktuelle hendelsen. 
+   </documentation>
+	</annotation>
+	<element name="Comment">
+		<complexType>
+			<sequence>
+				<element name="Heading" type="kith:CS"/>
+				<element name="TextResultValue" type="kith:ST"/>
+				<element name="TextCode" type="kith:CS"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Pasient -->
+	<annotation>
+		<documentation>
+      Opplysninger om pasienten.
+   </documentation>
+	</annotation>
+	<element name="Patient">
+		<complexType>
+			<sequence>
+				<element name="BasisForHealthServices" type="kith:CS" minOccurs="0"/>
+				<element name="Sex" type="kith:CS" minOccurs="0"/>
+				<element name="DateOfBirth" type="kith:TS" minOccurs="0"/>
+				<element name="Name" type="kith:ST" minOccurs="0"/>
+				<element name="IdByServProvider" type="kith:ST" minOccurs="0"/>
+				<element name="IdByRequester" type="kith:ST" minOccurs="0"/>
+				<element name="OffId" type="kith:ST"/>
+				<element name="TypeOffId" type="kith:CS"/>
+				<element ref="rep:PatRelHCP" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="rep:AdditionalId" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="rep:Address" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Kopimottaker -->
+	<annotation>
+		<documentation>
+      Helsetjenesteenhet som får eller som skal ha kopi av et dokument eller melding.
+   </documentation>
+	</annotation>
+	<element name="CopyDest">
+		<complexType>
+			<sequence>
+				<element name="Role" type="kith:CS" minOccurs="0"/>
+				<element ref="rep:CopyDestRole" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="rep:HCP"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Henvisende instans -->
+	<annotation>
+		<documentation>
+      Helsetjenesteenhet som henviser pasient til undersøkelse eller behandling.
+   </documentation>
+	</annotation>
+	<element name="Requester">
+		<complexType>
+			<sequence>
+				<element name="Role" type="kith:CS" minOccurs="0"/>
+				<element ref="rep:HCP"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Henvisning -->
+	<annotation>
+		<documentation>
+      Henvisning av en pasient til undersøkelse/behandling hos spesialist eller annen helsetjenesteenhet.
+   </documentation>
+	</annotation>
+	<element name="ServReq">
+		<complexType>
+			<sequence>
+				<element name="ServType" type="kith:CS"/>
+				<element name="IssueDate" type="kith:TS"/>
+				<element name="ReceiptDate" type="kith:TS" minOccurs="0"/>
+				<element name="MsgDescr" type="kith:ST"/>
+				<element name="Id" type="kith:ST"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Tilknyttet tjenesteyter -->
+	<annotation>
+		<documentation>
+      Helsetjenesteenhet involvert i å yte helsetjeneste i forbindelse med en hendelse eller selve tilbakemeldingen.
+   </documentation>
+	</annotation>
+	<element name="RelServProvider">
+		<complexType>
+			<sequence>
+				<element name="Relation" type="kith:CS"/>
+				<element name="Role" type="kith:CS" minOccurs="0"/>
+				<element ref="rep:HCP"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 4 -->
+	<!-- Class: Pasientrelatert helsetjenesteenhet -->
+	<annotation>
+		<documentation>
+      Pasientrelatert helsetjenesteenhet som er involvert i å yte helsetjeneste til en pasient og som ikke er spesielt relatert til en gitt hendelse.
+   </documentation>
+	</annotation>
+	<element name="PatRelHCP">
+		<complexType>
+			<sequence>
+				<element name="Relation" type="kith:CS"/>
+				<element name="StartDateTime" type="kith:TS" minOccurs="0"/>
+				<element name="EndDateTime" type="kith:TS" minOccurs="0"/>
+				<element ref="rep:HCP"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Alternativ pasientid -->
+	<annotation>
+		<documentation>
+      Annen identifikasjon av personen som personen er eller har vært kjent under.
+   </documentation>
+	</annotation>
+	<element name="AdditionalId">
+		<complexType>
+			<sequence>
+				<element name="Id" type="kith:ST"/>
+				<element name="Type" type="kith:CS"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Kopimottakerrolle -->
+	<annotation>
+		<documentation>
+      Rolle til aktuelle kopimottaker.
+   </documentation>
+	</annotation>
+	<element name="CopyDestRole">
+		<complexType>
+			<sequence>
+				<element name="MsgType" type="kith:CS"/>
+				<element name="ReqComMethod" type="kith:CS" minOccurs="0"/>
+				<element name="ActComMethod" type="kith:CS" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 5 -->
+	<!-- Class: Helsetjenesteenhet -->
+	<annotation>
+		<documentation>
+      Opplysninger om en helsetjenesteenhet.
+   </documentation>
+	</annotation>
+	<element name="HCP">
+		<complexType>
+			<sequence>
+				<choice>
+					<element ref="rep:Inst"/>
+					<element ref="rep:HCProf"/>
+				</choice>
+				<element name="MedSpecialty" type="kith:CV" minOccurs="0"/>
+				<element name="PartyIdByRequester" type="kith:ST" minOccurs="0"/>
+				<element name="PartyIdByServProv" type="kith:ST" minOccurs="0"/>
+				<element ref="rep:Address" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 6 -->
+	<!-- Class: Institusjon -->
+	<annotation>
+		<documentation>
+      Institusjon i helsevesenet
+   </documentation>
+	</annotation>
+	<element name="Inst">
+		<complexType>
+			<sequence>
+				<element name="Name" type="kith:ST" minOccurs="0"/>
+				<element name="Id" type="kith:ST" minOccurs="0"/>
+				<element name="TypeId" type="kith:CS" minOccurs="0"/>
+				<element ref="rep:Dept" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="rep:HCPerson" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Adresse -->
+	<annotation>
+		<documentation>
+      Adresse.
+   </documentation>
+	</annotation>
+	<element name="Address">
+		<complexType>
+			<sequence>
+				<element name="Type" type="kith:CS"/>
+				<element name="StreetAdr" type="kith:ST" minOccurs="0"/>
+				<element name="PostalCode" type="kith:ST" minOccurs="0"/>
+				<element name="City" type="kith:ST" minOccurs="0"/>
+				<element name="County" type="kith:CS" minOccurs="0"/>
+				<element name="Country" type="kith:CS" minOccurs="0"/>
+				<element name="CityDistr" type="kith:CS" minOccurs="0"/>
+				<element name="TeleAddress" type="kith:URL" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Person i helsevesenet -->
+	<annotation>
+		<documentation>
+      Person i helsevesenet som er involvert direkte eller indirekte i å yte helsetjenester til en pasient.
+   </documentation>
+	</annotation>
+	<element name="HCProf">
+		<complexType>
+			<sequence>
+				<element name="Type" type="kith:CS" minOccurs="0"/>
+				<element name="Name" type="kith:ST" minOccurs="0"/>
+				<element name="Id" type="kith:ST" minOccurs="0"/>
+				<element name="TypeId" type="kith:CS" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 7 -->
+	<!-- Class: Avdeling -->
+	<annotation>
+		<documentation>
+      Opplysninger om avdeling.
+   </documentation>
+	</annotation>
+	<element name="Dept">
+		<complexType>
+			<sequence>
+				<element name="Type" type="kith:CS" minOccurs="0"/>
+				<element name="Name" type="kith:ST" minOccurs="0"/>
+				<element name="Id" type="kith:ST" minOccurs="0"/>
+				<element name="TypeId" type="kith:CS" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Person i organisasjon -->
+	<annotation>
+		<documentation>
+      Person i helsevesenett som er del av en institusjon eller avdeling.
+   </documentation>
+	</annotation>
+	<element name="HCPerson">
+		<complexType>
+			<sequence>
+				<element name="Name" type="kith:ST" minOccurs="0"/>
+				<element name="Id" type="kith:ST" minOccurs="0"/>
+				<element name="TypeId" type="kith:CS" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

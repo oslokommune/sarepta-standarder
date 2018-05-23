@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>Forespørsel og svar om egenandel</Navn>
+	<Versjon>1.0</Versjon>
+	<Identifikator>HIS 1024:2010</Identifikator>
+	<Utgitt>10/2010</Utgitt>
+	<Utgiver>Helsedirektoratet</Utgiver>
+
+	<Referansekatalogen>
+		<Beskrivelse>Forespørsel og svar om egenandel (HIS 1024:2010)</Beskrivelse>
+		<Referanse>https://ehelse.no/Sider/Foresp%c3%b8rsel-og-svar-om-egenandel--Informasjonsmodell-og-XML-meldingsbeskrivelse-%e2%80%93-HIS-10242010.aspx</Referanse>
+	</Referansekatalogen>
+
+	<Status>Fastsatt som standard</Status>
+
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>Forespørsel og svar om egenandel. Informasjonsmodell og XML meldingsbeskrivelse (GitLab)</Beskrivelse>
+			<Referanse>kravdokument/HELFOForespørselOgSvarOmEgenandel/HIS_1024_2010_NAV-Egenandel-2010-10-06.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+
+	<Skjemaer>
+		<Skjema>
+			<Referanse>skjema/HELFOForespørselOgSvarOmEgenandel/NAV-Egenandel-2010-02-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/nav/egenandel/2010-02-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/HELFOForespørselOgSvarOmEgenandel/NAV-EgenandelMengde-2010-10-06.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/nav/egenandelmengde/2010-10-06</Namespace>
+		</Skjema>
+	</Skjemaer>
+	
+	<Felleskomponenter>
+		<Felleskomponent>
+			<Beskrivelse>XML-skjema for Hodemelding</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/MsgHead-v1_2.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Felles XML-definisjoner for person, helsepersonell, organisasjon etc</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/felleskomponent1.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Felles datatyper</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
+		</Felleskomponent>
+	</Felleskomponenter>
+
+</StandardMetadata>

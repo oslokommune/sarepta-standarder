@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- DETTE ER EN TESTMELDING MED FIKTIVE PERSONDATA  -->
+<Message xmlns="http://www.kith.no/xmlstds/henvisning/2005-07-08" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/henvisning/2005-07-08 Henvisning-v1.0.xsd">
+	<Type V="H" DN="Henvisning"/>
+	<MIGversion>v1.0 2005-07-08</MIGversion>
+	<GenDate V="2017-05-07T06:24:09"/>
+	<MsgId>d6babb5b-fa21-4f49-af38-dcd7f880a84e</MsgId>
+	<Status V="TEST" DN="Melding til testformål"/>
+	<ServReq>
+		<ServType V="C" DN="Kansellering"/>
+		<IssueDate V="2016-08-18T00:33:00"/>
+		<ReqComment>Henvisningen kanselleres da pasienten er lagt inn på sykehus for en annen hendelse</ReqComment>
+		<MsgDescr V="10" DN="Utredning/behandling"/>
+		<Id>c6b485e0-fa27-4b9c-b358-477a01a0bf7a</Id>
+		<Patient>
+			<Sex V="2" DN="Kvinne"/>
+			<DateOfBirth V="1969-11-13"/>
+			<Name>Danser, Line</Name>
+			<OffId>13116900216</OffId>
+			<TypeOffId V="FNR" DN="Fødselsnummer"/>
+			<PatRelHCP>
+				<Relation V="HHE" DN="Henvisende helsepersonell"/>
+				<HCP>
+					<HCProf>
+						<Type V="LE" DN="Lege"/>
+						<Name>Rita Lin</Name>
+						<Id>9144900</Id>
+						<TypeId V="HPR" DN="HPR-nummer"/>
+						<!-- Helsepersonellnummer -->
+					</HCProf>
+					<Address>
+						<Type V="WP" DN="Arbeidsadresse"/>
+						<TeleAddress V="tel:+4722345678"/>
+					</Address>
+				</HCP>
+			</PatRelHCP>
+			<PatRelHCP>
+				<Relation V="FLE" DN="Fastlege"/>
+				<HCP>
+					<HCProf>
+						<Name>Magnar Koman</Name>
+						<Id>9144889</Id>
+						<TypeId V="HPR" DN="HPR-nummer"/>
+						<!-- Helsepersonellnummer -->
+					</HCProf>
+					<Address>
+						<Type V="WP" DN="Arbeidsadresse"/>
+						<TeleAddress V="tel:+4712345678"/>
+					</Address>
+				</HCP>
+			</PatRelHCP>
+			<Address>
+				<Type V="H" DN="Bostedsadresse"/>
+				<StreetAdr>Snurreveien 23</StreetAdr>
+				<PostalCode>1111</PostalCode>
+				<City>Landgod</City>
+				<TeleAddress V="tel:+4712345678"/>
+			</Address>
+		</Patient>
+		<ServProvider>
+			<HCP>
+				<Inst>
+					<Name>ST OLAVS HOSPITAL HF</Name>
+					<Id>59</Id>
+					<TypeId V="HER" DN="HER-id"/>
+					<Dept>
+						<Name>Ortopedisk kirurgi</Name>
+						<Id>90998</Id>
+						<TypeId V="HER" DN="HER-id"/>
+					</Dept>
+				</Inst>
+			</HCP>
+		</ServProvider>
+		<Requester>
+			<HCP>
+				<Inst>
+					<Name>Kattskinnet legesenter</Name>
+					<Id>56704</Id>
+					<TypeId V="HER" DN="HER-id"/>
+					<HCPerson>
+						<Name>Rita Lin</Name>
+						<Id>258521</Id>
+						<TypeId V="HER" DN="HER-id" />
+					</HCPerson>
+				</Inst>
+			</HCP>
+		</Requester>
+		<Diagnosis>
+			<Concept V="L88" S="2.16.578.1.12.4.1.1.7170" DN="Reumatoid artritt/reumatisk sykdom"/>
+		</Diagnosis>
+	</ServReq>
+</Message>

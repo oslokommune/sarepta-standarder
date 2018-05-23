@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSpy v2009 (http://www.altova.com) by Iver Nordhuus (KITH) -->
+<!-- edited by Iver Nordhuus (NPR) -->
+<schema xmlns:bkm="http://www.npr.no/xmlstds" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" targetNamespace="http://www.npr.no/xmlstds" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<simpleType name="kommNr" id="kommNr">
+		<restriction base="string">
+			<minLength value="4"/>
+			<maxLength value="4"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="bydelNr" id="bydelNr">
+		<restriction base="string">
+			<minLength value="1"/>
+			<maxLength value="2"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="takstNr" id="takstNr">
+		<restriction base="string">
+			<minLength value="1"/>
+			<maxLength value="5"/>
+		</restriction>
+	</simpleType>
+	<complexType name="Ident">
+		<sequence>
+			<element name="Id" type="string"/>
+			<element name="TypeId" type="bkm:CV"/>
+		</sequence>
+	</complexType>
+	<!-- KITH/HL7 datatyper -->
+	<complexType name="CS">
+		<attribute name="V" type="token" use="optional"/>
+		<attribute name="DN" type="string" use="optional"/>
+	</complexType>
+	<complexType name="CV">
+		<attribute name="V" type="token" use="optional"/>
+		<attribute name="S" type="bkm:oid" use="optional"/>
+		<attribute name="DN" type="string" use="optional"/>
+		<attribute name="OT" type="string" use="optional"/>
+	</complexType>
+	<complexType name="MO">
+		<attribute name="V" type="double" use="optional"/>
+		<attribute name="U" type="token" use="optional"/>
+	</complexType>
+	<simpleType name="oid">
+		<restriction base="token">
+			<pattern value="(\d+\.?)*\d+"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="guid">
+		<restriction base="string">
+			<pattern value="\{[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}\}"/>
+		</restriction>
+	</simpleType>
+</schema>
