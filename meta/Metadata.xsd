@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="StandardMetadata">
+		<xs:annotation>
+			<xs:documentation>Definisjon av metadata knyttet til en standard</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Navn" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Standardens navn</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Emne" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Hvilket område standarden tilhører. Definert av referansekatalogen</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Versjon" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Standardens versjon</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+                <xs:element name="Identifikator" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Unik identifikator for denne standarden for denne utgiveren</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Utgitt" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Dato for når standarden ble utgitt.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Ansvarlig" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Utgiver av standard</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				
+				<xs:element name="Status" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Status for standardens livsløp. Oppgis kun for standarder som inngår i referansekatalogen</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="Under utvikling"/>
+							<xs:enumeration value="Til høring"/>
+							<xs:enumeration value="Til pilotering"/>
+							<xs:enumeration value="Fastsatt som standard"/>
+							<xs:enumeration value="Utgått"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				
+				<xs:element name="MerInformasjon" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Lenke til mer informasjon</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Informasjon" type="Filreferanse" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+
+				<xs:element name="Profiler" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Definisjon av tilgjengelige profiler</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Profil" type="Profilreferanse" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+				<xs:element name="Kravdokumenter" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Kravdokument som definerer en standard</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Kravdokument" type="Filreferanse" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Skjemaer" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>XML-skjema</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Skjema" type="Skjemareferanse" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Felleskomponenter" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Gjenbrukbare komponenter som benyttes av flere standarder. Typisk felles XML-skjema</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Felleskomponent" type="Filreferanse" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Modellfiler" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Modell som beskriver informasjonsstrukturen i standarden, f eks en UML-modell.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Modell" type="Filreferanse" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Visningsfiler" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Fil som bestemmer hvordan innholdet i en melding skal presenteres, f eks en xslt-fil.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Visningsfil" type="Filreferanse" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Testmateriell" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Testmateriell.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Testfil" type="Filreferanse" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Eksempler" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Eksempler som viser bruk av standarden</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Eksempel" type="Filreferanse" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="RelaterteFiler" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Andre filer som er relevante for bruk av standarden</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="RelatertFil" type="Filreferanse" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="definisjonVersjon" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="Profilreferanse">
+		<xs:annotation>
+			<xs:documentation>Referanse til en standardprofil</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ProfilId" type="xs:string" minOccurs="0"/>
+			<xs:element name="Beskrivelse" type="xs:string" minOccurs="0"/>
+			<xs:element name="Identifikator" type="xs:string" minOccurs="0"/>
+			<xs:element name="Utgitt" type="xs:string" minOccurs="0"/>
+			<xs:element name="Ansvarlig" type="xs:string" minOccurs="0"/>
+			<xs:element name="Status" type="xs:string" minOccurs="0"/>
+				<xs:element name="MerInformasjon" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Lenke til mer informasjon</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Informasjon" type="Filreferanse" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Filreferanse">
+		<xs:annotation>
+			<xs:documentation>Referanse til en lokal eller global fil</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+		    <xs:element name="ProfilId" type="xs:string" minOccurs="0"/>
+			<xs:element name="Beskrivelse" type="xs:string" minOccurs="0"/>
+			<xs:element name="Referanse" type="xs:anyURI"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Skjemareferanse">
+		<xs:annotation>
+			<xs:documentation>Referanse til skjemafil</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="Filreferanse">
+				<xs:sequence>
+					<xs:element name="Namespace" type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>
+
