@@ -5,14 +5,16 @@
 	<Versjon>2.0</Versjon>
 	<Identifikator>HIS 1162:2016</Identifikator>
 	<Utgitt>05/2016</Utgitt>
-	<Utgiver>Direktoratet for e-helse</Utgiver>
-	<Referansekatalogen>
-		<Beskrivelse>Helsefaglige funksjonelle krav</Beskrivelse>
-		<Referanse>https://ehelse.no/Sider/Standard-for-elektronisk-kommunikasjon-med-pleie--og-omsorgstjenesten-(v-2-0)-(HIS-1162-1_2016).aspx</Referanse>
-	</Referansekatalogen>
+	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	<Status>Til pilotering</Status>
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Helsefaglige funksjonelle krav</Beskrivelse>
+			<Referanse>https://ehelse.no/Sider/Standard-for-elektronisk-kommunikasjon-med-pleie--og-omsorgstjenesten-(v-2-0)-(HIS-1162-1_2016).aspx</Referanse>
+		</Informasjon>	
+	</MerInformasjon>
 
 	
-	<Status>Til pilotering</Status>
 	<Kravdokumenter>
 		<Kravdokument>
 			<Beskrivelse>Helsefaglige funksjonelle krav (GitLab)</Beskrivelse>

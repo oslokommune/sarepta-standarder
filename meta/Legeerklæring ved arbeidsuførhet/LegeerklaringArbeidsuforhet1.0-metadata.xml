@@ -5,18 +5,20 @@
 	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 80805:2008</Identifikator>
 	<Utgitt>06/2008</Utgitt>
-	<Utgiver>NAV</Utgiver>
-
-	<Referansekatalogen>
-		<Beskrivelse>Legeerklæring ved arbeidsuførhet (HIS 80805:2008)</Beskrivelse>
-		<Referanse>http://ehelse.no/HIS80805-2008</Referanse>
-	</Referansekatalogen>
-
+	<Ansvarlig>NAV</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Legeerklæring ved arbeidsuførhet (HIS 80805:2008)</Beskrivelse>
+			<Referanse>http://ehelse.no/HIS80805-2008</Referanse>
+		</Informasjon>
+	</MerInformasjon>
+
+	
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Legeerklæring ved arbeidsuførhet (GitLab)</Beskrivelse>
+			<Beskrivelse>Legeerklæring ved arbeidsuførhet (PDF)</Beskrivelse>
 			<Referanse>kravdokument/NAVLegeerklæringVedArbeidsuførhet/HIS_80805_2008_NAV-Legeerklaring-2008-06-06.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>

@@ -5,22 +5,24 @@
 	<Versjon>0.78</Versjon>
 	<Identifikator>NPR-BKM</Identifikator>
 	<Utgitt>03/2018</Utgitt>
-	<Utgiver>Helsedirektoratet</Utgiver>
+	<Ansvarlig>Helsedirektoratet</Ansvarlig>
+	<Status>Fastsatt som standard</Status>	
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>NPR behandlerkravmelding</Beskrivelse>
+			<Referanse>http://ehelse.no/NPR-BKM</Referanse>
+		</Informasjon>
+	</MerInformasjon>
 	
-	<Referansekatalogen>
-		<Beskrivelse>NPR behandlerkravmelding</Beskrivelse>
-		<Referanse>http://ehelse.no/NPR-BKM</Referanse>
-	</Referansekatalogen>
-	
-	<Status>Fastsatt som standard</Status>
+
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>NPR behandlerkravmelding (GitLab)</Beskrivelse>
+			<Beskrivelse>NPR behandlerkravmelding (PDF)</Beskrivelse>
 			<Referanse>kravdokument/NPRbehandlerkravmelding/BKM_078_Hierarkisk.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Endringslogg for NPR behandlerkravmelding (GitLab)</Beskrivelse>
+			<Beskrivelse>Endringslogg for NPR behandlerkravmelding (PDF)</Beskrivelse>
 			<Referanse>kravdokument/NPRbehandlerkravmelding/Endringslogg NPR-behandlerkravmelding.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
