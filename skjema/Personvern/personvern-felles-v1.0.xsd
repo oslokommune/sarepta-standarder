@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd"
+  xmlns:kith="http://www.kith.no/xmlstds"
+  xmlns:pvi="http://ehelse.no/xmlstds/PersonvernInnstilling/v1.0"
+  targetNamespace="http://ehelse.no/xmlstds/PersonvernInnstilling/v1.0"
+  elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <import namespace="http://www.kith.no/xmlstds" schemaLocation="kith.xsd"/>
+  <!-- Class: PersonvernInnstillingmelding -->
+  <complexType name="PersonvernInnstillingDefinisjon">
+    <annotation>
+      <documentation>Benyttes for å beskrive hva et PersonvernInnstilling innebærer. Må benyttes dersom PersonvernInnstillingdefinisjon ikke er kjent av begge parter på forhånd.</documentation>
+    </annotation>
+    <sequence>
+      <element name="PersonvernInnstillingDefinisjonId" type="pvi:PersonvernInnstillingDefinisjonId">
+        <annotation>
+          <documentation>Primær nøkkel</documentation>
+        </annotation>
+      </element>
+      <element name="Part" type="pvi:Part" minOccurs="1" maxOccurs="1">
+        <annotation>
+          <documentation/>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="PersonvernInnstillingNavn" type="pvi:PersonvernInnstillingNavn">
+        <annotation>
+          <documentation>
+</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="PersonvernInnstillingType" type="kith:CS" maxOccurs="unbounded">
+        <annotation>
+          <documentation>Vil initielt kunne ha en av to verdier (kan tenkes å registreres som Volven-kodesett på sikt):
+V="0" DN="Intern PersonvernInnstilling"
+V="1" DN="Ekstern PersonvernInnstilling"
+Det er åpnet for å ha flere repterende elemnetr. Dette kan være aktuelt dersom man ønsker å beskrive både at det er f.eks. et eksternt samtykke og at det er et repeterende samtykke.</documentation>
+        </annotation>
+      </element>
+      <element name="UstrukturertBeskrivelse" type="pvi:UstrukturertBeskrivelse" minOccurs="1">
+        <annotation>
+          <documentation>Denne typen PersonvernInnstillingdefinisjon skal benyttes dersom PersonvernInnstillings omfang og innhold kun beskrives i en tekst som innbygger tar stilling til.</documentation>
+        </annotation>
+      </element>
+      <element name="TillatesIndividuellTidsbegrensning" type="boolean">
+        <annotation>
+          <documentation>Dersom en definisjon tillater at innbygger selv kan sette en individuell tidsbegrensning skal det angis her. Denne boolean skal alltid settes. (En definisjon kan også selv ha en tidsbegrensning som gjelder for alle innbyggere.)</documentation>
+        </annotation>
+      </element>
+      <element name="DefinisjonMetadata" type="anyType" minOccurs="0">
+        <annotation>
+          <documentation>Strukturen for metadata vil avhenge av de forskjellige Personinnstilling typene (dvs. Reservasjon, Samtykke og Tilgangsbegrensning). Strukturen defineres i hver av disses skjema..</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="TidsbegrensetTil" type="dateTime">
+        <annotation>
+          <documentation>Dersom PersonvernInnstillingt har begrenset varighet (for alle innbyggere), kan dette angis her. NB! PersonvernInnstillingen gjelder alltid fra registreringstidspunkt.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="TekstVedOpprettelse" type="string">
+        <annotation>
+          <documentation>Kan benyttes dersom innbygger skal få en "angremulighet" og dette elementet gir i så fall teskten som skal vises.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="TekstVedFjerning" type="string">
+        <annotation>
+          <documentation>Dersom det er behov å vise innbygger en tekst når PersonvernInnstilling fjernes, kan teksten som skal vises angis her. Dette kan f.eks. være at det tar noe tid før en endret PersonvernInnstilling blir implementert i den aktuelle journal/register.</documentation>
+        </annotation>
+      </element>
+      <element maxOccurs="unbounded" minOccurs="0" name="PersonvernInnstillingRelasjon"
+        type="pvi:PersonvernInnstillingRelasjon">
+        <annotation>
+          <documentation>Ikke i bruk. Kan benyttes i framtiden for å beskrive et bestemt PersonvernInnstillings relasjon med andre PersonvernInnstillingdefinisjoner.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="PersonvernInnstillingDefinisjonReferanse">
+    <annotation>
+      <documentation>Refererer til et besetmt PersonvernInnstilling, der PersonvernInnstillingdefinisjonen er kjent av begge parter på orhånd.</documentation>
+    </annotation>
+    <sequence>
+      <element name="PersonvernInnstillingDefinisjonId" type="pvi:PersonvernInnstillingDefinisjonId"/>
+      <element name="Part" type="pvi:Part" minOccurs="1" maxOccurs="1">
+        <annotation>
+          <documentation/>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="PersonvernInnstillingNavn" type="pvi:PersonvernInnstillingNavn"
+        maxOccurs="1">
+        <annotation>
+          <documentation>
+</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="InnbyggersPersonvernInnstilling">
+    <annotation>
+      <documentation>Benyttes for å beskrive en innbyggers PersonvernInnstilling og dets status. Utveksles mellom PVK og registre som abonnerer på PersonvernInnstillinger. Angivelse av hvilken innbygger dette gjelder gjøres i KITH hodemeldingen som er bærer når PersonvernInnstillinginformasjon utveksles.</documentation>
+    </annotation>
+    <sequence>
+      <element name="PersonvernInnstillingDefinisjonReferanse"
+        type="pvi:PersonvernInnstillingDefinisjonReferanse">
+        <annotation>
+          <documentation>Referansen peker på en global unik personverninnstilling definisjon.</documentation>
+        </annotation>
+      </element>
+      <element name="OpprettetTidspunkt" type="dateTime" minOccurs="1" maxOccurs="1">
+        <annotation>
+          <documentation>Tidspunkt når PersonvernInnstillingt første gang ble registrert. Dvs. når innbygger ga PersonvernInnstillingt første gang.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="Metadata" type="anyType">
+        <annotation>
+          <documentation>Skal være med i replikeringsmeldingen dersom det er metadata knyttet til selve definisjonen eller dersom definisjonen innebærer at innbygger velger metadata selv.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="TidsbegrensetTil" type="dateTime">
+        <annotation>
+          <documentation>Dersom en PersonvernInnstilling har en fast tidsbegrensning (gitt av definisjonen) eller definisjonen tillater at innbygger kan sette individuell tidsbegrensning, skal gjeldende tidsbegrensning angis her. NB! PersonvernInnstillingen gjelder alltid fra registreringstidspunkt.</documentation>
+        </annotation>
+      </element>
+      <element name="Status" type="kith:CV" minOccurs="1" maxOccurs="1">
+        <annotation>
+          <documentation>PersonvernInnstillingstatus: Kodeverdier fra Volven 7609
+pvi: PersonvernInnstilling opprettet
+Ipvi: PersonvernInnstilling fjernet
+Upvi: PersonvernInnstilling utløpt (tidsbegrenset PersonvernInnstilling)</documentation>
+        </annotation>
+      </element>
+      <element name="Versjonsnummer" type="int" minOccurs="1" maxOccurs="1">
+        <annotation>
+          <documentation>Versjonsnummer for endringen. Den skal alltid være sekvensielt stigende og kan benyttes for å sikre at mottaker som abonnerer på en PersonvernInnstilling får med seg alle endringer. Den vil også indikere hvor mange ganger status er endret for PersonvernInnstillingt. Ved opprettelse sv PersonvernInnstilling første gang benyttes versjonsnummer 1.
+            </documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" name="SistEndretTidspunkt" type="dateTime">
+        <annotation>
+          <documentation>Angir når denne Personverninnstilling sist er endret. Dersom dette er første gang den opprettes er tidspunktet det samme som OpprettetTidspunkt.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="UstrukturertBeskrivelse">
+    <annotation>
+      <documentation>En definisjon skkal minimum bestå av en såkalt ustrukturert del. Begrepet ustrukturert benyttes da beskrivelsen av hva personverninnstillingen innebærer kun er tekstlig.</documentation>
+    </annotation>
+    <sequence>
+      <element name="PersonvernInnstillingIngres" type="string">
+        <annotation>
+          <documentation>Kort beskrivende tekst av PersonvernInnstillingen.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="SammendragPersonverninnstillingHodeTekst" type="string">
+        <annotation>
+          <documentation>Kan benyttes dersom sammendarget skal ha en uthevet overskrift.</documentation>
+        </annotation>
+      </element>
+      <element name="SammendragPersonvernInnstillingTekst" type="string">
+        <annotation>
+          <documentation>Et kortfattet sammendrag av hva PersonvernInnstillingen innebærer.</documentation>
+        </annotation>
+      </element>
+      <element name="FullstendigPersonvernInnstillingTekst"
+        type="pvi:FullstendigPersonvernInnstillingTekst" minOccurs="0">
+        <annotation>
+          <documentation>Fullstendig besekrivelse av hva PersonvernInnstillingen innebærer. Benyttes dersom dette er nødvendig for at innbygger entydig skal forstå hva personverninnstillingen innebærer.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="FullstendigPersonvernInnstillingTekst">
+    <annotation>
+      <documentation>Det detaljerte innholdet som beskriver for innbygger hva en PersonvernInnstilling innebærer. Ikke obligatorisk dersom Ingers og Sammendarg gir tilstrekkelig informasjon.</documentation>
+    </annotation>
+    <sequence>
+      <element name="KravOmLesing" type="boolean">
+        <annotation>
+          <documentation>Dersom denne er TRUE, skal dette dokumentet åpnes av innbygger før personverninnstilling kan settes. Kravet gjelder ikke ved fjerning av samme personverinnstilling.</documentation>
+        </annotation>
+      </element>
+      <element name="MimeType" type="string">
+        <annotation>
+          <documentation>http://www.iana.org/assignments/media-types/media-types.xhtml</documentation>
+        </annotation>
+      </element>
+      <element name="Innhold" type="base64Binary"/>
+    </sequence>
+  </complexType>
+  <simpleType name="PersonvernInnstillingDefinisjonId">
+    <annotation>
+      <documentation>En GUID for PersonvernInnstillingdefinisjonen. Dette er altså en referanse til en entydig PersonvernInnstilling definisjon. Denne er universell unik og tilordnes når en PersonvernInnstillin definisjon opprettes.</documentation>
+    </annotation>
+    <restriction base="string">
+      <pattern
+        value="([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})|(\{[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\})"
+      />
+    </restriction>
+  </simpleType>
+  <simpleType name="Part">
+    <annotation>
+      <documentation>Hvilket part som PersonvernInnstilling gjelder, dvs. hvilken journal eller register. Verdi avtales mellom Helsenorge og ekstern part. NB! Skal være samme kortnavn som benyttes i Oppføringsregisteret. (Dermed begrenset til 10 tegn)</documentation>
+    </annotation>
+    <restriction base="string"/>
+  </simpleType>
+  <simpleType name="PersonvernInnstillingNavn">
+    <annotation>
+      <documentation>Skal benyttes for å angi et kortfattet beskrivende navn for dette PersonvernInnstillingt. Navnet skal være unikt innenfor en Part. </documentation>
+    </annotation>
+    <restriction base="string"/>
+  </simpleType>
+  <complexType name="PersonvernInnstillingRelasjon">
+    <annotation>
+      <documentation>Kan benyttes til å beskrive relasjoner mellom PersonvernInnstillinger</documentation>
+    </annotation>
+    <sequence>
+      <element name="PersonvernInnstillingDefinisjonId" type="pvi:PersonvernInnstillingDefinisjonId">
+        <annotation>
+          <documentation>Hvilket annet PersonvernInnstilling relasjonen er til</documentation>
+        </annotation>
+      </element>
+      <element name="LogiskSammenheng" type="kith:CS">
+        <annotation>
+          <documentation>Kodeded verdier. Ikke definert pr. nå.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="Versjon" type="string">
+        <annotation>
+          <documentation>Kan benyttes dersom et PersonvernInnstilling erstatter et annen og man ønsker versjonsangivelse.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="YtterligereBeskrivelse" type="anyType"/>
+    </sequence>
+  </complexType>
+</schema>

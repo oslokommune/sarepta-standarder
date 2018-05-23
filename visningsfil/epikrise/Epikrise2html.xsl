@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?> 
+<?xml version="1.0" encoding="utf-8"?>
 <!-- 
 Endringslogg:
 - 18.05.17: v4.1.3 - 	Endret fra Rekvirent til Mottaker og Tjenesteyter til Avsender under "Helsetjenesteenheter"

@@ -8,13 +8,13 @@
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
 	<MerInformasjon>
-			<Informasjon>
-				<Beskrivelse>Dialogmelding 1.0 (HIS 80603:2006)</Beskrivelse>
-				<Referanse>http://ehelse.no/HIS80603-2006</Referanse>
-			</Informasjon>
+		<Informasjon>
+			<Beskrivelse>Dialogmelding 1.0 (HIS 80603:2006)</Beskrivelse>
+			<Referanse>http://ehelse.no/HIS80603-2006</Referanse>
+		</Informasjon>
 	</MerInformasjon>
 	
-		<Profiler>
+	<Profiler>
 			<Profil>
 				<ProfilId>1</ProfilId>
 				<Beskrivelse>Forespørsel og svar på forespørsel</Beskrivelse>
@@ -24,8 +24,8 @@
 				<Status>Fastsatt som standard</Status>
 				<MerInformasjon>
 					<Informasjon>
-						<Beskrivelse>Dialogmelding 1.0</Beskrivelse>
-						<Referanse>http://ehelse.no/HIS80603-2006</Referanse>
+						<Beskrivelse>Forespørsel og svar på forespørsel i tilknytning til pleie- og omsorgsmeldinger v1.0</Beskrivelse>
+						<Referanse>http://ehelse.no/HIS1152-2006</Referanse>
 					</Informasjon>
 				</MerInformasjon>
 			</Profil>
@@ -38,8 +38,8 @@
 				<Status>Fastsatt som standard</Status>
 				<MerInformasjon>
 					<Informasjon>
-						<Beskrivelse>Dialogmelding 1.0</Beskrivelse>
-						<Referanse>http://ehelse.no/HIS80603-2006</Referanse>
+						<Beskrivelse>Tilbakemelding om feil i mottatt melding v1.0</Beskrivelse>
+						<Referanse>http://ehelse.no/HIS1151-2006</Referanse>
 					</Informasjon>
 				</MerInformasjon>
 			</Profil>
@@ -47,17 +47,17 @@
 	
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Dialogmelding v1.0 (GitLab)</Beskrivelse>
+			<Beskrivelse>Dialogmelding v1.0 (PDF)</Beskrivelse>
 			<Referanse>kravdokument/dialogmelding/HIS 80603_2006 Standard for dialogmelding v1.0 -korrigert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>1</ProfilId>
-			<Beskrivelse>Forespørsel og svar på forespørsel (GitLab)</Beskrivelse>
+			<Beskrivelse>Forespørsel og svar på forespørsel (PDF)</Beskrivelse>
 			<Referanse>kravdokument/dialogmelding/HIS 1152_2006 Forespørsel og svar -korrigert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>2</ProfilId>
-			<Beskrivelse>Tilbakemelding om feil i mottatt melding (GitLab)</Beskrivelse>
+			<Beskrivelse>Tilbakemelding om feil i mottatt melding (PDF)</Beskrivelse>
 			<Referanse>kravdokument/dialogmelding/HIS_1151_2006 Tilbakemelding om feil i mottatt melding -korrigert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
@@ -171,14 +171,21 @@
 	</Visningsfiler>
 	<Eksempler>
 		<Eksempel>
-			<Referanse>eksempel/dialogmelding/Dialogmelding-v1-0/Dialogmelding_avvik_v1-0.xml</Referanse>
+			<Referanse>eksempel/Dialogmelding/Dialogmelding-v1-0/Dialogmelding_avvik_v1-0.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/dialogmelding/Dialogmelding-v1-0/Dialogmelding_foresporsel_PLO_v1-0.xml</Referanse>
+			<Referanse>eksempel/Dialogmelding/Dialogmelding-v1-0/Dialogmelding_foresporsel_PLO_v1-0.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/dialogmelding/Dialogmelding-v1-0/Dialogmelding_svar_foresporsel_PLO_v1-0.xml</Referanse>
+			<Referanse>eksempel/Dialogmelding/Dialogmelding-v1-0/Dialogmelding_svar_foresporsel_PLO_v1-0.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
+	
+	<RelaterteFiler>
+		<RelatertFil>
+			<Beskrivelse>Implementering av dialogmelding for spørsmål, svar og avviksmelding HISD 80903:2009 (PDF)</Beskrivelse>
+			<Referanse>relaterteFiler/dialogmelding/HISD_80903_2009-Dialogmelding-Implementeringsveiledning.pdf</Referanse>
+		</RelatertFil>
+	</RelaterteFiler>
 
 </StandardMetadata>

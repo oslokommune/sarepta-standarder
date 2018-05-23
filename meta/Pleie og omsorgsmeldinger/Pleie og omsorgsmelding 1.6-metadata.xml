@@ -5,79 +5,189 @@
 	<Versjon>1.6</Versjon>
 	<Identifikator>HIS 80704:2014</Identifikator>
 	<Utgitt>02/2014</Utgitt>
-	<Utgiver>Direktoratet for e-helse</Utgiver>
-
-	<Referansekatalogen>
-		<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten v1.6</Beskrivelse>
-		<Referanse>https://ehelse.no/Sider/Standard-for-elektronisk-kommunikasjon-med-pleie--og-omsorgstjenesten--Informasjonsmodell-og-XML-meldingsbeskrivel1106-1091.aspx</Referanse>
-	</Referansekatalogen>
-
+	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
+
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten v1.6</Beskrivelse>
+			<Referanse>https://ehelse.no/Sider/Standard-for-elektronisk-kommunikasjon-med-pleie--og-omsorgstjenesten--Informasjonsmodell-og-XML-meldingsbeskrivel1106-1091.aspx</Referanse>
+		</Informasjon>
+	</MerInformasjon>
+	
+	<Profiler>
+        <Profil>
+            <ProfilId>1</ProfilId>
+            <Beskrivelse>Innleggelsesrapport</Beskrivelse>
+            <Identifikator>HIS 1143:2014</Identifikator>
+	        <Utgitt>02/2014</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <Status>Fastsatt som standard</Status>
+	        <MerInformasjon>
+	            <Informasjon>
+	                <Beskrivelse>Pleie og omsorgsmelding: Innleggelsesrapport v1.5</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS1143-2014</Referanse>
+		        </Informasjon>
+	        </MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>2</ProfilId> 
+            <Beskrivelse>Helseopplysninger</Beskrivelse>
+            <Identifikator>HIS 1144:2014</Identifikator>
+	        <Utgitt>02/2014</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+	            <Informasjon>
+	                <Beskrivelse>Pleie- og omsorgsmelding: Helseopplysninger v1.5</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS1144-2014</Referanse>
+		        </Informasjon>  
+	        </MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>3</ProfilId> 
+            <Beskrivelse>Helseopplysninger til lege</Beskrivelse>
+            <Identifikator>HIS 1145:2014</Identifikator>
+	        <Utgitt>02/2014</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+	            <Informasjon>
+	                <Beskrivelse>Pleie- og omsorgsmelding: Helseopplysninger til lege v1.5</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS1145-2014</Referanse>
+		        </Informasjon>  
+	        </MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>4</ProfilId> 
+            <Beskrivelse>Orientering om tjenestetilbud</Beskrivelse>
+            <Identifikator>HIS 1146:2014</Identifikator>
+	        <Utgitt>02/2014</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+	            <Informasjon>
+	                <Beskrivelse>Pleie- og omsorgsmelding: Orientering om tjenestetilbud v1.5</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS1146-2014</Referanse>
+		        </Informasjon>  
+	        </MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>5</ProfilId> 
+            <Beskrivelse>Medisinske opplysninger</Beskrivelse>
+            <Identifikator>HIS 1147:2014</Identifikator>
+	        <Utgitt>02/2014</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+	            <Informasjon>
+	                <Beskrivelse>Pleie- og omsorgsmelding: Medisinske opplysninger v1.5</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS1147-2014</Referanse>
+		        </Informasjon>  
+	        </MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>6</ProfilId> 
+            <Beskrivelse>Utskrivningsrapport</Beskrivelse>
+            <Identifikator>HIS 1148:2014</Identifikator>
+	        <Utgitt>02/2014</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+	            <Informasjon>
+	                <Beskrivelse>Pleie- og omsorgsmelding: Utskrivningsrapport v1.5</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS1148-2014</Referanse>
+		        </Informasjon>  
+	        </MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>7</ProfilId> 
+            <Beskrivelse>Pasientlogistikkmeldinger</Beskrivelse>
+            <Identifikator>HIS 1149:2014</Identifikator>
+	        <Utgitt>02/2014</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+	            <Informasjon>
+	                <Beskrivelse>Pleie- og omsorgsmelding: Pasientlogistikkmeldinger v1.5</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS1149-2014</Referanse>
+		        </Informasjon>  
+	        </MerInformasjon>
+        </Profil>
+    </Profiler>
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten v1.6 (GitLab)</Beskrivelse>
+			<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten v1.6 (PDF)</Beskrivelse>
 			<Referanse>kravdokument/plo/HIS_80704_2014 Pleie-og omsorgsmeldinger v1.6 -korrigert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Profil: Innleggelsesrapport (GitLab)</Beskrivelse>
+			<ProfilId>1</ProfilId>
+			<Beskrivelse>Innleggelsesrapport (PDF)</Beskrivelse>
 			<Referanse>kravdokument/plo/HIS_1143_2014_PLO-innleggelsesrapport.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Profil: Helseopplysninger (GitLab)</Beskrivelse>
+			<ProfilId>2</ProfilId>
+			<Beskrivelse>Helseopplysninger (PDF)</Beskrivelse>
 			<Referanse>kravdokument/plo/HIS_1144_2014_PLO-helseopplysninger.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Profil: Helseopplysninger til lege (GitLab)</Beskrivelse>
+			<ProfilId>3</ProfilId>
+			<Beskrivelse>Helseopplysninger til lege (PDF)</Beskrivelse>
 			<Referanse>kravdokument/plo/HIS_1145_2014_PLO-helseopplysningerLege.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Profil: Orientering om tjenestetilbud (GitLab)</Beskrivelse>
+			<ProfilId>4</ProfilId>
+			<Beskrivelse>Orientering om tjenestetilbud (PDF)</Beskrivelse>
 			<Referanse>kravdokument/plo/HIS_1146_2014_PLO-orienteringTjenestetilbud.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Profil: Medisinske opplysninger (GitLab)</Beskrivelse>
+			<ProfilId>5</ProfilId>
+			<Beskrivelse>Medisinske opplysninger (PDF)</Beskrivelse>
 			<Referanse>kravdokument/plo/HIS_1147_2014_PLO-medisinskeOpplysninger.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Profil: Utskrivningsrapport (GitLab)</Beskrivelse>
+			<ProfilId>6</ProfilId>
+			<Beskrivelse>Utskrivningsrapport (PDF)</Beskrivelse>
 			<Referanse>kravdokument/plo/HIS_1148_2014_PLO-utskrivningsrapport.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Profil: Pasientlogistikkmeldinger (GitLab)</Beskrivelse>
+			<ProfilId>7</ProfilId>
+			<Beskrivelse>Pasientlogistikkmeldinger (PDF)</Beskrivelse>
 			<Referanse>kravdokument/plo/HIS_1149_2014_PLO-pasientlogistikkmeldinger.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
 
 	<Skjemaer>
 		<Skjema>
-			<Referanse>skjema/plo/v1.6/HelseopplysningerTilLege-v1.6.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/po/HelseopplysningerTilLege/2012-04-01</Namespace>
-		</Skjema>
-		<Skjema>
-			<Referanse>skjema/plo/v1.6/Helseopplysninger-v1.6.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/po/HelseopplysningerVedSoknad/2012-04-01</Namespace>
-		</Skjema>
-		<Skjema>
+			<ProfilId>1</ProfilId>
 			<Referanse>skjema/plo/v1.6/Innleggelsesrapport-v1.6.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/po/Innleggelsesrapport/2012-04-01</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/plo/v1.6/MedisinskeOpplysninger-v1.6.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/po/MedisinskeOpplysninger/2012-04-01</Namespace>
+			<ProfilId>2</ProfilId>
+			<Referanse>skjema/plo/v1.6/Helseopplysninger-v1.6.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/HelseopplysningerVedSoknad/2012-04-01</Namespace>
+		</Skjema>	
+		<Skjema>
+			<ProfilId>3</ProfilId>
+			<Referanse>skjema/plo/v1.6/HelseopplysningerTilLege-v1.6.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/HelseopplysningerTilLege/2012-04-01</Namespace>
 		</Skjema>
 		<Skjema>
+			<ProfilId>4</ProfilId>
 			<Referanse>skjema/plo/v1.6/OrienteringOmTjenestetilbud-v1.6.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/po/OrienteringOmTjenestetilbud/2012-04-01</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/plo/v1.6/Pasientlogistikk-v1.6.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/po/Pasientlogistikk/2012-04-01</Namespace>
+			<ProfilId>5</ProfilId>
+			<Referanse>skjema/plo/v1.6/MedisinskeOpplysninger-v1.6.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/MedisinskeOpplysninger/2012-04-01</Namespace>
 		</Skjema>
 		<Skjema>
+			<ProfilId>6</ProfilId>
 			<Beskrivelse>Utskrivningsrapport (Skjemaet og rotelementet heter TverrfagligEpikrise)</Beskrivelse>
 			<Referanse>skjema/plo/v1.6/TverrfagligEpikrise-v1.6.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/po/TverrfagligEpikrise/2012-04-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>7</ProfilId>
+			<Referanse>skjema/plo/v1.6/Pasientlogistikk-v1.6.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/po/Pasientlogistikk/2012-04-01</Namespace>
 		</Skjema>
 		<Skjema>
 			<Beskrivelse>Komponenter som gjenbrukes i flere ulike Pleie- og omsorgsmeldinger</Beskrivelse>
@@ -212,60 +322,80 @@
 	</Visningsfiler>
 	<Eksempler>
 		<Eksempel>
-			<Referanse>eksempel/plo/1_6/helseopplysninger_1_6_mottak/Helseopplysninger_Varsel_om_innlagt_pasient_v1-6_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_6/helseopplysninger_1_6_mottak/Helseopplysninger_Oppdaterte_opplysninger_v1-6_Endring1.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_6/helseopplysninger_1_6_mottak/Helseopplysninger_Oppdaterte_opplysninger_v1-6_Endring2.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_6/helseopplysninger_til_lege_1_6_mottak/Helseopplysninger_til_lege_v1-6_Ny.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/plo/1_6/helseopplysninger_til_lege_1_6_mottak/Helseopplysninger_til_lege_v1-6_Kansellering.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/plo/1_6/innleggelsesrapport_1_6_mottak/Innleggelsesrapport_v1-6_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/plo/1_6/innleggelsesrapport_1_6_mottak/Innleggelsesrapport_v1-6_Endring.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/plo/1_6/innleggelsesrapport_1_6_mottak/Innleggelsesrapport_v1-6_Kansellering.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/plo/1_6/medisinske_opplysninger_1_6_mottak/Medisinske_opplysninger_v1-6_Ny.xml</Referanse>
+			<ProfilId>2</ProfilId> 
+			<Referanse>eksempel/plo/1_6/helseopplysninger_1_6_mottak/Helseopplysninger_Varsel_om_innlagt_pasient_v1-6_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/plo/1_6/medisinske_opplysninger_1_6_mottak/Medisinske_opplysninger_v1-6_Kansellering.xml</Referanse>
+			<ProfilId>2</ProfilId> 
+			<Referanse>eksempel/plo/1_6/helseopplysninger_1_6_mottak/Helseopplysninger_Oppdaterte_opplysninger_v1-6_Endring1.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>2</ProfilId> 
+			<Referanse>eksempel/plo/1_6/helseopplysninger_1_6_mottak/Helseopplysninger_Oppdaterte_opplysninger_v1-6_Endring2.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>3</ProfilId> 
+			<Referanse>eksempel/plo/1_6/helseopplysninger_til_lege_1_6_mottak/Helseopplysninger_til_lege_v1-6_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>3</ProfilId> 
+			<Referanse>eksempel/plo/1_6/helseopplysninger_til_lege_1_6_mottak/Helseopplysninger_til_lege_v1-6_Kansellering.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>4</ProfilId> 
 			<Referanse>eksempel/plo/1_6/orientering_om_tjenestetilbud_1_6_mottak/Orientering_om_tjenestetilbud_v1-6_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>4</ProfilId> 
 			<Referanse>eksempel/plo/1_6/orientering_om_tjenestetilbud_1_6_mottak/Orientering_om_tjenestetilbud_v1-6_Kansellering.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+		    <ProfilId>5</ProfilId> 
+			<Referanse>eksempel/plo/1_6/medisinske_opplysninger_1_6_mottak/Medisinske_opplysninger_v1-6_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+		    <ProfilId>5</ProfilId> 
+			<Referanse>eksempel/plo/1_6/medisinske_opplysninger_1_6_mottak/Medisinske_opplysninger_v1-6_Kansellering.xml</Referanse>
+		</Eksempel>
+		
+		<Eksempel>
+			<ProfilId>7</ProfilId>
 			<Referanse>eksempel/plo/1_6/pasientlogistikk_1_6_mottak/Pasientlogistikk_Avmelding_av_utskrivningsklar_pasient_v1-6_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>7</ProfilId>
 			<Referanse>eksempel/plo/1_6/pasientlogistikk_1_6_mottak/Pasientlogistikk_Innlagt_pasient_v1-6_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>7</ProfilId>
 			<Referanse>eksempel/plo/1_6/pasientlogistikk_1_6_mottak/Pasientlogistikk_Innlagt_pasient_v1-6_Kansellering.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>7</ProfilId>
 			<Referanse>eksempel/plo/1_6/pasientlogistikk_1_6_mottak/Pasientlogistikk_Melding_om_utskrevet_pasient_v1-6_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>7</ProfilId>
 			<Referanse>eksempel/plo/1_6/pasientlogistikk_1_6_mottak/Pasientlogistikk_Orientering_om_dodsfall_v1-6_Ny.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>7</ProfilId>
 			<Referanse>eksempel/plo/1_6/pasientlogistikk_1_6_mottak/Pasientlogistikk_Orientering_om_dodsfall_v1-6_Kansellering.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>7</ProfilId>
 			<Referanse>eksempel/plo/1_6/pasientlogistikk_1_6_mottak/Pasientlogistikk_Utskrivningsklar_pasient_v1-6_Ny.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
