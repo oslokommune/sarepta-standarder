@@ -19,14 +19,14 @@
 	
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Applikasjonskvittering v1.0 (GitLab)</Beskrivelse>
+			<Beskrivelse>Applikasjonskvittering v1.0 (PDF)</Beskrivelse>
 			<Referanse>kravdokument/applikasjonskvittering/HIS_80415_2004 AppRec v1.0 -korrigert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
 	
 	<Skjemaer>
 		<Skjema>
-			<Referanse>skjema/Applikasjonskvittering/AppRec-v1-2004-11-21.xsd</Referanse>
+			<Referanse>skjema/applikasjonskvittering/AppRec-v1-2004-11-21.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/apprec/2004-11-21</Namespace>
 		</Skjema>
 	</Skjemaer>

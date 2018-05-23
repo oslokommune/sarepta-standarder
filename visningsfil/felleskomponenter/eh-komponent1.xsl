@@ -45,28 +45,58 @@
 				<div class="eh-col-1">
 					<span class="eh-field">
 						<xsl:if test="../child::*[local-name()='StartDateTime']">
-							Start:&#160;<xsl:call-template name="skrivUtTS">
-								<xsl:with-param name="oppgittTid" select="../child::*[local-name()='StartDateTime']/@V"/>
-								<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
-							</xsl:call-template>
+							<xsl:choose>
+								<xsl:when test="../child::*[local-name()='StartDateTime']/@V"> <!-- kith:TS -->
+									Start:&#160;<xsl:call-template name="skrivUtTS">
+										<xsl:with-param name="oppgittTid" select="../child::*[local-name()='StartDateTime']/@V"/>
+										<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+									</xsl:call-template>
+								</xsl:when>
+								<xsl:otherwise> <!-- dateTime, date, etc. -->
+									Start:&#160;<xsl:call-template name="skrivUtTS">
+										<xsl:with-param name="oppgittTid" select="../child::*[local-name()='StartDateTime']"/>
+										<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+									</xsl:call-template>
+								</xsl:otherwise>
+							</xsl:choose>
 						</xsl:if>
 						<xsl:if test="../child::*[local-name()='EndDateTime']">
 							<xsl:if test="../child::*[local-name()='StartDateTime']">
 								<xsl:value-of select="', '"/>
 							</xsl:if>
-							Slutt:&#160;<xsl:call-template name="skrivUtTS">
-									<xsl:with-param name="oppgittTid" select="../child::*[local-name()='EndDateTime']/@V"/>
-									<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
-								</xsl:call-template>
+							<xsl:choose>
+								<xsl:when test="../child::*[local-name()='EndDateTime']/@V"> <!-- kith:TS -->
+									Slutt:&#160;<xsl:call-template name="skrivUtTS">
+										<xsl:with-param name="oppgittTid" select="../child::*[local-name()='EndDateTime']/@V"/>
+										<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+									</xsl:call-template>
+								</xsl:when>
+								<xsl:otherwise> <!-- dateTime, date, etc. -->
+									Slutt:&#160;<xsl:call-template name="skrivUtTS">
+										<xsl:with-param name="oppgittTid" select="../child::*[local-name()='EndDateTime']"/>
+										<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+									</xsl:call-template>
+								</xsl:otherwise>
+							</xsl:choose>
 						</xsl:if>
 						<xsl:if test="../child::*[local-name()='OrgDate']">
 							<xsl:if test="../child::*[local-name()='StartDateTime'] or ../child::*[local-name()='EndDateTime']">
 								<xsl:value-of select="', '"/>
 							</xsl:if>
-							Opprinnelse:&#160;<xsl:call-template name="skrivUtTS">
-									<xsl:with-param name="oppgittTid" select="../child::*[local-name()='OrgDate']"/>
-									<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
-								</xsl:call-template>
+							<xsl:choose>
+								<xsl:when test="../child::*[local-name()='OrgDate']/@V"> <!-- kith:TS -->
+									Opprinnelse:&#160;<xsl:call-template name="skrivUtTS">
+										<xsl:with-param name="oppgittTid" select="../child::*[local-name()='OrgDate']/@V"/>
+										<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+									</xsl:call-template>
+								</xsl:when>
+								<xsl:otherwise> <!-- dateTime, date, etc. -->
+									Opprinnelse:&#160;<xsl:call-template name="skrivUtTS">
+										<xsl:with-param name="oppgittTid" select="../child::*[local-name()='OrgDate']"/>
+										<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+									</xsl:call-template>
+								</xsl:otherwise>
+							</xsl:choose>
 						</xsl:if>
 					</span>
 				</div>
@@ -126,7 +156,7 @@
 		</xsl:variable>
 
 		<div class="eh-col-1 eh-field {$stripedCss}">
-			<span class="eh-label">Legemiddel</span>
+			<xsl:if test="position()=1"><span class="eh-label">Legemiddel</span></xsl:if>
 			<span class="eh-text">
 				<xsl:for-each select="child::*[local-name()='DrugId']">
 					<xsl:call-template name="k-dummy"/>
@@ -135,7 +165,7 @@
 		</div>
 
 		<div class="eh-col-1 eh-field {$stripedCss}">
-			<span class="eh-label">Status</span>
+			<xsl:if test="position()=1"><span class="eh-label">Status</span></xsl:if>
 			<span class="eh-text">
 				<xsl:choose>
 					<xsl:when test="namespace-uri() = 'http://ehelse.no/xmlstds/henvisning/2017-11-30'"><!-- Henvisning v2.0-->
@@ -154,7 +184,7 @@
 
 		<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='UnitDose'] or //child::*[local-name()='Medication']/child::*[local-name()='QuantitySupplied']">
 			<div class="eh-col-1 eh-field {$stripedCss}">
-				<span class="eh-label">Mengde</span>
+				<xsl:if test="position()=1"><span class="eh-label">Mengde</span></xsl:if>
 				<span class="eh-text">
 					<xsl:if test="child::*[local-name()='UnitDose']">
 						<xsl:value-of select="child::*[local-name()='UnitDose']/@V"/>&#160;<xsl:value-of select="child::*[local-name()='UnitDose']/@U "/>
@@ -169,11 +199,13 @@
 
 		<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='DosageText'] or //child::*[local-name()='Medication']/child::*[local-name()='IntendedDuration']">
 			<div class="eh-col-1 eh-field {$stripedCss}">
-				<span class="eh-label">
-					<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='DosageText']">Dosering</xsl:if>
-					<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='DosageText'] and //child::*[local-name()='Medication']/child::*[local-name()='IntendedDuration']">/</xsl:if>
-					<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='IntendedDuration']">Varighet</xsl:if>
-				</span>
+				<xsl:if test="position()=1">
+					<span class="eh-label">
+						<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='DosageText']">Dosering</xsl:if>
+						<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='DosageText'] and //child::*[local-name()='Medication']/child::*[local-name()='IntendedDuration']">/</xsl:if>
+						<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='IntendedDuration']">Varighet</xsl:if>
+					</span>
+				</xsl:if>
 				<span class="eh-text">
 					<xsl:if test="child::*[local-name()='DosageText']">
 						<xsl:call-template name="line-breaks">
@@ -189,7 +221,7 @@
 
 		<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='Comment']">
 			<div class="eh-col-1 eh-field {$stripedCss}">
-				<span class="eh-label">Kommentar</span>
+				<xsl:if test="position()=1"><span class="eh-label">Kommentar</span></xsl:if>
 				<span class="eh-text">
 					<xsl:call-template name="line-breaks">
 						<xsl:with-param name="text" select="child::*[local-name()='Comment']"/>
@@ -200,36 +232,66 @@
 
 		<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Medication']]/child::*[local-name()='StartDateTime']">
 			<div class="eh-col-1 eh-field {$stripedCss}">
-				<span class="eh-label">Starttidspunkt</span>
+				<xsl:if test="position()=1"><span class="eh-label">Starttidspunkt</span></xsl:if>
 				<span class="eh-text">
-					<xsl:call-template name="skrivUtTS">
-						<xsl:with-param name="oppgittTid" select="../child::*[local-name()='StartDateTime']/@V "/>
-						<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
-					</xsl:call-template>
+					<xsl:choose>
+						<xsl:when test="../child::*[local-name()='StartDateTime']/@V"> <!-- kith:TS -->
+							<xsl:call-template name="skrivUtTS">
+								<xsl:with-param name="oppgittTid" select="../child::*[local-name()='StartDateTime']/@V"/>
+								<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+							</xsl:call-template>
+						</xsl:when>
+						<xsl:otherwise> <!-- dateTime, date, etc. -->
+							<xsl:call-template name="skrivUtTS">
+								<xsl:with-param name="oppgittTid" select="../child::*[local-name()='StartDateTime']"/>
+								<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+							</xsl:call-template>
+						</xsl:otherwise>
+					</xsl:choose>
 				</span>
 			</div>
 		</xsl:if>
 
 		<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Medication']]/child::*[local-name()='EndDateTime']">
 			<div class="eh-col-1 eh-field {$stripedCss}">
-				<span class="eh-label">Sluttidspunkt</span>
+				<xsl:if test="position()=1"><span class="eh-label">Sluttidspunkt</span></xsl:if>
 				<span class="eh-text">
-					<xsl:call-template name="skrivUtTS">
-						<xsl:with-param name="oppgittTid" select="../child::*[local-name()='EndDateTime']/@V"/>
-						<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
-					</xsl:call-template>
+					<xsl:choose>
+						<xsl:when test="../child::*[local-name()='EndDateTime']/@V"> <!-- kith:TS -->
+							<xsl:call-template name="skrivUtTS">
+								<xsl:with-param name="oppgittTid" select="../child::*[local-name()='EndDateTime']/@V"/>
+								<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+							</xsl:call-template>
+						</xsl:when>
+						<xsl:otherwise> <!-- dateTime, date, etc. -->
+							<xsl:call-template name="skrivUtTS">
+								<xsl:with-param name="oppgittTid" select="../child::*[local-name()='EndDateTime']"/>
+								<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+							</xsl:call-template>
+						</xsl:otherwise>
+					</xsl:choose>
 				</span>
 			</div>
 		</xsl:if>
 
 		<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Medication']]/child::*[local-name()='OrgDate']">
 			<div class="eh-col-1 eh-field eh-last-child {$stripedCss}">
-				<span class="eh-label">Tidspunkt for opprinnelse</span>
+				<xsl:if test="position()=1"><span class="eh-label">Tidspunkt for opprinnelse</span></xsl:if>
 				<span class="eh-text">
-					<xsl:call-template name="skrivUtTS">
-						<xsl:with-param name="oppgittTid" select="../child::*[local-name()='OrgDate']/@V"/>
-						<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
-					</xsl:call-template>
+					<xsl:choose>
+						<xsl:when test="../child::*[local-name()='OrgDate']/@V"> <!-- kith:TS -->
+							<xsl:call-template name="skrivUtTS">
+								<xsl:with-param name="oppgittTid" select="../child::*[local-name()='OrgDate']/@V"/>
+								<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+							</xsl:call-template>
+						</xsl:when>
+						<xsl:otherwise> <!-- dateTime, date, etc. -->
+							<xsl:call-template name="skrivUtTS">
+								<xsl:with-param name="oppgittTid" select="../child::*[local-name()='OrgDate']"/>
+								<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+							</xsl:call-template>
+						</xsl:otherwise>
+					</xsl:choose>
 				</span>
 			</div>
 		</xsl:if>
@@ -254,7 +316,7 @@
 				</xsl:choose>
 			</xsl:variable>
 			<div class="eh-col-1 eh-field {$stripedCss}">
-				<span class="eh-label">Undersøkelse</span>
+				<xsl:if test="position()=1"><span class="eh-label">Undersøkelse</span></xsl:if>
 				<span class="eh-text">
 					<xsl:for-each select="child::*[local-name()='ClinInv']">
 						<xsl:for-each select="child::*[local-name()='Id']"> 	<!-- minOccurs="1" -->
@@ -270,7 +332,7 @@
 			</div>
 
 		<div class="eh-col-3 eh-field {$stripedCss}">
-			<span class="eh-label">Funn/resultat</span>
+			<xsl:if test="position()=1"><span class="eh-label">Funn/resultat</span></xsl:if>
 			<span class="eh-text">
 				<xsl:for-each select="child::*[local-name()='Interval']">
 					<xsl:if test="child::*[local-name()='Low']">
@@ -284,10 +346,20 @@
 				</xsl:for-each>
 
 				<xsl:for-each select="child::*[local-name()='DateResult']">
-					<xsl:call-template name="skrivUtTS">
-						<xsl:with-param name="oppgittTid" select="child::*[local-name()='DateResultValue']/@V"/>
-						<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
-					</xsl:call-template>
+					<xsl:choose>
+						<xsl:when test="child::*[local-name()='DateResultValue']/@V"> <!-- kith:TS -->
+							<xsl:call-template name="skrivUtTS">
+								<xsl:with-param name="oppgittTid" select="child::*[local-name()='DateResultValue']/@V"/>
+								<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+							</xsl:call-template>
+						</xsl:when>
+						<xsl:otherwise> <!-- dateTime, date, etc. -->
+							<xsl:call-template name="skrivUtTS">
+								<xsl:with-param name="oppgittTid" select="child::*[local-name()='DateResultValue']"/>
+								<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+							</xsl:call-template>
+						</xsl:otherwise>
+					</xsl:choose>
 				</xsl:for-each>
 
 				<xsl:for-each select="child::*[local-name()='NumResult']">
@@ -342,12 +414,22 @@
 
 		<xsl:if test="//child::*[local-name()='ResultItem']/child::*[local-name()='InvDate']"> 
 			<div class="eh-col-1 eh-field">
-				<span class="eh-label">Tidspunkt for undersøkelsen</span>
+				<xsl:if test="position()=1"><span class="eh-label">Tidspunkt for undersøkelsen</span></xsl:if>
 				<span class="eh-text">
-					<xsl:call-template name="skrivUtTS">
-						<xsl:with-param name="oppgittTid" select="child::*[local-name()='InvDate']/@V"/>
-						<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
-					</xsl:call-template>
+					<xsl:choose>
+						<xsl:when test="child::*[local-name()='InvDate']/@V"> <!-- kith:TS -->
+							<xsl:call-template name="skrivUtTS">
+								<xsl:with-param name="oppgittTid" select="child::*[local-name()='InvDate']/@V"/>
+								<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+							</xsl:call-template>
+						</xsl:when>
+						<xsl:otherwise> <!-- dateTime, date, etc. -->
+							<xsl:call-template name="skrivUtTS">
+								<xsl:with-param name="oppgittTid" select="child::*[local-name()='InvDate']"/>
+								<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+							</xsl:call-template>
+						</xsl:otherwise>
+					</xsl:choose>
 				</span>
 			</div>
 		</xsl:if>
@@ -355,36 +437,66 @@
 
 		<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='ResultItem']]/child::*[local-name()='StartDateTime']"> <!-- up one level : InfItem -->
 			<div class="eh-col-1 eh-field">
-				<span class="eh-label">Starttidspunkt</span>
+				<xsl:if test="position()=1"><span class="eh-label">Starttidspunkt</span></xsl:if>
 				<span class="eh-text">
-					<xsl:call-template name="skrivUtTS">
-						<xsl:with-param name="oppgittTid" select="../child::*[local-name()='StartDateTime']/@V"/>
-						<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
-					</xsl:call-template>
+					<xsl:choose>
+						<xsl:when test="../child::*[local-name()='StartDateTime']/@V"> <!-- kith:TS -->
+							<xsl:call-template name="skrivUtTS">
+								<xsl:with-param name="oppgittTid" select="../child::*[local-name()='StartDateTime']/@V"/>
+								<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+							</xsl:call-template>
+						</xsl:when>
+						<xsl:otherwise> <!-- dateTime, date, etc. -->
+							<xsl:call-template name="skrivUtTS">
+								<xsl:with-param name="oppgittTid" select="../child::*[local-name()='StartDateTime']"/>
+								<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+							</xsl:call-template>
+						</xsl:otherwise>
+					</xsl:choose>
 				</span>
 			</div>
 		</xsl:if>
 
 		<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='ResultItem']]/child::*[local-name()='EndDateTime']"> <!-- up one level : InfItem -->
 			<div class="eh-col-1 eh-field">
-				<span class="eh-label">Sluttidspunkt</span>
+				<xsl:if test="position()=1"><span class="eh-label">Sluttidspunkt</span></xsl:if>
 				<span class="eh-text">
-					<xsl:call-template name="skrivUtTS">
-						<xsl:with-param name="oppgittTid" select="../child::*[local-name()='EndDateTime']/@V | ../child::*[local-name()='EndDateTime']/@V"/>
-						<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
-					</xsl:call-template>
+					<xsl:choose>
+						<xsl:when test="../child::*[local-name()='EndDateTime']/@V"> <!-- kith:TS -->
+							<xsl:call-template name="skrivUtTS">
+								<xsl:with-param name="oppgittTid" select="../child::*[local-name()='EndDateTime']/@V"/>
+								<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+							</xsl:call-template>
+						</xsl:when>
+						<xsl:otherwise> <!-- dateTime, date, etc. -->
+							<xsl:call-template name="skrivUtTS">
+								<xsl:with-param name="oppgittTid" select="../child::*[local-name()='EndDateTime']"/>
+								<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+							</xsl:call-template>
+						</xsl:otherwise>
+					</xsl:choose>
 				</span>
 			</div>
 		</xsl:if>
 
 		<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='ResultItem']]/child::*[local-name()='OrgDate']"> <!-- up one level : InfItem -->
 			<div class="eh-col-1 eh-field eh-last-child">
-				<span class="eh-label">Tidspunkt for opprinnelse</span>
+				<xsl:if test="position()=1"><span class="eh-label">Tidspunkt for opprinnelse</span></xsl:if>
 				<span class="eh-text">
-					<xsl:call-template name="skrivUtTS">
-						<xsl:with-param name="oppgittTid" select="../child::*[local-name()='OrgDate']/@V"/>
-						<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
-					</xsl:call-template>
+					<xsl:choose>
+						<xsl:when test="../child::*[local-name()='OrgDate']/@V"> <!-- kith:TS -->
+							<xsl:call-template name="skrivUtTS">
+								<xsl:with-param name="oppgittTid" select="../child::*[local-name()='OrgDate']/@V"/>
+								<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+							</xsl:call-template>
+						</xsl:when>
+						<xsl:otherwise> <!-- dateTime, date, etc. -->
+							<xsl:call-template name="skrivUtTS">
+								<xsl:with-param name="oppgittTid" select="../child::*[local-name()='OrgDate']"/>
+								<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+							</xsl:call-template>
+						</xsl:otherwise>
+					</xsl:choose>
 				</span>
 			</div>
 		</xsl:if>
@@ -540,10 +652,20 @@
 				<div class="eh-col-1 eh-field">
 					<span class="eh-label xs">Behov opph&#248;rt dato</span>
 					<span class="eh-text">
-						<xsl:call-template name="skrivUtTS">
-							<xsl:with-param name="oppgittTid" select="child::*[local-name()='BehovOpphortDato']/@V"/>
-							<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
-						</xsl:call-template>
+						<xsl:choose>
+							<xsl:when test="child::*[local-name()='BehovOpphortDato']/@V"> <!-- kith:TS -->
+								<xsl:call-template name="skrivUtTS">
+									<xsl:with-param name="oppgittTid" select="child::*[local-name()='BehovOpphortDato']/@V"/>
+									<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+								</xsl:call-template>
+							</xsl:when>
+							<xsl:otherwise> <!-- dateTime, date, etc. -->
+								<xsl:call-template name="skrivUtTS">
+									<xsl:with-param name="oppgittTid" select="child::*[local-name()='BehovOpphortDato']"/>
+									<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+								</xsl:call-template>
+							</xsl:otherwise>
+						</xsl:choose>
 					</span>
 				</div>
 			</xsl:if>
@@ -600,10 +722,20 @@
 					<div class="eh-col-1">
 						<span class="eh-label">Utstedt-dato</span>
 						<span class="eh-field blk">
-							<xsl:call-template name="skrivUtTS">
-								<xsl:with-param name="oppgittTid" select="child::*[local-name()='IssueDate']"/>
-								<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
-							</xsl:call-template>
+							<xsl:choose>
+								<xsl:when test="child::*[local-name()='IssueDate']/@V"> <!-- kith:TS -->
+									<xsl:call-template name="skrivUtTS">
+										<xsl:with-param name="oppgittTid" select="child::*[local-name()='IssueDate']/@V"/>
+										<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+									</xsl:call-template>
+								</xsl:when>
+								<xsl:otherwise> <!-- dateTime, date, etc. -->
+									<xsl:call-template name="skrivUtTS">
+										<xsl:with-param name="oppgittTid" select="child::*[local-name()='IssueDate']"/>
+										<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+									</xsl:call-template>
+								</xsl:otherwise>
+							</xsl:choose>
 						</span>
 					</div>
 				</xsl:if>
@@ -1094,10 +1226,20 @@
   							<div class="eh-col-2">
    								<span class="eh-label">Utstedt</span>
    								<span class="eh-field">
-   									<xsl:call-template name="skrivUtTS">
-   										<xsl:with-param name="oppgittTid" select="child::*[local-name()='IssueDate']"/>
-   										<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
-   									</xsl:call-template>
+									<xsl:choose>
+										<xsl:when test="child::*[local-name()='IssueDate']/@V"> <!-- kith:TS -->
+											<xsl:call-template name="skrivUtTS">
+												<xsl:with-param name="oppgittTid" select="child::*[local-name()='IssueDate']/@V"/>
+												<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+											</xsl:call-template>
+										</xsl:when>
+										<xsl:otherwise> <!-- dateTime, date, etc. -->
+											<xsl:call-template name="skrivUtTS">
+												<xsl:with-param name="oppgittTid" select="child::*[local-name()='IssueDate']"/>
+												<xsl:with-param name="useNormalSpaceSeparator" select="true()"/>
+											</xsl:call-template>
+										</xsl:otherwise>
+									</xsl:choose>
    								</span>
    							</div>
    						</xsl:if>

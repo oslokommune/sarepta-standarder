@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--       
+<!-- 
 
 Endringslogg
 - 23.08.17: v4.1.9 - Lagt til templaten EgetBunnTillegg
