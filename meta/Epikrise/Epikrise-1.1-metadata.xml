@@ -7,7 +7,6 @@
 	<Utgitt>02/2006</Utgitt>
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
-	
 	<MerInformasjon>
 		<Informasjon>
 			<Beskrivelse>Epikrise 1.1 (HIS 80226:2006)</Beskrivelse>
@@ -16,31 +15,32 @@
 	</MerInformasjon>
 	
 	<Profiler>
-		<Profil>
-			<ProfilId>1</ProfilId>
-			 <Beskrivelse>Tannhelsetjenesten</Beskrivelse>
+        <Profil>
+            <ProfilId>1</ProfilId>
+            <Beskrivelse>Tannhelsetjenesten</Beskrivelse>
             <Identifikator>HIS 1016:2010</Identifikator>
-	        <Utgitt>02/2010</Utgitt>
+	        <Utgitt>03/2010</Utgitt>
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <Status>Fastsatt som standard</Status>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Epikrise 1.1 (HIS 80226:2006)</Beskrivelse>
-					<Referanse>http://ehelse.no/HIS80226-2006</Referanse>
+	                <Beskrivelse>Henvisningsmelding: Tannhelsetjenesten</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS107-2010</Referanse>
 		        </Informasjon>
 	        </MerInformasjon>
-		</Profil>
-	</Profiler>
+        </Profil>
+    </Profiler>
+	
 	
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Epikrise v1.1 (GitLab)</Beskrivelse>
+			<Beskrivelse>Epikrise v1.1 (PDF)</Beskrivelse>
 			<Referanse>kravdokument/epikrise/HIS_80226_2006_epikrise_1.1 -korrigert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>1</ProfilId>
-			<Beskrivelse>Tannhelsetjenesten (GitLab)</Beskrivelse>
+			<Beskrivelse>Tannhelsetjenesten (PDF)</Beskrivelse>
 			<Referanse>kravdokument/epikrise/HIS_1016_2010 XML epikrise Meldingsprofil tannhelse.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
@@ -167,13 +167,16 @@
 
 	<Eksempler>
 		<Eksempel>
-			<Referanse>eksempel/epikrise/Epikrise_v1-1/epikrise_v1.1_n.xml</Referanse>
+			<ProfilId>0</ProfilId>
+			<Referanse>eksempel/Epikrise/Epikrise_v1-1/epikrise_v1.1_n.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/epikrise/Epikrise_v1-1/epikrise_v1.1_m.xml</Referanse>
+			<ProfilId>0</ProfilId>
+			<Referanse>eksempel/Epikrise/Epikrise_v1-1/epikrise_v1.1_m.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/epikrise/Epikrise_v1-1/epikrise_v1.1_c.xml</Referanse>
+			<ProfilId>0</ProfilId>
+			<Referanse>eksempel/Epikrise/Epikrise_v1-1/epikrise_v1.1_c.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
 <RelaterteFiler>
@@ -181,5 +184,13 @@
 		<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger</Beskrivelse>
 		<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
 	</RelatertFil>
+	<RelatertFil>
+			<Beskrivelse>Notat: Den gode epikrise - minstekrav til medisinskfaglig innhold ved sending HISD 1033:2010 (PDF)</Beskrivelse>
+			<Referanse>relaterteFiler/epikrise/HISD_1033_2010 Epikrise-Minimumskrav-2011-03-29.pdf</Referanse>
+		</RelatertFil>
+		<RelatertFil>
+			<Beskrivelse>Prinsipper for utskrift av epikrise HISD 80715:2007 (PDF)</Beskrivelse>
+			<Referanse>relaterteFiler/epikrise/HISD_80715_2007_UtskriftMal-Epikrise.pdf</Referanse>
+		</RelatertFil>
 </RelaterteFiler>	
 </StandardMetadata>

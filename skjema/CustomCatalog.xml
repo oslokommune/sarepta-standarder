@@ -2,5 +2,5 @@
 <!-- edited with XML Spy v5 beta 1 U (http://www.xmlspy.com) by Vladislav Gavrielov (Altova) -->
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:entity:xmlns:xml:catalog
 Catalog.xsd">
-	<nextCatalog catalog="C:/Sarepta/standarder/skjema/ehelseCatalog.xml"/>
+	<nextCatalog catalog="C:/gitLocal/standarder/skjema/ehelseCatalog.xml"/>
 </catalog>

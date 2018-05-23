@@ -7,60 +7,58 @@
 	<Utgitt>02/2017</Utgitt>
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
-		
 	<MerInformasjon>
 		<Informasjon>
 			<Beskrivelse>Henvisningsmelding 2.0 (HIS 80517:2017)</Beskrivelse>
 			<Referanse>https://ehelse.no/standarder-kodeverk-og-referansekatalog/standarder-og-referansekatalog/henvisningsmelding-his-80517-utkast-til-utproving-2017</Referanse>
 		</Informasjon>
 	</MerInformasjon>
-
+	
 	<Profiler>
-		<Profil>
-			<ProfilId>1</ProfilId>
-			 <Beskrivelse>Henvisning ny tilstand</Beskrivelse>
+        <Profil>
+            <ProfilId>1</ProfilId>
+            <Beskrivelse>Henvisning ny tilstand</Beskrivelse>
             <Identifikator>HIS 1207:2018</Identifikator>
 	        <Utgitt>02/2018</Utgitt>
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <Status>Fastsatt som standard</Status>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Henvisningsmelding 2.0 (HIS 80517:2017)</Beskrivelse>
-		            <Referanse>https://ehelse.no/standarder-kodeverk-og-referansekatalog/standarder-og-referansekatalog/henvisningsmelding-his-80517-utkast-til-utproving-2017</Referanse>
+	                <Beskrivelse>Henvisning ny tilstand</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS1207-2018</Referanse>
 		        </Informasjon>
 	        </MerInformasjon>
-		</Profil>
+        </Profil>
 		<Profil>
-			<ProfilId>2</ProfilId>
-			 <Beskrivelse>Viderehenvisning</Beskrivelse>
+            <ProfilId>2</ProfilId>
+            <Beskrivelse>Viderehenvisning</Beskrivelse>
             <Identifikator>HIS 1208:2018</Identifikator>
 	        <Utgitt>02/2018</Utgitt>
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <Status>Fastsatt som standard</Status>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Henvisningsmelding 2.0 (HIS 80517:2017)</Beskrivelse>
-		            <Referanse>https://ehelse.no/standarder-kodeverk-og-referansekatalog/standarder-og-referansekatalog/henvisningsmelding-his-80517-utkast-til-utproving-2017</Referanse>
+	                <Beskrivelse>Viderehenvisning</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS1208-2018</Referanse>
 		        </Informasjon>
 	        </MerInformasjon>
-		</Profil>
-	</Profiler>
-	
-	
+        </Profil>
+    </Profiler>
 	
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Henvisning v2.0 (GitLab)</Beskrivelse>
+		    
+			<Beskrivelse>Henvisning v2.0 (PDF)</Beskrivelse>
 			<Referanse>kravdokument/henvisning/HIS_80517_2017 Henvisning 2.0 -korrigert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>1</ProfilId>
-			<Beskrivelse>Henvisning ny tilstand (GitLab)</Beskrivelse>
+			<Beskrivelse>Henvisning ny tilstand (PDF)</Beskrivelse>
 			<Referanse>kravdokument/henvisning/HIS_1207-2018 Henvisning ny tilstand.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<ProfilId>2</ProfilId>
-			<Beskrivelse>Viderehenvisning (GitLab)</Beskrivelse>
+		    <ProfilId>2</ProfilId>
+			<Beskrivelse>Viderehenvisning (PDF)</Beskrivelse>
 			<Referanse>kravdokument/henvisning/HIS_1208-2018-Viderehenvisning.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
@@ -68,12 +66,7 @@
 	<Skjemaer>
 		<Skjema>
 			<Referanse>skjema/henvisning/Henvisning-v2.0.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/henvisning/2017-01-31</Namespace>
-		</Skjema>
-		<Skjema>
-			<Beskrivelse>Komponenter som gjenbrukes i flere ulike Pleie- og omsorgsmeldinger</Beskrivelse>
-			<Referanse>skjema/plo/v2.0/poKomponent-v2.0.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/po/poKomponent/2012-04-01</Namespace>
+			<Namespace>http://ehelse.no/xmlstds/henvisning/2017-11-30</Namespace>
 		</Skjema>
 	</Skjemaer>
 	
@@ -93,6 +86,10 @@
 		<Felleskomponent>
 			<Beskrivelse>XML-skjema for Hodemelding</Beskrivelse>
 			<Referanse>skjema/felleskomponenter/MsgHead-v1_2.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Beskrivelse>Komponenter som gjenbrukes i flere ulike Pleie- og omsorgsmeldinger</Beskrivelse>
+			<Referanse>skjema/plo/v2.0/poKomponent-v2.0.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
 	

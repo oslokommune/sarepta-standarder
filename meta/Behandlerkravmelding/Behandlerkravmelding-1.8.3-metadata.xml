@@ -14,15 +14,14 @@
 		</Informasjon>
 	</MerInformasjon>
 	
-	
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Behandlerkravmelding (GitLab)</Beskrivelse>
+			<Beskrivelse>Behandlerkravmelding (PDF)</Beskrivelse>
 			<Referanse>kravdokument/Behandlerkravmelding/Behandlerkrav versjon 1.8.3.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Endringslogg for behandlerkravmelding (GitLab)</Beskrivelse>
+			<Beskrivelse>Endringslogg for behandlerkravmelding (PDF)</Beskrivelse>
 			<Referanse>kravdokument/Behandlerkravmelding/Endringslogg for behandlerkrav.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>

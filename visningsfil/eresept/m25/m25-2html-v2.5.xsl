@@ -155,25 +155,6 @@
 						</xsl:choose>
 					</xsl:for-each>
 				</xsl:variable>
-				<!-- Deklarerer en variabel for å sjekke om det finnes ikke seponerte legemidler i bruk -->
-				<xsl:variable name="boolNotSeponertString">
-					<xsl:for-each select="descendant::*[local-name()=&quot;Seponering&quot;]/child::*[local-name()=&quot;Tidspunkt&quot;]">
-						<xsl:variable name="datoSeponertFormatert">
-							<xsl:call-template name="formaterDatoForSammenligning">
-								<xsl:with-param name="gittDato" select="."/>
-							</xsl:call-template>
-						</xsl:variable>
-						<xsl:variable name="datoSendtFormatert">
-							<xsl:call-template name="formaterDatoForSammenligning">
-								<xsl:with-param name="gittDato" select="/.//mh:GenDate"/>
-							</xsl:call-template>
-						</xsl:variable>
-						<xsl:choose>
-							<xsl:when test="$datoSeponertFormatert&lt;$datoSendtFormatert">true</xsl:when>
-							<xsl:otherwise>false</xsl:otherwise>
-						</xsl:choose>
-					</xsl:for-each>
-				</xsl:variable>
 				<xsl:variable name="position" select="position()"/>
 				<xsl:call-template name="FellesMeny">
 					<xsl:with-param name="position" select="position()"/>
@@ -226,17 +207,16 @@
 						</tbody>
 					</table>
 				</xsl:if>
-				<!-- Tabell for Enkeloppføringer (ikke seponert) -->
+				<!-- Tabell for Enkeloppføringer (i bruk eller seponert frem i tid) -->
 				<xsl:if test="child::*[local-name()=&quot;EnkeltoppforingLIB&quot; and not(child::*[local-name()=&quot;Seponering&quot;])] or contains($boolSeponertString, 'false')"> 
 					<xsl:variable name="id20">
 						<xsl:value-of select="concat('Legemidler',$position)"/>
 					</xsl:variable>
-					<h2 id="{$id20}" align="center">Legemidler (ikke seponert)</h2>
-					<xsl:for-each select="child::*[local-name()=&quot;EnkeltoppforingLIB&quot;][not(child::*[local-name()='Seponering'])] ">
+					<h2 id="{$id20}" align="center">Legemidler (i bruk eller seponert frem i tid)</h2>
 					<table>
 						<tbody>
 							<tr>
-								<th width="10%"></th>
+								<th width="10%">Seponert</th>
 								<th width="5%">Bruk</th>
 								<th width="5%">ATC</th>
 								<th width="20%">NavnFormStyrke/Virkestoff</th>
@@ -248,7 +228,7 @@
 								<th width="5%">Forskrevet&#160;av</th>
 								<th width="5%">Resept&#160;gyldig&#160;til</th>
 							</tr>
-							<!-- <xsl:for-each select="child::*[local-name()=&quot;EnkeltoppforingLIB&quot;]"> ORGINAL 06.04.2017 -->
+							<xsl:for-each select="child::*[local-name()=&quot;EnkeltoppforingLIB&quot;]">
 								<xsl:choose>
 									<xsl:when test="child::*[local-name()=&quot;Seponering&quot;]">
 										<xsl:variable name="datoSeponertFormatert">
@@ -269,20 +249,17 @@
 										<xsl:call-template name="EnkeltoppforingLIB"/>
 									</xsl:otherwise>
 								</xsl:choose>
-							<!-- </xsl:for-each> ORGINAL 06.04.2017 -->
+							</xsl:for-each>
 						</tbody>
 					</table>
 					<br></br>
-					</xsl:for-each>
 				</xsl:if>
 				<!-- Tabell for Enkeloppføringer (seponert) -->
-				<!-- ORG	<xsl:if test="contains($boolSeponertString, 'true')"> -->
-				<xsl:if test="child::*[local-name()=&quot;EnkeltoppforingLIB&quot; and (child::*[local-name()=&quot;Seponering&quot;])] and contains($boolNotSeponertString, 'true')">
+				<xsl:if test="contains($boolSeponertString, 'true')">
 					<xsl:variable name="id30">
 						<xsl:value-of select="concat('SeponerteLegemidler',$position)"/>
 					</xsl:variable>
 					<h2 id="{$id30}" align="center">Seponerte&#160;legemidler</h2>
-					<xsl:for-each select="child::*[local-name()=&quot;EnkeltoppforingLIB&quot; and child::*[local-name()=&quot;Seponering&quot;]]">
 					<table>
 						<tbody>
 							<tr>
@@ -298,7 +275,7 @@
 								<th width="5%">Forskrevet&#160;av</th>
 								<th width="5%">Resept&#160;gyldig&#160;til</th>
 							</tr>
-							<!-- <xsl:for-each select="child::*[local-name()=&quot;EnkeltoppforingLIB&quot; and child::*[local-name()=&quot;Seponering&quot;]]">-->
+							<xsl:for-each select="child::*[local-name()=&quot;EnkeltoppforingLIB&quot; and child::*[local-name()=&quot;Seponering&quot;]]">
 								<xsl:variable name="datoSeponertFormatert">
 									<xsl:call-template name="formaterDatoForSammenligning">
 										<xsl:with-param name="gittDato" select="child::*[local-name()=&quot;Seponering&quot;]/child::*[local-name()=&quot;Tidspunkt&quot;]"/>
@@ -312,10 +289,9 @@
 								<xsl:if test="$datoSeponertFormatert&lt;$datoSendtFormatert">
 									<xsl:call-template name="EnkeltoppforingLIB"/>
 								</xsl:if>
-							
+							</xsl:for-each>
 						</tbody>
 					</table>
-					</xsl:for-each>
 				</xsl:if>
 				<!-- Tabell for Legemidler som er utlevert -->
 				<xsl:call-template name="LegemiddelPakket"/>

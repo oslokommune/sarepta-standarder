@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd"
+  xmlns:kith="http://www.kith.no/xmlstds"
+  xmlns:pvi="http://ehelse.no/xmlstds/PersonvernInnstilling/v1.0"
+  xmlns:sam="http://ehelse.no/xmlstds/samtykke/v1.0"
+  targetNamespace="http://ehelse.no/xmlstds/samtykke/v1.0" elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+  <import namespace="http://ehelse.no/xmlstds/PersonvernInnstilling/v1.0"
+    schemaLocation="personvern-felles-v1.0.xsd"/>
+  <import namespace="http://www.kith.no/xmlstds" schemaLocation="kith.xsd"/>
+
+  <!-- Class: Samtykkemelding -->
+  <element name="SamtykkeDefinisjonReferanse" type="pvi:PersonvernInnstillingDefinisjonReferanse">
+    <annotation>
+      <documentation>Dette elementet kan benyttes for å referere til en bestemt samtykkedefinisjon i andre meldinger. Referansen peker på en samtykkedefinisjon som er bilateralt avtalt (dvs. kjent av begge parter).</documentation>
+    </annotation>
+  </element>
+  <element name="SamtykkeDefinisjon" type="pvi:PersonvernInnstillingDefinisjon">
+    <annotation>
+      <documentation>Dette elementet kan benyttes i meldinger for å utveksle en definisjon av et samtykke.</documentation>
+    </annotation>
+  </element>
+  <element name="InnbyggersSamtykke" type="pvi:InnbyggersPersonvernInnstilling">
+    <annotation>
+      <documentation>Benyttes for å beskrive en innbyggers samtykke og dets status. Utveksles mellom PVK og registre som abonnerer på samtykker. Angivelse av hvilken innbygger dette gjelder gjøres i KITH hodemeldingen som er bærer når samtykkeinformasjon utveksles.
+       </documentation>
+    </annotation>
+  </element>
+  <element name="SamtykkeMetadata" type="sam:SamtykkeMetadata"/>
+  <complexType name="SamtykkeMetadata">
+    <annotation>
+      <documentation>Utkast til en struktur der en forteller hva et samtykke egentlig innebærer.</documentation>
+    </annotation>
+    <sequence>
+      <element maxOccurs="unbounded" name="SamtykkeOmfangElement" type="sam:SamtykkeOmfangElement">
+        <annotation>
+          <documentation>Dersom samtykket består av flere deler kan dette angis her som flere "omfang". Et eksempel kan være at en ved å samtykke til å delta i et forskningsprosjekt samtykker til oppføring (i forskningsprosjektet) samtidig som en samtykker til at forskeren kan innhente opplysninger fra et eller flere andre registre.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="SamtykkeOmfangElement">
+    <annotation>
+      <documentation>Benyttes i Strukturet del av SamtykkeDefinisjon</documentation>
+    </annotation>
+    <sequence>
+      <element name="Omfang" type="kith:CV" minOccurs="1">
+        <annotation>
+          <documentation>Omfanget av samtykke(for eksempel: Oppføring i et register (OF - Kodeverk fra Volven 7608))</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="Presisering" type="string">
+        <annotation>
+          <documentation>Presisering er en streng som kan inneholde en ytterligere presisering til omfanget. Det benyttes bilateralt avtalte kodeverdier.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="LogiskOmfang" type="string">
+        <annotation>
+          <documentation>Kan ha en av følgende to verdier: 
+- ANGITTE = Gjelder for det som er angitt i Omfang og Presisering 
+- OVRIGE = Gjelder alt unntatt det som er angitt i Omfang og Presisering
+Dersom elementet ikke er med (default), er verdien "ANGITTE".</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="Tidsbegrensning" type="dateTime">
+        <annotation>
+          <documentation>Dersom denne delen av samtykket har begrenset varighet, kan dette angis her. NB! Samtykket gjelder alltid fra registreringstidspunkt.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+</schema>

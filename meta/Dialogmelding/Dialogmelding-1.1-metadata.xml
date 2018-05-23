@@ -7,11 +7,10 @@
 	<Utgitt>02/2017</Utgitt>
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
-	
 	<MerInformasjon>
 		<Informasjon>
 			<Beskrivelse>Dialogmelding 1.1 (HIS 80603:2017)</Beskrivelse>
-		<Referanse>http://ehelse.no/HIS80603-2017</Referanse>
+			<Referanse>http://ehelse.no/HIS80603-2017</Referanse>
 		</Informasjon>
 	</MerInformasjon>
 	
@@ -20,13 +19,13 @@
 				<ProfilId>1</ProfilId>
 				<Beskrivelse>Digital dialog</Beskrivelse>
 				<Identifikator>HIS 1176:2017</Identifikator>
-				<Utgitt>10/2017</Utgitt>
+				<Utgitt>??</Utgitt>
 				<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 				<Status>Fastsatt som standard</Status>
 				<MerInformasjon>
 					<Informasjon>
-						<Beskrivelse>Dialogmelding 1.1</Beskrivelse>
-						<Referanse>http://ehelse.no/HIS80603-2017</Referanse>
+						<Beskrivelse>Digital dialog</Beskrivelse>
+						<Referanse>http://ehelse.no/HIS1176-2017</Referanse>
 					</Informasjon>
 				</MerInformasjon>
 			</Profil>
@@ -34,50 +33,52 @@
 				<ProfilId>2</ProfilId>
 				<Beskrivelse>Helsefaglig dialog</Beskrivelse>
 				<Identifikator>HIS 1077:2017</Identifikator>
-				<Utgitt>10/2006</Utgitt>
+				<Utgitt>??</Utgitt>
 				<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 				<Status>Fastsatt som standard</Status>
 				<MerInformasjon>
 					<Informasjon>
-						<Beskrivelse>Dialogmelding 1.1</Beskrivelse>
-						<Referanse>http://ehelse.no/HIS80603-2017</Referanse>
+						<Beskrivelse>Helsefaglig dialog</Beskrivelse>
+						<Referanse>http://ehelse.no/HIS1077-2017</Referanse>
 					</Informasjon>
 				</MerInformasjon>
 			</Profil>
 			<Profil>
 				<ProfilId>3</ProfilId>
 				<Beskrivelse>Status på henvisning</Beskrivelse>
-				<Identifikator>HIS 1077:2017</Identifikator>
-				<Utgitt>10/2006</Utgitt>
+				<Identifikator>HIS 1206:2018</Identifikator>
+				<Utgitt>03/2018</Utgitt>
 				<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 				<Status>Fastsatt som standard</Status>
 				<MerInformasjon>
 					<Informasjon>
-						<Beskrivelse>Dialogmelding 1.1</Beskrivelse>
-						<Referanse>http://ehelse.no/HIS80603-2017</Referanse>
+						<Beskrivelse>Status på henvisning</Beskrivelse>
+						<Referanse>http://ehelse.no/HIS1206-2018</Referanse>
 					</Informasjon>
 				</MerInformasjon>
 			</Profil>
 		</Profiler>
 
+	
+	
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Dialogmelding v1.1 (GitLab)</Beskrivelse>
+			<Beskrivelse>Dialogmelding v1.1 (PDF)</Beskrivelse>
 			<Referanse>kravdokument/dialogmelding/v11/HIS 80603_2017 Standard for dialogmelding.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>1</ProfilId>
-			<Beskrivelse>Digital dialog (GitLab)</Beskrivelse>
+			<Beskrivelse>Digital dialog (PDF)</Beskrivelse>
 			<Referanse>kravdokument/dialogmelding/v11/HIS 1176_2017 Digital dialog Profil av dialogmelding.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>2</ProfilId>
-			<Beskrivelse>Helsefaglig dialog (GitLab)</Beskrivelse>
+			<Beskrivelse>Helsefaglig dialog (PDF)</Beskrivelse>
 			<Referanse>kravdokument/dialogmelding/v11/HIS 1077_2017 Helsefaglig dialog.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>3</ProfilId>
-			<Beskrivelse>Status på henvisning (GitLab)</Beskrivelse>
+			<Beskrivelse>Status på henvisning (PDF)</Beskrivelse>
 			<Referanse>kravdokument/dialogmelding/v11/HIS_1206-2018 Status på henvisning.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
@@ -193,5 +194,11 @@
 		</Visningsfil>
 	</Visningsfiler>
  
+	<RelaterteFiler>
+		<RelatertFil>
+			<Beskrivelse>Implementering av dialogmelding for spørsmål, svar og avviksmelding HISD 80903:2009 (PDF)</Beskrivelse>
+			<Referanse>relaterteFiler/dialogmelding/HISD_80903_2009-Dialogmelding-Implementeringsveiledning.pdf</Referanse>
+		</RelatertFil>
+	</RelaterteFiler>
 
 </StandardMetadata>

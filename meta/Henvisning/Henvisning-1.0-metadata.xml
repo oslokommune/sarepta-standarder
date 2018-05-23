@@ -7,7 +7,6 @@
 	<Utgitt>07/2005</Utgitt>
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
-	
 	<MerInformasjon>
 		<Informasjon>
 			<Beskrivelse>Henvisningsmelding 1.0 (HIS 80517:2005)</Beskrivelse>
@@ -16,37 +15,38 @@
 	</MerInformasjon>	
 	
 	<Profiler>
-		<Profil>
-			<ProfilId>1</ProfilId>
-			 <Beskrivelse>Tannhelsetjenesten</Beskrivelse>
+        <Profil>
+            <ProfilId>1</ProfilId>
+            <Beskrivelse>Tannhelsetjenesten</Beskrivelse>
             <Identifikator>HIS 1017:2010</Identifikator>
-	        <Utgitt>02/2010</Utgitt>
+	        <Utgitt>08/2010</Utgitt>
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <Status>Fastsatt som standard</Status>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Henvisningsmelding 1.0</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS80517-2005</Referanse>
+	                <Beskrivelse>Henvisningsmelding: Tannhelsetjenesten</Beskrivelse>
+		            <Referanse>http://ehelse.no/HIS107-2010</Referanse>
 		        </Informasjon>
 	        </MerInformasjon>
-		</Profil>
-	</Profiler>
+        </Profil>
+    </Profiler>
+	
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Henvisning v1.0 (GitLab)</Beskrivelse>
+			<Beskrivelse>Henvisning v1.0 (PDF)</Beskrivelse>
 			<Referanse>kravdokument/henvisning/HIS_80517_2005_Henvisning_v1.0 -korrigert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>1</ProfilId>
-			<Beskrivelse>Tannhelsetjenesten (GitLab)</Beskrivelse>
+			<Beskrivelse>Tannhelsetjenesten (PDF)</Beskrivelse>
 			<Referanse>kravdokument/henvisning/HIS_1017_2010 XML henvisning Meldingsprofil tannhelse.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
 	
 	<Skjemaer>
 		<Skjema>
-			<Referanse>skjema/Henvisning/Henvisning-v1.0.xsd</Referanse>
+			<Referanse>skjema/henvisning/Henvisning-v1.0.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/Henvisning/2005-07-08</Namespace>
 		</Skjema>
 	</Skjemaer>
@@ -169,16 +169,19 @@
 	
 	<Eksempler>
 		<Eksempel>
+			<ProfilId>0</ProfilId>
 			<Referanse>eksempel/Henvisning/Henvisning_v1-0/henvisning strukturert_v1.0_n.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>0</ProfilId>
 			<Referanse>eksempel/Henvisning/Henvisning_v1-0/henvisning_v1.0_n.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>0</ProfilId>
 			<Referanse>eksempel/Henvisning/Henvisning_v1-0/henvisning_v1.0_m.xml</Referanse>
 		</Eksempel>
-			
 		<Eksempel>
+			<ProfilId>0</ProfilId>
 			<Referanse>eksempel/Henvisning/Henvisning_v1-0/henvisning_v1.0_c.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
