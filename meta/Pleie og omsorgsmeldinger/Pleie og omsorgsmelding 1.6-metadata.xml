@@ -25,7 +25,7 @@
 	        <Status>Fastsatt som standard</Status>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Pleie og omsorgsmelding: Innleggelsesrapport v1.5</Beskrivelse>
+	                <Beskrivelse>Pleie og omsorgsmelding: Innleggelsesrapport v1.6</Beskrivelse>
 		            <Referanse>http://ehelse.no/HIS1143-2014</Referanse>
 		        </Informasjon>
 	        </MerInformasjon>
@@ -38,7 +38,7 @@
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Pleie- og omsorgsmelding: Helseopplysninger v1.5</Beskrivelse>
+	                <Beskrivelse>Pleie- og omsorgsmelding: Helseopplysninger v1.6</Beskrivelse>
 		            <Referanse>http://ehelse.no/HIS1144-2014</Referanse>
 		        </Informasjon>  
 	        </MerInformasjon>
@@ -51,7 +51,7 @@
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Pleie- og omsorgsmelding: Helseopplysninger til lege v1.5</Beskrivelse>
+	                <Beskrivelse>Pleie- og omsorgsmelding: Helseopplysninger til lege v1.6</Beskrivelse>
 		            <Referanse>http://ehelse.no/HIS1145-2014</Referanse>
 		        </Informasjon>  
 	        </MerInformasjon>
@@ -64,7 +64,7 @@
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Pleie- og omsorgsmelding: Orientering om tjenestetilbud v1.5</Beskrivelse>
+	                <Beskrivelse>Pleie- og omsorgsmelding: Orientering om tjenestetilbud v1.6</Beskrivelse>
 		            <Referanse>http://ehelse.no/HIS1146-2014</Referanse>
 		        </Informasjon>  
 	        </MerInformasjon>
@@ -77,7 +77,7 @@
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Pleie- og omsorgsmelding: Medisinske opplysninger v1.5</Beskrivelse>
+	                <Beskrivelse>Pleie- og omsorgsmelding: Medisinske opplysninger v1.6</Beskrivelse>
 		            <Referanse>http://ehelse.no/HIS1147-2014</Referanse>
 		        </Informasjon>  
 	        </MerInformasjon>
@@ -90,7 +90,7 @@
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Pleie- og omsorgsmelding: Utskrivningsrapport v1.5</Beskrivelse>
+	                <Beskrivelse>Pleie- og omsorgsmelding: Utskrivningsrapport v1.6</Beskrivelse>
 		            <Referanse>http://ehelse.no/HIS1148-2014</Referanse>
 		        </Informasjon>  
 	        </MerInformasjon>
@@ -103,7 +103,7 @@
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Pleie- og omsorgsmelding: Pasientlogistikkmeldinger v1.5</Beskrivelse>
+	                <Beskrivelse>Pleie- og omsorgsmelding: Pasientlogistikkmeldinger v1.6</Beskrivelse>
 		            <Referanse>http://ehelse.no/HIS1149-2014</Referanse>
 		        </Informasjon>  
 	        </MerInformasjon>
