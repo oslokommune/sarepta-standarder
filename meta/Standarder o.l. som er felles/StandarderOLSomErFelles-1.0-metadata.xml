@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
-	<Navn>Felles for flere meldingsstandarder</Navn>
+	<Navn>Standarder o.l. som er felles</Navn>
 	<Versjon>1.0</Versjon>
 	<Identifikator>Felles</Identifikator>
 	<Utgitt>04/2018</Utgitt>
