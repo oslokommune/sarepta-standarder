@@ -51,7 +51,7 @@
 	</Skjemaer>
 	<Felleskomponenter>
 		<Felleskomponent>
-			<Referanse>skjema/sysvak/commontypes.xsd</Referanse>
+			<Referanse>skjema/sysvak/CommonTypes.xsd</Referanse>
 		</Felleskomponent>
 		<Felleskomponent>
 			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
