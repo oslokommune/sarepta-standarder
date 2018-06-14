@@ -2,6 +2,7 @@
 <!-- 
 
 Endringslogg
+- 06.06.28: v4.1.10 - Bugfix hvor 'Andre relevante tilstander' var satt til å bli oppgitt i elementet ReasonAsText istedet for InfItem. Endret 'CAVE' til 'Kritisk informasjon'.
 - 03.05.18: v4.1.9 - Bugfix hvor informasjon ang. KontaktpersonHelspersonell ikke ble vist
 - 11.04.18: v4.1.8 - Noen endringer i overskrifter. Fikset bug hvor informasjon om nærmeste pårørende ikke ble vist. La til visning av Legemiddelgjennomgang fra poKomponent.
 - 05.01.18: v4.1.7 - Tilpasset til Henvisning v2.0
@@ -45,7 +46,7 @@ Forfatter:
 	<xsl:variable name="std-col" select="8"/>
 	<xsl:variable name="std-td" select="100"/>
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'henvisning v.uavhengig - v4.1.9 '"/>
+	<xsl:variable name="versjon" select="'henvisning v.uavhengig - v4.1.10 '"/>
 
 	<xsl:variable name="VisOvrigHelsetjenesteInfoVisSkjul" select="true()"/>
 	<xsl:variable name="VisDokInfoVisSkjul" select="true()"/>
@@ -416,7 +417,7 @@ Forfatter:
 				</xsl:variable>
 
 				<h2 id="{$id20}">
-					<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='CAVE']">CAVE</xsl:if>
+					<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='CAVE']">Kritisk informasjon</xsl:if>
 					<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='CAVE'] and //child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='NB'] ">&#160;og&#160;</xsl:if>
 					<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='NB']">NB-opplysninger</xsl:if>
 				</h2>
@@ -465,15 +466,23 @@ Forfatter:
 				</div>
 			</xsl:if>
 			<!-- Overskrift for Andre relevante tilstander -->
-			<xsl:if test="//child::*[local-name()='ReasonAsText'][child::*[local-name()='Heading']/@V='ART']">
+			<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='ART']">
 				<xsl:variable name="id35">
 					<xsl:value-of select="concat('ART',$position)"/>
 				</xsl:variable>
 				<h2 id="{$id35}">Andre relevante tilstander</h2>
 
 				<div class="eh-section">
-					<xsl:for-each select="child::*[local-name()='ReasonAsText'][child::*[local-name()='Heading']/@V='ART']">
-						<xsl:call-template name="eh-ReasonAsText"/>
+					<xsl:for-each select="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='ART']">
+						<xsl:for-each select="child::*[local-name()='ResultItem']">
+							<xsl:call-template name="eh-ResultItem"/>
+						</xsl:for-each>
+						<xsl:for-each select="child::*[local-name()='Medication']">
+							<xsl:call-template name="eh-Medication"/>
+						</xsl:for-each>
+						<xsl:for-each select="child::*[local-name()='Observation']">
+							<xsl:call-template name="eh-Observation"/>
+						</xsl:for-each>
 					</xsl:for-each>
 				</div>
 			</xsl:if>
@@ -1142,7 +1151,7 @@ Forfatter:
 						<li>
 							<xsl:variable name="temp20" select="concat('CAVE',$position)"/>
 							<a href="#{$temp20}">
-								<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='CAVE']">CAVE</xsl:if>
+								<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='CAVE']">Kritisk informasjon</xsl:if>
 								<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='CAVE' and child::*[local-name()='Type']/@V='NB']">&#160;og&#160;</xsl:if>
 								<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='NB']">NB-opplysninger</xsl:if>
 							</a>
@@ -1154,7 +1163,7 @@ Forfatter:
 							<a href="#{$temp30}">Aktuell problemstilling</a>
 						</li>
 					</xsl:if>
-					<xsl:if test="//child::*[local-name()='ReasonAsText'][child::*[local-name()='Heading']/@V='ART']">
+					<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='ART']">
 						<li>
 							<xsl:variable name="temp35" select="concat('ART',$position)"/>
 							<a href="#{$temp35}">Andre relevante tilstander</a>
