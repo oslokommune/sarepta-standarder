@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SYSVAK - HendelseResponse versjon 1.0 - 2008.01.01 -->
+<xs:schema xmlns="http://www.kith.no/xmlstds/sysvak/hendelseresponse/2008-01-01" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" targetNamespace="http://www.kith.no/xmlstds/sysvak/hendelseresponse/2008-01-01" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:sysvak="http://www.kith.no/xmlstds/sysvak">
+	<xs:import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="felleskomponent1.xsd" />
+	<xs:import namespace="http://www.kith.no/xmlstds/sysvak" schemaLocation="CommonTypes.xsd" />
+	<xs:element name="HendelseResponse">
+		<xs:annotation>
+			<xs:documentation>Meldingstypen definerer et svar på en hendelsesregistrering.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Behandlingsresultat" type="sysvak:Behandlingsresultat" />
+				<xs:element name="VaksinandIdent" minOccurs="0" type="fk1:Ident">
+					<xs:annotation>
+						<xs:documentation>
+							Identifikasjon og type identifikasjon for vaksinanden hendelsen ble tilknyttet.
+							Hvis VaksinandIdent ikke representert i svaret betyr det at SYSVAK ikke har funnet fødselsnummer/d-nummer for vaksinanden (hendelsen er allikevel registrert).
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

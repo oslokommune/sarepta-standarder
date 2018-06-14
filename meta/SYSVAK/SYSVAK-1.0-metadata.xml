@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>SYSVAK</Navn>
+	<Versjon>1.0</Versjon>
+	<Identifikator>SYSVAK</Identifikator>
+	<Utgitt>01/2008</Utgitt>
+	<Ansvarlig>Folkehelseinstituttet</Ansvarlig>
+	<Status>Fastsatt som standard</Status>	
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>SYSVAK</Beskrivelse>
+			<Referanse>http://ehelse.no/SYSVAK</Referanse>
+		</Informasjon>
+	</MerInformasjon>
+	
+
+
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>Dok-31 SYSVAK meldingsbeskrivelse (PDF)</Beskrivelse>
+			<Referanse>kravdokument/SYSVAK/dok-31---sysvak-meldingsbeskrivelse.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+	
+	<Skjemaer>
+		<Skjema>
+			<Referanse>skjema/sysvak/hendelserequest.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/sysvak/hendelserequest/2008-01-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/sysvak/hendelseresponse.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/sysvak/hendelseresponse/2008-01-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/sysvak/kodeverkrequest.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/sysvak/kodeverkrequest/2008-01-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/sysvak/kodeverkresponse.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/sysvak/kodeverkresponse/2008-01-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/sysvak/sokrequest.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/sysvak/sokrequest/2008-01-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/sysvak/sokresponse.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/sysvak/sokresponse/2008-01-01</Namespace>
+		</Skjema>
+	</Skjemaer>
+	<Felleskomponenter>
+		<Felleskomponent>
+			<Referanse>skjema/sysvak/CommonTypes.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Referanse>skjema/felleskomponenter/felleskomponent1.xsd</Referanse>
+		</Felleskomponent>
+	</Felleskomponenter>
+	<Eksempler>
+		<Eksempel>
+			<Referanse>eksempel/sysvak/100_krequest.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/sysvak/100_krequest_response.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/sysvak/210_hrequest_vaksinering_vaksinandident.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/sysvak/210_hrequest_vaksinering_vaksinandident_response.xml</Referanse>
+		</Eksempel>
+				<Eksempel>
+			<Referanse>eksempel/sysvak/211_hrequest_vaksinasjon_sletting.xml</Referanse>
+		</Eksempel>
+				<Eksempel>
+			<Referanse>eksempel/sysvak/211_hrequest_vaksinasjon_sletting_response.xml</Referanse>
+		</Eksempel>
+				<Eksempel>
+			<Referanse>eksempel/sysvak/220_hrequest_manglendevaksinering_vaksinandutenident.xml</Referanse>
+		</Eksempel>
+				<Eksempel>
+			<Referanse>eksempel/sysvak/220_hrequest_manglendevaksinering_vaksinandutenident_response.xml</Referanse>
+		</Eksempel>
+				<Eksempel>
+			<Referanse>eksempel/sysvak/290_hrequest_med_feil.xml</Referanse>
+		</Eksempel>
+				<Eksempel>
+			<Referanse>eksempel/sysvak/310_srequest_med_ident.xml</Referanse>
+		</Eksempel>
+				<Eksempel>
+			<Referanse>eksempel/sysvak/310_srequest_med_ident_response.xml</Referanse>
+		</Eksempel>
+				<Eksempel>
+			<Referanse>eksempel/sysvak/320_srequest_uten_ident.xml</Referanse>
+		</Eksempel>
+				<Eksempel>
+			<Referanse>eksempel/sysvak/320_srequest_uten_ident_response.xml</Referanse>
+		</Eksempel>
+				<Eksempel>
+			<Referanse>eksempel/sysvak/390_srequest_med_feil_response.xml</Referanse>
+		</Eksempel>
+	</Eksempler>
+	<RelaterteFiler>
+		<RelatertFil>
+			<Referanse>relaterteFiler/sysvak/valideringskoder_per20170124.xml</Referanse>
+		</RelatertFil>
+	</RelaterteFiler>
+</StandardMetadata>
