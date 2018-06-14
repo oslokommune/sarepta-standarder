@@ -34,7 +34,10 @@
 			<Beskrivelse>Implementasjonsguide API for bruk av kommunikasjonsparametere (PDF)</Beskrivelse>
 			<Referanse>relaterteFiler/EBXMLrammeverk/HISD_1177_2017 Implementasjonsguide API for bruk av kommunikasjonsparametere.pdf</Referanse>
 		</RelatertFil>
+		<RelatertFil>
+			<Beskrivelse>Service, Action og Role i ebXML-konvolutten (PDF)</Beskrivelse>
+			<Referanse>relaterteFiler/EBXMLrammeverk/HISD_1209_2018 Service_Action_og_Role i ebXML-konvolutten.pdf</Referanse>
+		</RelatertFil>
 	</RelaterteFiler>
-
 
 </StandardMetadata>
