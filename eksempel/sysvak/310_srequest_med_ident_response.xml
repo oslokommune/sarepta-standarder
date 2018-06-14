@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MsgHead xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd" xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24">
+  <MsgInfo>
+    <Type V="SOKRESPONSE" DN="SOKRESPONSE" />
+    <MIGversion>v1.2 2006-05-24</MIGversion>
+    <GenDate>2007-12-18T16:40:09</GenDate>
+    <MsgId>b3b6f4f7-1f46-4db7-89e3-41ff2a89d448</MsgId>
+    <ConversationRef>
+      <RefToParent>CB58AD82-67C8-4662-91FB-D1CEAF2B10C8</RefToParent>
+      <RefToConversation>CB58AD82-67C8-4662-91FB-D1CEAF2B10C8</RefToConversation>
+    </ConversationRef>
+    <Sender>
+      <Organisation>
+        <OrganisationName>NASJONALT FOLKEHELSEINSTITUTT</OrganisationName>
+        <Ident>
+          <Id>983744516</Id>
+          <TypeId V="ENH" S="2.16.578.1.12.4.1.1.9051" DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" />
+        </Ident>
+      </Organisation>
+    </Sender>
+    <Receiver>
+      <Organisation>
+        <OrganisationName>AVSENDER HELSEENHET</OrganisationName>
+        <Ident>
+          <Id>123456789</Id>
+          <TypeId V="ENH" S="2.16.578.1.12.4.1.1.9051" DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" />
+        </Ident>
+      </Organisation>
+    </Receiver>
+  </MsgInfo>
+  <Document>
+    <RefDoc>
+      <MsgType V="XML" DN="XML instans" />
+      <Content>
+        <SokResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.kith.no/xmlstds/sysvak/sokresponse/2008-01-01" xsi:schemaLocation="http://www.kith.no/xmlstds/sysvak/sokresponse/2008-01-01 SokResponse.xsd">
+          <Behandlingsresultat>
+            <HarValideringsFeil xmlns="http://www.kith.no/xmlstds/sysvak">false</HarValideringsFeil>
+            <HarValideringsAdvarsel xmlns="http://www.kith.no/xmlstds/sysvak">false</HarValideringsAdvarsel>
+            <HarValideringsInformasjon xmlns="http://www.kith.no/xmlstds/sysvak">false</HarValideringsInformasjon>
+          </Behandlingsresultat>
+          <Vaksinand>
+            <Ident xmlns="http://www.kith.no/xmlstds/sysvak">
+              <Id xmlns="http://www.kith.no/xmlstds/felleskomponent1">15076500565</Id>
+              <TypeId V="FNR" S="2.16.578.1.12.4.1.1.8327" DN="Fødselsnummer" xmlns="http://www.kith.no/xmlstds/felleskomponent1" />
+            </Ident>
+            <Fodselsdato xmlns="http://www.kith.no/xmlstds/sysvak">1976-07-15</Fodselsdato>
+            <Kjonn V="1" DN="Mann" xmlns="http://www.kith.no/xmlstds/sysvak" />
+            <RegisterstatusIFolkeregisteret V="1" DN="Bosatt" xmlns="http://www.kith.no/xmlstds/sysvak" />
+            <Fornavn xmlns="http://www.kith.no/xmlstds/sysvak">ROLAND</Fornavn>
+            <Etternavn xmlns="http://www.kith.no/xmlstds/sysvak">GUNDERSEN</Etternavn>
+            <Adresse xmlns="http://www.kith.no/xmlstds/sysvak">
+              <Bostedsomrade>
+                <Kommune V="0438" DN="Alvdal" />
+              </Bostedsomrade>
+              <Gateadresse>
+                <Gatenavn>Flåklypa</Gatenavn>
+                <Husnummer>31</Husnummer>
+              </Gateadresse>
+            </Adresse>
+            <Vaksinasjon>
+              <HendelseAksjon xmlns="http://www.kith.no/xmlstds/sysvak">Sletting</HendelseAksjon>
+              <Konsultasjonsdato xmlns="http://www.kith.no/xmlstds/sysvak">2004-08-13</Konsultasjonsdato>
+              <Registreringsdato xmlns="http://www.kith.no/xmlstds/sysvak">2004-08-13T15:00:00</Registreringsdato>
+              <Vaksine V="DIF01" S="2.16.578.1.12.4.1.1.9501" DN="Difteri (toksoid)" xmlns="http://www.kith.no/xmlstds/sysvak" />
+              <RegistrerendeHelseenhet xmlns="http://www.kith.no/xmlstds/sysvak">
+                <Id xmlns="http://www.kith.no/xmlstds/felleskomponent1">971318864</Id>
+                <TypeId V="ENH" S="2.16.578.1.12.4.1.1.9051" DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" xmlns="http://www.kith.no/xmlstds/felleskomponent1" />
+              </RegistrerendeHelseenhet>
+              <ErVaksinasjonSattPaStedet xmlns="http://www.kith.no/xmlstds/sysvak">true</ErVaksinasjonSattPaStedet>
+              <Preparat V="DIF01_001" S="2.16.578.1.12.4.1.1.9554" DN="Difterivaccine til primærvaksinasjon &quot;SSI&quot;" xmlns="http://www.kith.no/xmlstds/sysvak" />
+            </Vaksinasjon>
+          </Vaksinand>
+        </SokResponse>
+      </Content>
+    </RefDoc>
+  </Document>
+</MsgHead>
