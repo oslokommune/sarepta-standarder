@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- SYSVAK - HendelseRequest versjon 1.0 - 2008.01.01 -->
 <xs:schema xmlns="http://www.kith.no/xmlstds/sysvak/hendelserequest/2008-01-01" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:kith="http://www.kith.no/xmlstds" xmlns:sysvak="http://www.kith.no/xmlstds/sysvak" targetNamespace="http://www.kith.no/xmlstds/sysvak/hendelserequest/2008-01-01" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:import namespace="http://www.kith.no/xmlstds" schemaLocation="../../../felleskomponenter/kith.xsd"/>
-	<xs:import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="../../../felleskomponenter/felleskomponent1.xsd"/>
-	<xs:import namespace="http://www.kith.no/xmlstds/sysvak" schemaLocation="../../CommonTypes.xsd"/>
+	<xs:import namespace="http://www.kith.no/xmlstds" schemaLocation="kith.xsd"/>
+	<xs:import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="felleskomponent1.xsd" />
+	<xs:import namespace="http://www.kith.no/xmlstds/sysvak" schemaLocation="CommonTypes.xsd" />
 	<xs:element name="HendelseRequest">
 		<xs:annotation>
 			<xs:documentation>Meldingstypen definerer en hendelsesregistrering, dvs. enten en vaksinasjon eller manglende vaksinering for en gitt vaksinand.</xs:documentation>
@@ -26,8 +26,8 @@
 									<xs:sequence>
 										<xs:element name="Fodselsdato" type="xs:date"/>
 										<xs:element name="Kjonn" type="kith:CS"/>
-										<xs:element name="Fornavn" type="xs:string" minOccurs="0"/>
-										<xs:element name="Mellomnavn" type="xs:string" minOccurs="0"/>
+										<xs:element name="Fornavn" type="xs:string" minOccurs="0" />
+										<xs:element name="Mellomnavn" type="xs:string" minOccurs="0" />
 										<xs:element name="Etternavn" type="xs:string">
 											<xs:annotation>
 												<xs:documentation>Etternavn er obligatorisk ved registrering av vaksinand uten ident</xs:documentation>
@@ -36,8 +36,8 @@
 										<xs:element name="Adresse" minOccurs="0">
 											<xs:complexType>
 												<xs:sequence>
-													<xs:element name="Bostedsomrade" type="sysvak:Bostedsomrade" minOccurs="0"/>
-													<xs:element name="Gateadresse" type="sysvak:Gateadresse" minOccurs="0"/>
+													<xs:element name="Bostedsomrade" type="sysvak:Bostedsomrade" minOccurs="0" />
+													<xs:element name="Gateadresse" type="sysvak:Gateadresse" minOccurs="0" />
 												</xs:sequence>
 											</xs:complexType>
 										</xs:element>
@@ -66,8 +66,8 @@
 							<xs:annotation>
 								<xs:documentation>En hendelsesregistrering må enten være av type vaksinasjon eller manglende vaksinering.</xs:documentation>
 							</xs:annotation>
-							<xs:element name="Vaksinasjon" type="sysvak:Vaksinasjon"/>
-							<xs:element name="ManglendeVaksinering" type="sysvak:ManglendeVaksinering"/>
+							<xs:element name="Vaksinasjon" type="sysvak:Vaksinasjon" />
+							<xs:element name="ManglendeVaksinering" type="sysvak:ManglendeVaksinering" />
 						</xs:choice>
 					</xs:complexType>
 				</xs:element>
