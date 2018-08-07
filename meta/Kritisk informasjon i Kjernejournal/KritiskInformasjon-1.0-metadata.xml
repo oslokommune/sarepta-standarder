@@ -12,13 +12,17 @@
 			<Beskrivelse>Kritisk informasjon i Kjernejournal</Beskrivelse>
 			<Referanse>https://ehelse.no/standarder-kodeverk-og-referansekatalog/standarder-og-referansekatalog/standard-for-kritisk-informasjon-i-kjernejournal-his-1202-2018</Referanse>
 		</Informasjon>
+		<Informasjon>
+			<Beskrivelse>Kritisk informasjon i Kjernejournal - klinisk beskrivelse og kodeverk (PDF)</Beskrivelse>
+			<Referanse>https://ehelse.no/Lists/Publikasjoner/Attachments/30/Kritisk%20informasjon%20-%20klinisk%20beskrivelse%20og%20kodeverk_pdf.pdf</Referanse>
+		</Informasjon>
 	</MerInformasjon>
 	
 
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Kritisk informasjon i Kjernejournal (PDF)</Beskrivelse>
+			<Beskrivelse>Informasjonsmodell for kritisk informasjon i Kjernejournal (PDF)</Beskrivelse>
 			<Referanse>kravdokument/kritiskinformasjon/HIS1163_2017 Informasjonsmodell kritisk informasjon.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
@@ -26,13 +30,10 @@
 			<Referanse>kravdokument/kritiskinformasjon/HIS 1202_2018 Standard for kritisk informasjon i Kjernejournal.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
-	
-	
-	
-	<RelaterteFiler>
-		<RelatertFil>
-			<Beskrivelse>Kritisk informasjon i Kjernejournal - klinisk beskrivelse og kodeverk (PDF)</Beskrivelse>
-			<Referanse>https://ehelse.no/Lists/Publikasjoner/Attachments/30/Kritisk%20informasjon%20-%20klinisk%20beskrivelse%20og%20kodeverk_pdf.pdf</Referanse>
-		</RelatertFil>
-	</RelaterteFiler>
+	<Skjemaer>
+		<Skjema>
+			<Referanse>skjema/kritiskInformasjon/KritiskInformasjonKjernejournal.rar (RAR)</Referanse>
+			<Namespace>http://ehelse.no/fhir/StructureDefinition</Namespace>
+		</Skjema>
+	</Skjemaer>
 </StandardMetadata>
