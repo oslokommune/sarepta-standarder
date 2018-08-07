@@ -148,15 +148,8 @@
 		<!-- Epikrise v1.0, v1.1, v1.2. Skjema epikrise har flere elementer enn henvisning, men de brukes ikke i denne templaten. -->
 		<!-- Merk: rad-element ikke inkludert her. -->
 	
-		<xsl:variable name="stripedCss">
-			<xsl:choose>
-				<xsl:when test="$striped = 'true'">striped</xsl:when>
-				<xsl:otherwise></xsl:otherwise>
-			</xsl:choose>
-		</xsl:variable>
 
-		<div class="eh-col-1 eh-field {$stripedCss}">
-			<xsl:if test="position()=1"><span class="eh-label">Legemiddel</span></xsl:if>
+		<div class="eh-col-1 eh-field {$striped}">
 			<span class="eh-text">
 				<xsl:for-each select="child::*[local-name()='DrugId']">
 					<xsl:call-template name="k-dummy"/>
@@ -164,8 +157,7 @@
 			</span>
 		</div>
 
-		<div class="eh-col-1 eh-field {$stripedCss}">
-			<xsl:if test="position()=1"><span class="eh-label">Status</span></xsl:if>
+		<div class="eh-col-2 eh-field {$striped}">
 			<span class="eh-text">
 				<xsl:choose>
 					<xsl:when test="namespace-uri() = 'http://ehelse.no/xmlstds/henvisning/2017-11-30'"><!-- Henvisning v2.0-->
@@ -183,8 +175,7 @@
 		</div>
 
 		<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='UnitDose'] or //child::*[local-name()='Medication']/child::*[local-name()='QuantitySupplied']">
-			<div class="eh-col-1 eh-field {$stripedCss}">
-				<xsl:if test="position()=1"><span class="eh-label">Mengde</span></xsl:if>
+			<div class="eh-col-1 eh-field {$striped}">
 				<span class="eh-text">
 					<xsl:if test="child::*[local-name()='UnitDose']">
 						<xsl:value-of select="child::*[local-name()='UnitDose']/@V"/>&#160;<xsl:value-of select="child::*[local-name()='UnitDose']/@U "/>
@@ -198,14 +189,7 @@
 		</xsl:if>
 
 		<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='DosageText'] or //child::*[local-name()='Medication']/child::*[local-name()='IntendedDuration']">
-			<div class="eh-col-1 eh-field {$stripedCss}">
-				<xsl:if test="position()=1">
-					<span class="eh-label">
-						<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='DosageText']">Dosering</xsl:if>
-						<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='DosageText'] and //child::*[local-name()='Medication']/child::*[local-name()='IntendedDuration']">/</xsl:if>
-						<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='IntendedDuration']">Varighet</xsl:if>
-					</span>
-				</xsl:if>
+			<div class="eh-col-2 eh-field {$striped}">
 				<span class="eh-text">
 					<xsl:if test="child::*[local-name()='DosageText']">
 						<xsl:call-template name="line-breaks">
@@ -220,8 +204,7 @@
 		</xsl:if>
 
 		<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='Comment']">
-			<div class="eh-col-1 eh-field {$stripedCss}">
-				<xsl:if test="position()=1"><span class="eh-label">Kommentar</span></xsl:if>
+			<div class="eh-col-1 eh-field {$striped}">
 				<span class="eh-text">
 					<xsl:call-template name="line-breaks">
 						<xsl:with-param name="text" select="child::*[local-name()='Comment']"/>
@@ -231,8 +214,7 @@
 		</xsl:if>
 
 		<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Medication']]/child::*[local-name()='StartDateTime']">
-			<div class="eh-col-1 eh-field {$stripedCss}">
-				<xsl:if test="position()=1"><span class="eh-label">Starttidspunkt</span></xsl:if>
+			<div class="eh-col-1 eh-field {$striped}">
 				<span class="eh-text">
 					<xsl:choose>
 						<xsl:when test="../child::*[local-name()='StartDateTime']/@V"> <!-- kith:TS -->
@@ -253,8 +235,7 @@
 		</xsl:if>
 
 		<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Medication']]/child::*[local-name()='EndDateTime']">
-			<div class="eh-col-1 eh-field {$stripedCss}">
-				<xsl:if test="position()=1"><span class="eh-label">Sluttidspunkt</span></xsl:if>
+			<div class="eh-col-1 eh-field {$striped}">
 				<span class="eh-text">
 					<xsl:choose>
 						<xsl:when test="../child::*[local-name()='EndDateTime']/@V"> <!-- kith:TS -->
@@ -275,8 +256,7 @@
 		</xsl:if>
 
 		<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Medication']]/child::*[local-name()='OrgDate']">
-			<div class="eh-col-1 eh-field eh-last-child {$stripedCss}">
-				<xsl:if test="position()=1"><span class="eh-label">Tidspunkt for opprinnelse</span></xsl:if>
+			<div class="eh-col-1 eh-field eh-last-child {$striped}">
 				<span class="eh-text">
 					<xsl:choose>
 						<xsl:when test="../child::*[local-name()='OrgDate']/@V"> <!-- kith:TS -->
@@ -1289,75 +1269,47 @@
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++ -->
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++ -->
 
-	<xsl:template name="eh-Pakkeforlop"> <!-- Henvisning/Pakkeforlop -->
+	<xsl:template name="eh-Pakkeforlop"> <!-- Henvisning 2.0/Pakkeforlop -->
 		<xsl:param name="striped" />
-		<!-- Henvisning v2.0 -->
-			
-		<xsl:variable name="stripedCss">
-			<xsl:choose>
-				<xsl:when test="$striped = 'true'">striped</xsl:when>
-				<xsl:otherwise></xsl:otherwise>
-			</xsl:choose>
-		</xsl:variable>
 		
-		<div class="eh-col-1 eh-field {$stripedCss}">
-				<span class="eh-label">Kode</span>
-				<span class="eh-text">
-					<xsl:value-of select="child::*[local-name()='Pakkeforlopskode']/@V"/>
-				</span>
+		<div class="eh-col-1 eh-field {$striped}">
+			<span class="eh-text">
+				<xsl:value-of select="child::*[local-name()='Pakkeforlopskode']/@V"/>
+			</span>
 		</div>
 		
-		<div class="eh-col-2 eh-field {$stripedCss}">
-				<span class="eh-label">Navn</span>
-				<span class="eh-text">
+		<div class="eh-col-2 eh-field {$striped}">
+			<span class="eh-text">
 				<xsl:for-each select="child::*[local-name()='Pakkeforlopskode']">
 					<xsl:choose>
-						<xsl:when test="contains('8480','8480')">
+						<xsl:when test="contains(@S,'8480')">
 							<xsl:call-template name="k-8480"/>
 						</xsl:when>
-						<xsl:when test="contains(child::*[local-name()='Pakkeforlopskode']/@S,'9173')">
+						<xsl:when test="contains(@S,'9173')">
 							<xsl:call-template name="k-9173"/>
 						</xsl:when>
-						<xsl:when test="contains(child::*[local-name()='Pakkeforlopskode']/@S,'9174')">
+						<xsl:when test="contains(@S,'9174')">
 							<xsl:call-template name="k-9174"/>
 						</xsl:when>
-						<xsl:when test="contains(child::*[local-name()='Pakkeforlopskode']/@S,'9175')">
+						<xsl:when test="contains(@S,'9175')">
 							<xsl:call-template name="k-9175"/>
 						</xsl:when>
-						<xsl:when test="contains(child::*[local-name()='Pakkeforlopskode']/@S,'9176')">
+						<xsl:when test="contains(@S,'9176')">
 							<xsl:call-template name="k-9176"/>
 						</xsl:when>
-						<xsl:when test="contains(child::*[local-name()='Pakkeforlopskode']/@S,'9321')">
+						<xsl:when test="contains(@S,'9321')">
 							<xsl:call-template name="k-9321"/>
 						</xsl:when>
 					</xsl:choose>
 				</xsl:for-each>
-				</span>
-		</div>
-		<div class="eh-col-3 eh-field {$stripedCss}">
-				<span class="eh-label">Merknad</span>
-				<span class="eh-text">
-					<xsl:value-of select="child::*[local-name()='Merknad']"/>
-				</span>
-		</div>
-		<!-- <div class="eh-col-1 eh-field {$stripedCss}">
-			<span class="eh-label">Status</span>
-			<span class="eh-text">
-				<xsl:choose>
-					<xsl:when test="namespace-uri() = 'http://ehelse.no/xmlstds/henvisning/2017-11-30'"> 
-						<xsl:for-each select="child::*[local-name()='Status']">
-							<xsl:call-template name="k-9101"/>
-						</xsl:for-each>
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:for-each select="child::*[local-name()='Status']">
-							<xsl:call-template name="k-7307"/>
-						</xsl:for-each>
-					</xsl:otherwise>
-				</xsl:choose>
 			</span>
 		</div>
--->
+		
+		<div class="eh-col-3 eh-field {$striped}">
+			<span class="eh-text">
+				<xsl:value-of select="child::*[local-name()='Merknad']"/>
+			</span>
+		</div>
 	
 	</xsl:template>
 	

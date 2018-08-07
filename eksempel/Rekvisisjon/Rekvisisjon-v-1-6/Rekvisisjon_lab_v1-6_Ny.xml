@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -->
+<!-- Dette er en testmelding med fiktive personer -->
+<!-- -->
+<Message xmlns="http://www.kith.no/xmlstds/rekvisisjon/2012-02-15" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/rekvisisjon/2012-02-15 Rekvisisjon-v1.6.xsd">
+	<Type V="REQ_LAB" DN="Rekvisisjon-Laboratoriemedisin"/>
+	<MIGversion>v1.6 2012-02-15</MIGversion>
+	<GenDate V="2018-02-06T08:54:01"/>
+	<MsgId>6d821350-0b3a-11e8-b566-0800200c9a66</MsgId>
+	<ServReq>
+		<ServType V="N" DN="Ny"/>
+		<IssueDate V="2018-02-06T08:51:11"/>
+		<MsgDescr V="LAB" DN="Laboratoriemedisin"/>
+		<Id>79209fb0-0b3a-11e8-b566-0800200c9a66</Id>
+		<RequestedPrioReport V="N" DN="Normal"/>
+		<Patient>
+			<Sex V="2" DN="Kvinne"/>
+			<DateOfBirth V="1969-11-13"/>
+			<Name>Danser, Line</Name>
+			<OffId>13116900216</OffId>
+			<TypeOffId V="FNR" DN="Fødselsnummer"/>
+			<ResponsibleHcp>
+				<Relation V="REK" DN="Rekvirent"/>
+				<HCP>
+					<HCProf>
+						<Type V="LE" DN="Lege"/>
+						<Name>Rita Lin</Name>
+						<Id>91101</Id>
+						<TypeId V="HER" DN="HER-id"/>
+					</HCProf>
+					<Address>
+						<Type V="WP" DN="Arbeidsadresse"/>
+						<TeleAddress V="tel:73202600"/>
+					</Address>
+				</HCP>
+			</ResponsibleHcp>
+			<Address>
+				<Type V="H" DN="Bostedsadresse"/>
+				<StreetAdr>Numedalsveien 52</StreetAdr>
+				<PostalCode>3602</PostalCode>
+				<City>Kongsberg</City>
+			</Address>
+		</Patient>
+		<ServProvider>
+			<HCP>
+				<Inst>
+					<Name>ST OLAVS HOSPITAL HF</Name>
+					<Id>59</Id>
+					<TypeId V="HER" DN="HER-id"/>
+					<Dept>
+						<Name>Medisinsk biokjemi</Name>
+						<Id>94673</Id>
+						<TypeId V="HER" DN="HER-id"/>
+					</Dept>
+				</Inst>
+			</HCP>
+		</ServProvider>
+		<Requester>
+			<HCP>
+				<Inst>
+					<Name>Kattskinnet legesenter</Name>
+					<Id>91096</Id>
+					<TypeId V="HER" DN="HER-id"/>
+					<HCPerson>
+						<Name>Rita Lin</Name>
+						<Id>91101</Id>
+						<TypeId V="HER" DN="HER-id"/>
+					</HCPerson>
+				</Inst>
+			</HCP>
+		</Requester>
+<!-- Medisinsk biokjemi -->
+		<ReqInvestigation>
+			<ServType V="N" DN="Ny"/>
+			<Investigation>
+				<Id V="NPU03429" S="2.16.578.1.12.4.1.1.7280" DN="P-Natrium"/>
+			</Investigation>
+			<Investigation>
+				<Id V="NPU03230" S="2.16.578.1.12.4.1.1.7280" DN="P-Kalium"/>
+			</Investigation>
+			<Investigation>
+				<Id V="NOR05809" S="2.16.578.1.12.4.1.1.7280" DN="Us-Ferritin"/>
+			</Investigation>
+			<Investigation>
+				<Id V="NPU18106" S="2.16.578.1.12.4.1.1.7280" DN="Us-Triglyserid"/>
+			</Investigation>
+			<Investigation>
+				<Id V="NOR05865" S="2.16.578.1.12.4.1.1.7280" DN="Us-TSH"/>
+			</Investigation>
+			<Investigation>
+				<Id V="NOR05863" S="2.16.578.1.12.4.1.1.7280" DN="Us-FT4"/>
+			</Investigation>
+			<Investigation>
+				<Id V="NPU29868" S="2.16.578.1.12.4.1.1.7280" DN="P-Digoksin"/>
+			</Investigation>
+			<AnalysedSubject>
+				<CollectedSample>
+					<CollectedDate V="2018-02-06T08:52:15"/>
+				</CollectedSample>
+				<TypeCoded S="2.16.578.1.12.4.1.1.8351" V="S" DN="Serum"/>
+				<IdByRequester>79209fb0-0b3a-11e8-b566-0800200c9a66</IdByRequester>
+				<IdByServProv>f7737880-0b4c-11e8-b566-0800200c9a66</IdByServProv>
+			</AnalysedSubject>
+		</ReqInvestigation>
+		<ReqInvestigation>
+			<ServType V="N" DN="Ny"/>
+			<Investigation>
+				<Id V="NPU04073" S="2.16.578.1.12.4.1.1.7280" DN="P-Homocystein"/>
+			</Investigation>
+			<AnalysedSubject>
+				<CollectedSample>
+					<CollectedDate V="2018-02-06T08:52:15"/>
+				</CollectedSample>
+				<TypeCoded S="2.16.578.1.12.4.1.1.8351" V="P" DN="Plasma"/>
+				<IdByRequester>79209fb0-0b3a-11e8-b566-0800200c9a66</IdByRequester>
+				<IdByServProv>b8a333c0-0b51-11e8-b566-0800200c9a66</IdByServProv>
+			</AnalysedSubject>
+		</ReqInvestigation>
+		<ReqInvestigation>
+			<ServType V="N" DN="Ny"/>
+			<Investigation>
+				<Id V="NPU12537" S="2.16.578.1.12.4.1.1.7280" DN="P-Gliadin IgG"/>
+			</Investigation>
+			<Investigation>
+				<Id V="NPU14566" S="2.16.578.1.12.4.1.1.7280" DN="P-Transglutaminase IgA"/>
+			</Investigation>
+			<AnalysedSubject>
+				<CollectedSample>
+					<CollectedDate V="2018-02-06T08:52:15"/>
+				</CollectedSample>
+				<TypeCoded S="2.16.578.1.12.4.1.1.8351" V="S" DN="Serum"/>
+				<IdByRequester>79209fb0-0b3a-11e8-b566-0800200c9a66</IdByRequester>
+				<IdByServProv>dbf946a0-4023-11e8-b566-0800200c9a66</IdByServProv>
+			</AnalysedSubject>
+		</ReqInvestigation>
+<!-- Immunologi -->
+		<ReqInvestigation>
+			<ServType V="N" DN="Ny"/>
+			<Investigation>
+				<Id V="NPU03952" S="2.16.578.1.12.4.1.1.7280" DN="P-Kusmavirus (parotittvirus) IgG"/>
+			</Investigation>
+			<Investigation>
+				<Id V="NPU03953" S="2.16.578.1.12.4.1.1.7280" DN="P-Kusmavirus (parotittvirus) IgM"/>
+			</Investigation>
+			<AnalysedSubject>
+				<CollectedSample>
+					<CollectedDate V="2018-02-06T08:52:15"/>
+				</CollectedSample>
+				<TypeCoded S="2.16.578.1.12.4.1.1.8351" V="S" DN="Serum"/>
+				<IdByRequester>79209fb0-0b3a-11e8-b566-0800200c9a66</IdByRequester>
+				<IdByServProv>cd4515d0-4023-11e8-b566-0800200c9a66</IdByServProv>
+			</AnalysedSubject>
+		</ReqInvestigation>
+<!-- Medisinsk genetikk -->
+		<ReqInvestigation>
+			<ServType V="N" DN="Ny"/>
+			<Investigation>
+				<Id V="NPU19270" DN="DNA-F5(Leidenmutasjonen, Arg506Gln)" S="2.16.578.1.12.4.1.1.7280"/>
+			</Investigation>
+			<AnalysedSubject>
+				<CollectedSample>
+					<CollectedDate V="2017-01-10"/>
+				</CollectedSample>
+				<Type>Blod</Type>
+				<IdByServProv>67796679</IdByServProv>
+			</AnalysedSubject>
+		</ReqInvestigation>
+<!-- Klinisk farmakologi -->
+		<ReqInvestigation>
+			<ServType V="N" DN="Ny"/>
+			<Investigation>
+				<Id V="NPU22274" DN="P-Digoksin" S="2.16.578.1.12.4.1.1.7280"/>
+			</Investigation>
+			<AnalysedSubject>
+				<CollectedSample>
+					<CollectedDate V="2017-01-10"/>
+				</CollectedSample>
+				<Type>Urin</Type>
+				<IdByServProv>65596674</IdByServProv>
+			</AnalysedSubject>
+		</ReqInvestigation>
+	</ServReq>
+</Message>

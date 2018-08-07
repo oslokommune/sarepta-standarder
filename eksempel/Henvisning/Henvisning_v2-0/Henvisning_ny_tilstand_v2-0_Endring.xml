@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -->
+<!-- Dette er en testmelding med fiktive personer -->
+<!-- -->
+<MsgHead xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd">
+	<MsgInfo>
+		<Type V="HENVISNING_NYTILSTAND" DN="Henvisning ny tilstand"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2018-03-30T09:15:00</GenDate>
+		<MsgId>0b28bfe4-c3a8-43b6-b915-7f11cfc6a093</MsgId>
+		<ConversationRef>
+			<RefToParent>cf4efb50-3198-11e8-b566-0800200c9a66</RefToParent>
+			<RefToConversation>cf4efb50-3198-11e8-b566-0800200c9a66</RefToConversation>
+		</ConversationRef>
+		<Sender>
+			<Organisation>
+				<OrganisationName>Kattskinnet legesenter</OrganisationName>
+				<Ident>
+					<Id>91096</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<HealthcareProfessional>
+					<FamilyName>September</FamilyName>
+					<GivenName>August</GivenName>
+					<Ident>
+						<Id>91100</Id>
+						<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.8116"/>
+					</Ident>
+				</HealthcareProfessional>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>St Olavs Hospital HF</OrganisationName>
+				<Ident>
+					<Id>59</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Organisation>
+					<OrganisationName>Ortopedisk kirurgi</OrganisationName>
+					<Ident>
+						<Id>90998</Id>
+						<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</Organisation>
+			</Organisation>
+		</Receiver>
+		<Patient>
+			<FamilyName>Danser</FamilyName>
+			<GivenName>Line</GivenName>
+			<DateOfBirth>1969-11-13</DateOfBirth>
+			<Sex V="2" DN="Kvinne"/>
+			<Ident>
+				<Id>13116900216</Id>
+				<TypeId V="FNR" DN="Fødselsnummer" S="2.16.578.1.12.4.1.1.8116"/>
+			</Ident>
+			<Address>
+				<StreetAdr>Numedalsveien 52</StreetAdr>
+				<PostalCode>3602</PostalCode>
+				<City>Kongsberg</City>
+			</Address>
+			<TeleCom>
+				<TypeTelecom V="MC" DN="Mobiltelefon"/>
+				<TeleAddress V="tel:90094004"/>
+			</TeleCom>
+		</Patient>
+	</MsgInfo>
+	<Document>
+		<RefDoc>
+			<MsgType V="XML" DN="XML-instans"/>
+			<Content>
+				<Henvisning xsi:schemaLocation="http://ehelse.no/xmlstds/henvisning/2017-11-30 Henvisning-v2.0.xsd" xmlns="http://ehelse.no/xmlstds/henvisning/2017-11-30" xmlns:po="http://ehelse.no/xmlstds/po/poKomponent/2017-11-30" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1">
+					<ServType V="M" DN="Endring"/>
+					<IssueDate>2018-03-30T09:15:00</IssueDate>
+					<ReqComment>Endrer opprinnelig henvisning pga det var oppgitt feil verdi for bruk av Prednisolon. Endrer økning til 25 mg istedet for 30 mg</ReqComment>
+					<DocumentId>cf4efb50-3198-11e8-b566-0800200c9a66</DocumentId>
+					<po:TilleggsopplysningPasient>
+						<po:SivilStatus V="1" DN="Ugift"/>
+					</po:TilleggsopplysningPasient>
+					<po:ParorendeForesatt>
+						<po:Slektskap V="MO" DN="Mor"/>
+						<po:NarmesteParorende>true</po:NarmesteParorende>
+						<po:Referanseperson>
+							<fk1:FamilyName>Telokk</fk1:FamilyName>
+							<fk1:GivenName>Mor</fk1:GivenName>
+							<fk1:Address>
+								<fk1:Type V="H" DN="Bostedsadresse"/>
+								<fk1:StreetAdr>Lundegaardsbakken 13</fk1:StreetAdr>
+								<fk1:PostalCode>5020</fk1:PostalCode>
+								<fk1:City>Bergen</fk1:City>
+							</fk1:Address>
+						</po:Referanseperson>
+					</po:ParorendeForesatt>
+					<po:KontaktpersonHelsepersonell>
+						<po:Kontaktperson>
+							<fk1:TypeHealthcareProfessional V="LE" DN="Lege"/>
+							<fk1:RoleToPatient V="6" DN="Fastlege" S="2.16.578.1.12.4.1.1.9034"/>
+							<fk1:FamilyName>September</fk1:FamilyName>
+							<fk1:GivenName>August</fk1:GivenName>
+							<fk1:Ident>
+								<fk1:Id>9144897</fk1:Id>
+								<fk1:TypeId V="HPR" DN="HPR-nummer" S="2.16.578.1.12.4.1.1.8116"/>
+							</fk1:Ident>
+						</po:Kontaktperson>
+					</po:KontaktpersonHelsepersonell>
+					<po:AnsvarForRapport>
+						<po:AnsvarligRapport>
+							<fk1:TypeHealthcareProfessional V="LE" DN="Lege"/>
+							<fk1:RoleToPatient V="16" DN="Turnuslege" S="2.16.578.1.12.4.1.1.9034"/>
+							<fk1:FamilyName>Jones</fk1:FamilyName>
+							<fk1:GivenName>May</fk1:GivenName>
+							<fk1:Ident>
+								<fk1:Id>9144919</fk1:Id>
+								<fk1:TypeId V="HPR" DN="HPR-nummer" S="2.16.578.1.12.4.1.1.8116"/>
+							</fk1:Ident>
+							<fk1:TeleCom>
+								<fk1:TypeTelecom V="MC" DN="Mobiltelefon"/>
+								<fk1:TeleAddress V="tel:90550374"/>
+							</fk1:TeleCom>
+						</po:AnsvarligRapport>
+						<po:TypeRelasjon V="HHE" S="2.16.578.1.12.4.1.1.8254" DN="Henvisende helsepersonell"/>
+					</po:AnsvarForRapport>
+					<po:TypeInnholdIMelding>
+						<po:TypeInnhold V="10" S="2.16.578.1.12.4.1.1.8455" DN="Utredning/behandling"/>
+					</po:TypeInnholdIMelding>
+					<po:InfoAssistertKommunikasjon>
+						<po:AssistertKommunikasjon>
+							<po:PersonTolkebehov>
+								<fk1:FamilyName>Telokk</fk1:FamilyName>
+								<fk1:GivenName>Mor</fk1:GivenName>
+							</po:PersonTolkebehov>
+							<po:BehovTolkSprak V="SE" DN="NORDSAMISK"/>
+							<po:Merknad>Mor har behov for tolk hvis det er behov for informasjon til pårørende</po:Merknad>
+						</po:AssistertKommunikasjon>
+					</po:InfoAssistertKommunikasjon>
+					<InfItem>
+						<Observation>
+							<Description>
+							Høyde: 178 cm 
+							Vekt:	85 kg
+
+Laboratorieverdier: 28/03/18 
+HVITE:  			9200 
+RØDE: 				3.87 
+HB: 					12.3 
+HCT: 				35.8 
+MCV: 				92.5 
+TROMBOCYT: 	222 
+CRP: 				42 
+SR : 				70 
+ALAT: 				18 
+KREAT: 			64 
+GAMMA-GT: 	47 
+URISTIX : 			b++ 
+</Description>
+						</Observation>
+						<Type V="FUNN" S="2.16.578.1.12.4.1.1.8233" DN="Funn og undersøkelsesresultat"/>
+					</InfItem>
+					<InfItem>
+						<!-- Her vises et eksempel på ustrukturert legemiddelinformasjon -->
+						<Observation>
+							<Description>Registrert 13-03-04
+							Får blodtrykksfall ved vepsestikk</Description>
+						</Observation>
+						<Type V="CAVE" S="2.16.578.1.12.4.1.1.8233" DN="Cave-opplysninger"/>
+					</InfItem>
+					<InfItem>
+						<!-- Endret dose -->
+						<Observation>
+							<Description>Prednisolon, tablett 2,5mg og 20mg, 7,5mg dgl., økning til 25 mg dgl. i en uke fra 21.03.18</Description>
+						</Observation>
+						<Type V="MEDB" S="2.16.578.1.12.4.1.1.8233" DN="Legemiddelopplysning"/>
+					</InfItem>
+					<InfItem>
+						<Observation>
+							<Description>Paracet, tablett 500mg, 1-2 tabl. ved behov</Description>
+						</Observation>
+						<Type V="MEDB" S="2.16.578.1.12.4.1.1.8233" DN="Legemiddelopplysning"/>
+					</InfItem>
+					<ReasonAsText>
+						<Heading V="FA" S="2.16.578.1.12.4.1.1.8231" DN="Familie/sosialt"/>
+						<TextResultValue>Fraskilt, bor alene i eget hus. Mor bosatt i Narvik </TextResultValue>
+					</ReasonAsText>
+					<ReasonAsText>
+						<Heading V="PROB" S="2.16.578.1.12.4.1.1.8231" DN="Aktuell problemstilling"/>
+						<TextResultValue>Stadig dårligere denne vinteren, hevelse og rubor over en rekke ledd, betydelige smerter og stokk stiv, greier seg knapt nok selv lenger.Har økende smerter i hofter, men også tiltagende smerter i en rekke andre ledd, til tross for økning prednison opp til 30mg dgl i en uke fra 21.03.18. Henvises til ny vurdering og oppfølging av behandlingen. 
+						
+Seropos RA fra 2001-Myocrisinbeh tidl m god effekt, også brukt Ridaura. Fra 2012 Methotrexat 7,5mg ukentlig, sep pga hematuri og fra april 2016 Ercoquin 200mgx2. Vurdert v Reum.pol. St. Olavs 28.04.17 - fikk da endel leddinj DepoMedrol og red Ercoquin til 200mgx1. 						
+						Seropos RA fra 2001-Myocrisinbeh tidl m god effekt, også brukt Ridaura. Fra 2012 Methotrexat 7,5mg ukentlig, sep pga hematuri og fra april 2016 Ercoquin 200mgx2. Vurdert v Reum.pol. St. Olavs 28.04.17 - fikk da endel leddinj DepoMedrol og red Ercoquin til 200mgx1. 
+På ny vurdert 18.08.17: Ercoquin seponert, på ny steroidinj i div ledd og eneste faste med. Prednisolon 7,5mg dgl. 
+I sept tiltagende plager, fikk nytt "støt" med Prednisolon uten særlig effekt og 21.10.17 startet opp igjen med Ercoquin. Hun hadde da CRP 200 og SR økende til 85. 
+Vedvarende plager, bortsett fra en kortere periode i januar 2018 med bedring både klinisk og lab.messig.
+</TextResultValue>
+					</ReasonAsText>
+					<Diagnosis>
+						<Concept V="L88" S="2.16.578.1.12.4.1.1.7170" DN="Reumatoid artritt/reumatisk sykdom"/>
+					</Diagnosis>
+					<ReqServ>
+						<ServType V="N" DN="Ny"/>
+						<Priority V="N" DN="Elektiv/Ordinær (elektiv)"/>
+					</ReqServ>
+				</Henvisning>
+			</Content>
+		</RefDoc>
+	</Document>
+</MsgHead>

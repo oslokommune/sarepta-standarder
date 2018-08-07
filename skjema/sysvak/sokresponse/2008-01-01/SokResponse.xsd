@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SYSVAK - SokResponse versjon 1.0 - 2008.01.01 -->
+<xs:schema xmlns="http://www.kith.no/xmlstds/sysvak/sokresponse/2008-01-01" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:sysvak="http://www.kith.no/xmlstds/sysvak" targetNamespace="http://www.kith.no/xmlstds/sysvak/sokresponse/2008-01-01" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.kith.no/xmlstds" schemaLocation="../../../felleskomponenter/kith.xsd"/>
+	<xs:import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="../../../felleskomponenter/felleskomponent1.xsd"/>
+	<xs:import namespace="http://www.kith.no/xmlstds/sysvak" schemaLocation="../../CommonTypes.xsd"/>
+	<xs:element name="SokResponse">
+		<xs:annotation>
+			<xs:documentation>
+				Meldingstypen definerer en svarmelding for søk etter personer og vaksinasjonsstatus. 
+				Vaksinasjonsstatus er bare inkludert hvis søket var entydig, dvs. at det ga treff på kun en vaksinand.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:annotation>
+				<xs:documentation>Representerer et søkeresultat fra SYSVAK.</xs:documentation>
+			</xs:annotation>
+			<xs:sequence>
+				<xs:element name="Behandlingsresultat" type="sysvak:Behandlingsresultat"/>
+				<xs:element name="Vaksinand" type="Vaksinand" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="Vaksinand">
+		<xs:complexContent>
+			<xs:extension base="sysvak:Person">
+				<xs:sequence>
+					<xs:element name="Vaksinasjon" type="sysvak:Vaksinasjon" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="ManglendeVaksinering" type="sysvak:ManglendeVaksinering" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

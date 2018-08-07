@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -->
+<!-- Dette er en testmelding med fiktive personer -->
+<!-- -->
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd">
+	<MsgInfo>
+		<Type V="UTSKRIVNINGSRAPPORT" DN="Utskrivningsrapport"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2018-02-02T15:40:23</GenDate>
+		<MsgId>52c04610-0818-11e8-b566-0800200c9a66</MsgId>
+		<Sender>
+			<Organisation>
+				<OrganisationName>ST OLAVS HOSPITAL HF</OrganisationName>
+				<Ident>
+					<Id>59</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Organisation>
+					<OrganisationName>Ortopedisk kirurgi</OrganisationName>
+					<Ident>
+						<Id>90998</Id>
+						<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</Organisation>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>Alvdal Kommune</OrganisationName>
+				<Ident>
+					<Id>99387</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Organisation>
+					<OrganisationName>Sykepleietjeneste</OrganisationName>
+					<Ident>
+						<Id>5078</Id>
+						<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</Organisation>
+			</Organisation>
+		</Receiver>
+		<Patient>
+			<FamilyName>Gundersen</FamilyName>
+			<GivenName>Roland</GivenName>
+			<DateOfBirth>1965-07-15</DateOfBirth>
+			<Sex V="1" DN="Mann"/>
+			<Ident>
+				<Id>15076500565</Id>
+				<TypeId V="FNR" DN="Fødselsnummer" S="2.16.578.1.12.4.1.1.8116"/>
+			</Ident>
+			<Address>
+				<StreetAdr>Flåklypa 31</StreetAdr>
+				<PostalCode>2560</PostalCode>
+				<City>Alvdal</City>
+			</Address>
+		</Patient>
+	</MsgInfo>
+	<Document>
+		<RefDoc>
+			<IssueDate V="2018-02-02T15:30:01"/>
+			<MsgType V="XML" DN="XML-instans"/>
+			<Content>
+				<p8:TverrfagligEpikrise xmlns:p8="http://www.kith.no/xmlstds/po/TverrfagligEpikrise/2012-04-01" xmlns:epj1="http://www.kith.no/xmlstds/epj/epj1/2008-02-20" xmlns:epj2="http://www.kith.no/xmlstds/epj/epj2/2008-02-20" xmlns:epj3="http://www.kith.no/xmlstds/epj/epj3/2008-02-20" xmlns="http://www.kith.no/xmlstds/po/poKomponent/2012-04-01" xmlns:m1="http://www.kith.no/xmlstds/epj/meta/2008-02-20" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/po/TverrfagligEpikrise/2012-04-01 TverrfagligEpikrise-v1.6.xsd">
+					<InformasjonOmForsendelsen>
+						<Forsendelsesstatus V="N" DN="Ny"/>
+					</InformasjonOmForsendelsen>
+					<TilleggsopplysningPasient>
+						<SivilStatus V="6" DN="Enke/enkemann"/>
+						<BorAlene>true</BorAlene>
+						<Sprak V="SE" DN="NORDSAMISK"/>
+					</TilleggsopplysningPasient>
+					<TilknyttetEnhet>
+						<Kontaktenhet>
+							<fk1:OrganisationName>Ortopedisk avdeling Øya</fk1:OrganisationName>
+							<fk1:Ident>
+								<fk1:Id>ORTØYA</fk1:Id>
+								<fk1:TypeId V="LAV" DN="Lokal identifikator for avdelinger" S="2.16.578.1.12.4.1.1.9051"/>
+							</fk1:Ident>
+							<fk1:TeleCom>
+								<fk1:TeleAddress V="tel:73555555"/>
+							</fk1:TeleCom>
+						</Kontaktenhet>
+					</TilknyttetEnhet>
+					<KontaktpersonHelsepersonell>
+						<Kontaktperson>
+							<fk1:TypeHealthcareProfessional V="LE" DN="Lege"/>
+							<fk1:RoleToPatient V="19" DN="Kontaktlege" S="2.16.578.1.12.4.1.1.9034"/>
+							<fk1:FamilyName>Koman</fk1:FamilyName>
+							<fk1:GivenName>Magnar</fk1:GivenName>
+							<fk1:Ident>
+								<fk1:Id>9144889</fk1:Id>
+								<fk1:TypeId V="HPR" DN="HPR-nummer" S="2.16.578.1.12.4.1.1.8116"/>
+							</fk1:Ident>
+							<fk1:TeleCom>
+								<fk1:TeleAddress V="tel:73555555"/>
+							</fk1:TeleCom>
+						</Kontaktperson>
+					</KontaktpersonHelsepersonell>
+					<TypeInnholdIMelding>
+						<TypeInnhold V="11" DN="Utskrivningsrapport" S="2.16.578.1.12.4.1.1.9139"/>
+					</TypeInnholdIMelding>
+					<OpplysningOpphold>
+						<TidsfestetHendelse>
+							<BeskrivelseAvHendelse>Innlagt dato</BeskrivelseAvHendelse>
+							<TidspunktForHendelse V="2018-01-30T14:00:00"/>
+							<Anslag>false</Anslag>
+						</TidsfestetHendelse>
+					</OpplysningOpphold>
+					<OpplysningOpphold>
+						<TidsfestetHendelse>
+							<BeskrivelseAvHendelse>Innlagt fra: bosted</BeskrivelseAvHendelse>
+							<TidspunktForHendelse V="2018-01-30T14:00:00"/>
+							<Anslag>false</Anslag>
+						</TidsfestetHendelse>
+					</OpplysningOpphold>
+					<OpplysningOpphold>
+						<TidsfestetHendelse>
+							<BeskrivelseAvHendelse>Utskrevet dato</BeskrivelseAvHendelse>
+							<TidspunktForHendelse V="2018-02-02T10:00:00"/>
+							<Anslag>false</Anslag>
+						</TidsfestetHendelse>
+					</OpplysningOpphold>
+					<InfoMedisinskDiagnose>
+						<MedisinskDiagnose>
+							<Hoveddiagnose>false</Hoveddiagnose>
+							<Diagnosekode V="A46" DN="Erysipelas" S="2.16.578.1.12.4.1.1.7110"/>
+							<DiagnoseBeskrivelse>Ve legg</DiagnoseBeskrivelse>
+						</MedisinskDiagnose>
+						<MedisinskDiagnose>
+							<Hoveddiagnose>false</Hoveddiagnose>
+							<Diagnosekode V="I509" DN="Uspesifisert hjertesvikt" S="2.16.578.1.12.4.1.1.7110"/>
+						</MedisinskDiagnose>
+					</InfoMedisinskDiagnose>
+					<MedisinskfagligeOpplysninger>
+						<epj1:Cave m1:informasjonskategori="Cave/allergier" komponentID="07b3e630-fb63-11e1-a21f-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.14.50001.0" m1:basiskomponenttype="EPJ sak">
+							<epj1:SakshodeCave m1:informasjonskategori="Cave/allergier" komponentID="12dc7f40-fb63-11e1-a21f-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.10028.0" m1:basiskomponenttype="EPJ dokument">
+								<epj1:StikkordCave>
+									<epj1:CaveStikkord>Morfin. Registrert 13.03.04.</epj1:CaveStikkord>
+								</epj1:StikkordCave>
+							</epj1:SakshodeCave>
+							<epj1:Allerginotat komponentID="20cb8b50-fb63-11e1-a21f-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.11036.1" m1:basiskomponenttype="EPJ dokument">
+								<epj1:Allergi>
+									<epj1:HensynVedForskrivning>true</epj1:HensynVedForskrivning>
+									<epj1:HensynMatDrikke>false</epj1:HensynMatDrikke>
+									<epj1:Kontaktallergi>false</epj1:Kontaktallergi>
+									<epj1:PollenInnsektstikk>false</epj1:PollenInnsektstikk>
+									<epj1:AllergiskMot>Digitalis glycosides</epj1:AllergiskMot>
+									<epj1:VirkestoffLegemiddel V="C01AA" DN="Digitalis glycosides" S="2.16.578.1.12.4.1.1.7180"/>
+								</epj1:Allergi>
+							</epj1:Allerginotat>
+						</epj1:Cave>
+						<epj1:Allerginotat m1:informasjonskategori="Cave/allergier" komponentID="2d921cf0-fb63-11e1-a21f-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.11036.1" m1:basiskomponenttype="EPJ dokument">
+							<epj2:Journaltekst>
+								<epj2:Notat>Registrert 13-03-04</epj2:Notat>
+								<epj2:Merknad>Får blodtrykksfall ved vepsestikk</epj2:Merknad>
+							</epj2:Journaltekst>
+							<epj1:Allergi>
+								<epj1:HensynVedForskrivning>false</epj1:HensynVedForskrivning>
+								<epj1:HensynMatDrikke>false</epj1:HensynMatDrikke>
+								<epj1:Kontaktallergi>false</epj1:Kontaktallergi>
+								<epj1:PollenInnsektstikk>true</epj1:PollenInnsektstikk>
+								<epj1:AllergiskMot>Veps</epj1:AllergiskMot>
+							</epj1:Allergi>
+						</epj1:Allerginotat>
+						<epj2:GenereltJournalnotat m1:informasjonskategori="Andre notater" komponentID="3bb8b3c0-fb63-11e1-a21f-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.11009.0" m1:basiskomponenttype="EPJ dokument">
+							<epj2:Journaltekst>
+								<epj2:Overskriftskode V="PROB" DN="Aktuell problemstilling" S="2.16.578.1.12.4.1.1.9142"/>
+								<epj2:Notat>Innlagt med uttalt erysipelas i venstre legg.</epj2:Notat>
+							</epj2:Journaltekst>
+							<epj2:Journaltekst>
+								<epj2:Overskriftskode V="FO" DN="Forløp og behandling" S="2.16.578.1.12.4.1.1.9142"/>
+								<epj2:Notat>Startet umiddelbart med penicillinbehandling ved innkomst. God effekt, og utslettet er nå gått tilbake. Kan fortsette med tabl-behandling i eget hjem. Tilsyn av cardiolog pga hjertesvikt. Ingen endring i behandling av dette. Har sendt blodkultur til dyrkning på mikrobiologisk avdeling. Forventer svar innen en uke. Prøvesvar ettersendes.</epj2:Notat>
+							</epj2:Journaltekst>
+							<epj2:Journaltekst>
+								<epj2:Overskriftskode V="FU" DN="Funn og undersøkelsesresultat" S="2.16.578.1.12.4.1.1.9142"/>
+								<epj2:Notat>EKG viser ingen endring siden forrige kontroll. Rtg Thorax viser klare og fine lunger.</epj2:Notat>
+							</epj2:Journaltekst>
+							<epj2:Journaltekst>
+								<epj2:Overskriftskode V="OP" DN="Planer for videre oppfølging" S="2.16.578.1.12.4.1.1.9142"/>
+								<epj2:Notat>Trenger tilsyn og hjelp til håndtering av legemidler. Gis kontrolltime på sykehuset for oppfølgning av hjertesvikt.</epj2:Notat>
+							</epj2:Journaltekst>
+						</epj2:GenereltJournalnotat>
+					</MedisinskfagligeOpplysninger>
+					<!-- *** Faste legemidler *** -->
+					<epj3:Legemiddelinfo m1:informasjonskategori="Legemidler" komponentID="78ba39b0-fb63-11e1-a21f-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.10301.0" m1:basiskomponenttype="EPJ dokument">
+						<epj3:ForenkletForskrivning>
+							<epj3:InngaarIMultidose V="1" DN="Legemiddeldosering inngår ikke i en multidose"/>
+							<epj3:Merknad>Pasienten har ikke svelgproblemer, men store tabletter må deles</epj3:Merknad>
+							<epj3:Forskrivningsinfo>
+								<epj3:DosVeiledEnkel>2 tabl kl 08 og 13</epj3:DosVeiledEnkel>
+								<epj3:Navn>Burinex</epj3:Navn>
+								<epj3:Legemiddelform V="53" DN="Tablett"/>
+								<epj3:Styrke V="1" U="mg"/>
+								<epj3:Bruk V="1" DN="Fast"/>
+								<epj3:DoseringStarttidspunkt V="2018-02-01"/>
+								<epj3:DoseringSluttidspunkt V="2018-02-11"/>
+								<epj3:SkalIkkeTasSammenMedAnnetLegemiddel>false</epj3:SkalIkkeTasSammenMedAnnetLegemiddel>
+							</epj3:Forskrivningsinfo>
+						</epj3:ForenkletForskrivning>
+					</epj3:Legemiddelinfo>
+					<epj3:Legemiddelinfo m1:informasjonskategori="Legemidler" komponentID="7fe23210-fb63-11e1-a21f-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.10301.0" m1:basiskomponenttype="EPJ dokument">
+						<epj3:ForenkletForskrivning>
+							<epj3:InngaarIMultidose V="1" DN="Legemiddeldosering inngår ikke i en multidose"/>
+							<epj3:Merknad>Svelges med minst et ½ glass væske. Skal ikke tygges eller knuses.</epj3:Merknad>
+							<epj3:Forskrivningsinfo>
+								<epj3:DosVeiledEnkel>2 tabl kl 08 og 1 tabl kl 13</epj3:DosVeiledEnkel>
+								<epj3:Navn>Triatec</epj3:Navn>
+								<epj3:Legemiddelform V="53" DN="Tablett"/>
+								<epj3:Styrke V="2.5" U="mg"/>
+								<epj3:Bruk V="1" DN="Fast"/>
+								<epj3:DoseringStarttidspunkt V="2018-02-01"/>
+								<epj3:SkalIkkeTasSammenMedAnnetLegemiddel>false</epj3:SkalIkkeTasSammenMedAnnetLegemiddel>
+							</epj3:Forskrivningsinfo>
+						</epj3:ForenkletForskrivning>
+					</epj3:Legemiddelinfo>
+					<epj3:Legemiddelinfo m1:informasjonskategori="Legemidler" komponentID="85c1f300-fb63-11e1-a21f-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.10301.0" m1:basiskomponenttype="EPJ dokument">
+						<epj3:ForenkletForskrivning>
+							<epj3:InngaarIMultidose V="1" DN="Legemiddeldosering inngår ikke i en multidose"/>
+							<epj3:Forskrivningsinfo>
+								<epj3:DosVeiledEnkel>1 tabl kl 22</epj3:DosVeiledEnkel>
+								<epj3:Navn>Lipitor</epj3:Navn>
+								<epj3:Legemiddelform V="53" DN="Tablett"/>
+								<epj3:Styrke V="40" U="mg"/>
+								<epj3:Bruk V="1" DN="Fast"/>
+								<epj3:DoseringStarttidspunkt V="2017-09-25"/>
+								<epj3:SkalIkkeTasSammenMedAnnetLegemiddel>false</epj3:SkalIkkeTasSammenMedAnnetLegemiddel>
+							</epj3:Forskrivningsinfo>
+						</epj3:ForenkletForskrivning>
+					</epj3:Legemiddelinfo>
+					<epj3:Legemiddelinfo m1:informasjonskategori="Legemidler" komponentID="930ef2b0-fb63-11e1-a21f-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.10301.0" m1:basiskomponenttype="EPJ dokument">
+						<epj3:ForenkletForskrivning>
+							<epj3:InngaarIMultidose V="1" DN="Legemiddeldosering inngår ikke i en multidose"/>
+							<epj3:Merknad>Depottablettene kan deles, men må ikke knuses eller tygges. Skal svelges med et ½ glass væske.</epj3:Merknad>
+							<epj3:Forskrivningsinfo>
+								<epj3:DosVeiledEnkel>2 tabl kl 08</epj3:DosVeiledEnkel>
+								<epj3:Navn>Imdur</epj3:Navn>
+								<epj3:Legemiddelform V="53" DN="Tablett"/>
+								<epj3:Styrke V="30" U="mg"/>
+								<epj3:Bruk V="1" DN="Fast"/>
+								<epj3:DoseringStarttidspunkt V="2018-02-01"/>
+								<epj3:SkalIkkeTasSammenMedAnnetLegemiddel>false</epj3:SkalIkkeTasSammenMedAnnetLegemiddel>
+							</epj3:Forskrivningsinfo>
+						</epj3:ForenkletForskrivning>
+					</epj3:Legemiddelinfo>
+					<!-- *** Kur legemidler *** -->
+					<epj3:Legemiddelinfo m1:informasjonskategori="Legemidler" komponentID="9a9dc330-fb63-11e1-a21f-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.10301.0" m1:basiskomponenttype="EPJ dokument">
+						<epj3:ForenkletForskrivning>
+							<epj3:InngaarIMultidose V="1" DN="Legemiddeldosering inngår ikke i en multidose"/>
+							<epj3:Merknad>Inntas på fastende mave.</epj3:Merknad>
+							<epj3:Forskrivningsinfo>
+								<epj3:DosVeiledEnkel>1 tabl kl 08, 1 tabl kl 13, 2 tabl kl 18</epj3:DosVeiledEnkel>
+								<epj3:Navn>Apocillin</epj3:Navn>
+								<epj3:Legemiddelform V="53" DN="Tablett"/>
+								<epj3:Styrke V="660" U="mg"/>
+								<epj3:Bruk V="2" DN="Kur"/>
+								<epj3:DoseringStarttidspunkt V="2018-02-02"/>
+								<epj3:DoseringSluttidspunkt V="2018-02-02"/>
+								<epj3:SkalIkkeTasSammenMedAnnetLegemiddel>false</epj3:SkalIkkeTasSammenMedAnnetLegemiddel>
+							</epj3:Forskrivningsinfo>
+						</epj3:ForenkletForskrivning>
+					</epj3:Legemiddelinfo>
+					<!-- *** Ved behov legemidler *** -->
+					<epj3:Legemiddelinfo m1:informasjonskategori="Legemidler" komponentID="a203fd10-fb63-11e1-a21f-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.10301.0" m1:basiskomponenttype="EPJ dokument">
+						<epj3:ForenkletForskrivning>
+							<epj3:InngaarIMultidose V="1" DN="Legemiddeldosering inngår ikke i en multidose"/>
+							<epj3:Forskrivningsinfo>
+								<epj3:DosVeiledEnkel>Tas ved smerter. Max 8 pr døgn</epj3:DosVeiledEnkel>
+								<epj3:Navn>Paracetamol</epj3:Navn>
+								<epj3:Legemiddelform V="53" DN="Tablett"/>
+								<epj3:Styrke V="500" U="mg"/>
+								<epj3:Bruk V="3" DN="Ved behov"/>
+								<epj3:DoseringStarttidspunkt V="2018-02-01"/>
+								<epj3:SkalIkkeTasSammenMedAnnetLegemiddel>false</epj3:SkalIkkeTasSammenMedAnnetLegemiddel>
+							</epj3:Forskrivningsinfo>
+						</epj3:ForenkletForskrivning>
+					</epj3:Legemiddelinfo>
+					<!-- *** Seponerte legemidler **** -->
+					<epj3:Legemiddelinfo m1:informasjonskategori="Legemidler" komponentID="ab03e9c0-fb63-11e1-a21f-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.10301.0" m1:basiskomponenttype="EPJ dokument">
+						<epj3:ForenkletForskrivning>
+							<epj3:StatusTilForskrivningen V="2" DN="Seponering"/>
+							<epj3:InngaarIMultidose V="1" DN="Legemiddeldosering inngår ikke i en multidose"/>
+							<epj3:Forskrivningsinfo>
+								<epj3:Navn>Marevan</epj3:Navn>
+								<epj3:Legemiddelform V="53" DN="Tablett"/>
+								<epj3:Styrke V="2.5" U="mg"/>
+								<epj3:SkalIkkeTasSammenMedAnnetLegemiddel>false</epj3:SkalIkkeTasSammenMedAnnetLegemiddel>
+							</epj3:Forskrivningsinfo>
+						</epj3:ForenkletForskrivning>
+					</epj3:Legemiddelinfo>
+					<InfoAndreViktigeOpplysninger>
+						<epj2:GenereltJournalnotat m1:informasjonskategori="Cave/allergier" komponentID="b35064f0-fb63-11e1-a21f-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.11009.0" m1:basiskomponenttype="EPJ dokument">
+							<epj2:Journaltekst>
+								<epj2:Overskriftskode V="88" DN="Annet" S="2.16.578.1.12.4.1.1.9141"/>
+								<epj2:Notat>Luft og kontaktsmitte - MSRA: testet positiv under opphold</epj2:Notat>
+								<epj2:Merknad>Registrert 30-01-2018</epj2:Merknad>
+							</epj2:Journaltekst>
+						</epj2:GenereltJournalnotat>
+					</InfoAndreViktigeOpplysninger>
+					<Sykepleierdokumentasjon>
+						<InfoFraSykepleier>
+							<OpplysningerRelevantOppfolging>
+								<HjelpLegemiddeladm>true</HjelpLegemiddeladm>
+								<EndringFunksjonsnivaa>Betydelig bedring i forhold til bevegelse i foten.</EndringFunksjonsnivaa>
+							</OpplysningerRelevantOppfolging>
+							<epj2:Journaltekst>
+								<epj2:Overskriftskode V="8" DN="Sykepleiesammenfatning" S="2.16.578.1.12.4.1.1.9141"/>
+								<epj2:Notat>Nedsatt evne til å bevege seg grunnet erysipelas i venstre legg. Noe plaget av begynnende svikt i hukommelsen. Plaget av hovne bein pga hjertesvikt.</epj2:Notat>
+							</epj2:Journaltekst>
+							<epj2:Journaltekst>
+								<epj2:Overskriftskode V="12" DN="Status ved utskrivning" S="2.16.578.1.12.4.1.1.9141"/>
+								<epj2:Notat>Oppegående, men kan kun gå korte avstander innendørs. Pga smerter i leggen. Blir også lett tungpusten ved aktivitet pga sin hjertesvikt.Tilrettelagt pleie i henhold til vedtatt behandlingsplan</epj2:Notat>
+							</epj2:Journaltekst>
+							<epj2:Journaltekst>
+								<epj2:Overskriftskode V="13" DN="Pasientens egne vurderinger" S="2.16.578.1.12.4.1.1.9141"/>
+								<epj2:Notat>Uttrykker glede over å få lov til å komme hjem til egen bolig, syns det har vært vanskelig å få sove når han ligger i korridoren på sykehuset.</epj2:Notat>
+							</epj2:Journaltekst>
+							<epj2:Journaltekst>
+								<epj2:Overskriftskode V="88" DN="Annet" S="2.16.578.1.12.4.1.1.9141"/>
+								<epj2:Notat>Gullarmbånd er sendt hjem med pårørende i forbindelse med innleggelsen.</epj2:Notat>
+							</epj2:Journaltekst>
+						</InfoFraSykepleier>
+						<!-- Legemidler som er gitt ved overføring på utskrivningsdato -->
+						<epj3:LegemidlerAdministrertVedOverforing komponentID="bcf30f60-fb65-11e1-a21f-0800200c9a66" m1:komponenttype="2.16.578.1.12.4.1.6.13.10302.0" m1:basiskomponenttype="EPJ dokument">
+							<epj3:AdmAvHelsepersonell>
+								<epj3:AdmStart V="2018-02-02T08:00:00"/>
+								<epj3:Forskrivningsinfo>
+									<epj3:DosVeiledEnkel>2 tabletter gitt kl 08 på utskrivelsesdag</epj3:DosVeiledEnkel>
+									<epj3:Navn>Burinex</epj3:Navn>
+									<epj3:Legemiddelform V="53" DN="Tablett"/>
+									<epj3:Styrke V="1" U="mg"/>
+									<epj3:SkalIkkeTasSammenMedAnnetLegemiddel>false</epj3:SkalIkkeTasSammenMedAnnetLegemiddel>
+								</epj3:Forskrivningsinfo>
+							</epj3:AdmAvHelsepersonell>
+							<epj3:AdmAvHelsepersonell>
+								<epj3:AdmStart V="2018-02-02T08:00:00"/>
+								<epj3:Forskrivningsinfo>
+									<epj3:DosVeiledEnkel>2 tabletter gitt kl 08 på utskrivelsesdag</epj3:DosVeiledEnkel>
+									<epj3:Navn>Triatec</epj3:Navn>
+									<epj3:Legemiddelform V="53" DN="Tablett"/>
+									<epj3:Styrke V="2.5" U="mg"/>
+									<epj3:SkalIkkeTasSammenMedAnnetLegemiddel>false</epj3:SkalIkkeTasSammenMedAnnetLegemiddel>
+								</epj3:Forskrivningsinfo>
+							</epj3:AdmAvHelsepersonell>
+							<epj3:AdmAvHelsepersonell>
+								<epj3:AdmStart V="2018-02-02T08:00:00"/>
+								<epj3:Forskrivningsinfo>
+									<epj3:DosVeiledEnkel>2 tabletter gitt kl 08 på utskrivelsesdag</epj3:DosVeiledEnkel>
+									<epj3:Navn>Imdur</epj3:Navn>
+									<epj3:Legemiddelform V="53" DN="Tablett"/>
+									<epj3:Styrke V="30" U="mg"/>
+									<epj3:SkalIkkeTasSammenMedAnnetLegemiddel>false</epj3:SkalIkkeTasSammenMedAnnetLegemiddel>
+								</epj3:Forskrivningsinfo>
+							</epj3:AdmAvHelsepersonell>
+							<epj3:AdmAvHelsepersonell>
+								<epj3:AdmStart V="2018-02-02T08:00:00"/>
+								<epj3:Forskrivningsinfo>
+									<epj3:DosVeiledEnkel>1 tablett gitt kl 08 på utskrivelsesdag</epj3:DosVeiledEnkel>
+									<epj3:Navn>Apocillin</epj3:Navn>
+									<epj3:Legemiddelform V="53" DN="Tablett"/>
+									<epj3:Styrke V="660" U="mg"/>
+									<epj3:SkalIkkeTasSammenMedAnnetLegemiddel>false</epj3:SkalIkkeTasSammenMedAnnetLegemiddel>
+								</epj3:Forskrivningsinfo>
+							</epj3:AdmAvHelsepersonell>
+						</epj3:LegemidlerAdministrertVedOverforing>
+					</Sykepleierdokumentasjon>
+					<InfoAssistertKommunikasjon>
+						<AssistertKommunikasjon>
+							<BehovTolkSprak V="SE" DN="NORDSAMISK"/>
+							<PreferertTolk>
+								<fk1:FamilyName>Hætta</fk1:FamilyName>
+								<fk1:GivenName>Mattis</fk1:GivenName>
+								<fk1:TeleCom>
+									<fk1:TypeTelecom V="MC" DN="Mobiltelefon"/>
+									<fk1:TeleAddress V="tel:90909090"/>
+								</fk1:TeleCom>
+							</PreferertTolk>
+						</AssistertKommunikasjon>
+					</InfoAssistertKommunikasjon>
+					<InfoKontrolltime>
+						<InformasjonOmTime>
+							<BestiltKontrolltime>true</BestiltKontrolltime>
+							<TidspunktTime>2018-02-20T13:30:00</TidspunktTime>
+							<Varighet>60</Varighet>
+							<StedTime>St. Olavs hospital, Hjertemedisinsk poliklinikk</StedTime>
+						</InformasjonOmTime>
+					</InfoKontrolltime>
+					<OpplysningerOmHjelpemidler>
+						<FasteHjelpemidler>
+							<Merknad>Briller og tannproteser</Merknad>
+						</FasteHjelpemidler>
+						<StatusHjelpemiddel>
+							<Status V="6" DN="Aktiv"/>
+							<Hjelpemiddelbeskrivelse>
+								<BetegnelseHjelpemiddel>Rullator</BetegnelseHjelpemiddel>
+							</Hjelpemiddelbeskrivelse>
+						</StatusHjelpemiddel>
+					</OpplysningerOmHjelpemidler>
+				</p8:TverrfagligEpikrise>
+			</Content>
+		</RefDoc>
+	</Document>
+</MsgHead>
