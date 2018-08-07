@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 
 Endringslogg:
-- 18.05.17: v4.1.3 - 	Endret fra Rekvirent til Mottaker og Tjenesteyter til Avsender under "Helsetjenesteenheter"
+- 19.06.18: v4.1.4 - Fjernet unødvendige overskrifter i legemiddelvisning
+- 18.05.17: v4.1.3 - Endret fra Rekvirent til Mottaker og Tjenesteyter til Avsender under "Helsetjenesteenheter"
 								Endret logikk i visning av  Type opprinnelig visning. Tar nå tekst som er med i dis:MsgDescr, istedet for @V som ikke er med uansett siden det ikke er tillatt
 								Fjernet visning av henvisningsdiagnose i epikrise-diagnosevisning. Flyttet den til feltet "Opprinnelig henvisning"
 - 09.05.17: v4.1.2 - Rettet formell feil : fjernet parameter på templatekall "eh-TeleAddress"
@@ -37,7 +38,7 @@ Om:
 	<xsl:import href="../felleskomponenter/eh-komponent2.xsl"/>
 
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'epikrise v.uavhengig - v4.1.3'"/>
+	<xsl:variable name="versjon" select="'epikrise v.uavhengig - v4.1.4'"/>
 
 	<!-- Variabeler for standard antall kolonner i tabellene, og for standard cellebredde i tabellene -->
 	<xsl:variable name="std-col" select="8"/>
@@ -497,11 +498,7 @@ Om:
 					<xsl:value-of select="concat('CAVE',$position)"/>
 				</xsl:variable>
 
-				<h2 id="{$id2}">
-					<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='CAVE']">CAVE</xsl:if>
-					<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='CAVE'] and //child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='NB']">&#160;og&#160;</xsl:if>
-					<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='NB']">NB-opplysninger</xsl:if>
-				</h2>
+				<h2 id="{$id2}">Kritisk informasjon</h2>
 
 				<xsl:if test="VisCAVEVisSkjul">
 					<label for="vis{$id2}" class="VisSkjul">Vis/Skjul</label>
@@ -676,15 +673,15 @@ Om:
 				</div>
 			</xsl:if>
 
-			<!-- Overskrift og tabell for Medisinering -->
+			<!-- Overskrift og tabell for Legemiddelopplysninger -->
 			<xsl:if test="//child::*[local-name()='Comment'][child::*[local-name()='Heading']/@V='ME'] or //child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='MEDB']">
 				<xsl:variable name="id9">
 					<xsl:value-of select="concat('ME',$position)"/>
 				</xsl:variable>
 
-				<h2 id="{$id9}">Medisinering</h2>
+				<h2 id="{$id9}">Legemiddelopplysninger</h2>
 
-				<xsl:if test="$VisForlopBehandlingVisSkjul">
+				<xsl:if test="$VisMedisineringVisSkjul">
 					<label for="vis{$id9}" class="VisSkjul">Vis/Skjul</label>
 					<input type="checkbox" id="vis{$id9}" style="display: none;"/>
 				</xsl:if>
@@ -708,40 +705,35 @@ Om:
 						</xsl:variable>
 						<xsl:if test="position()=1">
 							<div class="eh-row-8">
-								<div class="eh-col-1 md eh-label">Lege&#173;middel</div>
-								<div class="eh-col-1 md eh-label">Status</div>
+								<div class="eh-col-1 eh-label">Legemiddel</div>
+								<div class="eh-col-2 eh-label">Status</div>
 								<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='UnitDose'] or //child::*[local-name()='Medication']/child::*[local-name()='QuantitySupplied']">
-									<div class="eh-col-1 md eh-label">Mengde</div>
+									<div class="eh-col-1 eh-label">Mengde</div>
 								</xsl:if>
 								<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='DosageText'] or //child::*[local-name()='Medication']/child::*[local-name()='IntendedDuration']">
-									<div class="eh-col-1 md eh-label">
+									<div class="eh-col-2 eh-label">
 										<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='DosageText']">Dosering</xsl:if>
 										<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='DosageText'] and //child::*[local-name()='Medication']/child::*[local-name()='IntendedDuration']">/</xsl:if>
 										<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='IntendedDuration']">Varighet</xsl:if>
 									</div>
 								</xsl:if>
 								<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='Comment']">
-									<div class="eh-col-1 md eh-label">Kommentar</div>
+									<div class="eh-col-1 eh-label">Kommentar</div>
 								</xsl:if>
 								<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Medication']]/child::*[local-name()='StartDateTime']">
-									<div class="eh-col-1 md eh-label">Start&#173;tidspunkt</div>
+									<div class="eh-col-1 eh-label">Starttidspunkt</div>
 								</xsl:if>
 								<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Medication']]/child::*[local-name()='EndDateTime']">
-									<div class="eh-col-1 md eh-label">Slut&#173;tidspunkt</div>
+									<div class="eh-col-1 eh-label">Sluttidspunkt</div>
 								</xsl:if>
 								<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Medication']]/child::*[local-name()='OrgDate']">
-									<div class="eh-col-1 md eh-label">Tidspunkt for opprinnelse</div>
+									<div class="eh-col-1 eh-label">Tidspunkt for opprinnelse</div>
 								</xsl:if>
 							</div>
 						</xsl:if>
 						<div class="eh-row-8 {$stripedCss}" >
 							<xsl:call-template name="eh-Medication">
-								<xsl:with-param name="striped">
-									<xsl:choose>
-										<xsl:when test="boolean(position() mod 2)"><xsl:value-of select="true()"/></xsl:when>
-										<xsl:otherwise><xsl:value-of select="false()"/></xsl:otherwise>
-									</xsl:choose>
-								</xsl:with-param>
+								<xsl:with-param name="striped" select="$stripedCss"/>
 							</xsl:call-template>
 						</div>
 					</xsl:for-each>
@@ -940,7 +932,7 @@ Om:
 					<xsl:value-of select="concat('HCP',$position)"/>
 				</xsl:variable>
 
-				<h2 id="{$id31}">Helsetjenesteenheter</h2>
+				<h2 id="{$id31}">Kontaktopplysninger</h2>
 
 				<xsl:if test="$VisOvrigHelsetjenesteInfoVisSkjul">
 					<label for="vis{$id31}" class="VisSkjul">Vis/Skjul</label>
@@ -1170,11 +1162,7 @@ Om:
 					<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='CAVE' or child::*[local-name()='Type']/@V='NB']">
 						<li>
 							<xsl:variable name="temp2" select="concat('CAVE',$position)"/>
-							<a href="#{$temp2}">
-								<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='CAVE']">CAVE</xsl:if>
-								<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='CAVE'] and //child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='NB']">&#160;og&#160;</xsl:if>
-								<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='NB']">NB-opplysninger</xsl:if>
-							</a>
+							<a href="#{$temp2}">Kritisk informasjon</a>
 						</li>
 					</xsl:if>
 					<xsl:if test="//child::*[local-name()='Comment'][child::*[local-name()='Heading']/@V='VU']">
@@ -1290,7 +1278,7 @@ Om:
 					<xsl:if test="child::*[local-name()='ServProvider'] or child::*[local-name()='Requester'] or child::*[local-name()='CopyDest'] or .//child::*[local-name()='RelServProvider'] or .//child::*[local-name()='Origin'] or .//child::*[local-name()='RelHCProvider'] or .//child::*[local-name()='PatRelHCP']">
 						<li>
 							<xsl:variable name="temp31" select="concat('HCP',$position)"/>
-							<a href="#{$temp31}">Helsetjenesteenheter</a>
+							<a href="#{$temp31}">Kontaktopplysninger</a>
 						</li>
 					</xsl:if>
 					<xsl:if test="child::*[local-name()='Event']">

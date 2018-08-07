@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- -->
+<!-- Dette er en testmelding med fiktive personer -->
+<!-- -->
+<!-- Eksempel på kansellerig av en henvisning som er rettighetsvurdert etter ventetid, inkludert pakkeforløp -->
+<!-- -->
+<MsgHead xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd">
+	<MsgInfo>
+		<Type V="HENVISNING_VIDERE" DN="Viderehenvisning"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2017-12-20T10:35:12</GenDate>
+		<MsgId>0293f9ef-1964-4a5e-8be2-55ce054f5cfa</MsgId>
+		<!-- Referanse til opprinnelig henvisning -->
+		<ConversationRef>
+			<RefToParent>8569d550-c79a-422d-8545-3fb1a772ad41</RefToParent>
+			<RefToConversation>c7534760-422f-11e8-b566-0800200c9a66</RefToConversation>
+		</ConversationRef>
+		<Sender>
+			<Organisation>
+				<OrganisationName>Sykehuset Telemark HF</OrganisationName>
+				<Ident>
+					<Id>39</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Organisation>
+					<OrganisationName>Indremedisin</OrganisationName>
+					<Ident>
+						<Id>99998</Id>
+						<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</Organisation>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>St Olavs hospital HF</OrganisationName>
+				<Ident>
+					<Id>59</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Organisation>
+					<OrganisationName>Onkologi</OrganisationName>
+					<Ident>
+						<Id>93220</Id>
+						<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</Organisation>
+			</Organisation>
+		</Receiver>
+		<Patient>
+			<FamilyName>Dottno</FamilyName>
+			<GivenName>Finn</GivenName>
+			<DateOfBirth>1964-01-21</DateOfBirth>
+			<Sex V="1" DN="Mann"/>
+			<Ident>
+				<Id>21016400952</Id>
+				<TypeId V="FNR" S="2.16.578.1.12.4.1.1.8116" DN="Fødselsnummer"/>
+			</Ident>
+			<Address>
+				<Type V="H" DN="Bostedsadresse"/>
+				<StreetAdr>Åssiden 31</StreetAdr>
+				<PostalCode>3008</PostalCode>
+				<City>Drammen</City>
+			</Address>
+			<TeleCom>
+				<TypeTelecom V="MC" DN="Mobiltelefon"/>
+				<TeleAddress V="tel:87654321"/>
+			</TeleCom>
+		</Patient>
+	</MsgInfo>
+	<Document>
+		<RefDoc>
+			<MsgType V="XML" DN="XML-instans"/>
+			<Content>
+				<Henvisning xsi:schemaLocation="http://ehelse.no/xmlstds/henvisning/2017-11-30 Henvisning-v2.0.xsd" xmlns="http://ehelse.no/xmlstds/henvisning/2017-11-30" xmlns:po="http://ehelse.no/xmlstds/po/poKomponent/2017-11-30" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1">
+					<ServType V="C" DN="Kansellering" />
+					<IssueDate>2017-12-19T08:39:12</IssueDate>
+					<ReqComment>Henvisningen kanselleres da pasienten døde</ReqComment>
+					<DocumentId>99b3aa1f-32aa-4d8b-a0f0-9e9de47b1f18</DocumentId>
+					<!--po:TilleggsopplysningPasient>
+						<po:SivilStatus V="2" DN="Gift"/>
+					</po:TilleggsopplysningPasient>
+					<po:ParorendeForesatt>
+						<po:Slektskap V="EF" DN="Ektefelle"/>
+						<po:NarmesteParorende>true</po:NarmesteParorende>
+						<po:Referanseperson>
+							<fk1:FamilyName>Dottno</fk1:FamilyName>
+							<fk1:GivenName>Helga</fk1:GivenName>
+							<fk1:Address>
+								<fk1:Type V="H" DN="Bostedsadresse"/>
+								<fk1:StreetAdr>Åssiden 31</fk1:StreetAdr>
+								<fk1:PostalCode>3008</fk1:PostalCode>
+								<fk1:City>Drammen</fk1:City>
+							</fk1:Address>
+							<fk1:TeleCom>
+								<fk1:TypeTelecom V="MC" DN="Mobiltelefon"/>
+								<fk1:TeleAddress V="tel:87654321"/>
+							</fk1:TeleCom>
+						</po:Referanseperson>
+					</po:ParorendeForesatt-->
+					<po:KontaktpersonHelsepersonell>
+						<po:Kontaktperson>
+							<fk1:TypeHealthcareProfessional V="LE" DN="Lege"/>
+							<fk1:RoleToPatient V="6" DN="Fastlege" S="2.16.578.1.12.4.1.1.9034"/>
+							<fk1:FamilyName>September</fk1:FamilyName>
+							<fk1:GivenName>August</fk1:GivenName>
+							<fk1:Ident>
+								<fk1:Id>9144897</fk1:Id>
+								<fk1:TypeId V="HPR" DN="HPR-nummer" S="2.16.578.1.12.4.1.1.8116"/>
+							</fk1:Ident>
+						</po:Kontaktperson>
+					</po:KontaktpersonHelsepersonell>
+					<po:AnsvarForRapport>
+						<po:AnsvarligRapport>
+							<fk1:TypeHealthcareProfessional V="LE" DN="Lege"/>
+							<fk1:RoleToPatient V="21" DN="Helsefaglig kontakt" S="2.16.578.1.12.4.1.1.9034"/>
+							<fk1:FamilyName>Koman</fk1:FamilyName>
+							<fk1:GivenName>Magnar</fk1:GivenName>
+							<fk1:Ident>
+								<fk1:Id>9144889</fk1:Id>
+								<fk1:TypeId V="HPR" DN="HPR-nummer" S="2.16.578.1.12.4.1.1.8116"/>
+							</fk1:Ident>
+							<fk1:TeleCom>
+								<fk1:TypeTelecom V="MC" DN="Mobiltelefon"/>
+								<fk1:TeleAddress V="tel:90550374"/>
+							</fk1:TeleCom>
+						</po:AnsvarligRapport>
+						<po:TypeRelasjon V="HHE" S="2.16.578.1.12.4.1.1.8254" DN="Henvisende helsepersonell"/>
+					</po:AnsvarForRapport>
+					<po:TypeInnholdIMelding>
+						<po:TypeInnhold V="10" S="2.16.578.1.12.4.1.1.8455" DN="Utredning/behandling"/>
+					</po:TypeInnholdIMelding>
+					<!--InfItem>
+						<Medication>
+							<DrugId V="C05AA04" DN="Prednisolon"/>
+							<Status V="1" DN="Fast"/>
+							<UnitDose V="10" U="mg"/>
+							<DosageText>X 2, oral bruk</DosageText>
+						</Medication>
+						<Type V="MEDB" S="2.16.578.1.12.4.1.1.8233" DN=" Legemiddelopplysning"/>
+					</InfItem>
+					<InfItem>
+						<Medication>
+							<DrugId V="L02A E03" DN="Zoladex"/>
+							<Status V="1" DN="Fast"/>
+							<UnitDose V="10.8" U="mg"/>
+							<DosageText>Hver 12. uke, 1. sprøyte 29.12.17</DosageText>
+						</Medication>
+						<Type V="MEDB" S="2.16.578.1.12.4.1.1.8233" DN=" Legemiddelopplysning"/>
+						<StartDateTime>2017-12-29T09:30:00</StartDateTime>
+					</InfItem>
+					<InfItem>
+						<Observation>
+							<Description>
+					Cystoscopi m/biopsi 28.12.2017
+				</Description>
+						</Observation>
+						<Type V="FUNN" S="2.16.578.1.12.4.1.1.8233" DN="Funn og undersøkelsesresultat"/>
+					</InfItem>
+					<ReasonAsText>
+						<Heading V="ART" S="2.16.578.1.12.4.1.1.8233" DN="Andre relevante tilstander"/>
+						<TextResultValue>K900 Cøliaki</TextResultValue>
+					</ReasonAsText>
+					<ReasonAsText>
+						<Heading V="PROB" S="2.16.578.1.12.4.1.1.8231" DN="Aktuell problemstilling"/>
+						<TextResultValue>Pasienten har påvist ca.prostata. PSA 30ng/ml. Startet hormonbehandling. 
+									Skjelettscintigrafi viser ikke tegn til metastaser. Cystocopi m/biopsi 28.12.17. Søkes inn til St. Olavs hospital for strålebehandling.</TextResultValue>
+					</ReasonAsText>
+					<ReasonAsText>
+						<Heading V="FA" S="2.16.578.1.12.4.1.1.8231" DN="Familie/sosialt"/>
+						<TextResultValue>Pasienten bor sammen med sin ektefelle. 
+										Pasienten sier at moren hadde brystkreft.</TextResultValue>
+					</ReasonAsText>
+					<Diagnosis>
+						<Concept V="C61" S="2.16.578.1.12.4.1.1.7180" DN="Ondartet svulst i blærehalskjertel (neoplasma malignum prostatae)"/>
+					</Diagnosis-->
+					<ReqServ>
+						<ServType V="N" DN="Ny"/>
+						<Priority V="PK" DN="Pakkeforløp for kreft (elektiv)"/>
+					</ReqServ>
+					<!--VurderingAvHenvisning>
+						<DatoMottakOgVurdering>
+							<TypeDato V="1" S="2.16.578.1.12.4.1.1.9147" DN="Ansiennitetsdato"/>
+							<Dato>2017-12-20</Dato>
+						</DatoMottakOgVurdering>
+						<DatoMottakOgVurdering>
+							<TypeDato V="2" S="2.16.578.1.12.4.1.1.9147" DN="Vurderingsdato"/>
+							<Dato>2017-12-22</Dato>
+						</DatoMottakOgVurdering>
+						<DatoMottakOgVurdering>
+							<TypeDato V="3" S="2.16.578.1.12.4.1.1.9147" DN="Frist for nødvendig helsehjelp"/>
+							<Dato>2017-12-30</Dato>
+						</DatoMottakOgVurdering>
+						<DatoMottakOgVurdering>
+							<TypeDato V="4" S="2.16.578.1.12.4.1.1.9147" DN="Ventetid sluttdato"/>
+							<Dato>2017-12-27</Dato>
+						</DatoMottakOgVurdering>
+						<Opplysninger>
+							<VentetidSluttkode V="1" S="2.16.578.1.12.4.1.1.8445" DN="Helsehjelp er påbegynt"/>
+							<ForlopsId>b0005cb0-422f-11e8-b566-0800200c9a66</ForlopsId>
+							<RettTilHelsehjelp>true</RettTilHelsehjelp>
+							<UtfallAvVurdering V="2" S="2.16.578.1.12.4.1.1.8485" DN="Behandling (eventuelt også inkludert videre utredning)"/>
+						</Opplysninger>
+					</VurderingAvHenvisning>
+					<Pakkeforlop>
+						<Pakkeforlopskode V="A16A" S="2.16.578.1.12.4.1.1.8480" DN="Prostatakreft; Start pakkeforløp"/>
+						<Merknad>Henvisning mottatt: 20.12.2017</Merknad>
+					</Pakkeforlop>
+					<Pakkeforlop>
+						<Pakkeforlopskode V="A16S" S="2.16.578.1.12.4.1.1.8480" DN="Prostatakreft; Start utredning"/>
+						<Merknad>Første fremmøte: 27.12.17</Merknad>
+					</Pakkeforlop>
+					<Pakkeforlop>
+						<Pakkeforlopskode V="A16CK" S="2.16.578.1.12.4.1.1.8480" DN="Prostatakreft; Klin beslutning; Påvist"/>
+						<Merknad>Behandling besluttet: 29.12.2017</Merknad>
+					</Pakkeforlop-->
+				</Henvisning>
+			</Content>
+		</RefDoc>
+	</Document>
+	<!-- Vedlegg: pdf med opprinnelig henvisning -->
+	<!--Document>
+		<RefDoc>
+			<IssueDate V="2017-12-20T08:39:12"/>
+			<MsgType V="A" DN="Vedlegg"/>
+			<MimeType>application/pdf</MimeType>
+			<Description>Opprinnelig henvisning</Description>
+			<Content-->
+				<!-- Generelt eksempel på innhold i vedlegg -->
+				<!--Base64Container xmlns="http://www.kith.no/xmlstds/base64container" xmlns:xsi="http://www.w3.org/2001/XMLSchemainstance">UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</Base64Container>
+			</Content>
+		</RefDoc>
+	</Document-->
+</MsgHead>
