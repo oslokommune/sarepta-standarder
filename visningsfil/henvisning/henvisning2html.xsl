@@ -2,7 +2,8 @@
 <!-- 
 
 Endringslogg
-- 06.06.28: v4.1.10 - Bugfix hvor 'Andre relevante tilstander' var satt til å bli oppgitt i elementet ReasonAsText istedet for InfItem. Endret 'CAVE' til 'Kritisk informasjon'.
+- 19.06.18: v4.1.11 - Fjernet unødvendige overskrifter i legemiddelvisning.
+- 06.06.18: v4.1.10 - Bugfix hvor 'Andre relevante tilstander' var satt til å bli oppgitt i elementet ReasonAsText istedet for InfItem. Endret 'CAVE' til 'Kritisk informasjon'.
 - 03.05.18: v4.1.9 - Bugfix hvor informasjon ang. KontaktpersonHelspersonell ikke ble vist
 - 11.04.18: v4.1.8 - Noen endringer i overskrifter. Fikset bug hvor informasjon om nærmeste pårørende ikke ble vist. La til visning av Legemiddelgjennomgang fra poKomponent.
 - 05.01.18: v4.1.7 - Tilpasset til Henvisning v2.0
@@ -46,7 +47,7 @@ Forfatter:
 	<xsl:variable name="std-col" select="8"/>
 	<xsl:variable name="std-td" select="100"/>
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'henvisning v.uavhengig - v4.1.10 '"/>
+	<xsl:variable name="versjon" select="'henvisning v.uavhengig - v4.1.11 '"/>
 
 	<xsl:variable name="VisOvrigHelsetjenesteInfoVisSkjul" select="true()"/>
 	<xsl:variable name="VisDokInfoVisSkjul" select="true()"/>
@@ -717,7 +718,7 @@ Forfatter:
 						<xsl:call-template name="eh-Observation"/>
 					</xsl:for-each>
 					<xsl:for-each select="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='MEDB']/child::*[local-name()='ResultItem']">
-					<!-- 	<xsl:call-template name="eh-ResultItem"/> --><!-- Mangler rad-element for ResultItem -->
+					 	<xsl:call-template name="eh-ResultItem"/> <!-- Mangler rad-element for ResultItem -->
 					</xsl:for-each>
 	
 					<xsl:for-each select="//child::*[local-name()='Medication']">
@@ -727,44 +728,37 @@ Forfatter:
 								<xsl:otherwise></xsl:otherwise>
 							</xsl:choose>
 						</xsl:variable>
-						<!--		
 						<xsl:if test="position()=1">
 							<div class="eh-row-8">
-								<div class="eh-col-1 md eh-label">Lege&#173;middel</div>
-								<div class="eh-col-1 md eh-label">Status</div>
+								<div class="eh-col-1 eh-label">Legemiddel</div>
+								<div class="eh-col-2 eh-label">Status</div>
 								<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='UnitDose'] or //child::*[local-name()='Medication']/child::*[local-name()='QuantitySupplied']">
-									<div class="eh-col-1 md eh-label">Mengde</div>
+									<div class="eh-col-1 eh-label">Mengde</div>
 								</xsl:if>
 								<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='DosageText'] or //child::*[local-name()='Medication']/child::*[local-name()='IntendedDuration']">
-									<div class="eh-col-1 md eh-label">
+									<div class="eh-col-2 eh-label">
 										<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='DosageText']">Dosering</xsl:if>
 										<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='DosageText'] and //child::*[local-name()='Medication']/child::*[local-name()='IntendedDuration']">/</xsl:if>
 										<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='IntendedDuration']">Varighet</xsl:if>
 									</div>
 								</xsl:if>
 								<xsl:if test="//child::*[local-name()='Medication']/child::*[local-name()='Comment']">
-									<div class="eh-col-1 md eh-label">Kommentar</div>
+									<div class="eh-col-1 eh-label">Kommentar</div>
 								</xsl:if>
 								<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Medication']]/child::*[local-name()='StartDateTime']">
-									<div class="eh-col-1 md eh-label">Start&#173;tidspunkt</div>
+									<div class="eh-col-1 eh-label">Starttidspunkt</div>
 								</xsl:if>
 								<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Medication']]/child::*[local-name()='EndDateTime']">
-									<div class="eh-col-1 md eh-label">Slut&#173;tidspunkt</div>
+									<div class="eh-col-1 eh-label">Sluttidspunkt</div>
 								</xsl:if>
 								<xsl:if test="//child::*[local-name()='InfItem'][child::*[local-name()='Medication']]/child::*[local-name()='OrgDate']">
-									<div class="eh-col-1 md eh-label">Tidspunkt for opprinnelse</div>
+									<div class="eh-col-1 eh-label">Tidspunkt for opprinnelse</div>
 								</xsl:if>
 							</div>
 						</xsl:if>
-						-->
 						<div class="eh-row-8 {$stripedCss}" >
 							<xsl:call-template name="eh-Medication">
-								<xsl:with-param name="striped">
-									<xsl:choose>
-										<xsl:when test="boolean(position() mod 2)"><xsl:value-of select="true()"/></xsl:when>
-										<xsl:otherwise><xsl:value-of select="false()"/></xsl:otherwise>
-									</xsl:choose>
-								</xsl:with-param>
+								<xsl:with-param name="striped" select="$stripedCss"/>
 							</xsl:call-template>
 						</div>
 					</xsl:for-each>
@@ -856,7 +850,7 @@ Forfatter:
 					</xsl:for-each>
 				</div>
 			</xsl:if>
-			  <!-- Pakkeforløp -->
+			<!-- Pakkeforløp -->
 		    <!-- Overskrift for pakkeforløp -->
 			<xsl:if test="child::*[local-name()='Pakkeforlop']">
 				<xsl:variable name="id185">
@@ -864,26 +858,30 @@ Forfatter:
 				</xsl:variable>
 				<h2 id="{$id185}">Pakkeforløp</h2>
 	
-			<div class="eh-section">
-				<xsl:for-each select="child::*[local-name()='Pakkeforlop']">
-					<xsl:variable name="stripedCss">
-						<xsl:choose>
-							<xsl:when test="boolean(position() mod 2)">striped</xsl:when>
-							<xsl:otherwise></xsl:otherwise>
-						</xsl:choose>
-					</xsl:variable>
-					<div class="eh-row-8 {$stripedCss}" >
-						<xsl:call-template name="eh-Pakkeforlop">
-							<xsl:with-param name="striped">
-								<xsl:choose>
-									<xsl:when test="boolean(position() mod 2)"><xsl:value-of select="true()"/></xsl:when>
-									<xsl:otherwise><xsl:value-of select="false()"/></xsl:otherwise>
-								</xsl:choose>
-							</xsl:with-param>
-						</xsl:call-template>
-					</div>
-				</xsl:for-each>	
-			</div>
+				<div class="eh-section">
+					<xsl:for-each select="child::*[local-name()='Pakkeforlop']">
+						<xsl:variable name="stripedCss">
+							<xsl:choose>
+								<xsl:when test="boolean(position() mod 2)">striped</xsl:when>
+								<xsl:otherwise></xsl:otherwise>
+							</xsl:choose>
+						</xsl:variable>
+						<xsl:if test="position()=1">
+							<div class="eh-row-8">
+								<div class="eh-col-1 eh-label">Kode</div>
+								<div class="eh-col-2 eh-label">Navn</div>
+								<xsl:if test="//child::*[local-name()='Merknad']">
+									<div class="eh-col-3 eh-label">Merknad</div>
+								</xsl:if>
+							</div>
+						</xsl:if>
+						<div class="eh-row-8 {$stripedCss}" >
+							<xsl:call-template name="eh-Pakkeforlop">
+								<xsl:with-param name="striped" select="$stripedCss"/>
+							</xsl:call-template>
+						</div>
+					</xsl:for-each>	
+				</div>
 			</xsl:if>
 			<!-- Overskrift for Kommentarer -->
 			<xsl:if test="child::*[local-name()='Comment']">

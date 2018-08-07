@@ -373,7 +373,18 @@
 			<ProfilId>5</ProfilId> 
 			<Referanse>eksempel/plo/1_5/Medisinske_opplysninger-v1_5/Medisinske_opplysninger_v1-5_Kansellering.xml</Referanse>
 		</Eksempel>
-		
+		<Eksempel>
+			<ProfilId>6</ProfilId> 
+			<Referanse>eksempel/plo/1_5/Utskrivningsrapport-v1_5/Utskrivningsrapport_v1-5_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>6</ProfilId> 
+			<Referanse>eksempel/plo/1_5/Utskrivningsrapport-v1_5/Utskrivningsrapport_v1-5_Endring.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>6</ProfilId> 
+			<Referanse>eksempel/plo/1_5/Utskrivningsrapport-v1_5/Utskrivningsrapport_v1-5_Kansellering.xml</Referanse>
+		</Eksempel>
 		<Eksempel>
 			<ProfilId>7</ProfilId> 
 			<Referanse>eksempel/plo/1_5/Pasientlogistikk_dodsfall-v1_5/Pasientlogistikk_Avmelding_av_utskrivningsklar_pasient_v1-5_Ny.xml</Referanse>

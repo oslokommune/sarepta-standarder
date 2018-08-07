@@ -68,7 +68,12 @@
 			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
-	
+	<Eksempler>
+		<Eksempel>
+			<ProfilId>1</ProfilId>
+			<Referanse>eksempel/KommunikasjonAvEPJ-innhold/Overføring legemiddelopplysninger.xml</Referanse>
+		</Eksempel>
+	</Eksempler>
 	<RelaterteFiler>
 		<RelatertFil>
 			<Beskrivelse>Teknisk informasjon: Overføring av legemiddelinformasjon</Beskrivelse>
