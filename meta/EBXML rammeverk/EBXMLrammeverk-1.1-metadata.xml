@@ -38,6 +38,10 @@
 			<Beskrivelse>Service, Action og Role i ebXML-konvolutten (PDF)</Beskrivelse>
 			<Referanse>relaterteFiler/EBXMLrammeverk/HISD_1209_2018 Service_Action_og_Role i ebXML-konvolutten.pdf</Referanse>
 		</RelatertFil>
+		<RelatertFil>
+			<Beskrivelse>Overvåkning av meldingsversjoner i ebXML (PDF)</Beskrivelse>
+			<Referanse>relaterteFiler/EBXMLrammeverk/HISD_1210_2018 Overvåkning av meldingsversjoner i ebXML.pdf</Referanse>
+		</RelatertFil>
 	</RelaterteFiler>
 
 </StandardMetadata>

@@ -190,11 +190,34 @@
 			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
+	
 	<Eksempler>
 		<Eksempel>
-			<Referanse>eksempel/Henvisning/Henvisning_v2-0/Henvisning_v2-0_Eksempel_Rettighetsvurdert_etter_ventetid_pakkeforlop.xml</Referanse>
+			<ProfilId>1</ProfilId>
+			<Referanse>eksempel/Henvisning/Henvisning_v2-0/Henvisning_ny_tilstand_v2-0_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>1</ProfilId>
+			<Referanse>eksempel/Henvisning/Henvisning_v2-0/Henvisning_ny_tilstand_v2-0_Endring.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>1</ProfilId>
+			<Referanse>eksempel/Henvisning/Henvisning_v2-0/Henvisning_ny_tilstand_v2-0_Kansellering.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>2</ProfilId>
+			<Referanse>eksempel/Henvisning/Henvisning_v2-0/Viderehenvisning_v2-0_Rettighetsvurdert_etter_ventetid_pakkeforlop_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>2</ProfilId>
+			<Referanse>eksempel/Henvisning/Henvisning_v2-0/Viderehenvisning_v2-0_Rettighetsvurdert_etter_ventetid_pakkeforlop_Endring.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>2</ProfilId>
+			<Referanse>eksempel/Henvisning/Henvisning_v2-0/Viderehenvisning_v2-0_Rettighetsvurdert_etter_ventetid_pakkeforlop_Kansellering.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
+	
 	<RelaterteFiler>
 	<RelatertFil>
 		<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger</Beskrivelse>

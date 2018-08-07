@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -->
+<!-- Dette er en testmelding med fiktive personer -->
+<!-- -->
+<!-- Eksempel på Status på henvisning – pasienten er innkalt til behandling etter viderehenvisning -->
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd">
+	<MsgInfo>
+		<Type V="DIALOG_STATUS_HENVISNING" DN="Status på henvisning"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2018-01-19T09:40:47</GenDate>
+		<MsgId>797700e0-2d17-11e8-b566-0800200c9a66</MsgId>
+		<ConversationRef>
+<!-- Referanse til viderehenvisningen -->
+			<RefToParent>810200d0-2d17-11e8-b566-0800200c9a66</RefToParent>
+<!-- Referanse til opprinnelig henvisning -->
+			<RefToConversation>87ef6130-2d17-11e8-b566-0800200c9a66</RefToConversation>
+		</ConversationRef>
+		<Sender>
+			<Organisation>
+				<OrganisationName>ST OLAVS HOSPITAL HF</OrganisationName>
+				<Ident>
+					<Id>59</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Organisation>
+					<OrganisationName>Ortopedisk kirurgi</OrganisationName>
+					<Ident>
+						<Id>90998</Id>
+						<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</Organisation>
+			</Organisation>
+		</Sender>
+		<Receiver>
+<!-- Viderehenviser -->
+			<Organisation>
+				<OrganisationName>Sykehuset Levanger HF</OrganisationName>
+				<Ident>
+					<Id>62</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Organisation>
+					<OrganisationName>Kirurgi</OrganisationName>
+					<Ident>
+						<Id>8605</Id>
+						<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</Organisation>
+			</Organisation>
+		</Receiver>
+		<OtherReceiver>
+<!-- Opprinnelig henviser -->
+			<RoleReceiver V="COP" DN="Kopimottaker"/>
+			<Organisation>
+				<OrganisationName>Kattskinnet legesenter</OrganisationName>
+				<Ident>
+					<Id>56704</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<HealthcareProfessional>
+					<RoleToPatient DN="Fastlege" V="6" S="2.16.578.1.12.4.1.1.9034"/>
+					<FamilyName>Lin</FamilyName>
+					<GivenName>Rita</GivenName>
+					<Ident>
+						<Id>258521</Id>
+						<TypeId DN="HER-id" V="HER" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</HealthcareProfessional>
+			</Organisation>
+		</OtherReceiver>
+		<Patient>
+			<FamilyName>Danser</FamilyName>
+			<GivenName>Line</GivenName>
+			<DateOfBirth>1969-11-13</DateOfBirth>
+			<Sex V="2" DN="Kvinne"/>
+			<Ident>
+				<Id>13116900216</Id>
+				<TypeId V="FNR" DN="Fødselsnummer" S="2.16.578.1.12.4.1.1.8116"/>
+			</Ident>
+		</Patient>
+	</MsgInfo>
+	<Document>
+		<RefDoc>
+			<IssueDate V="2018-01-19T09:30:47"/>
+			<MsgType V="XML" DN="XML-instans"/>
+			<Content>
+				<Dialogmelding xmlns="http://www.kith.no/xmlstds/dialog/2013-01-23" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/dialog/2013-01-23 dialogmelding-v1.1.xsd">
+					<Notat>
+						<TemaKodet V="1" DN="Innkalles til helsehjelp" S="2.16.578.1.12.4.1.1.9148"/>
+						<TekstNotatInnhold>Henvisningen er mottatt fra Sykehuset Levanger HF. Pasienten har fått time ved St. Olavs hospital, ortopedisk poliklinikk hos dr. Gryte Lokk. 
+
+      Tid: 05.02.2018, klokken 11:00 
+      Sted: Bevegelsessenteret, Olav Kyrres gate 13 
+     
+      Henvisning motatt: 22.01.2018
+      Ansiennitetsdato:  15.01.2018
+      Frist oppstart helsehjelp 20.02.2018 
+
+      Pasienten har rett til nødvendig helsehjelp i spesialisthelsetjenesten 
+      Pasienten er informert om sine rettigheter på www.helsenorge.no/rettigheter 
+						</TekstNotatInnhold>
+						<RollerRelatertNotat>
+							<RoleToPatient DN="Helsefaglig kontakt" V="21" S="2.16.578.1.12.4.1.1.9034"/>
+							<HealthcareProfessional>
+								<FamilyName>Jones</FamilyName>
+								<GivenName>May</GivenName>
+								<Ident>
+									<fk1:Id>258521</fk1:Id>
+									<fk1:TypeId V="HPR" DN="HPR-nummer" S="2.16.578.1.12.4.1.1.8116"/>
+								</Ident>
+								<TeleCom>
+									<fk1:TeleAddress V="tel:12345678"/>
+								</TeleCom>
+							</HealthcareProfessional>
+						</RollerRelatertNotat>
+					</Notat>
+				</Dialogmelding>
+			</Content>
+		</RefDoc>
+	</Document>
+</MsgHead>

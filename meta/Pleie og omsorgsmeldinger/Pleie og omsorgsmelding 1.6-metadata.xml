@@ -369,7 +369,18 @@
 		    <ProfilId>5</ProfilId> 
 			<Referanse>eksempel/plo/1_6/medisinske_opplysninger_1_6_mottak/Medisinske_opplysninger_v1-6_Kansellering.xml</Referanse>
 		</Eksempel>
-		
+		<Eksempel>
+			<ProfilId>6</ProfilId> 
+			<Referanse>eksempel/plo/1_6/utskrivningsrapport_1.6_mottak/Utskrivningsrapport_v1-6_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>6</ProfilId> 
+			<Referanse>eksempel/plo/1_6/utskrivningsrapport_1.6_mottak/Utskrivningsrapport_v1-6_Endring.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>6</ProfilId> 
+			<Referanse>eksempel/plo/1_6/utskrivningsrapport_1.6_mottak/Utskrivningsrapport_v1-6_Kansellering.xml</Referanse>
+		</Eksempel>
 		<Eksempel>
 			<ProfilId>7</ProfilId>
 			<Referanse>eksempel/plo/1_6/pasientlogistikk_1_6_mottak/Pasientlogistikk_Avmelding_av_utskrivningsklar_pasient_v1-6_Ny.xml</Referanse>

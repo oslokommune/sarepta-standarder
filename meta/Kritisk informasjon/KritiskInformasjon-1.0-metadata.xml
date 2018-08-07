@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>Kritisk informasjon i Kjernejournal</Navn>
+	<Versjon>1.0</Versjon>
+	<Identifikator>HIS 1202:2018</Identifikator>
+	<Utgitt>06/2018</Utgitt>
+	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	<Status>Til pilotering</Status>	
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Kritisk informasjon i Kjernejournal</Beskrivelse>
+			<Referanse>https://ehelse.no/standarder-kodeverk-og-referansekatalog/standarder-og-referansekatalog/standard-for-kritisk-informasjon-i-kjernejournal-his-1202-2018</Referanse>
+		</Informasjon>
+	</MerInformasjon>
+	
+
+
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>Kritisk informasjon i Kjernejournal (PDF)</Beskrivelse>
+			<Referanse>kravdokument/kritiskinformasjon/HIS1163_2017 Informasjonsmodell kritisk informasjon.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Kritisk informasjon i Kjernejournal (PDF)</Beskrivelse>
+			<Referanse>kravdokument/kritiskinformasjon/HIS 1202_2018 Standard for kritisk informasjon i Kjernejournal.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+	
+	
+	
+	<RelaterteFiler>
+		<RelatertFil>
+			<Beskrivelse>Kritisk informasjon i Kjernejournal - klinisk beskrivelse og kodeverk (PDF)</Beskrivelse>
+			<Referanse>https://ehelse.no/Lists/Publikasjoner/Attachments/30/Kritisk%20informasjon%20-%20klinisk%20beskrivelse%20og%20kodeverk_pdf.pdf</Referanse>
+		</RelatertFil>
+	</RelaterteFiler>
+</StandardMetadata>

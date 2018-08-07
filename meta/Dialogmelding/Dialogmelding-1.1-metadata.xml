@@ -72,9 +72,9 @@
 			<Referanse>kravdokument/dialogmelding/v11/HIS 1176_2017 Digital dialog Profil av dialogmelding.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<ProfilId>2</ProfilId>
+		<ProfilId>2</ProfilId>
 			<Beskrivelse>Helsefaglig dialog (PDF)</Beskrivelse>
-			<Referanse>kravdokument/dialogmelding/v11/HIS 1077_2017 Helsefaglig dialog.pdf</Referanse>
+			<Referanse>kravdokument/dialogmelding/v11/HIS 1077_2017 Helsefaglig dialog-korrigert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>3</ProfilId>
@@ -193,7 +193,18 @@
 			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
- 
+	 
+	<Eksempler>
+		<Eksempel>
+			<ProfilId>2</ProfilId>
+			<Referanse>eksempel/Dialogmelding/Dialogmelding-v1-1/Helsefaglig dialog.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>3</ProfilId>
+			<Referanse>eksempel/Dialogmelding/Dialogmelding-v1-1/Status_paa_henvisning-InnkaltEtterViderehenvisning.xml</Referanse>
+		</Eksempel>
+	</Eksempler>
+	 
 	<RelaterteFiler>
 		<RelatertFil>
 			<Beskrivelse>Implementering av dialogmelding for spørsmål, svar og avviksmelding HISD 80903:2009 (PDF)</Beskrivelse>
