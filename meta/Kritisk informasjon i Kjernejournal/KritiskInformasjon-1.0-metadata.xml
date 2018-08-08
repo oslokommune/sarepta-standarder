@@ -9,12 +9,8 @@
 	<Status>Til pilotering</Status>	
 	<MerInformasjon>
 		<Informasjon>
-			<Beskrivelse>Kritisk informasjon i Kjernejournal</Beskrivelse>
+			<Beskrivelse>Standard for Kritisk informasjon i Kjernejournal</Beskrivelse>
 			<Referanse>https://ehelse.no/standarder-kodeverk-og-referansekatalog/standarder-og-referansekatalog/standard-for-kritisk-informasjon-i-kjernejournal-his-1202-2018</Referanse>
-		</Informasjon>
-		<Informasjon>
-			<Beskrivelse>Kritisk informasjon i Kjernejournal - klinisk beskrivelse og kodeverk (PDF)</Beskrivelse>
-			<Referanse>https://ehelse.no/Lists/Publikasjoner/Attachments/30/Kritisk%20informasjon%20-%20klinisk%20beskrivelse%20og%20kodeverk_pdf.pdf</Referanse>
 		</Informasjon>
 	</MerInformasjon>
 	
@@ -129,6 +125,11 @@
 			<Referanse>skjema/kritiskInformasjon/ValueSet/kikj-Severity.valueset.xml</Referanse>
 			<Namespace>http://ehelse.no/fhir/ValueSet/kikj-Severity/kikj-Severity"</Namespace>
 		</Skjema>
-		
 	</Skjemaer>
+	<RelaterteFiler>
+		<RelatertFil>
+			<Beskrivelse>Kritisk informasjon - klinisk beskrivelse og kodeverk</Beskrivelse>
+			<Referanse>relaterteFiler/kritiskInformasjon/Kritisk informasjon - klinisk beskrivelse og kodeverk_pdf.pdf</Referanse>
+		</RelatertFil>
+	</RelaterteFiler>
 </StandardMetadata>
