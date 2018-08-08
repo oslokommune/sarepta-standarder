@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>Kritisk informasjon i Kjernejournal</Navn>
+	<Versjon>1.0</Versjon>
+	<Identifikator>HIS 1202:2018</Identifikator>
+	<Utgitt>06/2018</Utgitt>
+	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	<Status>Til pilotering</Status>	
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Kritisk informasjon i Kjernejournal</Beskrivelse>
+			<Referanse>https://ehelse.no/standarder-kodeverk-og-referansekatalog/standarder-og-referansekatalog/standard-for-kritisk-informasjon-i-kjernejournal-his-1202-2018</Referanse>
+		</Informasjon>
+		<Informasjon>
+			<Beskrivelse>Kritisk informasjon i Kjernejournal - klinisk beskrivelse og kodeverk (PDF)</Beskrivelse>
+			<Referanse>https://ehelse.no/Lists/Publikasjoner/Attachments/30/Kritisk%20informasjon%20-%20klinisk%20beskrivelse%20og%20kodeverk_pdf.pdf</Referanse>
+		</Informasjon>
+	</MerInformasjon>
+	
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>Informasjonsmodell for kritisk informasjon i Kjernejournal (PDF)</Beskrivelse>
+			<Referanse>kravdokument/kritiskinformasjon/HIS1163_2017 Informasjonsmodell kritisk informasjon.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Kritisk informasjon i Kjernejournal (PDF)</Beskrivelse>
+			<Referanse>kravdokument/kritiskinformasjon/HIS 1202_2018 Standard for kritisk informasjon i Kjernejournal.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+	<Skjemaer>
+		<Skjema>
+			<Beskrivelse>Annen prosedyreendring (XML)</Beskrivelse>
+			<Referanse>skjema/kritiskInformasjon/StructureDefinition/kikj-AdvanceDirective.structuredefinition-profile.xml</Referanse>
+			<Namespace>http://ehelse.no/fhir/StructureDefinition/kikj-AdvanceDirective"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Legemiddelreaksjon (XML)</Beskrivelse>
+			<Referanse>skjema/kritiskInformasjon/StructureDefinition/kikj-AdverseDrugReaction.structuredefinition-profile.xml</Referanse>
+			<Namespace>http://ehelse.no/fhir/StructureDefinition/kikj-AdverseDrugReaction"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Sannsynlighet / visshetsgrad (XML)</Beskrivelse>
+			<Referanse>skjema/kritiskInformasjon/StructureDefinition/kikj-Certainty.structuredefinition-extension.xml</Referanse>
+			<Namespace>http://ehelse.no/fhir/StructureDefinition/kikj-Certainty"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Felles base type (XML)</Beskrivelse>
+			<Referanse>skjema/kritiskInformasjon/StructureDefinition/kikj-CommonBaseType.structuredefinition-extension.xml</Referanse>
+			<Namespace>http://ehelse.no/fhir/StructureDefinition/kikj-CommonBaseType"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Implantat (XML)</Beskrivelse>
+			<Referanse>skjema/kritiskInformasjon/StructureDefinition/kikj-Implant.structuredefinition-profile.xml</Referanse>
+			<Namespace>http://ehelse.no/fhir/StructureDefinition/kikj-Implant"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Hjelpestoff (XML)</Beskrivelse>
+			<Referanse>skjema/kritiskInformasjon/StructureDefinition/kikj-InactiveIngredient.structuredefinition-extension.xml</Referanse>
+			<Namespace>http://ehelse.no/fhir/StructureDefinition/kikj-InactiveIngredient"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Smitte (XML)</Beskrivelse>
+			<Referanse>skjema/kritiskInformasjon/StructureDefinition/kikj-InfectiousDisease.structuredefinition-profile.xml</Referanse>
+			<Namespace>http://ehelse.no/fhir/StructureDefinition/kikj-InfectiousDisease"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Intubasjonsproblemer (XML)</Beskrivelse>
+			<Referanse>skjema/kritiskInformasjon/StructureDefinition/kikj-IntubationProblem.structuredefinition-profile.xml</Referanse>
+			<Namespace>http://ehelse.no/fhir/StructureDefinition/kikj-IntubationProblem"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Kritisk medisinsk tilstand (XML)</Beskrivelse>
+			<Referanse>skjema/kritiskInformasjon/StructureDefinition/kikj-MedicalConditionAlert.structuredefinition-profile.xml</Referanse>
+			<Namespace>http://ehelse.no/fhir/StructureDefinition/kikj-MedicalConditionAlert"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Notat (XML)</Beskrivelse>
+			<Referanse>skjema/kritiskInformasjon/StructureDefinition/kikj-Note.structuredefinition-extension.xml</Referanse>
+			<Namespace>http://ehelse.no/fhir/StructureDefinition/kikj-Note"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Annen allergi (XML)</Beskrivelse>
+			<Referanse>skjema/kritiskInformasjon/StructureDefinition/kikj-OtherAdverseReaction.structuredefinition-profile.xml</Referanse>
+			<Namespace>http://ehelse.no/fhir/StructureDefinition/kikj-OtherAdverseReaction"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Annet problem ved anestesi (XML)</Beskrivelse>
+			<Referanse>skjema/kritiskInformasjon/StructureDefinition/kikj-OtherAnaestheticProblem.structuredefinition-profile.xml</Referanse>
+			<Namespace>http://ehelse.no/fhir/StructureDefinition/kikj-OtherAnaestheticProblem"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Registrert av (XML)</Beskrivelse>
+			<Referanse>skjema/kritiskInformasjon/StructureDefinition/kikj-RegisteredBy.structuredefinition-profile.xml</Referanse>
+			<Namespace>http://ehelse.no/fhir/StructureDefinition/kikj-RegisteredBy"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Registreringsinformasjon (XML)</Beskrivelse>
+			<Referanse>skjema/kritiskInformasjon/StructureDefinition/kikj-RegistrationInformation.structuredefinition-profile.xml</Referanse>
+			<Namespace>http://ehelse.no/fhir/StructureDefinition/kikj-RegistrationInformation"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Registrert virksomhet (XML)</Beskrivelse>
+			<Referanse>skjema/kritiskInformasjon/StructureDefinition/kikj-RegistrationOrganization.structuredefinition-profile.xml</Referanse>
+			<Namespace>http://ehelse.no/fhir/StructureDefinition/kikj-RegistrationOrganization"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Avgrensning av livsforlengende behandling (XML)</Beskrivelse>
+			<Referanse>skjema/kritiskInformasjon/StructureDefinition/kikj-RestrictionOfLifeProlongingTreatment.structuredefinition-profile.xml</Referanse>
+			<Namespace>http://ehelse.no/fhir/StructureDefinition/kikj-RestrictionOfLifeProlongingTreatment"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Kilde til informasjon (XML)</Beskrivelse>
+			<Referanse>skjema/kritiskInformasjon/StructureDefinition/kikj-SourceOfInformation.structuredefinition-extension.xml</Referanse>
+			<Namespace>http://ehelse.no/fhir/StructureDefinition/kikj-SourceOfInformation"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Behandling (XML)</Beskrivelse>
+			<Referanse>skjema/kritiskInformasjon/StructureDefinition/kikj-Treatment.structuredefinition-profile.xml</Referanse>
+			<Namespace>http://ehelse.no/fhir/StructureDefinition/kikj-Treatment"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Verifisert ingen kjente (XML)</Beskrivelse>
+			<Referanse>skjema/kritiskInformasjon/StructureDefinition/kikj-VerifiedNoKnown.structuredefinition-profile.xml</Referanse>
+			<Namespace>http://ehelse.no/fhir/StructureDefinition/kikj-VerifiedNoKnown"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Legemiddelreaksjon (XML)</Beskrivelse>
+			<Referanse>skjema/kritiskInformasjon/ValueSet/kikj-Severity.valueset.xml</Referanse>
+			<Namespace>http://ehelse.no/fhir/ValueSet/kikj-Severity/kikj-Severity"</Namespace>
+		</Skjema>
+		
+	</Skjemaer>
+</StandardMetadata>
