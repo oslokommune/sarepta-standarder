@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2018-03-04T12:39:56.015+01:00" />
+  </meta>
+  <url value="http://ehelse.no/fhir/StructureDefinition/kikj-CommonBaseType" />
+  <name value="kikj-CommonBaseType" />
+  <status value="draft" />
+  <date value="2017-11-10T10:30:43.419+01:00" />
+  <description value=" " />
+  <fhirVersion value="3.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <contextType value="resource" />
+  <context value="AllergyIntolerance" />
+  <context value="Device" />
+  <context value="Procedure" />
+  <context value="Condition" />
+  <context value="Consent" />
+  <context value="Contract" />
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:confirmation">
+      <path value="Extension.extension" />
+      <sliceName value="confirmation" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:confirmation.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="confirmation" />
+    </element>
+    <element id="Extension.extension:confirmation.value[x]:valueCodeableConcept">
+      <path value="Extension.extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
+      <min value="1" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+    <element id="Extension.extension:confirmation.value[x]:valueCodeableConcept.coding">
+      <path value="Extension.extension.valueCodeableConcept.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:confirmation.value[x]:valueCodeableConcept.coding.system">
+      <path value="Extension.extension.valueCodeableConcept.coding.system" />
+      <type>
+        <code value="uri" />
+        <profile value="urn:uid:2.16.578.1.12.4.1.1.7524" />
+      </type>
+      <fixedUri value="urn:uid:2.16.578.1.12.4.1.1.7524" />
+    </element>
+    <element id="Extension.extension:confirmation.value[x]:valueCodeableConcept.coding.version">
+      <path value="Extension.extension.valueCodeableConcept.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:confirmation.value[x]:valueCodeableConcept.coding.code">
+      <path value="Extension.extension.valueCodeableConcept.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:confirmation.value[x]:valueCodeableConcept.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.valueCodeableConcept.coding.display" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:confirmation.value[x]:valueCodeableConcept.coding.userSelected">
+      <path value="Extension.extension.valueCodeableConcept.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:confirmation.value[x]:valueCodeableConcept.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.valueCodeableConcept.text" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:registrationInformation">
+      <path value="Extension.extension" />
+      <sliceName value="registrationInformation" />
+      <max value="2" />
+    </element>
+    <element id="Extension.extension:registrationInformation.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="registrationInformation" />
+    </element>
+    <element id="Extension.extension:registrationInformation.value[x]:valueReference">
+      <path value="Extension.extension.valueReference" />
+      <sliceName value="valueReference" />
+      <short value="Reference to the one initially registered the information" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://ehelse.no/fhir/StructureDefinition/kikj-RegistrationInformation" />
+      </type>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/kikj-CommonBaseType" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

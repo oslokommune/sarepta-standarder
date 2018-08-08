@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2018-03-03T18:23:53.7+01:00" />
+  </meta>
+  <url value="http://ehelse.no/fhir/StructureDefinition/kikj-OtherAnaestheticProblem" />
+  <version value="0.9" />
+  <name value="kikj-OtherAnaestheticProblem" />
+  <status value="draft" />
+  <date value="2017-11-01T12:05:00.309+01:00" />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Condition" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Condition" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Condition.id">
+      <path value="Condition.id" />
+      <min value="1" />
+    </element>
+    <element id="Condition.meta.versionId">
+      <path value="Condition.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="Condition.extension">
+      <path value="Condition.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Condition.extension:commonBaseType">
+      <path value="Condition.extension" />
+      <sliceName value="commonBaseType" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://ehelse.no/fhir/StructureDefinition/kikj-CommonBaseType" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.extension:sourceOfInformation">
+      <path value="Condition.extension" />
+      <sliceName value="sourceOfInformation" />
+      <short value="Source of information" />
+      <definition value="Here it is required to give infomation about what is the source of the information. And one can also give information about the paients age or the date when the information was given." />
+      <type>
+        <code value="Extension" />
+        <profile value="http://ehelse.no/fhir/StructureDefinition/kikj-SourceOfInformation" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.identifier">
+      <path value="Condition.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Condition.clinicalStatus">
+      <path value="Condition.clinicalStatus" />
+      <max value="0" />
+    </element>
+    <element id="Condition.verificationStatus">
+      <path value="Condition.verificationStatus" />
+      <definition value="Hvis feltet confirmation i extension &quot;CommonBaseType&quot; er satt til Bekreftet så må dette feltet bli satt til &quot;confirmed&quot;. Hvis confirmation er satt til &quot;Avkreftet&quot; så må dette feltet settes til &quot;refuted&quot;." />
+      <min value="1" />
+    </element>
+    <element id="Condition.category">
+      <path value="Condition.category" />
+      <short value="Type of anaesthetic problem" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Condition.category.id">
+      <path value="Condition.category.id" />
+      <max value="0" />
+    </element>
+    <element id="Condition.category.coding">
+      <path value="Condition.category.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Condition.category.coding.system">
+      <path value="Condition.category.coding.system" />
+      <type>
+        <code value="uri" />
+        <profile value="urn:uid:2.16.578.1.12.4.1.1.7651" />
+      </type>
+      <fixedUri value="urn:uid:2.16.578.1.12.4.1.1.7651" />
+    </element>
+    <element id="Condition.category.coding.code">
+      <path value="Condition.category.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Condition.category.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Condition.category.coding.display" />
+      <min value="1" />
+    </element>
+    <element id="Condition.category.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Condition.category.text" />
+      <max value="0" />
+      <fixedString value="Andre anestesiproblemer" />
+    </element>
+    <element id="Condition.severity">
+      <path value="Condition.severity" />
+      <max value="0" />
+    </element>
+    <element id="Condition.code">
+      <path value="Condition.code" />
+      <max value="0" />
+    </element>
+    <element id="Condition.bodySite">
+      <path value="Condition.bodySite" />
+      <max value="0" />
+    </element>
+    <element id="Condition.subject">
+      <path value="Condition.subject" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+      </type>
+    </element>
+    <element id="Condition.subject.identifier">
+      <path value="Condition.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Condition.subject.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Condition.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="Condition.context">
+      <path value="Condition.context" />
+      <max value="0" />
+    </element>
+    <element id="Condition.onset[x]:onsetDateTime">
+      <path value="Condition.onsetDateTime" />
+      <sliceName value="onsetDateTime" />
+      <short value="Actual date first registrated the anaesthetic problem" />
+      <max value="0" />
+      <type>
+        <code value="dateTime" />
+      </type>
+    </element>
+    <element id="Condition.abatement[x]">
+      <path value="Condition.abatement[x]" />
+      <max value="0" />
+    </element>
+    <element id="Condition.assertedDate">
+      <path value="Condition.assertedDate" />
+      <max value="0" />
+    </element>
+    <element id="Condition.asserter">
+      <path value="Condition.asserter" />
+      <max value="0" />
+    </element>
+    <element id="Condition.stage">
+      <path value="Condition.stage" />
+      <max value="0" />
+    </element>
+    <element id="Condition.evidence">
+      <path value="Condition.evidence" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Condition.evidence.id">
+      <path value="Condition.evidence.id" />
+      <max value="0" />
+    </element>
+    <element id="Condition.evidence.code">
+      <path value="Condition.evidence.code" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Condition.evidence.code.id">
+      <path value="Condition.evidence.code.id" />
+      <max value="0" />
+    </element>
+    <element id="Condition.evidence.code.coding">
+      <path value="Condition.evidence.code.coding" />
+      <max value="0" />
+    </element>
+    <element id="Condition.evidence.code.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Condition.evidence.code.text" />
+      <label value="Spesifiser problem" />
+      <min value="1" />
+    </element>
+    <element id="Condition.evidence.detail">
+      <path value="Condition.evidence.detail" />
+      <max value="0" />
+    </element>
+    <element id="Condition.note">
+      <path value="Condition.note" />
+      <max value="1" />
+    </element>
+    <element id="Condition.note.id">
+      <path value="Condition.note.id" />
+      <max value="0" />
+    </element>
+    <element id="Condition.note.author[x]">
+      <path value="Condition.note.author[x]" />
+      <max value="0" />
+    </element>
+    <element id="Condition.note.time">
+      <path value="Condition.note.time" />
+      <max value="0" />
+    </element>
+    <element id="Condition.note.text">
+      <path value="Condition.note.text" />
+      <label value="Kommentar" />
+    </element>
+  </differential>
+</StructureDefinition>
