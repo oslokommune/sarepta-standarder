@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2018-03-04T11:05:36.147+01:00" />
+  </meta>
+  <url value="http://ehelse.no/fhir/StructureDefinition/kikj-OtherAdverseReaction" />
+  <version value="0.9" />
+  <name value="kikj-OtherAdverseReaction" />
+  <status value="draft" />
+  <date value="2017-09-19T20:43:21.334+02:00" />
+  <publisher value="Anders Almås" />
+  <description value="This profile should store information about other reactions and allergies than from medication(&quot;Legemiddelreaksjoner&quot;)" />
+  <purpose value="This profile should store information about other reactions and allergies than from medication(&quot;Legemiddelreaksjoner&quot;)" />
+  <copyright value="Direktoratet for e-helse" />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="AllergyIntolerance" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/AllergyIntolerance" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="AllergyIntolerance.id">
+      <path value="AllergyIntolerance.id" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.meta.versionId">
+      <path value="AllergyIntolerance.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.extension">
+      <path value="AllergyIntolerance.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="AllergyIntolerance.extension:commonBaseType">
+      <path value="AllergyIntolerance.extension" />
+      <sliceName value="commonBaseType" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://ehelse.no/fhir/StructureDefinition/kikj-CommonBaseType" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.extension:sourceOfInformation">
+      <path value="AllergyIntolerance.extension" />
+      <sliceName value="sourceOfInformation" />
+      <short value="Source of information" />
+      <definition value="Here it is required to give infomation about what is the source of the information. And one can also give information about the paients age or the date when the information was given." />
+      <type>
+        <code value="Extension" />
+        <profile value="http://ehelse.no/fhir/StructureDefinition/kikj-SourceOfInformation" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.identifier">
+      <path value="AllergyIntolerance.identifier" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.clinicalStatus">
+      <path value="AllergyIntolerance.clinicalStatus" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.verificationStatus">
+      <path value="AllergyIntolerance.verificationStatus" />
+      <definition value="This element should have only one value &quot;confirmed&quot; or &quot;refuted&quot; depending on value of confirmation parameter in commonBaseType-extension" />
+      <comment value="This element should have only one value &quot;confirmed&quot;" />
+    </element>
+    <element id="AllergyIntolerance.type">
+      <path value="AllergyIntolerance.type" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.category">
+      <path value="AllergyIntolerance.category" />
+      <definition value="Should be set to other. The reason is because it is the only one, available from the required set of codes, and it fits our requirement" />
+      <comment value="Should be set to other. The reason is because it is the only one, available from the required set of codes, and it fits our requirement" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCode value="environment" />
+    </element>
+    <element id="AllergyIntolerance.criticality">
+      <path value="AllergyIntolerance.criticality" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.code">
+      <path value="AllergyIntolerance.code" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.patient.reference">
+      <path value="AllergyIntolerance.patient.reference" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.patient.identifier">
+      <path value="AllergyIntolerance.patient.identifier" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.patient.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="AllergyIntolerance.patient.display" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.onset[x]:onsetDateTime">
+      <path value="AllergyIntolerance.onsetDateTime" />
+      <sliceName value="onsetDateTime" />
+      <max value="0" />
+      <type>
+        <code value="dateTime" />
+      </type>
+    </element>
+    <element id="AllergyIntolerance.assertedDate">
+      <path value="AllergyIntolerance.assertedDate" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.recorder">
+      <path value="AllergyIntolerance.recorder" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.asserter">
+      <path value="AllergyIntolerance.asserter" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.lastOccurrence">
+      <path value="AllergyIntolerance.lastOccurrence" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.note">
+      <path value="AllergyIntolerance.note" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction">
+      <path value="AllergyIntolerance.reaction" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="AllergyIntolerance.reaction.id">
+      <path value="AllergyIntolerance.reaction.id" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.extension">
+      <path value="AllergyIntolerance.reaction.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="AllergyIntolerance.reaction.extension:certainty">
+      <path value="AllergyIntolerance.reaction.extension" />
+      <sliceName value="certainty" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://ehelse.no/fhir/StructureDefinition/kikj-Certainty" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance">
+      <path value="AllergyIntolerance.reaction.substance" />
+      <short value="Codesystem: 7514" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.coding">
+      <path value="AllergyIntolerance.reaction.substance.coding" />
+      <max value="1" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.coding.system">
+      <path value="AllergyIntolerance.reaction.substance.coding.system" />
+      <short value="OID 7514: Allergen" />
+      <min value="1" />
+      <type>
+        <code value="uri" />
+        <profile value="urn:uid:2.16.578.1.12.4.1.1.7514" />
+      </type>
+      <fixedUri value="urn:uid:2.16.578.1.12.4.1.1.7514" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.coding.version">
+      <path value="AllergyIntolerance.reaction.substance.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.coding.code">
+      <path value="AllergyIntolerance.reaction.substance.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="AllergyIntolerance.reaction.substance.coding.display" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.coding.userSelected">
+      <path value="AllergyIntolerance.reaction.substance.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="AllergyIntolerance.reaction.substance.text" />
+      <short value="Describe the allergy if no code exits" />
+      <definition value="Use this field if no proper code from CodeSystem 7514 can be used" />
+    </element>
+    <element id="AllergyIntolerance.reaction.manifestation">
+      <path value="AllergyIntolerance.reaction.manifestation" />
+      <max value="1" />
+    </element>
+    <element id="AllergyIntolerance.reaction.manifestation.coding">
+      <path value="AllergyIntolerance.reaction.manifestation.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="AllergyIntolerance.reaction.manifestation.coding.id">
+      <path value="AllergyIntolerance.reaction.manifestation.coding.id" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.manifestation.coding.system">
+      <path value="AllergyIntolerance.reaction.manifestation.coding.system" />
+      <short value="OID 7497: Reaksjonstyper" />
+      <type>
+        <code value="uri" />
+        <profile value="urn:uid:2.16.578.1.12.4.1.1.7497" />
+      </type>
+    </element>
+    <element id="AllergyIntolerance.reaction.manifestation.coding.version">
+      <path value="AllergyIntolerance.reaction.manifestation.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.manifestation.coding.code">
+      <path value="AllergyIntolerance.reaction.manifestation.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.reaction.manifestation.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="AllergyIntolerance.reaction.manifestation.coding.display" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.reaction.manifestation.coding.userSelected">
+      <path value="AllergyIntolerance.reaction.manifestation.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.manifestation.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="AllergyIntolerance.reaction.manifestation.text" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.description">
+      <path value="AllergyIntolerance.reaction.description" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.onset">
+      <path value="AllergyIntolerance.reaction.onset" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.severity">
+      <path value="AllergyIntolerance.reaction.severity" />
+      <min value="1" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="AllergyIntoleranceSeverity" />
+        </extension>
+        <strength value="required" />
+        <valueSetReference>
+          <reference value="http://ehelse.no/fhir/ValueSet/kikj-Severity" />
+        </valueSetReference>
+      </binding>
+    </element>
+    <element id="AllergyIntolerance.reaction.exposureRoute">
+      <path value="AllergyIntolerance.reaction.exposureRoute" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.note.author[x]">
+      <path value="AllergyIntolerance.reaction.note.author[x]" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.note.time">
+      <path value="AllergyIntolerance.reaction.note.time" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>
