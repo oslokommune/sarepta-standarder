@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xcal="urn:ietf:params:xml:ns:icalendar-2.0" targetNamespace="urn:ietf:params:xml:ns:icalendar-2.0" elementFormDefault="qualified">
+	<!-- =====================================================================
+
+       3.7 Calendar Properties
+
+       ===================================================================== -->
+	<!-- ===================== Properties =================================  -->
+	<xs:include schemaLocation="iCalendar-props.xsd"/>
+	<xs:element name="x-available-at" type="xcal:XAvailableAt" substitutionGroup="xcal:baseProperty"/>
+	<xs:complexType name="XAvailableAt" mixed="false">
+		<xs:complexContent>
+			<xs:extension base="xcal:DatetimePropertyType"/>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

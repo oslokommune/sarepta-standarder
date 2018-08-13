@@ -28,7 +28,7 @@ TODO/Svakheter:
 	<xsl:variable name="versjon" select="'epikrise1.0 v3.1.0 '"/>
 
 	<xsl:template match="/">
-		<html">
+		<html>
 			<head>
 				<title>Epikrise</title>
 				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
