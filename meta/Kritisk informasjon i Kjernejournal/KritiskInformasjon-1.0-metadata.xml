@@ -126,10 +126,4 @@
 			<Namespace>http://ehelse.no/fhir/ValueSet/kikj-Severity/kikj-Severity"</Namespace>
 		</Skjema>
 	</Skjemaer>
-	<RelaterteFiler>
-		<RelatertFil>
-			<Beskrivelse>Kritisk informasjon - klinisk beskrivelse og kodeverk</Beskrivelse>
-			<Referanse>relaterteFiler/kritiskInformasjon/Kritisk informasjon - klinisk beskrivelse og kodeverk_pdf.pdf</Referanse>
-		</RelatertFil>
-	</RelaterteFiler>
 </StandardMetadata> 
