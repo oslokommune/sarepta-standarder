@@ -9,8 +9,12 @@
 	<Status>Fastsatt som standard</Status>	
 	<MerInformasjon>
 		<Informasjon>
-			<Beskrivelse>SYSVAK</Beskrivelse>
+			<Beskrivelse>SYSVAK (Referansekatalogen, ehelse.no)</Beskrivelse>
 			<Referanse>http://ehelse.no/SYSVAK</Referanse>
+		</Informasjon>
+		<Informasjon>
+			<Beskrivelse>Teknisk informasjon for SYSVAK (fhi.no)</Beskrivelse>
+			<Referanse>https://www.fhi.no/hn/helseregistre-og-registre/sysvak/teknisk-informasjon-for-sysvak/</Referanse>
 		</Informasjon>
 	</MerInformasjon>
 	
