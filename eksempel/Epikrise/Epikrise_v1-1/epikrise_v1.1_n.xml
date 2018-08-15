@@ -343,7 +343,7 @@
 					<HCProf>
 						<Name>Turnuslege August September</Name>
 						<Id>9144897</Id>
-						<TypeId V="HPR" DN="Helsepersonellnummer"/>
+						<TypeId V="HPR" DN="HPR-nummer"/>
 					</HCProf>
 					<Address>
 						<Type V="WP" DN="Arbeidsadresse"/>
@@ -359,7 +359,7 @@
 						<Name>Tulle tre</Name>
 						<!-- KomDir: her må dere legge inn hpr-nummer som denne testaktøren har -->
 						<Id>xxx</Id>
-						<TypeId V="HPR" DN="Helsepersonellnummer"/>
+						<TypeId V="HPR" DN="HPR-nummer"/>
 					</HCProf>
 					<Address>
 						<Type V="WP" DN="Arbeidsadresse"/>
