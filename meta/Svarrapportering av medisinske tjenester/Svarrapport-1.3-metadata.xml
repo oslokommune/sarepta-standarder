@@ -203,6 +203,10 @@
 			<Referanse>visningsfil/felleskomponenter/kodeverk.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: storeKodeverk.xml</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/storeKodeverk.xml</Referanse>
+		</Visningsfil>
+		<Visningsfil>
 			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler: kodeverk2template.xsl</Beskrivelse>
 			<Referanse>visningsfil/felleskomponenter/kodeverk2template.xsl</Referanse>
 		</Visningsfil>
