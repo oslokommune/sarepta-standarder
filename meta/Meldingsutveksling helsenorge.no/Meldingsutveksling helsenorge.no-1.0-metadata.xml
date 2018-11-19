@@ -2,9 +2,9 @@
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
 	<Navn>Meldingsutveksling helsenorge.no</Navn>
-	<Versjon>1.0</Versjon>
-	<Identifikator>???</Identifikator>
-	<Utgitt>09/2018</Utgitt>
+	<Versjon>1.1</Versjon>
+	<Identifikator>Helsenorge.no</Identifikator>
+	<Utgitt>11/2018</Utgitt>
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<MerInformasjon>
 		<Informasjon>
@@ -14,8 +14,16 @@
 	</MerInformasjon>
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Implementasjonsguide (PDF)</Beskrivelse>
-			<Referanse>kravdokument/MeldingsutvekslingHelsenorge_no/Tjenesteoversikt - Implementasjonsguide standarder.pdf</Referanse>
+			<Beskrivelse>AMQP spesifikasjon Helsenorge.no (PDF)</Beskrivelse>
+			<Referanse>kravdokument/MeldingsutvekslingHelsenorge_no/AMQP_spesifikasjon_helsenorge.no.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Digital dialog - Implementasjonsguide standarder (PDF)</Beskrivelse>
+			<Referanse>kravdokument/MeldingsutvekslingHelsenorge_no/Digital_dialog_-_Implementasjonsguide_standarder.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Tjenesteoversikt - Implementasjonsguide standarder (PDF)</Beskrivelse>
+			<Referanse>kravdokument/MeldingsutvekslingHelsenorge_no/Tjenesteoversikt_-_Implementasjonsguide_standarder.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
 	
