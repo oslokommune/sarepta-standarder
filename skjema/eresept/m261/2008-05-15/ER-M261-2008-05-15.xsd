@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.3
+M26.1 Forespørsel om fastlegeinformasjon
+2008-05-15
+ -->
+<schema xmlns:m261="http://www.kith.no/xmlstds/eresept/m261/2008-05-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kith.no/xmlstds/eresept/m261/2008-05-15" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<element name="Foresporsel">
+		<annotation>
+			<documentation>Forespørsel om fastlegeinformasjon</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="FnrFastlege" type="string">
+					<annotation>
+						<documentation>Fødselsnummer fastlege</documentation>
+					</annotation>
+				</element>
+				<element name="FnrPasient" type="string">
+					<annotation>
+						<documentation>Fødselsnummer pasient</documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M9.21 Hent endrede mullidosepasienter
+2013-10-14
+ -->
+<!--
+Arbeidsutkast ny melding
+-->
+<schema xmlns:m921="http://www.kith.no/xmlstds/eresept/m921/2013-10-15" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kith.no/xmlstds/eresept/m921/2013-10-15" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<element name="M921">
+		<complexType>
+			<sequence>
+				<element name="EndringerEtter" type="dateTime"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

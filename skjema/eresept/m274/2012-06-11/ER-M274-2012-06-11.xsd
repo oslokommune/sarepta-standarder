@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M27.4 Svar på registrering av multidoseansvarlig gruppe
+2012-06-11
+ -->
+<schema xmlns:m274="http://www.kith.no/xmlstds/eresept/m274/2012-06-11" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" targetNamespace="http://www.kith.no/xmlstds/eresept/m274/2012-06-11" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="../felles/felleskomponent1.xsd"/>
+	<element name="M274">
+		<complexType>
+			<sequence>
+				<element name="RegistrertEndring" type="boolean"/>
+				<element name="GruppeId" type="string"/>
+				<element name="Pasient" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element name="Fnr" type="string"/>
+							<element ref="m274:Multidoselege" minOccurs="0"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element ref="m274:Multidoseapotek" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Multidoselege">
+		<annotation>
+			<documentation> </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="HprNr" type="string">
+					<annotation>
+						<documentation>Legens helsepersonell-nummer. </documentation>
+					</annotation>
+				</element>
+				<element name="Navn" type="string">
+					<annotation>
+						<documentation>Legens navn. </documentation>
+					</annotation>
+				</element>
+				<element name="Org" type="string">
+					<annotation>
+						<documentation>Navnet på organisasjonen til multidoseansvarlig. </documentation>
+					</annotation>
+				</element>
+				<element name="HerId" type="fk1:Ident">
+					<annotation>
+						<documentation>Id fra NHN-Adresseregister (Helsetjenesteenhetsregisteret) til organisasjonen til multidoseansvarlig. </documentation>
+					</annotation>
+				</element>
+				<element name="AktivTil" type="date" minOccurs="0">
+					<annotation>
+						<documentation>Dato for når lege ikke lenger har multidoseansvar for pasient. </documentation>
+					</annotation>
+				</element>
+				<element name="Telefon" type="fk1:TeleCom" minOccurs="0">
+					<annotation>
+						<documentation>Telefonnummer hvor multidoseansvarlig lege kan nåes på dagtid, eksempelvis legekontorets telefonnummer. </documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Multidoseapotek">
+		<complexType>
+			<sequence>
+				<element name="Navn" type="string">
+					<annotation>
+						<documentation>Apotekets navn. </documentation>
+					</annotation>
+				</element>
+				<element name="Adresse" type="fk1:Address" minOccurs="0"/>
+				<element name="Konsesjonsnr" type="fk1:Ident">
+					<annotation>
+						<documentation>Apotekets konsesjonsnummer</documentation>
+					</annotation>
+				</element>
+				<element name="AktivTil" type="date" minOccurs="0">
+					<annotation>
+						<documentation>Dato for når apotek ikke lenger har multidoseansvar for pasient</documentation>
+					</annotation>
+				</element>
+				<element name="Telefon" type="fk1:TeleCom" minOccurs="0">
+					<annotation>
+						<documentation>Apotekets telefonnummer. </documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

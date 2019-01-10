@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 sp1 (http://www.altova.com) by Jan Sigurd Dragsjø (KITH) -->
+<!-- 
+eResept versjon 2.1
+M10 Utleveringsrapport reseptformidler
+2008-11-06
+ -->
+<!--
+Endringer siden v2.1 2008-10-09: 
+Originalforskrivning: Fjernet
+BetaltEgenandel: Endret kardinalitet 1..1 -> 0..1
+StartEgenandelsperiode: Endret kardinalitet 1..1 -> 0..1
+Kanselleringskode: Endret kardinalitet 1..1 -> 0..1
+PrisLegemiddelUtenMt: Endret kardinalitet 1..1 -> 0..1
+-->
+<!--
+Endringer siden v2.1 2008-10-08: 
+Oppdatert namespace: ul http://www.kith.no/xmlstds/eresept/utlevering/2008-10-09
+Oppdatert namespace: m1 http://www.kith.no/xmlstds/eresept/m1/2008-10-09
+-->
+<!--
+Endringer siden v2.1 2008-09-23: 
+Benytter Utlevering v2.1 2008-10-08 (http://www.kith.no/xmlstds/eresept/utlevering/2008-10-08)
+Element ul:Utlevering i stedet for complexType ul:typeUtlevering
+-->
+<!-- 
+Endringer siden v2.0 2008-06-20:
+Benytter Utlevering v2.1 2008-09-23 (http://www.kith.no/xmlstds/eresept/utlevering/2008-09-23)
+Benytter M1 v2.1 2008-09-17 (http://www.kith.no/xmlstds/eresept/m1/2008-09-17)
+Utleveringsrapport/AnsattId: Nytt element
+Utleveringsrapport/ReservasjonRapportFastlege: Byttet navn fra RapportFastlege, og CS -> boolean
+-->
+<schema xmlns:m10="http://www.kith.no/xmlstds/eresept/m10/2008-11-06" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:m1="http://www.kith.no/xmlstds/eresept/m1/2008-10-09" xmlns:kith="http://www.kith.no/xmlstds" xmlns:ul="http://www.kith.no/xmlstds/eresept/utlevering/2008-10-09" targetNamespace="http://www.kith.no/xmlstds/eresept/m10/2008-11-06" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="felleskomponent1.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/eresept/m1/2008-10-09" schemaLocation="ER-M1-2008-10-09.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/eresept/utlevering/2008-10-09" schemaLocation="ER-Utlevering-2008-10-09.xsd"/>
+	<element name="Utleveringsrapport">
+		<annotation>
+			<documentation>M10</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ul:Utlevering"/>
+				<element name="BetaltEgenandel" type="kith:MO" minOccurs="0"/>
+				<element name="StartEgenandelsperiode" type="date" minOccurs="0"/>
+				<element name="Kanselleringskode" type="kith:CS" minOccurs="0"/>
+				<element name="ReservasjonRapportFastlege" type="boolean"/>
+				<element name="PrisLegemiddelUtenMt" type="kith:MO" minOccurs="0"/>
+				<element name="AnsattId" type="string"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>
