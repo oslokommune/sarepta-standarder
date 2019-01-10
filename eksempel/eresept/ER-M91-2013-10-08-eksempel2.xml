@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ForesporselReseptUtleverer xmlns="http://www.kith.no/xmlstds/eresept/m91/2013-10-08" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/eresept/m91/2013-10-08 ER-M91-2013-10-08.xsd">
+	<Fdato>1965-07-15</Fdato>
+	<Fornavn>Roland</Fornavn>
+	<Etternavn>Gundersen</Etternavn>
+	<AlleResepter V="1" DN="Ja"/>
+	<FonetiskSok V="1" DN="Ja"/>
+	<AnsattId>1234567890</AnsattId>
+	<InkluderVergeinnsynsreservasjon V="1" DN="Ja" />
+</ForesporselReseptUtleverer>
