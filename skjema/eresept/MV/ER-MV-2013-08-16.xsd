@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+MV Verify
+2013-08-16
+ -->
+<schema xmlns:mv="http://www.kith.no/xmlstds/eresept/mv/2013-08-16" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kith.no/xmlstds/eresept/mv/2013-08-16" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<element name="Verify">
+		<complexType>
+			<sequence>
+				<element name="Systemleverandor" type="string" minOccurs="0"/>
+				<element name="Driftsleverandor" type="string" minOccurs="0"/>
+				<element name="System" type="string" minOccurs="0"/>
+				<element name="Versjon" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

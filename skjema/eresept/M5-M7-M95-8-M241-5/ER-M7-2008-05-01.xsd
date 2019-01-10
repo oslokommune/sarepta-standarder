@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M7 Slettet resept i RF
+2008-05-01
+-->
+<schema xmlns:m5="http://www.kith.no/xmlstds/eresept/m7/2008-05-01" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kith.no/xmlstds/eresept/m7/2008-05-01" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<element name="SlettetReseptRF">
+		<annotation>
+			<documentation>Gir beskjed til rekvirent om at en resept er slettet i RF</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Tidspunkt" type="dateTime">
+					<annotation>
+						<documentation>Tidspunkt for sletting av resepten</documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

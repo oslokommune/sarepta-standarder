@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Reseptliste xmlns="http://www.kith.no/xmlstds/eresept/m92/2013-10-08" xmlns:kith="http://www.kith.no/xmlstds" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/eresept/m92/2013-10-08 ER-M92-2013-10-08.xsd">
+	<Reseptinfo>
+		<Forskrivningsdato>2006-09-05</Forskrivningsdato>
+		<Fornavn>Roland</Fornavn>
+		<Etternavn>Gundersen</Etternavn>
+		<Address>
+			<fk1:StreetAdr>Flåklypa 31</fk1:StreetAdr>
+			<fk1:PostalCode>2560</fk1:PostalCode>
+			<fk1:City>Alvdal</fk1:City>
+		</Address>
+		<RekvirentId>9144889</RekvirentId>
+		<NavnRekvirent>Magnar Koman</NavnRekvirent>
+		<Nr>021069</Nr>
+		<NavnFormStyrke>PRILIWA COMP 10 mg/12,5 mg tablett</NavnFormStyrke>
+		<EndretFarmasoyt V="2" DN="Nei" />
+		<RefHjemmel DN="String" S="0.0" V="token" OT="35a"/>
+		<ReseptId>5b6c5e2a-f30f-409a-a3dd-04b2ad6022af</ReseptId>
+		<Status V="E" DN="Ekspederbar"/>
+		<Vergeinnsynsreservasjon>false</Vergeinnsynsreservasjon>
+	</Reseptinfo>
+	<Reseptinfo>
+		<Forskrivningsdato>2007-02-15</Forskrivningsdato>
+		<Fornavn>Roland</Fornavn>
+		<Etternavn>Gundersen</Etternavn>
+		<Address>
+			<fk1:StreetAdr>Flåklypa 31</fk1:StreetAdr>
+			<fk1:PostalCode>2560</fk1:PostalCode>
+			<fk1:City>Alvdal</fk1:City>
+		</Address>
+		<RekvirentId>9144889</RekvirentId>
+		<NavnRekvirent>Magnar Koman</NavnRekvirent>
+		<Nr>021069</Nr>
+		<NavnFormStyrke>SEROXAT 10 mg tablett, filmdrasjertr</NavnFormStyrke>
+		<EndretFarmasoyt V="2" DN="Nei"/>
+		<RefHjemmel DN="String" S="0.0" V="token" OT="35a"/>
+		<ReseptId>c69b975b-952d-4079-b1e4-af02c0ce0e0d</ReseptId>
+		<Status V="T" DN="Tilbakekalt"/>
+		<MerknadTilbakekalling>Feil preparat"</MerknadTilbakekalling>
+		<RefNr>ABC123FGH</RefNr>
+		<Vergeinnsynsreservasjon>false</Vergeinnsynsreservasjon>
+	</Reseptinfo>
+</Reseptliste>
