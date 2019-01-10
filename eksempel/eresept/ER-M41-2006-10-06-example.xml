@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<M41 xmlns="http://www.kith.no/xmlstds/eresept/m41/2006-10-06" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/eresept/m41/2006-10-06 ER-M41-2006-10-06.xsd">
+	<Antall>100</Antall>
+</M41>
