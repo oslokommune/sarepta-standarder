@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M27.3 Registrering av multidoseansvarlig gruppe
+2012-06-11
+ -->
+<schema xmlns:m273="http://www.kith.no/xmlstds/eresept/m273/2012-06-11" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kith.no/xmlstds/eresept/m273/2012-06-11" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<element name="M273">
+		<annotation>
+			<documentation>Brukes av apotek for å registrere/avregistrere seg som multidoseansvarlig for en gruppe pasienter.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Status" type="kith:CS">
+					<annotation>
+						<documentation>Angir om dette er en registrering eller en avregistrering. </documentation>
+					</annotation>
+				</element>
+				<element name="GjelderFra" type="date">
+					<annotation>
+						<documentation>Dato når endringen gjelder fra. </documentation>
+					</annotation>
+				</element>
+				<element name="GruppeId" type="string">
+					<annotation>
+						<documentation>Gruppe-ID (UUID) for en gruppe pasienter.</documentation>
+					</annotation>
+				</element>
+				<element name="Pasient" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element name="Fnr" type="string">
+								<annotation>
+									<documentation>Pasientens fødselsnummer. </documentation>
+								</annotation>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>
