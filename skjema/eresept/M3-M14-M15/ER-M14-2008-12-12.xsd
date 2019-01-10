@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M14 Søknad til SLV
+2008-12-12
+ -->
+<schema xmlns:m14="http://www.kith.no/xmlstds/eresept/m14/2008-12-12" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kith.no/xmlstds/eresept/m14/2008-12-12" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- Midlertidig kommentert bort da den ikke benyttes. <import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/> xmlns:kith="http://www.kith.no/xmlstds" -->
+	<element name="SoknadSLV">
+		<complexType>
+			<sequence>
+				<element name="ReseptId" type="string"/>
+				<element name="AnmodningSLVId" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

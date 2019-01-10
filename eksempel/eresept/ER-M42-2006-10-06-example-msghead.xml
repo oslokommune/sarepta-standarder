@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 ../felles/MsgHead-v1_2.xsd">
+	<MsgInfo>
+		<Type V="ERM042" DN="Referansenummer" />
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2007-03-12T19:20:00</GenDate>
+		<MsgId>7770c1b3-7ef7-4a7f-afc3-2ce815edf53a</MsgId>
+		<Sender>
+			<Organisation>
+				<OrganisationName>Reseptbanken</OrganisationName>
+				<Ident>
+					<Id>1234567890-example</Id>
+					<TypeId S="2.16.578.1.12.4.1.1.9051" V="ENH" DN="Organisasjonsnummeret i Enhetsregister"/>
+				</Ident>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>Kattskinnet legesenter</OrganisationName>
+				<Ident>
+					<Id>971318864</Id>
+					<TypeId S="2.16.578.1.12.4.1.1.9051" V="ENH" DN="Organisasjonsnummeret i Enhetsregister"/>
+				</Ident>
+				<HealthcareProfessional>
+					<FamilyName>Koman</FamilyName>
+					<GivenName>Magnar</GivenName>
+					<Ident>
+						<Id>009144889</Id>
+						<TypeId S="2.16.578.1.12.4.1.1.8116" V="HPR" DN="HPR-nummer"/>
+					</Ident>
+				</HealthcareProfessional>
+			</Organisation>
+		</Receiver>
+	</MsgInfo>
+	<Document>
+		<RefDoc>
+			<MsgType V="XML" DN="XML-instans"/>
+			<Content>
+				<M42 xmlns="http://www.kith.no/xmlstds/eresept/m42/2006-10-06" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/eresept/m42/2006-10-06 ER-M42-2006-10-06.xsd">
+					<RefNr>1234567890ABCD</RefNr>
+					<RefNr>1234567890ABCE</RefNr>
+					<RefNr>1234567890ABCF</RefNr>
+					<RefNr>1234567890ABCG</RefNr>
+					<RefNr>1234567890ABCH</RefNr>
+				</M42>
+			</Content>
+		</RefDoc>
+	</Document>
+</MsgHead>

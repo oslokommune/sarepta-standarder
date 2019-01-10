@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M3 Anmodning om søknad til SLV
+2010-05-01
+ -->
+<schema xmlns:m3="http://www.kith.no/xmlstds/eresept/m3/2010-05-01" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kith.no/xmlstds/eresept/m3/2010-05-01" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<element name="AnmodningSLV">
+		<complexType>
+			<sequence>
+				<element name="ReseptId" type="string"/>
+				<element name="Kommentar" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>
