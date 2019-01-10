@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SvarSamtykke xsi:schemaLocation="http://www.kith.no/xmlstds/eresept/m242/2008-10-03 ER-M242-2008-10-03.xsd" xmlns="http://www.kith.no/xmlstds/eresept/m242/2008-10-03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Svar DN="Avvist" V="2"/>
+	<Begrunnelse DN="Rekvirent er ikke pasientens fastlege" V="2"/>
+</SvarSamtykke>

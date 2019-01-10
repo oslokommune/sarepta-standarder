@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 ../felles/MsgHead-v1_2.xsd">
+	<MsgInfo>
+		<Type V="ERM15" DN="Søknadssvar fra Legemiddelverket"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2007-03-12T19:20:00</GenDate>
+		<MsgId>5f723921-76d0-44ed-acd0-f7ed2baec16c</MsgId>
+		<Sender>
+			<Organisation>
+				<OrganisationName>Statens Legemiddelverk, Avdeling for legemiddelgodkjenning</OrganisationName>
+				<Ident>
+					<Id>1234567890-example</Id>
+					<TypeId S="2.16.578.1.12.4.1.1.9051" V="ENH" DN="Organisasjonsnummeret i Enhetsregister"/>
+				</Ident>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>Kattskinnet legesenter</OrganisationName>
+				<Ident>
+					<Id>971318864</Id>
+					<TypeId S="2.16.578.1.12.4.1.1.9051" V="ENH" DN="Organisasjonsnummeret i Enhetsregister"/>
+				</Ident>
+				<HealthcareProfessional>
+					<FamilyName>Koman</FamilyName>
+					<GivenName>Magnar</GivenName>
+					<Ident>
+						<Id>009144889</Id>
+						<TypeId S="2.16.578.1.12.4.1.1.8116" V="HPR" DN="HPR-nummer"/>
+					</Ident>
+				</HealthcareProfessional>
+			</Organisation>
+		</Receiver>
+	</MsgInfo>
+	<Document>
+		<RefDoc>
+			<MsgType V="XML" DN="XML-instans"/>
+			<Content>
+				<SvarSLV xmlns="http://www.kith.no/xmlstds/eresept/m15/2006-10-06" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/eresept/m15/2006-10-06 ER-M15-2006-10-06.xsd">
+					<ReseptId>1234567890</ReseptId>
+					<Innvilget V="N"/>
+					<BegrunnelseAvslag>Statshemmelighet</BegrunnelseAvslag>
+					<Saksbehandler>BEH123</Saksbehandler>
+				</SvarSLV>
+			</Content>
+		</RefDoc>
+	</Document>
+</MsgHead>
