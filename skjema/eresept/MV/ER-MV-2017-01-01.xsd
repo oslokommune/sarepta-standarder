@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 (http://www.altova.com) by Laila Rønning and Dag Hammer (ehelse) -->
+<!-- 
+eResept versjon 2.5
+MV Verify
+2017-01-01
+
+Utkast:
+20170105, daham: Fjernet SystemType og SystemVendorInfo
+20170130, daham: Rettet trykkfeil i "ServiceVendorName" etter tilbakemelding fra apotek
+20170203, daham: Endret kardinalitet for SystemInfo fra 1..3 til 1..* etter tilbakemeldinger
+ -->
+<schema xmlns:mv="http://ehelse.no/xmlstds/eresept/mv/2017-01-01" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ehelse.no/xmlstds/eresept/mv/2017-01-01" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<element name="Verify">
+		<complexType>
+			<sequence>
+				<element name="SystemInfo" type="mv:SystemInfo" minOccurs="1" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Informasjon om installert programvare for oppfølging og forvaltningsformål.</documentation>
+					</annotation>
+				</element>
+				<element name="OperationSupplierInfo" type="mv:ServiceVendorInfo">
+					<annotation>
+						<documentation>Driftsleverandør med tilhørende kontaktinformasjon.</documentation>
+					</annotation>
+				</element>
+				<element name="AdditionalInfo" type="mv:KeyValuePair" minOccurs="0" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Benyttes for kommandoer til mottaker i testsituasjoner</documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<complexType name="SystemInfo">
+		<sequence>
+			<element name="SystemCode" type="string">
+				<annotation>
+					<documentation>Kode som er kjent av Reseptformidleren for godkjent system</documentation>
+				</annotation>
+			</element>
+			<element name="SystemName" type="string"/>
+			<element name="Version" type="string"/>
+			<element name="TimeLastUpdated" type="dateTime"/>
+		</sequence>
+	</complexType>
+	<complexType name="ServiceVendorInfo">
+		<sequence>
+			<element name="ServiceVendorName" type="string"/>
+			<element name="ContactName" type="string"/>
+			<element name="ContactMail" type="string"/>
+			<element name="ContactPhone" type="string"/>
+		</sequence>
+	</complexType>
+	<complexType name="KeyValuePair">
+		<sequence>
+			<element name="Key" type="string"/>
+			<element name="Value" type="string"/>
+		</sequence>
+	</complexType>
+</schema>

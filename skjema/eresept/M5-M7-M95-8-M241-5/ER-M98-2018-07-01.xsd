@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M9.8 Utleveringer på resept
+2018-07-01
+ -->
+<!--
+Endringer siden 2015-05-01:
+Nytt element:  (ERSA-sak 14458)
+	Pasientreservasjon
+    Rettet skrivefeil i AntallUtleveringer
+-->
+<schema xmlns:m98="http://www.ehelse.no/xmlstds/eresept/m98/2018-07-01" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ehelse.no/xmlstds/eresept/m98/2018-07-01" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<element name="M98">
+		<complexType>
+			<choice>
+				<element name="IngenResept" type="boolean"/>
+				<element name="AntallUtleveringer" type="int"/>
+				<element name="Pasientreservasjon" type="boolean"/>
+			</choice>
+		</complexType>
+	</element>
+</schema>
