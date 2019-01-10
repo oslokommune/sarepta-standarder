@@ -492,7 +492,7 @@
 			<Referanse>visningsfil/eresept/utlevering/utlevering-2html-v2.4.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/Forskrivninger2html.xsl</Referanse>
+			<Referanse>visningsfil/eresept/Forskrivninger2html.xslt</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
 	<Eksempler>
