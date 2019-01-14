@@ -564,6 +564,10 @@
 	
 	<RelaterteFiler>
 		<RelatertFil>
+			<Beskrivelse>Versjon 2.5 av meldingsdefinisjonene – oppdatert 09.01.2019</Beskrivelse>
+			<Referanse>relaterteFiler/eresept/Versjonsmerknader til ny meldingsdef 2019.01.pdf</Referanse>
+		</RelatertFil>
+		<RelatertFil>
 			<Beskrivelse>Applikasjonskvittering v 1.0</Beskrivelse>
 			<Referanse>kravdokument/applikasjonskvittering/HIS_80415_2004 AppRec v1.0 -korrigert.pdf</Referanse>
 		</RelatertFil>
