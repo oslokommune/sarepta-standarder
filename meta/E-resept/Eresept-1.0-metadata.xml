@@ -9,8 +9,12 @@
 	<Status>Fastsatt som standard</Status>
 	<MerInformasjon>
 		<Informasjon>
-			<Beskrivelse>Eresept</Beskrivelse>
-			<Referanse>https://ehelse.no/eresept</Referanse>
+			<Beskrivelse>Referansekatalogen for e-helse (e-reseptmeldinger)</Beskrivelse>
+			<Referanse> http://ehelse.no/e-reseptmeldinger</Referanse>
+		</Informasjon>
+		<Informasjon>
+			<Beskrivelse>Dokumentasjon for e-resept</Beskrivelse>
+			<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/e-resept/dokumentasjon-for-e-resept</Referanse>
 		</Informasjon>
 	</MerInformasjon>
 
@@ -45,7 +49,7 @@
 		</Kravdokument>
 		<Kravdokument>
 			<Beskrivelse>M24.2 Svar på samtykke (PDF)</Beskrivelse>
-			<Referanse>kravdokument/eresept/HIS 3008_2018 M242 Svar på samtykkeregistreing.pdf</Referanse>
+			<Referanse>kravdokument/eresept/HIS 3008_2018 M242 Svar på samtykkeregistrering.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<Beskrivelse>M9.11 Forespørsel om legemidler i bruk (PDF)</Beskrivelse>
