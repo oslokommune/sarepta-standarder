@@ -87,6 +87,176 @@
 				</Informasjon>
 			</MerInformasjon>
         </Profil>
+        <Profil>
+            <ProfilId>5</ProfilId> 
+            <Beskrivelse>M9.7 Forespørsel om utlevering på resept</Beskrivelse>
+            <Identifikator>HIS 3005:2018</Identifikator>
+	        <Utgitt>07/2018</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+				<Informasjon>
+					<Beskrivelse>Referansekatalogen for e-helse (e-reseptmeldinger)</Beskrivelse>
+					<Referanse> http://ehelse.no/e-reseptmeldinger</Referanse>
+				</Informasjon>
+				<Informasjon>
+					<Beskrivelse>Dokumentasjon for e-resept</Beskrivelse>
+					<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/e-resept/dokumentasjon-for-e-resept</Referanse>
+				</Informasjon>
+			</MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>6</ProfilId> 
+            <Beskrivelse>M9.8 Utleveringer på resept</Beskrivelse>
+            <Identifikator>HIS 3006:2018</Identifikator>
+	        <Utgitt>07/2018</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+				<Informasjon>
+					<Beskrivelse>Referansekatalogen for e-helse (e-reseptmeldinger)</Beskrivelse>
+					<Referanse> http://ehelse.no/e-reseptmeldinger</Referanse>
+				</Informasjon>
+				<Informasjon>
+					<Beskrivelse>Dokumentasjon for e-resept</Beskrivelse>
+					<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/e-resept/dokumentasjon-for-e-resept</Referanse>
+				</Informasjon>
+			</MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>7</ProfilId> 
+            <Beskrivelse>M24.1 Samtykkeregistrering</Beskrivelse>
+            <Identifikator>HIS 3007:2018</Identifikator>
+	        <Utgitt>07/2018</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+				<Informasjon>
+					<Beskrivelse>Referansekatalogen for e-helse (e-reseptmeldinger)</Beskrivelse>
+					<Referanse> http://ehelse.no/e-reseptmeldinger</Referanse>
+				</Informasjon>
+				<Informasjon>
+					<Beskrivelse>Dokumentasjon for e-resept</Beskrivelse>
+					<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/e-resept/dokumentasjon-for-e-resept</Referanse>
+				</Informasjon>
+			</MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>8</ProfilId> 
+            <Beskrivelse>M24.2 Svar på samtykke</Beskrivelse>
+            <Identifikator>HIS 3008:2018</Identifikator>
+	        <Utgitt>07/2018</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+				<Informasjon>
+					<Beskrivelse>Referansekatalogen for e-helse (e-reseptmeldinger)</Beskrivelse>
+					<Referanse> http://ehelse.no/e-reseptmeldinger</Referanse>
+				</Informasjon>
+				<Informasjon>
+					<Beskrivelse>Dokumentasjon for e-resept</Beskrivelse>
+					<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/e-resept/dokumentasjon-for-e-resept</Referanse>
+				</Informasjon>
+			</MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>9</ProfilId> 
+            <Beskrivelse>M9.11 Forespørsel om legemidler i bruk</Beskrivelse>
+            <Identifikator>HIS 3009:2018</Identifikator>
+	        <Utgitt>07/2018</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+				<Informasjon>
+					<Beskrivelse>Referansekatalogen for e-helse (e-reseptmeldinger)</Beskrivelse>
+					<Referanse> http://ehelse.no/e-reseptmeldinger</Referanse>
+				</Informasjon>
+				<Informasjon>
+					<Beskrivelse>Dokumentasjon for e-resept</Beskrivelse>
+					<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/e-resept/dokumentasjon-for-e-resept</Referanse>
+				</Informasjon>
+			</MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>10</ProfilId> 
+            <Beskrivelse>M9.12 Nedlastning av legemidler i bruk</Beskrivelse>
+            <Identifikator>HIS 3010:2018</Identifikator>
+	        <Utgitt>07/2018</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+				<Informasjon>
+					<Beskrivelse>Referansekatalogen for e-helse (e-reseptmeldinger)</Beskrivelse>
+					<Referanse> http://ehelse.no/e-reseptmeldinger</Referanse>
+				</Informasjon>
+				<Informasjon>
+					<Beskrivelse>Dokumentasjon for e-resept</Beskrivelse>
+					<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/e-resept/dokumentasjon-for-e-resept</Referanse>
+				</Informasjon>
+			</MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>11</ProfilId> 
+            <Beskrivelse>M9NA1 Forespørsel om reseptliste fra nettkunde</Beskrivelse>
+            <Identifikator>HIS 3016:2018</Identifikator>
+	        <Utgitt>07/2018</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+				<Informasjon>
+					<Beskrivelse>Referansekatalogen for e-helse (e-reseptmeldinger)</Beskrivelse>
+					<Referanse> http://ehelse.no/e-reseptmeldinger</Referanse>
+				</Informasjon>
+				<Informasjon>
+					<Beskrivelse>Dokumentasjon for e-resept</Beskrivelse>
+					<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/e-resept/dokumentasjon-for-e-resept</Referanse>
+				</Informasjon>
+			</MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>12</ProfilId> 
+            <Beskrivelse>M9NA2 Reseptliste nettkunde </Beskrivelse>
+            <Identifikator>HIS 3017:2018</Identifikator>
+	        <Utgitt>07/2018</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+				<Informasjon>
+					<Beskrivelse>Referansekatalogen for e-helse (e-reseptmeldinger)</Beskrivelse>
+					<Referanse> http://ehelse.no/e-reseptmeldinger</Referanse>
+				</Informasjon>
+				<Informasjon>
+					<Beskrivelse>Dokumentasjon for e-resept</Beskrivelse>
+					<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/e-resept/dokumentasjon-for-e-resept</Referanse>
+				</Informasjon>
+			</MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>13</ProfilId> 
+            <Beskrivelse>M9NA3 Forespørsel om utvidet informasjon på resept fra nettkunde</Beskrivelse>
+            <Identifikator>HIS 3018:2018</Identifikator>
+	        <Utgitt>07/2018</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+				<Informasjon>
+					<Beskrivelse>Referansekatalogen for e-helse (e-reseptmeldinger)</Beskrivelse>
+					<Referanse> http://ehelse.no/e-reseptmeldinger</Referanse>
+				</Informasjon>
+				<Informasjon>
+					<Beskrivelse>Dokumentasjon for e-resept</Beskrivelse>
+					<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/e-resept/dokumentasjon-for-e-resept</Referanse>
+				</Informasjon>
+			</MerInformasjon>
+        </Profil> 
+        <Profil>
+            <ProfilId>14</ProfilId> 
+            <Beskrivelse>M9NA4 Utvidet informasjon om resept nettkunde</Beskrivelse>
+            <Identifikator>HIS 3019:2018</Identifikator>
+	        <Utgitt>07/2018</Utgitt>
+	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+				<Informasjon>
+					<Beskrivelse>Referansekatalogen for e-helse (e-reseptmeldinger)</Beskrivelse>
+					<Referanse> http://ehelse.no/e-reseptmeldinger</Referanse>
+				</Informasjon>
+				<Informasjon>
+					<Beskrivelse>Dokumentasjon for e-resept</Beskrivelse>
+					<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/e-resept/dokumentasjon-for-e-resept</Referanse>
+				</Informasjon>
+			</MerInformasjon>
+        </Profil>
     </Profiler>
 
 	<Kravdokumenter>
@@ -109,6 +279,56 @@
 			<ProfilId>4</ProfilId> 
 			<Beskrivelse>M9.6 Reseptliste (PDF)</Beskrivelse>
 			<Referanse>kravdokument/eresept/HIS 3004_2018 M96 Reseptliste.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>5</ProfilId> 
+			<Beskrivelse>M9.7 Forespørsel om utlevering på resept (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3005_2018 M97 Forespørsel om utleveringer på resept.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>6</ProfilId> 
+			<Beskrivelse>M9.8 Utleveringer på resept (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3006_2018 M98 Utleveringer på resept.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>7</ProfilId> 
+			<Beskrivelse>M24.1 Samtykkeregistrering (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3007_2018 M241 Samtykkeregistrering.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>8</ProfilId> 
+			<Beskrivelse>M24.2 Svar på samtykke (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3008_2018 M242 Svar på samtykkeregistrering.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>9</ProfilId> 
+			<Beskrivelse>M9.11 Forespørsel om legemidler i bruk (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3009_2018 M911 Forespørsel om legemidler i bruk.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>10</ProfilId> 
+			<Beskrivelse>M9.12 Nedlastning av legemidler i bruk (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3010_2018 M912 Nedlasting av legemidler i bruk.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>11</ProfilId> 
+			<Beskrivelse>M9NA1 Forespørsel om reseptliste fra nettkunde (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3016_2018 M9NA1 Forespørsel om reseptliste fra nettkunde.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>12</ProfilId> 
+			<Beskrivelse>M9NA2 Reseptliste nettkunde (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3017_2018 M9NA2 Reseptliste nettkunde.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>13</ProfilId> 
+			<Beskrivelse>M9NA3 Forespørsel om utvidet informasjon på resept fra nettkunde (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3018_2018 M9NA3 Forespørsel om utvidet informasjon på resept fra nettkunde.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>14</ProfilId> 
+			<Beskrivelse>M9NA4 Utvidet informasjon om resept nettkunde (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3019_2018 M9NA4 Utvidet informasjon på resept fra nettkunde.pdf</Referanse>
 		</Kravdokument>
 		
 	</Kravdokumenter>
@@ -153,6 +373,76 @@
 			<ProfilId>4</ProfilId> 
 			<Referanse>skjema/eresept/M5-M7-M95-8-M241-5/ER-M96-2018-07-01.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m96/2018-07-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>5</ProfilId> 
+			<Referanse>skjema/eresept/M5-M7-M95-8-M241-5/ER-M97-2015-05-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m97/2015-05-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>5</ProfilId> 
+			<Referanse>skjema/eresept/M5-M7-M95-8-M241-5/ER-M97-2018-07-01.xsd</Referanse>
+			<Namespace>http://www.ehelse.no/xmlstds/eresept/m97/2018-07-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>6</ProfilId> 
+			<Referanse>skjema/eresept/M5-M7-M95-8-M241-5/ER-M98-2015-10-15.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m98/2015-10-15</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>6</ProfilId> 
+			<Referanse>skjema/eresept/M5-M7-M95-8-M241-5/ER-M98-2018-07-01.xsd</Referanse>
+			<Namespace>http://www.ehelse.no/xmlstds/eresept/m98/2018-07-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>7</ProfilId> 
+			<Referanse>skjema/eresept/M5-M7-M95-8-M241-5/ER-M241-2009-02-20.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m241/2009-02-20</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>8</ProfilId> 
+			<Referanse>skjema/eresept/M5-M7-M95-8-M241-5/ER-M242-2008-10-03.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m242/2008-10-03</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>9</ProfilId> 
+			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M911-2014-01-21.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m911/2014-01-21</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>9</ProfilId> 
+			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M911-2018-07-01.xsd</Referanse>
+			<Namespace>http://www.ehelse.no/xmlstds/eresept/m911/2018-07-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>10</ProfilId> 
+			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M912-2014-01-21.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m912/2014-01-21</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>10</ProfilId> 
+			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M912-2018-07-01.xsd</Referanse>
+			<Namespace>http://www.ehelse.no/xmlstds/eresept/m912/2018-07-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>11</ProfilId> 
+			<Referanse>skjema/eresept/M9NA/ER-M9NA1-2016-06-06.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m9na1/2016-06-06</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>12</ProfilId> 
+			<Referanse>skjema/eresept/M9NA/ER-M9NA2-2016-10-26.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m9na2/2016-10-26</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>13</ProfilId> 
+			<Referanse>skjema/eresept/M9NA/ER-M9NA3-2016-06-06.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m9na3/2016-06-06</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>14</ProfilId> 
+			<Referanse>skjema/eresept/M9NA/ER-M9NA4-2016-06-06.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m9na4/2016-06-06</Namespace>
 		</Skjema>
 	</Skjemaer>
 	<Felleskomponenter>
