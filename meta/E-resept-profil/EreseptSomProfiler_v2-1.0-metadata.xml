@@ -1,0 +1,796 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet)   -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>E-resept</Navn>
+	<Versjon>1.0</Versjon>
+	<Identifikator>E-resept meldingsstandard</Identifikator>
+	<Utgitt>07/2018</Utgitt>
+	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	<Status>Fastsatt som standard</Status>
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Referansekatalogen for e-helse (e-reseptmeldinger)</Beskrivelse>
+			<Referanse> http://ehelse.no/e-reseptmeldinger</Referanse>
+		</Informasjon>
+		<Informasjon>
+			<Beskrivelse>Dokumentasjon for e-resept</Beskrivelse>
+			<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/e-resept/dokumentasjon-for-e-resept</Referanse>
+		</Informasjon>
+	</MerInformasjon>
+	<Profiler>
+        <Profil>
+            <ProfilId>1</ProfilId>
+            <Beskrivelse>Mellom rekvirent og Reseptformidleren</Beskrivelse>
+            <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <Status>Fastsatt som standard</Status>
+	        <MerInformasjon>
+				<Informasjon>
+					<Beskrivelse>Referansekatalogen for e-helse (e-reseptmeldinger)</Beskrivelse>
+					<Referanse> http://ehelse.no/e-reseptmeldinger</Referanse>
+				</Informasjon>
+				<Informasjon>
+					<Beskrivelse>Dokumentasjon for e-resept</Beskrivelse>
+					<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/e-resept/dokumentasjon-for-e-resept</Referanse>
+				</Informasjon>
+			</MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>2</ProfilId> 
+            <Beskrivelse>Mellom utleverer og Reseptformidleren</Beskrivelse>
+            <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+				<Informasjon>
+					<Beskrivelse>Referansekatalogen for e-helse (e-reseptmeldinger)</Beskrivelse>
+					<Referanse> http://ehelse.no/e-reseptmeldinger</Referanse>
+				</Informasjon>
+				<Informasjon>
+					<Beskrivelse>Dokumentasjon for e-resept</Beskrivelse>
+					<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/e-resept/dokumentasjon-for-e-resept</Referanse>
+				</Informasjon>
+			</MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>3</ProfilId> 
+            <Beskrivelse>Mellom nettutleverer (med innlogget kunde) og Reseptformidleren</Beskrivelse>
+            <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+				<Informasjon>
+					<Beskrivelse>Referansekatalogen for e-helse (e-reseptmeldinger)</Beskrivelse>
+					<Referanse> http://ehelse.no/e-reseptmeldinger</Referanse>
+				</Informasjon>
+				<Informasjon>
+					<Beskrivelse>Dokumentasjon for e-resept</Beskrivelse>
+					<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/e-resept/dokumentasjon-for-e-resept</Referanse>
+				</Informasjon>
+			</MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>4</ProfilId> 
+            <Beskrivelse>Pasientens legemiddelliste og multidose </Beskrivelse>
+            <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+				<Informasjon>
+					<Beskrivelse>Referansekatalogen for e-helse (e-reseptmeldinger)</Beskrivelse>
+					<Referanse> http://ehelse.no/e-reseptmeldinger</Referanse>
+				</Informasjon>
+				<Informasjon>
+					<Beskrivelse>Dokumentasjon for e-resept</Beskrivelse>
+					<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/e-resept/dokumentasjon-for-e-resept</Referanse>
+				</Informasjon>
+			</MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>5</ProfilId> 
+            <Beskrivelse>Mellom rekvirent og Helfo</Beskrivelse>
+            <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+				<Informasjon>
+					<Beskrivelse>Referansekatalogen for e-helse (e-reseptmeldinger)</Beskrivelse>
+					<Referanse> http://ehelse.no/e-reseptmeldinger</Referanse>
+				</Informasjon>
+				<Informasjon>
+					<Beskrivelse>Dokumentasjon for e-resept</Beskrivelse>
+					<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/e-resept/dokumentasjon-for-e-resept</Referanse>
+				</Informasjon>
+			</MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>6</ProfilId> 
+            <Beskrivelse>Mellom utleverer og Helfo</Beskrivelse>
+            <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+				<Informasjon>
+					<Beskrivelse>Referansekatalogen for e-helse (e-reseptmeldinger)</Beskrivelse>
+					<Referanse> http://ehelse.no/e-reseptmeldinger</Referanse>
+				</Informasjon>
+				<Informasjon>
+					<Beskrivelse>Dokumentasjon for e-resept</Beskrivelse>
+					<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/e-resept/dokumentasjon-for-e-resept</Referanse>
+				</Informasjon>
+			</MerInformasjon>
+        </Profil>
+        <Profil>
+            <ProfilId>7</ProfilId> 
+            <Beskrivelse>Mellom Statens legemiddelverk og Reseptformidleren m.fl.</Beskrivelse>
+            <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	        <MerInformasjon>
+				<Informasjon>
+					<Beskrivelse>Referansekatalogen for e-helse (e-reseptmeldinger)</Beskrivelse>
+					<Referanse> http://ehelse.no/e-reseptmeldinger</Referanse>
+				</Informasjon>
+				<Informasjon>
+					<Beskrivelse>Dokumentasjon for e-resept</Beskrivelse>
+					<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/e-resept/dokumentasjon-for-e-resept</Referanse>
+				</Informasjon>
+			</MerInformasjon>
+        </Profil>
+    </Profiler>
+     
+     
+    
+	<Kravdokumenter>
+		<Kravdokument>
+			<ProfilId>1</ProfilId> 
+			<Beskrivelse>eResept - M04.1-2 Referansenummer (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/R1908-eResept-M4-2013-04-16.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>1</ProfilId> 
+			<Beskrivelse>M9.5 Forespørsel om tilgjengelige resepter på pasient (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3003_2018 M95 Forespørsel om tilgjengelige resepter på pasient.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>1</ProfilId> 
+			<Beskrivelse>M9.6 Reseptliste (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3004_2018 M96 Reseptliste.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>1</ProfilId> 
+			<Beskrivelse>M9.7 Forespørsel om utlevering på resept (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3005_2018 M97 Forespørsel om utleveringer på resept.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>1</ProfilId> 
+			<Beskrivelse>M9.8 Utleveringer på resept (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3006_2018 M98 Utleveringer på resept.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>1</ProfilId> 
+			<Beskrivelse>M24.1 Samtykkeregistrering (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3007_2018 M241 Samtykkeregistrering.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>1</ProfilId> 
+			<Beskrivelse>M24.2 Svar på samtykke (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3008_2018 M242 Svar på samtykkeregistrering.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>1</ProfilId> 
+			<Beskrivelse>eResept – M1 Resept og M21 Ekspederingsanmodning (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/R0908-eResept-M1-M21-2013-10-08.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>1</ProfilId> 
+			<Beskrivelse>eResept – M5, M7, M9.5-8, M24.1-5 (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/R1208-eResept-M5-M7-M95-8-M41-5-2015-10-15.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>1</ProfilId> 
+			<Beskrivelse>eResept - Utleveringsrapporter M6, M8, M8.1, M10 og M20 (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/R1308-eResept-M6-M8-M81-M10-M20-2015-09-22.pdf</Referanse>
+		</Kravdokument>
+		
+		<Kravdokument>
+			<ProfilId>2</ProfilId> 
+			<Beskrivelse>eResept – M1 Resept og M21 Ekspederingsanmodning (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/R0908-eResept-M1-M21-2013-10-08.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>2</ProfilId> 
+			<Beskrivelse>eResept - M3 Anmodning om søknad til SLV - M14 Søknadtil SLV - M15 Søknadssvar fra SLV (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/R1108-eResept-M3-M14-M15-2013-04-16.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>2</ProfilId> 
+			<Beskrivelse>eResept - M09.1 Forespørsel om tilgjengelige resepter på pasient, M09.2 Reseptliste, M09.3 Forespørsel om nedlasting av resept og M09.4 Nedlasting av resept (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/R1408-eResept-M9.1-4-2014-04-07.pdf</Referanse>
+		</Kravdokument>
+		
+		<Kravdokument>
+			<ProfilId>3</ProfilId> 
+			<Beskrivelse>M9NA1 Forespørsel om reseptliste fra nettkunde (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3016_2018 M9NA1 Forespørsel om reseptliste fra nettkunde.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>3</ProfilId> 
+			<Beskrivelse>M9NA2 Reseptliste nettkunde (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3017_2018 M9NA2 Reseptliste nettkunde.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>3</ProfilId> 
+			<Beskrivelse>M9NA3 Forespørsel om utvidet informasjon på resept fra nettkunde (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3018_2018 M9NA3 Forespørsel om utvidet informasjon på resept fra nettkunde.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>3</ProfilId> 
+			<Beskrivelse>M9NA4 Utvidet informasjon om resept nettkunde (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3019_2018 M9NA4 Utvidet informasjon på resept fra nettkunde.pdf</Referanse>
+		</Kravdokument>
+
+		<Kravdokument>
+			<ProfilId>4</ProfilId> 
+			<Beskrivelse>M9.11 Forespørsel om legemidler i bruk (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3009_2018 M911 Forespørsel om legemidler i bruk.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>4</ProfilId> 
+			<Beskrivelse>M9.12 Nedlastning av legemidler i bruk (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3010_2018 M912 Nedlasting av legemidler i bruk.pdf</Referanse>
+		</Kravdokument>	
+		<Kravdokument>
+			<ProfilId>4</ProfilId>
+			<Beskrivelse>M25.1-4, M9.21-22, M27.1-2 og M28 (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/M25.1-4, M9.21-22, M27.1-2 og M28.pdf</Referanse>
+		</Kravdokument>
+		
+		<Kravdokument>
+			<ProfilId>5</ProfilId>
+			<Beskrivelse>M2 Individuell søknad om stønad til Helfo (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3001_2018 M2 Søknad om individuell stønad til Helfo.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>5</ProfilId> 
+			<Beskrivelse>M12 Søknadssvar - Individuell søknad om stønad til Helfo (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3002_2018 M12 Søknadssvar Individuell søknad om stønad til Helfo.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>5</ProfilId> 
+			<Beskrivelse>eResept – M02 Individuell søknad om stønad til HELFO og M12 Søknadssvar - Individuell søknad om stønad til HELFO (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/R1008-eResept-M2-M12-2015-12-02.pdf</Referanse>
+		</Kravdokument>
+
+		<Kravdokument>
+			<ProfilId>6</ProfilId> 
+			<Beskrivelse>M18 Oppgjørskrav, M22 Oppgjørsresultat og M23 Utbetaling (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/R1508-eResept-M18-M22-M23-2013-04-16.pdf</Referanse>
+		</Kravdokument>	
+		
+		<Kravdokument>
+			<ProfilId>7</ProfilId> 
+			<Beskrivelse>eResept - M3 Anmodning om søknad til SLV - M14 Søknadtil SLV - M15 Søknadssvar fra SLV (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/R1108-eResept-M3-M14-M15-2013-04-16.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>7</ProfilId> 
+			<Beskrivelse>eResept - Utleveringsrapporter M6, M8, M8.1, M10 og M20 (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/R1308-eResept-M6-M8-M81-M10-M20-2015-09-22.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>7</ProfilId> 
+			<Beskrivelse>eResept – M30 FEST og Forskrivning (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/R1808-eResept-M30-2013-10-08.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>7</ProfilId> 
+			<Beskrivelse>eResept – M30 FEST og Forskrivning (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/R1808-eResept-M30-2014-12-01.pdf</Referanse>
+		</Kravdokument>
+		
+		<Kravdokument>
+			<Beskrivelse>eResept – Verify-melding (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/eResept-MV-2013-08-16.pdf</Referanse>
+		</Kravdokument>
+		
+	
+	</Kravdokumenter>
+	
+	<Skjemaer>
+		<Skjema>
+			<ProfilId>1</ProfilId> 
+			<Referanse>skjema/eresept/M5-M7-M95-8-M241-5/ER-M95-2015-05-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m95/2015-05-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>1</ProfilId> 
+			<Referanse>skjema/eresept/M5-M7-M95-8-M241-5/ER-M95-2018-07-01.xsd</Referanse>
+			<Namespace>http://www.ehelse.no/xmlstds/eresept/m95/2018-07-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>1</ProfilId>
+			<Referanse>skjema/eresept/M1-M21/ER-M1-2010-05-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m1/2010-05-01</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>1</ProfilId>
+			<Referanse>skjema/eresept/M1-M21/ER-M1-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m1/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>1</ProfilId>
+			<Referanse>skjema/eresept/M4-2013-04-16/ER-M41-2006-10-06.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m41/2006-10-06</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>1</ProfilId>
+			<Referanse>skjema/eresept/M4-2013-04-16/ER-M42-2006-10-06.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m42/2006-10-06</Namespace>
+		</Skjema>	
+		<Skjema>		
+			<ProfilId>1</ProfilId>
+			<Referanse>skjema/eresept/M5-M7-M95-8-M241-5/ER-M5-2013-04-16.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m5/2013-04-16</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>1</ProfilId>
+			<Referanse>skjema/eresept/M5-M7-M95-8-M241-5/ER-M52-2013-12-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m52/2013-12-01</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>1</ProfilId>
+			<Referanse>skjema/eresept/M5-M7-M95-8-M241-5/ER-M7-2008-05-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m7/2008-05-01</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>1</ProfilId>
+			<Referanse>skjema/eresept/M5-M7-M95-8-M241-5/ER-M95-2015-05-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m95/2015-05-01</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>1</ProfilId>
+			<Referanse>skjema/eresept/M5-M7-M95-8-M241-5/ER-M96-2015-05-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m96/2015-05-01"</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>1</ProfilId>
+			<Referanse>skjema/eresept/M5-M7-M95-8-M241-5/ER-M97-2015-05-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m97/2015-05-01</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>1</ProfilId>
+			<Referanse>skjema/eresept/M5-M7-M95-8-M241-5/ER-M98-2015-10-15.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m98/2015-10-15</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>1</ProfilId>
+			<Referanse>skjema/eresept/M5-M7-M95-8-M241-5/ER-M241-2009-02-20.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m241/2009-02-20</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>1</ProfilId>
+			<Referanse>skjema/eresept/M5-M7-M95-8-M241-5/ER-M242-2008-10-03.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m242/2008-10-03</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>1</ProfilId>
+			<Referanse>skjema/eresept/M6-M8-M81-M10-M20/ER-M6-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m6/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>1</ProfilId>
+			<Referanse>skjema/eresept/M6-M8-M81-M10-M20/ER-M8-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m8/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>1</ProfilId>
+			<Referanse>skjema/eresept/M6-M8-M81-M10-M20/ER-M81-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m81/2013-10-08</Namespace>
+		</Skjema>
+		
+		<Skjema>
+			<ProfilId>2</ProfilId>
+			<Referanse>skjema/eresept/M1-M21/ER-M21-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m21/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>2</ProfilId>
+			<Referanse>skjema/eresept/M3-M14-M15/ER-M3-2010-05-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m3/2010-05-01</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>2</ProfilId>
+			<Referanse>skjema/eresept/M91-4/ER-M91-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m91/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>2</ProfilId>
+			<Referanse>skjema/eresept/M91-4/ER-M92-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m92/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>2</ProfilId>
+			<Referanse>skjema/eresept/M91-4/ER-M93-2010-06-04.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m93/2010-06-04</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>2</ProfilId>
+			<Referanse>skjema/eresept/M91-4/ER-M94-2010-07-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m94/2010-07-01</Namespace>
+		</Skjema>
+		
+		<Skjema>
+			<ProfilId>3</ProfilId>
+			<Referanse>skjema/eresept/M2-M12/ER-M2-2014-12-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m2/2014-12-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>3</ProfilId>
+			<Referanse>skjema/eresept/M2-M12/ER-M2-2017-12-01.xsd</Referanse>
+			<Namespace>http://www.ehelse.no/xmlstds/eresept/m2/2017-12-01</Namespace>
+		</Skjema>
+		
+		<Skjema>
+			<ProfilId>3</ProfilId> 
+			<Referanse>skjema/eresept/M9NA/ER-M9NA1-2016-06-06.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m9na1/2016-06-06</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>3</ProfilId> 
+			<Referanse>skjema/eresept/M9NA/ER-M9NA2-2016-10-26.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m9na2/2016-10-26</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>3</ProfilId> 
+			<Referanse>skjema/eresept/M9NA/ER-M9NA3-2016-06-06.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m9na3/2016-06-06</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>3</ProfilId> 
+			<Referanse>skjema/eresept/M9NA/ER-M9NA4-2016-06-06.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m9na4/2016-06-06</Namespace>
+		</Skjema>	
+		
+		<Skjema>
+			<ProfilId>4</ProfilId> 
+			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M911-2014-01-21.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m911/2014-01-21</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>4</ProfilId> 
+			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M911-2018-07-01.xsd</Referanse>
+			<Namespace>http://www.ehelse.no/xmlstds/eresept/m911/2018-07-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>4</ProfilId>
+			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M921-2013-10-15.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m921/2013-10-15</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>4</ProfilId>
+			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M922-2013-10-15.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m922/2013-10-15</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>4</ProfilId> 
+			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M251-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m251/2013-10-08</Namespace>
+		</Skjema>
+
+		<Skjema>
+			<ProfilId>4</ProfilId> 
+			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M252-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m252/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>4</ProfilId> 
+			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M253-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m253/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>4</ProfilId> 
+			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M254-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m254/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>4</ProfilId> 
+			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M271-2013-04-16.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m271/2013-04-16</Namespace>
+		</Skjema>
+		<Skjema>
+			<ProfilId>4</ProfilId> 
+			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M272-2013-04-16.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m272/2013-04-16</Namespace>
+		</Skjema>
+		
+		<Skjema>
+			<ProfilId>4</ProfilId>
+			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M28-2012-06-11.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m28/2012-06-11</Namespace>
+		</Skjema>
+		
+		<Skjema>
+			<ProfilId>5</ProfilId>
+			<Referanse>skjema/eresept/M2-M12/ER-M2-2014-12-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m2/2014-12-01</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>5</ProfilId>
+			<Referanse>skjema/eresept/M2-M12/ER-M12-2014-12-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m12/2014-12-01</Namespace>
+		</Skjema>
+		
+		<Skjema>		
+			<ProfilId>6</ProfilId>
+			<Referanse>skjema/eresept/M18-M22-M23/ER-M18-2013-04-16.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m18/2013-04-16</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>6</ProfilId>
+			<Referanse>skjema/eresept/M18-M22-M23/ER-M22-2006-10-06.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m22/2006-10-06</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>6</ProfilId>
+			<Referanse>skjema/eresept/M18-M22-M23/ER-M23-2006-10-06.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m23/2006-10-06</Namespace>
+		</Skjema>
+		
+		<Skjema>		
+			<ProfilId>7</ProfilId>
+			<Referanse>skjema/eresept/M3-M14-M15/ER-M14-2008-12-12.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m14/2008-12-12</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>7</ProfilId>
+			<Referanse>skjema/eresept/M3-M14-M15/ER-M15-2006-10-06.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m15/2006-10-06</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>7</ProfilId>
+			<Referanse>skjema/eresept/M30/ER-M30-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m30/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>7</ProfilId>
+			<Referanse>skjema/eresept/M30/ER-M30-2013-10-08-loose.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m30/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>7</ProfilId>
+			<Referanse>skjema/eresept/M30/ER-M30-2014-12-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m30/2014-12-01</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>7</ProfilId>
+			<Referanse>skjema/eresept/M30/ER-M30-2014-12-01-loose.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m30/2014-12-01</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>7</ProfilId>
+			<Referanse>skjema/eresept/Forskrivning/Forskrivning-2010-04-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/forskrivning/2010-04-01</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>7</ProfilId>
+			<Referanse>skjema/eresept/Forskrivning/Forskrivning-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/forskrivning/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>7</ProfilId>
+			<Referanse>skjema/eresept/Forskrivning/Forskrivning-2013-10-08-loose.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/forskrivning/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>7</ProfilId>
+			<Referanse>skjema/eresept/M6-M8-M81-M10-M20/ER-M10-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m10/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>7</ProfilId>
+			<Referanse>skjema/eresept/M6-M8-M81-M10-M20/ER-M20-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m20/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>7</ProfilId>
+			<Referanse>skjema/eresept/M6-M8-M81-M10-M20/ER-Utlevering-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/utlevering/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>7</ProfilId>
+			<Referanse>skjema/eresept/Forskrivning/Forskrivning-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/forskrivning/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>7</ProfilId>
+			<Referanse>skjema/eresept/Forskrivning/Forskrivning-2013-10-08-loose.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/forskrivning/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>7</ProfilId>
+			<Referanse>skjema/eresept/Forskrivning/Forskrivning-2014-12-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/forskrivning/2014-12-01</Namespace>
+		</Skjema>
+		<Skjema>		
+			<ProfilId>7</ProfilId>
+			<Referanse>skjema/eresept/Forskrivning/Forskrivning-2014-12-01-loose.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/forskrivning/2014-12-01</Namespace>
+		</Skjema>
+
+		
+		
+		
+		<Skjema>
+			<Referanse>skjema/eresept/MV/ER-MV-2013-08-16.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/mv/2013-08-16</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/eresept/MV/ER-MV-2017-01-01.xsd</Referanse>
+			<Namespace>http://ehelse.no/xmlstds/eresept/mv/2017-01-01</Namespace>
+		</Skjema>
+	</Skjemaer>
+	<Felleskomponenter>
+		<Felleskomponent>
+			<Referanse>/skjema/felleskomponenter/MsgHead-v1_2.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Referanse>/skjema/felleskomponenter/kith-base64.xsd</Referanse>
+		</Felleskomponent>
+	</Felleskomponenter>
+	<Visningsfiler>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m1/m1-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m1/m1-2html-v2.4.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m2-m12/m2-m12-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m2-m12/m2-m12-2html-v2.4.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m5/m5-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m5/m5-2html-v2.4.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m6/m6-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m6/m6-2html-v2.4.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m7/m7-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m7/m7-2html-v2.4.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m8/m8-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m8/m8-2html-v2.4.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m15/m15-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m24/m24-2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m25/m25-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m27/m271-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m27/m272-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m27/m273-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m27/m274-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m28/m28-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m42/m42-2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m96/m96-2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/utlevering/utlevering-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/utlevering/utlevering-2html-v2.4.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/Forskrivninger2html.xslt</Referanse>
+		</Visningsfil>
+	</Visningsfiler>
+	<Eksempler>
+		<Eksempel>
+			<Referanse>eksempel/eresept/ER-M3-2010-05-01-eksempel1.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/ER-M3-2010-05-011-eksempel1-msghead.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/ER-M5-2013-04-16-eksempel1.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/ER-M7-2008-05-01-eksempel1.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/ER-M14-2008-12-12-eksempel1.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/ER-M14-2008-12-12-eksempel1-msghead.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/ER-M15-2006-10-06-eksempel1-msghead.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/ER-M21-2013-10-08-eksempel1-msghead.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/ER-M41-2006-10-06-example.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/ER-M41-2006-10-06-example-msghead.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/ER-M42-2006-10-06-example.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/ER-M42-2006-10-06-example-msghead.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/ER-M91-2013-10-08-eksempel1.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/ER-M91-2013-10-08-eksempel2.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/ER-M92-2013-10-08-eksempel1.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/ER-M93-2008-04-29-eksempel1.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/ER-M94-2010-07-01-eksempel1.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/ER-M241-2009-02-20-eksempel1.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/ER-M242-2008-10-03-eksempel1.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/M96-b64.xml</Referanse>
+		</Eksempel>
+	</Eksempler>
+	
+	<RelaterteFiler>
+		<RelatertFil>
+			<Beskrivelse>Versjon 2.5 av meldingsdefinisjonene – oppdatert 09.01.2019</Beskrivelse>
+			<Referanse>relaterteFiler/eresept/Versjonsmerknader til ny meldingsdef 2019.01.pdf</Referanse>
+		</RelatertFil>
+		<RelatertFil>
+			<Beskrivelse>Applikasjonskvittering v 1.0</Beskrivelse>
+			<Referanse>kravdokument/applikasjonskvittering/HIS_80415_2004 AppRec v1.0 -korrigert.pdf</Referanse>
+		</RelatertFil>
+		<RelatertFil>
+			<Beskrivelse>Notat til bruk av kith-base.xsd</Beskrivelse>
+			<Referanse>relaterteFiler/eresept/NOTAT-kith-base64.pdf</Referanse>
+		</RelatertFil>
+		<RelatertFil>
+			<Beskrivelse>Hodemelding v 1.2</Beskrivelse>
+			<Referanse>kravdokument/hodemelding/HIS_80601_2006-Hodemelding-v12 -korrigert.pdf</Referanse>
+		</RelatertFil>
+		<RelatertFil>
+			<Beskrivelse>Datatyper v 1.1</Beskrivelse>
+			<Referanse>kravdokument/StandarderOlSomErFelles/HIS_80117_2002_Datatyper_v1.1 -korrigert.pdf</Referanse>
+		</RelatertFil>
+		<RelatertFil>
+			<Beskrivelse>Notat - Opplysninger om signerende helsepersoenell i meldinger fra Helseforetak til NAV og Reseptformidleren</Beskrivelse>
+			<Referanse>relaterteFiler/eresept/Signerende_HelsepersonellSykmelding-eResept-notat.pdf</Referanse>
+		</RelatertFil>
+	</RelaterteFiler>	
+	
+	
+</StandardMetadata>
