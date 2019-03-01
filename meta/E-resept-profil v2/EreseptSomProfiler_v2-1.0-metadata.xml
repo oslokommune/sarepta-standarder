@@ -627,140 +627,185 @@
 	</Felleskomponenter>
 	<Visningsfiler>
 		<Visningsfil>
+			<ProfilId>1</ProfilId>
 			<Referanse>visningsfil/eresept/m1/m1-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>1</ProfilId>
 			<Referanse>visningsfil/eresept/m1/m1-2html-v2.4.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>5</ProfilId>
 			<Referanse>visningsfil/eresept/m2-m12/m2-m12-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>5</ProfilId>
 			<Referanse>visningsfil/eresept/m2-m12/m2-m12-2html-v2.4.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>1</ProfilId>
 			<Referanse>visningsfil/eresept/m5/m5-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>1</ProfilId>
 			<Referanse>visningsfil/eresept/m5/m5-2html-v2.4.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>1</ProfilId>
 			<Referanse>visningsfil/eresept/m6/m6-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>1</ProfilId>
 			<Referanse>visningsfil/eresept/m6/m6-2html-v2.4.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>1</ProfilId>
 			<Referanse>visningsfil/eresept/m7/m7-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>1</ProfilId>
 			<Referanse>visningsfil/eresept/m7/m7-2html-v2.4.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>1</ProfilId>
 			<Referanse>visningsfil/eresept/m8/m8-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>1</ProfilId>
 			<Referanse>visningsfil/eresept/m8/m8-2html-v2.4.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>7</ProfilId>
 			<Referanse>visningsfil/eresept/m15/m15-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>1</ProfilId>
 			<Referanse>visningsfil/eresept/m24/m24-2html.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>4</ProfilId>
 			<Referanse>visningsfil/eresept/m25/m25-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>4</ProfilId>
 			<Referanse>visningsfil/eresept/m27/m271-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>4</ProfilId>
 			<Referanse>visningsfil/eresept/m27/m272-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>4</ProfilId>
 			<Referanse>visningsfil/eresept/m27/m273-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>4</ProfilId>
 			<Referanse>visningsfil/eresept/m27/m274-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>4</ProfilId>
 			<Referanse>visningsfil/eresept/m28/m28-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>1</ProfilId>
 			<Referanse>visningsfil/eresept/m42/m42-2html.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>1</ProfilId>
 			<Referanse>visningsfil/eresept/m96/m96-2html.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>7</ProfilId>
 			<Referanse>visningsfil/eresept/utlevering/utlevering-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>7</ProfilId>
 			<Referanse>visningsfil/eresept/utlevering/utlevering-2html-v2.4.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<ProfilId>1</ProfilId>
 			<Referanse>visningsfil/eresept/Forskrivninger2html.xslt</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
 	<Eksempler>
 		<Eksempel>
+			<ProfilId>2</ProfilId>
 			<Referanse>eksempel/eresept/ER-M3-2010-05-01-eksempel1.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>2</ProfilId>
 			<Referanse>eksempel/eresept/ER-M3-2010-05-011-eksempel1-msghead.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/eresept/ER-M5-2013-04-16-eksempel1.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/eresept/ER-M7-2008-05-01-eksempel1.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>7</ProfilId>
 			<Referanse>eksempel/eresept/ER-M14-2008-12-12-eksempel1.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>7</ProfilId>
 			<Referanse>eksempel/eresept/ER-M14-2008-12-12-eksempel1-msghead.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>7</ProfilId>
 			<Referanse>eksempel/eresept/ER-M15-2006-10-06-eksempel1-msghead.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>2</ProfilId>
 			<Referanse>eksempel/eresept/ER-M21-2013-10-08-eksempel1-msghead.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/eresept/ER-M41-2006-10-06-example.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/eresept/ER-M41-2006-10-06-example-msghead.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/eresept/ER-M42-2006-10-06-example.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/eresept/ER-M42-2006-10-06-example-msghead.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>2</ProfilId>
 			<Referanse>eksempel/eresept/ER-M91-2013-10-08-eksempel1.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>2</ProfilId>
 			<Referanse>eksempel/eresept/ER-M91-2013-10-08-eksempel2.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>2</ProfilId>
 			<Referanse>eksempel/eresept/ER-M92-2013-10-08-eksempel1.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>2</ProfilId>
 			<Referanse>eksempel/eresept/ER-M93-2008-04-29-eksempel1.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>2</ProfilId>
 			<Referanse>eksempel/eresept/ER-M94-2010-07-01-eksempel1.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/eresept/ER-M241-2009-02-20-eksempel1.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/eresept/ER-M242-2008-10-03-eksempel1.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>1</ProfilId>
 			<Referanse>eksempel/eresept/M96-b64.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
