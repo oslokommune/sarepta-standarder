@@ -619,10 +619,10 @@
 	</Skjemaer>
 	<Felleskomponenter>
 		<Felleskomponent>
-			<Referanse>/skjema/felleskomponenter/MsgHead-v1_2.xsd</Referanse>
+			<Referanse>skjema/felleskomponenter/MsgHead-v1_2.xsd</Referanse>
 		</Felleskomponent>
 		<Felleskomponent>
-			<Referanse>/skjema/felleskomponenter/kith-base64.xsd</Referanse>
+			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
 	<Visningsfiler>
