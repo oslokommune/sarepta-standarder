@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- .. .. edited with XMLSpy v2010 rel. 3 sp1 (x64) (http://www.altova.com) by XMLSpy 2009 Enterprise Ed., Installed for 30 users (with SMP from 2009-06-19 to 2010-06-20) (NAV ØKONOMITJENESTER) -->
-<!-- Validering 06/03/2019. -->
+<!-- Validering 28/03/2019. -->
 <MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd">
 	<MsgInfo>
 		<Type DN="Legeoppgjørsmelding" V="LOM"/>
