@@ -11,12 +11,12 @@
 	- Inngår i Hdirs visningsfiler versjon 2.0
 	- Laget i XMLSpy v2016 (http://www.altova.com) av Jan Sigurd Dragsjø (nhn.no)
 	-->
-<xsl:stylesheet version="1.0" 
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
-	xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" 
+<xsl:stylesheet version="1.0"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24"
+	xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1"
 	exclude-result-prefixes="mh fk1">
-	
+
 	<xsl:import href="../../felleskomponenter/funksjoner.xsl"/>
 	<xsl:import href="../../felleskomponenter/meldingshode2html.xsl"/>
 	<xsl:import href="../../felleskomponenter/poKomponent2html.xsl"/>
@@ -29,7 +29,7 @@
 
 
 	<xsl:variable name="versjon" select="'plo1.6 - v3.2.0 '"/>
-	
+
 	<xsl:template match="/">
 		<html>
 			<head>
@@ -52,12 +52,12 @@
 			</body>
 		</html>
 	</xsl:template>
-	
+
 	<!-- Visning av meldingshodet. Tilpasset vinduskonvolutt ved utskrift -->
 	<xsl:template name="MsgHead">
 		<xsl:call-template name="Topp"/>
 		<xsl:call-template name="Innhold"/>
-		<xsl:call-template name="eh-Footer">
+		<xsl:call-template name="Footer">
 			<xsl:with-param name="stil" select="$stil"/>
 			<xsl:with-param name="versjon" select="$versjon"/>
 			<xsl:with-param name="VisDokInfoVisSkjul" select="false()"/>

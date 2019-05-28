@@ -5,12 +5,12 @@
 	og versjonuavhengige xsl-filer (dvs. bruker ikke namespace prefiks).
 -->
 
-<xsl:stylesheet version="1.0" 
-	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+<xsl:stylesheet version="1.0"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" 
-	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
-	xmlns:base="http://www.kith.no/xmlstds/base64container" 
+	xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1"
+	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24"
+	xmlns:base="http://www.kith.no/xmlstds/base64container"
 	exclude-result-prefixes="xsl xhtml fk1 mh base"
 	>
 
@@ -27,7 +27,7 @@
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++ -->
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++ -->
 
-	<xsl:template name="eh-Observation"> 
+	<xsl:template name="eh-Observation">
 		<!-- Henvisning v2.0: 				MsgHead/Document/RefDoc/Content/Henvisning/InfItem/Observation  -->
 		<!-- Henvisning v1.0, v1.1 :		Message/ServReq/Patient/InfItem/Observation -->
 		<!-- Epikrise v1.0, v1.1, v1.2 : 	Message/ServRprt/Event/InfItem/Observation -->
@@ -147,7 +147,7 @@
 		<!-- Henvisning v1.0, v1.1, v2.0 -->
 		<!-- Epikrise v1.0, v1.1, v1.2. Skjema epikrise har flere elementer enn henvisning, men de brukes ikke i denne templaten. -->
 		<!-- Merk: rad-element ikke inkludert her. -->
-	
+
 
 		<div class="eh-col-1 eh-field {$striped}">
 			<span class="eh-text">
@@ -281,14 +281,14 @@
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++ -->
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++ -->
 
-	<xsl:template name="eh-ResultItem"> 
+	<xsl:template name="eh-ResultItem">
 		<!-- Henvisning v2.0 			MsgHead/Document/RefDoc/Content/Henvisning/InfItem/ResultItem  -->
 		<!-- Henvisning v1.0, v1.1 		Message/ServReq/Patient/InfItem/ResultItem -->
 		<!-- merk: rad-element ikke inkludert her. -->
 		<!-- Kan brukes av Henvisning, Epikrise, Svarrapport m.fl? -->
 		<!-- <div class="eh-col-1 eh-field"> -->
 		<xsl:param name="striped" />
-		
+
 			<xsl:variable name="stripedCss">
 				<xsl:choose>
 					<xsl:when test="$striped = 'true'">striped</xsl:when>
@@ -392,7 +392,7 @@
 			</span>
 		</div>
 
-		<xsl:if test="//child::*[local-name()='ResultItem']/child::*[local-name()='InvDate']"> 
+		<xsl:if test="//child::*[local-name()='ResultItem']/child::*[local-name()='InvDate']">
 			<div class="eh-col-1 eh-field">
 				<xsl:if test="position()=1"><span class="eh-label">Tidspunkt for undersøkelsen</span></xsl:if>
 				<span class="eh-text">
@@ -480,7 +480,7 @@
 				</span>
 			</div>
 		</xsl:if>
-		
+
 	</xsl:template>
 
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++ -->
@@ -544,7 +544,7 @@
 			</div>
 
 		</div>
-		
+
 	</xsl:template>
 
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++ -->
@@ -1152,7 +1152,7 @@
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++ -->
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++ -->
 
-	<xsl:template name="eh-Footer">
+	<xsl:template name="Footer">
 		<xsl:param name="stil"/>
 		<xsl:param name="versjon"/>
 		<xsl:param name="VisDokInfoVisSkjul"/>
@@ -1166,7 +1166,7 @@
 			</xsl:if>
 
 			<div class="eh-section">
-				<xsl:call-template name="EgetBunnTillegg"/>	
+				<xsl:call-template name="EgetBunnTillegg"/>
 				<div class="eh-row-5">
 					<div class="eh-col-2">
 						<span class="eh-label">Melding opprettet</span>
@@ -1196,7 +1196,7 @@
    								<xsl:otherwise>
   									<xsl:value-of select="/descendant::mh:MsgId[1]" />	<!-- /MsgHead/MsgInfo/MsgId -->
    								</xsl:otherwise>
-  							</xsl:choose> 
+  							</xsl:choose>
 						</span>
 					</div>
 				</div>
@@ -1271,13 +1271,13 @@
 
 	<xsl:template name="eh-Pakkeforlop"> <!-- Henvisning 2.0/Pakkeforlop -->
 		<xsl:param name="striped" />
-		
+
 		<div class="eh-col-1 eh-field {$striped}">
 			<span class="eh-text">
 				<xsl:value-of select="child::*[local-name()='Pakkeforlopskode']/@V"/>
 			</span>
 		</div>
-		
+
 		<div class="eh-col-2 eh-field {$striped}">
 			<span class="eh-text">
 				<xsl:for-each select="child::*[local-name()='Pakkeforlopskode']">
@@ -1304,13 +1304,13 @@
 				</xsl:for-each>
 			</span>
 		</div>
-		
+
 		<div class="eh-col-3 eh-field {$striped}">
 			<span class="eh-text">
 				<xsl:value-of select="child::*[local-name()='Merknad']"/>
 			</span>
 		</div>
-	
+
 	</xsl:template>
-	
+
 </xsl:stylesheet>

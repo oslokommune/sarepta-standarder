@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 
+<!--
 
 Endringslogg
 - 26.06.17: v.4.1.4 - La til <br/> i forbindelse med opplisting av kopi-mottakere, slik at de ikke havner på samme linje,
 - 20.06.17: v4.1.3 - Endret fra "Tjenesteyter" til "Mottaker" og fra "Henvisende instans" til "Avsender"
-						    Korrigert slik at Rekvirent vises under helsetjenesteenheter. Feil i koden som gjorde at den ikke ble vist.	
+						    Korrigert slik at Rekvirent vises under helsetjenesteenheter. Feil i koden som gjorde at den ikke ble vist.
 							Endret fra "eh-row-4" til "eh-row-5" i forbindelse med visning av adresseinformasjon for pasient. Dette for å få overskrifter til å passe med linjen over.
 							Erstattet hairspace med puncspace som mellomromstegn. Benyttet &#8200;
 - 17.03.17: v4.1.2 - Ny stil "Smooth".
@@ -34,12 +34,12 @@ Om:
 - Inngår i Direktoratet for e-helse visningsfiler
 
 -->
-<xsl:stylesheet version="1.0" 
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-	xmlns:base="http://www.kith.no/xmlstds/base64container" 
-	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+<xsl:stylesheet version="1.0"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:base="http://www.kith.no/xmlstds/base64container"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml"
 	exclude-result-prefixes="xhtml base">
-	
+
 	<xsl:import href="../felleskomponenter/funksjoner.xsl"/>
 	<xsl:import href="../felleskomponenter/kodeverk.xsl"/>
 	<xsl:import href="../felleskomponenter/meldingshode2html.xsl"/>
@@ -85,7 +85,7 @@ Om:
 			<!-- utelater meldingsid og kommunikasjonsinformasjon -->
 			<xsl:call-template name="Header"/>
 			<xsl:call-template name="ResultBody"/>
-			<xsl:call-template name="eh-Footer">
+			<xsl:call-template name="Footer">
 				<xsl:with-param name="stil" select="$stil"/>
 				<xsl:with-param name="versjon" select="$versjon"/>
 				<xsl:with-param name="VisDokInfoVisSkjul" select="$VisDokInfoVisSkjul"/>
@@ -1156,7 +1156,7 @@ Om:
 			</div>
 		</xsl:for-each>
 		<!-- Feil ?? Er allerede på Patient -->
-		<!--<xsl:for-each select="child::*[local-name()='Patient']"> 
+		<!--<xsl:for-each select="child::*[local-name()='Patient']">
 			<xsl:call-template name="Patient">
 				<xsl:with-param name="col" select="$col"/>
 			</xsl:call-template>
@@ -1878,7 +1878,7 @@ Om:
 								<xsl:otherwise>
 									<xsl:call-template name="k-8268"/> <!-- v1.5 and below -->
 								</xsl:otherwise>
-							</xsl:choose>						
+							</xsl:choose>
 						</xsl:for-each>
 					</xsl:when>
 					<xsl:otherwise>Id</xsl:otherwise>
@@ -2281,4 +2281,3 @@ Om:
 	</xsl:template>
 
 </xsl:stylesheet>
-
