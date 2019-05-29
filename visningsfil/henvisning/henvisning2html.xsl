@@ -1069,6 +1069,17 @@ Forfatter:
 				</tbody>
 			</table>
 		</div>
+						<div class="eh-row-5">
+					<div class="eh-col-1 eh-last-child">
+						<span class="eh-label">Meldingsstatus</span>
+						<span class="eh-field">
+							<xsl:for-each select="//mh:Status">
+								<xsl:call-template name="k-8419"/>
+							</xsl:for-each>
+						</span>
+					</div>
+				</div>
+
 	</xsl:template>
 
 	<!-- Template som kalles fra BunnTillegg i meldingshodet. Kan brukes til visning av egenkomponert bunn -->
@@ -1697,6 +1708,29 @@ Forfatter:
 							<xsl:for-each select="child::*[local-name()='BasisForHealthServices']">
 								<xsl:call-template name="k-8246"/>
 							</xsl:for-each>
+						</span>
+					</div>
+				</xsl:if>
+
+				<xsl:if test="child::*[local-name()='TilleggsopplysningPasient']/child::*[local-name()='MottarKommunaleTjenester']">
+					<div class="eh-col-1">
+						<span  class="eh-label">Mottar kommunale tjenester</span>
+						<span class="eh-field">
+							<xsl:choose>
+								<xsl:when test="child::*[local-name()='TilleggsopplysningPasient']/child::*[local-name()='MottarKommunaleTjenester']='true'">Ja</xsl:when>
+								<xsl:otherwise>Nei</xsl:otherwise>
+							</xsl:choose>
+						</span>
+					</div>
+				</xsl:if>
+
+				<xsl:if test="child::*[local-name()='TilleggsopplysningPasient']/child::*[local-name()='Merknad']">
+					<div class="eh-col-1">
+						<span class="eh-label">Merknad</span>
+						<span class="eh-field">
+							<xsl:call-template name="line-breaks">
+								<xsl:with-param name="text" select="child::*[local-name()='TilleggsopplysningPasient']/child::*[local-name()='Merknad']"/>
+							</xsl:call-template>
 						</span>
 					</div>
 				</xsl:if>
@@ -3000,7 +3034,6 @@ Forfatter:
 						</span>
 						 <span class="eh-field">
 						<xsl:for-each select="child::*[local-name()='AnsvarligRapport']">
-							<br/>
 							<xsl:call-template name="HealthcareProfessional"/>
 						</xsl:for-each>
 					</span>
@@ -3609,6 +3642,16 @@ Forfatter:
 				</div>
 			</xsl:if>
 
+			<xsl:if test="child::*[local-name()='TypeInnholdIMelding']/child::*[local-name()='Merknad']">
+				<div class="eh-col-1">
+					<span class="eh-label">Merknad</span>
+					<span class="eh-field">
+						<xsl:call-template name="line-breaks">
+							<xsl:with-param name="text" select="child::*[local-name()='TypeInnholdIMelding']/child::*[local-name()='Merknad']"/>
+						</xsl:call-template>
+					</span>
+				</div>
+			</xsl:if>
 
 		</div>
 
@@ -3663,7 +3706,7 @@ Forfatter:
 									<span class="eh-field">
 										<xsl:for-each select="//child::*[local-name()='TypeMottaker']">
 											<xsl:call-template name="k-8330"/>
-										</xsl:for-each>&#160;,&#160;
+										</xsl:for-each>,&#160;
 										<xsl:value-of select="//child::*[local-name()='NavnMottaker']"/>
 									</span>
 								</div>
@@ -3686,11 +3729,13 @@ Forfatter:
 									</span>
 								</div>
 							</xsl:if>
-							<xsl:if test="//child::*[local-name()='Merknad']">
+							<xsl:if test="//child::*[local-name()='SendtDokument']/child::*[local-name()='Merknad']">
 								<div class="eh-col-1">
 									<span class="eh-label">Merknad</span>
 									<span class="eh-field">
-										<xsl:value-of select="//child::*[local-name()='Merknad']"/>
+										<xsl:call-template name="line-breaks">
+											<xsl:with-param name="text" select="child::*[local-name()='Merknad']"/>
+										</xsl:call-template>
 									</span>
 								</div>
 							</xsl:if>
