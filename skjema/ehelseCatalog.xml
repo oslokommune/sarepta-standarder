@@ -4,12 +4,10 @@
 Catalog.xsd">
 	<!-- Generelle skjema-->
 	<uri name="http://www.w3.org/XML/1998/namespace" uri="w3c/xml.xsd"/>
-	<uri name="http://www.w3.org/2000/09/xmldsig#" uri="w3c/xmldsig-core-schema.xsd"/>
+	<uri name="http://www.w3.org/2000/09/xmldsig#" uri="w3c/xmldsig-core-schema.xsd"/> 
 	<!-- uri name="http://www.w3.org/2001/XMLSchema" uri="w3c/XMLSchema.xsd"/ Gir problemer i XmlSpy -->
 	<uri name="http://www.kith.no/xmlstds/egenerklaering/2010-08-20" uri="egenerklæring/2010-08-20/Egenerklaering.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/egenerklæring/2012-05-12" uri="egenerklæring/2012-05-12/Egenerklæring.xsd"/>
-	<uri name="http://nhn.no/xsd/a2015/egenerklaering-1.0" uri="egenerklæring/a2015/egenerklaering-1.0.xsd"/>
-	<uri name="http://nhn.no/xsd/a2015/referanseliste-1.0" uri="egenerklæring/a2015/referanseliste-1.0.xsd"/>
 	<!-- KITH felleskomponenter -->
 	<uri name="http://www.kith.no/xmlstds/msghead/2006-05-24" uri="felleskomponenter/MsgHead-v1_2.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/felleskomponent1" uri="felleskomponenter/felleskomponent1.xsd"/>
@@ -29,26 +27,6 @@ Catalog.xsd">
 	<!-- dialogmelding -->
 	<uri name="http://www.kith.no/xmlstds/dialog/2006-10-11" uri="dialogmelding/2006-10-11/dialogmelding.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/dialog/2013-01-23" uri="dialogmelding/2013-01-23/dialogmelding-v1.1.xsd"/>
-	<!-- PLO-meldinger v1.31 -->
-	<uri name="http://www.kith.no/xmlstds/po/poKomponent/2007-10-16" uri="plo/v1.31/poKomponent.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/po/Innleggelsesrapport/2007-10-16" uri="plo/v1.31/Innleggelsesrapport.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/po/Konsultasjon/2007-10-16" uri="plo/v1.31/Konsultasjon.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/po/Legemiddelhandtering/2007-10-16" uri="plo/v1.31/Legemiddelhandtering.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/po/MeldingFravar/2007-10-16" uri="plo/v1.31/MeldingFravar.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/po/OrienteringOmTjenestetilbud/2007-10-16" uri="plo/v1.31/OrienteringOmTjenestetilbud.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/po/OverforingHelseopplysningPO/2007-10-16" uri="plo/v1.31/OverforingHelseopplysningPO.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/po/Pasientlogistikk/2007-10-16" uri="plo/v1.31/Pasientlogistikk.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/po/TverrfagligEpikrise/2007-10-16" uri="plo/v1.31/TverrfagligEpikrise.xsd"/>
-	<!-- PLO-meldinger v1.4 -->
-	
-	<uri name="http://www.kith.no/xmlstds/po/poKomponent/2008-02-20" uri="plo/v1.4/poKomponent.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/po/Innleggelsesrapport/2008-02-20" uri="plo/v1.4/Innleggelsesrapport.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/po/Konsultasjon/2008-02-20" uri="plo/v1.4/Konsultasjon.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/po/MeldingFravar/2008-02-20" uri="plo/v1.4/MeldingFravar.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/po/OrienteringOmTjenestetilbud/2008-02-20" uri="plo/v1.4/OrienteringOmTjenestetilbud.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/po/OverforingMedisinskeOpplysninger/2008-02-20" uri="plo/v1.4/OverforingMedisinskeOpplysninger.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/po/Pasientlogistikk/2008-02-20" uri="plo/v1.4/Pasientlogistikk.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/po/TverrfagligEpikrise/2008-02-20" uri="plo/v1.4/TverrfagligEpikrise.xsd"/>
 	<!-- PLO-meldinger v1.5 -->
 	<uri name="http://www.kith.no/xmlstds/po/poKomponent/2009-06-30" uri="plo/v1.5/poKomponent-v1.5.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/po/Innleggelsesrapport/2009-06-30" uri="plo/v1.5/Innleggelsesrapport-v1.5.xsd"/>
@@ -70,12 +48,9 @@ Catalog.xsd">
 	<uri name="http://www.kith.no/xmlstds/po/HelseopplysningerTilLege/2012-04-01" uri="plo/v1.6/HelseopplysningerTilLege-v1.6.xsd"/>
 	<!-- PLO-meldinger v2.0 -->
 	<uri name="http://ehelse.no/xmlstds/po/poKomponent/2017-11-30" uri="plo/v2.0/poKomponent-v2.0.xsd"/>
-	<uri name="http://ehelse.no/xmlstds/po/Pasientlogistikk/2016-05-30" uri="plo/v2.0/Pasientlogistikk-v2.0.xsd"/>
-	<uri name="http://ehelse.no/xmlstds/po/HelseopplysningerSaksbehandling/2016-05-30" uri="plo/v2.0/HelseopplysningerSaksbehandling-v2.0.xsd"/>
-	<uri name="http://ehelse.no/xmlstds/po/Sammenfatning/2016-05-30" uri="plo/v2.0/Sammenfatning-v2.0.xsd"/>
-	<!-- Sykemelding / Legeerklæring v.3.0 (manuell) -->
-	<uri name="http://www.kith.no/xmlstds/sykmelding/2004-05-03" uri="NAVSykmelding/rtv-smlepo-v075.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/sykmelding/2011-03-04" uri="NAVSykmelding/NAV-Sykmelding-2011-03-04.xsd"/>
+		
+	<!-- NAV Legeerklæring ved arbeidsuførhet -->
+	<uri name="http://www.kith.no/xmlstds/legeerklaring/2008-06-06" uri="NAVLegeerklæringVedArbeidsuførhet/NAV-Legeerklaring-2008-06-06.xsd"/>
 	<!-- Legeoppgjørsmelding -->
 	<uri name="http://www.kith.no/xmlstds/lom/2003-12-01" uri="lom/LOM-0.91.xsd"/>
 	<!-- NAV  Innrapportering trekk-->
@@ -84,8 +59,6 @@ Catalog.xsd">
 	<uri name="http://www.kith.no/xmlstds/epikrise" uri="epikrise/Epikrise-v1.0.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/epikrise/2006-09-23" uri="epikrise/Epikrise-v1.1.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/epikrise/2012-02-15" uri="epikrise/Epikrise-v1.2.xsd"/> 
-	<!-- Fødselsepikrise -->
-	<uri name="http://www.kith.no/xmlstds/FodselBarsel/2012-11-21" uri="fødselsepikrise/FodselBarsel-v1.3.xsd"/>
 	<!-- Henvisning -->
 	<uri name="http://www.kith.no/xmlstds/henvisning/2003-10-13" uri="henvisning/Henvisning-v0.91.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/henvisning/2005-07-08" uri="henvisning/Henvisning-v1.0.xsd"/>
@@ -99,8 +72,6 @@ Catalog.xsd">
 	<uri name="http://www.kith.no/xmlstds/rekvisisjon/2005-05-20" uri="rekvisisjon/Rekvisisjon-v1_4.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/rekvisisjon/2008-12-01" uri="rekvisisjon/Rekvisisjon-v1_5.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/rekvisisjon/2012-02-15" uri="rekvisisjon/Rekvisisjon-v1.6.xsd"/>
-	<!-- Tilbakemelding på henvisning -->
-	<uri name="http://www.kith.no/xmlstds/reply/2003-10-10" uri="tilbakemeldingPåHenvisning/Tilbakemelding-v09.xsd"/>
 	<!-- Apprec -->
 	<uri name="http://www.kith.no/xmlstds/apprec/2004-11-21" uri="applikasjonskvittering/AppRec-v1-2004-11-21.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/apprec/2012-02-15" uri="applikasjonskvittering/Apprec-v1.1.xsd"/>
@@ -128,7 +99,7 @@ Catalog.xsd">
 	<uri name="http://www.kith.no/xmlstds/eresept/m10/2007-06-01" uri="eresept/m10/2007-06-01/ER-M10-2007-06-01.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m18/2007-06-01" uri="eresept/m18/2007-06-01/ER-M18-2007-06-01.xsd"/>
 	<!-- eResept v1.6 -->
-		<uri name="http://www.kith.no/xmlstds/eresept/m10/2007-09-01" uri="eresept/m10/2007-09-01/ER-M10-2007-09-01.xsd"/>
+	<uri name="http://www.kith.no/xmlstds/eresept/m10/2007-09-01" uri="eresept/m10/2007-09-01/ER-M10-2007-09-01.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m18/2007-09-01" uri="eresept/m18/2007-09-01/ER-M18-2007-09-01.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m21/2007-09-01" uri="eresept/m21/2007-09-01/ER-M21-2007-09-01.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m30/2007-09-01" uri="eresept/m30/2007-09-01/ER-M30-2007-09-01.xsd"/>
@@ -153,25 +124,16 @@ Catalog.xsd">
 	<uri name="http://www.kith.no/xmlstds/eresept/m262/2008-05-15" uri="eresept/m262/2008-05-15/ER-M262-2008-05-15.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/sko/2008-05-05" uri="eresept/sko/2008-05-05/ER-SKO-2008-05-05.xsd"/>
 	<!-- eResept v2.1 -->
-	<uri name="http://www.kith.no/xmlstds/eresept/m1/2008-10-09" uri="eresept/m1/2008-10-09/ER-M1-2008-10-09.xsd"/>
+	
 	<uri name="http://www.kith.no/xmlstds/eresept/m5/2008-05-01" uri="eresept/m5/2008-05-01/ER-M5-2008-05-01.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/eresept/m6/2008-10-09" uri="eresept/m6/2008-10-09/ER-M6-2008-10-09.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/eresept/m10/2008-11-06" uri="eresept/m10/2008-11-06/ER-M10-2008-11-06.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m18/2008-09-26" uri="eresept/m18/2008-09-26/ER-M18-2008-09-26.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/eresept/m30/2008-10-09" uri="eresept/m30/2008-10-09/ER-M30-2008-10-09.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m92/2008-10-03" uri="eresept/m92/2008-10-03/ER-M92-2008-10-03.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m95/2008-10-03" uri="eresept/m95/2008-10-03/ER-M95-2008-10-03.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m242/2008-10-03" uri="eresept/m242/2008-10-03/ER-M242-2008-10-03.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/eresept/utlevering/2008-10-09" uri="eresept/utlevering/2008-10-09/ER-Utlevering-2008-10-09.xsd"/>
 	<!-- eResept v2.2 -->
-	<uri name="http://www.kith.no/xmlstds/eresept/m1/2008-12-12" uri="eresept/m1/2008-12-12/ER-M1-2008-12-12.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/eresept/m6/2008-12-12" uri="eresept/m6/2008-12-12/ER-M6-2008-12-12.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/eresept/m10/2008-12-12" uri="eresept/m10/2008-12-12/ER-M10-2008-12-12.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m14/2008-12-12" uri="eresept/m14/2008-12-12/ER-M14-2008-12-12.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/eresept/m30/2008-12-12" uri="eresept/m30/2008-12-12/ER-M30-2008-12-12.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m92/2008-12-12" uri="eresept/m92/2008-12-12/ER-M92-2008-12-12.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m96/2008-10-03" uri="eresept/m96/2008-10-03/ER-M96-2008-10-03.xsd"/>
-	<uri name="http://www.kith.no/xmlstds/eresept/utlevering/2008-12-12" uri="eresept/utlevering/2008-12-12/ER-Utlevering-2008-12-12.xsd"/>
 	<!-- eResept v2.3 -->
 	<uri name="http://www.kith.no/xmlstds/eresept/m2/2009-04-24" uri="eresept/m2/2009-04-24/ER-M2-2009-04-24.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/eresept/m2/2009-07-03" uri="eresept/m2/2009-07-03/ER-M2-2009-07-03.xsd"/>
@@ -290,4 +252,9 @@ Catalog.xsd">
 	<uri name="http://www.kith.no/xmlstds/sysvak/kodeverkresponse/2008-01-01" uri="sysvak/kodeverkresponse/2008-01-01/KodeverkResponse.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/sysvak/sokrequest/2008-01-01" uri="sysvak/sokrequest/2008-01-01/SokRequest.xsd"/>
 	<uri name="http://www.kith.no/xmlstds/sysvak/sokresponse/2008-01-01" uri="sysvak/sokresponse/2008-01-01/SokResponse.xsd"/>
+	
+	<!-- NPR / KPR -->
+	<uri name="http://www.npr.no/xmlstds/53_1_2" uri="NPR-KPR/NPR.xsd"/>
+	<uri name="http://www.npr.no/xmlstds/iplos/2018" uri="NPR-KPR/IPLOS(2018)rev2018_10_10.xsd"/>
+	
 </catalog>

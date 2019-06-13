@@ -249,6 +249,9 @@
 				<xsl:value-of select="child::*[local-name()=&quot;FamilyName&quot;]"/>&#160;
 			</xsl:if>
 		</div>
+		<xsl:for-each select="child::*[local-name()=&quot;Ident&quot;]">
+			<xsl:call-template name="Ident"/>
+		</xsl:for-each>
 		<xsl:for-each select="child::*[local-name()=&quot;TeleCom&quot;]">
 			<xsl:call-template name="TeleCom"/>
 		</xsl:for-each>
@@ -296,6 +299,13 @@
 			<div class="NoPrint">,&#160;</div>
 			<div>
 				<xsl:value-of select="child::*[local-name()=&quot;Country&quot;]/@DN"/>&#160;</div>
+		</xsl:if>
+	</xsl:template>
+	<!-- Ident -->
+	<xsl:template match="mh:Ident" name="Ident">
+		<xsl:if test="child::*[local-name()=&quot;Id&quot;] and child::*[local-name()=&quot;TypeId&quot;]/@V = 'HPR'">
+			<span class="italic">HPR-nummer:</span>&#160;
+			<xsl:value-of select="child::*[local-name()=&quot;Id&quot;]"/>
 		</xsl:if>
 	</xsl:template>
 	<!-- Telekommunikasjon -->

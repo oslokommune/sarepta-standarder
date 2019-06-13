@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SOAP:Envelope xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/" xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ http://www.oasis-open.org/committees/ebxml-msg/schema/envelope.xsd">
-	<SOAP:Header xmlns:eb="http://www.oasis-open.org/committees/ebxml-msg/schema/msg-header-2_0.xsd" xsi:schemaLocation="http://www.oasis-open.org/committees/ebxml-msg/schema/msg-header-2_0.xsd http://www.oasis-open.org/committees/ebxml-msg/schema/msg-header-2_0.xsd">
+	<SOAP:Header xmlns:eb="http://www.oasis-open.org/committees/ebxml-msg/schema/msg-header-2_0.xsd" xsi:schemaLocation="http://www.oasis-open.org/committees/ebxml-msg/schema/msg-header-2_0.xsd msg-header-2_0.xsd">
 		<eb:MessageHeader SOAP:mustUnderstand="1" eb:version="2.0">
 			<eb:From>
 				<eb:PartyId eb:type="HER">43213</eb:PartyId>
@@ -10,7 +10,7 @@
 			<eb:To>
 				<eb:PartyId eb:type="HER">12345</eb:PartyId>
 				<eb:PartyId eb:type="ENH">54453455453</eb:PartyId>
-				<eb:Role>EPIKRISEsend</eb:Role>
+				<eb:Role>EPIKRISEsender</eb:Role>
 			</eb:To>
 			<eb:CPAId>959925496_991668721_42</eb:CPAId>
 			<eb:ConversationId>774a6ed1-76dd-4f89-9239-6ed3c1bd7caf</eb:ConversationId>
@@ -19,7 +19,6 @@
 			<eb:MessageData>
 				<eb:MessageId>2AAF1196-C3FE-472B-8A91-AD89EF7822DD</eb:MessageId>
 				<eb:Timestamp>2006-07-11T12:45:32</eb:Timestamp>
-				<eb:RefToMessageId>955536cb-fb9a-49d9-848d-2baca7b116e1</eb:RefToMessageId>
 			</eb:MessageData>
 		</eb:MessageHeader>
 		<eb:Acknowledgment eb:version="2.0" SOAP:mustUnderstand="1">

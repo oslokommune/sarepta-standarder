@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.1
+M9.2 Reseptliste
+2008-10-03
+-->
+<!-- 
+Endringer siden v2.0 2008-06-25:
+Reseptinfo/Styrke: Slettet
+Reseptinfo/Legemiddelform: Slettet
+Reseptinfo/Navn: Slettet
+Reseptinfo/NavnStyrkeForm: Nytt element
+-->
+<schema xmlns:m92="http://www.kith.no/xmlstds/eresept/m92/2008-10-03" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" targetNamespace="http://www.kith.no/xmlstds/eresept/m92/2008-10-03" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="felleskomponent1.xsd"/>
+	<element name="Reseptliste">
+		<annotation>
+			<documentation>Returnerer en liste over aktuelle resepter fra reseptbank. </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Status" type="kith:CS" minOccurs="0">
+					<annotation>
+						<documentation>Status på søk hvis Reseptbanken ikke finner resepter på oppgitt søkekriterium</documentation>
+					</annotation>
+				</element>
+				<element name="Reseptinfo" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element name="Forskrivningsdato" type="date">
+								<annotation>
+									<documentation>Reseptens forskrivningsdato</documentation>
+								</annotation>
+							</element>
+							<element name="Fornavn" type="string">
+								<annotation>
+									<documentation>Pasientens fornavn. </documentation>
+								</annotation>
+							</element>
+							<element name="Etternavn" type="string">
+								<annotation>
+									<documentation>Pasientens etternavn. </documentation>
+								</annotation>
+							</element>
+							<element name="Address" type="fk1:Address" minOccurs="0"/>
+							<element name="RekvirentId" type="string">
+								<annotation>
+									<documentation>Rekvirent-ID (HPR-nummer). </documentation>
+								</annotation>
+							</element>
+							<element name="NavnRekvirent" type="string">
+								<annotation>
+									<documentation>Rekvirentens navn.</documentation>
+								</annotation>
+							</element>
+							<element name="Nr" type="string" minOccurs="0">
+								<annotation>
+									<documentation>Varenummeret.</documentation>
+								</annotation>
+							</element>
+							<element name="NavnStyrkeForm" type="string" minOccurs="0"/>
+							<element name="EndretFarmasoyt" type="kith:CS">
+								<annotation>
+									<documentation>Om den opprinnelige forskrivningen er endret av farmasøyt. </documentation>
+								</annotation>
+							</element>
+							<element name="RefHjemmel" type="kith:CV" minOccurs="0"/>
+							<element name="ReseptId" type="string">
+								<annotation>
+									<documentation>Reseptens ID</documentation>
+								</annotation>
+							</element>
+							<element name="Status" type="kith:CS">
+								<annotation>
+									<documentation>Indikerer hva slags status resepten har i reseptbanken. </documentation>
+								</annotation>
+							</element>
+							<element name="MerknadTilbakekalling" type="string" minOccurs="0">
+								<annotation>
+									<documentation>Inneholder evt. merknad fra M5 Tilbakekalling. </documentation>
+								</annotation>
+							</element>
+							<element name="NavnUtleverer" type="string" minOccurs="0">
+								<annotation>
+									<documentation>Navn på utleverer som har resepten til ekspedering. </documentation>
+								</annotation>
+							</element>
+							<element name="RefNr" type="string" minOccurs="0">
+								<annotation>
+									<documentation>Referansenummer på resepten. </documentation>
+								</annotation>
+							</element>
+							<element name="ProdGruppe" type="kith:CV" minOccurs="0">
+								<annotation>
+									<documentation>Eksempel "bleier", "kateter". Lege kan forskrive på dette nivå.</documentation>
+								</annotation>
+							</element>
+							<element name="Ident" type="fk1:Ident" minOccurs="0">
+								<annotation>
+									<documentation>Identifikasjon som personen er eller har vært kjent under, enten fødselsnummer eller D-nummer for personer</documentation>
+								</annotation>
+							</element>
+							<element name="HPRMerknad" type="kith:CV">
+								<annotation>
+									<documentation>Kode for staus for utfallet av HPR-sjekk. </documentation>
+								</annotation>
+							</element>
+							<element name="HPRMerknadDato" type="date" minOccurs="0">
+								<annotation>
+									<documentation>Dato for når HPR sjekk ble utført</documentation>
+								</annotation>
+							</element>
+							<element name="StatusSoknadSlv" type="kith:CS" minOccurs="0"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

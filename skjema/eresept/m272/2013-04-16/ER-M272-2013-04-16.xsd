@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M27.2 Svar på registrering av multidoseansvarlig
+2012-06-11
+ -->
+<!--
+Endringer siden V2.4 2012-06-11
+Fjernet choice mellom Multidoselege og Multidoseapotek samt kardinaliteter
+-->
+<schema xmlns:m272="http://www.kith.no/xmlstds/eresept/m272/2013-04-16" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:m274="http://www.kith.no/xmlstds/eresept/m274/2012-06-11" targetNamespace="http://www.kith.no/xmlstds/eresept/m272/2013-04-16" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/eresept/m274/2012-06-11" schemaLocation="ER-M274-2012-06-11.xsd"/>
+	<element name="M272">
+		<annotation>
+			<documentation>Svar på M27.1. som brukes av apotek og lege for å registrere/avregistrere seg som multidoseansvarlig for pasient. </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="RegistrertEndring" type="boolean"/>
+				<element ref="m274:Multidoselege" minOccurs="0"/>
+				<element ref="m274:Multidoseapotek" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

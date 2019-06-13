@@ -1,0 +1,33 @@
+Return—Path: <hds@edi.nhn.no> 
+X-Original-To: bcc@localhost.nhn.no
+Delivered-To: bcc@localhost.nhn.no 
+Received: from VIR—APP1169 (unknown [10. 84 . 229. 119] ) 
+by pfop—edi01.nhn.no (Postfix) with SMTP id 570AD20102 
+for <ytrebygda@edi.nhn.no>; Mon, 16 Apr 2018 12 : 59: 32 +0200 (CEST) 
+SOAPACTION: "ebxml" 
+From: hds@edi.nhn.no 
+To: ytrebygda@edi.nhn.no 
+subject: EPIKRISE
+Date: Mon, 16 Apr 2018 12:59:32 +2 
+X—Mailer: CommunicateSMTPClient 
+Message-Id: b17088ff-bf6e-41c4-b389-b231b84bd97d 
+MIME-Version: 1.0
+Content-Type: multipart/related;
+type="text/xml";
+charset="utf-8";
+start="<body>"
+boundary="unique-boundary-1";
+Content-Transfer-Encoding: 7bit
+X-MSH: "Medilink"
+X-MSH-versjon: "1.23.2434"
+X-fagmelding: "http://www.kith.no/xmlstds/labsvar/2012-02-15"
+X-fagsystem: "System X"
+X-fagsystem-versjon: "1.24.6565"
+
+This is a multi—part message in MIME format. 
+
+--unique-boundary-1 
+Content-ID: <body>
+Content-Type: text/xml; 
+charset="UTF-8"
+Content-Transfer-Encoding: base64

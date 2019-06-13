@@ -1,0 +1,32 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"id": "http://ehelse.no/skjema/json/overvakning-description.json",
+	"type": "object",
+	"properties": {
+		"MSH-system":{
+			"type": "string",
+			"description": "MSH systemets offisielle navn"
+		},
+		"MSH-versjon":{
+			"type": "string",
+			"description": "Offisiell versjonsangivelse for MSH systemet"
+		},
+		"fagsystem":{
+			"type": "string",
+			"description": "Fagsystemets offisielle navn"
+		},
+		"fagsystem-versjon":{
+			"type": "string",
+			"description": "Offisiell versjonsangivelse for fagsystemet"
+		},
+		"mellomvare":{
+			"type": "string",
+			"description": "Mellomvarens offisielle navn"
+		},
+		"mellomvare-versjon":{
+			"type": "string",
+			"description": "Offisiell versjonsangivelse for mellomvaren"
+		}
+	},
+	"required": ["MSH-system","MSH-versjon"]
+}

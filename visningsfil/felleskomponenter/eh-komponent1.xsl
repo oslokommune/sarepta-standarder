@@ -1152,7 +1152,7 @@
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++ -->
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++ -->
 
-	<xsl:template name="eh-Footer">
+	<xsl:template name="Footer">
 		<xsl:param name="stil"/>
 		<xsl:param name="versjon"/>
 		<xsl:param name="VisDokInfoVisSkjul"/>

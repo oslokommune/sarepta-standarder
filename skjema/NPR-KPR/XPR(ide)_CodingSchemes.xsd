@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Generated on 10-12-2017  20:22:54 at NPR -->
+<!-- NPR-meldingen -->
+<!-- Modul ide  -->
+<!-- Skjema for Innrapportering av data for identifikasjon av person  -->
+<!-- XML-Schema level supported is specified by W3C -->
+<!-- http://www.w3.org/2001/XMLSchema -->
+<schema 
+       xmlns="http://www.w3.org/2001/XMLSchema"
+       xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:npr = "http://www.npr.no/xmlstds/53_1_2_ide"
+    targetNamespace = "http://www.npr.no/xmlstds/53_1_2_ide"
+    elementFormDefault = "qualified"
+    attributeFormDefault="unqualified">
+
+
+<!-- LEVEL 1 -->
+
+<!-- Class: Melding -->
+
+
+ <!-- Coding schemes as simpleTypes in the class: 'Melding' --> 
+<simpleType name="meldingstype">
+   <restriction base="string">  <!-- Kodeverk: 7371 Meldingstype -->
+
+      <enumeration value="E"/>  <!-- "Endringsmelding" -->
+      <enumeration value="B"/>  <!-- "Satsvis melding" -->
+   </restriction>
+</simpleType>
+
+
+ <!-- Appinfo for Coding schemes in the class: 'Melding' --> 
+<annotation>
+   <appinfo>
+      <class name="Melding"/> 
+      <attribute name="meldingstype"/> 
+      <codingScheme name="Meldingstype"/> 
+      <codingScheme OID="7371"/> 
+      <simpleT name="meldingstype"/> 
+         <code value="E" text="Endringsmelding" comment=""/>
+         <code value="B" text="Satsvis melding" comment=""/>
+   </appinfo>
+</annotation>
+
+
+<!-- LEVEL 2 -->
+
+<!-- Class: Kontaktperson -->
+
+
+ <!-- Coding schemes as simpleTypes in the class: 'Kontaktperson' --> 
+<simpleType name="kontaktperson_type">
+   <restriction base="nonNegativeInteger">  <!-- Kodeverk: 8471 Kontaktperson type -->
+
+      <enumeration value="1"/>  <!-- "Teknisk produksjon" -->
+      <enumeration value="2"/>  <!-- "Somatisk spesialisthelsetjeneste" -->
+      <enumeration value="3"/>  <!-- "Psykisk helsevern voksne" -->
+      <enumeration value="4"/>  <!-- "Barne og ungdomspsykiatri" -->
+      <enumeration value="5"/>  <!-- "Tverrfaglig spesialisert rusbehandling" -->
+      <enumeration value="6"/>  <!-- "Personskadestatistikk" -->
+      <enumeration value="7"/>  <!-- "Ventelistestatistikk" -->
+      <enumeration value="8"/>  <!-- "Ident-meldingen" -->
+      <enumeration value="9"/>  <!-- "RESH" -->
+      <enumeration value="10"/>  <!-- "Radiologi" -->
+      <enumeration value="11"/>  <!-- "Stråleterapi" -->
+      <enumeration value="12"/>  <!-- "Pakkeforløp kreft" -->
+      <enumeration value="13"/>  <!-- "Vedtak etter psykisk helsevernloven" -->
+      <enumeration value="14"/>  <!-- "Organisasjonsoppsett i EPJ" -->
+      <enumeration value="15"/>  <!-- "EPJ-leverandør, meldingsvalidering" -->
+      <enumeration value="16"/>  <!-- "IPLOS" -->
+   </restriction>
+</simpleType>
+
+
+ <!-- Appinfo for Coding schemes in the class: 'Kontaktperson' --> 
+<annotation>
+   <appinfo>
+      <class name="Kontaktperson"/> 
+      <attribute name="typeKontaktperson"/> 
+      <codingScheme name="Kontaktperson type"/> 
+      <codingScheme OID="8471"/> 
+      <simpleT name="kontaktperson_type"/> 
+         <code value="1" text="Teknisk produksjon" comment=""/>
+         <code value="2" text="Somatisk spesialisthelsetjeneste" comment=""/>
+         <code value="3" text="Psykisk helsevern voksne" comment=""/>
+         <code value="4" text="Barne og ungdomspsykiatri" comment=""/>
+         <code value="5" text="Tverrfaglig spesialisert rusbehandling" comment=""/>
+         <code value="6" text="Personskadestatistikk" comment=""/>
+         <code value="7" text="Ventelistestatistikk" comment=""/>
+         <code value="8" text="Ident-meldingen" comment=""/>
+         <code value="9" text="RESH" comment=""/>
+         <code value="10" text="Radiologi" comment="Unntatt stråleterapi"/>
+         <code value="11" text="Stråleterapi" comment=""/>
+         <code value="12" text="Pakkeforløp kreft" comment=""/>
+         <code value="13" text="Vedtak etter psykisk helsevernloven" comment=""/>
+         <code value="14" text="Organisasjonsoppsett i EPJ" comment=""/>
+         <code value="15" text="EPJ-leverandør, meldingsvalidering" comment=""/>
+         <code value="16" text="IPLOS" comment=""/>
+   </appinfo>
+</annotation>
+
+<!-- Class: Helseinstitusjon -->
+
+
+<!-- LEVEL 3 -->
+
+<!-- Class: PersonID -->
+
+
+ <!-- Coding schemes as simpleTypes in the class: 'PersonID' --> 
+<simpleType name="type_personidentifikasjon">
+   <restriction base="nonNegativeInteger">  <!-- Kodeverk: 9032 Type personidentifikasjon -->
+
+      <enumeration value="1"/>  <!-- "Norsk fødselsnummer" -->
+      <enumeration value="2"/>  <!-- "D-nummer" -->
+      <enumeration value="3"/>  <!-- "H-nummer" -->
+      <enumeration value="4"/>  <!-- "Passnummer" -->
+      <enumeration value="5"/>  <!-- "Svensk personnummer" -->
+      <enumeration value="6"/>  <!-- "Dansk personnummer" -->
+      <enumeration value="7"/>  <!-- "Sosial security number" -->
+      <enumeration value="8"/>  <!-- "Forsikringspolise nummer" -->
+      <enumeration value="9"/>  <!-- "Annet" -->
+      <enumeration value="10"/>  <!-- "DUF-nummer" -->
+      <enumeration value="12"/>  <!-- "Felles hjelpenummer (FH-nummer)" -->
+   </restriction>
+</simpleType>
+
+
+ <!-- Appinfo for Coding schemes in the class: 'PersonID' --> 
+<annotation>
+   <appinfo>
+      <class name="PersonID"/> 
+      <attribute name="typeID"/> 
+      <codingScheme name="Type personidentifikasjon"/> 
+      <codingScheme OID="9032"/> 
+      <simpleT name="type_personidentifikasjon"/> 
+         <code value="1" text="Norsk fødselsnummer" comment=""/>
+         <code value="2" text="D-nummer" comment="Personer i kontakt med norske myndigheter uten norsk fødselsnummer"/>
+         <code value="3" text="H-nummer" comment="Nødnummer"/>
+         <code value="4" text="Passnummer" comment=""/>
+         <code value="5" text="Svensk personnummer" comment=""/>
+         <code value="6" text="Dansk personnummer" comment=""/>
+         <code value="7" text="Sosial security number" comment=""/>
+         <code value="8" text="Forsikringspolise nummer" comment=""/>
+         <code value="9" text="Annet" comment=""/>
+         <code value="10" text="DUF-nummer" comment="Database for utlendingsforvaltningen"/>
+         <code value="12" text="Felles hjelpenummer (FH-nummer)" comment=""/>
+   </appinfo>
+</annotation>
+</schema>

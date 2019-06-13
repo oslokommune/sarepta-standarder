@@ -79,17 +79,17 @@
 			<div class="eh-col-1 {$stripedCss}">
 				<span class="eh-label">Kontaktenhet</span>
 				<span class="eh-field inline-content">
-					<xsl:for-each select="child::*[local-name()='Kontaktenhet']">	<!-- maxOccurs="1" -->
+					<xsl:for-each select="//child::*[local-name()='TilknyttetEnhet']/child::*[local-name()='Kontaktenhet']">	<!-- maxOccurs="1" -->
 						<xsl:call-template name="Organisation"/>
 					</xsl:for-each>
 				</span>
 			</div>
-			<xsl:if test="child::*[local-name()='Merknad']">
+			<xsl:if test="//child::*[local-name()='TilknyttetEnhet']/child::*[local-name()='Merknad']">
 				<div class="eh-col-1 eh-last-child {$stripedCss}">
 					<span class="eh-label">Merknad</span>
 					<span class="eh-field">
 						<xsl:call-template name="line-breaks">
-							<xsl:with-param name="text" select="child::*[local-name()='Merknad']"/>
+							<xsl:with-param name="text" select="//child::*[local-name()='TilknyttetEnhet']/child::*[local-name()='Merknad']"/>
 						</xsl:call-template>
 					</span>
 				</div>
@@ -257,7 +257,7 @@
 			</xsl:if>
 			<xsl:if test="//child::*[local-name()='InnholdKonsultasjon']/child::*[local-name()='Merknad'] or //child::*[local-name()='TypeInnholdIMelding']/child::*[local-name()='Merknad']">
 				<div class="eh-col-1">
-					<span class="eh-label">>Merknad til innhold</span>
+					<span class="eh-label">Merknad til innhold</span>
 					<span class="eh-field">
 						<xsl:for-each select="//child::*[local-name()='InnholdKonsultasjon']/child::*[local-name()='Merknad']">
 							<xsl:call-template name="line-breaks">

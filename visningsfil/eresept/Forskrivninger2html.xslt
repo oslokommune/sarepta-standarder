@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Edited with XMLSpy v2013 rel2 sp2 (www.altova.com) by Jan Sigurd Dragsjø (www.helsedirektoratet.no) -->
+<!-- Edited with XMLSpy v2018 sp1 (www.altova.com) by Jan Sigurd Dragsjø (www.nhn.no) -->
 <xsl:stylesheet version="1.0" 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
 	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
@@ -7,6 +7,7 @@
 
 	<!-- Visningsfil for forskrivninger og tilbakekallinger -->
 	<!-- Endringslogg
+	-	2018-11-30: La til linjer for enklere separering av forskrivningene
 	-	2017-03-27: v3.1.1: Ny parameter for "visningStil". Ny stil "Smooth".
 	-	2016-10-25: v3.1.0: La til variabel for visningsversjonnr
 	-	2014-02-12: La til visning av antall ifm legemiddelblanding
@@ -44,7 +45,7 @@
 	</xsl:variable>
 
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'forskrivning - v3.1.0 '"/>
+	<xsl:variable name="versjon" select="'forskrivning - v3.1.1'"/>
 
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
@@ -145,7 +146,6 @@
 			</table>
 		</div>
 	</xsl:template>
-
 	<!-- Visning av tilbakekallinger -->
 	<xsl:template name="Tilbakekallinger">
 		<div class="{$stil}">
@@ -175,7 +175,9 @@
 
 	<!-- Visning av reseptdokument - legemiddel -->
 	<xsl:template name="ReseptDokLegemiddel">
-		<tr>
+<tr>
+			<td colspan="8"><hr/></td>
+		</tr>		<tr>
 			<td>
 				<xsl:for-each select="descendant::*[local-name()='Bruk']">
 					<xsl:call-template name="k-9101"/>
@@ -271,7 +273,9 @@
 	
 	<!-- Visning av reseptdokument - handelsvarer -->
 	<xsl:template name="ReseptDokHandelsvare">
-		<tr>
+<tr>
+			<td colspan="8"><hr/></td>
+		</tr>		<tr>
 			<td>
 				<xsl:for-each select="child::*[local-name()='Naringsmiddel']">N</xsl:for-each>
 			</td>
@@ -315,6 +319,8 @@
 			<td>
 				<!-- Ingen reiterasjon for handelsvarer -->
 			</td>
+			
+			
 			<td>
 				<xsl:if test="../child::*[local-name()='RekvLegensNavn'] = 'true'">A</xsl:if>
 				<xsl:if test="../child::*[local-name()='RefNr']">R</xsl:if>
