@@ -7,6 +7,11 @@
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
+				<xs:element name="Temaer" type="Temareferanse" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Liste over temaer</xs:documentation>
+					</xs:annotation>
+				</xs:element>
 				<xs:element name="Navn" type="xs:string">
 					<xs:annotation>
 						<xs:documentation>Standardens navn</xs:documentation>
@@ -17,17 +22,17 @@
 						<xs:documentation>Hvilket område standarden tilhører. Definert av referansekatalogen</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="Versjon" type="xs:string">
+				<xs:element name="Versjon" type="xs:string" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Standardens versjon</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-                <xs:element name="Identifikator" type="xs:string">
+				<xs:element name="Identifikator" type="xs:string" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Unik identifikator for denne standarden for denne utgiveren</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="Utgitt" type="xs:string">
+				<xs:element name="Utgitt" type="xs:string" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Dato for når standarden ble utgitt.</xs:documentation>
 					</xs:annotation>
@@ -37,7 +42,6 @@
 						<xs:documentation>Utgiver av standard</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				
 				<xs:element name="Status" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Status for standardens livsløp. Oppgis kun for standarder som inngår i referansekatalogen</xs:documentation>
@@ -52,7 +56,6 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
-				
 				<xs:element name="MerInformasjon" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Lenke til mer informasjon</xs:documentation>
@@ -63,8 +66,6 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-
-
 				<xs:element name="Profiler" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Definisjon av tilgjengelige profiler</xs:documentation>
@@ -75,7 +76,6 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-
 				<xs:element name="Kravdokumenter" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Kravdokument som definerer en standard</xs:documentation>
@@ -160,42 +160,40 @@
 			<xs:attribute name="definisjonVersjon" type="xs:string" use="required"/>
 		</xs:complexType>
 	</xs:element>
-	
 	<xs:complexType name="Profilreferanse">
 		<xs:annotation>
 			<xs:documentation>Referanse til en standardprofil</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="ProfilId" type="xs:string" minOccurs="0"/>
-			<xs:element name="Beskrivelse" type="xs:string" minOccurs="0"/>
+			<xs:element name="ProfilId" type="xs:string"/>
+			<xs:element name="Beskrivelse" type="xs:string"/>
 			<xs:element name="Identifikator" type="xs:string" minOccurs="0"/>
 			<xs:element name="Utgitt" type="xs:string" minOccurs="0"/>
 			<xs:element name="Ansvarlig" type="xs:string" minOccurs="0"/>
 			<xs:element name="Status" type="xs:string" minOccurs="0"/>
-				<xs:element name="MerInformasjon" minOccurs="0">
-					<xs:annotation>
-						<xs:documentation>Lenke til mer informasjon</xs:documentation>
-					</xs:annotation>
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="Informasjon" type="Filreferanse" maxOccurs="unbounded"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
+			<xs:element name="MerInformasjon" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Lenke til mer informasjon</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Informasjon" type="Filreferanse" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Temaer" type="Temareferanse" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
-	
 	<xs:complexType name="Filreferanse">
 		<xs:annotation>
 			<xs:documentation>Referanse til en lokal eller global fil</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-		    <xs:element name="ProfilId" type="xs:string" minOccurs="0"/>
+			<xs:element name="ProfilId" type="xs:string" minOccurs="0"/>
 			<xs:element name="Beskrivelse" type="xs:string" minOccurs="0"/>
 			<xs:element name="Referanse" type="xs:anyURI"/>
 		</xs:sequence>
 	</xs:complexType>
-	
 	<xs:complexType name="Skjemareferanse">
 		<xs:annotation>
 			<xs:documentation>Referanse til skjemafil</xs:documentation>
@@ -208,5 +206,59 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="Temareferanse">
+		<xs:annotation>
+			<xs:documentation>Referanse til Temaer</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Tema" type="TemaData" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="TemaData">
+		<xs:annotation>
+			<xs:documentation>Navn og beskrivelse av tema</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Grunnleggende standarder og spesifikasjoner for elektronisk samhandling">
+				<xs:annotation>
+					<xs:documentation>Standarder og spesifikasjoner som benyttes i andre meldingsstandarder.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Samhandling i pasientforløp">
+				<xs:annotation>
+					<xs:documentation>Meldingsutveksling som støtter opp om samhandlingen i et pasientforløp. </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SYSVAK">
+				<xs:annotation>
+					<xs:documentation>Meldingene til SYSVAK er anbefalt for virksomheter hvor det foretas vaksinasjon.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="E-reseptmeldinger">
+				<xs:annotation>
+					<xs:documentation>Standarder som skal benyttes for e-reseptmeldinger</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Samhandling med NAV">
+				<xs:annotation>
+					<xs:documentation>Standarder som skal brukes i samhandling med NAV</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Samhandling med HELFO">
+				<xs:annotation>
+					<xs:documentation>Standarder som skal brukes i samhandling med HELFO</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Informasjonsdeling">
+				<xs:annotation>
+					<xs:documentation>Standarder for informasjonsdeling i referansekatalogen.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Meldingsutveksling helsenorge.no">
+				<xs:annotation>
+					<xs:documentation>Implementasjonsguider og annen teknisk dokumentasjon for bruk av meldinger på helsenorge.no</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>		
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>
-

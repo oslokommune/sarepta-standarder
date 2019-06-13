@@ -2,18 +2,23 @@
 <!-- Edited 2017-08-15: 
 		- Fixed the placement of eb:AckRequested and ds:Signature elements, moved them from within the eb:MessageHeader 
 		- Fixed eb:AckRequested "soap:mustUnderstand" -> "SOAP:mustUnderstand" 
-		- Fixed eb:signed="0" -> eb:signed="1" -->
+		- Fixed eb:signed="0" -> eb:signed="1" 
+	Edited 2018-03-08 TTR:
+		- Fixed the bug in msgheader-2_0.xsd by removing the ###other element not used by us
+		- Fixed the Epikrise send -> Epikrisesender
+		- Made scemaLocation point to the local copy of msg-header-2_0.xsd
+	Edited 2018-10-02 TTR:
+		- Removed one HER id from PartyId, only one of each id-type is allowed
+-->
 <SOAP:Envelope xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/" xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ http://www.oasis-open.org/committees/ebxml-msg/schema/envelope.xsd">
-	<SOAP:Header xmlns:eb="http://www.oasis-open.org/committees/ebxml-msg/schema/msg-header-2_0.xsd" xsi:schemaLocation="http://www.oasis-open.org/committees/ebxml-msg/schema/msg-header-2_0.xsd http://www.oasis-open.org/committees/ebxml-msg/schema/msg-header-2_0.xsd">
+	<SOAP:Header xmlns:eb="http://www.oasis-open.org/committees/ebxml-msg/schema/msg-header-2_0.xsd" xsi:schemaLocation="http://www.oasis-open.org/committees/ebxml-msg/schema/msg-header-2_0.xsd msg-header-2_0.xsd">
 		<eb:MessageHeader SOAP:mustUnderstand="1" eb:version="2.0">
 			<eb:From>
-				<eb:PartyId eb:type="HER">1234</eb:PartyId>
 				<eb:PartyId eb:type="HER">987654</eb:PartyId>
 				<eb:PartyId eb:type="ENH">545345434</eb:PartyId>
 				<eb:Role>EPIKRISEsender</eb:Role>
 			</eb:From>
 			<eb:To>
-				<eb:PartyId eb:type="HER">43213</eb:PartyId>
 				<eb:PartyId eb:type="HER">12345</eb:PartyId>
 				<eb:PartyId eb:type="ENH">934343432</eb:PartyId>
 				<eb:Role>EPIKRISEreceiver</eb:Role>
@@ -77,7 +82,7 @@ gTCCRm5tsGmxNPyL/CQthztAsuLeWMupeWidqLwpOxQiW3UKqG0yf3LdbsQ20sgBAdM2T8Gsw2ZN
 	<SOAP:Body xmlns:eb="http://www.oasis-open.org/committees/ebxml-msg/schema/msg-header-2_0.xsd" xsi:schemaLocation="http://www.oasis-open.org/committees/ebxml-msg/schema/msg-header-2_0.xsd http://www.oasis-open.org/committees/ebxml-msg/schema/msg-header-2_0.xsd">
 		<eb:Manifest eb:version="2.0">
 			<eb:Reference xlink:href="cid:ebxmlpayload111@example.com" xlink:role="XLinkRole" xlink:type="simple">
-				<eb:Description xml:lang="no">Sykmelding</eb:Description>
+				<eb:Description xml:lang="no">Epikrise</eb:Description>
 			</eb:Reference>
 		</eb:Manifest>
 	</SOAP:Body>

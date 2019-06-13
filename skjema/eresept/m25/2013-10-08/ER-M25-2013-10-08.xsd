@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M25 Legemidler i bruk MASTER
+2013-10-08
+Master for M25.1-4 - skal ikke brukes i produksjon. 
+-->
+<!--
+Endringer siden v2.5 2013-06-05
+Nytt element: m25:VarerIBruk/m25:Merknad (EA 4493)
+Element fjernet: m25:Pakkeinfo/m25:Pakkeintervall (EA 4495)
+Nytt element: m25:Pakkeinfo/m25:ForsteDoseringsdato (EA 4495)
+Nytt element: m25:Pakkeinfo/m25:SisteDoseringsdato (EA 4495)
+Endret kardinalitet: m25:EnkeltoppforingVIB/m25:SisteUtlevering 0..1 -> 0..* (EA 4497)
+Nytt element: m25:VarerIBruk/m25:Vikar (EA 4573)
+Nytt element: m25:EnkeltoppforingVIB/m25:UtlopsdatoResept (EA 4650)
+Hele m25:EnkeltoppforingVIB/m25:Sporsmal er bygd om til ny struktur (EA 4495/4503/4570)
+Nytt elementnavn: m25:EnkeltoppforingVIB -> m25:EnkeltoppforingLIB (OMW 2013-10-07)
+Nytt elementnavn: m25:VarerIBruk -> m25:LegemidlerIBruk (OMW 2013-10-07)
+-->
+<schema xmlns:m25="http://www.kith.no/xmlstds/eresept/m25/2013-10-08" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ki="http://www.kith.no/xmlstds/eresept/ki/2013-04-25" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" targetNamespace="http://www.kith.no/xmlstds/eresept/m25/2013-10-08" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds/eresept/ki/2013-04-25" schemaLocation="ER-KritiskInformasjon-2013-04-25.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="../felles/felleskomponent1.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<element name="LegemidlerIBruk">
+		<complexType>
+			<sequence>
+				<element ref="m25:Rolle" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="m25:EnkeltoppforingLIB" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="m25:Pakkeinfo" minOccurs="0"/>
+				<element ref="ki:Allergi" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="Merknad" type="string" minOccurs="0"/>
+				<element name="Vikar" type="kith:CS" minOccurs="0">
+					<annotation>
+						<documentation>Kun i M25.1</documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="EnkeltoppforingLIB">
+		<complexType>
+			<sequence>
+				<element name="Id" type="string">
+					<annotation>
+						<documentation>Lokalt generert UUID for oppføringen.</documentation>
+					</annotation>
+				</element>
+				<element name="Type" type="kith:CS">
+					<annotation>
+						<documentation>Type resept.</documentation>
+					</annotation>
+				</element>
+				<element name="ReseptId" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Identifiserer resepten denne oppføringen tilhører. UUID fra melding eller lokalt generert. </documentation>
+					</annotation>
+				</element>
+				<element name="UtlopsdatoResept" type="date" minOccurs="0"/>
+				<element name="SistEndret" type="dateTime">
+					<annotation>
+						<documentation>Sist endret dato. Referer til tidspunktet det sist ble gjort endringer i et element knyttet til gjeldende Id. </documentation>
+					</annotation>
+				</element>
+				<element name="DatoOppstart" type="date" minOccurs="0">
+					<annotation>
+						<documentation>Dato for når denne behandlingen ble startet/ønskes startet.</documentation>
+					</annotation>
+				</element>
+				<element name="InngarMultidose" type="kith:CS" minOccurs="0">
+					<annotation>
+						<documentation>Angir om aktuelt legemiddel pakkes av pakkesentral (endose eller multidose). 
+Bruk:
+Brukes kun i M25.3.</documentation>
+						<documentation>TODO Fjernes fra M25.1 og M25.2.</documentation>
+					</annotation>
+				</element>
+				<element name="MedEndring" type="boolean" minOccurs="0"/>
+				<element ref="m25:Rolle" minOccurs="0" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Rolle i forhold til oppføring</documentation>
+					</annotation>
+				</element>
+				<element name="ReseptDokLegemiddelB64" type="base64Binary"/>
+				<element ref="m25:SisteUtlevering" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="m25:Seponering" minOccurs="0"/>
+				<element ref="m25:Sporsmal" minOccurs="0" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Kun i M25.1 og M25.2</documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Rolle">
+		<annotation>
+			<documentation>Rolle i forhold til pasient</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Rolle" type="kith:CS">
+					<annotation>
+						<documentation>Beskriver rolle til helseperson eller organisasjon i forhold til aktuell pasient.</documentation>
+					</annotation>
+				</element>
+				<choice>
+					<annotation>
+						<documentation>Inneholder enten Helseperson eller Organisasjon. Rollen bestemmer om det skal benyttes Helseperson, Organisasjon eller om det kan velges mellom disse. </documentation>
+					</annotation>
+					<element ref="m25:Helseperson"/>
+					<element ref="m25:Organisasjon"/>
+				</choice>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="SisteUtlevering">
+		<annotation>
+			<documentation>Kun i M25.3</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="RefM10" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Meldingsreferanse til M10. </documentation>
+					</annotation>
+				</element>
+				<element name="Ompakkingsgrunn" type="kith:CS" minOccurs="0"/>
+				<element name="DatoForsteDose" type="date">
+					<annotation>
+						<documentation>Dato for når aktuell utlevering er forventet å bli tatt i bruk av pasient. </documentation>
+					</annotation>
+				</element>
+				<element name="DatoSisteDose" type="date">
+					<annotation>
+						<documentation>Dato for når aktuell utlevering er forventet å bli brukt siste gang av pasient. Medisinering dagen etter oppgitt dato vil kreve ny utlevering. </documentation>
+					</annotation>
+				</element>
+				<element name="Bilderef" type="kith:URL" minOccurs="0">
+					<annotation>
+						<documentation>Referanse til bilde av legemidlet som er pakket.
+Bruk:
+Brukes kun i M25.3. 
+</documentation>
+					</annotation>
+				</element>
+				<element name="UtleveringB64" type="base64Binary"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Pakkeinfo">
+		<annotation>
+			<documentation>Kun M25.2 og M25.3</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Bestillingsfrist" type="dateTime">
+					<annotation>
+						<documentation>Siste tidspunkt for innsending av VIB (M25.1) for at det skal komme med på neste pakking.</documentation>
+					</annotation>
+				</element>
+				<element name="ForsteDoseringsdato" type="date" minOccurs="0">
+					<annotation>
+						<documentation>Dato for første dosering. </documentation>
+					</annotation>
+				</element>
+				<element name="SisteDoseringsdato" type="date" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Seponering">
+		<annotation>
+			<documentation>Kun i M25.1</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Tidspunkt" type="dateTime">
+					<annotation>
+						<documentation>Tidspunkt for seponering av vare. Pasienten skal ikke innta medisin fra og med dette tidspunktet. </documentation>
+					</annotation>
+				</element>
+				<element name="Arsak" type="kith:CS">
+					<annotation>
+						<documentation>Kodeverk som angir årsaken til seponering.</documentation>
+					</annotation>
+				</element>
+				<element name="Merknad" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Tilleggsinformasjon knyttet til seponeringen av varen. </documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Sporsmal">
+		<annotation>
+			<documentation>Kun i M25.1 og M25.2</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Kode" type="kith:CV">
+					<annotation>
+						<documentation>Kodet spørsmål eller kommentar. </documentation>
+					</annotation>
+				</element>
+				<element name="Merknad" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Merknad, annet spørsmål eller beskjed fra lege. </documentation>
+					</annotation>
+				</element>
+				<element name="Tidspunkt" type="dateTime">
+					<annotation>
+						<documentation>Tidspunkt for spørsmålet, brukes til sortering. </documentation>
+					</annotation>
+				</element>
+				<element name="Stiller" type="string">
+					<annotation>
+						<documentation>Stiller av spørsmål/kommentar, identifisert med HER-id. </documentation>
+					</annotation>
+				</element>
+				<element name="Mottaker" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Ønsket mottaker av spørsmål/kommentar, identifisert med HER-id.</documentation>
+					</annotation>
+				</element>
+				<element name="Svar" minOccurs="0">
+					<annotation>
+						<documentation>Svar på spørsmål</documentation>
+					</annotation>
+					<complexType>
+						<sequence>
+							<element name="Kode" type="kith:CV">
+								<annotation>
+									<documentation>Kodet svar. </documentation>
+								</annotation>
+							</element>
+							<element name="Merknad" type="string" minOccurs="0"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<!--Klasser som skal bli felleskomponenter-->
+	<element name="Organisasjon">
+		<complexType>
+			<sequence>
+				<element name="HerId" type="fk1:Ident"/>
+				<element name="Inst" type="string" minOccurs="0"/>
+				<element name="Dept" type="string" minOccurs="0"/>
+				<element name="InstitusjonsID" type="kith:CV" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Helseperson">
+		<complexType>
+			<sequence>
+				<element name="HprId" type="fk1:Ident"/>
+				<element name="Fornavn" type="string" minOccurs="0"/>
+				<element name="Etternavn" type="string" minOccurs="0"/>
+				<element name="Spesialitet" type="kith:CV" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

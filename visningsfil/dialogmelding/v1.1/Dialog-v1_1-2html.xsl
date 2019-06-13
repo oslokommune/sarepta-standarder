@@ -54,6 +54,8 @@
 	<!-- Variabel for hvilken versjon av visningsfilen -->
 	<xsl:variable name="versjon" select="'dialog1.1 - v3.1.5 '"/>
 	
+	<xsl:variable name="IsTestMessage" select="boolean(/mh:MsgHead/mh:MsgInfo/mh:ProcessingStatus[@V = 'D'])" />
+	
 	<xsl:template match="/">
 		<html>
 			<head>
@@ -67,6 +69,9 @@
 				</style>
 			</head>
 			<body>
+				<xsl:if test="$IsTestMessage">
+					<p class="TestMessageWarning">OBS: Dette er en testmelding.</p>
+				</xsl:if>
 				<xsl:apply-templates select="mh:MsgHead"/>
 			</body>
 		</html>

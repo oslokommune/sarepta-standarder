@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by Helsedirektoratet (Helsedirektoratet) -->
+<!-- 
+eResept versjon 2.5
+Utlevering (fellesskjema)
+2013-10-08
+UNDER ARBEID
+-->
+<!-- 
+Endringer siden v2.5 2013-04-16
+Endret namespace M1
+Nytt element: ul:Utlevering/ul:Batchnr (V2.5 EA 4562)
+-->
+<!-- 
+Endringer siden v2.4 2009-02-20
+Namespace M1
+Nytt element: ul:Utlevering/ul:Intervensjon/ul:Begrunnelse (V2.5 EA 1251)
+Nytt element og klasse: RekvirentPapir. Samme som i M18 (Rekvirent). Brukes i M8(.1) og M10. (V2.5 EA 1221)
+-->
+<schema xmlns:ul="http://www.kith.no/xmlstds/eresept/utlevering/2013-10-08" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:m1="http://www.kith.no/xmlstds/eresept/m1/2013-10-08" xmlns:kith="http://www.kith.no/xmlstds" targetNamespace="http://www.kith.no/xmlstds/eresept/utlevering/2013-10-08" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="../felles/felleskomponent1.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/eresept/m1/2013-10-08" schemaLocation="../R0908-eResept-M1-M21-2013-10-08/ER-M1-2013-10-08.xsd"/>
+	<element name="Utlevering">
+		<complexType>
+			<sequence>
+				<element name="ReseptId" type="string"/>
+				<element name="Utleveringsdato" type="date"/>
+				<element name="Annullering" type="boolean"/>
+				<element name="Avsluttet" type="kith:CS" minOccurs="0"/>
+				<element name="ByttereservasjonKunde" type="boolean" minOccurs="0"/>
+				<element name="AnnulleringsId" type="string" minOccurs="0"/>
+				<element name="Batchnr" type="string" minOccurs="0"/>
+				<choice minOccurs="0">
+					<element ref="m1:ReseptDokLegemiddel"/>
+					<element ref="m1:ReseptDokHandelsvare"/>
+				</choice>
+				<element ref="ul:Utleverer"/>
+				<element ref="ul:Intervensjon" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Intervensjon">
+		<complexType>
+			<sequence>
+				<element name="Kode" type="kith:CV" minOccurs="0"/>
+				<element name="EndringsType" type="kith:CS" minOccurs="0"/>
+				<element name="KonfKunde" type="boolean" minOccurs="0"/>
+				<element name="KonfLege" type="fk1:Ident" minOccurs="0"/>
+				<element name="Begrunnelse" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Utleverer">
+		<complexType>
+			<sequence>
+				<element name="HerId" type="fk1:Ident"/>
+				<element name="Navn" type="string"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="RekvirentPapir">
+		<annotation>
+			<documentation>Informasjon om rekvirenten ved papirresept. Samme oppbygging som i M18.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Ident" type="fk1:Ident" minOccurs="0">
+					<annotation>
+						<documentation>Rekvirentens HPR-nummer</documentation>
+					</annotation>
+				</element>
+				<element name="Fornavn" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Identifisere fornavn på utsteder av rekvisisjon når legen er autorisert i annet nordisk land, eventuelt når legen fyller vilkårene for å yte tjeneste i Norge i henhold til EØS-avtalen.</documentation>
+					</annotation>
+				</element>
+				<element name="Etternavn" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Identifisere etternavn på utsteder av rekvisisjon når legen er autorisert i annet nordisk land, eventuelt når legen fyller vilkårene for å yte tjeneste i Norge i henhold til EØS-avtalen.</documentation>
+					</annotation>
+				</element>
+				<element name="Spesialitet" type="kith:CV" minOccurs="0">
+					<annotation>
+						<documentation>Spesialitet til rekvirerende lege</documentation>
+					</annotation>
+				</element>
+				<element name="Inst" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Navn på sykehus rekvirenten har sendt inn resepten fra.</documentation>
+					</annotation>
+				</element>
+				<element name="Dept" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Avdeling på sykehus hvor rekvirenten har sendt inn resepten fra</documentation>
+					</annotation>
+				</element>
+				<element name="RekvirentNordisk" type="boolean" minOccurs="0">
+					<annotation>
+						<documentation>Identifisere at den som har utstedt rekvisisjonen er lege autorisert i et annet nordisk land, eventuelt at legen fyller vilkårene for å yte tjeneste i Norge i henhold til EØSavtalen.</documentation>
+					</annotation>
+				</element>
+				<element name="InstitusjonsID" type="kith:CV" minOccurs="0">
+					<annotation>
+						<documentation>Identifikator til valgt institusjon. Fylles ut hvis institusjon er fylt ut</documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -3,6 +3,9 @@
 <StandardMetadata definisjonVersjon="" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Temaer>
+		<Tema>Grunnleggende standarder og spesifikasjoner for elektronisk samhandling</Tema>
+	</Temaer>
 	<Navn>Applikasjonskvittering</Navn>
 	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 80415:2004</Identifikator>

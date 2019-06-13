@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<!-- #434357 -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Temaer>
+		<Tema>Grunnleggende standarder og spesifikasjoner for elektronisk samhandling</Tema>
+	</Temaer>
 	<Navn>ebXML Rammeverk</Navn>
 	<Versjon>1.1</Versjon>
 	<Identifikator>HIS 1037:2011</Identifikator>
@@ -21,6 +25,12 @@
 			<Referanse>kravdokument/EBXMLrammeverk/HIS 1037_2011 Rammeverk for meldingsutveksling v1.1 -korrigert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
+	<Skjemaer>
+		<Skjema>
+			<Referanse>skjema/MeldingsVersjoner.xml</Referanse>
+			<Namespace></Namespace>
+		</Skjema>
+	</Skjemaer>
 	<RelaterteFiler>
 		<RelatertFil>
 			<Beskrivelse>Veiledning til riktig implementasjon og bruk av ebXML (PDF)</Beskrivelse>
@@ -36,11 +46,11 @@
 		</RelatertFil>
 		<RelatertFil>
 			<Beskrivelse>Service, Action og Role i ebXML-konvolutten (PDF)</Beskrivelse>
-			<Referanse>relaterteFiler/EBXMLrammeverk/HISD_1209_2018 Service_Action_og_Role i ebXML-konvolutten.pdf</Referanse>
+			<Referanse>relaterteFiler/EBXMLrammeverk/HISD_1209_2018 Service_Action_og_Role i ebXML-konvolutten -korrigert.pdf</Referanse>
 		</RelatertFil>
 		<RelatertFil>
 			<Beskrivelse>Overvåkning av meldingsversjoner i ebXML (PDF)</Beskrivelse>
-			<Referanse>relaterteFiler/EBXMLrammeverk/HISD_1210_2018 Overvåkning av meldingsversjoner i ebXML.pdf</Referanse>
+			<Referanse>relaterteFiler/EBXMLrammeverk/HITS_1210_2018 Overvåkning av meldingsversjoner i ebXML.pdf</Referanse>
 		</RelatertFil>
 	</RelaterteFiler>
 

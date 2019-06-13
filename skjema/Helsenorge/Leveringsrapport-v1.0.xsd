@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:kith="http://www.kith.no/xmlstds" xmlns:ns1="http://ehelse.no/xmlstds/leveringsrapport/2018-08-14" targetNamespace="http://ehelse.no/xmlstds/leveringsrapport/2018-08-14" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.kith.no/xmlstds" schemaLocation="../felleskomponenter/kith.xsd"/>
+	<xs:element name="Leveringsrapport">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Formidlingskanal" type="kith:CV" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="Leveringsstatus" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Levert" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute name="Tidspunkt" type="xs:dateTime" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Feilmelding" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Feiltype" type="xs:string"/>
+										<xs:element name="Detaljer" type="xs:string"/>
+									</xs:sequence>
+									<xs:attribute name="Tidspunkt" type="xs:dateTime" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Varslingfeilet" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="System" type="xs:string"/>
+										<xs:element name="Varslingskanal" type="xs:string"/>
+										<xs:element name="Detaljer" type="xs:string"/>
+									</xs:sequence>
+									<xs:attribute name="Tidspunkt" type="xs:dateTime" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Mottattpost" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute name="Tidspunkt" type="xs:dateTime" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Returpost" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute name="Tidspunkt" type="xs:dateTime" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

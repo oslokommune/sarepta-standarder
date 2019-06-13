@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Temaer>
+		<Tema>Samhandling i pasientforløp</Tema>
+	</Temaer>
 	<Navn>Henvisningsmelding</Navn>
 	<Versjon>1.1</Versjon>
 	<Identifikator>HIS 80517:2014</Identifikator>
@@ -23,6 +26,21 @@
 			<Beskrivelse>Henvisning v1.1 (PDF)</Beskrivelse>
 			<Referanse>kravdokument/henvisning/HIS_80517_2014_Henvisning_v1-1 -korrigert.pdf</Referanse>
 		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger HITS 1174:2017 (PDF)</Beskrivelse>
+			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
+		</Kravdokument>
+			
+		<Kravdokument>
+			<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger</Beskrivelse>
+			<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer HITS 1218:2019 (PDF)</Beskrivelse>
+			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer.pdf</Referanse>
+		</Kravdokument>
+
+	
 	</Kravdokumenter>
 	
 	<Skjemaer>
@@ -168,10 +186,5 @@
 		</Eksempel>
 	</Eksempler>
 	
-	<RelaterteFiler>
-		<RelatertFil>
-			<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger</Beskrivelse>
-			<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
-		</RelatertFil>
-	</RelaterteFiler>	
+	
 </StandardMetadata>

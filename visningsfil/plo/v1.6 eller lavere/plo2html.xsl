@@ -30,6 +30,8 @@
 
 	<xsl:variable name="versjon" select="'plo1.6 - v3.2.0 '"/>
 	
+	<xsl:variable name="IsTestMessage" select="boolean(/mh:MsgHead/mh:MsgInfo/mh:ProcessingStatus[@V = 'D'])" />
+	
 	<xsl:template match="/">
 		<html>
 			<head>
@@ -46,6 +48,9 @@
 				</style>
 			</head>
 			<body>
+				<xsl:if test="$IsTestMessage">
+					<p class="TestMessageWarning">OBS: Dette er en testmelding.</p>
+				</xsl:if>
 				<xsl:for-each select="mh:MsgHead">
 					<xsl:call-template name="MsgHead"/>
 				</xsl:for-each>
@@ -57,7 +62,7 @@
 	<xsl:template name="MsgHead">
 		<xsl:call-template name="Topp"/>
 		<xsl:call-template name="Innhold"/>
-		<xsl:call-template name="eh-Footer">
+		<xsl:call-template name="Footer">
 			<xsl:with-param name="stil" select="$stil"/>
 			<xsl:with-param name="versjon" select="$versjon"/>
 			<xsl:with-param name="VisDokInfoVisSkjul" select="false()"/>

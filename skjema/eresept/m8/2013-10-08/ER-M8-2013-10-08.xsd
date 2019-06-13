@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M8 Utleveringsrapport fastlege
+2013-10-08
+ -->
+ <!-- 
+Endringer siden v2.5 2013-04-16
+Nytt namespace Utlevering
+-->
+<schema xmlns:m8="http://www.kith.no/xmlstds/eresept/m8/2013-10-08" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" xmlns:ul="http://www.kith.no/xmlstds/eresept/utlevering/2013-10-08" targetNamespace="http://www.kith.no/xmlstds/eresept/m8/2013-10-08" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/eresept/utlevering/2013-10-08" schemaLocation="ER-Utlevering-2013-10-08.xsd"/>
+	<element name="UtleveringsrapportFastlege">
+		<annotation>
+			<documentation>M8</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ul:Utlevering"/>
+				<element name="ReferanseM10" type="string"/>
+				<element name="Papirresept" type="boolean" minOccurs="0"/>
+				<element ref="ul:RekvirentPapir" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

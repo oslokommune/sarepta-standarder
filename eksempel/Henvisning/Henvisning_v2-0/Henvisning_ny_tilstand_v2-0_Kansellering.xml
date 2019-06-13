@@ -106,6 +106,15 @@
 					<po:TypeInnholdIMelding>
 						<po:TypeInnhold V="10" S="2.16.578.1.12.4.1.1.8455" DN="Utredning/behandling"/>
 					</po:TypeInnholdIMelding>
+					<ReasonAsText>
+						<Heading V="PROB" S="2.16.578.1.12.4.1.1.8231" DN="Aktuell problemstilling"/>
+						<TextResultValue>Stadig dårligere denne vinteren, hevelse og rubor over en rekke ledd, betydelige smerter og stokk stiv, greier seg knapt nok selv lenger.Har økende smerter i hofter, men også tiltagende smerter i en rekke andre ledd, til tross for økning prednison opp til 30mg dgl i en uke fra 21.03.18. Henvises til ny vurdering og oppfølging av behandlingen. 
+						Seropos RA fra 2001-Myocrisinbeh tidl m god effekt, også brukt Ridaura. Fra 2012 Methotrexat 7,5mg ukentlig, sep pga hematuri og fra april 2016 Ercoquin 200mgx2. Vurdert v Reum.pol. St. Olavs 28.04.17 - fikk da endel leddinj DepoMedrol og red Ercoquin til 200mgx1. 
+På ny vurdert 18.08.17: Ercoquin seponert, på ny steroidinj i div ledd og eneste faste med. Prednisolon 7,5mg dgl. 
+I sept tiltagende plager, fikk nytt "støt" med Prednisolon uten særlig effekt og 21.10.17 startet opp igjen med Ercoquin. Hun hadde da CRP 200 og SR økende til 85. 
+Vedvarende plager, bortsett fra en kortere periode i januar 2018 med bedring både klinisk og lab.messig.
+</TextResultValue>
+					</ReasonAsText>
 					<ReqServ>
 						<ServType V="N" DN="Ny"/>
 						<Priority V="N" DN="Elektiv/Ordinær (elektiv)"/>

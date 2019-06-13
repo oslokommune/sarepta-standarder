@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M2 Individuell søknad om stønad til HELFO
+2014-12-01 Bugfix 1
+-->
+<!--
+Bugfix 2015-12-02
+Elementet typeSoknadLegemiddel/BehRegime/ForskrivningB64 manglet datatype. Rettet til base64Binary
+NB: Namespace for M2 2014-12-01 er ikke endret. 
+-->
+<!--
+Endringer siden v2.5 2013-05-30
+Nytt element typeSoknadLegemiddel/BehRegime (ERSA/Er-nr mangler)
+Nytt element Soknad4a (ERSA/EO-nr mangler)
+-->
+<schema xmlns:m2="http://www.kith.no/xmlstds/eresept/m2/2014-12-01" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" targetNamespace="http://www.kith.no/xmlstds/eresept/m2/2014-12-01" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="../felles/felleskomponent1.xsd"/>
+	<element name="SoknadHelfo">
+		<complexType>
+			<sequence>
+				<element name="KroniskSykdom" type="kith:CS" minOccurs="0"/>
+				<element name="LangvarigBeh" type="kith:CS" minOccurs="0"/>
+				<element name="SamPasient" type="kith:CS"/>
+				<element name="SamVedtak" type="kith:CS"/>
+				<element name="Diagnose" type="kith:CV"/>
+				<element name="Bidiagnose" type="kith:CV" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="Begrunnelse" type="string"/>
+				<element name="Merknad" type="string" minOccurs="0"/>
+				<element name="BrukUtenforSykehus" type="kith:CS"/>
+				<element name="Forstegangs" type="kith:CS"/>
+				<element name="Oppdatert" type="boolean"/>
+				<element name="Vedlegg" type="string" minOccurs="0" maxOccurs="unbounded"/>
+				<choice>
+					<element ref="m2:SoknadNaringsmiddel"/>
+					<element ref="m2:Soknad3a"/>
+					<element ref="m2:Soknad3b"/>
+					<element ref="m2:Soknad4a"/>
+					<element ref="m2:Yrkesskade"/>
+				</choice>
+				<element ref="m2:Instituert"/>
+				<element name="RefHjemmel" type="kith:CV"/>
+				<element name="Institueringstidspunkt" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<complexType name="typeSoknadLegemiddel">
+		<sequence>
+			<element ref="m2:OmsoktLegemiddel" maxOccurs="unbounded"/>
+			<element ref="m2:TidligereBeh" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="IngenTidlBeh" type="kith:CV" minOccurs="0"/>
+			<element name="BehRegime" minOccurs="0">
+				<complexType>
+					<sequence>
+						<element name="ForskrivningB64" type="base64Binary" maxOccurs="unbounded"/>
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+	<element name="OmsoktLegemiddel">
+		<complexType>
+			<sequence>
+				<element name="Uuid" type="string"/>
+				<element name="ForskrivningB64" type="base64Binary"/>
+				<element ref="m2:ReseptklasseAB" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="TidligereBeh">
+		<complexType>
+			<sequence>
+				<element name="SarligeGrunner" type="kith:CV"/>
+				<element name="ForskrivningB64" type="base64Binary"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Soknad3a">
+		<complexType>
+			<complexContent>
+				<extension base="m2:typeSoknadLegemiddel">
+					<sequence>
+						<element name="Refusjonskode" type="kith:CV"/>
+						<element name="Underterm" type="string" minOccurs="0"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="Soknad3b">
+		<complexType>
+			<complexContent>
+				<extension base="m2:typeSoknadLegemiddel">
+					<sequence>
+						<element name="Alvorlighetsgrad" type="string"/>
+						<element name="SjeldenSykdom" type="kith:CS"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="Soknad4a">
+		<complexType>
+			<complexContent>
+				<extension base="m2:typeSoknadLegemiddel">
+					<sequence>
+						<element name="Genotype" type="kith:CV"/>
+						<element name="GradLeverskade" type="kith:CV"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="Yrkesskade">
+		<annotation>
+			<documentation>Yrkesskade legemiddelsøknad</documentation>
+		</annotation>
+		<complexType>
+			<complexContent>
+				<extension base="m2:typeSoknadLegemiddel">
+					<sequence>
+						<element name="Vedtak" type="kith:CS"/>
+						<element name="Arsak" type="kith:CS"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="ReseptklasseAB">
+		<complexType>
+			<sequence>
+				<element name="HoyesteDogndose" type="kith:PQ"/>
+				<element name="Behandlingsplan" type="kith:CS"/>
+				<element name="AvhengihetsfareVurdert" type="kith:CS"/>
+				<element name="Smerteanalyse" type="kith:CS"/>
+				<element ref="m2:GyldigForskriver" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="SoknadNaringsmiddel">
+		<complexType>
+			<sequence>
+				<element name="Varenavn" type="string" minOccurs="0"/>
+				<element name="Beskrivelse" type="string" minOccurs="0"/>
+				<element name="Produktgruppe" type="kith:CV" minOccurs="0"/>
+				<element name="Begrunnelse" type="kith:CV"/>
+				<element name="TidligereBeh" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element name="Varenavn" type="string"/>
+							<element name="Beskrivelse" type="string" minOccurs="0"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Yrkesskade" minOccurs="0">
+					<complexType>
+						<sequence>
+							<element name="Vedtak" type="kith:CS"/>
+							<element name="Arsak" type="kith:CS"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="GyldigForskriver">
+		<complexType>
+			<sequence>
+				<element ref="m2:Helseperson" minOccurs="0"/>
+				<element ref="m2:Organisasjon" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!--Elementer som skal ligge i M1 eller "Felleskomponent2"-->
+	<element name="Organisasjon">
+		<complexType>
+			<sequence>
+				<element name="HerId" type="fk1:Ident"/>
+				<element name="Inst" type="string" minOccurs="0"/>
+				<element name="Dept" type="string" minOccurs="0"/>
+				<element name="InstitusjonsID" type="kith:CV" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Helseperson">
+		<complexType>
+			<sequence>
+				<element name="HprId" type="fk1:Ident"/>
+				<element name="Fornavn" type="string"/>
+				<element name="Etternavn" type="string"/>
+				<element name="Spesialitet" type="kith:CV" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Instituert">
+		<complexType>
+			<sequence>
+				<element ref="m2:Organisasjon" minOccurs="0"/>
+				<element ref="m2:Helseperson" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

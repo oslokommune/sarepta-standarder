@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Generated on 10-12-2017  20:22:54 at NPR -->
+<!-- NPR-meldingen -->
+<!-- Modul ide  -->
+<!-- Skjema for Innrapportering av data for identifikasjon av person  -->
+<!-- XML-Schema level supported is specified by W3C -->
+<!-- http://www.w3.org/2001/XMLSchema -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:kith="http://www.kith.no/xmlstds" xmlns:nprx="http://www.npr.no/xmlstds/53_1_2" xmlns:npr="http://www.npr.no/xmlstds/53_1_2_ide" targetNamespace="http://www.npr.no/xmlstds/53_1_2_ide" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.npr.no/xmlstds/53_1_2" schemaLocation="NPR.xsd"/>
+	<include schemaLocation="XPR(ide)_CodingSchemes.xsd"/>
+	<!-- LEVEL 1 -->
+	<!-- Class: Melding -->
+	<element name="Melding">
+		<annotation>
+			<documentation>
+         Opplysninger som leverandører av helsetjenester i kommuner, helsevirksomheter eller helsepersonell etter bestemmelser i lov eller i medhold av lov i gitte situasjoner er pliktig til å rapportere.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="npr:Kontaktperson" minOccurs="1" maxOccurs="unbounded"/>
+				<element ref="npr:Institusjon" minOccurs="1" maxOccurs="unbounded"/>
+			</sequence>
+			<attribute name="versjon" type="string" use="required" fixed="53.1.2"/>
+			<attribute name="meldingstype" type="npr:meldingstype" use="required"/>
+			<attribute name="fraDatoPeriode" type="date" use="required"/>
+			<attribute name="uttakDato" type="date" use="required"/>
+			<attribute name="leverandor" type="string" use="required"/>
+			<attribute name="navnEPJ" type="string" use="required"/>
+			<attribute name="versjonEPJ" type="string" use="required"/>
+			<attribute name="versjonUt" type="string" use="required"/>
+			<attribute name="lopenr" type="string" use="required"/>
+			<attribute name="tilDatoPeriode" type="date" use="required"/>
+			<attribute name="lokalident" type="string" use="optional"/>
+		</complexType>
+		<unique name="InstitusjonP_ID">
+			<selector xpath="npr:Institusjon"/>
+			<field xpath="@institusjonID"/>
+		</unique>
+	</element>
+	<!-- LEVEL 2 -->
+	<!-- Class: Kontaktperson -->
+	<element name="Kontaktperson">
+		<annotation>
+			<documentation>
+         Kontaktpersoner for dialog mellom kommune/helseinstitusjon og Helsedirektoratet.  NB: Det kan registreres flere kontaktpersoner per Type kontaktperson.
+      </documentation>
+		</annotation>
+		<complexType>
+			<attribute name="kontPerson" type="string" use="required"/>
+			<attribute name="meldTelefon" type="string" use="optional"/>
+			<attribute name="meldEpost1" type="string" use="required"/>
+			<attribute name="meldEpost2" type="string" use="optional"/>
+			<attribute name="typeKontaktperson" type="npr:kontaktperson_type" use="required"/>
+		</complexType>
+	</element>
+	<!-- Class: Helseinstitusjon -->
+	<element name="Institusjon">
+		<annotation>
+			<documentation>
+         Institusjon som hører under lov om spesialisthelsetjenesten.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="npr:PasientIdent" minOccurs="1" maxOccurs="unbounded"/>
+			</sequence>
+			<attribute name="institusjonID" type="string" use="required"/>
+		</complexType>
+		<unique name="PasientIdentP_ID">
+			<selector xpath="npr:PasientIdent"/>
+			<field xpath="@pid"/>
+		</unique>
+	</element>
+	<!-- LEVEL 3 -->
+	<!-- Class: PersonID -->
+	<element name="PasientIdent">
+		<complexType>
+			<attribute name="pasientGUID" type="nprx:guid" use="optional"/>
+			<attribute name="pid" type="string" use="required"/>
+			<attribute name="fid" type="string" use="required"/>
+			<attribute name="typeID" type="npr:type_personidentifikasjon" use="required"/>
+		</complexType>
+	</element>
+</schema>

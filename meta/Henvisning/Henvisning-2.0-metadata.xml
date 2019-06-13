@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Temaer>
+		<Tema>Samhandling i pasientforløp</Tema>
+	</Temaer>
 	<Navn>Henvisningsmelding</Navn>
 	<Versjon>2.0</Versjon>
 	<Identifikator>HIS 80517:2017</Identifikator>
@@ -28,7 +31,7 @@
 		            <Referanse>http://ehelse.no/HIS1207-2018</Referanse>
 		        </Informasjon>
 	        </MerInformasjon>
-        </Profil>
+	    </Profil>
 		<Profil>
             <ProfilId>2</ProfilId>
             <Beskrivelse>Viderehenvisning</Beskrivelse>
@@ -42,6 +45,10 @@
 		            <Referanse>http://ehelse.no/HIS1208-2018</Referanse>
 		        </Informasjon>
 	        </MerInformasjon>
+	        <Temaer>
+				<Tema>Samhandling i pasientforløp</Tema>
+				<Tema>Grunnleggende standarder og spesifikasjoner for elektronisk samhandling</Tema>
+			</Temaer>
         </Profil>
     </Profiler>
 	
@@ -61,6 +68,20 @@
 			<Beskrivelse>Viderehenvisning (PDF)</Beskrivelse>
 			<Referanse>kravdokument/henvisning/HIS_1208-2018-Viderehenvisning -korrigert.pdf</Referanse>
 		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger HITS 1174:2017 (PDF)</Beskrivelse>
+			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
+		</Kravdokument>
+		
+		<Kravdokument>
+			<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger</Beskrivelse>
+			<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer HITS 1218:2019 (PDF)</Beskrivelse>
+			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer.pdf</Referanse>
+		</Kravdokument>
+
 	</Kravdokumenter>
 	
 	<Skjemaer>
@@ -209,6 +230,22 @@
 			<Referanse>eksempel/Henvisning/Henvisning_v2-0/Henvisning_ny_tilstand_v2-0_Kansellering.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<ProfilId>1</ProfilId>
+			<Referanse>eksempel/Henvisning/Henvisning_v2-0/Henvisning_ny_tilstand_v2-0_Test_mange_elementer.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>1</ProfilId>
+			<Referanse>eksempel/Henvisning/Henvisning_v2-0/Henvisning_ny_tilstand_v2-0_Uten_rettighetsvurdering_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>1</ProfilId>
+			<Referanse>eksempel/Henvisning/Henvisning_v2-0/Henvisning_ny_tilstand_v2-0_Uten_rettighetsvurdering_Endring.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>1</ProfilId>
+			<Referanse>eksempel/Henvisning/Henvisning_v2-0/Henvisning_ny_tilstand_v2-0_Uten_rettighetsvurdering_Kansellering.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
 			<ProfilId>2</ProfilId>
 			<Referanse>eksempel/Henvisning/Henvisning_v2-0/Viderehenvisning_v2-0_Rettighetsvurdert_etter_ventetid_pakkeforlop_Ny.xml</Referanse>
 		</Eksempel>
@@ -218,14 +255,24 @@
 		</Eksempel>
 		<Eksempel>
 			<ProfilId>2</ProfilId>
+			<Referanse>eksempel/Henvisning/Henvisning_v2-0/Viderehenvisning_v2-0_Rettighetsvurdert_etter_ventetid_pakkeforlop_Endring.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>2</ProfilId>
 			<Referanse>eksempel/Henvisning/Henvisning_v2-0/Viderehenvisning_v2-0_Rettighetsvurdert_etter_ventetid_pakkeforlop_Kansellering.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>2</ProfilId>
+			<Referanse>eksempel/Henvisning/Henvisning_v2-0/Viderehenvisning_v2-0_Uten_rettighetsvurdering_Ny.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>2</ProfilId>
+			<Referanse>eksempel/Henvisning/Henvisning_v2-0/Viderehenvisning_v2-0_Uten_rettighetsvurdering_Endring.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>2</ProfilId>
+			<Referanse>eksempel/Henvisning/Henvisning_v2-0/Viderehenvisning_v2-0_Uten_rettighetsvurdering_Kansellering.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
 	
-	<RelaterteFiler>
-	<RelatertFil>
-		<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger</Beskrivelse>
-		<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
-	</RelatertFil>
-</RelaterteFiler>	
 </StandardMetadata>
