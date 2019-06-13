@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M25.4 Legemidler i bruk
+2013-10-08
+-->
+<!--
+Endringer siden v2.5 2013-06-05
+Nytt element: 
+m254:VarerIBruk/m254:Merknad (EA 4493)
+Element fjernet: m254:Pakkeinfo/m254:Pakkeintervall (EA 4495)
+Nytt element: m254:Pakkeinfo/m254:ForsteDoseringsdato (EA 4495)
+Nytt element: m254:Pakkeinfo/m254:SisteDoseringsdato (EA 4495)
+Endret kardinalitet: m254:EnkeltoppforingVIB/m254:SisteUtlevering 0..1 -> 0..* (EA 4497)
+Nytt element: m254:VarerIBruk/m254:Vikar (EA 4573)
+Nytt element: m254:EnkeltoppforingVIB/m254:UtlopsdatoResept (EA 4650)
+Hele m254:EnkeltoppforingVIB/m254:Sporsmal er bygd om til ny struktur (EA 4495/4503/4570)
+-->
+<schema xmlns:m254="http://www.kith.no/xmlstds/eresept/m254/2013-10-08" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ki="http://www.kith.no/xmlstds/eresept/ki/2013-04-25" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" targetNamespace="http://www.kith.no/xmlstds/eresept/m254/2013-10-08" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds/eresept/ki/2013-04-25" schemaLocation="ER-KritiskInformasjon-2013-04-25.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="../felles/felleskomponent1.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<element name="LegemidlerIBruk">
+		<complexType>
+			<sequence>
+				<element ref="m254:Rolle" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="m254:EnkeltoppforingLIB" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="ki:Allergi" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="Merknad" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="EnkeltoppforingLIB">
+		<complexType>
+			<sequence>
+				<element name="Id" type="string">
+					<annotation>
+						<documentation>Lokalt generert UUID for oppføringen.</documentation>
+					</annotation>
+				</element>
+				<element name="Type" type="kith:CS">
+					<annotation>
+						<documentation>Type resept.</documentation>
+					</annotation>
+				</element>
+				<element name="ReseptId" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Identifiserer resepten denne oppføringen tilhører. UUID fra melding eller lokalt generert. </documentation>
+					</annotation>
+				</element>
+				<element name="UtlopsdatoResept" type="date" minOccurs="0"/>
+				<element name="SistEndret" type="dateTime">
+					<annotation>
+						<documentation>Sist endret dato. Referer til tidspunktet det sist ble gjort endringer i et element knyttet til gjeldende Id. </documentation>
+					</annotation>
+				</element>
+				<element name="DatoOppstart" type="date" minOccurs="0">
+					<annotation>
+						<documentation>Dato for når denne behandlingen ble startet/ønskes startet.</documentation>
+					</annotation>
+				</element>
+				<element name="MedEndring" type="boolean" minOccurs="0"/>
+				<element ref="m254:Rolle" minOccurs="0" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Rolle i forhold til oppføring</documentation>
+					</annotation>
+				</element>
+				<element name="ReseptDokLegemiddelB64" type="base64Binary"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Rolle">
+		<annotation>
+			<documentation>Rolle i forhold til pasient</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Rolle" type="kith:CS">
+					<annotation>
+						<documentation>Beskriver rolle til helseperson eller organisasjon i forhold til aktuell pasient.</documentation>
+					</annotation>
+				</element>
+				<choice>
+					<annotation>
+						<documentation>Inneholder enten Helseperson eller Organisasjon. Rollen bestemmer om det skal benyttes Helseperson, Organisasjon eller om det kan velges mellom disse. </documentation>
+					</annotation>
+					<element ref="m254:Helseperson"/>
+					<element ref="m254:Organisasjon"/>
+				</choice>
+			</sequence>
+		</complexType>
+	</element>
+	<!--Klasser som skal bli felleskomponenter-->
+	<element name="Organisasjon">
+		<complexType>
+			<sequence>
+				<element name="HerId" type="fk1:Ident"/>
+				<element name="Inst" type="string" minOccurs="0"/>
+				<element name="Dept" type="string" minOccurs="0"/>
+				<element name="InstitusjonsID" type="kith:CV" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Helseperson">
+		<complexType>
+			<sequence>
+				<element name="HprId" type="fk1:Ident"/>
+				<element name="Fornavn" type="string" minOccurs="0"/>
+				<element name="Etternavn" type="string" minOccurs="0"/>
+				<element name="Spesialitet" type="kith:CV" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

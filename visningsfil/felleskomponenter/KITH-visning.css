@@ -529,4 +529,13 @@ color: purple;
 	}
 }
 
+p.TestMessageWarning {
+	background-color: #fff3cd;
+	color: #856404;
+	padding: 1rem;
+	font-size: x-large;
+	border: 3px solid #ffeeba;
+	border-radius: .5rem
+}
+
 <!--/*-->]]></root><!--*/--> 

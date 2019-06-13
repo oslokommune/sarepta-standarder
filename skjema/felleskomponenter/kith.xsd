@@ -3,7 +3,6 @@
 <schema xmlns:kith="http://www.kith.no/xmlstds" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kith.no/xmlstds">
 	<!--	Skjema som inneholder Felles definisjoner for KITH -->
 	<!--	Modified 11. january 2007 (IN) -->
-	<!--	Test 30.08.2018 -->
 	<!--	Changed from double to decimal for attribute V in element MO  -->
 	<!--	Modified 22. february 2005 (IN) -->
 	<!--	Changed TN from element to complexType  -->

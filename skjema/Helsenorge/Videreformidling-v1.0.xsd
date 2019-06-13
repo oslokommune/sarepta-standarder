@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://ehelse.no/xmlstds/Videreformidling/2018-09-25" xmlns:kith="http://www.kith.no/xmlstds" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" targetNamespace="http://ehelse.no/xmlstds/Videreformidling/2018-09-25" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../../skjema/felleskomponenter/kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="../../skjema/felleskomponenter/felleskomponent1.xsd"/>
+	<element name="Videreformidling">
+		<annotation>
+			<documentation>Inneholder informasjon nødvending for videreformidling.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<choice>
+					<element name="Kanalvalg">
+						<annotation>
+							<documentation>Mulighet for å overstyre kanalvalglogikken ved å angi hvilke kanaler meldingen kan kunne formidles til. Hvis en kanal ikke er valgt, vil meldingen formidles i en annen kanal der det er mulig.</documentation>
+						</annotation>
+						<complexType>
+							<sequence>
+								<element name="GodkjentForHelsenorge" type="boolean"/>
+								<element name="GodkjentForDPI" type="boolean"/>
+								<element name="GodkjentForFysiskPost" type="boolean"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="Mottakeravgrensning">
+						<annotation>
+							<documentation>Kan settes i stedet for kanalvalg hvis man bare ønsker å nå de innbyggerne som ville mottatt brevet i en spesifikk kanal. </documentation>
+						</annotation>
+						<complexType>
+							<sequence>
+								<element name="BareTilDPIBrukere" type="boolean"/>
+								<element name="BareTilFysiskPostBrukere" type="boolean"/>
+							</sequence>
+						</complexType>
+					</element>
+				</choice>
+				<element name="OmfattetAvReservasjonsrett" type="boolean">
+					<annotation>
+						<documentation>Angir om meldingen har innhold som dekkes av eForvaltningsforskriften §9, som spesifiserer reservasjon mot å motta følgende elektroniske meddelelser fra forvaltningen:
+a) enkeltvedtak
+b) forhåndsvarsel etter forvaltningsloven § 16
+c) andre meldinger som har betydning for vedkommendes rettsstilling eller for behandlingen av saken
+d) meldinger som det av andre grunner er av særlig betydning å sikre at vedkommende mottar</documentation>
+					</annotation>
+				</element>
+				<element name="InfoFysiskPost" minOccurs="0">
+					<complexType>
+						<sequence>
+							<element name="AvsenderTarAnsvarForAdresse" type="boolean">
+								<annotation>
+									<documentation>Angir omvsender ønsker å overstyre adresse registrert i Folkeregisteret. Dersom denne er satt til true må MottakerPostadresse ha verdier.</documentation>
+								</annotation>
+							</element>
+							<element name="Returtype" type="ns1:FysiskpostReturtypeEnum">
+								<annotation>
+									<documentation>Angir hvordan brevet skal behandles hvis det ikke kan leveres til mottakeradressen. Brevet kan returneres (DIREKTE_RETUR) eller makuleres av posten (MAKULERING_MED_MELDING). For DIREKTE_RETUR må ReturmottakerPostadresse ha verdier.</documentation>
+								</annotation>
+							</element>
+							<element name="MottakerPostadresse" type="ns1:FysiskPostadresse" minOccurs="0">
+								<annotation>
+									<documentation>Angir adresse brevet skal sendes til hvis. Påkrevd hvis AvsenderTarAnsvarForAdresse er satt til true.</documentation>
+								</annotation>
+							</element>
+							<element name="ReturmottakerPostadresse" type="ns1:FysiskPostadresse">
+								<annotation>
+									<documentation>Angir adressen brevet skal returneres til hvis returtype er DIREKTE_RETUR og brevet ikke kan bli levert til mottaker. Må også defineres for MAKULERING_MED_MELDING.</documentation>
+								</annotation>
+							</element>
+							<element name="UtskriftMedFarge" type="boolean">
+								<annotation>
+									<documentation>Angir om innholdet skal skrives ut med farge eller ikke.</documentation>
+								</annotation>
+							</element>
+							<element name="Printinstruksjoner" type="ns1:Printinstruksjoner" minOccurs="0">
+								<annotation>
+									<documentation>Liste av instruksjoner knyttet til print. Gyldige verdier avtales mellom avsender og printleverandør.</documentation>
+								</annotation>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="InfoDPI" minOccurs="0">
+					<complexType>
+						<sequence>
+							<element name="Sikkerhetsniva" type="ns1:SikkerhetsnivaEnum">
+								<annotation>
+									<documentation>Om meldingen krever mellomhøyt sikkerhetsnivå (3) eller høyeste sikkerhetsnivå (4)</documentation>
+								</annotation>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="AvsenderIdentifikator" minOccurs="0">
+					<annotation>
+						<documentation>Evt. referanse til postkonto som skal være postavsender.</documentation>
+					</annotation>
+					<simpleType>
+						<restriction base="string">
+							<maxLength value="100"/>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="Fakturarerefanse" minOccurs="0">
+					<annotation>
+						<documentation>Evt. fakturareferanse for å granulere kost på medlingene som går mot digital postkasse eller fysisk post.</documentation>
+					</annotation>
+					<simpleType>
+						<restriction base="string">
+							<maxLength value="40"/>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="Leveringsrapport" type="boolean">
+					<annotation>
+						<documentation>Avsender kan velge å motta Leveringsrapport-meldinger på forsendelsen. Disse vil inneholde informasjon om hviken formidlingskanal som meldingen ble levert i, og statuser på meldingsleveransen.</documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<complexType name="FysiskPostadresse">
+		<annotation>
+			<documentation>En fysisk postadresse består av enten en norsk eller utenlandsk postadresse.</documentation>
+		</annotation>
+		<sequence>
+			<element name="Navn">
+				<simpleType>
+					<restriction base="string">
+						<maxLength value="130"/>
+					</restriction>
+				</simpleType>
+			</element>
+			<choice>
+				<element name="norskAdresse" type="ns1:NorskPostadresse" minOccurs="1" maxOccurs="1"/>
+				<element name="utenlandskAdresse" type="ns1:UtenlandskPostadresse" minOccurs="1" maxOccurs="1"/>
+			</choice>
+		</sequence>
+	</complexType>
+	<complexType name="NorskPostadresse">
+		<sequence>
+			<element name="adresselinje1" type="ns1:Adresselinje" minOccurs="0" maxOccurs="1"/>
+			<element name="adresselinje2" type="ns1:Adresselinje" minOccurs="0" maxOccurs="1"/>
+			<element name="adresselinje3" type="ns1:Adresselinje" minOccurs="0" maxOccurs="1"/>
+			<element name="postnummer" type="ns1:NorskPostnummer" minOccurs="1" maxOccurs="1"/>
+			<element name="poststed" type="ns1:Poststed" minOccurs="1" maxOccurs="1"/>
+		</sequence>
+	</complexType>
+	<complexType name="UtenlandskPostadresse">
+		<sequence>
+			<element name="adresselinje1" type="ns1:Adresselinje" minOccurs="1" maxOccurs="1"/>
+			<element name="adresselinje2" type="ns1:Adresselinje" minOccurs="0" maxOccurs="1"/>
+			<element name="adresselinje3" type="ns1:Adresselinje" minOccurs="0" maxOccurs="1"/>
+			<element name="adresselinje4" type="ns1:Adresselinje" minOccurs="0" maxOccurs="1"/>
+			<choice>
+				<element name="land" type="ns1:Land" minOccurs="1" maxOccurs="1"/>
+				<element name="landkode" type="ns1:Landkode" minOccurs="1" maxOccurs="1"/>
+			</choice>
+		</sequence>
+	</complexType>
+	<complexType name="Printinstruksjoner">
+		<sequence>
+			<element name="printinstruksjon" type="ns1:Printinstruksjon" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="Printinstruksjon">
+		<sequence>
+			<element name="navn" type="string" minOccurs="1" maxOccurs="1"/>
+			<element name="verdi" type="string" minOccurs="1" maxOccurs="1"/>
+		</sequence>
+	</complexType>
+	<simpleType name="Adresselinje">
+		<restriction base="string">
+			<maxLength value="100"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="Land">
+		<restriction base="string">
+			<maxLength value="80"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="Landkode">
+		<annotation>
+			<documentation>To-bokstavs landkode ihht ISO 3166-1 alpha-2 standarden (http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)</documentation>
+		</annotation>
+		<restriction base="string">
+			<pattern value="[a-zA-Z]{2}"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="NorskPostnummer">
+		<restriction base="string">
+			<pattern value="\d{4}"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="Poststed">
+		<restriction base="string">
+			<maxLength value="80"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="SikkerhetsnivaEnum">
+		<annotation>
+			<documentation>Sikkerhetsnivå i henhold til DIFI sin definisjon:
+  3 - Passord
+  4 - To faktor autentisering
+			</documentation>
+		</annotation>
+		<restriction base="positiveInteger">
+			<enumeration value="3"/>
+			<enumeration value="4"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="FysiskpostReturtypeEnum">
+		<annotation>
+			<documentation>Adressering av returpost</documentation>
+		</annotation>
+		<restriction base="string">
+			<enumeration value="DIREKTE_RETUR"/>
+			<enumeration value="MAKULERING_MED_MELDING"/>
+		</restriction>
+	</simpleType>
+</schema>

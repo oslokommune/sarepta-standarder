@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M10 Utleveringsrapport reseptformidler
+2013-10-08
+ -->
+<!-- 
+Endringer siden v2.5 2013-04-16
+Nytt namespace Utlevering
+-->
+<schema xmlns:m10="http://www.kith.no/xmlstds/eresept/m10/2013-10-08" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" xmlns:ul="http://www.kith.no/xmlstds/eresept/utlevering/2013-10-08" targetNamespace="http://www.kith.no/xmlstds/eresept/m10/2013-10-08" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/eresept/utlevering/2013-10-08" schemaLocation="ER-Utlevering-2013-10-08.xsd"/>
+	<element name="Utleveringsrapport">
+		<annotation>
+			<documentation>M10</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ul:Utlevering"/>
+				<element name="Kanselleringskode" type="kith:CS" minOccurs="0"/>
+				<element name="ReservasjonRapportFastlege" type="boolean"/>
+				<element name="PrisLegemiddelUtenMt" type="kith:MO" minOccurs="0"/>
+				<element name="AnsattId" type="string"/>
+				<sequence minOccurs="0">
+					<element ref="m10:Egenandel" minOccurs="4" maxOccurs="4"/>
+				</sequence>
+				<element name="Papirresept" type="boolean" minOccurs="0"/>
+				<element ref="ul:RekvirentPapir" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Egenandel">
+		<complexType>
+			<sequence>
+				<element name="StartEgenandelsperiode" type="date"/>
+				<element name="BetaltEgenandel" type="kith:MO"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

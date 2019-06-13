@@ -37,7 +37,10 @@ Om:
 <xsl:stylesheet version="1.0" 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
 	xmlns:base="http://www.kith.no/xmlstds/base64container" 
-	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+	xmlns:xhtml="http://www.w3.org/1999/xhtml"
+	xmlns:doc14="http://www.kith.no/xmlstds/rekvisisjon/2005-05-20"
+	xmlns:doc15="http://www.kith.no/xmlstds/rekvisisjon/2008-12-01"
+	xmlns:doc16="http://www.kith.no/xmlstds/rekvisisjon/2012-02-15"
 	exclude-result-prefixes="xhtml base">
 	
 	<xsl:import href="../felleskomponenter/funksjoner.xsl"/>
@@ -55,6 +58,11 @@ Om:
 
 	<xsl:variable name="VisOvrigHelsetjenesteInfoVisSkjul" select="true()"/>
 	<xsl:variable name="VisDokInfoVisSkjul" select="true()"/>
+	
+	<xsl:variable name="IsTestMessage" select="
+		boolean(/doc14:Message/doc14:Status[@V = 'TEST'])
+		or boolean(/doc15:Message/doc15:Status[@V = 'TEST'])
+		or boolean(/doc16:Message/doc16:Status[@V = 'TEST'])" />
 
 	<!-- Meldingsstart -->
 	<xsl:template match="/">
@@ -73,6 +81,9 @@ Om:
 				</style>
 			</head>
 			<body>
+				<xsl:if test="$IsTestMessage">
+					<p class="TestMessageWarning">OBS: Dette er en testmelding.</p>
+				</xsl:if>
 				<xsl:for-each select="child::*[local-name()='Message']">
 					<xsl:call-template name="Message"/>
 				</xsl:for-each>
@@ -85,7 +96,7 @@ Om:
 			<!-- utelater meldingsid og kommunikasjonsinformasjon -->
 			<xsl:call-template name="Header"/>
 			<xsl:call-template name="ResultBody"/>
-			<xsl:call-template name="eh-Footer">
+			<xsl:call-template name="Footer">
 				<xsl:with-param name="stil" select="$stil"/>
 				<xsl:with-param name="versjon" select="$versjon"/>
 				<xsl:with-param name="VisDokInfoVisSkjul" select="$VisDokInfoVisSkjul"/>

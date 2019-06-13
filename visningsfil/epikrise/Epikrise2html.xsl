@@ -28,6 +28,7 @@ Om:
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
 	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
 	xmlns:base="http://www.kith.no/xmlstds/base64container"
+	xmlns:doc12="http://www.kith.no/xmlstds/epikrise/2012-02-15"
 	exclude-result-prefixes="xhtml base">
 
 	<!-- Import. Stien tilrettelegger for katalogstruktur med en meldings-katalog med versjons-kataloger inni. Sti må endres om slik struktur ikke benyttes -->
@@ -76,6 +77,8 @@ Om:
 
 	<!-- Boolsk variabel for å anonymisere pasienten i visningen -->
 	<xsl:variable name="Anonymisert" select="false()"/>
+	
+	<xsl:variable name="IsTestMessage" select="boolean(/doc12:Message/doc12:Status[@V = 'TEST']) or contains(/comment(), 'test') or contains(/comment(), 'TEST')" />
 
 	<xsl:template match="/">
 		<html>
@@ -93,6 +96,9 @@ Om:
 				</style>
 			</head>
 			<body class="{$stil}">
+				<xsl:if test="$IsTestMessage">
+					<p class="TestMessageWarning">OBS: Dette er en testmelding.</p>
+				</xsl:if>
 				<xsl:for-each select="child::*[local-name()='Message']">
 					<xsl:call-template name="Message"/>
 				</xsl:for-each>
@@ -105,7 +111,7 @@ Om:
 			<!-- utelater meldingsid og kommunikasjonsinformasjon -->
 			<xsl:call-template name="Header"/>
 			<xsl:call-template name="ResultBody"/>
-			<xsl:call-template name="eh-Footer">
+			<xsl:call-template name="Footer">
 				<xsl:with-param name="stil" select="$stil"/>
 				<xsl:with-param name="versjon" select="$versjon"/>
 				<xsl:with-param name="VisDokInfoVisSkjul" select="$VisDokInfoVisSkjul"/>

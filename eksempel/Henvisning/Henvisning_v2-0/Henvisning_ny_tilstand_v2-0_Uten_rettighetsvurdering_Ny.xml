@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- -->
+<!--  Dette er en testmelding med fiktive personer -->
+<!-- -->
+<!-- Eksempel på henvisning som ikke skal rettighetsvurderes -->
+<!-- -->
+<MsgHead xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd">
+	<MsgInfo>
+		<Type V="HENVISNING_NYTILSTAND" DN="Henvisning ny tilstand"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2019-01-23T09:53:36</GenDate>
+		<MsgId>dc90b9b0-1f14-11e9-b56e-0800200c9a66</MsgId>
+		<Sender>
+			<Organisation>
+				<OrganisationName>Etterstad Tannklinikk</OrganisationName>
+				<Ident>
+					<Id>127731</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Organisation>
+					<OrganisationName>Allmenn tannhelse (offentlig og privat)</OrganisationName>
+					<Ident>
+						<Id>999998</Id>
+						<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</Organisation>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>Bærum Oralkirurgi</OrganisationName>
+				<Ident>
+					<Id>111557</Id>
+					<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Organisation>
+					<OrganisationName>Oral kirurgi og medisin</OrganisationName>
+					<Ident>
+						<Id>999999</Id>
+						<TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+					</Ident>
+				</Organisation>
+			</Organisation>
+		</Receiver>
+		<Patient>
+			<FamilyName>Dottno</FamilyName>
+			<GivenName>Finn</GivenName>
+			<DateOfBirth>1964-01-21</DateOfBirth>
+			<Sex V="1" DN="Mann"/>
+			<Ident>
+				<Id>21016400952</Id>
+				<TypeId V="FNR" S="2.16.578.1.12.4.1.1.8116" DN="Fødselsnummer"/>
+			</Ident>
+			<Address>
+				<Type V="H" DN="Bostedsadresse"/>
+				<StreetAdr>Åssiden 31</StreetAdr>
+				<PostalCode>3008</PostalCode>
+				<City>Drammen</City>
+			</Address>
+			<TeleCom>
+				<TypeTelecom V="MC" DN="Mobiltelefon"/>
+				<TeleAddress V="tel:87654321"/>
+			</TeleCom>
+		</Patient>
+	</MsgInfo>
+	<Document>
+		<RefDoc>
+			<MsgType V="XML" DN="XML-instans"/>
+			<Content>
+				<Henvisning xsi:schemaLocation="http://ehelse.no/xmlstds/henvisning/2017-11-30 Henvisning-v2.0.xsd" xmlns="http://ehelse.no/xmlstds/henvisning/2017-11-30" xmlns:po="http://ehelse.no/xmlstds/po/poKomponent/2017-11-30" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1">
+					<ServType V="N" DN="Ny"/>
+					<IssueDate>2019-01-23T09:24:41</IssueDate>
+					<DocumentId>47f22b00-1f18-11e9-b56e-0800200c9a66</DocumentId>
+					<po:AnsvarForRapport>
+						<po:AnsvarligRapport>
+							<fk1:TypeHealthcareProfessional V="TL" DN="Tannlege"/>
+							<fk1:FamilyName>Koman</fk1:FamilyName>
+							<fk1:GivenName>Magnar</fk1:GivenName>
+							<fk1:Ident>
+								<fk1:Id>9144889</fk1:Id>
+								<fk1:TypeId V="HPR" DN="HPR-nummer" S="2.16.578.1.12.4.1.1.8116"/>
+							</fk1:Ident>
+							<fk1:TeleCom>
+								<fk1:TypeTelecom V="MC" DN="Mobiltelefon"/>
+								<fk1:TeleAddress V="tel:90550374"/>
+							</fk1:TeleCom>
+						</po:AnsvarligRapport>
+						<po:TypeRelasjon V="HHE" S="2.16.578.1.12.4.1.1.8254" DN="Henvisende helsepersonell"/>
+					</po:AnsvarForRapport>
+					<po:TypeInnholdIMelding>
+						<po:TypeInnhold V="10" S="2.16.578.1.12.4.1.1.8455" DN="Utredning/behandling"/>
+					</po:TypeInnholdIMelding>
+					<InfItem>
+						<Medication>
+							<DrugId V="J01CE02" S="2.16.578.1.12.4.1.1.7180"  DN="Apocillin"/>
+							<Status V="2" DN="Kur"/>
+							<UnitDose V="660" U="mg"/>
+							<DosageText>4 tbl daglig i 7 dager</DosageText>
+						</Medication>
+						<Type V="MEDB" S="2.16.578.1.12.4.1.1.8233" DN="Legemiddelopplysning"/>
+					</InfItem>
+					<ReasonAsText>
+						<Heading V="PROB" S="2.16.578.1.12.4.1.1.8231" DN="Aktuell problemstilling"/>
+						<TextResultValue>Pasient kommer akutt med kraftig hevelse i kinn buccalt for 38, trismus og foetor ex or. Pasient opplyser at han det siste året har vært plaget med smerter og hevelse i tannkjøtt rundt tannen. Har vært hos tannlege på hjemplassen tidligere hvor det ble gitt behandling for dette. Har selv villet avvente med å fjerne tannen. Klinisk: Tann 38 ligger tippet mesialt mot 37, partielt eruptert. Litt hovne lymfeknuter submand og på hals. Ikke fått tatt rtg på grunn av redusert gapeevne. Forsøkt incidert abscess i dag men fikk ingen utflod. Satt på antibiotika.</TextResultValue>
+					</ReasonAsText>
+					<ReasonAsText>
+						<Heading V="UTRED" S="2.16.578.1.12.4.1.1.8231" DN="Forventet utredning/behandling"/>
+						<TextResultValue>Kirurgisk fjerning av tann 38.</TextResultValue>
+					</ReasonAsText>
+					<Diagnosis>
+						<Concept V="K053" S="2.16.578.1.12.4.1.1.7110" DN="Periodontitt"/>
+					</Diagnosis>
+					<Diagnosis>
+						<Concept V="K011" S="2.16.578.1.12.4.1.1.7110" DN="Retinert tann med frembruddshinder fra annen tann"/>
+					</Diagnosis>
+					<ReqServ>
+						<ServType V="N" DN="Ny"/>
+						<Priority V="N" DN="Elektiv/Ordinær (elektiv)"/>
+					</ReqServ>
+				</Henvisning>
+			</Content>
+		</RefDoc>
+	</Document>
+</MsgHead>

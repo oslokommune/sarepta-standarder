@@ -110,7 +110,7 @@
 					<span class="eh-label xs">Atc</span>
 					<span class="eh-text">
 						<xsl:for-each select=".//child::*[local-name()='Atc']">
-							<xsl:call-template name="k-dummy"/>&#160;
+							<xsl:call-template name="k-dummy-V"/>&#160;
 						</xsl:for-each>
 					</span>
 				</div>
@@ -346,7 +346,7 @@
 						<span class="eh-label xs">Atc</span>
 						<span class="eh-text">
 							<xsl:for-each select=".//child::*[local-name()='Atc']">
-								<xsl:call-template name="k-dummy"/>&#160;
+								<xsl:call-template name="k-dummy-V"/>&#160;
 							</xsl:for-each>
 						</span>	
 					</div>
