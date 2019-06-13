@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP:Envelope xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/" xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ http://www.oasis-open.org/committees/ebxml-msg/schema/envelope.xsd">
+	<SOAP:Header xmlns:eb="http://www.oasis-open.org/committees/ebxml-msg/schema/msg-header-2_0.xsd" xsi:schemaLocation="http://www.oasis-open.org/committees/ebxml-msg/schema/msg-header-2_0.xsd msg-header-2_0.xsd">
+		<eb:MessageHeader SOAP:mustUnderstand="1" eb:version="2.0">
+			<eb:From>
+				<eb:PartyId eb:type="HER">133735</eb:PartyId>
+				<eb:Role>SVAR_CYTsender</eb:Role>
+			</eb:From>
+			<eb:To>
+				<eb:PartyId eb:type="HER">94866</eb:PartyId>
+				<eb:Role>SVAR_CYTreceiver</eb:Role>
+			</eb:To>
+			<eb:CPAId>94866_133735</eb:CPAId>
+			<eb:ConversationId>b6bbd462-a3a8-4483-8440-222e6e6977ce</eb:ConversationId>
+			<eb:Service>urn:oasis:names:tc:ebxml-msg:service</eb:Service>
+			<eb:Action>Acknowledgment</eb:Action>
+			<eb:MessageData>
+				<eb:MessageId>2AAF1196-C3FE-472B-8A91-AD89EF7822DD</eb:MessageId>
+				<eb:Timestamp>2018-03-07T10:07:00.7894735Z</eb:Timestamp>
+			</eb:MessageData>
+			<eb:Description xml:lang="NO" >
+			{ 
+				"MSH-system":"DIPS Communicator",
+				"MSH-versjon":"2.54",
+			  }
+			</eb:Description>
+		</eb:MessageHeader>
+		<eb:Acknowledgment eb:version="2.0" SOAP:mustUnderstand="1">
+			<eb:Timestamp>2018-03-07T10:07:00.7894735Z</eb:Timestamp>
+			<eb:RefToMessageId>d237e310-796f-4e56-a50b-353b0e5d5947</eb:RefToMessageId>
+			<Reference xmlns:ds="http://www.w3.org/2000/09/xmldsig#" URI="">
+				<Transforms>
+					<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+					<Transform Algorithm="http://www.w3.org/TR/1999/REC-xpath-19991116">
+						<XPath xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">not(ancestor-or-self::node()[@SOAP-ENV:actor="urn:oasis:names:tc:ebxml-msg:actor:nextMSH"]|ancestor-or-self::node()[@SOAP-ENV:actor="http://schemas.xmlsoap.org/soap/actor/next"])</XPath>
+					</Transform>
+					<Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+				</Transforms>
+				<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+				<DigestValue>WZVpfFbBlLdcFJJRIG9EYugx2vk=</DigestValue>
+			</Reference>
+			<Reference URI="cid:6ae2017d-2b1f-41cf-8c10-f306b5d996f7">
+				<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+				<DigestValue>CvBpwjq9SFjwa5/LeA0VLdo98m0=</DigestValue>
+			</Reference>
+		</eb:Acknowledgment>
+		<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+			<ds:SignedInfo>
+				<ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+				<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+				<ds:Reference URI="">
+					<ds:Transforms>
+						<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+						<ds:Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+					</ds:Transforms>
+					<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+					<ds:DigestValue>RJ2QdODr5ADUs9RAR9aT8NFdqds=</ds:DigestValue>
+				</ds:Reference>
+			</ds:SignedInfo>
+			<ds:SignatureValue>
+ZRLxNWAWqxvW1d9vdtZhQ3cII02NhUk7H8ugAML0cIrP0noebUMikAOuX6fNIVTvi4kLAeb3FfQq
+BJD6heRWrM0lMZsA0rIHVOtH3fc6JqwUWRuiS9zzuKIx5ah8O0yU1ZkeS5b6fTJtX36+idO5KvTZ
+c2az7fpWhPLcrfcyT4A=
+			</ds:SignatureValue>
+			<ds:KeyInfo>
+				<ds:X509Data>
+					<ds:X509Certificate>
+MIIDLjCCAhagAwIBAgIGAO75BUawMA0GCSqGSIb3DQEBBAUAMGQxCzAJBgNVBAYTAkVVMRAwDgYD
+VQQKEwdQQVBJTkVUMRkwFwYDVQQLExBDZW50cmFsIFNlcnZpY2VzMSgwJgYDVQQDEx9QQVBJTkVU
+IENlcnRpZmljYXRpb24gQXV0aG9yaXR5MB4XDTAyMDcxMTA5MzQ0OVoXDTAzMDcxMTA5MzQ0OVow
+VDELMAkGA1UEBhMCREUxFTATBgNVBAoTDFNFRUJVUkdFUiBBRzERMA8GA1UECxMIUmVzZWFyY2gx
+GzAZBgNVBAMTElNFRUJVUkdFUl9SZXNlYXJjaDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA
+x18IyJhQIoQdBYvRQflIr8D2IhFh2KPAJY6oSDoKytxZ+llH83yiU6TK/w6sYAdQzCBVL+wwM5Gg
+/1jC0aM7+OYO+o7Po0mrVo7qSVF2R6467gR46TunQ+lEKePcjwSnRLXyqe4clBAKfcIjjJOHdJKZ
+ugyTfl3yhk1Oof4/3S0CAwEAAaN6MHgwHwYDVR0jBBgwFoAUOhZxtfVaQrBKkpXg4EdpACiBJdEw
+VQYDVR0RBE4wTIFKRS1tYWlsOiBjLmZyYW5rQHNlZWJ1cmdlci5kZSwgVGVsOiArNDkoMCk3MjUy
+OTYxMTg1LCBGYXg6ICs0OSgwKTcyNTI5NjI0MDAwDQYJKoZIhvcNAQEEBQADggEBACF7qqnHJSUx
+siSQcPZxLMlOVv8OLP8IxPOpxFVSt98bhmMDC+AJwL2tlX4Q3uQGI6lfu26bO9RqELS26gVpYQej
+Vs+NNwGipV2S3VqJXz5C/Ge6EFnFgPfX060QE0krJCq+d9GPYllnrbA5VaEVw3ihgPhX8jali/Qx
+cDPYmqUJXaqFLHmm1OCmcCiTPqXhWnhmYTm0pTGRdlrFEWyGjTEOunvOjn8mjvD6wcYOAp91cPE5
+gTCCRm5tsGmxNPyL/CQthztAsuLeWMupeWidqLwpOxQiW3UKqG0yf3LdbsQ20sgBAdM2T8Gsw2ZN
+0iDbd7xWIDn1Vy2mYfAHaRs6VSQ=
+					</ds:X509Certificate>
+				</ds:X509Data>
+			</ds:KeyInfo>
+		</ds:Signature>
+	</SOAP:Header>
+	<SOAP:Body></SOAP:Body>
+</SOAP:Envelope>

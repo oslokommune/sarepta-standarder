@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M18 Oppgjørskrav
+2013-04-16
+ -->
+<!--
+Enderinger siden v2.4 2010-10-01
+Nytt navn: EOSDok -> EEADok (EA 2728)
+Nytt navn: EEAtrygdekontorNavn -> EEATrygdekontorNavn (EA 2728)
+Nytt navn: EEAtrygdekontorNr -> EEATrygdekontorNr (EA 2728)
+Nytt navn: EEAgyldighetFra -> GyldighetFra (EA 2728)
+Nytt navn: EEAgyldighet -> EEAGyldighet (EA 2728)
+Nytt element: m18:Utlevering/m18:ManglendeKvittering (EA 1572)
+-->
+<!-- 
+Endringer siden v2.4 2010-05-10
+Nytt element: Utlevering/AnsattId (Sak v2-850)
+Nytt element: Utlevering/SigCompressionMode (Sak v2-851)
+-->
+<schema xmlns:m18="http://www.kith.no/xmlstds/eresept/m18/2013-04-16" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" targetNamespace="http://www.kith.no/xmlstds/eresept/m18/2013-04-16" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="../felles/felleskomponent1.xsd"/>
+	<element name="Oppgjorskrav">
+		<annotation>
+			<documentation>Oppgjørskrav fra utleverer (vanligvis ett apotek) til NAV.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="OppgjorsNr" type="string">
+					<annotation>
+						<documentation>Unik identifikasjon av oppgjørskravet.</documentation>
+					</annotation>
+				</element>
+				<element name="AvsenderDato" type="date">
+					<annotation>
+						<documentation>Dato for når oppgjørskravet er generert hos utleverer.</documentation>
+					</annotation>
+				</element>
+				<element name="RefKrav" type="kith:MO">
+					<annotation>
+						<documentation>Dette er det totale kravet om refusjon som fremsettes for dette oppgjørskravet. Skal være lik summen av kravene (sum refusjon) for alle enkeltregninger.</documentation>
+					</annotation>
+				</element>
+				<element name="AntEnkeltregninger" type="integer">
+					<annotation>
+						<documentation>Antall enkeltregninger som inngår i oppgjørskravet.</documentation>
+					</annotation>
+				</element>
+				<element ref="m18:Enkeltregning" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Enkeltregning">
+		<annotation>
+			<documentation>Identifiserer en enkeltregning som er en del av ett oppgjørskrav.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="RegningsNr" type="string">
+					<annotation>
+						<documentation>Identifikasjon av en enkeltregning. Dersom en enkeltregning senere korrigeres benyttes samme nummer.</documentation>
+					</annotation>
+				</element>
+				<element name="SumRefusjon" type="kith:MO">
+					<annotation>
+						<documentation>Totalt fremsatt krav om refusjon for denne enkeltregningen.</documentation>
+					</annotation>
+				</element>
+				<element name="ReseptId" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Referanse til originalresepten. </documentation>
+					</annotation>
+				</element>
+				<element name="KrediteringRef" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Referanse til den enkeltregningen som krediteres. </documentation>
+					</annotation>
+				</element>
+				<element ref="m18:Utlevering"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Utlevering">
+		<annotation>
+			<documentation>Informasjon om utleveringen av varen det sendes oppgjørskrav for.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Registreringsdato" type="dateTime">
+					<annotation>
+						<documentation>Angir dato for når resepten er registrert/ekspedert i utleverers system.</documentation>
+					</annotation>
+				</element>
+				<element name="Dato" type="dateTime">
+					<annotation>
+						<documentation>Dato når varen fysisk er utlevert.</documentation>
+					</annotation>
+				</element>
+				<element name="BytteRes" type="kith:CS" minOccurs="0">
+					<annotation>
+						<documentation>Angir om det foreligger reservasjon mot bytte og hvem som har reservert seg.</documentation>
+					</annotation>
+				</element>
+				<element name="Arbeidspris" type="kith:MO" minOccurs="0">
+					<annotation>
+						<documentation>Angir i sum arbeidspris som er beregnet for aktuell utlevering.</documentation>
+					</annotation>
+				</element>
+				<element name="Nodekspedisjon" type="kith:CS">
+					<annotation>
+						<documentation>Bekrefter om utleveringen er basert på en nødekspedering og at vilkårene for dette er oppfylt.</documentation>
+					</annotation>
+				</element>
+				<element name="Kvittering" type="base64Binary" minOccurs="0">
+					<annotation>
+						<documentation>Kundens/befrakters kvittering</documentation>
+					</annotation>
+				</element>
+				<element name="ReseptType" type="kith:CS">
+					<annotation>
+						<documentation>Angir hva slags resept utleveringen er basert på.</documentation>
+					</annotation>
+				</element>
+				<element name="Multidose" type="boolean"/>
+				<element name="VareSendPasient" type="boolean"/>
+				<element ref="m18:Hjemmel" minOccurs="0"/>
+				<element ref="m18:Pasient"/>
+				<element ref="m18:Resept" minOccurs="0">
+					<annotation>
+						<documentation>Beskriver resepten som ligger til grunn for utleveringen.</documentation>
+					</annotation>
+				</element>
+				<element name="Intervensjon" minOccurs="0" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Dersom det er avvik mellom resepten og det som er utlevert skal årsaken til dette fremgå av intervensjonskoden.</documentation>
+					</annotation>
+					<complexType>
+						<sequence>
+							<element name="Kode" type="kith:CV">
+								<annotation>
+									<documentation>Dokumenterer intervensjonen (endring av resept) - det er utlevert noe annet enn det som er forskrevet. Gjelder ikke generisk bytte.</documentation>
+								</annotation>
+							</element>
+							<element name="EndringsType" type="kith:CS">
+								<annotation>
+									<documentation>Hva slags endring har vært gjort - vare, dosering, refusjonshjemmel.</documentation>
+								</annotation>
+							</element>
+							<element name="KonfKunde" type="boolean" minOccurs="0">
+								<annotation>
+									<documentation>Oppgis hvis utleverer bare har konferert med kunde.</documentation>
+								</annotation>
+							</element>
+							<element name="Ident" type="fk1:Ident" minOccurs="0">
+								<annotation>
+									<documentation>Angir HPR-nummer til den legen som er konsultert</documentation>
+								</annotation>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+				<element ref="m18:Vare" maxOccurs="unbounded"/>
+				<element name="AnsattId" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Identifikasjon av ansatt hos utleverer. </documentation>
+					</annotation>
+				</element>
+				<element name="SigCompressionMode" type="string" default="1" minOccurs="0">
+					<annotation>
+						<documentation>Angir komprimeringsgraden for signaturbildet i feltet kvittering.</documentation>
+					</annotation>
+				</element>
+				<element name="ManglendeKvittering" type="kith:CV" minOccurs="0">
+					<annotation>
+						<documentation>Begrunnelse for hvorfor kundens signatur ikke kan sendes med. </documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Vare">
+		<complexType>
+			<sequence>
+				<element name="Navn" type="string">
+					<annotation>
+						<documentation>Navnet på utlevert vare</documentation>
+					</annotation>
+				</element>
+				<element name="Nr" type="string">
+					<annotation>
+						<documentation>Varenummer for utlevert vare</documentation>
+					</annotation>
+				</element>
+				<element name="Atc" type="string" minOccurs="0">
+					<annotation>
+						<documentation>ATC-koden til utlevert vare</documentation>
+					</annotation>
+				</element>
+				<element name="Antall" type="decimal">
+					<annotation>
+						<documentation>Antall pakninger som er utlevert</documentation>
+					</annotation>
+				</element>
+				<element name="Pris">
+					<annotation>
+						<documentation>Identifiserer pris inkl. moms (AUP).</documentation>
+					</annotation>
+					<complexType>
+						<sequence>
+							<element name="Pris" type="kith:MO">
+								<annotation>
+									<documentation>Identifiserer pris per enhet inkl. moms.</documentation>
+								</annotation>
+							</element>
+							<element name="Innpris" type="kith:MO" minOccurs="0">
+								<annotation>
+									<documentation>Angitt pris er innpris per pakning etter at rabatter er trukket fra.</documentation>
+								</annotation>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Hjemmel">
+		<annotation>
+			<documentation>Dersom forevist vedtak skal informasjon i vedtaket dokumenteres for refusjon.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="RefHjemmel" type="kith:CV">
+					<annotation>
+						<documentation>Hjemmelskode som ligger til grunn for utleveringen.</documentation>
+					</annotation>
+				</element>
+				<element name="RefKode" type="kith:CV" minOccurs="0">
+					<annotation>
+						<documentation>Diagnosekode i henhold til gjeldende kodeverk.</documentation>
+					</annotation>
+				</element>
+				<element name="VedtaksEnh" type="kith:CV" minOccurs="0">
+					<annotation>
+						<documentation>Kode for NAV-kontor som har fattet vedtak. </documentation>
+					</annotation>
+				</element>
+				<element name="Vedtaksdato" type="date" minOccurs="0">
+					<annotation>
+						<documentation>Dato når vedtaket er fattet</documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Pasient">
+		<complexType>
+			<sequence>
+				<element name="Ident" type="fk1:Ident" minOccurs="0">
+					<annotation>
+						<documentation>Pasientens fødselsnummer eller D-nummer</documentation>
+					</annotation>
+				</element>
+				<element name="Fornavn" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Pasientens fornavn dersom pasienten ikke har fødselsnummer eller D-nummer.</documentation>
+					</annotation>
+				</element>
+				<element name="Mellomnavn" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Pasientens mellomnavn dersom pasienten ikke har fødselsnummer eller D-nummer.</documentation>
+					</annotation>
+				</element>
+				<element name="Etternavn" type="string" minOccurs="0">
+					<annotation>
+						<documentation>Pasientens etternavn dersom pasienten ikke har fødselsnummer eller D-nummer.</documentation>
+					</annotation>
+				</element>
+				<element name="Fodselsdato" type="date" minOccurs="0">
+					<annotation>
+						<documentation>Pasientens fødselsdato dersom pasienten ikke har fødselsnummer eller D-nummer</documentation>
+					</annotation>
+				</element>
+				<element name="Kommune" type="kith:CS" minOccurs="0">
+					<annotation>
+						<documentation>Pasientens bostedskommune dersom bosatt i Norge</documentation>
+					</annotation>
+				</element>
+				<element name="Kjonn" type="kith:CS" minOccurs="0">
+					<annotation>
+						<documentation>Pasientens kjønn dersom pasienten ikke har fødselsnummer eller D-nummer</documentation>
+					</annotation>
+				</element>
+				<element name="ArbeidstakerNorge" type="boolean" minOccurs="0">
+					<annotation>
+						<documentation>Identifiserer om vedkommende som ikke er bosatt i Norge, er arbeidstaker i Norge.</documentation>
+					</annotation>
+				</element>
+				<element name="Konvensjonsland" type="kith:CS" minOccurs="0">
+					<annotation>
+						<documentation>Identifiserer det konvensjonsland som er grunnlaget (hjemmelen) for pasientens rett til stønad fra folketrygden.</documentation>
+					</annotation>
+				</element>
+				<element name="Dokumentasjon" type="kith:CS" minOccurs="0">
+					<annotation>
+						<documentation>Identifiserer nødvendig dokumentasjon for konvensjonsland og arbeidstaker</documentation>
+					</annotation>
+				</element>
+				<element name="Vernepliktig" type="boolean">
+					<annotation>
+						<documentation>Settes til true hvis personen er vernepliktig. </documentation>
+					</annotation>
+				</element>
+				<element name="Egenandel">
+					<annotation>
+						<documentation>Informasjon om egenandel.</documentation>
+					</annotation>
+					<complexType>
+						<sequence>
+							<element name="Egenandel" type="kith:MO">
+								<annotation>
+									<documentation>Egenandel betalt for denne enkeltregningen/utleveringen</documentation>
+								</annotation>
+							</element>
+							<element name="EgenandelKode" type="kith:CV" minOccurs="0">
+								<annotation>
+									<documentation>Kode for fri egenandel.</documentation>
+								</annotation>
+							</element>
+							<element name="BetTidl" type="kith:MO" minOccurs="0">
+								<annotation>
+									<documentation>Tidligere innbetalt egenandel i samme egenandelsperiode.</documentation>
+								</annotation>
+							</element>
+							<element name="StartPeriode" type="date" minOccurs="0">
+								<annotation>
+									<documentation>Dato for når egenandelsperioden som denne enkeltregningen refererer til starter.</documentation>
+								</annotation>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+				<element ref="m18:EEA" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Resept">
+		<complexType>
+			<sequence>
+				<element name="Forskrivningsdato" type="date">
+					<annotation>
+						<documentation>Dato for forskrivning</documentation>
+					</annotation>
+				</element>
+				<element name="Avsluttet" type="boolean" minOccurs="0">
+					<annotation>
+						<documentation>Angir at resepten er ferdig ekspedert slik at det ikke skal foretas flere ekspederinger eller utleveringer på den resepten som det er referert til ved reseptid.</documentation>
+					</annotation>
+				</element>
+				<element name="Instituert" minOccurs="0">
+					<annotation>
+						<documentation>Fylles ut dersom behandlingen er instituert et annet sted enn hos rekvirent og dersom dette er et refusjonsvilkår. </documentation>
+					</annotation>
+					<complexType>
+						<sequence>
+							<element name="Fornavn" type="string" minOccurs="0">
+								<annotation>
+									<documentation>Fornavn instituerende lege.</documentation>
+								</annotation>
+							</element>
+							<element name="Etternavn" type="string" minOccurs="0">
+								<annotation>
+									<documentation>Etternavn instituerende lege</documentation>
+								</annotation>
+							</element>
+							<element name="Spesialitet" type="kith:CV" minOccurs="0">
+								<annotation>
+									<documentation>Spesialitet til instituerende lege</documentation>
+								</annotation>
+							</element>
+							<element name="Inst" type="string" minOccurs="0">
+								<annotation>
+									<documentation>Navn på sykehus som har instituert behandlingen</documentation>
+								</annotation>
+							</element>
+							<element name="Dept" type="string" minOccurs="0">
+								<annotation>
+									<documentation>Navn på sykehusavdeling som har instituert behandlingen</documentation>
+								</annotation>
+							</element>
+							<element name="InstitusjonsID" type="kith:CV" minOccurs="0">
+								<annotation>
+									<documentation>Identifikator til valgt institusjon. Fylles ut hvis institusjon er fylt ut</documentation>
+								</annotation>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Rekvirent">
+					<annotation>
+						<documentation>Informasjon om rekvirenten.</documentation>
+					</annotation>
+					<complexType>
+						<sequence>
+							<element name="Ident" type="fk1:Ident" minOccurs="0">
+								<annotation>
+									<documentation>Rekvirentens HPR-nummer</documentation>
+								</annotation>
+							</element>
+							<element name="Fornavn" type="string" minOccurs="0">
+								<annotation>
+									<documentation>Identifisere fornavn på utsteder av rekvisisjon når legen er autorisert i annet nordisk land, eventuelt når legen fyller vilkårene for å yte tjeneste i Norge i henhold til EØS-avtalen.</documentation>
+								</annotation>
+							</element>
+							<element name="Etternavn" type="string" minOccurs="0">
+								<annotation>
+									<documentation>Identifisere etternavn på utsteder av rekvisisjon når legen er autorisert i annet nordisk land, eventuelt når legen fyller vilkårene for å yte tjeneste i Norge i henhold til EØS-avtalen.</documentation>
+								</annotation>
+							</element>
+							<element name="Spesialitet" type="kith:CV" minOccurs="0">
+								<annotation>
+									<documentation>Spesialitet til rekvirerende lege</documentation>
+								</annotation>
+							</element>
+							<element name="Inst" type="string" minOccurs="0">
+								<annotation>
+									<documentation>Navn på sykehus rekvirenten har sendt inn resepten fra.</documentation>
+								</annotation>
+							</element>
+							<element name="Dept" type="string" minOccurs="0">
+								<annotation>
+									<documentation>Avdeling på sykehus hvor rekvirenten har sendt inn resepten fra</documentation>
+								</annotation>
+							</element>
+							<element name="RekvirentNordisk" type="boolean" minOccurs="0">
+								<annotation>
+									<documentation>Identifisere at den som har utstedt rekvisisjonen er lege autorisert i et annet nordisk land, eventuelt at legen fyller vilkårene for å yte tjeneste i Norge i henhold til EØSavtalen.</documentation>
+								</annotation>
+							</element>
+							<element name="InstitusjonsID" type="kith:CV" minOccurs="0">
+								<annotation>
+									<documentation>Identifikator til valgt institusjon. Fylles ut hvis institusjon er fylt ut</documentation>
+								</annotation>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="EEA">
+		<complexType>
+			<sequence>
+				<element name="EEADok" type="kith:CS"/>
+				<element name="EEACardId" type="string" minOccurs="0"/>
+				<element name="EEAId" type="string" minOccurs="0"/>
+				<element name="EEAtrygdekontorNavn" type="string" minOccurs="0"/>
+				<element name="EEAtrygdekontorNr" type="string" minOccurs="0"/>
+				<element name="EEAgyldighetFra" type="date" minOccurs="0"/>
+				<element name="EEAgyldighet" type="date" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

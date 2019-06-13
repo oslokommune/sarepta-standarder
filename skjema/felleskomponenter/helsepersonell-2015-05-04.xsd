@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Endret 28. mars 2014 (MA):
+	- Endret namespace: http://www.kith.no/xmlstds/helsepersonell/2014-03-28
+	- Endret tegnsett fra "ISO-8859-1" til "UTF-8"-->
+<!-- Endret 5. mai 2015 (MA):
+	- Endret namespace: http://www.kith.no/xmlstds/helsepersonell/2015-05-04
+	- La til nytt felt Merknad og pga. av dette nye elementet er det lagt til et ekstra nivå i strukturen for å knytte merknadsfeltet og helsepersonell sammen-->
+<schema xmlns:hcp="http://www.kith.no/xmlstds/helsepersonell/2015-05-04" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" targetNamespace="http://www.kith.no/xmlstds/helsepersonell/2015-05-04" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="felleskomponent1.xsd"/>
+	<element name="HelsepersonelListe">
+		<complexType>
+			<sequence>
+				<element ref="hcp:Helsepersonell" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Helsepersonell">
+		<annotation>
+			<documentation>
+         Dokumentasjon av helsepersonell.
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Helsepersonell" type="fk1:HealthcareProfessional" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="Merknad" type="string" minOccurs="0" maxOccurs="1"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

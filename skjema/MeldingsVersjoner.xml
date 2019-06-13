@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Liste over meldinger med navnerom og versjon
+ - Meldingsnavn skal være det samme som filnavnet til tilhørende xsd-fil.
+-->
+<MeldingsVersjoner versjon="1.0" sistEndret="2019-01-16">
+	<MeldingsKategori navn="Applikasjonskvitteringer" eier="Direktoratet for e-helse" kontakt="meldingshjelp@ehelse.no" nettsted="www.ehelse.no">
+		<Melding navn="AppRec-v1-2004-11-21" navnerom="http://www.kith.no/xmlstds/apprec/2004-11-21" versjon="1.0"/>
+		<Melding navn="AppRec-v1.1" navnerom="http://www.kith.no/xmlstds/apprec/2012-02-15" versjon="1.1"/>
+	</MeldingsKategori>
+	<MeldingsKategori navn="Basismeldinger" eier="Direktoratet for e-helse" kontakt="meldingshjelp@ehelse.no" nettsted="www.ehelse.no">
+		<Melding navn="Epikrise-v1.1" navnerom="http://www.kith.no/xmlstds/epikrise/2006-09-23" versjon="1.1"/>
+		<Melding navn="Epikrise-v1.2" navnerom="http://www.kith.no/xmlstds/epikrise/2012-02-15" versjon="1.2"/>
+		<Melding navn="Henvisning-v1.0" navnerom="http://www.kith.no/xmlstds/henvisning/2005-07-08" versjon="1.0"/>
+		<Melding navn="Henvisning-v1.1" navnerom="http://www.kith.no/xmlstds/henvisning/2012-02-15" versjon="1.1"/>
+		<Melding navn="Henvisning-v2.0" navnerom="http://ehelse.no/xmlstds/henvisning/2017-11-30" versjon="2.0"/>
+		<Melding navn="Rekvisisjon-v1_5" navnerom="http://www.kith.no/xmlstds/rekvisisjon/2008-12-01" versjon="1.5"/>
+		<Melding navn="Rekvisisjon-v1_6" navnerom="http://www.kith.no/xmlstds/rekvisisjon/2012-02-15" versjon="1.6"/>
+		<Melding navn="svar-v13" navnerom="http://www.kith.no/xmlstds/labsvar/2008-12-01" versjon="1.3"/>
+		<Melding navn="svar-v1.4" navnerom="http://www.kith.no/xmlstds/labsvar/2012-02-15" versjon="1.4"/>
+	</MeldingsKategori>
+	<MeldingsKategori navn="Dialogmeldinger" eier="Direktoratet for e-helse" kontakt="meldingshjelp@ehelse.no" nettsted="www.ehelse.no">
+		<Melding navn="dialogmelding" navnerom="http://www.kith.no/xmlstds/dialog/2006-10-11" versjon="1.0"/>
+		<Melding navn="dialogmelding-v1.1" navnerom="http://www.kith.no/xmlstds/dialog/2013-01-23" versjon="1.1"/>
+	</MeldingsKategori>
+	<MeldingsKategori navn="eResept" eier="Direktoratet for e-helse" kontaktInfo="" nettsted="">
+		<Melding navn="ER-M1-2010-05-01" navnerom="http://www.kith.no/xmlstds/eresept/m1/2010-05-01" versjon="2.4"/>
+		<Melding navn="ER-M1-2013-10-08" navnerom="http://www.kith.no/xmlstds/eresept/m1/2013-10-08" versjon="2.5"/>
+		<Melding navn="ER-M10-2010-06-07" navnerom="http://www.kith.no/xmlstds/eresept/m10/2010-06-07" versjon="2.4"/>
+		<Melding navn="ER-M10-2013-10-08" navnerom="http://www.kith.no/xmlstds/eresept/m10/2013-10-08" versjon="2.5"/>
+		<Melding navn="ER-M12-2010-07-01" navnerom="http://www.kith.no/xmlstds/eresept/m12/2010-07-01" versjon="2.4"/>
+		<Melding navn="ER-M12-2014-12-01" navnerom="http://www.kith.no/xmlstds/eresept/m12/2014-12-01" versjon="2.5"/>
+		<Melding navn="ER-M12-2017-12-01" navnerom="http://www.ehelse.no/xmlstds/eresept/m12/2017-12-01" versjon="2.5"/>
+		<Melding navn="ER-M14-2008-12-12" navnerom="http://www.kith.no/xmlstds/eresept/m14/2008-12-12" versjon="2.2"/>
+		<Melding navn="ER-M15-2006-10-06" navnerom="http://www.kith.no/xmlstds/eresept/m15/2006-10-06" versjon="1.0"/>
+		<Melding navn="ER-M18-2010-05-01" navnerom="http://www.kith.no/xmlstds/eresept/m18/2010-05-01" versjon="2.4"/>
+		<Melding navn="ER-M18-2010-10-01" navnerom="http://www.kith.no/xmlstds/eresept/m18/2010-10-01" versjon="2.4"/>
+		<Melding navn="ER-M18-2013-04-16" navnerom="http://www.kith.no/xmlstds/eresept/m18/2013-04-16" versjon="2.5"/>
+		<Melding navn="ER-M2-2010-07-01" navnerom="http://www.kith.no/xmlstds/eresept/m2/2010-07-01" versjon="2.4"/>
+		<Melding navn="ER-M2-2010-10-01" navnerom="http://www.kith.no/xmlstds/eresept/m2/2010-10-01" versjon="2.4"/>
+		<Melding navn="ER-M2-2014-12-01" navnerom="http://www.kith.no/xmlstds/eresept/m2/2014-12-01" versjon="2.5"/>
+		<Melding navn="ER-M2-2017-12-01" navnerom="http://www.ehelse.no/xmlstds/eresept/m2/2017-12-01" versjon="2.5"/>
+		<Melding navn="ER-M20-2010-05-01" navnerom="http://www.kith.no/xmlstds/eresept/m20/2010-05-01" versjon="2.4"/>
+		<Melding navn="ER-M20-2013-10-08" navnerom="http://www.kith.no/xmlstds/eresept/m20/2013-10-08" versjon="2.5"/>
+		<Melding navn="ER-M21-2010-05-01" navnerom="http://www.kith.no/xmlstds/eresept/m21/2010-05-01" versjon="2.4"/>
+		<Melding navn="ER-M21-2013-10-08" navnerom="http://www.kith.no/xmlstds/eresept/m21/2013-10-08" versjon="2.5"/>
+		<Melding navn="ER-M22-2006-10-06" navnerom="http://www.kith.no/xmlstds/eresept/m22/2006-10-06" versjon="1.0"/>
+		<Melding navn="ER-M23-2006-10-06" navnerom="http://www.kith.no/xmlstds/eresept/m23/2006-10-06" versjon="1.0"/>
+		<Melding navn="ER-M241-2009-02-20" navnerom="http://www.kith.no/xmlstds/eresept/m241/2009-02-20" versjon="2.3"/>
+		<Melding navn="ER-M242-2008-10-03" navnerom="http://www.kith.no/xmlstds/eresept/m242/2008-10-03" versjon="2.1"/>
+		<Melding navn="ER-M251-2013-10-08" navnerom="http://www.kith.no/xmlstds/eresept/m251/2013-10-08" versjon="2.5"/>
+		<Melding navn="ER-M252-2013-10-08" navnerom="http://www.kith.no/xmlstds/eresept/m252/2013-10-08" versjon="2.5"/>
+		<Melding navn="ER-M253-2013-10-08" navnerom="http://www.kith.no/xmlstds/eresept/m253/2013-10-08" versjon="2.5"/>
+		<Melding navn="ER-M271-2013-04-16" navnerom="http://www.kith.no/xmlstds/eresept/m271/2013-04-16" versjon="2.5"/>
+		<Melding navn="ER-M272-2013-04-16" navnerom="http://www.kith.no/xmlstds/eresept/m272/2013-04-16" versjon="2.5"/>
+		<Melding navn="ER-M28-2012-06-11" navnerom="http://www.kith.no/xmlstds/eresept/m28/2012-06-11" versjon="2.5"/>
+		<Melding navn="ER-M3-2010-05-01" navnerom="http://www.kith.no/xmlstds/eresept/m3/2010-05-01" versjon="2.5"/>
+		<Melding navn="ER-M30-2010-09-01" navnerom="http://www.kith.no/xmlstds/eresept/m30/2010-09-01" versjon="2.4"/>
+		<Melding navn="ER-M30-2014-12-01" navnerom="http://www.kith.no/xmlstds/eresept/m30/2014-12-01" versjon="2.5"/>
+		<Melding navn="ER-M41-2006-10-06" navnerom="http://www.kith.no/xmlstds/eresept/m41/2006-10-06" versjon="1.0"/>
+		<Melding navn="ER-M42-2006-10-06" navnerom="http://www.kith.no/xmlstds/eresept/m42/2006-10-06" versjon="1.0"/>
+		<Melding navn="ER-M5-2009-02-20" navnerom="http://www.kith.no/xmlstds/eresept/m5/2009-02-20" versjon="2.3"/>
+		<Melding navn="ER-M5-2013-04-16" navnerom="http://www.kith.no/xmlstds/eresept/m5/2013-04-16" versjon="2.5"/>
+		<Melding navn="ER-M52-2013-12-01" navnerom="http://www.kith.no/xmlstds/eresept/m52/2013-12-01" versjon="2.5"/>
+		<Melding navn="ER-M6-2010-05-01" navnerom="http://www.kith.no/xmlstds/eresept/m6/2010-05-01" versjon="2.4"/>
+		<Melding navn="ER-M6-2013-10-08" navnerom="http://www.kith.no/xmlstds/eresept/m6/2013-10-08" versjon="2.5"/>
+		<Melding navn="ER-M7-2008-05-01" navnerom="http://www.kith.no/xmlstds/eresept/m7/2008-05-01" versjon="2.0"/>
+		<Melding navn="ER-M8-2010-06-07" navnerom="http://www.kith.no/xmlstds/eresept/m8/2010-06-07" versjon="2.4"/>
+		<Melding navn="ER-M8-2013-10-08" navnerom="http://www.kith.no/xmlstds/eresept/m8/2013-10-08" versjon="2.5"/>
+		<Melding navn="ER-M91-2010-06-04" navnerom="http://www.kith.no/xmlstds/eresept/m91/2010-06-04" versjon="2.4"/>
+		<Melding navn="ER-M91-2013-10-08" navnerom="http://www.kith.no/xmlstds/eresept/m91/2013-10-08" versjon="2.5"/>
+		<Melding navn="ER-M911-2014-01-21" navnerom="http://www.kith.no/xmlstds/eresept/m911/2014-01-21" versjon="2.5"/>
+		<Melding navn="ER-M911-2018-07-01" navnerom="http://www.ehelse.no/xmlstds/eresept/m911/2018-07-01" versjon="2.5"/>
+		<Melding navn="ER-M912-2014-01-21" navnerom="http://www.kith.no/xmlstds/eresept/m912/2014-01-21" versjon="2.5"/>
+		<Melding navn="ER-M912-2018-07-01" navnerom="http://www.ehelse.no/xmlstds/eresept/m912/2018-07-01" versjon="2.5"/>
+		<Melding navn="ER-M92-2010-05-01" navnerom="http://www.kith.no/xmlstds/eresept/m92/2010-05-01" versjon="2.4"/>
+		<Melding navn="ER-M92-2013-10-08" navnerom="http://www.kith.no/xmlstds/eresept/m92/2013-10-08" versjon="2.5"/>
+		<Melding navn="ER-M93-2010-06-04" navnerom="http://www.kith.no/xmlstds/eresept/m93/2010-06-04" versjon="2.4"/>
+		<Melding navn="ER-M94-2010-07-01" navnerom="http://www.kith.no/xmlstds/eresept/m94/2010-07-01" versjon="2.4"/>
+		<Melding navn="ER-M95-2008-10-03" navnerom="http://www.kith.no/xmlstds/eresept/m95/2008-10-03" versjon="2.1"/>
+		<Melding navn="ER-M95-2015-05-01" navnerom="http://www.kith.no/xmlstds/eresept/m95/2015-05-01" versjon="2.5"/>
+		<Melding navn="ER-M95-2018-07-01" navnerom="http://www.ehelse.no/xmlstds/eresept/m95/2018-07-01" versjon="2.5"/>
+		<Melding navn="ER-M96-2009-03-18" navnerom="http://www.kith.no/xmlstds/eresept/m96/2009-03-18" versjon="2.3"/>
+		<Melding navn="ER-M96-2015-05-01" navnerom="http://www.kith.no/xmlstds/eresept/m96/2015-05-01" versjon="2.5"/>
+		<Melding navn="ER-M96-2018-07-01" navnerom="http://www.ehelse.no/xmlstds/eresept/m96/2018-07-01" versjon="2.5"/>
+		<Melding navn="ER-M97-2015-05-01" navnerom="http://www.kith.no/xmlstds/eresept/m97/2015-05-01" versjon="2.5"/>
+		<Melding navn="ER-M97-2018-07-01" navnerom="http://www.ehelse.no/xmlstds/eresept/m97/2018-07-01" versjon="2.5"/>
+		<Melding navn="ER-M98-2015-05-01" navnerom="http://www.kith.no/xmlstds/eresept/m98/2015-05-01" versjon="2.5"/>
+		<Melding navn="ER-M98-2018-07-01" navnerom="http://www.ehelse.no/xmlstds/eresept/m98/2018-07-01" versjon="2.5"/>
+		<Melding navn="ER-MV-2013-08-16" navnerom="http://www.kith.no/xmlstds/eresept/mv/2013-08-16" versjon="2.5"/>
+		<Melding navn="ER-MV-2017-01-01" navnerom="http://ehelse.no/xmlstds/eresept/mv/2017-01-01" versjon="2.5"/>
+	</MeldingsKategori>
+	<MeldingsKategori navn="NAVmeldinger" eier="NAV" kontaktInfo="" nettsted="www.nav.no">
+		<Melding navn="Behandlerkrav" navnerom="http://www.kith.no/xmlstds/bkm/2006-12-20" versjon="1.8.3"/>
+		<Melding navn="HelseOpplysningerArbeidsuforhet_2013-10-01" navnerom="http://www.kith.no/xmlstds/helseopplysningerNAV/2013-10-01" versjon="1.3"/>
+		<Melding navn="InnrapporteringTrekk-2010-02-04" navnerom="http://www.kith.no/xmlstds/nav/innrapporteringtrekk/2010-02-04" versjon="1.0"/>
+		<Melding navn="NAV-Legeerklaring-2008-06-06" navnerom="http://www.kith.no/xmlstds/legeerklaring/2008-06-06" versjon="1.0"/>
+		<Melding navn="NAV-Sykmelding-2011-03-04" navnerom="http://www.kith.no/xmlstds/sykmelding/2011-03-04" versjon="1.1"/>
+	</MeldingsKategori>
+	<MeldingsKategori navn="PLOmeldinger" eier="Direktoratet for e-helse" kontaktInfo="meldingshjelp@ehelse.no" nettsted="www.ehelse.no">
+		<Melding navn="EPJEkstrakt" navnerom="http://www.kith.no/xmlstds/epj/EPJEkstrakt/2008-02-20" versjon="1.4"/>
+		<Melding navn="HelseopplysningerTilLege-v1.5" navnerom="http://www.kith.no/xmlstds/po/Konsultasjon/2009-06-30" versjon="1.5"/>
+		<Melding navn="HelseopplysningerTilLege-v1.6" navnerom="http://www.kith.no/xmlstds/po/HelseopplysningerTilLege/2012-04-01" versjon="1.6"/>
+		<Melding navn="HelseopplysningerVedSoknad-v1.5" navnerom="http://www.kith.no/xmlstds/po/HelseopplysningerVedSoknad/2009-06-30" versjon="1.5"/>
+		<Melding navn="Helseopplysninger-v1.6" navnerom="http://www.kith.no/xmlstds/po/HelseopplysningerVedSoknad/2012-04-01" versjon="1.6"/>
+		<Melding navn="Innleggelsesrapport-v1.5" navnerom="http://www.kith.no/xmlstds/po/Innleggelsesrapport/2009-06-30" versjon="1.5"/>
+		<Melding navn="Innleggelsesrapport-v1.6" navnerom="http://www.kith.no/xmlstds/po/Innleggelsesrapport/2012-04-01" versjon="1.6"/>
+		<Melding navn="MedisinskeOpplysninger-v1.5" navnerom="http://www.kith.no/xmlstds/po/OverforingMedisinskeOpplysninger/2009-06-30" versjon="1.5"/>
+		<Melding navn="MedisinskeOpplysninger-v1.6" navnerom="http://www.kith.no/xmlstds/po/MedisinskeOpplysninger/2012-04-01" versjon="1.6"/>
+		<Melding navn="OrienteringOmTjenestetilbud-v1.5" navnerom="http://www.kith.no/xmlstds/po/OrienteringOmTjenestetilbud/2009-06-30" versjon="1.5"/>
+		<Melding navn="OrienteringOmTjenestetilbud-v1.6" navnerom="http://www.kith.no/xmlstds/po/OrienteringOmTjenestetilbud/2012-04-01" versjon="1.6"/>
+		<Melding navn="Pasientlogistikk-v1.5" navnerom="http://www.kith.no/xmlstds/po/Pasientlogistikk/2009-06-30" versjon="1.5"/>
+		<Melding navn="Pasientlogistikk-v1.6" navnerom="http://www.kith.no/xmlstds/po/Pasientlogistikk/2012-04-01" versjon="1.6"/>
+		<Melding navn="TverrfagligEpikrise-v1.5" navnerom="http://www.kith.no/xmlstds/po/TverrfagligEpikrise/2009-06-30" versjon="1.5"/>
+		<Melding navn="TverrfagligEpikrise-v1.6" navnerom="http://www.kith.no/xmlstds/po/TverrfagligEpikrise/2012-04-01" versjon="1.6"/>
+	</MeldingsKategori>
+	<MeldingsKategori navn="SYSVAK" eier="Folkehelseinstituttet" kontaktInfo="" nettsted="www.fhi.no">
+		<Melding navn="HendelseRequest" navnerom="http://www.kith.no/xmlstds/sysvak/hendelserequest/2008-01-01" versjon="1.0"/>
+		<Melding navn="HendelseResponse" navnerom="http://www.kith.no/xmlstds/sysvak/hendelseresponse/2008-01-01" versjon="1.0"/>
+		<Melding navn="KodeverkRequest" navnerom="http://www.kith.no/xmlstds/sysvak/kodeverkrequest/2008-01-01" versjon="1.0"/>
+		<Melding navn="KodeverkResponse" navnerom="http://www.kith.no/xmlstds/sysvak/kodeverkresponse/2008-01-01" versjon="1.0"/>
+		<Melding navn="SokRequest" navnerom="http://www.kith.no/xmlstds/sysvak/sokrequest/2008-01-01" versjon="1.0"/>
+		<Melding navn="SokResponse" navnerom="http://www.kith.no/xmlstds/sysvak/sokresponse/2008-01-01" versjon="1.0"/>
+	</MeldingsKategori>
+</MeldingsVersjoner>

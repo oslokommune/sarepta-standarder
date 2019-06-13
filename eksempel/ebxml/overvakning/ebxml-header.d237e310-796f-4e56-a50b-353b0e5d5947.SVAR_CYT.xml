@@ -1,0 +1,57 @@
+<Soap:Envelope xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:eb="http://www.oasis-open.org/committees/ebxml-msg/schema/msg-header-2_0.xsd" xmlns:Soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <Soap:Header>
+    <!--TEST. TEST. Sendt i testøyemed. Har ingen andre formål.-->
+    <eb:MessageHeader Soap:mustUnderstand="1" eb:version="2.0">
+      <eb:From>
+        <eb:PartyId eb:type="HER">94866</eb:PartyId>
+        <eb:Role>SVAR_CYTreceiver</eb:Role>
+      </eb:From>
+      <eb:To>
+        <eb:PartyId eb:type="HER">133735</eb:PartyId>
+        <eb:Role>SVAR_CYTsender</eb:Role>
+      </eb:To>
+      <eb:CPAId>94866_133735</eb:CPAId>
+      <eb:ConversationId>b6bbd462-a3a8-4483-8440-222e6e6977ce</eb:ConversationId>
+      <eb:Service eb:type="kithService">S-SVAR_CYT</eb:Service>
+      <eb:Action>SVAR_CYT</eb:Action>
+      <eb:MessageData>
+        <eb:MessageId>d237e310-796f-4e56-a50b-353b0e5d5947</eb:MessageId>
+        <eb:Timestamp>2018-03-07T10:06:56.8750778Z</eb:Timestamp>
+      </eb:MessageData>
+      <eb:DuplicateElimination />
+    </eb:MessageHeader>
+    <eb:AckRequested eb:version="2.0" eb:signed="true" />
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+            <Transform Algorithm="http://www.w3.org/TR/1999/REC-xpath-19991116">
+              <XPath xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">not(ancestor-or-self::node()[@SOAP-ENV:actor="urn:oasis:names:tc:ebxml-msg:actor:nextMSH"]|ancestor-or-self::node()[@SOAP-ENV:actor="http://schemas.xmlsoap.org/soap/actor/next"])</XPath>
+            </Transform>
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>WZVpfFbBlLdcFJJRIG9EYugx2vk=</DigestValue>
+        </Reference>
+        <Reference URI="cid:6ae2017d-2b1f-41cf-8c10-f306b5d996f7">
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>CvBpwjq9SFjwa5/LeA0VLdo98m0=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>gWAK/vJ4sc4gSUR3hTtpTDw3+a1kymTKjNa0swVD3AHB4Oq0XtzUYT8QEcmYxSMw3gsOPPRpUoald5SNi1K0Hu8GHW/3Yx8qwbTULbS20iMALbRLBhxGlZgpxFfn7N8Ff8odLk2FBomaClJsTtcPXA9YwLgN9SG4NB5gwxGhAJ28VqRWZt/hZiHzy3gRYDnbEKgl8ptUL6yn/o1iqzwNPvTpSEj/AsT4JlmkBnBmBVQdPndfwPbu3FR8CrwgwUbiOj2a9DKdn9pQFqZ64dm+CJjpM7eV+sEyyJRFcHbfSDAv97OeYBo7Q4LguCgXWhM0L+CkrUym3oS8KFXAf8qm6A==</SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>MIIE3jCCA8agAwIBAgILCE2BUrKlJGrOxOgwDQYJKoZIhvcNAQELBQAwSzELMAkGA1UEBhMCTk8xHTAbBgNVBAoMFEJ1eXBhc3MgQVMtOTgzMTYzMzI3MR0wGwYDVQQDDBRCdXlwYXNzIENsYXNzIDMgQ0EgMzAeFw0xNjAxMTgwOTA3NTZaFw0xOTAxMTgyMjU5MDBaMHIxCzAJBgNVBAYTAk5PMRswGQYDVQQKDBJOT1JTSyBIRUxTRU5FVFQgU0YxFTATBgNVBAsMDFRFU1RTRU5URVJFVDEbMBkGA1UEAwwSTk9SU0sgSEVMU0VORVRUIFNGMRIwEAYDVQQFEwk5OTQ1OTg3NTkwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCZ34VMBCzmHwmvMWwq0YhtNaEz19PxcEq3ImbCLWZx0zIf2hp8ZSDQy23KpgTumrTebeXEW5b1ig4THXizKzDtwirV5ssO441U7hvTXr+Bm1GYpRc1Q0vzZbKg41Nje5cq+kAovq3H8nnJ3csdjFS5QWKKz1hyUL9V6mZiR1eMVLWbOL2gBR6rjB0OgpoXtF9wmb2Z9So+srAyqnpRy9xBumBFdqvx3+8iZp8G9FH0TPgzeEPreLX5tdKZL0J/Z7+zWXqCx+Fu1PoKMkdw+aYJCVtUJPRXY1t4BpLKO0h6yXf7Rpky+sUQcJmKyagOBPZr9mqqjycYQg6JPSkcTo+XAgMBAAGjggGaMIIBljAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFMzD+Ae3nG16TvWnKx0F+bNHHJHRMB0GA1UdDgQWBBRpioossQ08OgpOuAl6/58qpAkvajAOBgNVHQ8BAf8EBAMCBkAwFQYDVR0gBA4wDDAKBghghEIBGgEDAjCBpQYDVR0fBIGdMIGaMC+gLaArhilodHRwOi8vY3JsLmJ1eXBhc3Mubm8vY3JsL0JQQ2xhc3MzQ0EzLmNybDBnoGWgY4ZhbGRhcDovL2xkYXAuYnV5cGFzcy5uby9kYz1CdXlwYXNzLGRjPU5PLENOPUJ1eXBhc3MlMjBDbGFzcyUyMDMlMjBDQSUyMDM/Y2VydGlmaWNhdGVSZXZvY2F0aW9uTGlzdDB6BggrBgEFBQcBAQRuMGwwMwYIKwYBBQUHMAGGJ2h0dHA6Ly9vY3NwLmJ1eXBhc3Mubm8vb2NzcC9CUENsYXNzM0NBMzA1BggrBgEFBQcwAoYpaHR0cDovL2NydC5idXlwYXNzLm5vL2NydC9CUENsYXNzM0NBMy5jZXIwDQYJKoZIhvcNAQELBQADggEBALPuCmA93Mi9NZFUFOaQz3PasTFLeLmtSXtt4Qp0TVtJuhqrlDeWYXDCsffMQoCAZXE3569/hdEgHPBVALo8xKS9vdwZR5SgIF+IivsEdC4ZYsq8C5VX4qq2WxW7yHNy3GYU8RBdOaztTfUliv7uaAeooP6EOPa6m+R+dgGfGnb5rM8NRyGgcAKDvC1YUFwdWaIgqO0gBB6WnSkhkyk0iX4tksUkbemQFcyMi2XDog6IFpkYt85MvfBklwjjufCiIcpkzHmuZCcYSLdwqi40Cz4QM5FE8zQYJJLco35A7NVW3MusyFImTleOlL10NH3XnqeLM8loa1Ph7YPl0SpiSjY=</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </Soap:Header>
+  <Soap:Body>
+    <eb:Manifest eb:version="2.0">
+      <eb:Reference xlink:href="cid:6ae2017d-2b1f-41cf-8c10-f306b5d996f7" />
+    </eb:Manifest>
+  </Soap:Body>
+</Soap:Envelope>

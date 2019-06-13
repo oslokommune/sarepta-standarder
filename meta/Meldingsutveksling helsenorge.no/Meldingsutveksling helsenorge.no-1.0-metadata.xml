@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Temaer>
+		<Tema>Meldingsutveksling helsenorge.no</Tema>
+	</Temaer>
+	<Navn>Meldingsutveksling helsenorge.no</Navn> 
+	<Versjon>1.0</Versjon>
+	<Identifikator>Helsenorge.no</Identifikator>
+	<Utgitt>11/2018</Utgitt>
+	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Helsenorge.no</Beskrivelse>
+			<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/helsenorgeno</Referanse>
+		</Informasjon>
+		<Informasjon>
+			<Beskrivelse>HL7 FHIR definisjoner</Beskrivelse>
+			<Referanse>https://www.hl7.org/fhir/definitions.xml.zip</Referanse>
+		</Informasjon>
+	</MerInformasjon>
+	<Kravdokumenter> 
+		<Kravdokument>
+			<Beskrivelse>AMQP spesifikasjon Helsenorge.no (PDF)</Beskrivelse>
+			<Referanse>kravdokument/MeldingsutvekslingHelsenorge_no/AMQP_spesifikasjon_helsenorge.no.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Digital dialog - Implementasjonsguide standarder (PDF)</Beskrivelse>
+			<Referanse>kravdokument/MeldingsutvekslingHelsenorge_no/Digital_Dialog-Implementasjonsguide.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Tjenesteoversikt - Implementasjonsguide standarder (PDF)</Beskrivelse>
+			<Referanse>kravdokument/MeldingsutvekslingHelsenorge_no/Tjenesteoversikt_-_Implementasjonsguide_standarder.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+	<Skjemaer>
+		<Skjema>
+			<Beskrivelse>Hodemelding</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/MsgHead-v1_2.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/msghead/2006-05-24</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Dialogmelding 1.1</Beskrivelse>
+			<Referanse>skjema/dialogmelding/2013-01-23/dialogmelding-v1.1.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/dialog/2013-01-23</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>iCalendar/xCal</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/iCalendar.xsd</Referanse>
+			<Namespace>Urn:ietf:params:xml:ns:icalendar-2.0</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>x-referral-id extensions</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/iCalendar-DigitalDialogSpesialist-extensions.xsd</Referanse>
+			<Namespace>Urn:ietf:params:xml:ns:icalendar-2.0</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Pasientrelasjon</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/pasientrelasjon-2014-03-28.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/pasientrelasjon/2014-03-28</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Helsepersonell</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/helsepersonell-2015-05-04.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/helsepersonell/2015-05-04</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Personer</Beskrivelse>
+			<Referanse>skjema/felleskomponenter/personer-2014-03-28.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/person/2014-03-28</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>M1 Resept</Beskrivelse>
+			<Referanse>skjema/eresept/m1/2013-10-08/ER-M1-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m1/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Applikasjons-kvittering</Beskrivelse>
+			<Referanse>skjema/applikasjonskvittering/AppRec-v1.1.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/apprec/2012-02-15</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Samtykkereferanse</Beskrivelse>
+			<Referanse>skjema/Personvern/samtykke-v1.0.xsd</Referanse>
+			<Namespace>http://ehelse.no/xmlstds/samtykke/v1.0</Namespace>
+		</Skjema>
+		
+	</Skjemaer>
+	
+</StandardMetadata>

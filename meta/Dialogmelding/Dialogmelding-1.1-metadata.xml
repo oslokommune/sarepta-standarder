@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<!-- #434357 -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Temaer>
+		<Tema>Samhandling i pasientforløp</Tema>
+	</Temaer>
 	<Navn>Dialogmelding</Navn>
 	<Versjon>1.1</Versjon>
 	<Identifikator>HIS 80603:2017</Identifikator>
@@ -56,6 +60,7 @@
 						<Referanse>http://ehelse.no/HIS1206-2018</Referanse>
 					</Informasjon>
 				</MerInformasjon>
+				
 			</Profil>
 		</Profiler>
 
@@ -81,6 +86,15 @@
 			<Beskrivelse>Status på henvisning (PDF)</Beskrivelse>
 			<Referanse>kravdokument/dialogmelding/v11/HIS_1206-2018 Status på henvisning.pdf</Referanse>
 		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger HITS 1174:2017 (PDF)</Beskrivelse>
+			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
+		</Kravdokument>
+				<Kravdokument>
+			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer HITS 1218:2019 (PDF)</Beskrivelse>
+			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer.pdf</Referanse>
+		</Kravdokument>
+
 	</Kravdokumenter>
 
 	<Skjemaer>
@@ -196,6 +210,14 @@
 			<Beskrivelse>Funksjonsfil som benyttes for alle visningsfiler (Fra SourceForge): string.xsl</Beskrivelse>
 			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
 		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>M1 - Resept(v2.4): m1-2html-v2.4.xsl</Beskrivelse>
+			<Referanse>visningsfil/eresept/m1/m1-2html-v2.4.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>M1 - Resept(v2.5): m1-2html-v2.4.xsl</Beskrivelse>
+			<Referanse>visningsfil/eresept/m1/m1-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
 	</Visningsfiler>
 	 
 	<Eksempler>
@@ -208,12 +230,5 @@
 			<Referanse>eksempel/Dialogmelding/Dialogmelding-v1-1/Status_paa_henvisning-InnkaltEtterViderehenvisning.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
-	 
-	<RelaterteFiler>
-		<RelatertFil>
-			<Beskrivelse>Implementering av dialogmelding for spørsmål, svar og avviksmelding HISD 80903:2009 (PDF)</Beskrivelse>
-			<Referanse>relaterteFiler/dialogmelding/HISD_80903_2009-Dialogmelding-Implementeringsveiledning.pdf</Referanse>
-		</RelatertFil>
-	</RelaterteFiler>
 
 </StandardMetadata>

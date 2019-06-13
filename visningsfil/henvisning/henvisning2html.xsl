@@ -2,6 +2,7 @@
 <!--
 
 Endringslogg
+- 25.01.19: v4.1.12 - Endret overskrifter
 - 19.06.18: v4.1.11 - Fjernet unødvendige overskrifter i legemiddelvisning.
 - 06.06.18: v4.1.10 - Bugfix hvor 'Andre relevante tilstander' var satt til å bli oppgitt i elementet ReasonAsText istedet for InfItem. Endret 'CAVE' til 'Kritisk informasjon'.
 - 03.05.18: v4.1.9 - Bugfix hvor informasjon ang. KontaktpersonHelspersonell ikke ble vist
@@ -20,9 +21,7 @@ Design:
 - Responsive kollaps ved 767px bredde.
 Om:
 - Inngår i Direktoratet for e-helse visningsfiler
-Forfatter:
-- Jan Sigurd Dragsjø
-
+ 
 -->
 <xsl:stylesheet version="1.0"
 	xmlns:xhtml="http://www.w3.org/1999/xhtml"
@@ -30,6 +29,8 @@ Forfatter:
 	xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1"
 	xmlns:base="http://www.kith.no/xmlstds/base64container"
 	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24"
+	xmlns:doc10="http://www.kith.no/xmlstds/henvisning/2005-07-08"
+	xmlns:doc11="http://www.kith.no/xmlstds/henvisning/2012-02-15"
 	exclude-result-prefixes="xhtml fk1 base mh" >
 
 	<xsl:import href="../felleskomponenter/funksjoner.xsl"/>
@@ -47,11 +48,16 @@ Forfatter:
 	<xsl:variable name="std-col" select="8"/>
 	<xsl:variable name="std-td" select="100"/>
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'henvisning v.uavhengig - v4.1.11 '"/>
+	<xsl:variable name="versjon" select="'henvisning v.uavhengig - v4.1.12 '"/>
 
 	<xsl:variable name="VisOvrigHelsetjenesteInfoVisSkjul" select="true()"/>
 	<xsl:variable name="VisDokInfoVisSkjul" select="true()"/>
 	<xsl:variable name="VisRefDokVisSkjul" select="true()"/>
+	
+	<xsl:variable name="IsTestMessage" select="
+		boolean(/doc10:Message/doc10:Status[@V = 'TEST'])
+		or boolean(/doc11:Message/doc11:Status[@V = 'TEST'])
+		or boolean(/mh:MsgHead/mh:MsgInfo/mh:ProcessingStatus[@V = 'D'])" />
 
 	 <xsl:template match="/">
 		<html>
@@ -69,6 +75,9 @@ Forfatter:
 				</style>
 			</head>
 			<body>
+				<xsl:if test="$IsTestMessage">
+					<p class="TestMessageWarning">OBS: Dette er en testmelding.</p>
+				</xsl:if>
 				<xsl:for-each select="child::*[local-name()='Message']">  <!-- v1.0, v1.1 -->
 					<xsl:call-template name="Message"/>
 				</xsl:for-each>
@@ -322,12 +331,7 @@ Forfatter:
 			<h1>
 				<xsl:choose>
 					<xsl:when test="namespace-uri() = 'http://ehelse.no/xmlstds/henvisning/2017-11-30'">
-						<xsl:for-each select="child::*[local-name()='TypeInnholdIMelding']/child::*[local-name()='TypeInnhold']">
-							<xsl:choose>
-								<xsl:when test="contains(@S,'8455')"><xsl:call-template name="k-8455"/></xsl:when>
-								<xsl:otherwise><xsl:call-template name="k-dummy"/></xsl:otherwise>
-							</xsl:choose>
-						</xsl:for-each>
+						<xsl:value-of select="/mh:MsgHead/mh:MsgInfo/mh:Type/@DN"/>				
 					</xsl:when>
 					<xsl:otherwise>Henvisning&#160;-&#160;<xsl:for-each select="child::*[local-name()='MsgDescr']">
 							<xsl:call-template name="k-8455"/>
@@ -1069,17 +1073,17 @@ Forfatter:
 				</tbody>
 			</table>
 		</div>
-						<div class="eh-row-5">
-					<div class="eh-col-1 eh-last-child">
-						<span class="eh-label">Meldingsstatus</span>
-						<span class="eh-field">
-							<xsl:for-each select="//mh:Status">
-								<xsl:call-template name="k-8419"/>
-							</xsl:for-each>
-						</span>
-					</div>
-				</div>
 
+		<div class="eh-row-5">
+			<div class="eh-col-1 eh-last-child">
+				<span class="eh-label">Meldingsstatus</span>
+				<span class="eh-field">
+					<xsl:for-each select="//mh:Status">
+						<xsl:call-template name="k-8419"/>
+					</xsl:for-each>
+				</span>
+			</div>
+		</div>
 	</xsl:template>
 
 	<!-- Template som kalles fra BunnTillegg i meldingshodet. Kan brukes til visning av egenkomponert bunn -->
@@ -1734,7 +1738,7 @@ Forfatter:
 						</span>
 					</div>
 				</xsl:if>
-
+				
 			</div>
 			<xsl:for-each select="child::*[local-name()='Consent']">
 				<div class="eh-row-4">
@@ -3575,6 +3579,17 @@ Forfatter:
 
 	<xsl:template name="ServReq_Henvisning"> <!-- Message/ServReq (1.0, 1.1) eller /MsgHead/Document/Content/Henvisning (v2.0)-->
 		<div  class="eh-row-4">
+			<xsl:for-each select="child::*[local-name()='TypeInnholdIMelding']/child::*[local-name()='TypeInnhold']">
+				<div class="eh-col-1">
+					<span class="eh-label">Type henvisning</span>
+					<span class="eh-field">
+						<xsl:choose>
+							<xsl:when test="contains(@S,'8455')"><xsl:call-template name="k-8455"/></xsl:when>
+							<xsl:otherwise><xsl:call-template name="k-dummy"/></xsl:otherwise>
+						</xsl:choose>
+					</span>
+				</div>
+			</xsl:for-each>
 			<xsl:if test="child::*[local-name()='IssueDate']">
 				<div class="eh-col-1">
 					<span class="eh-label">Utstedt</span>
@@ -3651,8 +3666,8 @@ Forfatter:
 						</xsl:call-template>
 					</span>
 				</div>
-			</xsl:if>
-
+			</xsl:if>	
+				
 		</div>
 
 		<xsl:for-each select="child::*[local-name()='ReqServ']">

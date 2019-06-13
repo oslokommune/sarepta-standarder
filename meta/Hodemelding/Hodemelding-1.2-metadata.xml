@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
-<!-- Release test 2019-02-03 -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Temaer>
+		<Tema>Grunnleggende standarder og spesifikasjoner for elektronisk samhandling</Tema>
+	</Temaer>
 	<Navn>Hodemelding</Navn>
 	<Versjon>1.2</Versjon>
 	<Identifikator>HIS 80601:2006</Identifikator>

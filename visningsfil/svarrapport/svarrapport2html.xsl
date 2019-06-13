@@ -29,7 +29,9 @@ Om:
 <xsl:stylesheet version="1.0" 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
 	xmlns:base="http://www.kith.no/xmlstds/base64container" 
-	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+	xmlns:xhtml="http://www.w3.org/1999/xhtml"
+	xmlns:doc13="http://www.kith.no/xmlstds/labsvar/2008-12-01"
+	xmlns:doc14="http://www.kith.no/xmlstds/labsvar/2012-02-15"
 	exclude-result-prefixes="base xhtml">
 
 	<xsl:import href="../felleskomponenter/funksjoner.xsl"/>
@@ -71,6 +73,10 @@ Om:
 	<!-- Boolsk variabel for å anonymisere pasienten i visningen -->
 	<xsl:variable name="Anonymisert" select="false()"/>
 	
+	<xsl:variable name="IsTestMessage" select="
+		boolean(/doc13:Message/doc13:Status[@V = 'TEST'])
+		or boolean(/doc14:Message/doc14:Status[@V = 'TEST'])" />
+	
 	<!-- Meldingsstart -->
 	<xsl:template match="/">
 		<html>
@@ -88,6 +94,9 @@ Om:
 				</style>
 			</head>
 			<body>
+				<xsl:if test="$IsTestMessage">
+					<p class="TestMessageWarning">OBS: Dette er en testmelding.</p>
+				</xsl:if>
 				<xsl:for-each select="child::*[local-name()='Message']">
 					<xsl:call-template name="Message"/>
 				</xsl:for-each>

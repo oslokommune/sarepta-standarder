@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<!-- #434357  -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Temaer>
+		<Tema>Informasjonsdeling</Tema>
+	</Temaer>
 	<Navn>IHE XDS metadata</Navn>
 	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 1169:2016</Identifikator>
@@ -18,7 +22,7 @@
 	<Kravdokumenter>
 		<Kravdokument>
 			<Beskrivelse>IHE XDS metadata - Norsk profil for IHE XDS.b (PDF)</Beskrivelse>
-			<Referanse>kravdokument/IHE_XDS_metadata/HIS 1169_2016 IHE XDS metadata -korrigert.pdf</Referanse>
+			<Referanse>kravdokument/IHS_XDS_metadata/HIS 1169_2016 IHE XDS metadata -korrigert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
 	

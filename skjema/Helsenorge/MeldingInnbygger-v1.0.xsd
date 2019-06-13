@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:ns1="http://ehelse.no/xmlstds/MeldingInnbygger/2018-09-25" targetNamespace="http://ehelse.no/xmlstds/MeldingInnbygger/2018-09-25" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../../skjema/felleskomponenter/kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="../../skjema/felleskomponenter/felleskomponent1.xsd"/>
+	<element name="MeldingInnbygger">
+		<annotation>
+			<documentation>Inneholder informasjon om hvordan meldingen skal vises til innbygger.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Innholdstype" type="kith:CV" minOccurs="0">
+					<annotation>
+						<documentation>Angir innholdstype. Gjelder for Helsenorge.</documentation>
+					</annotation>
+				</element>
+				<element name="Emne">
+					<annotation>
+						<documentation>Emnetekst/overskrift på meldingen i Helsenorge og digital postkasse.</documentation>
+					</annotation>
+					<simpleType>
+						<restriction base="string">
+							<minLength value="1"/>
+							<maxLength value="192"/>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="Meldingsavsender">
+					<annotation>
+						<documentation>Angir navn på meldingsavsender som vises på Helsenorge.</documentation>
+					</annotation>
+					<simpleType>
+						<restriction base="string">
+							<maxLength value="255"/>
+							<minLength value="1"/>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="Meldingstekst" type="string">
+					<annotation>
+						<documentation>Meldingstekst som i Helsenorge vil vises på som egen tekst på meldingen i tillegg til vedlegget, og for digital post vil meldingen være første side på vedlegget.</documentation>
+					</annotation>
+				</element>
+				<element name="SvarTillatt" type="boolean">
+					<annotation>
+						<documentation>Angir om innbygger kan svare på meldingen eller ikke. Gjelder Helsenorge.</documentation>
+					</annotation>
+				</element>
+				<element name="UtsattVisningstidspunkt" type="dateTime" minOccurs="0">
+					<annotation>
+						<documentation>Dato og tidspunkt for når en melding tidligst kan gjøres tilgjengelig for innbygger. Gjelder Helsenorge og digital postkasse.</documentation>
+					</annotation>
+				</element>
+				<element name="DelInnholdMedHelsepersonell" type="kith:CV" minOccurs="0">
+					<annotation>
+						<documentation>Her angis oppfordring til innbygger om å dele meldingens innhold med helsepersonell. Deling skjer aldri automatisk, men skal være et eksplisitt valg innbygger gjør. Helsenorge legger til rette for at dette kan gjøres på en effektiv måte for innbygger. Helsepersonells rolle i forhold til pasient (OID=9246). Verdier pr 2018-07-10:
+1 Pasientansvarlig lege
+2 Pasientansvarlig psykolog
+3 Behandlingsansvarlig lege
+4 Journalansvarlig
+5 Informasjonsansvarlig
+6 Fastlege
+7 Faglig ansvarlig for vedtak i psykisk helsevern
+8 Koordinator Individuell plan
+9 Koordinator (spesialisthelsetjenesteloven)
+10 Kontaktlege Pasient- og brukerrettighetsloven§ 2-5.
+11 Kontaktpsykolog</documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -257,7 +257,7 @@
 			</xsl:if>
 			<xsl:if test="//child::*[local-name()='InnholdKonsultasjon']/child::*[local-name()='Merknad'] or //child::*[local-name()='TypeInnholdIMelding']/child::*[local-name()='Merknad']">
 				<div class="eh-col-1">
-					<span class="eh-label">>Merknad til innhold</span>
+					<span class="eh-label">Merknad til innhold</span>
 					<span class="eh-field">
 						<xsl:for-each select="//child::*[local-name()='InnholdKonsultasjon']/child::*[local-name()='Merknad']">
 							<xsl:call-template name="line-breaks">
