@@ -86,5 +86,11 @@
 		</Skjema>
 		
 	</Skjemaer>
+	<Eksempler>
+		<Eksempel>
+			<Beskrivelse>Meldingseksempler for Digital dialog</Beskrivelse>
+			<Referanse>eksempel/MeldingsutvekslingHelsenorge/SystemdokumentasjonKommunikasjonsprosesser-verifiserbare.zip</Referanse>
+		</Eksempel>
+	</Eksempler>
 	
 </StandardMetadata>
