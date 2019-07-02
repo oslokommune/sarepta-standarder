@@ -17,7 +17,7 @@
 		</Informasjon>
 	</MerInformasjon>
 	
-	 <Profiler>
+	<Profiler>
         <Profil>
             <ProfilId>1</ProfilId>
             <Beskrivelse>Radiologi</Beskrivelse>
@@ -28,7 +28,7 @@
 	        <MerInformasjon>
 	            <Informasjon>
 	                <Beskrivelse>Svarrapport: radiologi v1.4</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1142-2014</Referanse>
+		            <Referanse>https://ehelse.no/standarder/radiologi-v1.4-svarrapport</Referanse>
 		        </Informasjon>
 	        </MerInformasjon>
         </Profil>
@@ -41,7 +41,7 @@
 	        <MerInformasjon>
 	            <Informasjon>
 	                <Beskrivelse>Svarrapport: patologi v1.4</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1141-2014</Referanse>
+		            <Referanse>https://ehelse.no/standarder/patologi-v1.4-svarrapport</Referanse>
 		        </Informasjon>  
 	        </MerInformasjon>
         </Profil>
@@ -54,7 +54,7 @@
 	        <MerInformasjon>
 	            <Informasjon>
 	                <Beskrivelse>Svarrapportering: immunologi v1.4</Beskrivelse>
-		        <Referanse>http://ehelse.no/HIS1140-2014</Referanse>
+		        <Referanse>https://ehelse.no/standarder/immunologi-v1.4-svarrapport</Referanse>
 		        </Informasjon>
 		    </MerInformasjon>
         </Profil>
@@ -67,7 +67,7 @@
 	        <MerInformasjon>
                 <Informasjon>
 	                <Beskrivelse>Svarrapportering: mikrobiologi v1.4</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1139-2014</Referanse>
+		            <Referanse>https://ehelse.no/standarder/mikrobiologi-v1.4-svarrapport</Referanse>
 		        </Informasjon>
 		    </MerInformasjon>
         </Profil>
@@ -80,7 +80,7 @@
 	        <MerInformasjon>
 	            <Informasjon>
 	                <Beskrivelse>Svarrapportering: medisinsk biokjemi v1.4</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1138-2014</Referanse>
+		            <Referanse>https://ehelse.no/standarder/medisinsk-biokjemi-v1.4-svarrapport</Referanse>
 	            </Informasjon>
             </MerInformasjon>
         </Profil>
@@ -89,36 +89,94 @@
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Svarrapportering av medisinske tjenester v.1.4 (PDF)</Beskrivelse>
-			<Referanse>kravdokument/svarrapport/HIS_80822_2014 Svarrapportering av medisinske tjenester v1.4 -korrigert.pdf</Referanse>
+			<Beskrivelse>Svarrapportering av medisinske tjenester v.1.4 (oppdatert standard) (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/HIS 80822_2014 Svarrapportering av medisinske tjenester v1.4 -oppdatert.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Orginal standard (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/HIS 80822_2014 Svarrapportering av medisinske tjenester v1.4.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Endringsoversikt (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/Endringsoversikt HIS 80822_2014.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>1</ProfilId>
-			<Beskrivelse>Radiologi (PDF)</Beskrivelse>
+			<Beskrivelse>Radiologi (oppdatert standard) (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/HIS_1142_2014_Svarrapport radiologi -oppdatert.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>1</ProfilId>
+			<Beskrivelse>Radiologi: Endringsoversikt (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/Endringoversikt HIS 1142_2014.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>1</ProfilId>
+			<Beskrivelse>Radiologi: Orginal standard (PDF)</Beskrivelse>
 			<Referanse>kravdokument/svarrapport/HIS_1142_2014_Svarrapport-Radiologi.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>2</ProfilId>
-			<Beskrivelse>Patologi (PDF)</Beskrivelse>
+			<Beskrivelse>Patologi (oppdatert standard) (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/HIS_1141_2014_Svarrapport-Patologi -oppdatert.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>2</ProfilId>
+			<Beskrivelse>Patologi: Endringsoversikt (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/Endringoversikt HIS 1141_2014.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>2</ProfilId>
+			<Beskrivelse>Patologi: Orginal standard (PDF)</Beskrivelse>
 			<Referanse>kravdokument/svarrapport/HIS_1141_2014_Svarrapport-Patologi.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>3</ProfilId>
-			<Beskrivelse>Immunologi (PDF)</Beskrivelse>
+			<Beskrivelse>Immunologi (oppdatert standard) (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/HIS_1140_2014_Svarrapport-Immunologi -oppdatert.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>3</ProfilId>
+			<Beskrivelse>Immunologi: Endringsoversikt (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/Endringoversikt HIS 1140_2014.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>3</ProfilId>
+			<Beskrivelse>Immunologi: Orginal standard (PDF)</Beskrivelse>
 			<Referanse>kravdokument/svarrapport/HIS_1140_2014_Svarrapport-Immunologi.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>4</ProfilId>
-			<Beskrivelse>Mikrobiologi (PDF)</Beskrivelse>
+			<Beskrivelse>Mikrobiologi (oppdatert standard) (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/HIS_1139_2014_Svarrapport-Mikrobiologi -oppdatert.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>4</ProfilId>
+			<Beskrivelse>Mikrobiologi: Endringsoversikt (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/Endringoversikt HIS 1139_2014.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>4</ProfilId>
+			<Beskrivelse>Mikrobiologi: Orginal standard (PDF)</Beskrivelse>
 			<Referanse>kravdokument/svarrapport/HIS_1139_2014_Svarrapport-Mikrobiologi.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>5</ProfilId>
-			<Beskrivelse>Medisinsk biokjemi (PDF)</Beskrivelse>
-			<Referanse>kravdokument/svarrapport/HIS_1138_2014_Svarrapport-MedisinskBiokjemi -korrigert.pdf</Referanse>
+			<Beskrivelse>Medisinsk biokjemi (oppdatert standard) (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/HIS_1138_2014_Svarrapport-MedisinskBiokjemi -oppdatert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger HITS 1174:2017 (PDF)</Beskrivelse>
+			<ProfilId>5</ProfilId>
+			<Beskrivelse>Medisinsk biokjemi: Endringsoversikt (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/Endringoversikt HIS 1138_2014.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>5</ProfilId>
+			<Beskrivelse>Medisinsk biokjemi: Orginal standard (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/HIS_1138_2014_Svarrapport-MedisinskBiokjemi.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger (PDF)</Beskrivelse>
 			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
 		</Kravdokument>
 		
@@ -131,7 +189,7 @@
 			<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1101_2015_NLK - Teknisk veileder v.2.0.pdf</Referanse>
 		</Kravdokument>
 			<Kravdokument>
-			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer HITS 1218:2019 (PDF)</Beskrivelse>
+			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer (PDF)</Beskrivelse>
 			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer.pdf</Referanse>
 		</Kravdokument>
 
