@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
-	<Temaer>
-		<Tema>Samhandling i pasientforløp</Tema>
-	</Temaer>
 	<Navn>Dialogmelding</Navn>
 	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 80603:2006</Identifikator>
@@ -13,7 +10,7 @@
 	<MerInformasjon>
 		<Informasjon>
 			<Beskrivelse>Dialogmelding 1.0 (HIS 80603:2006)</Beskrivelse>
-			<Referanse>http://ehelse.no/HIS80603-2006</Referanse>
+			<Referanse>https://ehelse.no/standarder/dialogmelding-v1.0</Referanse>
 		</Informasjon>
 	</MerInformasjon>
 	
@@ -28,7 +25,7 @@
 				<MerInformasjon>
 					<Informasjon>
 						<Beskrivelse>Forespørsel og svar på forespørsel i tilknytning til pleie- og omsorgsmeldinger v1.0</Beskrivelse>
-						<Referanse>http://ehelse.no/HIS1152-2006</Referanse>
+						<Referanse>https://ehelse.no/standarder/foresporsel-og-svar-pa-foresporsel-i-tilknytning-til-pleie-og-omsorgsmeldinger</Referanse>
 					</Informasjon>
 				</MerInformasjon>
 			</Profil>
@@ -42,9 +39,12 @@
 				<MerInformasjon>
 					<Informasjon>
 						<Beskrivelse>Tilbakemelding om feil i mottatt melding v1.0</Beskrivelse>
-						<Referanse>http://ehelse.no/HIS1151-2006</Referanse>
+						<Referanse>https://ehelse.no/standarder/tilbakemelding-om-feil-i-mottatt-melding</Referanse>
 					</Informasjon>
 				</MerInformasjon>
+				<Temaer>
+					<Tema>Grunnleggende standarder for elektronisk samhandling</Tema>
+				</Temaer>
 			</Profil>
 		</Profiler>
 	
@@ -60,21 +60,31 @@
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>2</ProfilId>
-			<Beskrivelse>Tilbakemelding om feil i mottatt melding (PDF)</Beskrivelse>
-			<Referanse>kravdokument/dialogmelding/HIS_1151_2006 Tilbakemelding om feil i mottatt melding -korrigert.pdf</Referanse>
+			<Beskrivelse>Tilbakemelding om feil i mottatt melding (oppdatert standard) (PDF)</Beskrivelse>
+			<Referanse>kravdokument/dialogmelding/HIS_1151_2006 Tilbakemelding om feil i mottatt melding -oppdatert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger HITS 1174:2017 (PDF)</Beskrivelse>
+			<ProfilId>2</ProfilId>
+			<Beskrivelse>Tilbakemelding om feil i mottatt melding: Endringsoversikt (PDF)</Beskrivelse>
+			<Referanse>kravdokument/dialogmelding/Endringsoversikt HIS 1151_2006.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>2</ProfilId>
+			<Beskrivelse>Tilbakemelding om feil i mottatt melding: Orginal standard (PDF)</Beskrivelse>
+			<Referanse>kravdokument/dialogmelding/HIS 1151 2006 Avviksmelding.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger (PDF)</Beskrivelse>
 			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
 		</Kravdokument>
 		
 		<Kravdokument>
-			<Beskrivelse>Implementering av dialogmelding for spørsmål, svar og avviksmelding HISD 80903:2009 (PDF)</Beskrivelse>
+			<Beskrivelse>Implementering av dialogmelding for spørsmål, svar og avviksmelding (PDF)</Beskrivelse>
 			<Referanse>relaterteFiler/dialogmelding/HISD_80903_2009-Dialogmelding-Implementeringsveiledning.pdf</Referanse>
 		</Kravdokument>
 				<Kravdokument>
-			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer HITS 1218:2019 (PDF)</Beskrivelse>
-			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer.pdf</Referanse>
+			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer (PDF)</Beskrivelse>
+			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer -oppdatert.pdf</Referanse>
 		</Kravdokument>
 
 	

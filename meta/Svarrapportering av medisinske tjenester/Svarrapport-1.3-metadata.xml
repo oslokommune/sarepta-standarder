@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
-	<Temaer>
-		<Tema>Samhandling i pasientforløp</Tema>
-	</Temaer>
 	<Navn>Svarrapportering av medisinske tjenester</Navn>
 	<Versjon>1.3</Versjon>
 	<Identifikator>HIS 80822:2008</Identifikator>
@@ -13,7 +10,7 @@
 	<MerInformasjon>
 		<Informasjon>
 			<Beskrivelse>Svarrapportering av medisinske tjenester v1.3</Beskrivelse>
-			<Referanse>http://ehelse.no/HIS80822-2008</Referanse>
+			<Referanse>https://ehelse.no/standarder/svarrapportering-av-medisinske-tjenester-v1.3</Referanse>
 		</Informasjon>
 	</MerInformasjon>
 
@@ -28,7 +25,7 @@
 	        <MerInformasjon>
 	            <Informasjon>
 	                <Beskrivelse>Svarrapport: radiologi v1.3</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1142-2008</Referanse>
+		            <Referanse>https://ehelse.no/standarder/radiologi-v1.3-svarrapport</Referanse>
 		        </Informasjon>
 	        </MerInformasjon>
         </Profil>
@@ -41,7 +38,7 @@
 	        <MerInformasjon>
 	            <Informasjon>
 	                <Beskrivelse>Svarrapport: patologi v1.3</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1141-2008</Referanse>
+		            <Referanse>https://ehelse.no/standarder/patologi-v1.3-svarrapport</Referanse>
 		        </Informasjon>  
 	        </MerInformasjon>
         </Profil>
@@ -54,7 +51,7 @@
 	        <MerInformasjon>
 	            <Informasjon>
 	                <Beskrivelse>Svarrapport: immunologi v1.3</Beskrivelse>
-					<Referanse>http://ehelse.no/HIS1140-2008</Referanse>
+					<Referanse>https://ehelse.no/standarder/immunologi-v1.3-svarrapport</Referanse>
 		        </Informasjon>
 		    </MerInformasjon>
         </Profil>
@@ -67,7 +64,7 @@
 	        <MerInformasjon>
                 <Informasjon>
 	                <Beskrivelse>Svarrapport: mikrobiologi v1.3</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1139-2008</Referanse>
+		            <Referanse>https://ehelse.no/standarder/mikrobiologi-v1.3-svarrapport</Referanse>
 		        </Informasjon>
 		    </MerInformasjon>
         </Profil>
@@ -80,7 +77,7 @@
 	        <MerInformasjon>
 	            <Informasjon>
 	                <Beskrivelse>Svarrapport: medisinsk biokjemi v1.3</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1138-2008</Referanse>
+		            <Referanse>https://ehelse.no/standarder/medisinsk-biokjemi-v1.3-svarrapport</Referanse>
 	            </Informasjon>
             </MerInformasjon>
         </Profil>
@@ -89,54 +86,62 @@
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Svarrapportering av medisinske tjenester v1.3 (PDF)</Beskrivelse>
-			<Referanse>kravdokument/svarrapport/HIS_80822_2008 Svarrapportering av medisinske tjenester v1.3 -korrigert.pdf</Referanse>
+			<Beskrivelse>Svarrapportering av medisinske tjenester v1.3 (oppdatert standard) (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/HIS 80822_2008 Svarrapportering av medisinske tjenester v1.3 -oppdatert.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Orginal standard (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/HIS 80822_2008 Svarrapportering av medisinske tjenester v1.3.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Endringsoversikt (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/Endringoversikt HIS 80822_2008.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>1</ProfilId>
-			<Beskrivelse>Radiologi (PDF)</Beskrivelse>
-			<Referanse>kravdokument/svarrapport/HIS_1142_2008_Svarrapport-Radiologi.pdf</Referanse>
+			<Beskrivelse>Radiologi (oppdatert standard) (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/HIS_1142_2008_Svarrapport-Radiologi -oppdatert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>2</ProfilId>
-			<Beskrivelse>Patologi (PDF)</Beskrivelse>
-			<Referanse>kravdokument/svarrapport/HIS_1141_2008_Svarrapport-Patologi.pdf</Referanse>
+			<Beskrivelse>Patologi (oppdatert standard) (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/HIS_1141_2008_Svarrapport-Patologi -oppdatert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>3</ProfilId>
-			<Beskrivelse>Immunologi (PDF)</Beskrivelse>
-			<Referanse>kravdokument/svarrapport/HIS_1140_2008_Svarrapport-Immunologi.pdf</Referanse>
+			<Beskrivelse>Immunologi (oppdatert standard) (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/HIS_1140_2008_Svarrapport-Immunologi -oppdatert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>4</ProfilId>
-			<Beskrivelse>Mikrobiologi (PDF)</Beskrivelse>
-			<Referanse>kravdokument/svarrapport/HIS_1139_2008_Svarrapport-Mikrobiologi.pdf</Referanse>
+			<Beskrivelse>Mikrobiologi (oppdatert standard) (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/HIS_1139_2008_Svarrapport-Mikrobiologi -oppdatert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>5</ProfilId>
-			<Beskrivelse>Medisinsk biokjemi (PDF)</Beskrivelse>
-			<Referanse>kravdokument/svarrapport/HIS_1138_2008_Svarrapport-MedisinskBiokjemi.pdf</Referanse>
+			<Beskrivelse>Medisinsk biokjemi (oppdatert standard) (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/HIS_1138_2008_Svarrapport-MedisinskBiokjemi -oppdatert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger HITS 1174:2017 (PDF)</Beskrivelse>
+			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger (PDF)</Beskrivelse>
 			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
 		</Kravdokument>
 		
 		<Kravdokument>
-			<Beskrivelse>Retningslinjer for bruk av standardene for Rekvisisjon av medisinske tjenester og Svarrapportering av medisinske tjenester</Beskrivelse>
+			<Beskrivelse>Retningslinjer for bruk av standardene for Rekvisisjon av medisinske tjenester og Svarrapportering av medisinske tjenester (PDF)</Beskrivelse>
 			<Referanse>relaterteFiler/FellesForFlereStandarder/HITS_1102_2014_Retningslinjer for bruk av rekvisisjon og svarrapport -korrigert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Bruk av Norsk laboratoriekodeverk (NLK) i rekvirering og svarrapportering av medisinske tjenester</Beskrivelse>
+			<Beskrivelse>Bruk av Norsk laboratoriekodeverk (NLK) i rekvirering og svarrapportering av medisinske tjenester (PDF)</Beskrivelse>
 			<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1101_2015_NLK - Teknisk veileder v.2.0.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Veiledning til mapping av hovedfunn for kolon- og rektumkarsinomer</Beskrivelse>
+			<Beskrivelse>Veiledning til mapping av hovedfunn for kolon- og rektumkarsinomer (PDF)</Beskrivelse>
 			<Referanse>relaterteFiler/svarrapport/HISD_1170_2004-Veiledning-hovedfunn_for_kolon-_og_rektumkarsioner-svar-v11.pdf</Referanse>
 		</Kravdokument>
 				<Kravdokument>
-			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer HITS 1218:2019 (PDF)</Beskrivelse>
-			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer.pdf</Referanse>
+			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer (PDF)</Beskrivelse>
+			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer -oppdatert.pdf</Referanse>
 		</Kravdokument>
 
 	</Kravdokumenter>
