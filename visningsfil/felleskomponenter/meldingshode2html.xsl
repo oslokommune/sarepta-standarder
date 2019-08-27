@@ -178,8 +178,9 @@
 			</xsl:when>
 			<xsl:otherwise>
 				<div>
-					<div class="NoPrint">&#160;-&#160;</div>
-					<xsl:value-of select="child::*[local-name()=&quot;OrganisationName&quot;]"/>&#160;
+					<div class="NoPrint">-&#160;</div>
+					<xsl:value-of select="child::*[local-name()=&quot;OrganisationName&quot;]"/>&#160;(
+					<xsl:value-of select="child::*[local-name()=&quot;Ident&quot;]/child::*[local-name()=&quot;Id&quot;]"/>&#160;)
 				</div>
 			</xsl:otherwise>
 		</xsl:choose>

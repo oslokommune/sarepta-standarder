@@ -1802,7 +1802,7 @@ Om:
 					<div class="eh-col-1 eh-last-child">
 						<span class="eh-label">Prøvetakingsprosedyre</span>
 						<span class="eh-field">
-							<xsl:for-each select="child::*[local-name()='SampleCollInd']">
+							<xsl:for-each select="child::*[local-name()='SampleCollProc']">
 								<xsl:call-template name="k-dummy"/>
 							</xsl:for-each>
 						</span>
