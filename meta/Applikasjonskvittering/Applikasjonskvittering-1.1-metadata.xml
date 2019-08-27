@@ -2,7 +2,7 @@
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
 	<Temaer>
-		<Tema>Grunnleggende standarder og spesifikasjoner for elektronisk samhandling</Tema>
+		<Tema>Grunnleggende standarder for elektronisk samhandling</Tema>
 	</Temaer>
 	<Navn>Applikasjonskvittering</Navn>
 	<Versjon>1.1</Versjon>
@@ -13,14 +13,22 @@
 	<MerInformasjon>
 		<Informasjon>
 			<Beskrivelse>Applikasjonskvittering 1.1 (HIS 80415:2012)</Beskrivelse>
-			<Referanse>http://ehelse.no/HIS80415-2012</Referanse>
+			<Referanse>https://ehelse.no/standarder/applikasjonskvittering-v1.1</Referanse>
 		</Informasjon>
 	</MerInformasjon>
 	
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Applikasjonskvittering v1.1 (PDF)</Beskrivelse>
-			<Referanse>kravdokument/applikasjonskvittering/HIS 80415_2012 AppRec v1.1 -korrigert.pdf</Referanse>
+			<Beskrivelse>Applikasjonskvittering v1.1 (oppdatert standard) (PDF)</Beskrivelse>
+			<Referanse>kravdokument/applikasjonskvittering/HIS 80415_2012 AppRec v1.1 - oppdatert.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Orginal standard (PDF)</Beskrivelse>
+			<Referanse>kravdokument/applikasjonskvittering/HIS 80415_2012 AppRec v1.1.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Endringsoversikt (PDF)</Beskrivelse>
+			<Referanse>kravdokument/applikasjonskvittering/Endringsoversikt HIS 80415_2012.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
 	
@@ -44,8 +52,8 @@
 	
 	<RelaterteFiler>
 		<RelatertFil>
-			<Beskrivelse>Veiledning til riktig bruk av applikasjonskvittering (HISD 1168:2016) (PDF)</Beskrivelse>
-			<Referanse>relaterteFiler/applikasjonskvittering/HISD_1168_2016 Veiledning til riktig bruk av Applikasjonskvittering -korrigert.pdf</Referanse>
+			<Beskrivelse>Veiledning til riktig bruk av applikasjonskvittering (PDF)</Beskrivelse>
+			<Referanse>relaterteFiler/applikasjonskvittering/HITS_1168_2016 Veiledning til riktig bruk av Applikasjonskvittering -oppdatert.pdf</Referanse>
 		</RelatertFil>
 	</RelaterteFiler>
 </StandardMetadata>

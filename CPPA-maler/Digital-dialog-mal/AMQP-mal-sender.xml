@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="CPPViewOldPack.xsl"?>
 <!-- Endret 2015-07-02 (TTR)
       - La inn dialogmelding v1.2, SimplePart, Packaging og CollaborationRoles
 	 Endret 2015-11-23 (KM)
@@ -61,10 +62,12 @@ Endret 2018-10-25 (KVL)
 	- Lagt til CollaborationRole Dialog_Innbygger_AvtaleAvbestilling
 Endret 2018-12-20 (KVL)
 	- Oppdatert navnestandard på packaging. Må være _vxpx for at importjobb skal fungere
-	- Opdatert navnestandard på Action. Må være UPPERCASE for at importjobb skal fungere
+	- Opdatert navnestandard på Action. Action er case sensitiv i import og kan ikke endres for eksisterende verdier
 Endret 2019-05.22 (KVL)
 	- Lagt til CollaborationRole Dialog_Innbygger_Journal 1.0
 	- Lagt til CollaborationRole Dialog_Innbygger_Helsepersonell 1.1
+Endret 2019-08-07 (KVL)
+	- Oppdatert casing på Action i tråd med definisjon importert i CPP mal i grunndata
 -->
 <tns:CollaborationProtocolProfile xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:tns="http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" tns:cppid="UNIKCPPID" tns:version="string" xsi:schemaLocation="http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd cpp-cpa-2_0.xsd">
 	<tns:PartyInfo tns:partyName="PARTYNAME" tns:defaultMshChannelId="asyncAMQPChannelC1" tns:defaultMshPackageId="package_dialogmld_v1p1">
@@ -537,7 +540,7 @@ Endret 2019-05.22 (KVL)
 			<tns:ServiceBinding>
 				<tns:Service tns:type="string">InnsynHelseopplysning</tns:Service>
 				<tns:CanSend>
-					<tns:ThisPartyActionBinding tns:action="SVAR" tns:id="Dialog_Innbygger_Hreg_Innsyn_Helseopplysninger_1.1_Sending1" tns:packageId="package_dialogmld_v1p1_Innsyn_v6p0" xlink:type="simple">
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="Dialog_Innbygger_Hreg_Innsyn_Helseopplysninger_1.1_Sending1" tns:packageId="package_dialogmld_v1p1_Innsyn_v6p0" xlink:type="simple">
 						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
 						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
 					</tns:ThisPartyActionBinding>
@@ -549,7 +552,7 @@ Endret 2019-05.22 (KVL)
 					</tns:ThisPartyActionBinding>
 				</tns:CanSend>
 				<tns:CanReceive>
-					<tns:ThisPartyActionBinding tns:action="FORESPORSEL" tns:id="Dialog_Innbygger_Hreg_Innsyn_Helseopplysninger_1.1_Mottak1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+					<tns:ThisPartyActionBinding tns:action="Foresporsel" tns:id="Dialog_Innbygger_Hreg_Innsyn_Helseopplysninger_1.1_Mottak1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
 						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
 						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
 					</tns:ThisPartyActionBinding>
@@ -603,7 +606,7 @@ Endret 2019-05.22 (KVL)
 			<tns:ServiceBinding>
 				<tns:Service tns:type="string">RegisterBruk	</tns:Service>
 				<tns:CanSend>
-					<tns:ThisPartyActionBinding tns:action="SVAR" tns:id="Dialog_Innbygger_Hreg_Innsyn_Bruk" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="Dialog_Innbygger_Hreg_Innsyn_Bruk" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
 						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
 						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
 					</tns:ThisPartyActionBinding>
@@ -615,7 +618,7 @@ Endret 2019-05.22 (KVL)
 					</tns:ThisPartyActionBinding>
 				</tns:CanSend>
 				<tns:CanReceive>
-					<tns:ThisPartyActionBinding tns:action="FORESPORSEL" tns:id="Dialog_Innbygger_Hreg_Innsyn_Bruk_Mottak1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+					<tns:ThisPartyActionBinding tns:action="Foresporsel" tns:id="Dialog_Innbygger_Hreg_Innsyn_Bruk_Mottak1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
 						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
 						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
 					</tns:ThisPartyActionBinding>
@@ -1173,13 +1176,13 @@ Endret 2019-05.22 (KVL)
 			<tns:ServiceBinding>
 				<tns:Service tns:type="string">DIALOG_HELSEPERSONELL</tns:Service>
 				<tns:CanSend>
-					<tns:ThisPartyActionBinding tns:action="FORESPORSEL" tns:id="Dialog_Innbygger_Helsepersonell_Asynk1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+					<tns:ThisPartyActionBinding tns:action="Foresporsel" tns:id="Dialog_Innbygger_Helsepersonell_Asynk1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
 						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
 						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
 					</tns:ThisPartyActionBinding>
 				</tns:CanSend>
 				<tns:CanSend>
-					<tns:ThisPartyActionBinding tns:action="SVAR" tns:id="Dialog_Innbygger_Helsepersonell_Asynk2" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="Dialog_Innbygger_Helsepersonell_Asynk2" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
 						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
 						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
 					</tns:ThisPartyActionBinding>
@@ -1191,13 +1194,13 @@ Endret 2019-05.22 (KVL)
 					</tns:ThisPartyActionBinding>
 				</tns:CanSend>
 				<tns:CanReceive>
-					<tns:ThisPartyActionBinding tns:action="FORESPORSEL" tns:id="Dialog_Innbygger_Helsepersonell_Asynk3" tns:packageId="package_eKontakt_v1p2" xlink:type="simple">
+					<tns:ThisPartyActionBinding tns:action="Foresporsel" tns:id="Dialog_Innbygger_Helsepersonell_Asynk3" tns:packageId="package_eKontakt_v1p2" xlink:type="simple">
 						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
 						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
 					</tns:ThisPartyActionBinding>
 				</tns:CanReceive>
 				<tns:CanReceive>
-					<tns:ThisPartyActionBinding tns:action="SVAR" tns:id="Dialog_Innbygger_Helsepersonell_Asynk4" tns:packageId="package_eKontakt_v1p2" xlink:type="simple">
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="Dialog_Innbygger_Helsepersonell_Asynk4" tns:packageId="package_eKontakt_v1p2" xlink:type="simple">
 						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
 						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
 					</tns:ThisPartyActionBinding>
@@ -1365,7 +1368,7 @@ Endret 2019-05.22 (KVL)
 			<tns:ServiceBinding>
 				<tns:Service tns:type="string">MeldingTilInnbygger</tns:Service>
 				<tns:CanSend>
-					<tns:ThisPartyActionBinding tns:action="FORESPORSEL" tns:id="Dialog_Innbygger_Meldingsformidling_Sending_Asynk2" tns:packageId="package_meldingsformidling_v1p0" xlink:type="simple">
+					<tns:ThisPartyActionBinding tns:action="Foresporsel" tns:id="Dialog_Innbygger_Meldingsformidling_Sending_Asynk2" tns:packageId="package_meldingsformidling_v1p0" xlink:type="simple">
 						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
 						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
 					</tns:ThisPartyActionBinding>
@@ -1377,7 +1380,7 @@ Endret 2019-05.22 (KVL)
 					</tns:ThisPartyActionBinding>
 				</tns:CanSend>
 				<tns:CanReceive>
-					<tns:ThisPartyActionBinding tns:action="LEVERINGSRAPPORT" tns:id="Dialog_Innbygger_Meldingsformidling_Mottak_Asynk3" tns:packageId="package_leveringsrapport_v1p0" xlink:type="simple">
+					<tns:ThisPartyActionBinding tns:action="Leveringsrapport" tns:id="Dialog_Innbygger_Meldingsformidling_Mottak_Asynk3" tns:packageId="package_leveringsrapport_v1p0" xlink:type="simple">
 						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
 						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
 					</tns:ThisPartyActionBinding>
@@ -1431,13 +1434,13 @@ Endret 2019-05.22 (KVL)
 			<tns:ServiceBinding>
 				<tns:Service tns:type="string">BehandlerOversikt</tns:Service>
 				<tns:CanSend>
-					<tns:ThisPartyActionBinding tns:action="SVAR" tns:id="Dialog_Innbygger_BehandlerOversikt_Svar" tns:packageId="package_dia_v1.1_hp_v1p0" xlink:type="simple">
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="Dialog_Innbygger_BehandlerOversikt_Svar" tns:packageId="package_dia_v1.1_hp_v1p0" xlink:type="simple">
 						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
 						<tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
 					</tns:ThisPartyActionBinding>
 				</tns:CanSend>
 				<tns:CanReceive>
-					<tns:ThisPartyActionBinding tns:action="HENT" tns:id="Dialog_Innbygger_BehandlerOversikt_Hent" tns:packageId="package_eKontakt_v1p2" xlink:type="simple">
+					<tns:ThisPartyActionBinding tns:action="Hent" tns:id="Dialog_Innbygger_BehandlerOversikt_Hent" tns:packageId="package_eKontakt_v1p2" xlink:type="simple">
 						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
 						<tns:ChannelId>syncAMQPChannelC2</tns:ChannelId>
 					</tns:ThisPartyActionBinding>
@@ -1452,7 +1455,7 @@ Endret 2019-05.22 (KVL)
 			<tns:ServiceBinding>
 				<tns:Service tns:type="string">AvtaleUtsending</tns:Service>
 				<tns:CanSend>
-					<tns:ThisPartyActionBinding tns:action="AVTALE" tns:id="Dialog_Innbygger_Avtaleutsending_Asynk1" tns:packageId="package_timer_v1p1" xlink:type="simple">
+					<tns:ThisPartyActionBinding tns:action="Avtale" tns:id="Dialog_Innbygger_Avtaleutsending_Asynk1" tns:packageId="package_timer_v1p1" xlink:type="simple">
 						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
 						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
 					</tns:ThisPartyActionBinding>
@@ -1473,7 +1476,7 @@ Endret 2019-05.22 (KVL)
 			<tns:ServiceBinding>
 				<tns:Service tns:type="string">AvtaleAvbestilling</tns:Service>
 				<tns:CanSend>
-					<tns:ThisPartyActionBinding tns:action="SVAR" tns:id="Dialog_Innbygger_AvtaleAvbestilling_Asynk1" tns:packageId="package_timer_v1p1" xlink:type="simple">
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="Dialog_Innbygger_AvtaleAvbestilling_Asynk1" tns:packageId="package_timer_v1p1" xlink:type="simple">
 						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
 						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
 					</tns:ThisPartyActionBinding>
@@ -1485,7 +1488,7 @@ Endret 2019-05.22 (KVL)
 					</tns:ThisPartyActionBinding>
 				</tns:CanSend>
 				<tns:CanReceive>
-					<tns:ThisPartyActionBinding tns:action="FORESPORSEL" tns:id="Dialog_Innbygger_AvtaleAvbestilling_Asynk2" tns:packageId="package_timereservasjon_v1p2" xlink:type="simple">
+					<tns:ThisPartyActionBinding tns:action="Foresporsel" tns:id="Dialog_Innbygger_AvtaleAvbestilling_Asynk2" tns:packageId="package_timereservasjon_v1p2" xlink:type="simple">
 						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
 						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
 					</tns:ThisPartyActionBinding>
@@ -1506,13 +1509,13 @@ Endret 2019-05.22 (KVL)
 			<tns:ServiceBinding>
 				<tns:Service tns:type="string">Journal</tns:Service>
 				<tns:CanSend>
-					<tns:ThisPartyActionBinding tns:action="FORESPORSEL" tns:id="Dialog_Innbygger_Journal_Asynk1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+					<tns:ThisPartyActionBinding tns:action="Foresporsel" tns:id="Dialog_Innbygger_Journal_Asynk1" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
 						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
 						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
 					</tns:ThisPartyActionBinding>
 				</tns:CanSend>
 				<tns:CanSend>
-					<tns:ThisPartyActionBinding tns:action="SVAR" tns:id="Dialog_Innbygger_Journal_Asynk2" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="Dialog_Innbygger_Journal_Asynk2" tns:packageId="package_dialogmld_v1p1" xlink:type="simple">
 						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
 						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
 					</tns:ThisPartyActionBinding>
@@ -1524,13 +1527,13 @@ Endret 2019-05.22 (KVL)
 					</tns:ThisPartyActionBinding>
 				</tns:CanSend>
 				<tns:CanReceive>
-					<tns:ThisPartyActionBinding tns:action="FORESPORSEL" tns:id="Dialog_Innbygger_Journal_Asynk3" tns:packageId="package_eKontakt_v1p2" xlink:type="simple">
+					<tns:ThisPartyActionBinding tns:action="Foresporsel" tns:id="Dialog_Innbygger_Journal_Asynk3" tns:packageId="package_eKontakt_v1p2" xlink:type="simple">
 						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
 						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
 					</tns:ThisPartyActionBinding>
 				</tns:CanReceive>
 				<tns:CanReceive>
-					<tns:ThisPartyActionBinding tns:action="SVAR" tns:id="Dialog_Innbygger_Journal_Asynk4" tns:packageId="package_eKontakt_v1p2" xlink:type="simple">
+					<tns:ThisPartyActionBinding tns:action="Svar" tns:id="Dialog_Innbygger_Journal_Asynk4" tns:packageId="package_eKontakt_v1p2" xlink:type="simple">
 						<tns:BusinessTransactionCharacteristics tns:isAuthenticated="none" tns:isAuthorizationRequired="false" tns:isConfidential="none" tns:isIntelligibleCheckRequired="false" tns:isNonRepudiationReceiptRequired="true" tns:isNonRepudiationRequired="true" tns:isTamperProof="none" tns:timeToPerform="P180M"/>
 						<tns:ChannelId>asyncAMQPChannelC1</tns:ChannelId>
 					</tns:ThisPartyActionBinding>
