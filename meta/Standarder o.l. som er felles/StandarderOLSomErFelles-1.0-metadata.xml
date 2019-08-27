@@ -1,50 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
-	<Temaer>
-		<Tema>Grunnleggende standarder og spesifikasjoner for elektronisk samhandling</Tema>
-	</Temaer>
 	<Navn>Standarder o.l. som er felles</Navn>
 	<Versjon>1.0</Versjon>
 	<Identifikator>Felles</Identifikator>
-	<Utgitt>04/2018</Utgitt>
+	<Utgitt>2019</Utgitt>
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
-	<MerInformasjon>
-		<Informasjon>
-			<Beskrivelse>Elektronisk samhandling </Beskrivelse>
-			<Referanse>https://ehelse.no/standarder-kodeverk-og-referansekatalog/elektronisk-samhandling</Referanse>
-		</Informasjon>
-	</MerInformasjon>
-	
+		
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Datatyper til bruk ved meldingsutveksling HIS 80117:2002 (PDF)</Beskrivelse>
+			<Beskrivelse>Datatyper til bruk ved meldingsutveksling (PDF)</Beskrivelse>
 			<Referanse>kravdokument/StandarderOlSomErFelles/HIS_80117_2002_Datatyper_v1.1 -korrigert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Vedlegg til meldinger HIS 1036:2011 (PDF)</Beskrivelse>
+			<Beskrivelse>Vedlegg til meldinger (PDF)</Beskrivelse>
 			<Referanse>kravdokument/StandarderOlSomErFelles/HIS_1036_2011-Vedlegg_til_meldinger -korrigert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Identifikatorer for personer HIS 1001:2010 (PDF)</Beskrivelse>
+			<Beskrivelse>Identifikatorer for personer (PDF)</Beskrivelse>
 			<Referanse>kravdokument/StandarderOlSomErFelles/HIS_1001_2010_Identifikatorer for personer v1.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Praktisk bruk av XML i helsefaglige meldinger HISD 1165:2016 (PDF)</Beskrivelse>
+			<Beskrivelse>Praktisk bruk av XML i helsefaglige meldinger (PDF)</Beskrivelse>
 			<Referanse>kravdokument/StandarderOlSomErFelles/HISD_1165_2016_Referansedokument-BrukAvXML.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Bruk av XHTML-formatering HISD 1155:2008 (PDF)</Beskrivelse>
+			<Beskrivelse>Bruk av XHTML-formatering (PDF)</Beskrivelse>
 			<Referanse>kravdokument/StandarderOlSomErFelles/HISD_1155_2008_Bruk av XHTML formatering-2008-02-22.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Prinsipper for utskrift av meldinger og skjema HISD 80714:2007 (PDF)</Beskrivelse>
+			<Beskrivelse>Prinsipper for utskrift av meldinger og skjema (PDF)</Beskrivelse>
 			<Referanse>kravdokument/StandarderOlSomErFelles/HISD_80714_2007_UtskriftMeldingPrinsipper.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger HITS 1174:2017 (PDF)</Beskrivelse>
+			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger (PDF)</Beskrivelse>
 			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer (PDF)</Beskrivelse>
+			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer -oppdatert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
 	

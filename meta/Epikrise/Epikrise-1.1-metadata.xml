@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
-	<Temaer>
-		<Tema>Samhandling i pasientforløp</Tema>
-	</Temaer>
 	<Navn>Epikrise</Navn>
 	<Versjon>1.1</Versjon>
 	<Identifikator>HIS 80226:2006</Identifikator>
@@ -13,7 +10,7 @@
 	<MerInformasjon>
 		<Informasjon>
 			<Beskrivelse>Epikrise 1.1 (HIS 80226:2006)</Beskrivelse>
-			<Referanse>http://ehelse.no/HIS80226-2006</Referanse>
+			<Referanse>https://ehelse.no/standarder/epikrise-v1.1-his</Referanse>
 		</Informasjon>
 	</MerInformasjon>
 	
@@ -28,7 +25,7 @@
 	        <MerInformasjon>
 	            <Informasjon>
 	                <Beskrivelse>Henvisningsmelding: Tannhelsetjenesten</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS107-2010</Referanse>
+		            <Referanse>https://ehelse.no/standarder/epikrise-tannhelsetjenesten</Referanse>
 		        </Informasjon>
 	        </MerInformasjon>
         </Profil>
@@ -47,24 +44,24 @@
 			<Referanse>kravdokument/epikrise/HIS_1016_2010 XML epikrise Meldingsprofil tannhelse.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger HITS 1174:2017 (PDF)</Beskrivelse>
+			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger (PDF)</Beskrivelse>
 			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
 		</Kravdokument>
 		
 		<Kravdokument>
-			<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger</Beskrivelse>
+			<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger (PDF)</Beskrivelse>
 			<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Notat: Den gode epikrise - minstekrav til medisinskfaglig innhold ved sending HISD 1033:2010 (PDF)</Beskrivelse>
+			<Beskrivelse>Notat: Den gode epikrise - minstekrav til medisinskfaglig innhold ved sending (PDF)</Beskrivelse>
 			<Referanse>relaterteFiler/epikrise/HISD_1033_2010 Epikrise-Minimumskrav-2011-03-29.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer HITS 1218:2019 (PDF)</Beskrivelse>
-			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer.pdf</Referanse>
+			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer (PDF)</Beskrivelse>
+			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer -oppdatert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Prinsipper for utskrift av epikrise HISD 80715:2007 (PDF)</Beskrivelse>
+			<Beskrivelse>Prinsipper for utskrift av epikrise (PDF)</Beskrivelse>
 			<Referanse>relaterteFiler/epikrise/HISD_80715_2007_UtskriftMal-Epikrise.pdf</Referanse>
 		</Kravdokument>
 

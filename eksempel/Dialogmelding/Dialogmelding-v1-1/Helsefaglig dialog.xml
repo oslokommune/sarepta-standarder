@@ -60,7 +60,7 @@
 			<Content>
 				<Dialogmelding xmlns="http://www.kith.no/xmlstds/dialog/2013-01-23" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/dialog/2013-01-23 dialogmelding-v1.1.xsd">
 					<Notat>
-						<TemaKodet V="6" DN="Henvendelse om pasient" S="2.16.578.1.12.4.1.1.7321"/>
+						<TemaKodet V="6" DN="Henvendelse om pasient" S="2.16.578.1.12.4.1.1.7322"/>
 						<Tema>EKG tatt i dag</Tema>
 						<TekstNotatInnhold>Pasienten er henvist til kardiologisk poliklinikk for utredning med spørsmål om cardial årsak og mulig angina pectoris. Ettersender EKG tatt i dag uten funn. Se vedlegg.</TekstNotatInnhold>
 						<RollerRelatertNotat>
