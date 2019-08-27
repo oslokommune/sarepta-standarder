@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 
+<!--
 Endringslogg:
 - 19.06.18: v4.1.4 - Fjernet unødvendige overskrifter i legemiddelvisning
 - 18.05.17: v4.1.3 - Endret fra Rekvirent til Mottaker og Tjenesteyter til Avsender under "Helsetjenesteenheter"
@@ -21,12 +21,12 @@ Design:
 - Headervisning avhengig av utskriftsmedium
 - Kommentarer for ofte tildelt fulle rader
 Om:
-- Inngår i Direktoratet for e-helse visningsfiler 
-	
+- Inngår i Direktoratet for e-helse visningsfiler
+
 -->
-<xsl:stylesheet version="1.0" 
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+<xsl:stylesheet version="1.0"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml"
 	xmlns:base="http://www.kith.no/xmlstds/base64container"
 	xmlns:doc12="http://www.kith.no/xmlstds/epikrise/2012-02-15"
 	exclude-result-prefixes="xhtml base">
@@ -44,7 +44,7 @@ Om:
 	<!-- Variabeler for standard antall kolonner i tabellene, og for standard cellebredde i tabellene -->
 	<xsl:variable name="std-col" select="8"/>
 	<xsl:variable name="std-td" select="200"/>
-		
+
 	<!-- Boolske variabler for visning av 'Vis/Skjul' knapp ved hver overskrift. Settes til 'true()' om knappen skal vises -->
 	<xsl:variable name="VisDiagnoserVisSkjul" select="false()"/>
 	<xsl:variable name="VisVurderingVisSkjul" select="false()"/>
@@ -71,7 +71,7 @@ Om:
 	<xsl:variable name="VisRefDokVisSkjul" select="true()"/>
 	<xsl:variable name="VisOpprinneligHenvisningVisSkjul" select="true()"/>
 	<xsl:variable name="VisDokInfoVisSkjul" select="true()"/>
-	
+
 	<!-- Boolsk variabel om menylinjen skal vises. Settes til true() om den skal vises. -->
 	<xsl:variable name="VisMenylinje" select="false()"/>
 
@@ -1409,7 +1409,7 @@ Om:
 					</span>
 				</div>
 			</xsl:if>
-			
+
 		</div>
 		<!-- Endring pr 22.05.2017 -->
 		<!-- Finn antall diagnoser for å lage en tittel som er Diagnose/Diagnoser -->
@@ -1418,32 +1418,32 @@ Om:
 				  <div class="eh-col-1">
 				<span class="eh-label">Diagnoser:</span>
 				<span class="eh-field"></span>
-					<xsl:for-each select="child::*[local-name()='Diagnosis']">    
+					<xsl:for-each select="child::*[local-name()='Diagnosis']">
 					  <div class="eh-col-1">
 						<span class="eh-label"></span>
 						<span class="eh-field">
 						    <xsl:value-of select="child::*[local-name()='Concept']/@DN"/>,&#160;
 							<xsl:value-of select="child::*[local-name()='Concept']/@V"/>&#160;
 							<xsl:if test="contains(child::*[local-name()='Concept']/@S, '7170')">(ICPC)&#160;</xsl:if>
-							<xsl:if test="contains(child::*[local-name()='Concept']/@S, '7110')">(ICD-10)&#160;</xsl:if>			
+							<xsl:if test="contains(child::*[local-name()='Concept']/@S, '7110')">(ICD-10)&#160;</xsl:if>
 							<xsl:for-each select="child::*[local-name()='Modifier']">
 								<xsl:value-of select="child::*[local-name()='Value']/@V"/>,&#160;
 								<xsl:value-of select="child::*[local-name()='Value']/@DN"/>&#160;
 							</xsl:for-each>
-						</span>	
+						</span>
 					    </div>
-					</xsl:for-each>			
+					</xsl:for-each>
 			    </div>
 		    </xsl:when>
 			<xsl:otherwise>
 				<div class="eh-col-1">
 					<span class="eh-label">Diagnose:</span>
 					<span class="eh-field">
-						<xsl:for-each select="child::*[local-name()='Diagnosis']">    
+						<xsl:for-each select="child::*[local-name()='Diagnosis']">
 							<xsl:value-of select="child::*[local-name()='Concept']/@DN"/>,&#160;
 							<xsl:value-of select="child::*[local-name()='Concept']/@V"/>&#160;
 							<xsl:if test="contains(child::*[local-name()='Concept']/@S, '7170')">(ICPC)&#160;</xsl:if>
-							<xsl:if test="contains(child::*[local-name()='Concept']/@S, '7110')">(ICD-10)&#160;</xsl:if>			
+							<xsl:if test="contains(child::*[local-name()='Concept']/@S, '7110')">(ICD-10)&#160;</xsl:if>
 							<xsl:for-each select="child::*[local-name()='Modifier']">
 								<xsl:value-of select="child::*[local-name()='Value']/@V"/>,&#160;
 								<xsl:value-of select="child::*[local-name()='Value']/@DN"/>&#160;
@@ -1453,9 +1453,9 @@ Om:
 				</div>
 			</xsl:otherwise>
 		</xsl:choose>
-       
-		
-		
+
+
+
 			<!-- Endring pr 22.05.2017  SLUTT-->
 		<xsl:for-each select="child::*[local-name()='ReasonAsText']">
 			<xsl:call-template name="ReasonAsText-Comment"/>
@@ -1464,9 +1464,9 @@ Om:
 
 
 	<!-- Visning av Diagnose -->
-	<xsl:template name="Diagnosis-DiagComment-CodedDescr-CodedComment">	
+	<xsl:template name="Diagnosis-DiagComment-CodedDescr-CodedComment">
 		<xsl:param name="addColumn"/>
-		
+
 		<xsl:variable name="HovedDiagnose">
 			<xsl:choose>
 				<xsl:when test="../../child::*[local-name()='Type']/@V='H'">bold</xsl:when>
@@ -2077,7 +2077,7 @@ Om:
 							(<xsl:for-each select="child::*[local-name()='Recipient']">
 								<xsl:call-template name="k-8250"/>
 							</xsl:for-each>)
-							
+
 						</div>
 					</xsl:if>
 				</span>

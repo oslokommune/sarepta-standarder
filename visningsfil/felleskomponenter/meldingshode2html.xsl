@@ -11,10 +11,10 @@
 	- Laget i XMLSpy v2016 (http://www.altova.com) av Jan Sigurd Dragsjø (nhn.no)
 	-->
 
-<xsl:stylesheet version="1.0" 
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
-	xmlns:base="http://www.kith.no/xmlstds/base64container" 
+<xsl:stylesheet version="1.0"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24"
+	xmlns:base="http://www.kith.no/xmlstds/base64container"
 	exclude-result-prefixes="mh base">
 
 	<!-- Filer som må importeres. Vanligvis gjøres dette i hovedfila som importerer denne komponentfila. Derfor er de kommentert ut.
