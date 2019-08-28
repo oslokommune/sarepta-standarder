@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
+<!--
 
 Endringslogg
 - 25.01.19: v4.1.12 - Endret overskrifter
@@ -23,10 +23,10 @@ Om:
 - Inngår i Direktoratet for e-helse visningsfiler
  
 -->
-<xsl:stylesheet version="1.0" 
-	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+<xsl:stylesheet version="1.0"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" 
+	xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1"
 	xmlns:base="http://www.kith.no/xmlstds/base64container"
 	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24"
 	xmlns:doc10="http://www.kith.no/xmlstds/henvisning/2005-07-08"
@@ -41,7 +41,7 @@ Om:
 	<xsl:import href="../felleskomponenter/poKomponent2html.xsl"/>
 	<xsl:import href="../felleskomponenter/eh-komponent1.xsl"/>
 	<xsl:import href="../felleskomponenter/eh-komponent2.xsl"/>
-	
+
 
 
 	<!-- Variabel for standard antall kolonner i tabellene-->
@@ -348,10 +348,10 @@ Om:
 					</span>
 				</xsl:for-each>
 			</h1>
-	
+
 			<div class="eh-section">
 				<xsl:call-template name="ServReq_Henvisning"/> <!-- v1.0, v1.1, v2.0 -->
-	
+
 				<xsl:choose>
 					<xsl:when test="//child::*[local-name()='ServReq']/child::*[local-name()='ReqComment']"> <!-- v1.0 og v1.1 -->
 						<div class="eh-row-4">
@@ -378,10 +378,10 @@ Om:
 								</div>
 							</div>
 						</xsl:if>
-						
+
 					</xsl:otherwise>
 				</xsl:choose>
-					
+
 			</div>
 
 			<!-- Overskrift for Diagnoser -->
@@ -439,7 +439,7 @@ Om:
 							<xsl:call-template name="eh-Observation"/>
 						</xsl:for-each>
 						<!-- Men ResultItem og Medication er kankje ikke aktuell herfra siden rad-element mangler ?? -->
-					</xsl:for-each> 
+					</xsl:for-each>
 				</div>
 			</xsl:if>
 
@@ -454,9 +454,9 @@ Om:
 					<xsl:for-each select="child::*[local-name()='ReasonAsText'][child::*[local-name()='Heading']/@V='PROB']">
 						<xsl:call-template name="eh-ReasonAsText"/>
 					</xsl:for-each>
-	
+
 					<xsl:for-each select="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='SYMP' or child::*[local-name()='Type']/@V='PROG' or child::*[local-name()='Type']/@V='SM']">
-	
+
 						<xsl:for-each select="child::*[local-name()='ResultItem']">
 							<xsl:call-template name="eh-ResultItem"/>
 						</xsl:for-each>
@@ -538,7 +538,7 @@ Om:
 
 				<div class="eh-section">
 					<xsl:for-each select="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='GOPL' or child::*[local-name()='Type']/@V='GBEH']">
-	
+
 						<xsl:for-each select="child::*[local-name()='ResultItem']">
 							<xsl:call-template name="eh-ResultItem"/>
 						</xsl:for-each>
@@ -585,7 +585,7 @@ Om:
 					<xsl:value-of select="concat('Annen',$position)"/>
 				</xsl:variable>
 				<h2 id="{$id90}">Annen begrunnelse for henvisningen</h2>
-				
+
 				<div class="eh-section">
 					<xsl:for-each select="child::*[local-name()='ReasonAsText'][child::*[local-name()='Heading']/@V='BG' or child::*[local-name()='Heading']/@V='BUP-BM' or child::*[local-name()='Heading']/@V='BUP-HG' or child::*[local-name()='Heading']/@V='KF' or child::*[local-name()='Heading']/@V='MAAL' or child::*[local-name()='Heading']/@V='MU' or child::*[local-name()='Heading']/@V='RU' or child::*[local-name()='Heading']/@V='UP' or not(child::*[local-name()='Heading'])]">
 						<xsl:call-template name="eh-ReasonAsText"/>
@@ -650,7 +650,7 @@ Om:
 						<div class="eh-row-8">
 							<xsl:call-template name="eh-ResultItem"/>
 						</div>
-					
+
 					</xsl:for-each>
 					<xsl:for-each select="child::*[local-name()='ReasonAsText'][child::*[local-name()='Heading']/@V='FU']">
 						<xsl:call-template name="eh-ReasonAsText"/>
@@ -724,7 +724,7 @@ Om:
 					<xsl:for-each select="//child::*[local-name()='InfItem'][child::*[local-name()='Type']/@V='MEDB']/child::*[local-name()='ResultItem']">
 					 	<xsl:call-template name="eh-ResultItem"/> <!-- Mangler rad-element for ResultItem -->
 					</xsl:for-each>
-	
+
 					<xsl:for-each select="//child::*[local-name()='Medication']">
 						<xsl:variable name="stripedCss">
 							<xsl:choose>
@@ -766,7 +766,7 @@ Om:
 							</xsl:call-template>
 						</div>
 					</xsl:for-each>
-					
+
 					<xsl:for-each select="child::*[local-name()='Legemiddelgjennomgang']">
 						<div class="eh-row-4">
 							<xsl:if test="child::*[local-name()='DatoLegemiddelgjennomgang']">
@@ -779,7 +779,7 @@ Om:
 									</span>
 								</div>
 							</xsl:if>
-					
+
 							<xsl:if test="child::*[local-name()='DatoSamstemming']">
 								<div class="eh-col-1">
 									<span class="eh-label">Dato for siste samstemming</span>
@@ -790,7 +790,7 @@ Om:
 									</span>
 								</div>
 							</xsl:if>
-					
+
 							<xsl:if test="child::*[local-name()='Merknad']">
 								<div class="eh-col-2 eh-last-child">
 									<span class="eh-label">Merknad</span>
@@ -861,7 +861,7 @@ Om:
 					<xsl:value-of select="concat('Pakkeforlop',$position)"/>
 				</xsl:variable>
 				<h2 id="{$id185}">Pakkeforløp</h2>
-	
+
 				<div class="eh-section">
 					<xsl:for-each select="child::*[local-name()='Pakkeforlop']">
 						<xsl:variable name="stripedCss">
@@ -884,7 +884,7 @@ Om:
 								<xsl:with-param name="striped" select="$stripedCss"/>
 							</xsl:call-template>
 						</div>
-					</xsl:for-each>	
+					</xsl:for-each>
 				</div>
 			</xsl:if>
 			<!-- Overskrift for Kommentarer -->
@@ -935,7 +935,7 @@ Om:
 					</xsl:for-each>
 				</div>
 			</xsl:if>
-		  
+
 
 
 			<xsl:choose>
@@ -994,7 +994,7 @@ Om:
 							<label for="vis{$id210}" class="VisSkjul">Vis/Skjul</label>
 							<input type="checkbox" checked="true" id="vis{$id210}" style="display: none;"/>
 						</xsl:if>
-						
+
 						<div class="eh-section xs">
 							<xsl:call-template name="HealthCareProfessional_v1"/>
 						</div>
@@ -1029,13 +1029,13 @@ Om:
 
 				<div class="eh-section">
 					<xsl:for-each select="child::*[local-name()='RefDoc']"> <!-- v1.0, v1.1 -->
-						<xsl:call-template name="eh-RefDoc"/> 
+						<xsl:call-template name="eh-RefDoc"/>
 					</xsl:for-each>
 
 					<xsl:for-each select="//mh:RefDoc"> <!-- v2.0 -->
-						<xsl:if test="position() != 1"> 
+						<xsl:if test="position() != 1">
 							<div class="eh-section">
-								<xsl:call-template name="eh-msghead-RefDoc" /> 
+								<xsl:call-template name="eh-msghead-RefDoc" />
 							</div>
 						</xsl:if>
 					</xsl:for-each>
@@ -1088,7 +1088,7 @@ Om:
 
 	<!-- Template som kalles fra BunnTillegg i meldingshodet. Kan brukes til visning av egenkomponert bunn -->
 	<xsl:template name="EgetBunnTillegg_v2"> <!-- v2.0 -->
-		<div class="{$stil}">	
+		<div class="{$stil}">
 
 			<h2>Dokumentinformasjon</h2>
 
@@ -1129,7 +1129,7 @@ Om:
 							<xsl:for-each select="//child::*[local-name()='ProcessingStatus']">
 								<xsl:call-template name="k-8113"/>
 							</xsl:for-each>
-						</span>	
+						</span>
 					</div>
 				</div>
 				</xsl:if>
@@ -1274,7 +1274,7 @@ Om:
 							<a href="#{$temp190}">Kommentarer</a>
 						</li>
 					</xsl:if>
-					
+
 					<xsl:for-each select="//child::*[local-name()='Patient']">
 					<!--
 						<xsl:if test="child::*[local-name()='BasisForHealthServices'] or child::*[local-name()='Sex'] or child::*[local-name()='DateOfBirth'] or child::*[local-name()='PatientPrecaution'] or child::*[local-name()='AssistertKommunikasjon'] or child::*[local-name()='ParorendeForesatt'] or child::*[local-name()='ContactPerson'] or child::*[local-name()='PatRelInst'] or child::*[local-name()='Consent'] or child::*[local-name()='AdditionalId'] or child::*[local-name()='NeedTranslator'] or child::*[local-name()='CareSituation']">
@@ -1531,7 +1531,7 @@ Om:
 			</xsl:if>
 		</div>
 
-		<xsl:if test="//child::*[local-name()='ResultItem']/child::*[local-name()='InvDate']"> 
+		<xsl:if test="//child::*[local-name()='ResultItem']/child::*[local-name()='InvDate']">
 			<div class="eh-col-1 eh-field">
 				<xsl:call-template name="skrivUtTS">
 					<xsl:with-param name="oppgittTid" select="child::*[local-name()='InvDate']/@V"/>
@@ -1648,7 +1648,7 @@ Om:
 		<xsl:if test="child::*[local-name()='PatientPrecaution']">
 			<div class="eh-row-4">
 				<div class="eh-col-1 eh-last-child">
-					<span class="eh-label" style="color: red;">Advarsel</span>				
+					<span class="eh-label" style="color: red;">Advarsel</span>
 					<span class="eh-field">
 						<xsl:for-each select="child::*[local-name()='PatientPrecaution']"> <!-- maxOccurs="unbounded" -->
 							<xsl:value-of select="child::*[local-name()='Precaution']"/>
@@ -1670,7 +1670,7 @@ Om:
 		</xsl:if>
 		<xsl:if test="child::*[local-name()='BasisForHealthServices'] or child::*[local-name()='TilleggsopplysningPasient'] or ancestor::*[local-name()='Document']/child::*[local-name()='Consent']">
 			<div class="eh-row-4">
-			
+
 				<xsl:if test="child::*[local-name()='TilleggsopplysningPasient']/child::*[local-name()='BorAlene']">
 					<div class="eh-col-1">
 						<span  class="eh-label">Bostatus</span>
@@ -1680,9 +1680,9 @@ Om:
 								<xsl:otherwise>Bor ikke alene</xsl:otherwise>
 							</xsl:choose>
 						</span>
-					</div>	
+					</div>
 				</xsl:if>
-				
+
 				<xsl:if test="child::*[local-name()='TilleggsopplysningPasient']/child::*[local-name()='SivilStatus']">
 					<div class="eh-col-1">
 						<span  class="eh-label">Sivilstatus	</span>
@@ -1693,7 +1693,7 @@ Om:
 						</span>
 					</div>
 				</xsl:if>
-				
+
 				<xsl:if test="child::*[local-name()='TilleggsopplysningPasient']/child::*[local-name()='Sprak']">
 					<div class="eh-col-1">
 						<span class="eh-label">Spr&#229;k</span>
@@ -1704,7 +1704,7 @@ Om:
 						</span>
 					</div>
 				</xsl:if>
-				
+
 				<xsl:if test="child::*[local-name()='BasisForHealthServices']">
 					<div class="eh-col-1">
 						<span class="eh-label">Refusjonsgrunnlag</span>
@@ -1755,7 +1755,7 @@ Om:
 					</div>
 					<!--Dato samtykke ble gitt-->
 					<xsl:if test="child::*[local-name()='ConsentDate']">
-						<div class="eh-col-1">	
+						<div class="eh-col-1">
 							<span class="eh-label">Dato gitt</span>
 							<span class="eh-field">
 								<xsl:for-each select="child::*[local-name()='ConsentDate']">
@@ -1769,7 +1769,7 @@ Om:
 					</xsl:if>
 					<!--Samtykke gitt av-->
 					<xsl:if test="child::*[local-name()='GivenBy']">
-						<div class="eh-col-1">	
+						<div class="eh-col-1">
 							<span class="eh-label">Samtykke gitt av</span>
 							<span class="eh-field">
 								<xsl:value-of select="child::*[local-name()='GivenBy']"/>
@@ -1778,7 +1778,7 @@ Om:
 					</xsl:if>
 					<!--Merknad-->
 					<xsl:if test="child::*[local-name()='Merknad']">
-						<div class="eh-col-1 eh-last-child">	
+						<div class="eh-col-1 eh-last-child">
 							<span class="eh-label">Merknad</span>
 							<span class="eh-field">
 								<xsl:value-of select="child::*[local-name()='Merknad']"/>
@@ -1949,7 +1949,7 @@ Om:
 		<xsl:if test="child::*[local-name()='PatientPrecaution']">
 			<div class="eh-row-4">
 				<div class="eh-col-1 eh-last-child">
-					<span class="eh-label" style="color: red;">Advarsel</span>				
+					<span class="eh-label" style="color: red;">Advarsel</span>
 					<span class="eh-field">
 						<xsl:for-each select="child::*[local-name()='PatientPrecaution']"> <!-- maxOccurs="unbounded" -->
 							<xsl:value-of select="child::*[local-name()='Precaution']"/>
@@ -2176,7 +2176,7 @@ Om:
 				<xsl:if test="child::*[local-name()='OffId']">
 					<div class="eh-col-1 md eh-label">
 							<xsl:for-each select="child::*[local-name()='TypeOffId']">
-								<xsl:call-template name="k-8116"/> 
+								<xsl:call-template name="k-8116"/>
 							</xsl:for-each>
 					</div>
 				</xsl:if>
@@ -2210,7 +2210,7 @@ Om:
 					<div class="eh-col-1 eh-field">
 						<span class="eh-label xs">
 							<xsl:for-each select="child::*[local-name()='TypeOffId']">
-								<xsl:call-template name="k-8116"/> 
+								<xsl:call-template name="k-8116"/>
 							</xsl:for-each>
 						</span>
 						<span class="eh-text">
@@ -2223,7 +2223,7 @@ Om:
 						<span class="eh-label xs">Kjønn</span>
 						<span class="eh-text">
 							<xsl:for-each select="child::*[local-name()='Sex']">
-								<xsl:call-template name="k-3101"/> 
+								<xsl:call-template name="k-3101"/>
 							</xsl:for-each>
 						</span>
 					</div>
@@ -2255,7 +2255,7 @@ Om:
 						<span class="eh-label xs">Refusjonsgrunnlag</span>
 						<span class="eh-text">
 							<xsl:for-each select="child::*[local-name()='BasisForHealthServices']">
-								<xsl:call-template name="k-8246"/> 
+								<xsl:call-template name="k-8246"/>
 							</xsl:for-each>
 						</span>
 					</div>
@@ -2436,7 +2436,7 @@ Om:
 					</span>
 				</div>
 				<div class="eh-row-8">
-					<div class="eh-col-1 eh-label">Pårørende/&#173;foresatt</div>				
+					<div class="eh-col-1 eh-label">Pårørende/&#173;foresatt</div>
 					<xsl:if test="..//child::*[local-name()='ParorendeForesatt']/child::*[local-name()='Referanseperson']">
 						<div class="eh-col-1 md eh-label">Person</div>
 					</xsl:if>
@@ -3036,7 +3036,7 @@ Om:
 							</xsl:choose>
 						</xsl:for-each>
 						</span>
-						 <span class="eh-field"> 
+						 <span class="eh-field">
 						<xsl:for-each select="child::*[local-name()='AnsvarligRapport']">
 							<xsl:call-template name="HealthcareProfessional"/>
 						</xsl:for-each>
@@ -3163,7 +3163,7 @@ Om:
 			</div>
 		</xsl:if>
 	</xsl:template>
-	
+
 	<xsl:template name="PatRelHCP"> <!-- Message/ServReq/Patient/PatRelHCP  maxOccurs="unbounded" (1.0, 1.1) -->
 
 		<xsl:variable name="raw-rows" select="count(.//child::*[local-name()='HCProf'] | .//child::*[local-name()='HCPerson'] | .//child::*[local-name()='Dept'])"/>
@@ -3179,7 +3179,7 @@ Om:
 		<xsl:variable name="cssDocRow" >
 			<xsl:if test="count(.//child::*[local-name()='HCProf'] | .//child::*[local-name()='HCPerson'] | .//child::*[local-name()='Dept']) &gt; 1">DocRow</xsl:if>
 		</xsl:variable>
-		
+
 		<div class="eh-row-8 {$cssDocRow}">
 			<xsl:if test="..//child::*[local-name()='PatRelHCP']/child::*[local-name()='Relation']">
 				<div class="eh-col-1 eh-field">
@@ -3632,10 +3632,10 @@ Om:
 								</xsl:for-each>
 							</span>
 						</div>
-					</xsl:if>	
+					</xsl:if>
 			    </xsl:otherwise>
 			</xsl:choose>
-				
+
 			<xsl:if test="child::*[local-name()='Ack']"> <!-- (1.0, 1.1) -->
 				<div class="eh-col-1">
 					<span class="eh-label">Meldings&#173;bekreftelse</span>
@@ -3669,11 +3669,11 @@ Om:
 			</xsl:if>	
 				
 		</div>
-      
+
 		<xsl:for-each select="child::*[local-name()='ReqServ']">
 			<xsl:call-template name="ServReq_ReqServ"/>
 		</xsl:for-each>
-		
+
 	   <!-- Legger inn sjekk om noen dokumenter er sendt som kan være relevante (v2.0) SendtDokument-->
          <div>
 			<xsl:if test="child::*[local-name()='SendtDokument']">
@@ -3755,9 +3755,9 @@ Om:
 								</div>
 							</xsl:if>
 						</xsl:for-each>
-						</div>	
+						</div>
 					</span>
-				</div>	
+				</div>
      		</xsl:if>
 		</div>
 		<!-- SendDokumenter slutt -->

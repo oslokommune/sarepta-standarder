@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
-<Temaer>
-		<Tema>Samhandling i pasientforløp</Tema>
-	</Temaer>
 	<Navn>Pleie- og omsorgsmeldinger</Navn>
 	<Versjon>1.5</Versjon>
 	<Identifikator>HIS 80704:2009</Identifikator>
@@ -14,7 +11,7 @@
 	<MerInformasjon>
 		<Informasjon>
 			<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten v1.5</Beskrivelse>
-			<Referanse>https://ehelse.no/Sider/Standard-for-elektronisk-kommunikasjon-med-pleie--og-omsorgstjenesten--Informasjonsmodell-og-XML-meldingsbeskrivelse-–-HIS-.aspx</Referanse>
+			<Referanse>https://ehelse.no/standarder/standard-for-elektronisk-kommunikasjon-med-pleie-og-omsorgstjenesten-v1.5</Referanse>
 		</Informasjon>
 	</MerInformasjon>
 
@@ -154,24 +151,22 @@
 			<Referanse>kravdokument/plo/HIS_1149_2009_PLO-pasientlogistikkmeldinger.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger HITS 1174:2017 (PDF)</Beskrivelse>
-			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
+			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger (PDF)</Beskrivelse>
+			<Referanse>kravdokument/BrukAvKontaktopplysninger/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer (PDF)</Beskrivelse>
+			<Referanse>kravdokument/KoblingAvRelaterteMeldingerMedIdentifikatorer/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer -oppdatert.pdf</Referanse>
 		</Kravdokument>
 		
 		<Kravdokument>
-			<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger</Beskrivelse>
+			<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger (PDF)</Beskrivelse>
 			<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Bruk av pleie- og omsorgsmeldinger i pasientforløp</Beskrivelse>
+			<Beskrivelse>Bruk av pleie- og omsorgsmeldinger i pasientforløp (PDF)</Beskrivelse>
 			<Referanse>relaterteFiler/plo/HISD_80806_2012_Veiviser-PLO-meldinger_v2.1.pdf</Referanse>
 		</Kravdokument>
-				<Kravdokument>
-			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer HITS 1218:2019 (PDF)</Beskrivelse>
-			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer.pdf</Referanse>
-		</Kravdokument>
-
-
 	</Kravdokumenter>
 
 	<Skjemaer>

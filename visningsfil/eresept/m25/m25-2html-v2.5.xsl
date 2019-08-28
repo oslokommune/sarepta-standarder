@@ -671,9 +671,9 @@
 						</td>
 					</xsl:if>
 					<!-- ATC -->
-					<xsl:if test="contains($konvertertBase64, 'Atc ')">
-						 <td>
-							 <div class="eh-row-1">
+					<td>
+						<xsl:if test="contains($konvertertBase64, 'Atc ')">
+							<div class="eh-row-1">
 								<span class="eh-label eh-strong">ATC</span>
 								<div>
 									<span class="eh-field">
@@ -684,8 +684,8 @@
 									</span>	
 								</div>								
 							</div>
-						</td>
-					</xsl:if>
+						</xsl:if>
+					</td>
 					<!--NavnFormStyrke-->
 					<xsl:if test="contains($konvertertBase64, 'NavnFormStyrke')">
 						 <td>
@@ -723,10 +723,19 @@
 								<span class="eh-label eh-strong">Pakningsinformasjon</span>
 								<div>
 									<span class="eh-field">
-										<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'Pakningsstr'),'&gt;'),' ')"/>
-												&#160;<xsl:value-of select="substring-before(substring-after(substring-after(substring-after($konvertertBase64, 'Pakningsstr'),'&gt;'),' '),'&lt;/')"/>
+										<xsl:value-of select="
+											substring-before(
+												substring-after(
+													substring-after($konvertertBase64, 'Pakningsstr'),
+												'&gt;'),
+											'&lt;')"/>
+										&#160;
+										<xsl:value-of select="
+											substring-before(
+												substring-after($konvertertBase64, 'EnhetPakning V=&quot;'),
+											'&quot;')"/>
 										&#160;	
-									</span>	
+									</span>
 								</div>								
 							</div>
 						</td>
@@ -738,10 +747,18 @@
 								<span class="eh-label eh-strong">Utlevert&#160;av</span>
 								<div>
 									<span class="eh-field">
-										<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'Utleverer'),'&gt;'),' ')"/>
-												&#160;<xsl:value-of select="substring-after(substring-before(substring-after(substring-after(substring-after($konvertertBase64, 'Utleverer'),'&gt;'),'Navn'),'&lt;/'),'&gt;')"/>
-										&#160;	
-									</span>	
+										<xsl:value-of select="
+											substring-after(
+												substring-before(
+													substring-after(
+														substring-after(
+															substring-after($konvertertBase64, 'Utleverer'),
+														'&gt;'),
+													'Navn'),
+												'&lt;/'),
+											'&gt;')"/>
+										&#160;
+									</span>
 								</div>								
 							</div>
 						</td>

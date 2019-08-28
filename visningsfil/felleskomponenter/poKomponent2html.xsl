@@ -11,16 +11,16 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" exclude-result-prefixes="fk1">
 
 	<!-- Filer som må importeres. Vanligvis gjøres dette i hovedfila som importerer denne komponentfila. Derfor er de kommentert ut.
-	<xsl:import href="funksjoner.xsl"/> 
+	<xsl:import href="funksjoner.xsl"/>
 	<xsl:import href="meldingshode2html.xsl"/>
-	<xsl:import href="kodeverk.xsl"/> 
+	<xsl:import href="kodeverk.xsl"/>
 	<xsl:import href="cave2html.xsl"/>
 	<xsl:import href="journalnotat2html.xsl"/> -->
 
 	<!-- Variabel for standard antall kolonner i tabellene-->
 	<xsl:variable name="std-col" select="8"/>
 	<xsl:variable name="std-td" select="100"/>
-	
+
 
 	<!-- Visning av innhold i Pårørende/foresatt -->
 	<xsl:template name="ParorendeForesatt">
@@ -327,7 +327,7 @@
 		<div class="eh-row-4">
 			<div class="eh-col-1">
 				<span class="eh-label">
-					Opprinnelig forespørsel: 
+					Opprinnelig forespørsel:
 					<xsl:for-each select="child::*[local-name()='TypeForesp']">
 						<xsl:choose>
 							<xsl:when test="contains(@S, '9152')"><xsl:call-template name="k-9152"/></xsl:when>
@@ -357,16 +357,16 @@
 						</xsl:for-each>
 						<xsl:if test="child::*[local-name()='Begrunnelse']">
 							<br />
-							<span class="strong">Begrunnelse:</span> 
+							<span class="strong">Begrunnelse:</span>
 							<xsl:call-template name="line-breaks">
 								<xsl:with-param name="text" select="child::*[local-name()='Begrunnelse']"/>
 							</xsl:call-template>
 						</xsl:if>
 						<xsl:if test="child::*[local-name()='TypeJournalinfo']">
 							<br />
-							<span class="strong">Kategori:</span> 
+							<span class="strong">Kategori:</span>
 							<xsl:for-each select="child::*[local-name()='TypeJournalinfo']">
-								<xsl:call-template name="k-9066"/> 
+								<xsl:call-template name="k-9066"/>
 							</xsl:for-each>
 						</xsl:if>
 					</span>
@@ -386,7 +386,7 @@
 				<div class="eh-col-1">
 					<span class="eh-label">Tidsrom</span>
 					<span class="eh-field">
-						Fra 
+						Fra
 						<xsl:call-template name="skrivUtTS">
 							<xsl:with-param name="oppgittTid" select="child::*[local-name()='FraDato']"/>
 						</xsl:call-template>
@@ -457,7 +457,7 @@
 						<xsl:otherwise>striped</xsl:otherwise>
 					</xsl:choose>
 				</xsl:with-param>
-			</xsl:call-template>		
+			</xsl:call-template>
 		</xsl:for-each>
 		<xsl:for-each select="child::*[local-name()='TidsfestetHendelse']">		<!-- maxOccurs="1" -->
 			<xsl:call-template name="TidsfestetHendelse">
@@ -509,7 +509,7 @@
 						</xsl:choose>
 					</xsl:for-each>
 				</span>
-				
+
 				<span class="eh-field">
 					<xsl:if test="child::*[local-name()='BetegnelseTjeneste'] or child::*[local-name()='TjenestenLevertAv'] or child::*[local-name()='OpplysningerOmTjenesten'] or child::*[local-name()='PrivatTjeneste']">
 						<xsl:if test="child::*[local-name()='BetegnelseTjeneste']">
@@ -640,7 +640,7 @@
 						<xsl:otherwise></xsl:otherwise>
 					</xsl:choose>
 				</xsl:variable>
-				<div class="eh-col-1 {$lastChildCss} {$stripedCss}">	
+				<div class="eh-col-1 {$lastChildCss} {$stripedCss}">
 					<span class="eh-label">Beskrivelse</span>
 					<span class="eh-field">
 						<xsl:call-template name="line-breaks">
@@ -866,7 +866,7 @@
 
 	<!-- Visning av innhold i Info om medisinsk diagnose -->
 	<xsl:template name="InfoMedisinskDiagnose">
-		<xsl:for-each select="child::*[local-name()='MedisinskDiagnose']">	<!-- her : maxOccurs="unbounded" --> 
+		<xsl:for-each select="child::*[local-name()='MedisinskDiagnose']">	<!-- her : maxOccurs="unbounded" -->
 			<xsl:call-template name="MedisinskDiagnose">
 				<xsl:with-param name="stripedCss">
 					<xsl:choose>
@@ -1387,13 +1387,13 @@
 				<div class="eh-col-1">
 					<span class="eh-label">Informert</span>
 					<span class="eh-field">
-						<div>Pasient: 
+						<div>Pasient:
 							<xsl:choose>
 								<xsl:when test="child::*[local-name()='InformertOm']/child::*[local-name()='PasientInformert']='true'">Ja</xsl:when>
 								<xsl:otherwise>Nei</xsl:otherwise>
 							</xsl:choose>
 						</div>
-						<div>Pårørende: 
+						<div>Pårørende:
 							<xsl:choose>
 								<xsl:when test="child::*[local-name()='InformertOm']/child::*[local-name()='ParorendeInformert']='true'">Ja</xsl:when>
 								<xsl:otherwise>Nei</xsl:otherwise>
@@ -1411,7 +1411,7 @@
 			<div class="eh-col-1">
 				<span class="eh-label">Kontrolltime skal bestilles</span>
 				<span class="eh-field">
-					Bestilles av pasient/pårørende: 
+					Bestilles av pasient/pårørende:
 					<xsl:choose>
 						<xsl:when test="child::*[local-name()='PasientParorendeBestiller']='true'">Ja</xsl:when>
 						<xsl:otherwise>Nei</xsl:otherwise>
@@ -1446,7 +1446,7 @@
 				<span class="eh-label">Informasjon om tentativ kontrolltime</span>
 				<span class="eh-field">
 					<xsl:if test="po.TentativtTidspunktTime">
-						Tentativt tidspunkt: 
+						Tentativt tidspunkt:
 						<xsl:call-template name="line-breaks">
 							<xsl:with-param name="text" select="child::*[local-name()='TentativtTidspunktTime']"/>
 						</xsl:call-template>
@@ -1902,7 +1902,7 @@
 
 		<div class="eh-row-4">
 			<div class="eh-col-1 eh-label eh-last-child">
-				Vurdering av: 
+				Vurdering av:
 				<xsl:call-template name="line-breaks">
 					<xsl:with-param name="text" select="child::*[local-name()='InnholdVurdering']/child::*[local-name()='VurderingenGjelder']"/>
 				</xsl:call-template>

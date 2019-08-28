@@ -2,9 +2,6 @@
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <!-- #434357 -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
-	<Temaer>
-		<Tema>Samhandling i pasientforløp</Tema>
-	</Temaer>
 	<Navn>Dialogmelding</Navn>
 	<Versjon>1.1</Versjon>
 	<Identifikator>HIS 80603:2017</Identifikator>
@@ -14,7 +11,7 @@
 	<MerInformasjon>
 		<Informasjon>
 			<Beskrivelse>Dialogmelding 1.1 (HIS 80603:2017)</Beskrivelse>
-			<Referanse>http://ehelse.no/HIS80603-2017</Referanse>
+			<Referanse>https://ehelse.no/standarder/dialogmelding-v1.1</Referanse>
 		</Informasjon>
 	</MerInformasjon>
 	
@@ -29,7 +26,7 @@
 				<MerInformasjon>
 					<Informasjon>
 						<Beskrivelse>Digital dialog</Beskrivelse>
-						<Referanse>http://ehelse.no/HIS1176-2017</Referanse>
+						<Referanse>https://ehelse.no/standarder/digital-dialog</Referanse>
 					</Informasjon>
 				</MerInformasjon>
 			</Profil>
@@ -43,9 +40,12 @@
 				<MerInformasjon>
 					<Informasjon>
 						<Beskrivelse>Helsefaglig dialog</Beskrivelse>
-						<Referanse>http://ehelse.no/HIS1077-2017</Referanse>
+						<Referanse>https://ehelse.no/standarder/helsefaglig-dialog</Referanse>
 					</Informasjon>
 				</MerInformasjon>
+				<Temaer>
+					<Tema>Standarder under innføring</Tema>
+				</Temaer>
 			</Profil>
 			<Profil>
 				<ProfilId>3</ProfilId>
@@ -57,10 +57,20 @@
 				<MerInformasjon>
 					<Informasjon>
 						<Beskrivelse>Status på henvisning</Beskrivelse>
-						<Referanse>http://ehelse.no/HIS1206-2018</Referanse>
+						<Referanse>https://ehelse.no/standarder/status-pa-henvisning</Referanse>
 					</Informasjon>
 				</MerInformasjon>
-				
+				<Temaer>
+					<Tema>Standarder under innføring</Tema>
+				</Temaer>
+			</Profil>
+			<Profil>
+				<ProfilId>4</ProfilId>
+				<Beskrivelse>Til arkivering</Beskrivelse>
+				<Identifikator>HITS 1228:2019</Identifikator>
+				<Utgitt>06/2019</Utgitt>
+				<Ansvarlig>Folkehelseinstituttet</Ansvarlig>
+				<Status>Fastsatt som standard</Status>
 			</Profil>
 		</Profiler>
 
@@ -79,7 +89,7 @@
 		<Kravdokument>
 		<ProfilId>2</ProfilId>
 			<Beskrivelse>Helsefaglig dialog (PDF)</Beskrivelse>
-			<Referanse>kravdokument/dialogmelding/v11/HIS 1077_2017 Helsefaglig dialog-korrigert.pdf</Referanse>
+			<Referanse>kravdokument/dialogmelding/v11/HIS 1077_2017 Helsefaglig dialog -oppdatert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>3</ProfilId>
@@ -87,14 +97,18 @@
 			<Referanse>kravdokument/dialogmelding/v11/HIS_1206-2018 Status på henvisning.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger HITS 1174:2017 (PDF)</Beskrivelse>
-			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
+			<ProfilId>4</ProfilId>
+			<Beskrivelse>Til arkivering (PDF)</Beskrivelse>
+			<Referanse>kravdokument/dialogmelding/v11/HITS 1228_2019 Til arkivering_v1.0.pdf</Referanse>
 		</Kravdokument>
-				<Kravdokument>
-			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer HITS 1218:2019 (PDF)</Beskrivelse>
-			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer.pdf</Referanse>
+		<Kravdokument>
+			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger (PDF)</Beskrivelse>
+			<Referanse>kravdokument/BrukAvKontaktopplysninger/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
 		</Kravdokument>
-
+		<Kravdokument>
+			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer (PDF)</Beskrivelse>
+			<Referanse>kravdokument/KoblingAvRelaterteMeldingerMedIdentifikatorer/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer -oppdatert.pdf</Referanse>
+		</Kravdokument>
 	</Kravdokumenter>
 
 	<Skjemaer>
@@ -224,6 +238,10 @@
 		<Eksempel>
 			<ProfilId>2</ProfilId>
 			<Referanse>eksempel/Dialogmelding/Dialogmelding-v1-1/Helsefaglig dialog.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<ProfilId>2</ProfilId>
+			<Referanse>eksempel/Dialogmelding/Dialogmelding-v1-1/Helsefaglig dialog_angi profesjon hos mottaker.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 			<ProfilId>3</ProfilId>

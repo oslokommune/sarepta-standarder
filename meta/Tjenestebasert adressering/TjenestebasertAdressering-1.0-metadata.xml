@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
-	<Temaer>
-		<Tema>Grunnleggende standarder og spesifikasjoner for elektronisk samhandling</Tema>
+<Temaer>
+		<Tema>Grunnleggende standarder for elektronisk samhandling</Tema>
+		<Tema>Standarder under innføring</Tema>
 	</Temaer>
 	<Navn>Tjenestebasert adressering</Navn>
 	<Versjon>1.0</Versjon>
@@ -13,7 +14,7 @@
 	<MerInformasjon>
 		<Informasjon>
 			<Beskrivelse>Tjenestebasert adressering</Beskrivelse>
-			<Referanse>https://ehelse.no/tjenestebasert-adressering</Referanse>
+			<Referanse>https://ehelse.no/standarder/tjenestebasert-adressering</Referanse>
 		</Informasjon>
 	</MerInformasjon>
 
@@ -28,11 +29,11 @@
 		</Kravdokument>
 		<Kravdokument>
 			<Beskrivelse>Tjenestebasert adressering del 3: Adressering (PDF)</Beskrivelse>
-			<Referanse>kravdokument/TjenestebasertAdressering/HIS 1153-3_2017/HIS 1153-3_2017 Tjenestebasert adressering del 3 -korrigert.pdf</Referanse>
+			<Referanse>kravdokument/TjenestebasertAdressering/HIS 1153-3_2017/HIS 1153-3_2017 Tjenestebasert adressering del 3 -oppdatert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger HITS 1174:2017 (PDF)</Beskrivelse>
-			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
+			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger (PDF)</Beskrivelse>
+			<Referanse>kravdokument/BrukAvKontaktopplysninger/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>	
 </StandardMetadata>

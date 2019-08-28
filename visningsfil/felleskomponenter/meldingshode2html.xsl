@@ -11,10 +11,10 @@
 	- Laget i XMLSpy v2016 (http://www.altova.com) av Jan Sigurd Dragsjø (nhn.no)
 	-->
 
-<xsl:stylesheet version="1.0" 
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
-	xmlns:base="http://www.kith.no/xmlstds/base64container" 
+<xsl:stylesheet version="1.0"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24"
+	xmlns:base="http://www.kith.no/xmlstds/base64container"
 	exclude-result-prefixes="mh base">
 
 	<!-- Filer som må importeres. Vanligvis gjøres dette i hovedfila som importerer denne komponentfila. Derfor er de kommentert ut.
@@ -178,8 +178,9 @@
 			</xsl:when>
 			<xsl:otherwise>
 				<div>
-					<div class="NoPrint">&#160;-&#160;</div>
-					<xsl:value-of select="child::*[local-name()=&quot;OrganisationName&quot;]"/>&#160;
+					<div class="NoPrint">-&#160;</div>
+					<xsl:value-of select="child::*[local-name()=&quot;OrganisationName&quot;]"/>&#160;(
+					<xsl:value-of select="child::*[local-name()=&quot;Ident&quot;]/child::*[local-name()=&quot;Id&quot;]"/>&#160;)
 				</div>
 			</xsl:otherwise>
 		</xsl:choose>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Temaer>
+		<Tema>Felles for flere meldingsstandarder</Tema>
+	</Temaer>
+	<Navn>Identifikatorer for personer</Navn>
+	<Versjon>1.0</Versjon>
+	<Identifikator>HIS 1001:2010</Identifikator>
+	<Utgitt>2010</Utgitt>
+	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	<Status>Fastsatt som standard</Status>
+		
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>Identifikatorer for personer (PDF)</Beskrivelse>
+			<Referanse>kravdokument/IdentifikatorerForPersoner/HIS_1001_2010_Identifikatorer for personer v1.pdf</Referanse>
+		</Kravdokument>		
+	</Kravdokumenter>	
+	
+
+</StandardMetadata>

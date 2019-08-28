@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
-	<Temaer>
-		<Tema>SYSVAK</Tema>
-	</Temaer>
 	<Navn>SYSVAK</Navn>
 	<Versjon>1.0</Versjon>
 	<Identifikator>SYSVAK</Identifikator>
@@ -13,7 +10,7 @@
 	<MerInformasjon>
 		<Informasjon>
 			<Beskrivelse>SYSVAK (ehelse.no)</Beskrivelse>
-			<Referanse>http://ehelse.no/SYSVAK</Referanse>
+			<Referanse>https://ehelse.no/standarder/sysvak</Referanse>
 		</Informasjon>
 		<Informasjon>
 			<Beskrivelse>Teknisk informasjon for SYSVAK (fhi.no)</Beskrivelse>

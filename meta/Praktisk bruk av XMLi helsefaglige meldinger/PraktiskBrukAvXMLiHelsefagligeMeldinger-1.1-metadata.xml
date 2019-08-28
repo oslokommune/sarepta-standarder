@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Temaer>
+		<Tema>Felles for flere meldingsstandarder</Tema>
+	</Temaer>
+	<Navn>Praktisk bruk av XML i helsefaglige meldinger</Navn>
+	<Versjon>1.1</Versjon>
+	<Identifikator>HIS 1165:2016</Identifikator>
+	<Utgitt>2016</Utgitt>
+	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	<Status>Fastsatt som standard</Status>
+		
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>Praktisk bruk av XML i helsefaglige meldinger (PDF)</Beskrivelse>
+			<Referanse>kravdokument/PraktiskBrukAvXMLiHelsefagligeMeldinger/HISD_1165_2016_Referansedokument-BrukAvXML.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+</StandardMetadata>

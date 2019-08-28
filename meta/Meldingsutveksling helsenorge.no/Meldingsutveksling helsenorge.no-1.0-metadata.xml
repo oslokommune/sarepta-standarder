@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
-	<Temaer>
-		<Tema>Meldingsutveksling helsenorge.no</Tema>
-	</Temaer>
+<Temaer>
+	<Tema>Meldingsutveksling helsenorge.no</Tema> 
+</Temaer>
 	<Navn>Meldingsutveksling helsenorge.no</Navn> 
 	<Versjon>1.0</Versjon>
 	<Identifikator>Helsenorge.no</Identifikator>
@@ -26,7 +26,7 @@
 		</Kravdokument>
 		<Kravdokument>
 			<Beskrivelse>Digital dialog - Implementasjonsguide standarder (PDF)</Beskrivelse>
-			<Referanse>kravdokument/MeldingsutvekslingHelsenorge_no/Digital_Dialog-Implementasjonsguide.pdf</Referanse>
+			<Referanse>kravdokument/MeldingsutvekslingHelsenorge_no/Digital_Dialog_Implementasjonsguide.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<Beskrivelse>Tjenesteoversikt - Implementasjonsguide standarder (PDF)</Beskrivelse>
@@ -86,11 +86,5 @@
 		</Skjema>
 		
 	</Skjemaer>
-	<Eksempler>
-		<Eksempel>
-			<Beskrivelse>Meldingseksempler for Digital dialog</Beskrivelse>
-			<Referanse>eksempel/MeldingsutvekslingHelsenorge/SystemdokumentasjonKommunikasjonsprosesser-verifiserbare.zip</Referanse>
-		</Eksempel>
-	</Eksempler>
 	
 </StandardMetadata>

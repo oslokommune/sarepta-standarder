@@ -1113,7 +1113,7 @@
 				<xsl:if test="lso:SampleCollProc">
 					<th>Prøvetakingsprosedyre</th>
 					<td colspan="{($col)-1-count(lso:Number | lso:IdByServProv | lso:SampleCollInd)*2}">
-						<xsl:for-each select="lso:SampleCollInd">
+						<xsl:for-each select="lso:SampleCollProc">
 							<xsl:call-template name="k-dummy"/>
 						</xsl:for-each>
 					</td>

@@ -206,7 +206,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="Temareferanse">
+	<xs:complexType name="Temareferanse"> 
 		<xs:annotation>
 			<xs:documentation>Referanse til Temaer</xs:documentation>
 		</xs:annotation>
@@ -219,9 +219,19 @@
 			<xs:documentation>Navn og beskrivelse av tema</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Grunnleggende standarder og spesifikasjoner for elektronisk samhandling">
+			<xs:enumeration value="Grunnleggende standarder for elektronisk samhandling">
 				<xs:annotation>
-					<xs:documentation>Standarder og spesifikasjoner som benyttes i andre meldingsstandarder.</xs:documentation>
+					<xs:documentation>Grunnleggende standarder for samhandling i helse- og omsorgstjenesten.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Standarder under innføring">
+				<xs:annotation>
+					<xs:documentation>E-helsestandarder for elektronisk samhandling i helse- og omsorgstjenesten som er under innføring.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Felles for flere meldingsstandarder">
+				<xs:annotation>
+					<xs:documentation>Dokumenter som er viktige for implementering av flere meldingsstandarder</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Samhandling i pasientforløp">
@@ -239,14 +249,9 @@
 					<xs:documentation>Standarder som skal benyttes for e-reseptmeldinger</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="Samhandling med NAV">
+			<xs:enumeration value="Samhandling med NAV og HELFO">
 				<xs:annotation>
-					<xs:documentation>Standarder som skal brukes i samhandling med NAV</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="Samhandling med HELFO">
-				<xs:annotation>
-					<xs:documentation>Standarder som skal brukes i samhandling med HELFO</xs:documentation>
+					<xs:documentation>Standarder som skal brukes i samhandling med NAV eller HELFO</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Informasjonsdeling">
@@ -258,7 +263,8 @@
 				<xs:annotation>
 					<xs:documentation>Implementasjonsguider og annen teknisk dokumentasjon for bruk av meldinger på helsenorge.no</xs:documentation>
 				</xs:annotation>
-			</xs:enumeration>		
+			</xs:enumeration>
+			
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>

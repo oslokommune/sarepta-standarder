@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
-	<Temaer>
-		<Tema>Samhandling i pasientforløp</Tema>
-	</Temaer>
 	<Navn>Kommunikasjon av EPJ-innhold</Navn>
 	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 80710:2007</Identifikator>
@@ -13,7 +10,7 @@
 	<MerInformasjon>
 		<Informasjon>
 			<Beskrivelse>Standard for kommunikasjon av EPJ-innhold (HIS 80710:2007)</Beskrivelse>
-			<Referanse>http://ehelse.no/HIS80710-2007</Referanse>
+			<Referanse>https://ehelse.no/standarder/standard-for-kommunikasjon-av-epj-innhold</Referanse>
 		</Informasjon>
 	</MerInformasjon>
 	
@@ -79,8 +76,8 @@
 	</Eksempler>
 	<RelaterteFiler>
 		<RelatertFil>
-			<Beskrivelse>Teknisk informasjon: Overføring av legemiddelinformasjon</Beskrivelse>
-			<Referanse>relaterteFiler/kommEPJinnhold/HISD_1156_2008 Overføring av legemiddelinformasjon -korrigert.pdf</Referanse>
+			<Beskrivelse>Teknisk informasjon: Overføring av legemiddelinformasjon (PDF)</Beskrivelse>
+			<Referanse>relaterteFiler/kommEPJinnhold/HITS_1156_2008-KommunikasjonLegemiddelinformasjon -oppdatert.pdf</Referanse>
 		</RelatertFil>
 	</RelaterteFiler>
 </StandardMetadata>

@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
-	<Temaer>
-		<Tema>Samhandling i pasientforløp</Tema>
-	</Temaer>
 	<Navn>Svarrapportering av medisinske tjenester</Navn>
 	<Versjon>1.4</Versjon>
 	<Identifikator>HIS 80822:2014</Identifikator>
@@ -13,11 +10,11 @@
 	<MerInformasjon>
 		<Informasjon>
 			<Beskrivelse>Svarrapportering av medisinske tjenester v1.4</Beskrivelse>
-			<Referanse>http://ehelse.no/HIS80822-2014</Referanse>
+			<Referanse>https://ehelse.no/standarder/svarrapportering-av-medisinske-tjenester-v1.4</Referanse>
 		</Informasjon>
 	</MerInformasjon>
 	
-	<Profiler>
+	 <Profiler>
         <Profil>
             <ProfilId>1</ProfilId>
             <Beskrivelse>Radiologi</Beskrivelse>
@@ -177,21 +174,22 @@
 		</Kravdokument>
 		<Kravdokument>
 			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger (PDF)</Beskrivelse>
-			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
+			<Referanse>kravdokument/BrukAvKontaktopplysninger/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer (PDF)</Beskrivelse>
+			<Referanse>kravdokument/KoblingAvRelaterteMeldingerMedIdentifikatorer/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer -oppdatert.pdf</Referanse>
 		</Kravdokument>
 		
 		<Kravdokument>
-			<Beskrivelse>Retningslinjer for bruk av standardene for Rekvisisjon av medisinske tjenester og Svarrapportering av medisinske tjenester</Beskrivelse>
+			<Beskrivelse>Retningslinjer for bruk av standardene for Rekvisisjon av medisinske tjenester og Svarrapportering av medisinske tjenester (PDF)</Beskrivelse>
 			<Referanse>relaterteFiler/FellesForFlereStandarder/HITS_1102_2014_Retningslinjer for bruk av rekvisisjon og svarrapport -korrigert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>Bruk av Norsk laboratoriekodeverk (NLK) i rekvirering og svarrapportering av medisinske tjenester</Beskrivelse>
+			<Beskrivelse>Bruk av Norsk laboratoriekodeverk (NLK) i rekvirering og svarrapportering av medisinske tjenester (PDF)</Beskrivelse>
 			<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1101_2015_NLK - Teknisk veileder v.2.0.pdf</Referanse>
 		</Kravdokument>
-			<Kravdokument>
-			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer (PDF)</Beskrivelse>
-			<Referanse>kravdokument/StandarderOlSomErFelles/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer.pdf</Referanse>
-		</Kravdokument>
+		
 
 	</Kravdokumenter>
 	
