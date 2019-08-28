@@ -2,20 +2,25 @@
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
 	<Temaer>
-		<Tema>Grunnleggende standarder for elektronisk samhandling</Tema>
+		<Tema>Felles for flere meldingsstandarder</Tema>
 	</Temaer>
-	<Navn>Vedlegg til meldinger</Navn>
+	<Navn>Bruk av XHTML-formatering</Navn>
 	<Versjon>1.0</Versjon>
-	<Identifikator>HIS 1036:2011</Identifikator>
-	<Utgitt>05/2011</Utgitt>
+	<Identifikator>HISD 1155:2008</Identifikator>
+	<Utgitt>2008</Utgitt>
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
 		
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Vedlegg til meldinger (PDF)</Beskrivelse>
-			<Referanse>kravdokument/VedleggTilMeldinger/HIS_1036_2011-Vedlegg_til_meldinger -korrigert.pdf</Referanse>
+			<Beskrivelse>Bruk av XHTML-formatering (PDF)</Beskrivelse>
+			<Referanse>kravdokument/BrukAvXHTML-Formatering/HISD_1155_2008_Bruk av XHTML formatering-2008-02-22.pdf</Referanse>
 		</Kravdokument>
+		
+		
 	</Kravdokumenter>
 	
+	
+	
+
 </StandardMetadata>

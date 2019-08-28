@@ -224,6 +224,16 @@
 					<xs:documentation>Grunnleggende standarder for samhandling i helse- og omsorgstjenesten.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
+			<xs:enumeration value="Standarder under innføring">
+				<xs:annotation>
+					<xs:documentation>E-helsestandarder for elektronisk samhandling i helse- og omsorgstjenesten som er under innføring.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Felles for flere meldingsstandarder">
+				<xs:annotation>
+					<xs:documentation>Dokumenter som er viktige for implementering av flere meldingsstandarder</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="Samhandling i pasientforløp">
 				<xs:annotation>
 					<xs:documentation>Meldingsutveksling som støtter opp om samhandlingen i et pasientforløp. </xs:documentation>
@@ -254,11 +264,7 @@
 					<xs:documentation>Implementasjonsguider og annen teknisk dokumentasjon for bruk av meldinger på helsenorge.no</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="Standarder under innføring">
-				<xs:annotation>
-					<xs:documentation>E-helsestandarder for elektronisk samhandling i helse- og omsorgstjenesten som er under innføring.</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
+			
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
