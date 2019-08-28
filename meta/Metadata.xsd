@@ -206,7 +206,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="Temareferanse">
+	<xs:complexType name="Temareferanse"> 
 		<xs:annotation>
 			<xs:documentation>Referanse til Temaer</xs:documentation>
 		</xs:annotation>
