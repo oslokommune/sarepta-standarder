@@ -30,6 +30,7 @@
 	        </MerInformasjon>
 	        <Temaer>
 				<Tema>Standarder under innføring</Tema>
+				<Tema>Samhandling i pasientforløp</Tema>
 			</Temaer>
         </Profil>
 		<Profil>
@@ -47,6 +48,7 @@
 	        </MerInformasjon>
 	         <Temaer>
 				<Tema>Standarder under innføring</Tema>
+				<Tema>Samhandling i pasientforløp</Tema>
 			</Temaer>
         </Profil>
     </Profiler>
@@ -61,6 +63,7 @@
 			<ProfilId>1</ProfilId>
 			<Beskrivelse>Henvisning ny tilstand (PDF)</Beskrivelse>
 			<Referanse>kravdokument/henvisning/HIS_1207-2018 Henvisning ny tilstand -korrigert.pdf</Referanse>
+			
 		</Kravdokument>
 		<Kravdokument>
 		    <ProfilId>2</ProfilId>
