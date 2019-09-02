@@ -4,9 +4,9 @@
 <Temaer>
 	<Tema>Meldingsutveksling helsenorge.no</Tema> 
 </Temaer>
-	<Navn>Meldingsutveksling helsenorge.no</Navn> 
+	<Navn>AMQP spesifikasjon Helsenorge.no</Navn> 
 	<Versjon>1.0</Versjon>
-	<Identifikator>Helsenorge.no</Identifikator>
+	<Identifikator>HITS 1216:2018</Identifikator>
 	<Utgitt>11/2018</Utgitt>
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<MerInformasjon>
@@ -22,15 +22,7 @@
 	<Kravdokumenter> 
 		<Kravdokument>
 			<Beskrivelse>AMQP spesifikasjon Helsenorge.no (PDF)</Beskrivelse>
-			<Referanse>kravdokument/MeldingsutvekslingHelsenorge_no/AMQP_spesifikasjon_helsenorge.no.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>Digital dialog - Implementasjonsguide standarder (PDF)</Beskrivelse>
-			<Referanse>kravdokument/MeldingsutvekslingHelsenorge_no/Digital_Dialog_Implementasjonsguide.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>Tjenesteoversikt - Implementasjonsguide standarder (PDF)</Beskrivelse>
-			<Referanse>kravdokument/MeldingsutvekslingHelsenorge_no/Tjenesteoversikt_-_Implementasjonsguide_standarder.pdf</Referanse>
+			<Referanse>kravdokument/AMQPSpesifikasjonHelsenorge/AMQP_spesifikasjon_helsenorge.no.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
 	<Skjemaer>
