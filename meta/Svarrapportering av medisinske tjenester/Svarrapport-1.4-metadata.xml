@@ -146,6 +146,21 @@
 			<Referanse>kravdokument/svarrapport/HIS_1140_2014_Svarrapport-Immunologi.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
+			<ProfilId>3</ProfilId>
+			<Beskrivelse>Immunologi (oppdatert profil) (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/HIS_1140_2014_Svarrapport-Immunologi -oppdatert.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>3</ProfilId>
+			<Beskrivelse>Endringsoversikt profil (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/Endringoversikt HIS 1140_2014.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>3</ProfilId>
+			<Beskrivelse>Original profil (PDF)</Beskrivelse>
+			<Referanse>kravdokument/svarrapport/HIS_1140_2014_Svarrapport-Immunologi.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
 			<ProfilId>4</ProfilId>
 			<Beskrivelse>Mikrobiologi (oppdatert standard) (PDF)</Beskrivelse>
 			<Referanse>kravdokument/svarrapport/HIS_1139_2014_Svarrapport-Mikrobiologi -oppdatert.pdf</Referanse>
