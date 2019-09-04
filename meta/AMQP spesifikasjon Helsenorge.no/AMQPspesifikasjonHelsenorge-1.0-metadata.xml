@@ -19,12 +19,18 @@
 			<Referanse>https://www.hl7.org/fhir/definitions.xml.zip</Referanse>
 		</Informasjon>
 	</MerInformasjon>
-	<Kravdokumenter> 
-		<Kravdokument>
+	<Implementasjonsguider> 
+		<Implementasjonsguide>
 			<Beskrivelse>AMQP spesifikasjon Helsenorge.no (PDF)</Beskrivelse>
 			<Referanse>kravdokument/AMQPSpesifikasjonHelsenorge/AMQP_spesifikasjon_helsenorge.no.pdf</Referanse>
-		</Kravdokument>
-	</Kravdokumenter>
+		</Implementasjonsguide>
+	</Implementasjonsguider>
+	<Tilleggsdokumentasjon>
+		<Tilleggsdokument>
+			<Beskrivelse>AMQP spesifikasjon Helsenorge.no (PDF)</Beskrivelse>
+			<Referanse>kravdokument/AMQPSpesifikasjonHelsenorge/AMQP_spesifikasjon_helsenorge.no.pdf</Referanse>
+		</Tilleggsdokument>
+	</Tilleggsdokumentasjon>
 	<Skjemaer>
 		<Skjema>
 			<Beskrivelse>Hodemelding</Beskrivelse>
