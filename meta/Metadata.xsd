@@ -86,6 +86,26 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
+				<xs:element name="Implementasjonsguider" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Implementasjonsguide som sier hvordan noe skal implementeres</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Implementasjonsguide" type="Filreferanse" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Tilleggsdokumentasjon" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Tilleggsdokumentasjon som er nødvendig å ha med</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Tilleggsdokument" type="Filreferanse" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
 				<xs:element name="Skjemaer" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>XML-skjema</xs:documentation>
@@ -254,7 +274,6 @@
 					<xs:documentation>Implementasjonsguider og annen teknisk dokumentasjon for bruk av meldinger på helsenorge.no</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
