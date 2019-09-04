@@ -244,6 +244,11 @@
 					<xs:documentation>Grunnleggende standarder for samhandling i helse- og omsorgstjenesten.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
+			<xs:enumeration value="Meldingsutveksling helsenorge.no">
+				<xs:annotation>
+					<xs:documentation>Implementasjonsguider og annen teknisk dokumentasjon for bruk av meldinger på helsenorge.no</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="Samhandling i pasientforløp">
 				<xs:annotation>
 					<xs:documentation>Meldingsutveksling som støtter opp om samhandlingen i et pasientforløp. </xs:documentation>
@@ -269,11 +274,7 @@
 					<xs:documentation>Standarder som skal brukes i samhandling med NAV eller HELFO</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="Meldingsutveksling helsenorge.no">
-				<xs:annotation>
-					<xs:documentation>Implementasjonsguider og annen teknisk dokumentasjon for bruk av meldinger på helsenorge.no</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
+			
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
