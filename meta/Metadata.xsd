@@ -251,17 +251,17 @@
 			</xs:enumeration>
 			<xs:enumeration value="Samhandling i pasientforløp">
 				<xs:annotation>
-					<xs:documentation>Meldingsutveksling som støtter opp om samhandlingen i et pasientforløp. </xs:documentation>
+					<xs:documentation>Henvisning og epikrise, rekvisisjon og svarrapport, dialogmelding og pleie- og omsorgsmeldinger</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Standarder under innføring">
 				<xs:annotation>
-					<xs:documentation>E-helsestandarder for elektronisk samhandling i helse- og omsorgstjenesten som er under innføring.</xs:documentation>
+					<xs:documentation>Tjenestebasert adressering, henvisningsstandarder og helsefaglig dialog</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Felles for flere meldingsstandarder">
 				<xs:annotation>
-					<xs:documentation>Dokumenter som er viktige for implementering av flere meldingsstandarder</xs:documentation>
+					<xs:documentation>Dokumenter som er nødvendige for implementering av flere standarder</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="E-reseptmeldinger">
