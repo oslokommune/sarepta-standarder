@@ -262,6 +262,14 @@
 			<Referanse>visningsfil/felleskomponenter/smooth-visning.css</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<Beskrivelse>ehelse-visning.css</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/ehelse-visning.css</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Beskrivelse>eh-komponent1.xsl</Beskrivelse>
+			<Referanse>visningsfil/felleskomponenter/eh-komponent1.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
 			<Beskrivelse>eh-komponent2.xsl</Beskrivelse>
 			<Referanse>visningsfil/felleskomponenter/eh-komponent2.xsl</Referanse>
 		</Visningsfil>
