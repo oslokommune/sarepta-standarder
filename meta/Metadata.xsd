@@ -245,6 +245,9 @@
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Grunnleggende standarder for elektronisk samhandling">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
 			</xs:enumeration>
 			
 			<xs:enumeration value="Standarder under innføring">
