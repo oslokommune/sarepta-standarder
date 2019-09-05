@@ -239,6 +239,11 @@
 			<xs:documentation>Navn og beskrivelse av tema</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="Samhandling med NAV og HELFO">
+				<xs:annotation>
+					<xs:documentation>Standarder som skal brukes i samhandling med NAV eller HELFO</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="Grunnleggende standarder for elektronisk samhandling">
 				<xs:annotation>
 					<xs:documentation>Grunnleggende standarder for samhandling i helse- og omsorgstjenesten.</xs:documentation>
@@ -267,11 +272,6 @@
 			<xs:enumeration value="E-reseptmeldinger">
 				<xs:annotation>
 					<xs:documentation>Standarder som skal benyttes for e-reseptmeldinger</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="Samhandling med NAV og HELFO">
-				<xs:annotation>
-					<xs:documentation>Standarder som skal brukes i samhandling med NAV eller HELFO</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			
