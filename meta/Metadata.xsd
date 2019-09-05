@@ -249,16 +249,7 @@
 					<xs:documentation>Grunnleggende standarder for samhandling i helse- og omsorgstjenesten.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="Meldingsutveksling helsenorge.no">
-				<xs:annotation>
-					<xs:documentation>Implementasjonsguider og annen teknisk dokumentasjon for bruk av meldinger på helsenorge.no</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="Samhandling i pasientforløp">
-				<xs:annotation>
-					<xs:documentation>Henvisning og epikrise, rekvisisjon og svarrapport, dialogmelding og pleie- og omsorgsmeldinger</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
+			
 			<xs:enumeration value="Standarder under innføring">
 				<xs:annotation>
 					<xs:documentation>Tjenestebasert adressering, henvisningsstandarder og helsefaglig dialog</xs:documentation>
@@ -272,6 +263,16 @@
 			<xs:enumeration value="E-reseptmeldinger">
 				<xs:annotation>
 					<xs:documentation>Standarder som skal benyttes for e-reseptmeldinger</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Samhandling i pasientforløp">
+				<xs:annotation>
+					<xs:documentation>Henvisning og epikrise, rekvisisjon og svarrapport, dialogmelding og pleie- og omsorgsmeldinger</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Meldingsutveksling helsenorge.no">
+				<xs:annotation>
+					<xs:documentation>Implementasjonsguider og annen teknisk dokumentasjon for bruk av meldinger på helsenorge.no</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			
