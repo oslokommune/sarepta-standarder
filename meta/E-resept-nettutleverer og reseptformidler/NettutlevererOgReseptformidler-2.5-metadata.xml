@@ -77,11 +77,11 @@
 		</RelatertFil>
 		<RelatertFil>
 			<Beskrivelse>Datatyper v 1.1</Beskrivelse>
-			<Referanse>/kravdokument/StandarderOlSomErFelles/HIS_80117_2002_Datatyper_v1.1 -korrigert.pdf</Referanse>
+			<Referanse>/kravdokument/DatatyperTilBrukVedMeldingsutveksling/HIS_80117_2002_Datatyper_v1.1 -korrigert.pdf</Referanse>
 		</RelatertFil>
 		<RelatertFil>
 			<Beskrivelse>Notat - Opplysninger om signerende helsepersoenell i meldinger fra Helseforetak til NAV og Reseptformidleren</Beskrivelse>
-			<Referanse>/relaterteFiler/Signerende_HelsepersonellSykmelding-eResept-notat.pdf</Referanse>
+			<Referanse>/relaterteFiler/eresept/Signerende_HelsepersonellSykmelding-eResept-notat.pdf</Referanse>
 		</RelatertFil>
 	</RelaterteFiler>	
 	
