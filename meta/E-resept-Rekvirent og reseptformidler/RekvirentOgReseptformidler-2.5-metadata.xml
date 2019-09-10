@@ -32,8 +32,12 @@
 			<Referanse>kravdokument/eresept/R1908-eResept-M4-2013-04-16.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>M12 Søknadssvar - Individuell søknad om stønad til Helfo (PDF)</Beskrivelse>
-			<Referanse>kravdokument/eresept/HIS 3002_2018 M12 Søknadssvar Individuell søknad om stønad til Helfo.pdf</Referanse>
+			<Beskrivelse>eResept – M5, M7, M9.5-8, M24.1-5 (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/R1208-eResept-M5-M7-M95-8-M41-5-2015-10-15.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>eResept - Utleveringsrapporter M6, M8, M8.1, M10 og M20 (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/R1308-eResept-M6-M8-M81-M10-M20-2015-09-22.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<Beskrivelse>M9.5 Forespørsel om tilgjengelige resepter på pasient (PDF)</Beskrivelse>
@@ -75,23 +79,6 @@
 			<Beskrivelse>M25.1-4, M9.21-22, M27.1-2 og M28 (PDF)</Beskrivelse>
 			<Referanse>kravdokument/eresept/M25.1-4, M9.21-22, M27.1-2 og M28.pdf</Referanse>
 		</Kravdokument>
-		
-		<Kravdokument>
-			<Beskrivelse>eResept – M02 Individuell søknad om stønad til HELFO og M12 Søknadssvar - Individuell søknad om stønad til HELFO (PDF)</Beskrivelse>
-			<Referanse>kravdokument/eresept/R1008-eResept-M2-M12-2015-12-02.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>eResept - M3 Anmodning om søknad til SLV - M14 Søknadtil SLV - M15 Søknadssvar fra SLV (PDF)</Beskrivelse>
-			<Referanse>kravdokument/eresept/R1108-eResept-M3-M14-M15-2013-04-16.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>eResept – M5, M7, M9.5-8, M24.1-5 (PDF)</Beskrivelse>
-			<Referanse>kravdokument/eresept/R1208-eResept-M5-M7-M95-8-M41-5-2015-10-15.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>eResept - Utleveringsrapporter M6, M8, M8.1, M10 og M20 (PDF)</Beskrivelse>
-			<Referanse>kravdokument/eresept/R1308-eResept-M6-M8-M81-M10-M20-2015-09-22.pdf</Referanse>
-		</Kravdokument>
 		<Kravdokument>
 			<Beskrivelse>eResept - M09.1 Forespørsel om tilgjengelige resepter på pasient, M09.2 Reseptliste, M09.3 Forespørsel om nedlasting av resept og M09.4 Nedlasting av resept (PDF)</Beskrivelse>
 			<Referanse>kravdokument/eresept/R1408-eResept-M9.1-4-2014-04-07.pdf</Referanse>
@@ -104,14 +91,7 @@
 			<Beskrivelse>M25.1-4, M9.11-12, M9.21-22, M27.1-4 og M28 (PDF)</Beskrivelse>
 			<Referanse>kravdokument/eresept/R1608-eResept-M25-mm-2015-09-22.pdf</Referanse>
 		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>eResept – M30 FEST og Forskrivning (PDF)</Beskrivelse>
-			<Referanse>kravdokument/eresept/R1808-eResept-M30-2013-10-08.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>eResept – M30 FEST og Forskrivning (PDF)</Beskrivelse>
-			<Referanse>kravdokument/eresept/R1808-eResept-M30-2014-12-01.pdf</Referanse>
-		</Kravdokument>
+		
 		
 	</Kravdokumenter>
 	
