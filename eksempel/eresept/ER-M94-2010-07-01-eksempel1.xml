@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReseptNedlasting xmlns="http://www.kith.no/xmlstds/eresept/m94/2010-07-01" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/eresept/m94/2010-07-01 ER-M94-2010-07-01.xsd">
+	<Status DN="Ekspederbar" V="E"/>
+</ReseptNedlasting>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tilbakekalling xsi:schemaLocation="http://www.kith.no/xmlstds/eresept/m5/2013-04-16 ER-M5-2013-04-16.xsd" xmlns="http://www.kith.no/xmlstds/eresept/m5/2013-04-16" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ReseptId>e6a9486f-41d5-47d6-adf7-cb720af372db</ReseptId>
+	<Merknad>Pasient har avsluttet behandling. </Merknad>
+	<Arsak DN="Fornying" S="0.0.0" V="1" />
+</Tilbakekalling>
