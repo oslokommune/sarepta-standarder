@@ -97,7 +97,7 @@
 		<Skjema>
 			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M911-2018-07-01.xsd</Referanse>
 			<Namespace>http://www.ehelse.no/xmlstds/eresept/m911/2018-07-01</Namespace>
-		</Skjema>
+		</Skjema> 
 		<Skjema>
 			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M912-2014-01-21.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m912/2014-01-21</Namespace>
