@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M9.6 Reseptliste 
+2018-07-01
+ -->
+<!--
+Endringer siden 2015-05-01
+Nye elementer:  (ERSA-sak 13463)
+PasientInfo 0..1
+	Fnr 1..1
+	AndreFnr 0..*
+Nye elementer:  (ERSA-sak 14458)
+	LastResept
+	Pasientreservasjon
+-->
+<!--
+Endringer siden 2009-03-18
+Større endringer, se ERSA 7761.
+-->
+<schema xmlns:m96="http://www.ehelse.no/xmlstds/eresept/m96/2018-07-01" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" xmlns:ns1="http://www.kith.no/xmlstds/eresept/m96/2018-07-01" targetNamespace="http://www.ehelse.no/xmlstds/eresept/m96/2018-07-01" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../../felleskomponenter/kith.xsd"/>
+	<element name="M96">
+		<complexType>
+			<sequence>
+				<element name="PasientInfo" minOccurs="0">
+					<annotation>
+						<documentation>Info om nåværende og ev tidligere identiteter</documentation>
+					</annotation>
+					<complexType>
+						<sequence>
+							<element name="Fnr" type="string"/>
+							<element name="AndreFnr" type="string" minOccurs="0" maxOccurs="unbounded"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="LastResept" type="boolean" minOccurs="0"/>
+				<element name="Pasientreservasjon" type="boolean" minOccurs="0"/>
+				<choice>
+					<element name="StatusSok" type="kith:CS" minOccurs="0">
+						<annotation>
+							<documentation>Status på søk hvis Reseptbanken ikke finner resepter på oppgitt søkekriterium</documentation>
+						</annotation>
+					</element>
+					<element name="Listeelement" minOccurs="0" maxOccurs="unbounded">
+						<complexType>
+							<sequence>
+								<element name="ReseptId" type="string">
+									<annotation>
+										<documentation>Vedlegg MsgHead</documentation>
+									</annotation>
+								</element>
+								<element name="NavnUtleverer" type="string" minOccurs="0"/>
+								<element name="SendtSLVDato" type="date" minOccurs="0"/>
+								<element name="Status" type="kith:CS"/>
+								<element name="StatusSoknadSlv" type="kith:CS" minOccurs="0"/>
+								<element name="TilbakekallingStatus" type="boolean" minOccurs="0"/>
+								<element name="Arsak" type="kith:CV" minOccurs="0"/>
+								<element name="Utlevering" minOccurs="0" maxOccurs="unbounded">
+									<complexType>
+										<sequence>
+											<element name="Varenr" type="string" minOccurs="0"/>
+											<element name="NavnFormStyrke" type="string"/>
+											<element name="Pakningsstr" type="kith:PQ" minOccurs="0"/>
+											<element name="AntallPakningerUtlevertTotalt" type="decimal"/>
+											<element name="AntallPakningerUtlevertSiste" type="decimal"/>
+											<element name="TidspunktSisteUtlevering" type="dateTime"/>
+										</sequence>
+									</complexType>
+								</element>
+							</sequence>
+						</complexType>
+					</element>
+				</choice>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

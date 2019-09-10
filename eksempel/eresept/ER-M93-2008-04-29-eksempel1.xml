@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<M93 xmlns="http://www.kith.no/xmlstds/eresept/m93/2010-06-04" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/eresept/m93/2010-06-04 ER-M93-2010-06-04.xsd">
+	<ReseptId>05da5132-1a65-4723-bb72-e07d9bc43944</ReseptId>
+	<AnsattId>1234567890</AnsattId>
+</M93>

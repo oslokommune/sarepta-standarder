@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<M42 xmlns="http://www.kith.no/xmlstds/eresept/m42/2006-10-06" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/eresept/m42/2006-10-06 ER-M42-2006-10-06.xsd">
+	<RefNr>1234567890ABCD</RefNr>
+	<RefNr>1234567890ABCE</RefNr>
+	<RefNr>1234567890ABCF</RefNr>
+	<RefNr>1234567890ABCG</RefNr>
+	<RefNr>1234567890ABCH</RefNr>
+</M42>
