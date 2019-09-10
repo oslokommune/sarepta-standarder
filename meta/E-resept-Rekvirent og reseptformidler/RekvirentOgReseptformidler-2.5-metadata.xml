@@ -336,19 +336,19 @@
 			<Namespace>http://www.kith.no/xmlstds/eresept/m922/2013-10-15</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M30/ER-M30-2013-10-08.xsd</Referanse>
+			<Referanse>skjema/eresept/m30/ER-M30-2013-10-08.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m30/2013-10-08</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M30/ER-M30-2013-10-08-loose.xsd</Referanse>
+			<Referanse>skjema/eresept/m30/ER-M30-2013-10-08-loose.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m30/2013-10-08</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M30/ER-M30-2014-12-01.xsd</Referanse>
+			<Referanse>skjema/eresept/m30/ER-M30-2014-12-01.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m30/2014-12-01</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M30/ER-M30-2014-12-01-loose.xsd</Referanse>
+			<Referanse>skjema/eresept/m30/ER-M30-2014-12-01-loose.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m30/2014-12-01</Namespace>
 		</Skjema>
 		<Skjema>
