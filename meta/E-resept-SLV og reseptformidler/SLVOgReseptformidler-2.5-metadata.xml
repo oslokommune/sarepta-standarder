@@ -44,7 +44,7 @@
 			<Namespace>http://www.kith.no/xmlstds/eresept/m14/2008-12-12</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M3-M14-M15/ER-M15-2006-10-06.xsd</Referanse>
+			<Referanse>skjema/eresept/M3-M14-M15/ER-M15-2006-10-06.xsd</Referanse> 
 			<Namespace>http://www.kith.no/xmlstds/eresept/m15/2006-10-06</Namespace>
 		</Skjema>
 		<Skjema>
