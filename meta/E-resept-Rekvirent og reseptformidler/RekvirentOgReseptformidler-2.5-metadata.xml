@@ -378,172 +378,157 @@
 	</Skjemaer>
 	<Felleskomponenter>
 		<Felleskomponent>
-			<Referanse>/skjema/felleskomponenter/MsgHead-v1_2.xsd</Referanse>
+			<Referanse>skjema/felleskomponenter/MsgHead-v1_2.xsd</Referanse>
 		</Felleskomponent>
 		<Felleskomponent>
-			<Referanse>/skjema/felleskomponenter/kith-base64.xsd</Referanse>
+			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
 	<Visningsfiler>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/m1/m1-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m1/m1-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/m1/m1-2html-v2.4.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m1/m1-2html-v2.4.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/m2-m12/m2-m12-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m2-m12/m2-m12-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/m2-m12/m2-m12-2html-v2.4.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m2-m12/m2-m12-2html-v2.4.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/m5/m5-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m5/m5-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/m5/m5-2html-v2.4.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m5/m5-2html-v2.4.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/m6/m6-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m6/m6-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/m6/m6-2html-v2.4.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m6/m6-2html-v2.4.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/m7/m7-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m7/m7-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/m7/m7-2html-v2.4.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m7/m7-2html-v2.4.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/m8/m8-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m8/m8-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/m8/m8-2html-v2.4.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m8/m8-2html-v2.4.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/m15/m15-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m15/m15-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/m24/m24-2html.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m24/m24-2html.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/m25/m25-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m25/m25-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/m27/m271-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m27/m271-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/m27/m272-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m27/m272-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/m27/m273-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m27/m273-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/m27/m274-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m27/m274-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/m28/m28-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m28/m28-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/m42/m42-2html.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m42/m42-2html.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/m96/m96-2html.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m96/m96-2html.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/utlevering/utlevering-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/utlevering/utlevering-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/utlevering/utlevering-2html-v2.4.xsl</Referanse>
+			<Referanse>visningsfil/eresept/utlevering/utlevering-2html-v2.4.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>/visningsfil/eresept/Forskrivninger2html.xsl</Referanse>
+			<Referanse>visningsfil/eresept/Forskrivninger2html.xsl</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
 	<Eksempler>
 		<Eksempel>
-			<Referanse>/eksempel/eresept/ER-M3-2010-05-01-eksempel1.xml</Referanse>
+			<Referanse>eksempel/eresept/ER-M5-2013-04-16-eksempel1.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>/eksempel/eresept/ER-M3-2010-05-011-eksempel1-msghead.xml</Referanse>
+			<Referanse>eksempel/eresept/ER-M7-2008-05-01-eksempel1.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>/eksempel/eresept/ER-M5-2013-04-16-eksempel1.xml</Referanse>
+			<Referanse>eksempel/eresept/ER-M21-2013-10-08-eksempel1-msghead.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>/eksempel/eresept/ER-M7-2008-05-01-eksempel1.xml</Referanse>
+			<Referanse>eksempel/eresept/ER-M41-2006-10-06-example.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>/eksempel/eresept/ER-M14-2008-12-12-eksempel1.xml</Referanse>
+			<Referanse>eksempel/eresept/ER-M41-2006-10-06-example-msghead.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>/eksempel/eresept/ER-M14-2008-12-12-eksempel1-msghead.xml</Referanse>
+			<Referanse>eksempel/eresept/ER-M42-2006-10-06-example.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>/eksempel/eresept/ER-M15-2006-10-06-eksempel1-msghead.xml</Referanse>
+			<Referanse>eksempel/eresept/ER-M42-2006-10-06-example-msghead.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>/eksempel/eresept/ER-M21-2013-10-08-eksempel1-msghead.xml</Referanse>
+			<Referanse>eksempel/eresept/ER-M91-2013-10-08-eksempel1.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>/eksempel/eresept/ER-M41-2006-10-06-example.xml</Referanse>
+			<Referanse>eksempel/eresept/ER-M91-2013-10-08-eksempel2.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>/eksempel/eresept/ER-M41-2006-10-06-example-msghead.xml</Referanse>
+			<Referanse>eksempel/eresept/ER-M92-2013-10-08-eksempel1.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>/eksempel/eresept/ER-M42-2006-10-06-example.xml</Referanse>
+			<Referanse>eksempel/eresept/ER-M93-2008-04-29-eksempel1.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>/eksempel/eresept/ER-M42-2006-10-06-example-msghead.xml</Referanse>
+			<Referanse>eksempel/eresept/ER-M94-2010-07-01-eksempel1.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>/eksempel/eresept/ER-M91-2013-10-08-eksempel1.xml</Referanse>
+			<Referanse>eksempel/eresept/ER-M241-2009-02-20-eksempel1.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>/eksempel/eresept/ER-M91-2013-10-08-eksempel2.xml</Referanse>
+			<Referanse>eksempel/eresept/ER-M242-2008-10-03-eksempel1.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>/eksempel/eresept/ER-M92-2013-10-08-eksempel1.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>/eksempel/eresept/ER-M93-2008-04-29-eksempel1.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>/eksempel/eresept/ER-M94-2010-07-01-eksempel1.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>/eksempel/eresept/ER-M241-2009-02-20-eksempel1.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>/eksempel/eresept/ER-M242-2008-10-03-eksempel1.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>/eksempel/eresept/M96-b64.xml</Referanse>
+			<Referanse>eksempel/eresept/M96-b64.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
 	
 	<RelaterteFiler>
 		<RelatertFil>
 			<Beskrivelse>Applikasjonskvittering v 1.0</Beskrivelse>
-			<Referanse>/kravdokument/applikasjonskvittering/HIS_80415_2004 AppRec v1.0 -korrigert.pdf</Referanse>
+			<Referanse>kravdokument/applikasjonskvittering/HIS_80415_2004 AppRec v1.0 -korrigert.pdf</Referanse>
 		</RelatertFil>
 		<RelatertFil>
 			<Beskrivelse>Notat til bruk av kith-base.xsd</Beskrivelse>
-			<Referanse>/relaterteFiler/eresept/NOTAT-kith-base64.pdf</Referanse>
+			<Referanse>relaterteFiler/eresept/NOTAT-kith-base64.pdf</Referanse>
 		</RelatertFil>
 		<RelatertFil>
 			<Beskrivelse>Hodemelding v 1.2</Beskrivelse>
-			<Referanse>/kravdokument/hodemelding/HIS_80601_2006-Hodemelding-v12 -korrigert.pdf</Referanse>
+			<Referanse>kravdokument/hodemelding/HIS_80601_2006-Hodemelding-v12 -korrigert.pdf</Referanse>
 		</RelatertFil>
 		<RelatertFil>
 			<Beskrivelse>Datatyper v 1.1</Beskrivelse>
-			<Referanse>/kravdokument/DatatyperTilBrukVedMeldingsutveksling/HIS_80117_2002_Datatyper_v1.1 -korrigert.pdf</Referanse>
+			<Referanse>kravdokument/DatatyperTilBrukVedMeldingsutveksling/HIS_80117_2002_Datatyper_v1.1 -korrigert.pdf</Referanse>
 		</RelatertFil>
 		<RelatertFil>
 			<Beskrivelse>Notat - Opplysninger om signerende helsepersoenell i meldinger fra Helseforetak til NAV og Reseptformidleren</Beskrivelse>
-			<Referanse>/relaterteFiler/eresept/Signerende_HelsepersonellSykmelding-eResept-notat.pdf</Referanse>
+			<Referanse>relaterteFiler/eresept/Signerende_HelsepersonellSykmelding-eResept-notat.pdf</Referanse>
 		</RelatertFil>
 	</RelaterteFiler>	
 	
