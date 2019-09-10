@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 ../felles/MsgHead-v1_2.xsd">
+	<MsgInfo>
+		<Type V="ERM21" DN="Ekspederingsanmodning"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2007-03-12T19:20:00</GenDate>
+		<MsgId>fa662190-cc17-4a0d-959c-7e3c2a8523ff</MsgId>
+		<Sender>
+			<Organisation>
+				<OrganisationName>Reseptformidleren</OrganisationName>
+				<Ident>
+					<Id>1234567890-example</Id>
+					<TypeId S="2.16.578.1.12.4.1.1.9051" V="ENH" DN="Organisasjonsnummeret i Enhetsregister"/>
+				</Ident>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>Apoteket Flodhesten</OrganisationName>
+				<Ident>
+					<Id>971033541</Id>
+					<TypeId S="2.16.578.1.12.4.1.1.9051" V="ENH" DN="Organisasjonsnummeret i Enhetsregister"/>
+				</Ident>
+				<Ident>
+					<Id>9001</Id>
+					<TypeId S="2.16.578.1.12.4.1.1.9051" V="AKO" DN="Apotekets konsesjonsnummer"/>
+				</Ident>
+			</Organisation>
+		</Receiver>
+	</MsgInfo>
+	<Document>
+		<RefDoc>
+			<MsgType V="XML" DN="XML-instans"/>
+			<Content>
+				<Ekspederingsanmodning xsi:schemaLocation="http://www.kith.no/xmlstds/eresept/m21/2013-10-08 ER-M21-2013-10-08.xsd" xmlns:m1="http://www.kith.no/xmlstds/eresept/m1/2013-10-08" xmlns="http://www.kith.no/xmlstds/eresept/m21/2013-10-08" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<ReseptId>8eaa6000-3ec6-11dd-ae16-0800200c9a66</ReseptId>
+					<RefNr>THX1138</RefNr>
+					<Fnr>15076500565</Fnr>
+					<Navn>Roland Gundersen</Navn>
+					<m1:EkspAnm>
+						<m1:Vilkar>true</m1:Vilkar>
+						<m1:MetodeEkspedering DN="Forsendelse" V="F"/>
+						<m1:Utleverer>HER1234567890</m1:Utleverer>
+						<m1:Kontaktperson>Roland Gundersen</m1:Kontaktperson>
+						<m1:Adresse>
+							<fk1:StreetAdr>Flåklypa 31</fk1:StreetAdr>
+							<fk1:PostalCode>2560</fk1:PostalCode>
+							<fk1:City>Alvdal</fk1:City>
+						</m1:Adresse>
+						<m1:Merknad>Ikke bruk innpakkingsmateriale laget av biomateriale grunnet allergi. </m1:Merknad>
+						<m1:OrgNrUtleverer>971033541</m1:OrgNrUtleverer>
+						<m1:UtlevererNavn>Heidundradegår Sykepleieartikler</m1:UtlevererNavn>
+					</m1:EkspAnm>
+				</Ekspederingsanmodning>
+			</Content>
+		</RefDoc>
+	</Document>
+</MsgHead>
