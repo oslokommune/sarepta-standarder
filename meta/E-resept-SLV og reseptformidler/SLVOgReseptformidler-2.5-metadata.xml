@@ -56,7 +56,7 @@
 			<Namespace>http://www.kith.no/xmlstds/eresept/m20/2013-10-08</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M30/ER-M30-2013-10-08.xsd</Referanse>
+			<Referanse>skjema/eresept/m30/ER-M30-2013-10-08.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m30/2013-10-08</Namespace>
 		</Skjema>
 		<Skjema>
