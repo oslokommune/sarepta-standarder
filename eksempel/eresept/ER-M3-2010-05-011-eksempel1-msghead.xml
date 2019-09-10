@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 ../felles/MsgHead-v1_2.xsd">
+	<MsgInfo>
+		<Type V="ERM3" DN="Grunnlag for søknad Legemiddelverket"/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2007-03-12T19:20:00</GenDate>
+		<MsgId>5f723921-76d0-44ed-acd0-f7ed2baec16c</MsgId>
+		<Sender>
+			<Organisation>
+				<OrganisationName>Kattskinnet legesenter</OrganisationName>
+				<Ident>
+					<Id>971318864</Id>
+					<TypeId S="2.16.578.1.12.4.1.1.9051" V="ENH" DN="Organisasjonsnummeret i Enhetsregister"/>
+				</Ident>
+				<HealthcareProfessional>
+					<FamilyName>Koman</FamilyName>
+					<GivenName>Magnar</GivenName>
+					<Ident>
+						<Id>009144889</Id>
+						<TypeId S="2.16.578.1.12.4.1.1.8116" V="HPR" DN="HPR-nummer"/>
+					</Ident>
+				</HealthcareProfessional>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>Statens Legemiddelverk, Avdeling for legemiddelgodkjenning</OrganisationName>
+				<Ident>
+					<Id>1234567890-example</Id>
+					<TypeId S="2.16.578.1.12.4.1.1.9051" V="ENH" DN="Organisasjonsnummeret i Enhetsregister"/>
+				</Ident>
+			</Organisation>
+		</Receiver>
+	</MsgInfo>
+	<Document>
+		<RefDoc>
+			<MsgType V="XML" DN="XML-instans"/>
+			<Content>
+				<AnmodningSLV xsi:schemaLocation="http://www.kith.no/xmlstds/eresept/m3/2010-05-01 ER-M3-2010-05-01.xsd" xmlns="http://www.kith.no/xmlstds/eresept/m3/2010-05-01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<ReseptId>7c77a590-317a-11dd-bd11-0800200c9a66</ReseptId>
+					<Kommentar>Denne bør dere ta en titt på</Kommentar>
+				</AnmodningSLV>
+			</Content>
+		</RefDoc>
+	</Document>
+</MsgHead>
+

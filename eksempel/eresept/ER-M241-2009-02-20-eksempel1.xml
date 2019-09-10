@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Samtykke xsi:schemaLocation="http://www.kith.no/xmlstds/eresept/m241/2009-02-20 ER-M241-2009-02-20.xsd" xmlns="http://www.kith.no/xmlstds/eresept/m241/2009-02-20" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<SamtykkeGittAv DN="Kodeverk mangler" V="TODO"/>
+	<SamtykkeTil>2077-03-12</SamtykkeTil>
+	<TypeSamtykke DN="Samtykke for utleveringsmelding" V="1"/>
+	<Samtykkeverdi DN="Ja" V="1"/>
+</Samtykke>
