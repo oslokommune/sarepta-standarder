@@ -13,7 +13,7 @@
 
 	<MerInformasjon>
 		<Informasjon>
-			<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten v1.6</Beskrivelse>
+			<Beskrivelse>Bruk og målgrupper</Beskrivelse>
 			<Referanse>https://ehelse.no/standarder/standard-for-elektronisk-kommunikasjon-med-pleie-og-omsorgstjenesten-v1.6</Referanse>
 		</Informasjon>
 	</MerInformasjon>
@@ -28,8 +28,8 @@
 	        <Status>Fastsatt som standard</Status>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Pleie og omsorgsmelding: Innleggelsesrapport v1.6</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1143-2014</Referanse>
+	                <Beskrivelse>Bruk og målgrupper</Beskrivelse>
+		            <Referanse>https://ehelse.no/standarder/innleggelsesrapport-v1.6</Referanse>
 		        </Informasjon>
 	        </MerInformasjon>
         </Profil>
@@ -41,8 +41,8 @@
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Pleie- og omsorgsmelding: Helseopplysninger v1.6</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1144-2014</Referanse>
+	                <Beskrivelse>Bruk og målgrupper</Beskrivelse>
+		            <Referanse>https://ehelse.no/standarder/helseopplysninger-v1.6</Referanse>
 		        </Informasjon>  
 	        </MerInformasjon>
         </Profil>
@@ -54,8 +54,8 @@
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Pleie- og omsorgsmelding: Helseopplysninger til lege v1.6</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1145-2014</Referanse>
+	                <Beskrivelse>Bruk og målgrupper</Beskrivelse>
+		            <Referanse>https://ehelse.no/standarder/helseopplysninger-til-lege-v1.6</Referanse>
 		        </Informasjon>  
 	        </MerInformasjon>
         </Profil>
@@ -67,8 +67,8 @@
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Pleie- og omsorgsmelding: Orientering om tjenestetilbud v1.6</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1146-2014</Referanse>
+	                <Beskrivelse>Bruk og målgrupper</Beskrivelse>
+		            <Referanse>https://ehelse.no/standarder/orientering-om-tjenestetilbud-v1.6</Referanse>
 		        </Informasjon>  
 	        </MerInformasjon>
         </Profil>
@@ -80,8 +80,8 @@
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Pleie- og omsorgsmelding: Medisinske opplysninger v1.6</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1147-2014</Referanse>
+	                <Beskrivelse>Bruk og målgrupper</Beskrivelse>
+		            <Referanse>https://ehelse.no/standarder/medisinske-opplysninger-v1.6</Referanse>
 		        </Informasjon>  
 	        </MerInformasjon>
         </Profil>
@@ -93,8 +93,8 @@
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Pleie- og omsorgsmelding: Utskrivningsrapport v1.6</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1148-2014</Referanse>
+	                <Beskrivelse>Bruk og målgrupper</Beskrivelse>
+		            <Referanse>https://ehelse.no/standarder/utskrivningsrapport-v1.6</Referanse>
 		        </Informasjon>  
 	        </MerInformasjon>
         </Profil>
@@ -106,8 +106,8 @@
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Pleie- og omsorgsmelding: Pasientlogistikkmeldinger v1.6</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1149-2014</Referanse>
+	                <Beskrivelse>Bruk og målgrupper</Beskrivelse>
+		            <Referanse>https://ehelse.no/standarder/pasientlogistikkmeldinger-v1.6</Referanse>
 		        </Informasjon>  
 	        </MerInformasjon>
         </Profil>
@@ -115,42 +115,110 @@
 
 	<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten v1.6 (PDF)</Beskrivelse>
-			<Referanse>kravdokument/plo/HIS_80704_2014 Pleie-og omsorgsmeldinger v1.6 -korrigert.pdf</Referanse>
+			<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten v1.6 (oppdatert standard) (PDF)</Beskrivelse>
+			<Referanse>kravdokument/plo/HIS_80704_2014-Pleie-og-omsorg-melding-v1.6-oppdatert.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Endringsoversikt (PDF)</Beskrivelse>
+			<Referanse>kravdokument/plo/Endringsoversikt HIS 80704_2014.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>Original standard (PDF)</Beskrivelse>
+			<Referanse>kravdokument/plo/HIS_80704_2014-Pleie-og-omsorg-melding-v1.6.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>1</ProfilId>
-			<Beskrivelse>Innleggelsesrapport (PDF)</Beskrivelse>
+			<Beskrivelse>Innleggelsesrapport (oppdatert profil) (PDF)</Beskrivelse>
+			<Referanse>kravdokument/plo/HIS_1143_2014_PLO-innleggelsesrapport -oppdatert.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>1</ProfilId>
+			<Beskrivelse>Endringsoversikt profil (PDF)</Beskrivelse>
+			<Referanse>kravdokument/plo/Endringsoversikt HIS 1143_2014.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>1</ProfilId>
+			<Beskrivelse>Original profil (PDF)</Beskrivelse>
 			<Referanse>kravdokument/plo/HIS_1143_2014_PLO-innleggelsesrapport.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>2</ProfilId>
-			<Beskrivelse>Helseopplysninger (PDF)</Beskrivelse>
+			<Beskrivelse>Helseopplysninger (oppdatert profil) (PDF)</Beskrivelse>
+			<Referanse>kravdokument/plo/HIS_1144_2014_PLO-helseopplysninger -oppdatert.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>2</ProfilId>
+			<Beskrivelse>Endringsoversikt profil (PDF)</Beskrivelse>
+			<Referanse>kravdokument/plo/Endringsoversikt HIS 1144_2014.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>2</ProfilId>
+			<Beskrivelse>Original profil (PDF)</Beskrivelse>
 			<Referanse>kravdokument/plo/HIS_1144_2014_PLO-helseopplysninger.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>3</ProfilId>
-			<Beskrivelse>Helseopplysninger til lege (PDF)</Beskrivelse>
-			<Referanse>kravdokument/plo/HIS_1145_2014_PLO-helseopplysningerLege-korrigert.pdf</Referanse>
+			<Beskrivelse>Helseopplysninger til lege (oppdatert profil) (PDF)</Beskrivelse>
+			<Referanse>kravdokument/plo/HIS_1145_2014_PLO-helseopplysningerLege -oppdatert.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>3</ProfilId>
+			<Beskrivelse>Endringsoversikt profil (PDF)</Beskrivelse>
+			<Referanse>kravdokument/plo/Endringsoversikt HIS 1145_2014.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>3</ProfilId>
+			<Beskrivelse>Original profil (PDF)</Beskrivelse>
+			<Referanse>kravdokument/plo/HIS_1145_2014_PLO-helseopplysningerLege.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>4</ProfilId>
-			<Beskrivelse>Orientering om tjenestetilbud (PDF)</Beskrivelse>
+			<Beskrivelse>Orientering om tjenestetilbud (oppdatert profil) (PDF)</Beskrivelse>
+			<Referanse>kravdokument/plo/HIS_1146_2014_PLO-orienteringTjenestetilbud -oppdatert.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>4</ProfilId>
+			<Beskrivelse>Endringsoversikt profil (PDF)</Beskrivelse>
+			<Referanse>kravdokument/plo/Endringsoversikt HIS 1146_2014.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>4</ProfilId>
+			<Beskrivelse>Original profil (PDF)</Beskrivelse>
 			<Referanse>kravdokument/plo/HIS_1146_2014_PLO-orienteringTjenestetilbud.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>5</ProfilId>
-			<Beskrivelse>Medisinske opplysninger (PDF)</Beskrivelse>
-			<Referanse>kravdokument/plo/HIS_1147_2014_PLO-medisinskeOpplysninger -korrigert.pdf</Referanse>
+			<Beskrivelse>Medisinske opplysninger (oppdatert profil) (PDF)</Beskrivelse>
+			<Referanse>kravdokument/plo/HIS_1147_2014_PLO-medisinskeOpplysninger -oppdatert.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>5</ProfilId>
+			<Beskrivelse>Endringsoversikt profil (PDF)</Beskrivelse>
+			<Referanse>kravdokument/plo/Endringsoversikt HIS 1147_2014.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>5</ProfilId>
+			<Beskrivelse>Original profil (PDF)</Beskrivelse>
+			<Referanse>kravdokument/plo/HIS_1147_2014_PLO-medisinskeOpplysninger.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>6</ProfilId>
-			<Beskrivelse>Utskrivningsrapport (PDF)</Beskrivelse>
-			<Referanse>kravdokument/plo/HIS_1148_2014_PLO-utskrivningsrapport.pdf</Referanse>
+			<Beskrivelse>Utskrivningsrapport (oppdatert profil) (PDF)</Beskrivelse>
+			<Referanse>kravdokument/plo/HIS_1148_2014_PLO-utskrivningsrapport -oppdatert.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
 			<ProfilId>7</ProfilId>
-			<Beskrivelse>Pasientlogistikkmeldinger (PDF)</Beskrivelse>
+			<Beskrivelse>Pasientlogistikkmeldinger (oppdatert profil) (PDF)</Beskrivelse>
+			<Referanse>kravdokument/plo/HIS_1149_2014_PLO-pasientlogistikkmeldinger -oppdatert.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>7</ProfilId>
+			<Beskrivelse>Endringsoversikt profil (PDF)</Beskrivelse>
+			<Referanse>kravdokument/plo/Endringsoversikt HIS 1149_2014.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<ProfilId>7</ProfilId>
+			<Beskrivelse>Original profil (PDF)</Beskrivelse>
 			<Referanse>kravdokument/plo/HIS_1149_2014_PLO-pasientlogistikkmeldinger.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
