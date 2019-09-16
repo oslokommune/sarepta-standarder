@@ -5,7 +5,6 @@
 	<Tema>Meldingsutveksling helsenorge.no</Tema>   
 </Temaer>
 	<Navn>Tjenesteoversikt - Implementasjonsguide standarder</Navn> 
-	<Versjon>1.0</Versjon>
 	<Identifikator>HITS 1218:2018</Identifikator>
 	<Utgitt>03/2019</Utgitt>
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
@@ -15,7 +14,11 @@
 			<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/helsenorgeno</Referanse>
 		</Informasjon>
 		<Informasjon>
-			<Beskrivelse>HL7 FHIR definisjoner</Beskrivelse>
+			<Beskrivelse>Bruk og målgrupper</Beskrivelse>
+			<Referanse>https://ehelse.no/standarder/ikke-standarder/implementasjonsguide-for-tjenesteoversikt-helsenorge.no</Referanse>
+		</Informasjon>
+		<Informasjon>
+			<Beskrivelse>HL7 FHIR definisjoner (ZIP)</Beskrivelse>
 			<Referanse>https://www.hl7.org/fhir/definitions.xml.zip</Referanse>
 		</Informasjon>
 	</MerInformasjon>

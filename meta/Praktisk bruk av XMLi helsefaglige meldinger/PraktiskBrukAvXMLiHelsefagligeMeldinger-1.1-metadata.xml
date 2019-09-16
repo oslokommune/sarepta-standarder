@@ -5,11 +5,16 @@
 		<Tema>Felles for flere meldingsstandarder</Tema>
 	</Temaer>
 	<Navn>Praktisk bruk av XML i helsefaglige meldinger</Navn>
-	<Versjon>1.1</Versjon>
 	<Identifikator>HIS 1165:2016</Identifikator>
 	<Utgitt>2016</Utgitt>
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Bruk og målgrupper</Beskrivelse>
+			<Referanse>https://ehelse.no/standarder/ikke-standarder/praktisk-bruk-av-xml-i-helsefaglige-meldinger</Referanse>
+		</Informasjon>
+	</MerInformasjon>
 		
 	<Kravdokumenter>
 		<Kravdokument>

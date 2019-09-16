@@ -235,15 +235,14 @@
 			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer (PDF)</Beskrivelse>
 			<Referanse>kravdokument/KoblingAvRelaterteMeldingerMedIdentifikatorer/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer -oppdatert.pdf</Referanse>
 		</Tilleggsdokument>
-		
-	<Tilleggsdokument>
-		<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger (PDF)</Beskrivelse>
-		<Referanse>tilleggsdokument/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
-	</Tilleggsdokument>
-	<Tilleggsdokument>
-		<Beskrivelse>Bruk av pleie- og omsorgsmeldinger i pasientforløp (PDF)</Beskrivelse>
-		<Referanse>tilleggsdokument/plo/HISD_80806_2012_Veiviser-PLO-meldinger_v2.1.pdf</Referanse>
-	</Tilleggsdokument>
+		<Tilleggsdokument>
+			<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger (PDF)</Beskrivelse>
+			<Referanse>tilleggsdokument/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
+		</Tilleggsdokument>
+		<Tilleggsdokument>
+			<Beskrivelse>Bruk av pleie- og omsorgsmeldinger i pasientforløp (PDF)</Beskrivelse>
+			<Referanse>tilleggsdokument/plo/HISD_80806_2012_Veiviser-PLO-meldinger_v2.1.pdf</Referanse>
+		</Tilleggsdokument>
 	</Tilleggsdokumenter>
 	<Skjemaer>
 	

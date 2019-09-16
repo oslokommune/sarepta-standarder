@@ -10,7 +10,7 @@
 	
 	<MerInformasjon>
 		<Informasjon>
-			<Beskrivelse>Standard for elektronisk kommunikasjon med pleie- og omsorgstjenesten v1.5</Beskrivelse>
+			<Beskrivelse>Bruk og målgrupper</Beskrivelse>
 			<Referanse>https://ehelse.no/standarder/standard-for-elektronisk-kommunikasjon-med-pleie-og-omsorgstjenesten-v1.5</Referanse>
 		</Informasjon>
 	</MerInformasjon>
@@ -25,8 +25,8 @@
 	        <Status>Fastsatt som standard</Status>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Pleie og omsorgsmelding: Innleggelsesrapport v1.5</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1143-2009</Referanse>
+	                <Beskrivelse>Bruk og målgrupper</Beskrivelse>
+		            <Referanse>https://ehelse.no/standarder/innleggelsesrapport-v1.5</Referanse>
 		        </Informasjon>
 	        </MerInformasjon>
         </Profil>
@@ -38,8 +38,8 @@
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Pleie- og omsorgsmelding: Helseopplysninger v1.5</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1144-2009</Referanse>
+	                <Beskrivelse>Bruk og målgrupper</Beskrivelse>
+		            <Referanse>https://ehelse.no/standarder/helseopplysninger-v1.5</Referanse>
 		        </Informasjon>  
 	        </MerInformasjon>
         </Profil>
@@ -51,8 +51,8 @@
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Pleie- og omsorgsmelding: Helseopplysninger til lege v1.5</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1145-2009</Referanse>
+	                <Beskrivelse>Bruk og målgrupper</Beskrivelse>
+		            <Referanse>https://ehelse.no/standarder/helseopplysninger-til-lege-v1.5</Referanse>
 		        </Informasjon>  
 	        </MerInformasjon>
         </Profil>
@@ -64,8 +64,8 @@
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Pleie- og omsorgsmelding: Orientering om tjenestetilbud v1.5</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1146-2009</Referanse>
+	                <Beskrivelse>Bruk og målgrupper</Beskrivelse>
+		            <Referanse>https://ehelse.no/standarder/orientering-om-tjenestetilbud-v1.5</Referanse>
 		        </Informasjon>  
 	        </MerInformasjon>
         </Profil>
@@ -77,8 +77,8 @@
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Pleie- og omsorgsmelding: Medisinske opplysninger v1.5</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1147-2009</Referanse>
+	                <Beskrivelse>Bruk og målgrupper</Beskrivelse>
+		            <Referanse>https://ehelse.no/standarder/medisinske-opplysninger-v1.5</Referanse>
 		        </Informasjon>  
 	        </MerInformasjon>
         </Profil>
@@ -90,8 +90,8 @@
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Pleie- og omsorgsmelding: Utskrivningsrapport v1.5</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1148-2009</Referanse>
+	                <Beskrivelse>Bruk og målgrupper</Beskrivelse>
+		            <Referanse>https://ehelse.no/standarder/utskrivningsrapport-v1.5</Referanse>
 		        </Informasjon>  
 	        </MerInformasjon>
         </Profil>
@@ -103,8 +103,8 @@
 	        <Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Pleie- og omsorgsmelding: Pasientlogistikkmeldinger v1.5</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1149-2009</Referanse>
+	                <Beskrivelse>Bruk og målgrupper</Beskrivelse>
+		            <Referanse>https://ehelse.no/standarder/pasientlogistikkmeldinger-v1.5</Referanse>
 		        </Informasjon>  
 	        </MerInformasjon>
         </Profil>
@@ -161,15 +161,14 @@
 			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer (PDF)</Beskrivelse>
 			<Referanse>kravdokument/KoblingAvRelaterteMeldingerMedIdentifikatorer/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer -oppdatert.pdf</Referanse>
 		</Tilleggsdokument>
-		
-	<Tilleggsdokument>
-		<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger (PDF)</Beskrivelse>
-		<Referanse>tilleggsdokument/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
-	</Tilleggsdokument>
-	<Tilleggsdokument>
-		<Beskrivelse>Bruk av pleie- og omsorgsmeldinger i pasientforløp (PDF)</Beskrivelse>
-		<Referanse>tilleggsdokument/plo/HISD_80806_2012_Veiviser-PLO-meldinger_v2.1.pdf</Referanse>
-	</Tilleggsdokument>
+		<Tilleggsdokument>
+			<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger (PDF)</Beskrivelse>
+			<Referanse>tilleggsdokument/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
+		</Tilleggsdokument>
+		<Tilleggsdokument>
+			<Beskrivelse>Bruk av pleie- og omsorgsmeldinger i pasientforløp (PDF)</Beskrivelse>
+			<Referanse>tilleggsdokument/plo/HISD_80806_2012_Veiviser-PLO-meldinger_v2.1.pdf</Referanse>
+		</Tilleggsdokument>
 	</Tilleggsdokumenter>
 	<Skjemaer>
 		<Skjema>
