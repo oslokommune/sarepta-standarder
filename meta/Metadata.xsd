@@ -274,7 +274,6 @@
 					<xs:documentation>Implementasjonsguider og annen teknisk dokumentasjon for bruk av meldinger på helsenorge.no</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-					
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
