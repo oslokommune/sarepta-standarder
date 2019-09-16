@@ -9,7 +9,7 @@
 	<Status>Fastsatt som standard</Status>
 	<MerInformasjon>
 		<Informasjon>
-			<Beskrivelse>Standard for kommunikasjon av EPJ-innhold (HIS 80710:2007)</Beskrivelse>
+			<Beskrivelse>Bruk og målgrupper</Beskrivelse>
 			<Referanse>https://ehelse.no/standarder/standard-for-kommunikasjon-av-epj-innhold</Referanse>
 		</Informasjon>
 	</MerInformasjon>
@@ -24,8 +24,8 @@
 	        <Status>Fastsatt som standard</Status>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Overføring av legemiddelopplysninger</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1150-2014</Referanse>
+	                <Beskrivelse>Bruk og målgrupper</Beskrivelse>
+		            <Referanse>https://ehelse.no/standarder/overforing-av-legemiddelopplysninger</Referanse>
 		        </Informasjon>
 	        </MerInformasjon>
         </Profil>
@@ -43,6 +43,13 @@
 			<Referanse>kravdokument/kommEPJinnhold/HIS_1150_2014_EPJ-overforingLegemiddelopplysninger-korrigert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
+
+	<Tilleggsdokumenter>
+		<Tilleggsdokument>
+			<Beskrivelse>Teknisk informasjon: Overføring av legemiddelinformasjon (PDF)</Beskrivelse>
+			<Referanse>tilleggsdokument/kommEPJinnhold/HITS_1156_2008-KommunikasjonLegemiddelinformasjon -oppdatert.pdf</Referanse>
+		</Tilleggsdokument>
+	</Tilleggsdokumenter>
 	
 	<Felleskomponenter>
 		<Felleskomponent>
@@ -74,10 +81,5 @@
 			<Referanse>eksempel/KommunikasjonAvEPJ-innhold/Overføring legemiddelopplysninger.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
-	<RelaterteFiler>
-		<RelatertFil>
-			<Beskrivelse>Teknisk informasjon: Overføring av legemiddelinformasjon (PDF)</Beskrivelse>
-			<Referanse>relaterteFiler/kommEPJinnhold/HITS_1156_2008-KommunikasjonLegemiddelinformasjon -oppdatert.pdf</Referanse>
-		</RelatertFil>
-	</RelaterteFiler>
+	
 </StandardMetadata>
