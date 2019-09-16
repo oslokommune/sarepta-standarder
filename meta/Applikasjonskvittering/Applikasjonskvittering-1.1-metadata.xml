@@ -57,10 +57,5 @@
 		</Felleskomponent>
 	</Felleskomponenter>
 	
-	<RelaterteFiler>
-		<RelatertFil>
-			<Beskrivelse>Veiledning til riktig bruk av applikasjonskvittering (PDF)</Beskrivelse>
-			<Referanse>relaterteFiler/applikasjonskvittering/HITS_1168_2016 Veiledning til riktig bruk av Applikasjonskvittering -oppdatert.pdf</Referanse>
-		</RelatertFil>
-	</RelaterteFiler>
+	
 </StandardMetadata>
