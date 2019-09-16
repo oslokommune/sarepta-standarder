@@ -10,7 +10,13 @@
 	<Utgitt>2002</Utgitt>
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
-		
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Bruk og målgrupper</Beskrivelse>
+			<Referanse>https://ehelse.no/standarder/datatyper-til-bruk-ved-meldingsutveksling-mv</Referanse>
+		</Informasjon>
+	</MerInformasjon>
+	
 	<Kravdokumenter>
 		<Kravdokument>
 			<Beskrivelse>Datatyper til bruk ved meldingsutveksling (PDF)</Beskrivelse>

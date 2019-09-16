@@ -12,7 +12,7 @@
 	<Status>Fastsatt som standard</Status>
 	<MerInformasjon>
 		<Informasjon>
-			<Beskrivelse>Applikasjonskvittering 1.1 (HIS 80415:2012)</Beskrivelse>
+			<Beskrivelse>Bruk og målgrupper</Beskrivelse>
 			<Referanse>https://ehelse.no/standarder/applikasjonskvittering-v1.1</Referanse>
 		</Informasjon>
 	</MerInformasjon>
@@ -31,19 +31,13 @@
 			<Referanse>kravdokument/applikasjonskvittering/Endringsoversikt HIS 80415_2012.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
-	<Implementasjonsguider>
-               <Implementasjonsguide>
-                       <Beskrivelse>Implementasjonsguide v1.1 (PDF)</Beskrivelse>
-                       <Referanse>kravdokument/applikasjonskvittering/HIS 80415_2012 AppRec v1.1 -korrigert.pdf</Referanse>
-               </Implementasjonsguide>
-        </Implementasjonsguider>
-        
-        <Tilleggsdokumentasjon>
-               <Tilleggsdokument>
-                       <Beskrivelse>Tilleggsdokument v1.1 (PDF)</Beskrivelse>
-                       <Referanse>kravdokument/applikasjonskvittering/HIS 80415_2012 AppRec v1.1 -korrigert.pdf</Referanse>
-               </Tilleggsdokument>
-        </Tilleggsdokumentasjon>
+	
+	<Tilleggsdokumenter>
+		<Tilleggsdokument>
+			<Beskrivelse>Veiledning til riktig bruk av applikasjonskvittering (PDF)</Beskrivelse>
+			<Referanse>kravdokument/BrukAvApplikasjonskvittering/HITS_1168_2016 Veiledning til riktig bruk av Applikasjonskvittering -oppdatert.pdf</Referanse>
+		</Tilleggsdokument>
+	</Tilleggsdokumenter>
 
 	<Skjemaer>
 		<Skjema>
@@ -63,10 +57,5 @@
 		</Felleskomponent>
 	</Felleskomponenter>
 	
-	<RelaterteFiler>
-		<RelatertFil>
-			<Beskrivelse>Veiledning til riktig bruk av applikasjonskvittering (PDF)</Beskrivelse>
-			<Referanse>relaterteFiler/applikasjonskvittering/HITS_1168_2016 Veiledning til riktig bruk av Applikasjonskvittering -oppdatert.pdf</Referanse>
-		</RelatertFil>
-	</RelaterteFiler>
+	
 </StandardMetadata>
