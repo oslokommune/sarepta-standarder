@@ -4,18 +4,21 @@
 <Temaer>
 	<Tema>Meldingsutveksling helsenorge.no</Tema>   
 </Temaer>
-	<Navn>Digital dialog - Implementasjonsguide standarder</Navn> 
-	<Versjon>1.0</Versjon>
+	<Navn>Implementasjonsguide for digital dialog med Helsenorge.no</Navn> 
 	<Identifikator>HITS 1217:2018</Identifikator>
 	<Utgitt>07/2019</Utgitt>
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<MerInformasjon>
 		<Informasjon>
-			<Beskrivelse>Helsenorge.no</Beskrivelse>
+			<Beskrivelse>Om Helsenorge.no</Beskrivelse>
 			<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/helsenorgeno</Referanse>
 		</Informasjon>
 		<Informasjon>
-			<Beskrivelse>HL7 FHIR definisjoner</Beskrivelse>
+			<Beskrivelse>Bruk og målgrupper</Beskrivelse>
+			<Referanse>https://ehelse.no/standarder/ikke-standarder/implementasjonsguide-for-digital-dialog-med-helsenorge.no</Referanse>
+		</Informasjon>
+		<Informasjon>
+			<Beskrivelse>HL7 FHIR definisjoner (ZIP)</Beskrivelse>
 			<Referanse>https://www.hl7.org/fhir/definitions.xml.zip</Referanse>
 		</Informasjon>
 	</MerInformasjon>
@@ -63,7 +66,7 @@
 		</Skjema>
 		<Skjema>
 			<Beskrivelse>M1 Resept</Beskrivelse>
-			<Referanse>skjema/eresept/m1/2013-10-08/ER-M1-2013-10-08.xsd</Referanse>
+			<Referanse>skjema/eresept/M1-M21/ER-M1-2013-10-08.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m1/2013-10-08</Namespace>
 		</Skjema>
 		<Skjema>
