@@ -10,11 +10,15 @@
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<MerInformasjon>
 		<Informasjon>
-			<Beskrivelse>Helsenorge.no</Beskrivelse>
+			<Beskrivelse>Om Helsenorge.no</Beskrivelse>
 			<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/helsenorgeno</Referanse>
 		</Informasjon>
 		<Informasjon>
-			<Beskrivelse>HL7 FHIR definisjoner</Beskrivelse>
+			<Beskrivelse>Bruk og målgrupper</Beskrivelse>
+			<Referanse>https://ehelse.no/standarder/ikke-standarder/amqp-spesifikasjon</Referanse>
+		</Informasjon>
+		<Informasjon>
+			<Beskrivelse>HL7 FHIR definisjoner (ZIP)</Beskrivelse>
 			<Referanse>https://www.hl7.org/fhir/definitions.xml.zip</Referanse>
 		</Informasjon>
 	</MerInformasjon>
@@ -24,12 +28,7 @@
 			<Referanse>kravdokument/AMQPSpesifikasjonHelsenorge/AMQP_spesifikasjon_helsenorge.no.pdf</Referanse>
 		</Implementasjonsguide>
 	</Implementasjonsguider>
-	<Tilleggsdokumentasjon>
-		<Tilleggsdokument>
-			<Beskrivelse>AMQP spesifikasjon Helsenorge.no (PDF)</Beskrivelse>
-			<Referanse>kravdokument/AMQPSpesifikasjonHelsenorge/AMQP_spesifikasjon_helsenorge.no.pdf</Referanse>
-		</Tilleggsdokument>
-	</Tilleggsdokumentasjon>
+	
 	<Skjemaer>
 		<Skjema>
 			<Beskrivelse>Hodemelding</Beskrivelse>
