@@ -27,6 +27,10 @@
 	                <Beskrivelse>Om bruk og målgrupper</Beskrivelse>
 		            <Referanse>http://ehelse.no/HIS1207-2018</Referanse>
 		        </Informasjon>
+		        <Informasjon>
+	                <Beskrivelse>Innføring av standarder</Beskrivelse>
+		            <Referanse>https://ehelse.no/standarder/innforing-av-standarder</Referanse>
+		        </Informasjon>
 	        </MerInformasjon>
 	        <Temaer>
 				<Tema>Standarder under innføring</Tema>
@@ -44,6 +48,10 @@
 	            <Informasjon>
 	                <Beskrivelse>Bruk og målgrupper</Beskrivelse>
 		            <Referanse>http://ehelse.no/HIS1208-2018</Referanse>
+		        </Informasjon>
+		        <Informasjon>
+	                <Beskrivelse>Innføring av standarder</Beskrivelse>
+		            <Referanse>https://ehelse.no/standarder/innforing-av-standarder</Referanse>
 		        </Informasjon>
 	        </MerInformasjon>
 	         <Temaer>
@@ -70,19 +78,24 @@
 			<Beskrivelse>Viderehenvisning (PDF)</Beskrivelse>
 			<Referanse>kravdokument/henvisning/HIS_1208-2018-Viderehenvisning -korrigert.pdf</Referanse>
 		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger (PDF)</Beskrivelse>
-			<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
+		
+		
+	</Kravdokumenter>
+	
+	<Tilleggsdokumenter>
+		<Tilleggsdokument>
 			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger (PDF)</Beskrivelse>
 			<Referanse>kravdokument/BrukAvKontaktopplysninger/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
+		</Tilleggsdokument>
+		<Tilleggsdokument>
 			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer (PDF)</Beskrivelse>
 			<Referanse>kravdokument/KoblingAvRelaterteMeldingerMedIdentifikatorer/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer -oppdatert.pdf</Referanse>
-		</Kravdokument>
-	</Kravdokumenter>
+		</Tilleggsdokument>
+		<Tilleggsdokument>
+				<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger (PDF)</Beskrivelse>
+				<Referanse>tilleggsdokument/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
+		</Tilleggsdokument>
+	</Tilleggsdokumenter>
 	
 	<Skjemaer>
 		<Skjema>

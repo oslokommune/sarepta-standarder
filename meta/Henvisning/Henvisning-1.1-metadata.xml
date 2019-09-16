@@ -4,7 +4,7 @@
 	<Temaer>
 		<Tema>Samhandling i pasientforløp</Tema>
 	</Temaer>
-	<Navn>Henvisningsmelding</Navn>
+	<Navn>Henvisning</Navn>
 	<Versjon>1.1</Versjon>
 	<Identifikator>HIS 80517:2014</Identifikator>
 	<Utgitt>02/2014</Utgitt>
@@ -13,7 +13,7 @@
     
 	<MerInformasjon>
 		<Informasjon>
-			<Beskrivelse>Henvisningsmelding 1.1 (HIS 80517:2014)</Beskrivelse>
+			<Beskrivelse>Bruk og målgrupper</Beskrivelse>
 			<Referanse>https://ehelse.no/standarder/henvisning-v1.1</Referanse>
 		</Informasjon>
 	</MerInformasjon>
@@ -26,19 +26,23 @@
 			<Beskrivelse>Henvisning v1.1 (PDF)</Beskrivelse>
 			<Referanse>kravdokument/henvisning/HIS_80517_2014_Henvisning_v1-1 -korrigert.pdf</Referanse>
 		</Kravdokument>
-		<Kravdokument>
+		
+	</Kravdokumenter>
+	
+		<Tilleggsdokumenter>
+			<Tilleggsdokument>
 			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger (PDF)</Beskrivelse>
 			<Referanse>kravdokument/BrukAvKontaktopplysninger/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
+		</Tilleggsdokument>
+		<Tilleggsdokument>
 			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer (PDF)</Beskrivelse>
 			<Referanse>kravdokument/KoblingAvRelaterteMeldingerMedIdentifikatorer/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer -oppdatert.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
+		</Tilleggsdokument>
+		<Tilleggsdokument>
 			<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger (PDF)</Beskrivelse>
-			<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
-		</Kravdokument>
-	</Kravdokumenter>
+			<Referanse>tilleggsdokument/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
+		</Tilleggsdokument>
+		</Tilleggsdokumenter>
 	
 	<Skjemaer>
 		<Skjema>
