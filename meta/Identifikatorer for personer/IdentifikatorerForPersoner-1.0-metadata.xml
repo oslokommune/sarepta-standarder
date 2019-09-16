@@ -5,11 +5,16 @@
 		<Tema>Felles for flere meldingsstandarder</Tema>
 	</Temaer>
 	<Navn>Identifikatorer for personer</Navn>
-	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 1001:2010</Identifikator>
 	<Utgitt>2010</Utgitt>
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Bruk og målgrupper</Beskrivelse>
+			<Referanse>https://ehelse.no/standarder/identifikatorer-for-personer.syntaks-for-fodselsnummer-hjelpenummer-mv</Referanse>
+		</Informasjon>
+	</MerInformasjon>	
 		
 	<Kravdokumenter>
 		<Kravdokument>

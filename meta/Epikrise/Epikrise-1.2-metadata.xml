@@ -26,23 +26,27 @@
 			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger (PDF)</Beskrivelse>
 			<Referanse>kravdokument/BrukAvKontaktopplysninger/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
 		</Kravdokument>
-		<Kravdokument>
+		
+	</Kravdokumenter>
+
+	<Tilleggsdokumenter>
+		<Tilleggsdokument>
+			<Beskrivelse>Notat: Den gode epikrise - minstekrav til medisinskfaglig innhold ved sending (PDF)</Beskrivelse>
+			<Referanse>tilleggsdokument/epikrise/HISD_1033_2010 Epikrise-Minimumskrav-2011-03-29.pdf</Referanse>
+		</Tilleggsdokument>
+		<Tilleggsdokument>
+			<Beskrivelse>Prinsipper for utskrift av epikrise (PDF)</Beskrivelse>
+			<Referanse>tilleggsdokument/epikrise/HISD_80715_2007_UtskriftMal-Epikrise.pdf</Referanse>
+		</Tilleggsdokument>
+		<Tilleggsdokument>
 			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer (PDF)</Beskrivelse>
 			<Referanse>kravdokument/KoblingAvRelaterteMeldingerMedIdentifikatorer/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer -oppdatert.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
+		</Tilleggsdokument>
+		<Tilleggsdokument>
 			<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger (PDF)</Beskrivelse>
-			<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>Notat: Den gode epikrise - minstekrav til medisinskfaglig innhold ved sending (PDF)</Beskrivelse>
-			<Referanse>relaterteFiler/epikrise/HISD_1033_2010 Epikrise-Minimumskrav-2011-03-29.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>Prinsipper for utskrift av epikrise (PDF)</Beskrivelse>
-			<Referanse>relaterteFiler/epikrise/HISD_80715_2007_UtskriftMal-Epikrise.pdf</Referanse>
-		</Kravdokument>
-	</Kravdokumenter>
+			<Referanse>tilleggsdokument/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
+		</Tilleggsdokument>
+	</Tilleggsdokumenter>	
 	
 	<Skjemaer>
 		<Skjema>

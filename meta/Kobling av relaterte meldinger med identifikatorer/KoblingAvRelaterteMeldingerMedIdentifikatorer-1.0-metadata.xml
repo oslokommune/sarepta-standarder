@@ -5,11 +5,16 @@
 		<Tema>Felles for flere meldingsstandarder</Tema>
 	</Temaer>
 	<Navn>Kobling av relaterte meldinger med bruk av identifikatorer</Navn>
-	<Versjon>1.0</Versjon>
 	<Identifikator>HITS 1218:2019</Identifikator>
 	<Utgitt>2019</Utgitt>
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Bruk og målgrupper</Beskrivelse>
+			<Referanse>https://ehelse.no/standarder/ikke-standarder/kobling-av-relaterte-meldinger-med-bruk-av-identifikatorer</Referanse>
+		</Informasjon>
+	</MerInformasjon>	
 		
 	<Kravdokumenter>
 		<Kravdokument>

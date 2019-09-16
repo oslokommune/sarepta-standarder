@@ -6,15 +6,18 @@
 		<Tema>Standarder under innføring</Tema>
 	</Temaer>
 	<Navn>Tjenestebasert adressering</Navn>
-	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 1153:2017</Identifikator>
 	<Utgitt>11/2017</Utgitt>
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
 	<MerInformasjon>
 		<Informasjon>
-			<Beskrivelse>Tjenestebasert adressering</Beskrivelse>
+			<Beskrivelse>Om tjenestebasert adressering og tjenestetyper</Beskrivelse>
 			<Referanse>https://ehelse.no/standarder/tjenestebasert-adressering</Referanse>
+		</Informasjon>
+		<Informasjon>
+			<Beskrivelse>Innføring av standarder</Beskrivelse>
+			<Referanse>https://ehelse.no/standarder/innforing-av-standarder</Referanse>
 		</Informasjon>
 	</MerInformasjon>
 
@@ -31,9 +34,13 @@
 			<Beskrivelse>Tjenestebasert adressering del 3: Adressering (PDF)</Beskrivelse>
 			<Referanse>kravdokument/TjenestebasertAdressering/HIS 1153-3_2017/HIS 1153-3_2017 Tjenestebasert adressering del 3 -oppdatert.pdf</Referanse>
 		</Kravdokument>
-		<Kravdokument>
+	</Kravdokumenter>
+	
+	<Tilleggsdokumenter>
+		<Tilleggsdokument>
 			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger (PDF)</Beskrivelse>
 			<Referanse>kravdokument/BrukAvKontaktopplysninger/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
-		</Kravdokument>
-	</Kravdokumenter>	
+		</Tilleggsdokument>
+	</Tilleggsdokumenter>
+			
 </StandardMetadata>
