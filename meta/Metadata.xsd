@@ -96,7 +96,7 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="Tilleggsdokumentasjon" minOccurs="0">
+				<xs:element name="Tilleggsdokumenter" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Tilleggsdokumentasjon som er nødvendig å ha med</xs:documentation>
 					</xs:annotation>
