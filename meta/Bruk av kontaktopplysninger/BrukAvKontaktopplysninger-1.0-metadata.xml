@@ -5,12 +5,16 @@
 		<Tema>Felles for flere meldingsstandarder</Tema>
 	</Temaer>
 	<Navn>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger</Navn>
-	<Versjon>1.0</Versjon>
 	<Identifikator>HITS 1174:2017</Identifikator>
 	<Utgitt>2017</Utgitt>
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
-	<Status>Fastsatt som standard</Status>
-		
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Bruk og målgrupper</Beskrivelse>
+			<Referanse>https://ehelse.no/standarder/ikke-standarder/bruk-av-kontaktopplysninger-i-basismeldinger-dialogmelding-og-pleie-og-omsorgsmeldinger</Referanse>
+		</Informasjon>
+	</MerInformasjon>
+	
 	<Kravdokumenter>
 		<Kravdokument>
 			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger (PDF)</Beskrivelse>
