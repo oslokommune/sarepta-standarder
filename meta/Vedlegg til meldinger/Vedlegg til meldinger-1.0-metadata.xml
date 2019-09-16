@@ -5,11 +5,16 @@
 		<Tema>Grunnleggende standarder for elektronisk samhandling</Tema>
 	</Temaer>
 	<Navn>Vedlegg til meldinger</Navn>
-	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 1036:2011</Identifikator>
 	<Utgitt>05/2011</Utgitt>
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Bruk og målgrupper</Beskrivelse>
+			<Referanse>https://ehelse.no/standarder/vedlegg-til-meldinger</Referanse>
+		</Informasjon>
+	</MerInformasjon>
 		
 	<Kravdokumenter>
 		<Kravdokument>
