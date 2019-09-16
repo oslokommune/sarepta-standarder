@@ -31,7 +31,20 @@
 			<Referanse>kravdokument/applikasjonskvittering/Endringsoversikt HIS 80415_2012.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
-	
+	<Implementasjonsguider>
+               <Implementasjonsguide>
+                       <Beskrivelse>Implementasjonsguide v1.1 (PDF)</Beskrivelse>
+                       <Referanse>kravdokument/applikasjonskvittering/HIS 80415_2012 AppRec v1.1 -korrigert.pdf</Referanse>
+               </Implementasjonsguide>
+        </Implementasjonsguider>
+        
+        <Tilleggsdokumentasjon>
+               <Tilleggsdokument>
+                       <Beskrivelse>Tilleggsdokument v1.1 (PDF)</Beskrivelse>
+                       <Referanse>kravdokument/applikasjonskvittering/HIS 80415_2012 AppRec v1.1 -korrigert.pdf</Referanse>
+               </Tilleggsdokument>
+        </Tilleggsdokumentasjon>
+
 	<Skjemaer>
 		<Skjema>
 			<Referanse>skjema/applikasjonskvittering/AppRec-v1.1.xsd</Referanse>
