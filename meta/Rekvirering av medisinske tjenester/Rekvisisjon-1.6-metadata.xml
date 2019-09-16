@@ -12,7 +12,7 @@
 	<Status>Fastsatt som standard</Status>
 	<MerInformasjon>
 		<Informasjon>
-			<Beskrivelse>Rekvirering av medisinske tjenester v1.6</Beskrivelse>
+			<Beskrivelse>Bruk og målgrupper</Beskrivelse>
 			<Referanse>https://ehelse.no/standarder/rekvirering-av-medisinske-tjenester-v1.6</Referanse>
 		</Informasjon>
 	</MerInformasjon>
@@ -27,8 +27,8 @@
 			<Status>Fastsatt som standard</Status>
 			<MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Rekvisisjon: radiologi v1.6</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1175-2014</Referanse>
+	                <Beskrivelse>Bruk og målgrupper</Beskrivelse>
+		            <Referanse>https://ehelse.no/standarder/radiologi-v1.6-rekvisisjon</Referanse>
 		        </Informasjon>
 	        </MerInformasjon>
 		</Profil>
@@ -41,8 +41,8 @@
 			<Status>Fastsatt som standard</Status>
 			<MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Rekvisisjon: laboratoriemedisin v1.6</Beskrivelse>
-		            <Referanse>http://ehelse.no/HIS1160-2014</Referanse>
+	                <Beskrivelse>Bruk og målgrupper</Beskrivelse>
+		            <Referanse>https://ehelse.no/standarder/laboratoriemedisin-v1.6-rekvisisjon</Referanse>
 		        </Informasjon>
 	        </MerInformasjon>
 		</Profil>
@@ -70,26 +70,27 @@
 			<ProfilId>2</ProfilId>
 			<Beskrivelse>Laboratoriemedisin (oppdatert standard)(PDF)</Beskrivelse>
 			<Referanse>kravdokument/rekvisisjon/HIS_1160_2014_Rekvisisjon-laboratoriemedisin -oppdatert.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
+		</Kravdokument>				
+	</Kravdokumenter>
+	
+	<Tilleggsdokumenter>
+		<Tilleggsdokument>
 			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger (PDF)</Beskrivelse>
 			<Referanse>kravdokument/BrukAvKontaktopplysninger/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
+		</Tilleggsdokument>
+		<Tilleggsdokument>
 			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer (PDF)</Beskrivelse>
 			<Referanse>kravdokument/KoblingAvRelaterteMeldingerMedIdentifikatorer/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer -oppdatert.pdf</Referanse>
-		</Kravdokument>
-			
-		<Kravdokument>
+		</Tilleggsdokument>
+		<Tilleggsdokument>
 			<Beskrivelse>Retningslinjer for bruk av standardene for Rekvisisjon av medisinske tjenester og Svarrapportering av medisinske tjenester (PDF)</Beskrivelse>
-			<Referanse>relaterteFiler/FellesForFlereStandarder/HITS_1102_2014_Retningslinjer for bruk av rekvisisjon og svarrapport -korrigert.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
+			<Referanse>tilleggsdokument/FellesForFlereStandarder/HITS_1102_2014_Retningslinjer for bruk av rekvisisjon og svarrapport -korrigert.pdf</Referanse>
+		</Tilleggsdokument>
+		<Tilleggsdokument>
 			<Beskrivelse>Bruk av Norsk laboratoriekodeverk (NLK) i rekvirering og svarrapportering av medisinske tjenester (PDF)</Beskrivelse>
-			<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1101_2015_NLK - Teknisk veileder v.2.0.pdf</Referanse>
-		</Kravdokument>
-				
-	</Kravdokumenter>
+			<Referanse>tilleggsdokument/FellesForFlereStandarder/HISD_1101_2015_NLK - Teknisk veileder v.2.0.pdf</Referanse>
+		</Tilleggsdokument>
+	</Tilleggsdokumenter>
 
 	<Skjemaer>
 		<Skjema>
