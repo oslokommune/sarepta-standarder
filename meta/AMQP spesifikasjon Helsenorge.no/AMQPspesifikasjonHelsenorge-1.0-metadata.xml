@@ -67,7 +67,7 @@
 		</Skjema>
 		<Skjema>
 			<Beskrivelse>M1 Resept</Beskrivelse>
-			<Referanse>skjema/eresept/M1-M21/2013-10-08/ER-M1-2013-10-08.xsd</Referanse>
+			<Referanse>skjema/eresept/M1-M21/ER-M1-2013-10-08.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m1/2013-10-08</Namespace>
 		</Skjema>
 		<Skjema>
