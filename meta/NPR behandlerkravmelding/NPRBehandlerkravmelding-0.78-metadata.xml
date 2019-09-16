@@ -9,8 +9,8 @@
 	<Status>Fastsatt som standard</Status>	
 	<MerInformasjon>
 		<Informasjon>
-			<Beskrivelse>NPR behandlerkravmelding</Beskrivelse>
-			<Referanse>http://ehelse.no/NPR-BKM</Referanse>
+			<Beskrivelse>Bruk og målgrupper</Beskrivelse>
+			<Referanse>https://ehelse.no/standarder/npr-behandlerkravmelding</Referanse>
 		</Informasjon>
 	</MerInformasjon>
 	
@@ -26,6 +26,13 @@
 			<Referanse>kravdokument/NPRbehandlerkravmelding/Endringslogg NPR-behandlerkravmelding.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
+
+	<Tilleggsdokumenter>
+		<Tilleggsdokument>
+			<Referanse>tilleggsdokument/NPRbehandlerkravmelding/beskrivelse-av-regninger-i-eksempelfil.doc</Referanse>
+		</Tilleggsdokument>
+	</Tilleggsdokumenter>
+	
 	<Skjemaer>
 		<Skjema>
 			<Referanse>skjema/NPRbehandlerkravmelding/bkm.xsd</Referanse>
@@ -51,9 +58,5 @@
 			<Referanse>eksempel/NPRbehandlerkravmelding/npr-bkm-ncrp-eksempel-kith.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
-	<RelaterteFiler>
-		<RelatertFil>
-			<Referanse>relaterteFiler/NPRbehandlerkravmelding/beskrivelse-av-regninger-i-eksempelfil.doc</Referanse>
-		</RelatertFil>
-	</RelaterteFiler>
+	
 </StandardMetadata>
