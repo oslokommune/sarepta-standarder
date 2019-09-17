@@ -22,12 +22,12 @@
 			<Referanse>https://www.hl7.org/fhir/definitions.xml.zip</Referanse>
 		</Informasjon>
 	</MerInformasjon>
-	<Kravdokumenter> 
-		<Kravdokument>
+	<Implementasjonsguider> 
+		<Implementasjonsguide>
 			<Beskrivelse>Tjenesteoversikt - Implementasjonsguide standarder (PDF)</Beskrivelse>
 			<Referanse>kravdokument/TjenesteoversiktImplementasjonsguideStandarder/Tjenesteoversikt_-_Implementasjonsguide_standarder.pdf</Referanse>
-		</Kravdokument>
-	</Kravdokumenter>
+		</Implementasjonsguide>
+	</Implementasjonsguider>
 	<Skjemaer>
 		<Skjema>
 			<Beskrivelse>Hodemelding</Beskrivelse>
