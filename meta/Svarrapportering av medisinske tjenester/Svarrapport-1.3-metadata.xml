@@ -142,6 +142,11 @@
 			<Beskrivelse>Bruk av Norsk laboratoriekodeverk (NLK) i rekvirering og svarrapportering av medisinske tjenester (PDF)</Beskrivelse>
 			<Referanse>tilleggsdokument/FellesForFlereStandarder/HISD_1101_2015_NLK - Teknisk veileder v.2.0.pdf</Referanse>
 		</Tilleggsdokument>
+		<Tilleggsdokument>
+			<ProfilId>2</ProfilId>
+			<Beskrivelse>Veiledning til mapping av hovedfunn for kolon- og rektumkarsinomer (PDF)</Beskrivelse>
+			<Referanse>tilleggsdokument/svarrapport/HISD_1170_2004-Veiledning-hovedfunn_for_kolon-_og_rektumkarsioner-svar-v11.pdf</Referanse>
+		</Tilleggsdokument>
 	</Tilleggsdokumenter>
 	<Skjemaer>
 		<Skjema>
