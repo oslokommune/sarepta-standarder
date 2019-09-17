@@ -9,7 +9,7 @@
 	<Status>Fastsatt som standard</Status>
 	<MerInformasjon>
 		<Informasjon>
-			<Beskrivelse>Dialogmelding 1.0 (HIS 80603:2006)</Beskrivelse>
+			<Beskrivelse>Bruk og målgrupper</Beskrivelse>
 			<Referanse>https://ehelse.no/standarder/dialogmelding-v1.0</Referanse>
 		</Informasjon>
 	</MerInformasjon>
@@ -24,7 +24,7 @@
 				<Status>Fastsatt som standard</Status>
 				<MerInformasjon>
 					<Informasjon>
-						<Beskrivelse>Forespørsel og svar på forespørsel i tilknytning til pleie- og omsorgsmeldinger v1.0</Beskrivelse>
+						<Beskrivelse>Bruk og målgrupper</Beskrivelse>
 						<Referanse>https://ehelse.no/standarder/foresporsel-og-svar-pa-foresporsel-i-tilknytning-til-pleie-og-omsorgsmeldinger</Referanse>
 					</Informasjon>
 				</MerInformasjon>
@@ -38,7 +38,7 @@
 				<Status>Fastsatt som standard</Status>
 				<MerInformasjon>
 					<Informasjon>
-						<Beskrivelse>Tilbakemelding om feil i mottatt melding v1.0</Beskrivelse>
+						<Beskrivelse>Bruk og målgrupper</Beskrivelse>
 						<Referanse>https://ehelse.no/standarder/tilbakemelding-om-feil-i-mottatt-melding</Referanse>
 					</Informasjon>
 				</MerInformasjon>
@@ -73,18 +73,20 @@
 			<Beskrivelse>Tilbakemelding om feil i mottatt melding: Orginal standard (PDF)</Beskrivelse>
 			<Referanse>kravdokument/dialogmelding/HIS 1151 2006 Avviksmelding.pdf</Referanse>
 		</Kravdokument>
-		<Kravdokument>
+		
+	</Kravdokumenter>
+	
+	<Tilleggsdokumenter>
+		<Tilleggsdokument>
 			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger (PDF)</Beskrivelse>
 			<Referanse>kravdokument/BrukAvKontaktopplysninger/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
+		</Tilleggsdokument>
+		<Tilleggsdokument>
 			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer (PDF)</Beskrivelse>
 			<Referanse>kravdokument/KoblingAvRelaterteMeldingerMedIdentifikatorer/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer -oppdatert.pdf</Referanse>
-		</Kravdokument><Kravdokument>
-			<Beskrivelse>Implementering av dialogmelding for spørsmål, svar og avviksmelding (PDF)</Beskrivelse>
-			<Referanse>relaterteFiler/dialogmelding/HISD_80903_2009-Dialogmelding-Implementeringsveiledning.pdf</Referanse>
-		</Kravdokument>
-	</Kravdokumenter>
+		</Tilleggsdokument>
+		
+	</Tilleggsdokumenter>
 
 	<Skjemaer>
 		<Skjema>
@@ -208,7 +210,11 @@
 			<Referanse>eksempel/Dialogmelding/Dialogmelding-v1-0/Dialogmelding_svar_foresporsel_PLO_v1-0.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
-	
-	
+	<RelaterteFiler>
+		<RelatertFil>
+			<Beskrivelse>Implementering av dialogmelding for spørsmål, svar og avviksmelding (PDF)</Beskrivelse>
+			<Referanse>relaterteFiler/dialogmelding/HISD_80903_2009-Dialogmelding-Implementeringsveiledning.pdf</Referanse>
+		</RelatertFil>
+	</RelaterteFiler>	
 
 </StandardMetadata>

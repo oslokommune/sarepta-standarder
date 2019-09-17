@@ -4,13 +4,13 @@
 <Temaer>
 	<Tema>Meldingsutveksling helsenorge.no</Tema>   
 </Temaer>
-	<Navn>Tjenesteoversikt - Implementasjonsguide standarder</Navn> 
+	<Navn>Implementasjonsguide for tjenesteoversikt Helsenorge.no</Navn> 
 	<Identifikator>HITS 1218:2018</Identifikator>
 	<Utgitt>03/2019</Utgitt>
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<MerInformasjon>
 		<Informasjon>
-			<Beskrivelse>Helsenorge.no</Beskrivelse>
+			<Beskrivelse>Om Helsenorge.no</Beskrivelse>
 			<Referanse>https://ehelse.no/e-resept-kjernejournal-og-helsenorgeno/helsenorgeno</Referanse>
 		</Informasjon>
 		<Informasjon>
