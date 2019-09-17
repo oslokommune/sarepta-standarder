@@ -81,5 +81,10 @@
 		</Skjema>
 		
 	</Skjemaer>
-	
+	<Eksempler>
+		<Eksempel>
+			<Beskrivelse>Systemdokumentasjon kommunikasjonsprosesser - verifiserbare (ZIP)</Beskrivelse>
+			<Referanse>eksempel/DigitalDialogImplementasjonsguideStandarder/SystemdokumentasjonKommunikasjonsprosesser-verifiserbare.zip</Referanse>
+		</Eksempel>
+	</Eksempler>
 </StandardMetadata>
