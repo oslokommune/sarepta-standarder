@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
-	<Navn>Henvisningsmelding</Navn>
+	<Navn>Henvisning</Navn>
 	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 80517:2005</Identifikator>
 	<Utgitt>07/2005</Utgitt>
@@ -9,7 +9,7 @@
 	<Status>Fastsatt som standard</Status>
 	<MerInformasjon>
 		<Informasjon>
-			<Beskrivelse>Henvisningsmelding 1.0 (HIS 80517:2005)</Beskrivelse>
+			<Beskrivelse>Bruk og målgrupper</Beskrivelse>
 			<Referanse>https://ehelse.no/standarder/henvisning-v1.0</Referanse>
 		</Informasjon>
 	</MerInformasjon>	
@@ -24,7 +24,7 @@
 	        <Status>Fastsatt som standard</Status>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Henvisningsmelding: Tannhelsetjenesten</Beskrivelse>
+	                <Beskrivelse>Bruk og målgrupper</Beskrivelse>
 		            <Referanse>https://ehelse.no/standarder/henvisningsmelding-tannhelsetjenesten</Referanse>
 		        </Informasjon>
 	        </MerInformasjon>
@@ -42,18 +42,23 @@
 			<Beskrivelse>Tannhelsetjenesten (PDF)</Beskrivelse>
 			<Referanse>kravdokument/henvisning/HIS_1017_2010 XML henvisning Meldingsprofil tannhelse.pdf</Referanse>
 		</Kravdokument>
-		<Kravdokument>
+		
+	</Kravdokumenter>
+	
+	<Tilleggsdokumenter>
+		<Tilleggsdokument>
 			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger (PDF)</Beskrivelse>
 			<Referanse>kravdokument/BrukAvKontaktopplysninger/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
+		</Tilleggsdokument>
+		<Tilleggsdokument>
 			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer (PDF)</Beskrivelse>
 			<Referanse>kravdokument/KoblingAvRelaterteMeldingerMedIdentifikatorer/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer -oppdatert.pdf</Referanse>
-		</Kravdokument><Kravdokument>
+		</Tilleggsdokument>
+		<Tilleggsdokument>
 			<Beskrivelse>Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger (PDF)</Beskrivelse>
-			<Referanse>relaterteFiler/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
-		</Kravdokument>
-	</Kravdokumenter>
+			<Referanse>tilleggsdokument/FellesForFlereStandarder/HISD_1154_2018 Retningslinjer for bruk av kodeverk og identifikatorer ved endring og kansellering av meldinger.pdf</Referanse>
+		</Tilleggsdokument>
+	</Tilleggsdokumenter>	
 	
 	<Skjemaer>
 		<Skjema>
