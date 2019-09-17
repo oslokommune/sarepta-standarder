@@ -24,7 +24,7 @@
 	        <Status>Fastsatt som standard</Status>
 	        <MerInformasjon>
 	            <Informasjon>
-	                <Beskrivelse>Henvisningsmelding: Tannhelsetjenesten</Beskrivelse>
+	                <Beskrivelse>Bruk og målgrupper</Beskrivelse>
 		            <Referanse>https://ehelse.no/standarder/epikrise-tannhelsetjenesten</Referanse>
 		        </Informasjon>
 	        </MerInformasjon>
@@ -43,21 +43,15 @@
 			<Beskrivelse>Tannhelsetjenesten (PDF)</Beskrivelse>
 			<Referanse>kravdokument/epikrise/HIS_1016_2010 XML epikrise Meldingsprofil tannhelse.pdf</Referanse>
 		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger (PDF)</Beskrivelse>
-			<Referanse>kravdokument/BrukAvKontaktopplysninger/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
-		</Kravdokument>
+		
 	
 	</Kravdokumenter>
 	
 	<Tilleggsdokumenter>
+		
 		<Tilleggsdokument>
-			<Beskrivelse>Notat: Den gode epikrise - minstekrav til medisinskfaglig innhold ved sending (PDF)</Beskrivelse>
-			<Referanse>tilleggsdokument/epikrise/HISD_1033_2010 Epikrise-Minimumskrav-2011-03-29.pdf</Referanse>
-		</Tilleggsdokument>
-		<Tilleggsdokument>
-			<Beskrivelse>Prinsipper for utskrift av epikrise (PDF)</Beskrivelse>
-			<Referanse>tilleggsdokument/epikrise/HISD_80715_2007_UtskriftMal-Epikrise.pdf</Referanse>
+			<Beskrivelse>Bruk av kontaktopplysninger i basismeldinger, dialogmelding og pleie- og omsorgsmeldinger (PDF)</Beskrivelse>
+			<Referanse>kravdokument/BrukAvKontaktopplysninger/HITS_1174_2017_Bruk av kontaktopplysninger -korrigert.pdf</Referanse>
 		</Tilleggsdokument>
 		<Tilleggsdokument>
 			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer (PDF)</Beskrivelse>
@@ -207,5 +201,11 @@
 			<Referanse>eksempel/Epikrise/Epikrise_v1-1/epikrise_v1.1_c.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
+	<RelaterteFiler>
+		<RelatertFil>
+			<Beskrivelse>Notat: Den gode epikrise - minstekrav til medisinskfaglig innhold ved sending (PDF)</Beskrivelse>
+			<Referanse>relaterteFiler/epikrise/HISD_1033_2010 Epikrise-Minimumskrav-2011-03-29.pdf</Referanse>
+		</RelatertFil>
+	</RelaterteFiler>
 	
 </StandardMetadata>
