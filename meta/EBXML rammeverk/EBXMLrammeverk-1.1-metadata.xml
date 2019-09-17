@@ -13,7 +13,7 @@
 	<Status>Fastsatt som standard</Status>	
 	<MerInformasjon>
 		<Informasjon>
-			<Beskrivelse>ebXML Rammeverk 1.1</Beskrivelse>
+			<Beskrivelse>Bruk og målgrupper </Beskrivelse>
 			<Referanse>https://ehelse.no/standarder/ebxml-rammeverk-v1.1</Referanse>
 		</Informasjon>
 	</MerInformasjon>
@@ -25,33 +25,35 @@
 			<Referanse>kravdokument/EBXMLrammeverk/HIS 1037_2011 Rammeverk for meldingsutveksling v1.1 -korrigert.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
+	
+	<Tilleggsdokumenter>
+		<Tilleggsdokument>
+			<Beskrivelse>Veiledning til riktig implementasjon og bruk av ebXML (PDF)</Beskrivelse>
+			<Referanse>tilleggsdokument/EBXMLrammeverk/HISD 1171_2017 Veiledning til riktig implementasjon og bruk av ebXML v1.0.pdf</Referanse>
+		</Tilleggsdokument>
+		<Tilleggsdokument>
+			<Beskrivelse>Validering av ebXML-meldinger (PDF)</Beskrivelse>
+			<Referanse>tilleggsdokument/EBXMLrammeverk/HISD 1172_2017 Validering av ebXML-meldinger.pdf</Referanse>
+		</Tilleggsdokument>
+		<Tilleggsdokument>
+			<Beskrivelse>Implementasjonsguide API for bruk av kommunikasjonsparametere (PDF)</Beskrivelse>
+			<Referanse>tilleggsdokument/EBXMLrammeverk/HISD_1177_2017 Implementasjonsguide API for bruk av kommunikasjonsparametere.pdf</Referanse>
+		</Tilleggsdokument>
+		<Tilleggsdokument>
+			<Beskrivelse>Service, Action og Role i ebXML-konvolutten (PDF)</Beskrivelse>
+			<Referanse>tilleggsdokument/EBXMLrammeverk/HISD_1209_2018 Service_Action_og_Role i ebXML-konvolutten -korrigert.pdf</Referanse>
+		</Tilleggsdokument>
+		<Tilleggsdokument>
+			<Beskrivelse>Overvåkning av meldingsversjoner i ebXML (PDF)</Beskrivelse>
+			<Referanse>tilleggsdokument/EBXMLrammeverk/HITS_1210_2018 Overvåkning av meldingsversjoner i ebXML.pdf</Referanse>
+		</Tilleggsdokument>
+	</Tilleggsdokumenter>
 	<Skjemaer>
 		<Skjema>
 			<Referanse>skjema/MeldingsVersjoner.xml</Referanse>
 			<Namespace></Namespace>
 		</Skjema>
 	</Skjemaer>
-	<RelaterteFiler>
-		<RelatertFil>
-			<Beskrivelse>Veiledning til riktig implementasjon og bruk av ebXML (PDF)</Beskrivelse>
-			<Referanse>relaterteFiler/EBXMLrammeverk/HISD 1171_2017 Veiledning til riktig implementasjon og bruk av ebXML v1.0.pdf</Referanse>
-		</RelatertFil>
-		<RelatertFil>
-			<Beskrivelse>Validering av ebXML-meldinger (PDF)</Beskrivelse>
-			<Referanse>relaterteFiler/EBXMLrammeverk/HISD 1172_2017 Validering av ebXML-meldinger.pdf</Referanse>
-		</RelatertFil>
-		<RelatertFil>
-			<Beskrivelse>Implementasjonsguide API for bruk av kommunikasjonsparametere (PDF)</Beskrivelse>
-			<Referanse>relaterteFiler/EBXMLrammeverk/HISD_1177_2017 Implementasjonsguide API for bruk av kommunikasjonsparametere.pdf</Referanse>
-		</RelatertFil>
-		<RelatertFil>
-			<Beskrivelse>Service, Action og Role i ebXML-konvolutten (PDF)</Beskrivelse>
-			<Referanse>relaterteFiler/EBXMLrammeverk/HISD_1209_2018 Service_Action_og_Role i ebXML-konvolutten -korrigert.pdf</Referanse>
-		</RelatertFil>
-		<RelatertFil>
-			<Beskrivelse>Overvåkning av meldingsversjoner i ebXML (PDF)</Beskrivelse>
-			<Referanse>relaterteFiler/EBXMLrammeverk/HITS_1210_2018 Overvåkning av meldingsversjoner i ebXML.pdf</Referanse>
-		</RelatertFil>
-	</RelaterteFiler>
+	
 
 </StandardMetadata>
