@@ -12,7 +12,7 @@
 	<Status>Fastsatt som standard</Status>
 	<MerInformasjon>
 		<Informasjon>
-			<Beskrivelse>Epikrise 1.2 (HIS 80226:2014)</Beskrivelse>
+			<Beskrivelse>Bruk og målgrupper</Beskrivelse>
 			<Referanse>https://ehelse.no/standarder/epikrise-v1.2</Referanse>
 		</Informasjon>
 	</MerInformasjon>
@@ -30,14 +30,6 @@
 	</Kravdokumenter>
 
 	<Tilleggsdokumenter>
-		<Tilleggsdokument>
-			<Beskrivelse>Notat: Den gode epikrise - minstekrav til medisinskfaglig innhold ved sending (PDF)</Beskrivelse>
-			<Referanse>tilleggsdokument/epikrise/HISD_1033_2010 Epikrise-Minimumskrav-2011-03-29.pdf</Referanse>
-		</Tilleggsdokument>
-		<Tilleggsdokument>
-			<Beskrivelse>Prinsipper for utskrift av epikrise (PDF)</Beskrivelse>
-			<Referanse>tilleggsdokument/epikrise/HISD_80715_2007_UtskriftMal-Epikrise.pdf</Referanse>
-		</Tilleggsdokument>
 		<Tilleggsdokument>
 			<Beskrivelse>Kobling av relaterte meldinger med bruk av identifikatorer (PDF)</Beskrivelse>
 			<Referanse>kravdokument/KoblingAvRelaterteMeldingerMedIdentifikatorer/HITS_1218_2019_Kobling av relaterte meldinger med bruk av identifikatorer -oppdatert.pdf</Referanse>
@@ -181,6 +173,11 @@
 			<Referanse>eksempel/Epikrise/Epikrise_v1-2/epikrise_v1.2_c.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
-	
+	<RelaterteFiler>
+		<RelatertFil>
+			<Beskrivelse>Notat: Den gode epikrise - minstekrav til medisinskfaglig innhold ved sending (PDF)</Beskrivelse>
+			<Referanse>relaterteFiler/epikrise/HISD_1033_2010 Epikrise-Minimumskrav-2011-03-29.pdf</Referanse>
+		</RelatertFil>
+	</RelaterteFiler>
 	
 </StandardMetadata>
