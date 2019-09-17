@@ -30,6 +30,21 @@
 	</Implementasjonsguider>
 	<Skjemaer>
 		<Skjema>
+			<Beskrivelse>Leveringsrapport</Beskrivelse>
+			<Referanse>skjema/Helsenorge/Leveringsrapport-v1.0.xsd</Referanse>
+			<Namespace>http://ehelse.no/xmlstds/leveringsrapport/2018-08-14</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>MeldingInnbygger</Beskrivelse>
+			<Referanse>skjema/Helsenorge/MeldingInnbygger-v1.0.xsd</Referanse>
+			<Namespace>http://ehelse.no/xmlstds/MeldingInnbygger/2018-09-25</Namespace>
+		</Skjema>
+		<Skjema>
+			<Beskrivelse>Videreformidling</Beskrivelse>
+			<Referanse>skjema/Helsenorge/Videreformidling-v1.0.xsd</Referanse>
+			<Namespace>http://ehelse.no/xmlstds/Videreformidling/2018-09-25</Namespace>
+		</Skjema>
+		<Skjema>
 			<Beskrivelse>Hodemelding</Beskrivelse>
 			<Referanse>skjema/felleskomponenter/MsgHead-v1_2.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/msghead/2006-05-24</Namespace>
