@@ -239,14 +239,19 @@
 			<xs:documentation>Navn og beskrivelse av tema</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Samhandling med NAV og HELFO">
-				<xs:annotation>
-					<xs:documentation>Standarder som skal brukes i samhandling med NAV eller HELFO</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
 			<xs:enumeration value="Grunnleggende standarder for elektronisk samhandling">
 				<xs:annotation>
 					<xs:documentation/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Fagmeldinger for samhandling i pasientforløp">
+				<xs:annotation>
+					<xs:documentation>Henvisning og epikrise, rekvisisjon og svarrapport, dialogmelding og pleie- og omsorgsmeldinger</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Felles for flere fagmeldinger">
+				<xs:annotation>
+					<xs:documentation>Dokumenter som er nødvendige for implementering av flere standarder</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Standarder under innføring">
@@ -254,9 +259,9 @@
 					<xs:documentation>Tjenestebasert adressering, henvisningsstandarder og helsefaglig dialog</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="Felles for flere meldingsstandarder">
+			<xs:enumeration value="Meldingsutveksling helsenorge.no">
 				<xs:annotation>
-					<xs:documentation>Dokumenter som er nødvendige for implementering av flere standarder</xs:documentation>
+					<xs:documentation>Implementasjonsguider og annen teknisk dokumentasjon for bruk av meldinger på helsenorge.no</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="E-reseptmeldinger">
@@ -264,16 +269,17 @@
 					<xs:documentation>Standarder som skal benyttes for e-reseptmeldinger</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="Samhandling i pasientforløp">
+			<xs:enumeration value="Samhandling med NAV og HELFO">
 				<xs:annotation>
-					<xs:documentation>Henvisning og epikrise, rekvisisjon og svarrapport, dialogmelding og pleie- og omsorgsmeldinger</xs:documentation>
+					<xs:documentation>Standarder som skal brukes i samhandling med NAV eller HELFO</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="Meldingsutveksling helsenorge.no">
-				<xs:annotation>
-					<xs:documentation>Implementasjonsguider og annen teknisk dokumentasjon for bruk av meldinger på helsenorge.no</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
+			
+			
+			
+			
+			
+			
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
