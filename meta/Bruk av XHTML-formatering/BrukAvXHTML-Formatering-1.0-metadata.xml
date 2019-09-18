@@ -2,7 +2,7 @@
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
 	<Temaer>
-		<Tema>Felles for flere meldingsstandarder</Tema>
+		<Tema>Felles for flere fagmeldinger</Tema>
 	</Temaer>
 	<Navn>Bruk av XHTML-formatering</Navn>
 	<Identifikator>HISD 1155:2008</Identifikator>
