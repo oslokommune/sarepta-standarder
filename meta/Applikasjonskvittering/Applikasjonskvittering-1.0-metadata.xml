@@ -3,7 +3,7 @@
 <StandardMetadata definisjonVersjon="" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:noNamespaceSchemaLocation="../Metadata.xsd">
-	<Navn>Applikasjonskvittering</Navn>
+	<Navn>Applikasjonskvittering</Navn> 
 	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 80415:2004</Identifikator>
 	<Utgitt>11/2004</Utgitt>
