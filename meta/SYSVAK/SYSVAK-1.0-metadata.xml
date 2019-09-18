@@ -2,7 +2,7 @@
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
 	<Navn>SYSVAK</Navn>
-	<Versjon>1.0</Versjon>
+	<Versjon>1.0</Versjon> 
 	<Identifikator>SYSVAK</Identifikator>
 	<Utgitt>01/2008</Utgitt>
 	<Ansvarlig>Folkehelseinstituttet</Ansvarlig>

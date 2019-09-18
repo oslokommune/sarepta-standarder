@@ -2,7 +2,7 @@
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <!-- #434357  -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
-	<Navn>IHE XDS metadata</Navn>
+	<Navn>IHE XDS metadata</Navn> 
 	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 1169:2016</Identifikator>
 	<Utgitt>10/2016</Utgitt>

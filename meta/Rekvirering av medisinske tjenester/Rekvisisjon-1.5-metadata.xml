@@ -2,10 +2,10 @@
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
 	<Navn>Rekvirering av medisinske tjenester</Navn>
-	<Versjon>1.5</Versjon>
+	<Versjon>1.5</Versjon> 
 	<Identifikator>HIS 80821:2008</Identifikator>
 	<Utgitt>12/2008</Utgitt>
-	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	<Ansvarlig>Direktoratet for e-helse</Ansvarlig> 
 	<Status>Fastsatt som standard</Status>
 	<MerInformasjon>
 		<Informasjon>

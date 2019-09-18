@@ -2,7 +2,7 @@
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
 	<Temaer>
-		<Tema>Grunnleggende standarder for elektronisk samhandling</Tema>
+		<Tema>Grunnleggende standarder for elektronisk samhandling</Tema> 
 	</Temaer>
 	<Navn>Vedlegg til meldinger</Navn>
 	<Identifikator>HIS 1036:2011</Identifikator>
