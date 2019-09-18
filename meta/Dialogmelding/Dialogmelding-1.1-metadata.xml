@@ -4,8 +4,8 @@
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
 	<Temaer>
 		<Tema>Fagmeldinger for samhandling i pasientforløp</Tema>
-	</Temaer>
-	<Navn>Dialogmelding</Navn>
+	</Temaer> 
+	<Navn>Dialogmelding</Navn> 
 	<Versjon>1.1</Versjon>
 	<Identifikator>HIS 80603:2017</Identifikator>
 	<Utgitt>02/2017</Utgitt>

@@ -3,7 +3,7 @@
 <!-- #434357 -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
 <Temaer>
-		<Tema>Grunnleggende standarder for elektronisk samhandling</Tema> 
+		<Tema>Grunnleggende standarder for elektronisk samhandling</Tema>  
 </Temaer>
 	<Navn>ebXML Rammeverk</Navn>
 	<Identifikator>HIS 1037:2011</Identifikator>
