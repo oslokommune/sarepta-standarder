@@ -3,7 +3,7 @@
 <!-- #434357 -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
 	<Temaer>
-		<Tema>Samhandling i pasientforløp</Tema>
+		<Tema>Fagmeldinger for samhandling i pasientforløp</Tema>
 	</Temaer>
 	<Navn>Dialogmelding</Navn>
 	<Versjon>1.1</Versjon>
@@ -73,7 +73,7 @@
 				</MerInformasjon>
 				<Temaer>
 					<Tema>Standarder under innføring</Tema>
-					<Tema>Samhandling i pasientforløp</Tema>
+					<Tema>Fagmeldinger for samhandling i pasientforløp</Tema>
 				</Temaer>
 			</Profil>
 			<Profil>
