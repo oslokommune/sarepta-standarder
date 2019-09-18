@@ -3,7 +3,7 @@
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
 	<Navn>Epikrise</Navn>
 	<Versjon>1.1</Versjon>
-	<Identifikator>HIS 80226:2006</Identifikator>
+	<Identifikator>HIS 80226:2006</Identifikator> 
 	<Utgitt>02/2006</Utgitt>
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>

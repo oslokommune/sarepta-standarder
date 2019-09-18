@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
-	<Navn>Spørretjenesten pasientens frikortstatus</Navn>
+	<Navn>Spørretjenesten pasientens frikortstatus</Navn> 
 	<Versjon>1.0</Versjon>
 	<Identifikator>HIS 1024:2017</Identifikator>
 	<Utgitt>01/2017</Utgitt>
