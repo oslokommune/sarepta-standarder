@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24">
+  <MsgInfo>
+    <Type DN="Resept" V="ERM1"/>
+    <MIGversion>v1.2 2006-05-24</MIGversion>
+    <GenDate>2019-07-17T10:29:43.7843251+02:00</GenDate>
+    <MsgId>717c1879-9271-4828-9c59-1681392408b9</MsgId>
+    <Sender>
+      <Organisation>
+        <OrganisationName>Virginia Legekontor</OrganisationName>
+        <Ident>
+          <Id>100169444</Id>
+          <TypeId DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" V="ENH" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Ident>
+          <Id>8095068</Id>
+          <TypeId DN="HER-id" V="HER" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Ident>
+          <Id>0</Id>
+          <TypeId DN="Nasjonalt register over enheter i spesialisthelsetjenesten (RESH-ID)" V="RSH" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Address>
+          <Type DN="Besøksadresse" V="RES"/>
+          <StreetAdr>Verkstedveien 1</StreetAdr>
+          <PostalCode>0102</PostalCode>
+          <City>Oslo</City>
+        </Address>
+        <TeleCom>
+          <TypeTelecom DN="Hovedtelefon" V="HP"/>
+          <TeleAddress V="tel:22222222"/>
+        </TeleCom>
+        <HealthcareProfessional>
+          <TypeHealthcareProfessional DN="Lege" V="LE"/>
+          <FamilyName>Eidsvik</FamilyName>
+          <GivenName>Anja Fos</GivenName>
+          <Sex DN="Ikke spesifisert" V="9"/>
+          <Ident>
+            <Id>431002737</Id>
+            <TypeId V="HPR" S="2.16.578.1.12.4.1.1.8116" DN="HPR-nummer"/>
+          </Ident>
+          <Address>
+            <Type V="WP" DN="Arbeidsadresse"/>
+            <StreetAdr>Virginia Legekontor</StreetAdr>
+            <PostalCode>0102</PostalCode>
+            <City>OSLO</City>
+          </Address>
+        </HealthcareProfessional>
+      </Organisation>
+    </Sender>
+    <Receiver>
+      <Organisation>
+        <OrganisationName>Reseptformidleren</OrganisationName>
+        <Ident>
+          <Id>915933149</Id>
+          <TypeId DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" V="ENH" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Ident>
+          <Id>80624</Id>
+          <TypeId DN="HER-id" V="HER" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+      </Organisation>
+    </Receiver>
+    <Patient>
+      <FamilyName>HELSE</FamilyName>
+      <GivenName>IBEN BEDRE</GivenName>
+      <Sex V="1" DN="Mann"/>
+      <Ident>
+        <Id>02032827732</Id>
+        <TypeId V="FNR" S="2.16.578.1.12.4.1.1.8116" DN="Fødselsnummer"/>
+      </Ident>
+      <Address>
+        <Type V="H" DN="Bostedsadresse"/>
+        <StreetAdr>STENSGATA 30</StreetAdr>
+        <PostalCode>0026</PostalCode>
+        <City>OSLO</City>
+        <County DN="Oslo" V="0301"/>
+      </Address>
+    </Patient>
+  </MsgInfo>
+  <Document>
+    <RefDoc>
+      <MsgType V="XML" DN="XML-instans"/>
+      <Content>
+        <Resept xmlns="http://www.kith.no/xmlstds/eresept/m1/2013-10-08">
+          <Forskrivningsdato>2019-07-17+02:00</Forskrivningsdato>
+          <Utloper>2020-07-16+02:00</Utloper>
+          <Frikort>false</Frikort>
+          <ReseptDokLegemiddel>
+            <Varegruppekode DN="Legemiddel" V="L"/>
+            <Antall>1</Antall>
+            <Reiterasjon>0</Reiterasjon>
+            <Mengde U="(ikke angitt)" V="1"/>
+            <LegemiddelUtenMt>
+              <Begrunnelse>Test</Begrunnelse>
+              <Produsent>Ukjent</Produsent>
+              <DirektesoknadSlv>false</DirektesoknadSlv>
+            </LegemiddelUtenMt>
+            <Forskrivning xmlns="http://www.kith.no/xmlstds/eresept/forskrivning/2013-10-08">
+              <Bruksomrade>FOR TEST</Bruksomrade>
+              <DosVeiledEnkel>Brukes som avtalt med lege</DosVeiledEnkel>
+              <Bruk DN="Fast" V="1"/>
+              <Legemiddelpakning>
+                <Atc V="V03AX" S="2.16.578.1.12.4.1.1.7180" DN="Andre terapeutiske preparater"/>
+                <NavnFormStyrke>Iscador P Serie II Inj væske 1 mg/ml/10 mg/ml/20 mg/ml</NavnFormStyrke>
+                <Reseptgruppe V="C" DN="Reseptgruppe C"/>
+                <LegemiddelformKort V="101" S="2.16.578.1.12.4.1.1.7448" DN="Injeksjonsvæske"/>
+                <Varenr>343544</Varenr>
+                <PakningsinfoResept>
+                  <Varenavn>Iscador P Serie II</Varenavn>
+                  <Pakningsstr>2 x 2 x 1</Pakningsstr>
+                  <EnhetPakning V="ml" S="2.16.578.1.12.4.1.1.7452" DN="milliliter"/>
+                </PakningsinfoResept>
+                <PakningsinfoResept>
+                  <Varenavn>Iscador P Serie II</Varenavn>
+                  <Pakningsstr>2 x 2 x 1</Pakningsstr>
+                  <EnhetPakning V="ml" S="2.16.578.1.12.4.1.1.7452" DN="milliliter"/>
+                </PakningsinfoResept>
+                <PakningsinfoResept>
+                  <Varenavn>Iscador P Serie II</Varenavn>
+                  <Pakningsstr>2 x 3 x 1</Pakningsstr>
+                  <EnhetPakning V="ml" S="2.16.578.1.12.4.1.1.7452" DN="milliliter"/>
+                </PakningsinfoResept>
+              </Legemiddelpakning>
+            </Forskrivning>
+          </ReseptDokLegemiddel>
+          <OppdatertFest>2019-07-05T13:37:50</OppdatertFest>
+          <LastResept>false</LastResept>
+        </Resept>
+      </Content>
+    </RefDoc>
+  </Document>
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <SignedInfo>
+      <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+      <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+      <Reference URI="">
+        <Transforms>
+          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+          <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+        </Transforms>
+        <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+        <DigestValue>f21rXNiMg1Ge3KBjBbCGJoZZWiCQYQNXgqTNe/GWeKU=</DigestValue>
+      </Reference>
+    </SignedInfo>
+    <SignatureValue>aelLDZhpL5GzDZw8fSC0eUYDRCeeMKoWTf0/qBqV0uVYk9NYC1XfefZT4HJDlaU53iAXHNvPs0xvNfP3LuRPFgOa6w1puw/G6QD8AlgOYC9ztvCn4bREsYXkNjRkvTf7e6aUyYcV1eKZ8Ok+RweArvpDhFe6pGfoMAwmOJaVfHQ3/LK/pFgFnqEoH+9FuRg1vWfsQD0w1rTw0eZCsu/Igk/a1KAEa6Shin1IdxKE/GyJ97CNbmWEJfP4RRnb3DsmdJYJXgzpACR4Fr+i8T0dDL6z4qjdb3m1qB4co5wgzI/DxDd/7G8xrG2dI+YWEiJ7t8k/iBXv2IeUTwL7em8=</SignatureValue>
+    <KeyInfo>
+      <X509Data>
+        <X509Certificate>MIIE2zCCA8OgAwIBAgILAXspAaj0XAL6+pgwDQYJKoZIhvcNAQELBQAwUTELMAkGA1UEBhMCTk8xHTAbBgNVBAoMFEJ1eXBhc3MgQVMtOTgzMTYzMzI3MSMwIQYDVQQDDBpCdXlwYXNzIENsYXNzIDMgVGVzdDQgQ0EgMzAeFw0xODAxMzAxMjA2NDRaFw0yMTAxMzAyMjU5MDBaMEYxCzAJBgNVBAYTAk5PMRkwFwYDVQQDDBBBTkpBIEZPUyBFSURTVklLMRwwGgYDVQQFExM5NTc4LTQwNTAtMTAwNzMyMzUzMIIBHzANBgkqhkiG9w0BAQEFAAOCAQwAMIIBBwKB/wDV42nNKvZcK5pcpyFJslrdvmmZjTbzQ6Bo2uumCxzWm3MTwMZPCuUsOByIquKpbWoWFgE3DP8eV658QcfWz505A8afI5ErkC7N1JJDWsbpKleq/j1/mNSdEhVKd5ISxkYNK+GYb6521wGUKBku3+bkVy1BadlsxhPo/6waE0uCBpWNopr3viZDyQdxpbLPzAKq2KWanwY6Lc87IkRC3ySVypolLsmiOR6hKlwmjLyuEswufFwVipJzCLreJBOTWqBlLZTuy0IQsTTcOhGWESNfg7q72EF2lDslyvcVV8vSRHK3De00V12kp0tL8OwVSjYytc7TJFvYnCxBoYqAAwIDAQABo4IBwDCCAbwwCQYDVR0TBAIwADAfBgNVHSMEGDAWgBQ/rvV4C5KjcCA1X1r69ySgUgHwQTAdBgNVHQ4EFgQU/sIXRBDRXZrzCxxb/KpEV7hpNfQwDgYDVR0PAQH/BAQDAgZAMBQGA1UdIAQNMAswCQYHYIRCARoBADCBuwYDVR0fBIGzMIGwMDegNaAzhjFodHRwOi8vY3JsLnRlc3Q0LmJ1eXBhc3Mubm8vY3JsL0JQQ2xhc3MzVDRDQTMuY3JsMHWgc6Bxhm9sZGFwOi8vbGRhcC50ZXN0NC5idXlwYXNzLm5vL2RjPUJ1eXBhc3MsZGM9Tk8sQ049QnV5cGFzcyUyMENsYXNzJTIwMyUyMFRlc3Q0JTIwQ0ElMjAzP2NlcnRpZmljYXRlUmV2b2NhdGlvbkxpc3QwgYoGCCsGAQUFBwEBBH4wfDA7BggrBgEFBQcwAYYvaHR0cDovL29jc3AudGVzdDQuYnV5cGFzcy5uby9vY3NwL0JQQ2xhc3MzVDRDQTMwPQYIKwYBBQUHMAKGMWh0dHA6Ly9jcnQudGVzdDQuYnV5cGFzcy5uby9jcnQvQlBDbGFzczNUNENBMy5jZXIwDQYJKoZIhvcNAQELBQADggEBAGNWsjAdKPUZoE+jrrke2pac8tPTuJUL46wJptJWrHaXvf+SJVn2VoduOJVdwEpTeGrIllDjwc+hMqoBrBkdoJdYLdSrVqnZo/r2Np1FcAJk4y7xeh4LbshG0hgI8X0bqod9GCGOlrpKlk6KTE+du+aV+O5QsVxNOtKy2PiFYhmAUvA/8b992XDbx1hMAZDB20XxPEZ1QnHKVfPEUdhT76ae2y+asUOXkZqXQmDxpCewKWFHlmv1DlhU2kKv4gT/2+X+Ef+X9yGgUBB5G0WO2MFRV1vFRg/yTOXybNs6+fBRiqZv16kQ5xsWh6itEqI18Jy7I9R0fKJaEjyu1/KkaFo=</X509Certificate>
+      </X509Data>
+    </KeyInfo>
+  </Signature>
+</MsgHead>
