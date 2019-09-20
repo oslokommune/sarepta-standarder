@@ -2,7 +2,7 @@
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
 	<Temaer>
-		<Tema>E-resept eksempler</Tema>
+		<Tema>E-reseptmeldinger</Tema>
 	</Temaer>
 	<Navn>Rekvirent leverer kun resept og leverer ikke PLL M1,M5,M7,M9.5,M9.6,M9.7,M9.8,M9.11,M9.12</Navn>
 	<Versjon>2.5</Versjon>	
@@ -442,10 +442,6 @@
 		</Eksempel>
 		<Eksempel>
 			<Referanse>eksempel/eresept/M1Resept/Rekvirent rekvirerer kun resept og leverer ikke PLL M1.xml
-			</Referanse>
-			<Referanse>eksempel/eresept/M1Resept/Rekvirent rekvirerer kun resept og leverer ikke PLL M1.html
-			</Referanse>
-			<Referanse>eksempel/eresept/M1Resept/Rekvirent rekvirerer kun resept og leverer ikke PLL M1.pdf
 			</Referanse>
 		</Eksempel>
 		<Eksempel>
