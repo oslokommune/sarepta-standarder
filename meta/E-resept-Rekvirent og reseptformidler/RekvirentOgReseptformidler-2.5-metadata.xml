@@ -508,6 +508,33 @@
 		<Eksempel>
 			<Referanse>eksempel/eresept/M96-b64.xml</Referanse>
 		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/M1Resept/Lege endrer på legemiddelbehandling M1 Resept.html</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/M1Resept/Lege endrer på legemiddelbehandling M1 Resept.pdf</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/M1Resept/Lege endrer på legemiddelbehandling M1 Resept.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/M1Resept/Rekvirent rekvirerer kun resept og leverer ikke PLL M1.html</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/M1Resept/Rekvirent rekvirerer kun resept og leverer ikke PLL M1.pdf</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/M1Resept/Rekvirent rekvirerer kun resept og leverer ikke PLL M1.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/M1Resept/Søknad om godkjenningsfritak til Legemiddelverket M1 Resept_apotek sender søknad.html</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/M1Resept/Søknad om godkjenningsfritak til Legemiddelverket M1 Resept_apotek sender søknad.pdf</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/M1Resept/Søknad om godkjenningsfritak til Legemiddelverket M1 Resept_apotek sender søknad.xml</Referanse>
+		</Eksempel>
 	</Eksempler>
 	
 	<RelaterteFiler>
