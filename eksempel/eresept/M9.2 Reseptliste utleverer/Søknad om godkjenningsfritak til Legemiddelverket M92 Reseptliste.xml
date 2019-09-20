@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 ../felles/MsgHead-v1_2.xsd">
+  <MsgInfo>
+    <Type DN="Reseptliste (utleverer)" V="ERM92"/>
+    <MIGversion>v1.2 2006-05-24</MIGversion>
+    <GenDate>2019-07-17T10:38:25.589+02:00</GenDate>
+    <MsgId>72a6fb0a-0a34-4681-b3b8-47e517f6c5c6</MsgId>
+    <ConversationRef>
+      <RefToParent>96655d6e-0182-46bf-b678-fe9f8d119b86</RefToParent>
+      <RefToConversation>96655d6e-0182-46bf-b678-fe9f8d119b86</RefToConversation>
+    </ConversationRef>
+    <Sender>
+      <Organisation>
+        <OrganisationName>Reseptformidleren</OrganisationName>
+        <Ident>
+          <Id>915933149</Id>
+          <TypeId V="ENH" DN="Organisasjonsnummeret i Enhetsregister" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Ident>
+          <Id>80624</Id>
+          <TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+      </Organisation>
+    </Sender>
+    <Receiver>
+      <Organisation>
+        <OrganisationName>Apotek 1 Ski Storsenter</OrganisationName>
+        <Ident>
+          <Id>983044778</Id>
+          <TypeId V="ENH" S="2.16.578.1.12.4.1.1.9051" DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)"/>
+        </Ident>
+        <Ident>
+          <Id>983716466</Id>
+          <TypeId V="LOK" S="2.16.578.1.12.4.1.1.9051" DN="Lokal identifikator uten nærmere angivelse"/>
+        </Ident>
+        <Ident>
+          <Id>1463</Id>
+          <TypeId V="AKO" S="2.16.578.1.12.4.1.1.9051" DN="Apotekets konsesjonsnummer"/>
+        </Ident>
+        <Ident>
+          <Id>8090688</Id>
+          <TypeId V="HER" S="2.16.578.1.12.4.1.1.9051" DN="HER-id"/>
+        </Ident>
+        <TeleCom>
+          <TypeTelecom V="HP" DN="Hovedtelefon"/>
+          <TeleAddress V="tel:23 20 41 00"/>
+        </TeleCom>
+      </Organisation>
+    </Receiver>
+  </MsgInfo>
+  <Document>
+    <RefDoc>
+      <MsgType DN="XML-instans" V="XML"/>
+      <Content xmlns:kith="http://www.kith.no/xmlstds" xmlns:ns="http://www.kith.no/xmlstds/msghead/2006-05-24" xsi:schemaLocation="http://www.kith.no/xmlstds/eresept/m92/2013-10-08 ER-M92-2013-10-08.xsd">
+        <Reseptliste xmlns="http://www.kith.no/xmlstds/eresept/m92/2013-10-08">
+          <Reseptinfo>
+            <Forskrivningsdato>2019-07-17+02:00</Forskrivningsdato>
+            <Fornavn>IBEN BEDRE</Fornavn>
+            <Etternavn>HELSE</Etternavn>
+            <Address>
+              <fel:Type xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1" DN="Bostedsadresse" V="H"/>
+              <fel:StreetAdr xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1">STENSGATA 30</fel:StreetAdr>
+              <fel:PostalCode xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1">0026</fel:PostalCode>
+              <fel:City xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1">OSLO</fel:City>
+              <fel:County xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1" DN="Oslo" V="0301"/>
+            </Address>
+            <RekvirentId>431002737</RekvirentId>
+            <NavnRekvirent>Anja Fos Eidsvik</NavnRekvirent>
+            <Nr>343544</Nr>
+            <NavnFormStyrke>Iscador P Serie II Inj væske 1 mg/ml/10 mg/ml/20 mg/ml</NavnFormStyrke>
+            <EndretFarmasoyt DN="Nei" V="2"/>
+            <ReseptId>717c1879-9271-4828-9c59-1681392408b9</ReseptId>
+            <Status DN="Ekspederbar" V="E"/>
+            <Ident>
+              <fel:Id xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1">02032827732</fel:Id>
+              <fel:TypeId xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1" S="2.16.578.1.12.4.1.1.8116" V="FNR" DN="Fødselsnummer"/>
+            </Ident>
+            <StatusSoknadSlv V="1" DN="Må vurderes hos apotek"/>
+            <Vergeinnsynsreservasjon>false</Vergeinnsynsreservasjon>
+            <Bruksomrade>FOR TEST</Bruksomrade>
+            <Antall>1</Antall>
+            <Pakningsstr>2 x 2 x 1</Pakningsstr>
+            <EnhetPakning V="ml" DN="milliliter" S="2.16.578.1.12.4.1.1.7452"/>
+            <Mengde V="1.0" U="(ikke angitt)"/>
+          </Reseptinfo>
+        </Reseptliste>
+      </Content>
+    </RefDoc>
+  </Document>
+</MsgHead>
