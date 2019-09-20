@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24">
+  <MsgInfo>
+    <Type DN="Resept" V="ERM1"></Type>
+    <MIGversion>v1.2 2006-05-24</MIGversion>
+    <GenDate>2019-07-16T14:25:01.5226046+02:00</GenDate>
+    <MsgId>c2883dc2-8eef-4b8e-a80f-167f858425f7</MsgId>
+    <Sender>
+      <Organisation>
+        <OrganisationName>Virginia Legekontor</OrganisationName>
+        <Ident>
+          <Id>100169444</Id>
+          <TypeId DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" V="ENH" S="2.16.578.1.12.4.1.1.9051"></TypeId>
+        </Ident>
+        <Ident>
+          <Id>8095068</Id>
+          <TypeId DN="HER-id" V="HER" S="2.16.578.1.12.4.1.1.9051"></TypeId>
+        </Ident>
+        <Ident>
+          <Id>0</Id>
+          <TypeId DN="Nasjonalt register over enheter i spesialisthelsetjenesten (RESH-ID)" V="RSH" S="2.16.578.1.12.4.1.1.9051"></TypeId>
+        </Ident>
+        <Address>
+          <Type DN="Besøksadresse" V="RES"></Type>
+          <StreetAdr>Verkstedveien 1</StreetAdr>
+          <PostalCode>0102</PostalCode>
+          <City>Oslo</City>
+        </Address>
+        <TeleCom>
+          <TypeTelecom DN="Hovedtelefon" V="HP"></TypeTelecom>
+          <TeleAddress V="tel:22222222"></TeleAddress>
+        </TeleCom>
+        <HealthcareProfessional>
+          <TypeHealthcareProfessional DN="Lege" V="LE"></TypeHealthcareProfessional>
+          <FamilyName>Eidsvik</FamilyName>
+          <GivenName>Anja Fos</GivenName>
+          <Sex DN="Ikke spesifisert" V="9"></Sex>
+          <Ident>
+            <Id>431002737</Id>
+            <TypeId V="HPR" S="2.16.578.1.12.4.1.1.8116" DN="HPR-nummer"></TypeId>
+          </Ident>
+          <Address>
+            <Type V="WP" DN="Arbeidsadresse"></Type>
+            <StreetAdr>Virginia Legekontor</StreetAdr>
+            <PostalCode>0102</PostalCode>
+            <City>OSLO</City>
+          </Address>
+        </HealthcareProfessional>
+      </Organisation>
+    </Sender>
+    <Receiver>
+      <Organisation>
+        <OrganisationName>Reseptformidleren</OrganisationName>
+        <Ident>
+          <Id>915933149</Id>
+          <TypeId DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" V="ENH" S="2.16.578.1.12.4.1.1.9051"></TypeId>
+        </Ident>
+        <Ident>
+          <Id>80624</Id>
+          <TypeId DN="HER-id" V="HER" S="2.16.578.1.12.4.1.1.9051"></TypeId>
+        </Ident>
+      </Organisation>
+    </Receiver>
+    <Patient>
+      <FamilyName>KNUTSEN</FamilyName>
+      <GivenName>OTTAR</GivenName>
+      <Sex V="1" DN="Mann"></Sex>
+      <Ident>
+        <Id>21014605158</Id>
+        <TypeId V="FNR" S="2.16.578.1.12.4.1.1.8116" DN="Fødselsnummer"></TypeId>
+      </Ident>
+      <Address>
+        <Type V="H" DN="Bostedsadresse"></Type>
+        <PostalCode>3050</PostalCode>
+        <City>MJØNDALEN</City>
+        <County DN="Nedre Eiker" V="0625"></County>
+      </Address>
+    </Patient>
+  </MsgInfo>
+  <Document>
+    <RefDoc>
+      <MsgType V="XML" DN="XML-instans"></MsgType>
+      <Content>
+        <Resept xmlns="http://www.kith.no/xmlstds/eresept/m1/2013-10-08">
+          <Forskrivningsdato>2019-07-16+02:00</Forskrivningsdato>
+          <Utloper>2020-07-15+02:00</Utloper>
+          <Frikort>false</Frikort>
+          <ReseptDokLegemiddel>
+            <Varegruppekode DN="Legemiddel" V="L"></Varegruppekode>
+            <Antall>1</Antall>
+            <Reiterasjon>0</Reiterasjon>
+            <Forskrivning xmlns="http://www.kith.no/xmlstds/eresept/forskrivning/2013-10-08">
+              <Bruksomrade>HOSTEDEMPENDE</Bruksomrade>
+              <DosVeiledEnkel>10 ml 3 ganger daglig</DosVeiledEnkel>
+              <IngenKombinasjon>false</IngenKombinasjon>
+              <Bruk DN="Ved behov" V="3"></Bruk>
+              <Kortdose DN="10x3" V="223" S="2.16.578.1.12.4.1.1.7478" OT="10 ml 3 ganger daglig"></Kortdose>
+              <Dosering>
+                <Starttidspunkt V="2019-07-16"></Starttidspunkt>
+                <DoseFastTidspunkt>
+                  <Mengde V="10" U="ml"></Mengde>
+                  <Intervall V="1" U="Døgn"></Intervall>
+                  <Tidsomrade DN="Morgen" V="1"></Tidsomrade>
+                  <GisEksakt>false</GisEksakt>
+                </DoseFastTidspunkt>
+                <DoseFastTidspunkt>
+                  <Mengde V="10" U="ml"></Mengde>
+                  <Intervall V="1" U="Døgn"></Intervall>
+                  <Tidsomrade DN="Midt på dagen" V="3"></Tidsomrade>
+                  <GisEksakt>false</GisEksakt>
+                </DoseFastTidspunkt>
+                <DoseFastTidspunkt>
+                  <Mengde V="10" U="ml"></Mengde>
+                  <Intervall V="1" U="Døgn"></Intervall>
+                  <Tidsomrade DN="Kveld" V="5"></Tidsomrade>
+                  <GisEksakt>false</GisEksakt>
+                </DoseFastTidspunkt>
+              </Dosering>
+              <Legemiddelpakning>
+                <Atc V="R05DA01" S="2.16.578.1.12.4.1.1.7180" DN="Etylmorfin"></Atc>
+                <NavnFormStyrke>Cosylan Mikst 1,7 mg/ml</NavnFormStyrke>
+                <Reseptgruppe V="B" DN="Reseptgruppe B"></Reseptgruppe>
+                <LegemiddelformKort V="9" S="2.16.578.1.12.4.1.1.7448" DN="Mikstur"></LegemiddelformKort>
+                <Varenr>429076</Varenr>
+                <PakningsinfoResept>
+                  <Varenavn>Cosylan</Varenavn>
+                  <Pakningsstr>300</Pakningsstr>
+                  <EnhetPakning V="ml" S="2.16.578.1.12.4.1.1.7452" DN="milliliter"></EnhetPakning>
+                </PakningsinfoResept>
+              </Legemiddelpakning>
+            </Forskrivning>
+          </ReseptDokLegemiddel>
+          <OppdatertFest>2019-07-05T13:37:50</OppdatertFest>
+          <LastResept>false</LastResept>
+        </Resept>
+      </Content>
+    </RefDoc>
+  </Document>
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <SignedInfo>
+      <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></CanonicalizationMethod>
+      <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
+      <Reference URI="">
+        <Transforms>
+          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></Transform>
+          <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></Transform>
+        </Transforms>
+        <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+        <DigestValue>rcH64LLXqp95BphNuAWY1jQWOO1fXZGOo337Uh2oClU=</DigestValue>
+      </Reference>
+    </SignedInfo>
+    <SignatureValue>w68YAvpCAJl75ts52pWbeIlR22l4WDCepIC92RY+gjS1pP6kXk/5DxcbOWNk5g2sWHomtSbbGxSE0isaKScQixydspxd+yZGZjAm9R+Vw5CGKDFs97nVm+mXftQVTn1AJvcl0/mRtKwhEGTH0p2Yhb9HdM2ZoFQNOuqRy6UEZBZg2LEH/dtxrOXW5Jenq6+SzdsMrLW4XEAgcFxT+V6H5HBqKYBnxB9O/iT5pIW/PDfc8+xJHKd3lXUK+QEmERZfpdjRcxYDNuLV9OjxnckkucJASjDdr4o0T2UL2qV7IJsz2TMp2AyrAYxhqFKzNs5We1sjvMDKLjb36GL9TQc=</SignatureValue>
+    <KeyInfo>
+      <X509Data>
+        <X509Certificate>MIIE2zCCA8OgAwIBAgILAXspAaj0XAL6+pgwDQYJKoZIhvcNAQELBQAwUTELMAkGA1UEBhMCTk8xHTAbBgNVBAoMFEJ1eXBhc3MgQVMtOTgzMTYzMzI3MSMwIQYDVQQDDBpCdXlwYXNzIENsYXNzIDMgVGVzdDQgQ0EgMzAeFw0xODAxMzAxMjA2NDRaFw0yMTAxMzAyMjU5MDBaMEYxCzAJBgNVBAYTAk5PMRkwFwYDVQQDDBBBTkpBIEZPUyBFSURTVklLMRwwGgYDVQQFExM5NTc4LTQwNTAtMTAwNzMyMzUzMIIBHzANBgkqhkiG9w0BAQEFAAOCAQwAMIIBBwKB/wDV42nNKvZcK5pcpyFJslrdvmmZjTbzQ6Bo2uumCxzWm3MTwMZPCuUsOByIquKpbWoWFgE3DP8eV658QcfWz505A8afI5ErkC7N1JJDWsbpKleq/j1/mNSdEhVKd5ISxkYNK+GYb6521wGUKBku3+bkVy1BadlsxhPo/6waE0uCBpWNopr3viZDyQdxpbLPzAKq2KWanwY6Lc87IkRC3ySVypolLsmiOR6hKlwmjLyuEswufFwVipJzCLreJBOTWqBlLZTuy0IQsTTcOhGWESNfg7q72EF2lDslyvcVV8vSRHK3De00V12kp0tL8OwVSjYytc7TJFvYnCxBoYqAAwIDAQABo4IBwDCCAbwwCQYDVR0TBAIwADAfBgNVHSMEGDAWgBQ/rvV4C5KjcCA1X1r69ySgUgHwQTAdBgNVHQ4EFgQU/sIXRBDRXZrzCxxb/KpEV7hpNfQwDgYDVR0PAQH/BAQDAgZAMBQGA1UdIAQNMAswCQYHYIRCARoBADCBuwYDVR0fBIGzMIGwMDegNaAzhjFodHRwOi8vY3JsLnRlc3Q0LmJ1eXBhc3Mubm8vY3JsL0JQQ2xhc3MzVDRDQTMuY3JsMHWgc6Bxhm9sZGFwOi8vbGRhcC50ZXN0NC5idXlwYXNzLm5vL2RjPUJ1eXBhc3MsZGM9Tk8sQ049QnV5cGFzcyUyMENsYXNzJTIwMyUyMFRlc3Q0JTIwQ0ElMjAzP2NlcnRpZmljYXRlUmV2b2NhdGlvbkxpc3QwgYoGCCsGAQUFBwEBBH4wfDA7BggrBgEFBQcwAYYvaHR0cDovL29jc3AudGVzdDQuYnV5cGFzcy5uby9vY3NwL0JQQ2xhc3MzVDRDQTMwPQYIKwYBBQUHMAKGMWh0dHA6Ly9jcnQudGVzdDQuYnV5cGFzcy5uby9jcnQvQlBDbGFzczNUNENBMy5jZXIwDQYJKoZIhvcNAQELBQADggEBAGNWsjAdKPUZoE+jrrke2pac8tPTuJUL46wJptJWrHaXvf+SJVn2VoduOJVdwEpTeGrIllDjwc+hMqoBrBkdoJdYLdSrVqnZo/r2Np1FcAJk4y7xeh4LbshG0hgI8X0bqod9GCGOlrpKlk6KTE+du+aV+O5QsVxNOtKy2PiFYhmAUvA/8b992XDbx1hMAZDB20XxPEZ1QnHKVfPEUdhT76ae2y+asUOXkZqXQmDxpCewKWFHlmv1DlhU2kKv4gT/2+X+Ef+X9yGgUBB5G0WO2MFRV1vFRg/yTOXybNs6+fBRiqZv16kQ5xsWh6itEqI18Jy7I9R0fKJaEjyu1/KkaFo=</X509Certificate>
+      </X509Data>
+    </KeyInfo>
+  </Signature>
+</MsgHead>
