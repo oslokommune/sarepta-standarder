@@ -1,0 +1,78 @@
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24">
+	<MsgInfo>
+		<Type V="ERM271" DN="Registrering av multidoseansvarlig."/>
+		<MIGversion>v1.2 2006-05-24</MIGversion>
+		<GenDate>2019-07-18T14:10:05+02:00</GenDate>
+		<MsgId>b30f0359-78fb-4aa9-9f6b-7240081f8217</MsgId>
+		<Sender>
+			<Organisation>
+			  <OrganisationName>Apoteket Vågen RFTest</OrganisationName>
+			  <Ident>
+				<Id>983044778</Id>
+				<TypeId DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" V="ENH" S="2.16.578.1.12.4.1.1.9051"/>
+			  </Ident>
+			  <Ident>
+				<Id>991557407</Id>
+				<TypeId DN="Lokal identifikator uten nærmere angivelse" V="LOK" S="2.16.578.1.12.4.1.1.9051"/>
+			  </Ident>
+			  <Ident>
+				<Id>8091831</Id>
+				<TypeId DN="HER-id" V="HER" S="2.16.578.1.12.4.1.1.9051"/>
+			  </Ident>
+			  <Ident>
+				<Id>8043</Id>
+				<TypeId DN="Apotekets konsesjonsnummer" V="AKO" S="2.16.578.1.12.4.1.1.9051"/>
+			  </Ident>
+			  <Address>
+				<Type DN="Besøksadresse" V="RES"/>
+				<StreetAdr>Elvegata 11</StreetAdr>
+				<PostalCode>4306</PostalCode>
+				<City>Sandnes</City>
+			  </Address>
+			  <TeleCom>
+				<TypeTelecom DN="Hovedtelefon" V="HP"/>
+				<TeleAddress V="tel:51605170"/>
+			  </TeleCom>
+			</Organisation>
+		</Sender>
+		<Receiver>
+			<Organisation>
+				<OrganisationName>Reseptformidleren</OrganisationName>
+				<Ident>
+					<Id>915933149</Id>
+					<TypeId DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" V="ENH" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+				<Ident>
+					<Id>80624</Id>
+					<TypeId DN="HER-id" V="HER" S="2.16.578.1.12.4.1.1.9051"/>
+				</Ident>
+			</Organisation>
+		</Receiver>
+		<Patient>
+<FamilyName>KNUTSEN</FamilyName>
+<GivenName>OTTAR</GivenName>
+<Sex V="1" DN="Mann"/>
+<Ident>
+  <Id>21014605158</Id>
+  <TypeId V="FNR" S="2.16.578.1.12.4.1.1.8116" DN="Fødselsnummer"/>
+</Ident>
+<Address>
+  <Type V="H" DN="Bostedsadresse"/>
+  <PostalCode>3050</PostalCode>
+  <City>MJØNDALEN</City>
+  <County DN="Nedre Eiker" V="0625"/>
+</Address>
+</Patient>
+	</MsgInfo>
+	<Document>
+		<RefDoc>
+			<MsgType V="XML" DN="XML-instans"/>
+			<Content>
+				<M271 xmlns="http://www.kith.no/xmlstds/eresept/m271/2013-04-16">
+					<Status DN="Registrering" V="R"/>
+					<GjelderFra>2019-07-18</GjelderFra>
+				</M271>
+			</Content>
+		</RefDoc>
+	</Document>
+</MsgHead>

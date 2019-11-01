@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MsgHead xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd">
+  <MsgInfo>
+    <Type V="ERM93" DN="Forespørsel om nedlasting av resept"/>
+    <MIGversion>v1.2 2006-05-24</MIGversion>
+    <GenDate>2019-07-17T10:39:27.8146875+02:00</GenDate>
+    <MsgId>db6f6ad0-4a1c-47bc-bf27-8744b97d07cf</MsgId>
+    <ConversationRef>
+      <RefToParent>72a6fb0a-0a34-4681-b3b8-47e517f6c5c6</RefToParent>
+      <RefToConversation>96655d6e-0182-46bf-b678-fe9f8d119b86</RefToConversation>
+    </ConversationRef>
+    <Sender>
+      <Organisation>
+        <OrganisationName>Apotek 1 Ski Storsenter</OrganisationName>
+        <Ident>
+          <Id>983044778</Id>
+          <TypeId V="ENH" S="2.16.578.1.12.4.1.1.9051" DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)"/>
+        </Ident>
+        <Ident>
+          <Id>983716466</Id>
+          <TypeId V="LOK" S="2.16.578.1.12.4.1.1.9051" DN="Lokal identifikator uten nærmere angivelse"/>
+        </Ident>
+        <Ident>
+          <Id>1463</Id>
+          <TypeId V="AKO" S="2.16.578.1.12.4.1.1.9051" DN="Apotekets konsesjonsnummer"/>
+        </Ident>
+        <Ident>
+          <Id>8090688</Id>
+          <TypeId V="HER" S="2.16.578.1.12.4.1.1.9051" DN="HER-id"/>
+        </Ident>
+        <TeleCom>
+          <TypeTelecom V="HP" DN="Hovedtelefon"/>
+          <TeleAddress V="tel:23 20 41 00"/>
+        </TeleCom>
+      </Organisation>
+    </Sender>
+    <Receiver>
+      <Organisation>
+        <OrganisationName>Reseptformidleren</OrganisationName>
+        <Ident>
+          <Id>982528011</Id>
+          <TypeId V="ENH" S="2.16.578.1.12.4.1.1.9051" DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)"/>
+        </Ident>
+        <Ident>
+          <Id>2397.1</Id>
+          <TypeId V="HER" S="2.16.578.1.12.4.1.1.9051" DN="HER-id"/>
+        </Ident>
+      </Organisation>
+    </Receiver>
+  </MsgInfo>
+  <Document>
+    <DocumentConnection V="H" DN="Hoveddokument"/>
+    <RefDoc>
+      <MsgType V="XML" DN="XML-instans"/>
+      <Content>
+        <M93 xmlns="http://www.kith.no/xmlstds/eresept/m93/2010-06-04" xsi:schemaLocation="http://www.kith.no/xmlstds/eresept/m93/2010-06-04 ER-M93-2010-06-04.xsd">
+          <ReseptId>717c1879-9271-4828-9c59-1681392408b9</ReseptId>
+          <AnsattId>ibj</AnsattId>
+        </M93>
+      </Content>
+    </RefDoc>
+  </Document>
+</MsgHead>

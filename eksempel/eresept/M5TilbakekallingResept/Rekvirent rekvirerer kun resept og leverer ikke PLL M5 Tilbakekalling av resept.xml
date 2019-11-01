@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24">
+  <MsgInfo>
+    <Type DN="Tilbakekalling av resept" V="ERM5"/>
+    <MIGversion>v1.2 2006-05-24</MIGversion>
+    <GenDate>2019-07-17T07:42:11.257358+02:00</GenDate>
+    <MsgId>097d012e-39a8-470d-836b-1680fc8e9ab6</MsgId>
+    <Sender>
+      <Organisation>
+        <OrganisationName>GFM Legekontor</OrganisationName>
+        <Ident>
+          <Id>988453315</Id>
+          <TypeId DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" V="ENH" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Ident>
+          <Id>8091390</Id>
+          <TypeId DN="HER-id" V="HER" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Ident>
+          <Id>0</Id>
+          <TypeId DN="Nasjonalt register over enheter i spesialisthelsetjenesten (RESH-ID)" V="RSH" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Address>
+          <Type DN="Besøksadresse" V="RES"/>
+          <StreetAdr>Testveien 12</StreetAdr>
+          <PostalCode>0102</PostalCode>
+          <City>Oslo</City>
+        </Address>
+        <TeleCom>
+          <TypeTelecom DN="Hovedtelefon" V="HP"/>
+          <TeleAddress V="tel:22222222"/>
+        </TeleCom>
+        <HealthcareProfessional>
+          <TypeHealthcareProfessional DN="Lege" V="LE"/>
+          <FamilyName>Sjursen</FamilyName>
+          <GivenName>Tommy Fos</GivenName>
+          <Sex DN="Ikke spesifisert" V="9"/>
+          <Ident>
+            <Id>431001905</Id>
+            <TypeId V="HPR" S="2.16.578.1.12.4.1.1.8116" DN="HPR-nummer"/>
+          </Ident>
+          <Address>
+            <Type V="WP" DN="Arbeidsadresse"/>
+            <StreetAdr>GFM Legekontor</StreetAdr>
+            <PostalCode>0102</PostalCode>
+            <City>OSLO</City>
+          </Address>
+        </HealthcareProfessional>
+      </Organisation>
+    </Sender>
+    <Receiver>
+      <Organisation>
+        <OrganisationName>Reseptformidleren</OrganisationName>
+        <Ident>
+          <Id>915933149</Id>
+          <TypeId DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" V="ENH" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Ident>
+          <Id>80624</Id>
+          <TypeId DN="HER-id" V="HER" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+      </Organisation>
+    </Receiver>
+    <Patient>
+      <FamilyName>KNUTSEN</FamilyName>
+      <GivenName>OTTAR</GivenName>
+      <Sex V="1" DN="Mann"/>
+      <Ident>
+        <Id>21014605158</Id>
+        <TypeId V="FNR" S="2.16.578.1.12.4.1.1.8116" DN="Fødselsnummer"/>
+      </Ident>
+      <Address>
+        <Type V="H" DN="Bostedsadresse"/>
+        <PostalCode>3050</PostalCode>
+        <City>MJØNDALEN</City>
+        <County DN="Nedre Eiker" V="0625"/>
+      </Address>
+    </Patient>
+  </MsgInfo>
+  <Document>
+    <RefDoc>
+      <MsgType V="XML" DN="XML-instans"/>
+      <Content>
+        <Tilbakekalling xmlns="http://www.kith.no/xmlstds/eresept/m5/2013-04-16">
+          <ReseptId>c2883dc2-8eef-4b8e-a80f-167f858425f7</ReseptId>
+          <Merknad>Trenger ikke resten</Merknad>
+          <Arsak DN="Annen" V="4" S="2.16.578.1.12.4.1.1.7500"/>
+        </Tilbakekalling>
+      </Content>
+    </RefDoc>
+  </Document>
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <SignedInfo>
+      <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+      <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+      <Reference URI="">
+        <Transforms>
+          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+          <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+        </Transforms>
+        <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+        <DigestValue>YfGp9w+/LU777RjGSUh7k6TmWcf3RAMWtbMR2yFwnnI=</DigestValue>
+      </Reference>
+    </SignedInfo>
+    <SignatureValue>y4a2CBFZTiMYZQdRQkA12KbVbxy2zhKasYf8+AyRmm9p211FdZ/TX0a+YnA5vnmQNr2yTrHsRlJ2IN/aX6/Pvh7e/msXq0IxxIQIhygf0T70HV+6j9nILHEWkicikIpGPBKoFs4Py5r5JuKWaAiB5JWoB750UD2MznjBgXzgn0c3eKcnW7CfhyDGhuR1trZID8bKLVXPETAwlh9PNAA2TgkrdfX7Q6NldDp/l0qBkPdamxvo4N99NCqm0R4MBaVq0u28G9DB5xG1n1OlpSh3Lr908jOH4FAubsBassqXaTN1aw8/k3LDO697RXAjxaIYF5lO3Z/RguTjd22GAqk=</SignatureValue>
+    <KeyInfo>
+      <X509Data>
+        <X509Certificate>MIIE3DCCA8SgAwIBAgILARvPjdxepiYXHrUwDQYJKoZIhvcNAQELBQAwUTELMAkGA1UEBhMCTk8xHTAbBgNVBAoMFEJ1eXBhc3MgQVMtOTgzMTYzMzI3MSMwIQYDVQQDDBpCdXlwYXNzIENsYXNzIDMgVGVzdDQgQ0EgMzAeFw0xNjExMjQwOTQzMzdaFw0xOTExMjQyMjU5MDBaMEcxCzAJBgNVBAYTAk5PMRowGAYDVQQDDBFUT01NWSBGT1MgU0pVUlNFTjEcMBoGA1UEBRMTOTU3OC00MDUwLTEwMDU4NjcxODCCAR8wDQYJKoZIhvcNAQEBBQADggEMADCCAQcCgf8A43WleK53BSCvNyZP6tZL++LVrKYVnbyxDYJonQJN79/lmViz4fYHW70fFJ1DzPfHvNW0pd3T55Q6wSEHMiAn7C0OzWTiYipG3t62WpZfH1SOtg667wzjBrqxAEtTcdfnc4A6dyuvZcGXpLfkDtp2hy08UQ5TXK0ww+9fsFjqxH+NS6+/O18tNtlW0LvIoFfxiI2JV1gJ4YqCWJ++vasjUpV8yg1ycENFwMG4n7jhOvIs7D8MI4v9YaNRYrB5BP6W5ckdm/7MtuEmrvpS/uibzgFLP3sz3nRgTtZ3Ru/emBHZw8HO7e3Yom5EFFTT4gUMFrfjkZDBh7DfYNW458kCAwEAAaOCAcAwggG8MAkGA1UdEwQCMAAwHwYDVR0jBBgwFoAUP671eAuSo3AgNV9a+vckoFIB8EEwHQYDVR0OBBYEFOh8ag07eo3FEq+6b8Qa8OodlOitMA4GA1UdDwEB/wQEAwIGQDAUBgNVHSAEDTALMAkGB2CEQgEaAQAwgbsGA1UdHwSBszCBsDA3oDWgM4YxaHR0cDovL2NybC50ZXN0NC5idXlwYXNzLm5vL2NybC9CUENsYXNzM1Q0Q0EzLmNybDB1oHOgcYZvbGRhcDovL2xkYXAudGVzdDQuYnV5cGFzcy5uby9kYz1CdXlwYXNzLGRjPU5PLENOPUJ1eXBhc3MlMjBDbGFzcyUyMDMlMjBUZXN0NCUyMENBJTIwMz9jZXJ0aWZpY2F0ZVJldm9jYXRpb25MaXN0MIGKBggrBgEFBQcBAQR+MHwwOwYIKwYBBQUHMAGGL2h0dHA6Ly9vY3NwLnRlc3Q0LmJ1eXBhc3Mubm8vb2NzcC9CUENsYXNzM1Q0Q0EzMD0GCCsGAQUFBzAChjFodHRwOi8vY3J0LnRlc3Q0LmJ1eXBhc3Mubm8vY3J0L0JQQ2xhc3MzVDRDQTMuY2VyMA0GCSqGSIb3DQEBCwUAA4IBAQAdKlxJt8ISqOyTThtiRgPIY0A3Yls06m/tbQyOjkDiwVfRZUt77+yoxlfNLmfokl6d1hbXe8kpqpxigI5oMDPY2Sduy9xGxcV+Rns7kIlpgzfzg4qzits8LCYnuKRZuqLXwW29oXcYNHCvMv6yUQXXkiAaY5prNzttuCh1BuHf4nQkM2IoJE9syqEPB3uAPMNNq3ElSu0Q0mrZuzsQbXy+dQWTavAJn7Z2/QTxT7CxXVaVZ8ygsjKBlZga8gt0ly3wJB/Ap0yPUcWSOj24dyuPtIxpmuYcvKlQYXBrn2sPBbufYM9bhQTHlTiw9VhDD/lCuRk3wrOdD2V9BG+9sHxb</X509Certificate>
+      </X509Data>
+    </KeyInfo>
+  </Signature>
+</MsgHead>

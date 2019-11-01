@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MsgHead xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd">
+  <MsgInfo>
+    <Type V="ERM10" DN="Utleveringsrapport reseptbanken"/>
+    <MIGversion>v1.2 2006-05-24</MIGversion>
+    <GenDate>2019-07-16T14:33:40.0233391+02:00</GenDate>
+    <MsgId>4a774ee6-94f5-48d2-bd15-1537a1b70e1c</MsgId>
+    <ConversationRef>
+      <RefToParent>18ee921e-f754-48eb-91da-c3dc532a82fe</RefToParent>
+      <RefToConversation>9ac162fe-17b4-497a-b4e2-5bb0a6e185df</RefToConversation>
+    </ConversationRef>
+    <Sender>
+      <Organisation>
+        <OrganisationName>Apotek 1 Ski Storsenter</OrganisationName>
+        <Ident>
+          <Id>983044778</Id>
+          <TypeId V="ENH" S="2.16.578.1.12.4.1.1.9051" DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)"/>
+        </Ident>
+        <Ident>
+          <Id>983716466</Id>
+          <TypeId V="LOK" S="2.16.578.1.12.4.1.1.9051" DN="Lokal identifikator uten nærmere angivelse"/>
+        </Ident>
+        <Ident>
+          <Id>1463</Id>
+          <TypeId V="AKO" S="2.16.578.1.12.4.1.1.9051" DN="Apotekets konsesjonsnummer"/>
+        </Ident>
+        <Ident>
+          <Id>8090688</Id>
+          <TypeId V="HER" S="2.16.578.1.12.4.1.1.9051" DN="HER-id"/>
+        </Ident>
+        <TeleCom>
+          <TypeTelecom V="HP" DN="Hovedtelefon"/>
+          <TeleAddress V="tel:23 20 41 00"/>
+        </TeleCom>
+      </Organisation>
+    </Sender>
+    <Receiver>
+      <Organisation>
+        <OrganisationName>Reseptformidleren</OrganisationName>
+        <Ident>
+          <Id>982528011</Id>
+          <TypeId V="ENH" S="2.16.578.1.12.4.1.1.9051" DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)"/>
+        </Ident>
+        <Ident>
+          <Id>2397.1</Id>
+          <TypeId V="HER" S="2.16.578.1.12.4.1.1.9051" DN="HER-id"/>
+        </Ident>
+      </Organisation>
+    </Receiver>
+    <Patient>
+      <FamilyName>Knutsen</FamilyName>
+      <GivenName>Ottar</GivenName>
+      <Ident>
+        <Id>21014605158</Id>
+        <TypeId V="FNR" S="2.16.578.1.12.4.1.1.8116" DN="Fødselsnummer"/>
+      </Ident>
+    </Patient>
+  </MsgInfo>
+  <Document>
+    <DocumentConnection V="H" DN="Hoveddokument"/>
+    <RefDoc>
+      <MsgType V="XML" DN="XML-instans"/>
+      <Content>
+        <Utleveringsrapport xmlns="http://www.kith.no/xmlstds/eresept/m10/2013-10-08" xsi:schemaLocation="http://www.kith.no/xmlstds/eresept/m10/2013-10-08 ER-M10-2013-10-08.xsd">
+          <Utlevering xmlns="http://www.kith.no/xmlstds/eresept/utlevering/2013-10-08">
+            <ReseptId>c2883dc2-8eef-4b8e-a80f-167f858425f7</ReseptId>
+            <Utleveringsdato>2019-07-16</Utleveringsdato>
+            <Annullering>false</Annullering>
+            <Avsluttet V="2" DN="Nei"/>
+            <ByttereservasjonKunde>false</ByttereservasjonKunde>
+            <ReseptDokLegemiddel xmlns="http://www.kith.no/xmlstds/eresept/m1/2013-10-08">
+              <Varegruppekode V="L" DN="Legemiddel"/>
+              <Antall>1.000</Antall>
+              <Reiterasjon>0</Reiterasjon>
+              <BytteresRekvirent V="2" DN="Nei"/>
+              <Forskrivning xmlns="http://www.kith.no/xmlstds/eresept/forskrivning/2013-10-08">
+                <DosVeiledEnkel>
+HOSTEDEMPENDE
+10 ml 3 ganger daglig</DosVeiledEnkel>
+                <Legemiddelpakning>
+                  <Atc V="R05DA01" S="2.16.578.1.12.4.1.1.7180" DN="ethylmorphine"/>
+                  <NavnFormStyrke>Cosylan Mikst 1,7 mg/ml</NavnFormStyrke>
+                  <Reseptgruppe V="B" DN="Reseptgruppe B"/>
+                  <LegemiddelformKort V="9" S="2.16.578.1.12.4.1.1.7448" DN="Mikstur"/>
+                  <Varenr>541409</Varenr>
+                  <PakningsinfoResept>
+                    <Varenavn>Cosylan</Varenavn>
+                    <Pakningsstr>125</Pakningsstr>
+                    <EnhetPakning V="ML" S="2.16.578.1.12.4.1.1.7484" DN="ML"/>
+                  </PakningsinfoResept>
+                </Legemiddelpakning>
+              </Forskrivning>
+            </ReseptDokLegemiddel>
+            <Utleverer>
+              <HerId>
+                <Id xmlns="http://www.kith.no/xmlstds/felleskomponent1">8090688</Id>
+                <TypeId xmlns="http://www.kith.no/xmlstds/felleskomponent1" V="HER" S="2.16.578.1.12.4.1.1.9051" DN="HER-id"/>
+              </HerId>
+              <Navn>Apotek 1 Ski Storsenter</Navn>
+            </Utleverer>
+          </Utlevering>
+          <ReservasjonRapportFastlege>false</ReservasjonRapportFastlege>
+          <AnsattId>9876543</AnsattId>
+        </Utleveringsrapport>
+      </Content>
+    </RefDoc>
+  </Document>
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <SignedInfo>
+      <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+      <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+      <Reference URI="">
+        <Transforms>
+          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+          <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+        </Transforms>
+        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <DigestValue>QnUicNwh4Gv8sNwh5UB5H2GI8XQ=</DigestValue>
+      </Reference>
+    </SignedInfo>
+    <SignatureValue>eWYIOjiABxLk+ZpfJl+Tit8lxs3GPIX3fz83Z+LPXwqc3991gwkXLRKxOchDTEcpuaOaH14nCoHEWPlBKuDjehtv4YX1C74U/jfCBHjjoQ8k5vaTVGMIaLCWsfpfCF7MDScZmtT3lNrQGjDAK72vlm3FV2jErFv1wAgHSBeZs7lytvHMJ+xAmQjUBLh0vHl18FABxiSo2JGgVC3jPVTVVFjTn3vCrwLdULtJS/Rp0+NB6xCHAvB2rRnRPb+ggyHvSPWwT7opjmhu9GaEArhSiy+iNihF5lJ8vBZPPOqQysxphb/Ith0o6xAmXWWe0jNikozctwuS55d0TdORH/uQuw==</SignatureValue>
+    <KeyInfo>
+      <X509Data>
+        <X509Certificate>MIIFJDCCBAygAwIBAgILARwxbozKRjOqaeQwDQYJKoZIhvcNAQELBQAwUTELMAkGA1UEBhMCTk8xHTAbBgNVBAoMFEJ1eXBhc3MgQVMtOTgzMTYzMzI3MSMwIQYDVQQDDBpCdXlwYXNzIENsYXNzIDMgVGVzdDQgQ0EgMzAeFw0xNjExMjUxMTIwNTJaFw0xOTEyMTgyMjU5MDBaMIGJMQswCQYDVQQGEwJOTzEcMBoGA1UECgwTQVBPVEVLIDEgR1JVUFBFTiBBUzEqMCgGA1UECwwhQVBPVEVLIDEgU0tJIFNUT1JTRU5URVItOTgzNzE2NDY2MRwwGgYDVQQDDBNBUE9URUsgMSBHUlVQUEVOIEFTMRIwEAYDVQQFEwk5ODMwNDQ3NzgwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDFPNEc4TN+EmLznnn3o6Qd71vGqlEOw4V7fXu8Gc+9FIDaIfQpgnKd5cj8SvNBm/MbFo31dFeq+akUfC8+VxFd9BVpiOpPrkN29PtQlBkYqtT6zSIhfQIX1jsmGrL/+xjtU6UjyA5F/vq7paW0j3bB3Ch6A91dO73CPr1qqz8RM7ByVefPVVed5QF6EHnliUlLvbK7XKaAPu06A7H8dqW81A7Ms6BseCfDZhMYKi4AciNm/9vW48u0KsWZ8wQ8qZaZqrlnvDFFZHva7Fv9PRQk2VwFsEN32MTsAY1affzolPQB9XHdj7cD94FMldeGbw6tNSjXFeDhEphRWi6YfYrdAgMBAAGjggHCMIIBvjAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFD+u9XgLkqNwIDVfWvr3JKBSAfBBMB0GA1UdDgQWBBSUifuvaY238eFtKLlFhlvkrazy8DAOBgNVHQ8BAf8EBAMCBkAwFgYDVR0gBA8wDTALBglghEIBGgEAAwIwgbsGA1UdHwSBszCBsDA3oDWgM4YxaHR0cDovL2NybC50ZXN0NC5idXlwYXNzLm5vL2NybC9CUENsYXNzM1Q0Q0EzLmNybDB1oHOgcYZvbGRhcDovL2xkYXAudGVzdDQuYnV5cGFzcy5uby9kYz1CdXlwYXNzLGRjPU5PLENOPUJ1eXBhc3MlMjBDbGFzcyUyMDMlMjBUZXN0NCUyMENBJTIwMz9jZXJ0aWZpY2F0ZVJldm9jYXRpb25MaXN0MIGKBggrBgEFBQcBAQR+MHwwOwYIKwYBBQUHMAGGL2h0dHA6Ly9vY3NwLnRlc3Q0LmJ1eXBhc3Mubm8vb2NzcC9CUENsYXNzM1Q0Q0EzMD0GCCsGAQUFBzAChjFodHRwOi8vY3J0LnRlc3Q0LmJ1eXBhc3Mubm8vY3J0L0JQQ2xhc3MzVDRDQTMuY2VyMA0GCSqGSIb3DQEBCwUAA4IBAQBWHwOKwO4pBVj49HSSFxH69ajOWhy2tmE5btz+DPlNhe853u/zGBBcvcJi2tg685Oqvwi9gFrqAbow+x0luksRMVjdKNj9Px+sI8lRyKnAAk6dc5LkhrPUBVRIz2C2CfTPWOHzgFQIW41KRATNRWrMwabGZZzmLwaWhfvWSU8mYZG5ljF4ulir1R1Iwlj3KJb8Ga1plKxUmLRqkwszGuMcNwny3hugc4xi8OJceQUQHEWOaxPr0sPuFuPNHlaxNk6hGuDBZ+9LCpTCjOjnRULHRoBAtxsft5VYYrzJ9ILVKtepgIP0fiTwhooIQhgbrP2XejKLT1mDmwA7Y6NvTgNk</X509Certificate>
+      </X509Data>
+    </KeyInfo>
+  </Signature>
+</MsgHead>
