@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 ../felles/MsgHead-v1_2.xsd">
+  <MsgInfo>
+    <Type DN="Søknadssvar fra Legemiddelverket" V="ERM15"/>
+    <MIGversion>v1.2 2006-05-24</MIGversion>
+    <GenDate>2019-07-17T11:04:15.676+02:00</GenDate>
+    <MsgId>3662d3a4-ff82-4746-a275-a11e5cbe2402</MsgId>
+    <ConversationRef>
+      <RefToParent>0011b5e6-aa98-41cd-97a7-ad8bc54fb50f</RefToParent>
+      <RefToConversation>1b281a94-522c-42ed-b2fc-8423808f1664</RefToConversation>
+    </ConversationRef>
+    <Sender>
+      <Organisation>
+        <OrganisationName>Reseptformidleren</OrganisationName>
+        <Ident>
+          <Id>915933149</Id>
+          <TypeId V="ENH" DN="Organisasjonsnummeret i Enhetsregister" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Ident>
+          <Id>80624</Id>
+          <TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+      </Organisation>
+    </Sender>
+    <Receiver>
+      <Organisation>
+        <OrganisationName>Virginia Legekontor</OrganisationName>
+        <Ident>
+          <Id>100169444</Id>
+          <TypeId V="ENH" DN="Organisasjonsnummeret i Enhetsregister" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Ident>
+          <Id>8095068</Id>
+          <TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <HealthcareProfessional>
+          <FamilyName>Eidsvik</FamilyName>
+          <MiddleName>Fos</MiddleName>
+          <GivenName>Anja</GivenName>
+          <Ident>
+            <Id>431002737</Id>
+            <TypeId V="HPR" DN="HPR-nummer" S="2.16.578.1.12.4.1.1.8116"/>
+          </Ident>
+        </HealthcareProfessional>
+      </Organisation>
+    </Receiver>
+  </MsgInfo>
+  <Document>
+    <RefDoc>
+      <MsgType DN="XML-instans" V="XML"/>
+      <Content>
+        <m15:SvarSLV xmlns:m15="http://www.kith.no/xmlstds/eresept/m15/2006-10-06" xmlns:kith="http://www.kith.no/xmlstds" xsi:schemaLocation="http://www.kith.no/xmlstds/eresept/m15/2006-10-06 ER-M15-2006-10-06.xsd">
+          <m15:ReseptId>717c1879-9271-4828-9c59-1681392408b9</m15:ReseptId>
+          <m15:Innvilget DN="Ja" V="1"/>
+          <m15:Saksbehandler>UD-CZC524271K\testlab</m15:Saksbehandler>
+        </m15:SvarSLV>
+      </Content>
+    </RefDoc>
+  </Document>
+</MsgHead>

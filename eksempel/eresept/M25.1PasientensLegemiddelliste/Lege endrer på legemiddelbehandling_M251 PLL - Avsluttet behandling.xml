@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24">
+  <MsgInfo>
+    <Type DN="Varer i bruk" V="ERM251"/>
+    <MIGversion>v1.2 2006-05-24</MIGversion>
+    <GenDate>2019-07-17T08:55:29.332909+02:00</GenDate>
+    <MsgId>438308f4-dc36-467d-b00b-16811710205d</MsgId>
+    <ConversationRef>
+      <RefToParent>36638174-088b-498c-9908-168116c13f53</RefToParent>
+      <RefToConversation>36638174-088b-498c-9908-168116c13f53</RefToConversation>
+    </ConversationRef>
+    <Sender>
+      <Organisation>
+        <OrganisationName>Virginia Legekontor</OrganisationName>
+        <Ident>
+          <Id>100169444</Id>
+          <TypeId DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" V="ENH" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Ident>
+          <Id>8095068</Id>
+          <TypeId DN="HER-id" V="HER" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Ident>
+          <Id>0</Id>
+          <TypeId DN="Nasjonalt register over enheter i spesialisthelsetjenesten (RESH-ID)" V="RSH" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Address>
+          <Type DN="Besøksadresse" V="RES"/>
+          <StreetAdr>Verkstedveien 1</StreetAdr>
+          <PostalCode>0102</PostalCode>
+          <City>Oslo</City>
+        </Address>
+        <TeleCom>
+          <TypeTelecom DN="Hovedtelefon" V="HP"/>
+          <TeleAddress V="tel:22222222"/>
+        </TeleCom>
+        <HealthcareProfessional>
+          <TypeHealthcareProfessional DN="Lege" V="LE"/>
+          <FamilyName>Eidsvik</FamilyName>
+          <GivenName>Anja Fos</GivenName>
+          <Sex DN="Ikke spesifisert" V="9"/>
+          <Ident>
+            <Id>431002737</Id>
+            <TypeId V="HPR" S="2.16.578.1.12.4.1.1.8116" DN="HPR-nummer"/>
+          </Ident>
+          <Address>
+            <Type V="WP" DN="Arbeidsadresse"/>
+            <StreetAdr>Virginia Legekontor</StreetAdr>
+            <PostalCode>0102</PostalCode>
+            <City>OSLO</City>
+          </Address>
+        </HealthcareProfessional>
+      </Organisation>
+    </Sender>
+    <Receiver>
+      <Organisation>
+        <OrganisationName>Reseptformidleren</OrganisationName>
+        <Ident>
+          <Id>915933149</Id>
+          <TypeId DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" V="ENH" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Ident>
+          <Id>80624</Id>
+          <TypeId DN="HER-id" V="HER" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+      </Organisation>
+    </Receiver>
+    <Patient>
+      <FamilyName>KNUTSEN</FamilyName>
+      <GivenName>OTTAR</GivenName>
+      <Sex V="1" DN="Mann"/>
+      <Ident>
+        <Id>21014605158</Id>
+        <TypeId V="FNR" S="2.16.578.1.12.4.1.1.8116" DN="Fødselsnummer"/>
+      </Ident>
+      <Address>
+        <Type V="H" DN="Bostedsadresse"/>
+        <PostalCode>3050</PostalCode>
+        <City>MJØNDALEN</City>
+        <County DN="Nedre Eiker" V="0625"/>
+      </Address>
+    </Patient>
+  </MsgInfo>
+  <Document>
+    <RefDoc>
+      <MsgType V="XML" DN="XML-instans"/>
+      <Content>
+        <LegemidlerIBruk xmlns="http://www.kith.no/xmlstds/eresept/m251/2013-10-08">
+          <Rolle>
+            <Rolle DN="LIB-ansvarlig lege" V="L"/>
+            <Helseperson>
+              <HprId>
+                <Id xmlns="http://www.kith.no/xmlstds/felleskomponent1">431002737</Id>
+                <TypeId xmlns="http://www.kith.no/xmlstds/felleskomponent1" DN="HPR-nummer" V="HPR" S="2.16.578.1.12.4.1.1.8116"/>
+              </HprId>
+              <Fornavn>Anja Fos</Fornavn>
+              <Etternavn>Eidsvik</Etternavn>
+            </Helseperson>
+          </Rolle>
+          <Rolle>
+            <Rolle DN="Fastlege" V="F"/>
+            <Helseperson>
+              <HprId>
+                <Id xmlns="http://www.kith.no/xmlstds/felleskomponent1">431002737</Id>
+                <TypeId xmlns="http://www.kith.no/xmlstds/felleskomponent1" DN="HPR-nummer" V="HPR" S="2.16.578.1.12.4.1.1.8116"/>
+              </HprId>
+              <Fornavn>Anja Fos</Fornavn>
+              <Etternavn>Eidsvik</Etternavn>
+            </Helseperson>
+          </Rolle>
+          <EnkeltoppforingLIB>
+            <Id>c4044d55-2279-422b-9975-164661c52a8c</Id>
+            <Type DN="Eresept" V="E"/>
+            <ReseptId>665e2a11-787a-4dac-aec1-16466a9838d1</ReseptId>
+            <UtlopsdatoResept>2020-06-17+02:00</UtlopsdatoResept>
+            <SistEndret>2019-06-18T12:12:30.063</SistEndret>
+            <DatoOppstart>2019-06-18</DatoOppstart>
+            <Rolle>
+              <Rolle DN="Rekvirent" V="R"/>
+              <Helseperson>
+                <HprId>
+                  <Id xmlns="http://www.kith.no/xmlstds/felleskomponent1">431002737</Id>
+                  <TypeId xmlns="http://www.kith.no/xmlstds/felleskomponent1" DN="HPR-nummer" V="HPR" S="2.16.578.1.12.4.1.1.8116"/>
+                </HprId>
+                <Fornavn>Anja Fos</Fornavn>
+                <Etternavn>Eidsvik</Etternavn>
+              </Helseperson>
+            </Rolle>
+            <ReseptDokLegemiddelB64>PFJlc2VwdERva0xlZ2VtaWRkZWwgeG1sbnM9Imh0dHA6Ly93d3cua2l0aC5uby94bWxzdGRzL2VyZXNlcHQvbTEvMjAxMy0xMC0wOCI+DQogIDxWYXJlZ3J1cHBla29kZSBETj0iTGVnZW1pZGRlbCIgVj0iTCI+PC9WYXJlZ3J1cHBla29kZT4NCiAgPEFudGFsbD4xPC9BbnRhbGw+DQogIDxSZWZIamVtbWVsIEROPSLCpzUtMTQgwqcyIiBWPSIyMDAiIFM9IjIuMTYuNTc4LjEuMTIuNC4xLjEuNzQyNyIgT1Q9IlZpc2VyIHRpbCBsZWdlbWlkbGVyIG1lZCBmb3Jow6VuZHNnb2RramVudCByZWZ1c2pvbiwgb3BwZsO4cnQgaSByZWZ1c2pvbnNsaXN0ZW4iPjwvUmVmSGplbW1lbD4NCiAgPFJlZktvZGUgRE49IkFsbGVyZ2lzayByaW5pdHQiIFY9IlI5NyIgUz0iMi4xNi41NzguMS4xMi40LjEuMS43MTcwIj48L1JlZktvZGU+DQogIDxSZWl0ZXJhc2pvbj4zPC9SZWl0ZXJhc2pvbj4NCiAgPEZvcnNrcml2bmluZyB4bWxucz0iaHR0cDovL3d3dy5raXRoLm5vL3htbHN0ZHMvZXJlc2VwdC9mb3Jza3Jpdm5pbmcvMjAxMy0xMC0wOCI+DQogICAgPEJydWtzb21yYWRlPkFMTEVSR0lNRURJU0lOPC9CcnVrc29tcmFkZT4NCiAgICA8RG9zVmVpbGVkRW5rZWw+MSB0YWJsZXR0IGRhZ2xpZzwvRG9zVmVpbGVkRW5rZWw+DQogICAgPEluZ2VuS29tYmluYXNqb24+ZmFsc2U8L0luZ2VuS29tYmluYXNqb24+DQogICAgPEJydWsgRE49IkZhc3QiIFY9IjEiPjwvQnJ1az4NCiAgICA8S29ydGRvc2UgRE49IjEgZGFnbGlnIiBWPSI5MyIgUz0iMi4xNi41NzguMS4xMi40LjEuMS43NDc4IiBPVD0iMSB0YWJsZXR0IGRhZ2xpZyI+PC9Lb3J0ZG9zZT4NCiAgICA8RG9zZXJpbmc+DQogICAgICA8U3RhcnR0aWRzcHVua3QgVj0iMjAxOS0wNi0xOCI+PC9TdGFydHRpZHNwdW5rdD4NCiAgICAgIDxEb3NlRmFzdFRpZHNwdW5rdD4NCiAgICAgICAgPE1lbmdkZSBWPSIxIiBVPSJ0YWJsZXR0Ij48L01lbmdkZT4NCiAgICAgICAgPEludGVydmFsbCBWPSIxIiBVPSJEw7hnbiI+PC9JbnRlcnZhbGw+DQogICAgICAgIDxUaWRzb21yYWRlIEROPSJNb3JnZW4iIFY9IjEiPjwvVGlkc29tcmFkZT4NCiAgICAgICAgPEdpc0Vrc2FrdD5mYWxzZTwvR2lzRWtzYWt0Pg0KICAgICAgPC9Eb3NlRmFzdFRpZHNwdW5rdD4NCiAgICA8L0Rvc2VyaW5nPg0KICAgIDxMZWdlbWlkZGVscGFrbmluZz4NCiAgICAgIDxBdGMgVj0iUjA2QUUwNyIgUz0iMi4xNi41NzguMS4xMi40LjEuMS43MTgwIiBETj0iQ2V0aXJpemluIj48L0F0Yz4NCiAgICAgIDxOYXZuRm9ybVN0eXJrZT5DZXRpbWF4IFRhYiAxMCBtZzwvTmF2bkZvcm1TdHlya2U+DQogICAgICA8UmVzZXB0Z3J1cHBlIFY9IkMiIEROPSJSZXNlcHRncnVwcGUgQyI+PC9SZXNlcHRncnVwcGU+DQogICAgICA8TGVnZW1pZGRlbGZvcm1Lb3J0IFY9IjUzIiBTPSIyLjE2LjU3OC4xLjEyLjQuMS4xLjc0NDgiIEROPSJUYWJsZXR0Ij48L0xlZ2VtaWRkZWxmb3JtS29ydD4NCiAgICAgIDxWYXJlbnI+MDU3OTMyPC9WYXJlbnI+DQogICAgICA8UGFrbmluZ3NpbmZvUmVzZXB0Pg0KICAgICAgICA8VmFyZW5hdm4+Q2V0aW1heDwvVmFyZW5hdm4+DQogICAgICAgIDxQYWtuaW5nc3N0cj4xMDA8L1Bha25pbmdzc3RyPg0KICAgICAgICA8RW5oZXRQYWtuaW5nIFY9InN0ayIgUz0iMi4xNi41NzguMS4xMi40LjEuMS43NDUyIiBETj0ic3R5a2siPjwvRW5oZXRQYWtuaW5nPg0KICAgICAgPC9QYWtuaW5nc2luZm9SZXNlcHQ+DQogICAgPC9MZWdlbWlkZGVscGFrbmluZz4NCiAgPC9Gb3Jza3Jpdm5pbmc+DQo8L1Jlc2VwdERva0xlZ2VtaWRkZWw+</ReseptDokLegemiddelB64>
+          </EnkeltoppforingLIB>
+          <EnkeltoppforingLIB>
+            <Id>b08e4a01-fe66-41eb-8f07-16810c2e3eb3</Id>
+            <Type DN="Eresept" V="E"/>
+            <ReseptId>252bc3f1-af62-4a37-9810-16810c33e84f</ReseptId>
+            <UtlopsdatoResept>2020-07-16+02:00</UtlopsdatoResept>
+            <SistEndret>2019-07-17T08:25:23.61</SistEndret>
+            <DatoOppstart>2019-07-17</DatoOppstart>
+            <Rolle>
+              <Rolle DN="Rekvirent" V="R"/>
+              <Helseperson>
+                <HprId>
+                  <Id xmlns="http://www.kith.no/xmlstds/felleskomponent1">431002737</Id>
+                  <TypeId xmlns="http://www.kith.no/xmlstds/felleskomponent1" DN="HPR-nummer" V="HPR" S="2.16.578.1.12.4.1.1.8116"/>
+                </HprId>
+                <Fornavn>Anja Fos</Fornavn>
+                <Etternavn>Eidsvik</Etternavn>
+              </Helseperson>
+            </Rolle>
+            <ReseptDokLegemiddelB64>PFJlc2VwdERva0xlZ2VtaWRkZWwgeG1sbnM9Imh0dHA6Ly93d3cua2l0aC5uby94bWxzdGRzL2VyZXNlcHQvbTEvMjAxMy0xMC0wOCI+DQogIDxWYXJlZ3J1cHBla29kZSBETj0iTGVnZW1pZGRlbCIgVj0iTCI+PC9WYXJlZ3J1cHBla29kZT4NCiAgPEFudGFsbD4xPC9BbnRhbGw+DQogIDxSZWZIamVtbWVsIEROPSLCpzUtMTQgwqcyIiBWPSIyMDAiIFM9IjIuMTYuNTc4LjEuMTIuNC4xLjEuNzQyNyIgT1Q9IlZpc2VyIHRpbCBsZWdlbWlkbGVyIG1lZCBmb3Jow6VuZHNnb2RramVudCByZWZ1c2pvbiwgb3BwZsO4cnQgaSByZWZ1c2pvbnNsaXN0ZW4iPjwvUmVmSGplbW1lbD4NCiAgPFJlZktvZGUgRE49IkJldHlkZWxpZyBmb3Jow7h5ZXQgcmlzaWtvIGZvciDDpSB1dHZpa2xlIGF0ZXJvc2tsZXJvdGlzayBzeWtkb20gKHByaW3DpnJwcmV2ZW5zam9uKSIgVj0iLTI3IiBTPSIyLjE2LjU3OC4xLjEyLjQuMS4xLjc0MzQiPjwvUmVmS29kZT4NCiAgPFJlaXRlcmFzam9uPjM8L1JlaXRlcmFzam9uPg0KICA8Rm9yc2tyaXZuaW5nIHhtbG5zPSJodHRwOi8vd3d3LmtpdGgubm8veG1sc3Rkcy9lcmVzZXB0L2ZvcnNrcml2bmluZy8yMDEzLTEwLTA4Ij4NCiAgICA8QnJ1a3NvbXJhZGU+S09MRVNURVJPTFNFTktFTkRFPC9CcnVrc29tcmFkZT4NCiAgICA8RG9zVmVpbGVkRW5rZWw+MSB0YWJsZXR0IGt2ZWxkPC9Eb3NWZWlsZWRFbmtlbD4NCiAgICA8SW5nZW5Lb21iaW5hc2pvbj5mYWxzZTwvSW5nZW5Lb21iaW5hc2pvbj4NCiAgICA8QnJ1ayBETj0iRmFzdCIgVj0iMSI+PC9CcnVrPg0KICAgIDxLb3J0ZG9zZSBETj0iMCswKzEiIFY9IjIxIiBTPSIyLjE2LjU3OC4xLjEyLjQuMS4xLjc0NzgiIE9UPSIxIHRhYmxldHQga3ZlbGQiPjwvS29ydGRvc2U+DQogICAgPERvc2VyaW5nPg0KICAgICAgPFN0YXJ0dGlkc3B1bmt0IFY9IjIwMTktMDctMTciPjwvU3RhcnR0aWRzcHVua3Q+DQogICAgICA8RG9zZUZhc3RUaWRzcHVua3Q+DQogICAgICAgIDxNZW5nZGUgVj0iMSIgVT0idGFibGV0dCI+PC9NZW5nZGU+DQogICAgICAgIDxJbnRlcnZhbGwgVj0iMSIgVT0iRMO4Z24iPjwvSW50ZXJ2YWxsPg0KICAgICAgICA8VGlkc29tcmFkZSBETj0iS3ZlbGQiIFY9IjUiPjwvVGlkc29tcmFkZT4NCiAgICAgICAgPEdpc0Vrc2FrdD5mYWxzZTwvR2lzRWtzYWt0Pg0KICAgICAgPC9Eb3NlRmFzdFRpZHNwdW5rdD4NCiAgICA8L0Rvc2VyaW5nPg0KICAgIDxMZWdlbWlkZGVscGFrbmluZz4NCiAgICAgIDxBdGMgVj0iQzEwQUEwMSIgUz0iMi4xNi41NzguMS4xMi40LjEuMS43MTgwIiBETj0iU2ltdmFzdGF0aW4iPjwvQXRjPg0KICAgICAgPE5hdm5Gb3JtU3R5cmtlPlpvY29yIFRhYiAxMCBtZzwvTmF2bkZvcm1TdHlya2U+DQogICAgICA8UmVzZXB0Z3J1cHBlIFY9IkMiIEROPSJSZXNlcHRncnVwcGUgQyI+PC9SZXNlcHRncnVwcGU+DQogICAgICA8TGVnZW1pZGRlbGZvcm1Lb3J0IFY9IjUzIiBTPSIyLjE2LjU3OC4xLjEyLjQuMS4xLjc0NDgiIEROPSJUYWJsZXR0Ij48L0xlZ2VtaWRkZWxmb3JtS29ydD4NCiAgICAgIDxWYXJlbnI+NDU0MTY1PC9WYXJlbnI+DQogICAgICA8UGFrbmluZ3NpbmZvUmVzZXB0Pg0KICAgICAgICA8VmFyZW5hdm4+Wm9jb3I8L1ZhcmVuYXZuPg0KICAgICAgICA8UGFrbmluZ3NzdHI+OTg8L1Bha25pbmdzc3RyPg0KICAgICAgICA8RW5oZXRQYWtuaW5nIFY9InN0ayIgUz0iMi4xNi41NzguMS4xMi40LjEuMS43NDUyIiBETj0ic3R5a2siPjwvRW5oZXRQYWtuaW5nPg0KICAgICAgPC9QYWtuaW5nc2luZm9SZXNlcHQ+DQogICAgPC9MZWdlbWlkZGVscGFrbmluZz4NCiAgPC9Gb3Jza3Jpdm5pbmc+DQo8L1Jlc2VwdERva0xlZ2VtaWRkZWw+</ReseptDokLegemiddelB64>
+          </EnkeltoppforingLIB>
+          <EnkeltoppforingLIB>
+            <Id>19efeecc-d1f3-4518-83a7-168115d42942</Id>
+            <Type DN="Eresept" V="E"/>
+            <ReseptId>f63b9535-5160-4972-b923-168114660619</ReseptId>
+            <UtlopsdatoResept>2020-07-16+02:00</UtlopsdatoResept>
+            <SistEndret>2019-07-17T00:00:00</SistEndret>
+            <DatoOppstart>2019-07-17</DatoOppstart>
+            <Rolle>
+              <Rolle DN="Rekvirent" V="R"/>
+              <Helseperson>
+                <HprId>
+                  <Id xmlns="http://www.kith.no/xmlstds/felleskomponent1">431001905</Id>
+                  <TypeId xmlns="http://www.kith.no/xmlstds/felleskomponent1" DN="HPR-nummer" V="HPR" S="2.16.578.1.12.4.1.1.8116"/>
+                </HprId>
+                <Fornavn>Tommy Fos</Fornavn>
+                <Etternavn>Sjursen</Etternavn>
+                <Spesialitet DN="Revmatologi" V="41" S="2.16.578.1.12.4.1.1.7426"/>
+              </Helseperson>
+            </Rolle>
+            <ReseptDokLegemiddelB64>PFJlc2VwdERva0xlZ2VtaWRkZWwgeG1sbnM9Imh0dHA6Ly93d3cua2l0aC5uby94bWxzdGRzL2VyZXNlcHQvbTEvMjAxMy0xMC0wOCI+DQogIDxWYXJlZ3J1cHBla29kZSBETj0iTGVnZW1pZGRlbCIgVj0iTCI+PC9WYXJlZ3J1cHBla29kZT4NCiAgPEFudGFsbD4xPC9BbnRhbGw+DQogIDxSZWl0ZXJhc2pvbj4wPC9SZWl0ZXJhc2pvbj4NCiAgPEZvcnNrcml2bmluZyB4bWxucz0iaHR0cDovL3d3dy5raXRoLm5vL3htbHN0ZHMvZXJlc2VwdC9mb3Jza3Jpdm5pbmcvMjAxMy0xMC0wOCI+DQogICAgPEJydWtzb21yYWRlPlNNRVJURVNUSUxMRU5ERTwvQnJ1a3NvbXJhZGU+DQogICAgPERvc1ZlaWxlZEVua2VsPjEtMiB0YWJsZXR0ZXIgaW5udGlsIDMgZ2FuZ2VyIGRhZ2xpZzwvRG9zVmVpbGVkRW5rZWw+DQogICAgPEJydWsgRE49IlZlZCBiZWhvdiIgVj0iMyI+PC9CcnVrPg0KICAgIDxLb3J0ZG9zZSBETj0iMS0yIGlubnRpbCB4MyIgVj0iMjMzIiBTPSIyLjE2LjU3OC4xLjEyLjQuMS4xLjc0NzgiIE9UPSIxLTIgdGFibGV0dGVyIGlubnRpbCAzIGdhbmdlciBkYWdsaWciPjwvS29ydGRvc2U+DQogICAgPExlZ2VtaWRkZWxwYWtuaW5nPg0KICAgICAgPEF0YyBWPSJOMDJCRTAxIiBTPSIyLjE2LjU3OC4xLjEyLjQuMS4xLjcxODAiIEROPSJQYXJhY2V0YW1vbCI+PC9BdGM+DQogICAgICA8TmF2bkZvcm1TdHlya2U+UGFyYWNldCBUYWIgNTAwIG1nPC9OYXZuRm9ybVN0eXJrZT4NCiAgICAgIDxSZXNlcHRncnVwcGUgVj0iQyIgRE49IlJlc2VwdGdydXBwZSBDIj48L1Jlc2VwdGdydXBwZT4NCiAgICAgIDxMZWdlbWlkZGVsZm9ybUtvcnQgVj0iNTMiIFM9IjIuMTYuNTc4LjEuMTIuNC4xLjEuNzQ0OCIgRE49IlRhYmxldHQiPjwvTGVnZW1pZGRlbGZvcm1Lb3J0Pg0KICAgICAgPFZhcmVucj4wMTc0MjY8L1ZhcmVucj4NCiAgICAgIDxQYWtuaW5nc2luZm9SZXNlcHQ+DQogICAgICAgIDxWYXJlbmF2bj5QYXJhY2V0PC9WYXJlbmF2bj4NCiAgICAgICAgPFBha25pbmdzc3RyPjEwIHggMTAwPC9QYWtuaW5nc3N0cj4NCiAgICAgICAgPEVuaGV0UGFrbmluZyBWPSJzdGsiIFM9IjIuMTYuNTc4LjEuMTIuNC4xLjEuNzQ1MiIgRE49InN0eWtrIj48L0VuaGV0UGFrbmluZz4NCiAgICAgIDwvUGFrbmluZ3NpbmZvUmVzZXB0Pg0KICAgIDwvTGVnZW1pZGRlbHBha25pbmc+DQogIDwvRm9yc2tyaXZuaW5nPg0KPC9SZXNlcHREb2tMZWdlbWlkZGVsPg==</ReseptDokLegemiddelB64>
+          </EnkeltoppforingLIB>
+          <EnkeltoppforingLIB>
+            <Id>1806b060-4a42-4993-957e-168115d44355</Id>
+            <Type DN="Eresept" V="E"/>
+            <ReseptId>ee75a79a-ad68-4f98-9e93-1681146612bd</ReseptId>
+            <UtlopsdatoResept>2020-07-16+02:00</UtlopsdatoResept>
+            <SistEndret>2019-07-17T00:00:00</SistEndret>
+            <DatoOppstart>2019-07-17</DatoOppstart>
+            <MedEndring>true</MedEndring>
+            <Rolle>
+              <Rolle DN="Rekvirent" V="R"/>
+              <Helseperson>
+                <HprId>
+                  <Id xmlns="http://www.kith.no/xmlstds/felleskomponent1">431001905</Id>
+                  <TypeId xmlns="http://www.kith.no/xmlstds/felleskomponent1" DN="HPR-nummer" V="HPR" S="2.16.578.1.12.4.1.1.8116"/>
+                </HprId>
+                <Fornavn>Tommy Fos</Fornavn>
+                <Etternavn>Sjursen</Etternavn>
+                <Spesialitet DN="Revmatologi" V="41" S="2.16.578.1.12.4.1.1.7426"/>
+              </Helseperson>
+            </Rolle>
+            <ReseptDokLegemiddelB64>PFJlc2VwdERva0xlZ2VtaWRkZWwgeG1sbnM9Imh0dHA6Ly93d3cua2l0aC5uby94bWxzdGRzL2VyZXNlcHQvbTEvMjAxMy0xMC0wOCI+DQogIDxWYXJlZ3J1cHBla29kZSBETj0iTGVnZW1pZGRlbCIgVj0iTCI+PC9WYXJlZ3J1cHBla29kZT4NCiAgPEFudGFsbD4xPC9BbnRhbGw+DQogIDxSZWl0ZXJhc2pvbj4wPC9SZWl0ZXJhc2pvbj4NCiAgPEZvcnNrcml2bmluZyB4bWxucz0iaHR0cDovL3d3dy5raXRoLm5vL3htbHN0ZHMvZXJlc2VwdC9mb3Jza3Jpdm5pbmcvMjAxMy0xMC0wOCI+DQogICAgPEJydWtzb21yYWRlPk1PVCBJTkZFS1NKT048L0JydWtzb21yYWRlPg0KICAgIDxEb3NWZWlsZWRFbmtlbD4yIHRhYmxldHRlciBtb3JnZW4sIDIgdGFibGV0dGVyIG1pZHQgcMOlIGRhZ2VuIG9nIDIgdGFibGV0dGVyIGt2ZWxkIGkgNiBkYWdlcjwvRG9zVmVpbGVkRW5rZWw+DQogICAgPEluZ2VuS29tYmluYXNqb24+ZmFsc2U8L0luZ2VuS29tYmluYXNqb24+DQogICAgPEJydWsgRE49Ikt1ciIgVj0iMiI+PC9CcnVrPg0KICAgIDxEb3NlcmluZz4NCiAgICAgIDxTdGFydHRpZHNwdW5rdCBWPSIyMDE5LTA3LTE3Ij48L1N0YXJ0dGlkc3B1bmt0Pg0KICAgICAgPFNsdXR0aWRzcHVua3QgVj0iMjAxOS0wNy0yMyI+PC9TbHV0dGlkc3B1bmt0Pg0KICAgICAgPERvc2VGYXN0VGlkc3B1bmt0Pg0KICAgICAgICA8TWVuZ2RlIFY9IjIiIFU9InRhYmxldHQiPjwvTWVuZ2RlPg0KICAgICAgICA8SW50ZXJ2YWxsIFY9IjEiIFU9IkTDuGduIj48L0ludGVydmFsbD4NCiAgICAgICAgPFRpZHNvbXJhZGUgRE49Ik1vcmdlbiIgVj0iMSI+PC9UaWRzb21yYWRlPg0KICAgICAgICA8R2lzRWtzYWt0PmZhbHNlPC9HaXNFa3Nha3Q+DQogICAgICA8L0Rvc2VGYXN0VGlkc3B1bmt0Pg0KICAgICAgPERvc2VGYXN0VGlkc3B1bmt0Pg0KICAgICAgICA8TWVuZ2RlIFY9IjIiIFU9InRhYmxldHQiPjwvTWVuZ2RlPg0KICAgICAgICA8SW50ZXJ2YWxsIFY9IjEiIFU9IkTDuGduIj48L0ludGVydmFsbD4NCiAgICAgICAgPFRpZHNvbXJhZGUgRE49Ik1pZHQgcMOlIGRhZ2VuIiBWPSIzIj48L1RpZHNvbXJhZGU+DQogICAgICAgIDxHaXNFa3Nha3Q+ZmFsc2U8L0dpc0Vrc2FrdD4NCiAgICAgIDwvRG9zZUZhc3RUaWRzcHVua3Q+DQogICAgICA8RG9zZUZhc3RUaWRzcHVua3Q+DQogICAgICAgIDxNZW5nZGUgVj0iMiIgVT0idGFibGV0dCI+PC9NZW5nZGU+DQogICAgICAgIDxJbnRlcnZhbGwgVj0iMSIgVT0iRMO4Z24iPjwvSW50ZXJ2YWxsPg0KICAgICAgICA8VGlkc29tcmFkZSBETj0iS3ZlbGQiIFY9IjUiPjwvVGlkc29tcmFkZT4NCiAgICAgICAgPEdpc0Vrc2FrdD5mYWxzZTwvR2lzRWtzYWt0Pg0KICAgICAgPC9Eb3NlRmFzdFRpZHNwdW5rdD4NCiAgICA8L0Rvc2VyaW5nPg0KICAgIDxMZWdlbWlkZGVscGFrbmluZz4NCiAgICAgIDxBdGMgVj0iSjAxQ0UwMiIgUz0iMi4xNi41NzguMS4xMi40LjEuMS43MTgwIiBETj0iRmVub2tzeW1ldHlscGVuaWNpbGxpbiI+PC9BdGM+DQogICAgICA8TmF2bkZvcm1TdHlya2U+QXBvY2lsbGluIFRhYiA2NjAgbWc8L05hdm5Gb3JtU3R5cmtlPg0KICAgICAgPFJlc2VwdGdydXBwZSBWPSJDIiBETj0iUmVzZXB0Z3J1cHBlIEMiPjwvUmVzZXB0Z3J1cHBlPg0KICAgICAgPExlZ2VtaWRkZWxmb3JtS29ydCBWPSI1MyIgUz0iMi4xNi41NzguMS4xMi40LjEuMS43NDQ4IiBETj0iVGFibGV0dCI+PC9MZWdlbWlkZGVsZm9ybUtvcnQ+DQogICAgICA8VmFyZW5yPjAxMTgxODwvVmFyZW5yPg0KICAgICAgPFBha25pbmdzaW5mb1Jlc2VwdD4NCiAgICAgICAgPFZhcmVuYXZuPkFwb2NpbGxpbjwvVmFyZW5hdm4+DQogICAgICAgIDxQYWtuaW5nc3N0cj40MDwvUGFrbmluZ3NzdHI+DQogICAgICAgIDxFbmhldFBha25pbmcgVj0ic3RrIiBTPSIyLjE2LjU3OC4xLjEyLjQuMS4xLjc0NTIiIEROPSJzdHlrayI+PC9FbmhldFBha25pbmc+DQogICAgICA8L1Bha25pbmdzaW5mb1Jlc2VwdD4NCiAgICA8L0xlZ2VtaWRkZWxwYWtuaW5nPg0KICA8L0ZvcnNrcml2bmluZz4NCjwvUmVzZXB0RG9rTGVnZW1pZGRlbD4=</ReseptDokLegemiddelB64>
+            <Seponering>
+              <Tidspunkt>2019-07-23T00:00:00</Tidspunkt>
+              <Arsak DN="Annen årsak" V="X"/>
+            </Seponering>
+          </EnkeltoppforingLIB>
+          <EnkeltoppforingLIB>
+            <Id>dd2b6e59-18e6-431a-a5f8-16811709fb1f</Id>
+            <Type DN="Eresept" V="E"/>
+            <ReseptId>ef36537f-563b-4fb1-b93d-1681170f9817</ReseptId>
+            <UtlopsdatoResept>2020-07-16+02:00</UtlopsdatoResept>
+            <SistEndret>2019-07-17T08:55:25.32</SistEndret>
+            <DatoOppstart>2019-07-17</DatoOppstart>
+            <Rolle>
+              <Rolle DN="Seponert av" V="S"/>
+              <Helseperson>
+                <HprId>
+                  <Id xmlns="http://www.kith.no/xmlstds/felleskomponent1">431002737</Id>
+                  <TypeId xmlns="http://www.kith.no/xmlstds/felleskomponent1" DN="HPR-nummer" V="HPR" S="2.16.578.1.12.4.1.1.8116"/>
+                </HprId>
+                <Fornavn>Anja Fos</Fornavn>
+                <Etternavn>Eidsvik</Etternavn>
+              </Helseperson>
+            </Rolle>
+            <Rolle>
+              <Rolle DN="Rekvirent" V="R"/>
+              <Helseperson>
+                <HprId>
+                  <Id xmlns="http://www.kith.no/xmlstds/felleskomponent1">431002737</Id>
+                  <TypeId xmlns="http://www.kith.no/xmlstds/felleskomponent1" DN="HPR-nummer" V="HPR" S="2.16.578.1.12.4.1.1.8116"/>
+                </HprId>
+                <Fornavn>Anja Fos</Fornavn>
+                <Etternavn>Eidsvik</Etternavn>
+              </Helseperson>
+            </Rolle>
+            <ReseptDokLegemiddelB64>PFJlc2VwdERva0xlZ2VtaWRkZWwgeG1sbnM9Imh0dHA6Ly93d3cua2l0aC5uby94bWxzdGRzL2VyZXNlcHQvbTEvMjAxMy0xMC0wOCI+DQogIDxWYXJlZ3J1cHBla29kZSBETj0iTGVnZW1pZGRlbCIgVj0iTCIgLz4NCiAgPEFudGFsbD4xPC9BbnRhbGw+DQogIDxSZWl0ZXJhc2pvbj4wPC9SZWl0ZXJhc2pvbj4NCiAgPEZvcnNrcml2bmluZyB4bWxucz0iaHR0cDovL3d3dy5raXRoLm5vL3htbHN0ZHMvZXJlc2VwdC9mb3Jza3Jpdm5pbmcvMjAxMy0xMC0wOCI+DQogICAgPEJydWtzb21yYWRlPk1PVCBTTUVSVEVSPC9CcnVrc29tcmFkZT4NCiAgICA8RG9zVmVpbGVkRW5rZWw+MSB0YWJsZXR0IG1vcmdlbiwgMSB0YWJsZXR0IG1pZHQgcMOlIGRhZ2VuIG9nIDEgdGFibGV0dCBrdmVsZCBpIDMzIGRhZ2VyPC9Eb3NWZWlsZWRFbmtlbD4NCiAgICA8SW5nZW5Lb21iaW5hc2pvbj5mYWxzZTwvSW5nZW5Lb21iaW5hc2pvbj4NCiAgICA8QnJ1ayBETj0iS3VyIiBWPSIyIiAvPg0KICAgIDxEb3NlcmluZz4NCiAgICAgIDxTdGFydHRpZHNwdW5rdCBWPSIyMDE5LTA3LTE3Ij48L1N0YXJ0dGlkc3B1bmt0Pg0KICAgICAgPFNsdXR0aWRzcHVua3QgVj0iMjAxOS0wOC0xOSI+PC9TbHV0dGlkc3B1bmt0Pg0KICAgICAgPERvc2VGYXN0VGlkc3B1bmt0Pg0KICAgICAgICA8TWVuZ2RlIFY9IjEiIFU9InRhYmxldHQiPjwvTWVuZ2RlPg0KICAgICAgICA8SW50ZXJ2YWxsIFY9IjEiIFU9IkTDuGduIj48L0ludGVydmFsbD4NCiAgICAgICAgPFRpZHNvbXJhZGUgRE49Ik1vcmdlbiIgVj0iMSI+PC9UaWRzb21yYWRlPg0KICAgICAgICA8R2lzRWtzYWt0PmZhbHNlPC9HaXNFa3Nha3Q+DQogICAgICA8L0Rvc2VGYXN0VGlkc3B1bmt0Pg0KICAgICAgPERvc2VGYXN0VGlkc3B1bmt0Pg0KICAgICAgICA8TWVuZ2RlIFY9IjEiIFU9InRhYmxldHQiPjwvTWVuZ2RlPg0KICAgICAgICA8SW50ZXJ2YWxsIFY9IjEiIFU9IkTDuGduIj48L0ludGVydmFsbD4NCiAgICAgICAgPFRpZHNvbXJhZGUgRE49Ik1pZHQgcMOlIGRhZ2VuIiBWPSIzIj48L1RpZHNvbXJhZGU+DQogICAgICAgIDxHaXNFa3Nha3Q+ZmFsc2U8L0dpc0Vrc2FrdD4NCiAgICAgIDwvRG9zZUZhc3RUaWRzcHVua3Q+DQogICAgICA8RG9zZUZhc3RUaWRzcHVua3Q+DQogICAgICAgIDxNZW5nZGUgVj0iMSIgVT0idGFibGV0dCI+PC9NZW5nZGU+DQogICAgICAgIDxJbnRlcnZhbGwgVj0iMSIgVT0iRMO4Z24iPjwvSW50ZXJ2YWxsPg0KICAgICAgICA8VGlkc29tcmFkZSBETj0iS3ZlbGQiIFY9IjUiPjwvVGlkc29tcmFkZT4NCiAgICAgICAgPEdpc0Vrc2FrdD5mYWxzZTwvR2lzRWtzYWt0Pg0KICAgICAgPC9Eb3NlRmFzdFRpZHNwdW5rdD4NCiAgICA8L0Rvc2VyaW5nPg0KICAgIDxMZWdlbWlkZGVscGFrbmluZyB4bWxucz0iaHR0cDovL3d3dy5raXRoLm5vL3htbHN0ZHMvZXJlc2VwdC9mb3Jza3Jpdm5pbmcvMjAxMy0xMC0wOCI+DQogICAgICA8QXRjIFY9Ik0wMUFFMDEiIFM9IjIuMTYuNTc4LjEuMTIuNC4xLjEuNzE4MCIgRE49IklidXByb2ZlbiI+PC9BdGM+DQogICAgICA8TmF2bkZvcm1TdHlya2U+SWJ1eCBUYWIgNDAwIG1nPC9OYXZuRm9ybVN0eXJrZT4NCiAgICAgIDxSZXNlcHRncnVwcGUgVj0iQyIgRE49IlJlc2VwdGdydXBwZSBDIj48L1Jlc2VwdGdydXBwZT4NCiAgICAgIDxMZWdlbWlkZGVsZm9ybUtvcnQgVj0iNTMiIFM9IjIuMTYuNTc4LjEuMTIuNC4xLjEuNzQ0OCIgRE49IlRhYmxldHQiPjwvTGVnZW1pZGRlbGZvcm1Lb3J0Pg0KICAgICAgPFZhcmVucj4xNTQwMjE8L1ZhcmVucj4NCiAgICAgIDxQYWtuaW5nc2luZm9SZXNlcHQ+DQogICAgICAgIDxWYXJlbmF2bj5JYnV4PC9WYXJlbmF2bj4NCiAgICAgICAgPFBha25pbmdzc3RyPjEwMDwvUGFrbmluZ3NzdHI+DQogICAgICAgIDxFbmhldFBha25pbmcgVj0ic3RrIiBTPSIyLjE2LjU3OC4xLjEyLjQuMS4xLjc0NTIiIEROPSJzdHlrayI+PC9FbmhldFBha25pbmc+DQogICAgICA8L1Bha25pbmdzaW5mb1Jlc2VwdD4NCiAgICA8L0xlZ2VtaWRkZWxwYWtuaW5nPg0KICA8L0ZvcnNrcml2bmluZz4NCjwvUmVzZXB0RG9rTGVnZW1pZGRlbD4=</ReseptDokLegemiddelB64>
+            <Seponering>
+              <Tidspunkt>2019-08-19T00:00:00</Tidspunkt>
+              <Arsak DN="Avsluttet behandling" V="A"/>
+            </Seponering>
+          </EnkeltoppforingLIB>
+          <Vikar DN="Nei" V="2"/>
+        </LegemidlerIBruk>
+      </Content>
+    </RefDoc>
+  </Document>
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <SignedInfo>
+      <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+      <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+      <Reference URI="">
+        <Transforms>
+          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+          <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+        </Transforms>
+        <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+        <DigestValue>ObQcouUav1IIhKDoZ4lyvWQPqyu29lexzM/7BRaV2Zg=</DigestValue>
+      </Reference>
+    </SignedInfo>
+    <SignatureValue>DMDjjC6yUXbQsp+jMcgBRC+M6ZMaHTFZnlbWtEu7PF253WPTN2o1ku8Yw/N/fUJQA11JFgJIR6FqFQDSPlskiJ5FExSvhNhe+KwkudeCIsq2cw+NyV1ZBxKAALh01S9fSmc2F5YNA2Xrq4AuZPkioZHrlx0W+TaWS/0tizyO4HjbomuVuy6QwJxOeiOumkse7LmJ+bhjZO9EH41qo2/GoMYh496L2vt54/OLVcOIWWVaD7rNdA3a7P9gw4e2i3/cXR3Cj3Kpyr8HKj0ltDNkJr8yqPvIsAtnluCCwxdbvS8pyMlKyDbp1vytVJvOL+s88tdZdq5VrSfuaMBhVAQ=</SignatureValue>
+    <KeyInfo>
+      <X509Data>
+        <X509Certificate>MIIE2zCCA8OgAwIBAgILAXspAaj0XAL6+pgwDQYJKoZIhvcNAQELBQAwUTELMAkGA1UEBhMCTk8xHTAbBgNVBAoMFEJ1eXBhc3MgQVMtOTgzMTYzMzI3MSMwIQYDVQQDDBpCdXlwYXNzIENsYXNzIDMgVGVzdDQgQ0EgMzAeFw0xODAxMzAxMjA2NDRaFw0yMTAxMzAyMjU5MDBaMEYxCzAJBgNVBAYTAk5PMRkwFwYDVQQDDBBBTkpBIEZPUyBFSURTVklLMRwwGgYDVQQFExM5NTc4LTQwNTAtMTAwNzMyMzUzMIIBHzANBgkqhkiG9w0BAQEFAAOCAQwAMIIBBwKB/wDV42nNKvZcK5pcpyFJslrdvmmZjTbzQ6Bo2uumCxzWm3MTwMZPCuUsOByIquKpbWoWFgE3DP8eV658QcfWz505A8afI5ErkC7N1JJDWsbpKleq/j1/mNSdEhVKd5ISxkYNK+GYb6521wGUKBku3+bkVy1BadlsxhPo/6waE0uCBpWNopr3viZDyQdxpbLPzAKq2KWanwY6Lc87IkRC3ySVypolLsmiOR6hKlwmjLyuEswufFwVipJzCLreJBOTWqBlLZTuy0IQsTTcOhGWESNfg7q72EF2lDslyvcVV8vSRHK3De00V12kp0tL8OwVSjYytc7TJFvYnCxBoYqAAwIDAQABo4IBwDCCAbwwCQYDVR0TBAIwADAfBgNVHSMEGDAWgBQ/rvV4C5KjcCA1X1r69ySgUgHwQTAdBgNVHQ4EFgQU/sIXRBDRXZrzCxxb/KpEV7hpNfQwDgYDVR0PAQH/BAQDAgZAMBQGA1UdIAQNMAswCQYHYIRCARoBADCBuwYDVR0fBIGzMIGwMDegNaAzhjFodHRwOi8vY3JsLnRlc3Q0LmJ1eXBhc3Mubm8vY3JsL0JQQ2xhc3MzVDRDQTMuY3JsMHWgc6Bxhm9sZGFwOi8vbGRhcC50ZXN0NC5idXlwYXNzLm5vL2RjPUJ1eXBhc3MsZGM9Tk8sQ049QnV5cGFzcyUyMENsYXNzJTIwMyUyMFRlc3Q0JTIwQ0ElMjAzP2NlcnRpZmljYXRlUmV2b2NhdGlvbkxpc3QwgYoGCCsGAQUFBwEBBH4wfDA7BggrBgEFBQcwAYYvaHR0cDovL29jc3AudGVzdDQuYnV5cGFzcy5uby9vY3NwL0JQQ2xhc3MzVDRDQTMwPQYIKwYBBQUHMAKGMWh0dHA6Ly9jcnQudGVzdDQuYnV5cGFzcy5uby9jcnQvQlBDbGFzczNUNENBMy5jZXIwDQYJKoZIhvcNAQELBQADggEBAGNWsjAdKPUZoE+jrrke2pac8tPTuJUL46wJptJWrHaXvf+SJVn2VoduOJVdwEpTeGrIllDjwc+hMqoBrBkdoJdYLdSrVqnZo/r2Np1FcAJk4y7xeh4LbshG0hgI8X0bqod9GCGOlrpKlk6KTE+du+aV+O5QsVxNOtKy2PiFYhmAUvA/8b992XDbx1hMAZDB20XxPEZ1QnHKVfPEUdhT76ae2y+asUOXkZqXQmDxpCewKWFHlmv1DlhU2kKv4gT/2+X+Ef+X9yGgUBB5G0WO2MFRV1vFRg/yTOXybNs6+fBRiqZv16kQ5xsWh6itEqI18Jy7I9R0fKJaEjyu1/KkaFo=</X509Certificate>
+      </X509Data>
+    </KeyInfo>
+  </Signature>
+</MsgHead>

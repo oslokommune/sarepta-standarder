@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24">
+  <MsgInfo>
+    <Type DN="Samtykkeregistrering" V="ERM241"/>
+    <MIGversion>v1.2 2006-05-24</MIGversion>
+    <GenDate>2019-07-16T15:07:11.4547201+02:00</GenDate>
+    <MsgId>9fe3751f-7b7b-49cd-89c2-167f94c36d0e</MsgId>
+    <Sender>
+      <Organisation>
+        <OrganisationName>Virginia Legekontor</OrganisationName>
+        <Ident>
+          <Id>100169444</Id>
+          <TypeId DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" V="ENH" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Ident>
+          <Id>8095068</Id>
+          <TypeId DN="HER-id" V="HER" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Ident>
+          <Id>0</Id>
+          <TypeId DN="Nasjonalt register over enheter i spesialisthelsetjenesten (RESH-ID)" V="RSH" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Address>
+          <Type DN="Besøksadresse" V="RES"/>
+          <StreetAdr>Verkstedveien 1</StreetAdr>
+          <PostalCode>0102</PostalCode>
+          <City>Oslo</City>
+        </Address>
+        <TeleCom>
+          <TypeTelecom DN="Hovedtelefon" V="HP"/>
+          <TeleAddress V="tel:22222222"/>
+        </TeleCom>
+        <HealthcareProfessional>
+          <TypeHealthcareProfessional DN="Lege" V="LE"/>
+          <FamilyName>Eidsvik</FamilyName>
+          <GivenName>Anja Fos</GivenName>
+          <Sex DN="Ikke spesifisert" V="9"/>
+          <Ident>
+            <Id>16058700421</Id>
+            <TypeId V="FNR" S="2.16.578.1.12.4.1.1.8116" DN="Fødselsnummer"/>
+          </Ident>
+          <Ident>
+            <Id>431002737</Id>
+            <TypeId V="HPR" S="2.16.578.1.12.4.1.1.8116" DN="HPR-nummer"/>
+          </Ident>
+          <Address>
+            <Type V="WP" DN="Arbeidsadresse"/>
+            <StreetAdr>Virginia Legekontor</StreetAdr>
+            <PostalCode>0102</PostalCode>
+            <City>OSLO</City>
+          </Address>
+        </HealthcareProfessional>
+      </Organisation>
+    </Sender>
+    <Receiver>
+      <Organisation>
+        <OrganisationName>Reseptformidleren</OrganisationName>
+        <Ident>
+          <Id>915933149</Id>
+          <TypeId DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" V="ENH" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Ident>
+          <Id>80624</Id>
+          <TypeId DN="HER-id" V="HER" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+      </Organisation>
+    </Receiver>
+    <Patient>
+      <FamilyName>KNUTSEN</FamilyName>
+      <GivenName>OTTAR</GivenName>
+      <Sex V="1" DN="Mann"/>
+      <Ident>
+        <Id>21014605158</Id>
+        <TypeId V="FNR" S="2.16.578.1.12.4.1.1.8116" DN="Fødselsnummer"/>
+      </Ident>
+      <Address>
+        <Type V="H" DN="Bostedsadresse"/>
+        <PostalCode>3050</PostalCode>
+        <City>MJØNDALEN</City>
+        <County DN="Nedre Eiker" V="0625"/>
+      </Address>
+    </Patient>
+  </MsgInfo>
+  <Document>
+    <RefDoc>
+      <MsgType V="XML" DN="XML-instans"/>
+      <Content>
+        <Samtykke xmlns="http://www.kith.no/xmlstds/eresept/m241/2009-02-20">
+          <SamtykkeGittAv DN="Pasienten, stilltiende samtykke" V="2"/>
+          <SamtykkeTil>2056-01-21</SamtykkeTil>
+          <TypeSamtykke DN="Samtykke for utleveringsmelding" V="1"/>
+          <Samtykkeverdi DN="Nei" V="2"/>
+        </Samtykke>
+      </Content>
+    </RefDoc>
+  </Document>
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <SignedInfo>
+      <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+      <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+      <Reference URI="">
+        <Transforms>
+          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+          <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+        </Transforms>
+        <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+        <DigestValue>LSx4RmAZoBqbhZeMaaTQOauASlMEuickn7joffb+Cy8=</DigestValue>
+      </Reference>
+    </SignedInfo>
+    <SignatureValue>IgpmyxUmxUHeh3Tb3T9tuoqqpdIIFdbTq4dEDi71YJ0itD4o0vXc647m6wQ3tw20t8aar8dh7bc7pnDQ6P2t7QmejeZ2ANKkwS9trhLT/IFOTP7jvfkxTEfakYXi35Kp03JMNlfzGrA8Za96y9kKI3QAG1otNae+hrYJra2CirRey1/YW3aH3h/RGT2xVDNvBaHcWBzd2wm7U7NPJ8ZYW+STTbB99CjS3padvm5U4iJal8NIXfHG894BsNgjFs4J23zalRVc7mrTNWXC9A3hfHnseFafBto9Bdd+z6znX30a7X687IQIMuKC1ojTIHvHbCPRbSysMdSEvP5mjGE=</SignatureValue>
+    <KeyInfo>
+      <X509Data>
+        <X509Certificate>MIIE2zCCA8OgAwIBAgILAXspAaj0XAL6+pgwDQYJKoZIhvcNAQELBQAwUTELMAkGA1UEBhMCTk8xHTAbBgNVBAoMFEJ1eXBhc3MgQVMtOTgzMTYzMzI3MSMwIQYDVQQDDBpCdXlwYXNzIENsYXNzIDMgVGVzdDQgQ0EgMzAeFw0xODAxMzAxMjA2NDRaFw0yMTAxMzAyMjU5MDBaMEYxCzAJBgNVBAYTAk5PMRkwFwYDVQQDDBBBTkpBIEZPUyBFSURTVklLMRwwGgYDVQQFExM5NTc4LTQwNTAtMTAwNzMyMzUzMIIBHzANBgkqhkiG9w0BAQEFAAOCAQwAMIIBBwKB/wDV42nNKvZcK5pcpyFJslrdvmmZjTbzQ6Bo2uumCxzWm3MTwMZPCuUsOByIquKpbWoWFgE3DP8eV658QcfWz505A8afI5ErkC7N1JJDWsbpKleq/j1/mNSdEhVKd5ISxkYNK+GYb6521wGUKBku3+bkVy1BadlsxhPo/6waE0uCBpWNopr3viZDyQdxpbLPzAKq2KWanwY6Lc87IkRC3ySVypolLsmiOR6hKlwmjLyuEswufFwVipJzCLreJBOTWqBlLZTuy0IQsTTcOhGWESNfg7q72EF2lDslyvcVV8vSRHK3De00V12kp0tL8OwVSjYytc7TJFvYnCxBoYqAAwIDAQABo4IBwDCCAbwwCQYDVR0TBAIwADAfBgNVHSMEGDAWgBQ/rvV4C5KjcCA1X1r69ySgUgHwQTAdBgNVHQ4EFgQU/sIXRBDRXZrzCxxb/KpEV7hpNfQwDgYDVR0PAQH/BAQDAgZAMBQGA1UdIAQNMAswCQYHYIRCARoBADCBuwYDVR0fBIGzMIGwMDegNaAzhjFodHRwOi8vY3JsLnRlc3Q0LmJ1eXBhc3Mubm8vY3JsL0JQQ2xhc3MzVDRDQTMuY3JsMHWgc6Bxhm9sZGFwOi8vbGRhcC50ZXN0NC5idXlwYXNzLm5vL2RjPUJ1eXBhc3MsZGM9Tk8sQ049QnV5cGFzcyUyMENsYXNzJTIwMyUyMFRlc3Q0JTIwQ0ElMjAzP2NlcnRpZmljYXRlUmV2b2NhdGlvbkxpc3QwgYoGCCsGAQUFBwEBBH4wfDA7BggrBgEFBQcwAYYvaHR0cDovL29jc3AudGVzdDQuYnV5cGFzcy5uby9vY3NwL0JQQ2xhc3MzVDRDQTMwPQYIKwYBBQUHMAKGMWh0dHA6Ly9jcnQudGVzdDQuYnV5cGFzcy5uby9jcnQvQlBDbGFzczNUNENBMy5jZXIwDQYJKoZIhvcNAQELBQADggEBAGNWsjAdKPUZoE+jrrke2pac8tPTuJUL46wJptJWrHaXvf+SJVn2VoduOJVdwEpTeGrIllDjwc+hMqoBrBkdoJdYLdSrVqnZo/r2Np1FcAJk4y7xeh4LbshG0hgI8X0bqod9GCGOlrpKlk6KTE+du+aV+O5QsVxNOtKy2PiFYhmAUvA/8b992XDbx1hMAZDB20XxPEZ1QnHKVfPEUdhT76ae2y+asUOXkZqXQmDxpCewKWFHlmv1DlhU2kKv4gT/2+X+Ef+X9yGgUBB5G0WO2MFRV1vFRg/yTOXybNs6+fBRiqZv16kQ5xsWh6itEqI18Jy7I9R0fKJaEjyu1/KkaFo=</X509Certificate>
+      </X509Data>
+    </KeyInfo>
+  </Signature>
+</MsgHead>

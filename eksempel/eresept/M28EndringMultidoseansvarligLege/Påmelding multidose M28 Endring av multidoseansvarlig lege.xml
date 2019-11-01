@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 ../felles/MsgHead-v1_2.xsd">
+  <MsgInfo>
+    <Type DN="Endring av multidoseansvarlig lege" V="ERM28"/>
+    <MIGversion>v1.2 2006-05-24</MIGversion>
+    <GenDate>2019-07-18T13:50:31.882+02:00</GenDate>
+    <MsgId>f636db1a-ebe7-4c7d-8cc4-14945e0dc862</MsgId>
+    <ConversationRef>
+      <RefToParent>3e1e3d86-6ed6-4983-863f-16838ad39556</RefToParent>
+      <RefToConversation>3e1e3d86-6ed6-4983-863f-16838ad39556</RefToConversation>
+    </ConversationRef>
+    <Sender>
+      <Organisation>
+        <OrganisationName>Reseptformidleren</OrganisationName>
+        <Ident>
+          <Id>915933149</Id>
+          <TypeId V="ENH" DN="Organisasjonsnummeret i Enhetsregister" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Ident>
+          <Id>80624</Id>
+          <TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+      </Organisation>
+    </Sender>
+    <Receiver>
+      <Organisation>
+        <OrganisationName>Virginia Legekontor</OrganisationName>
+        <Ident>
+          <Id>100169444</Id>
+          <TypeId V="ENH" DN="Organisasjonsnummeret i Enhetsregister" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Ident>
+          <Id>8095068</Id>
+          <TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <HealthcareProfessional>
+          <FamilyName>Eidsvik</FamilyName>
+          <MiddleName>Fos</MiddleName>
+          <GivenName>Anja</GivenName>
+          <Ident>
+            <Id>431002737</Id>
+            <TypeId V="HPR" DN="HPR-nummer" S="2.16.578.1.12.4.1.1.8116"/>
+          </Ident>
+        </HealthcareProfessional>
+      </Organisation>
+    </Receiver>
+    <Patient>
+      <FamilyName>KNUTSEN</FamilyName>
+      <GivenName>OTTAR</GivenName>
+      <Sex V="1" DN="Mann"/>
+      <Ident>
+        <Id>21014605158</Id>
+        <TypeId V="FNR" S="2.16.578.1.12.4.1.1.8116" DN="Fødselsnummer"/>
+      </Ident>
+      <Address>
+        <Type V="H" DN="Bostedsadresse"/>
+        <PostalCode>3050</PostalCode>
+        <City>MJØNDALEN</City>
+        <County DN="Nedre Eiker" V="0625"/>
+      </Address>
+    </Patient>
+  </MsgInfo>
+  <Document>
+    <RefDoc>
+      <MsgType DN="XML-instans" V="XML"/>
+      <Content>
+        <ns:M28 xmlns:ns="http://www.kith.no/xmlstds/eresept/m28/2012-06-11">
+          <ns:AktivFra>2019-07-18+02:00</ns:AktivFra>
+          <ns1:Multidoselege xmlns:ns1="http://www.kith.no/xmlstds/eresept/m274/2012-06-11">
+            <ns1:HprNr>431001905</ns1:HprNr>
+            <ns1:Navn>Tommy Fos  Sjursen</ns1:Navn>
+            <ns1:Org>Virginia Legekontor</ns1:Org>
+            <ns1:HerId>
+              <fel:Id xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1">8095068</fel:Id>
+              <fel:TypeId xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1" DN="HER-id" V="HER"/>
+            </ns1:HerId>
+            <ns1:Telefon>
+              <fel:TypeTelecom xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1" V="HP" DN="Hovedtelefon"/>
+              <fel:TeleAddress xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1" V="tel:33333333"/>
+            </ns1:Telefon>
+          </ns1:Multidoselege>
+        </ns:M28>
+      </Content>
+    </RefDoc>
+  </Document>
+</MsgHead>

@@ -1,0 +1,776 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>SvarSLV</title>
+		<style type="text/css"><!--*/-->  
+
+
+body
+{
+	background-color: #ffffff;
+	color: #000000;
+}
+
+/* @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,700'); */
+
+@media screen {
+	
+	.Top {
+	width:95%;
+	margin: 1px;
+	/**border:1px solid gray;
+	background-color: #eeeeee;*/
+	padding:1em;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	}
+
+	.No-line-top {
+	width:95%;
+	margin: 1px;
+	padding:1em;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	}
+	
+	.Header {
+	width: 100%;
+	/*border:1px solid black;*/
+	overflow: visible;
+	padding: 1px;
+	}
+	
+	.No-line-header {
+	width: 100%;
+	overflow: visible;
+	padding: 1px;
+	}
+	
+	.HeaderContent {
+	width: 100%;
+	padding: 1px;
+	}
+	
+	.No-line-headerContent {
+	width: 100%;
+	padding: 1px;
+	line-height: 20px;
+	}
+	
+	.Caption {
+	width: 100px;
+	padding:1px;
+	margin-right: 2px;
+	float: left;
+	clear: both;
+	font-weight: bold;
+	}
+	.Document .Caption {
+		background-color: #CAE8EA;
+	}
+	
+	.No-line-caption {
+	width: 100px;
+	padding:1px;
+	margin-right: 2px;
+	float: left;
+	clear: both;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	display: inline-block;
+	width: 15%;
+	min-width: 100px;
+	}
+	.No-line-caption.servprov {
+		padding-top: 4px;
+	}
+	
+	.Content, .No-line-content {
+	padding:1px;
+	background-color:  white;
+	margin-right: 1px;
+	}
+	.No-line-content {
+	display: inline-block;
+    width: 65%;
+	}
+	.inline-content div {
+	display: inline;
+	}
+
+	.Content div, .No-line-content div {
+	display:inline;
+	}
+	
+	.NoScreen {
+	display: none;
+	}
+	
+	input:checked+table {
+	display: none;
+	}
+	.VisSkjul {
+	margin-left: 5px;
+	color: blue;
+	cursor: pointer;
+	}
+
+	.VisSkjul:after {
+	content:"\A";
+	white-space: pre;
+	}
+	.Document h1 {
+		color:white;
+		background-color:gray;
+	}
+	.Document h2 {
+		color:white;
+		background-color:gray;
+	}
+	.Document .summary h2 {
+		background-color: #fff;
+	}
+	.No-line-doc  .summary h2,
+	.One-line-doc  .summary h2 {
+		background-color:#e3e3e3;
+	}
+	.No-line-doc .summary table,
+	.One-line-doc .summary table {
+		background-color: #e3e3e3;
+	}
+	.Document .summary h2 {
+		background-color: #ecece7;
+	}
+	.Document .summary table{
+		background-color: #ecece7;
+	}
+	.Document .summary {
+		box-shadow: 1px 1px 8px 1px #6d6a60;
+	}
+}
+
+@media print {
+
+	.Top, .No-line-top {
+	margin: 1px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	overflow: visible;
+	}
+
+	.HeaderContent, .No-line-headerContent {
+	width: 47.5%;
+	height: 82px;
+	min-height: 82px;
+	max-height: 82px;
+	border: solid black 1px;
+	padding: 0.5em;
+	float: left;
+	overflow: hidden;
+	}
+	
+	.Caption, .No-line-caption {
+	float: left;
+	display:inline;
+	font-weight: bold;
+	}
+	
+	.NoPrint {
+	display: none;
+	}
+	
+	input:checked+table {
+	display: block;
+	}
+
+	.VisSkjul {
+	display: none;
+	}
+	.Document h1 {
+		color: #000;
+		background-color: #fff;
+	}
+	.Document h2 {
+		color: #000;
+		background-color: #fff;
+	}
+	.Document .summary h2 {
+		background-color: #fff;
+	}
+	.Document .summary {
+		background-color: #ffffff;
+	}
+	.Document .summary,
+	.One-line-doc .summary,
+	.No-line-doc .summary {
+		border: 1px solid #6d6a60;
+	}
+
+}
+
+div {
+	min-height: 12px;
+}
+
+.Document {
+width:95%;
+clear:left;
+margin: 1px;
+border:1px solid gray;
+padding:1em;
+background-color: #eeeeee;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 13px;
+}
+
+.No-line-doc, .One-line-doc {
+width:95%;
+clear:left;
+margin: 1px;
+padding:1em;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 13px;
+}
+
+.Document h1 {
+padding:0.3em;
+border:1px solid gray;
+font-size: 1.8em;
+margin-bottom:0.3em;
+margin-top:0em;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.No-line-doc h1, .One-line-doc h1 {
+padding:0.1em;
+font-size: 1.8em;
+line-height:0.7em;
+margin-bottom:0.3em;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.Document h2 {
+padding:0.4em;
+border:1px solid gray;
+font-size: 1.4em;
+line-height:0.7em;
+margin-bottom:0.3em;
+margin-top:0.3em;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.No-line-doc h2, .One-line-doc h2 {
+padding:0.1em;
+font-size: 1.4em;
+line-height:1em;
+margin-top:1em;
+margin-bottom:0em;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.summary h2 {
+	margin-top: 0;
+	margin-bottom: 0;
+	border: none;
+}
+.Document .summary {
+	margin: 10px;
+}
+.No-line-doc  .summary h2,
+.One-line-doc  .summary h2,
+.Document .summary h2	{
+	padding-top:1em; 
+	padding-left:1em; 
+	margin-left:0em;
+}
+.No-line-doc  .summary h2,
+.One-line-doc  .summary h2 {
+	margin-top:0em; 
+}
+.Document .summary h2 {
+	color: #000;
+}
+.Document .summary table{
+	border: none;
+}
+.No-line-doc  .summary td,
+.One-line-doc  .summary td,
+.Document   .summary td {
+	background-color: inherit; 
+}
+.Document h3 {
+padding:0.2em;
+color:black;
+font-size: 1.2em;
+line-height:0.1em;
+margin-bottom:0.3em;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.No-line-doc h3, .One-line-doc h3 {
+padding:0.2em;
+font-size: 1.3em;
+line-height:1em;
+margin-bottom:0.3em;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.Document table {
+border:1px solid black;
+width:100%;
+}
+
+.No-line-doc table, .One-line-doc table {
+width:100%;
+}
+
+.Document th {
+background-color: #CAE8EA;
+border-style:none;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 13px;
+text-align: left;
+vertical-align: top;
+width: 100px;
+font-weight: normal;
+padding-right: 5px;
+}
+
+.One-line-doc th {
+border-top: 1px solid lightgrey; 
+font-family: Arial, Helvetica, sans-serif;
+font-size: 13px;
+text-align: left;
+vertical-align: top;
+width: 100px;
+padding: 4px 5px 4px 2px;
+font-weight: bold;
+/* color: #826b35; */
+}
+
+.No-line-doc th {
+border-style:none;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 13px;
+text-align: left;
+vertical-align: top;
+width: 100px;
+font-weight: bold;
+padding-right: 5px;
+/* color: #826b35; */
+}
+
+.Document td {
+background-color: white;
+border-style: none;
+text-align: left;
+vertical-align: top;
+font-size: 13px;
+}
+
+.No-line-doc tr.striped {
+	background-color: #f3f3f3;
+}
+
+.One-line-doc td {
+border-top: 1px solid lightgrey;
+background-color: white;
+text-align: left;
+vertical-align: top;
+font-size: 13px;
+padding: 4px 2px 4px 2px;
+}
+
+.No-line-doc td {
+border-style: none;
+text-align: left;
+vertical-align: top;
+font-size: 13px;
+}
+
+.Document th.h2 {
+color:white;
+background-color: gray;
+border:1px solid gray;
+font-size: 1em;
+line-height:0.9em;
+width: 100px;
+}
+
+.One-line-doc th.h2 {
+border-top: 1px solid lightgrey;
+font-family: Arial, Helvetica, sans-serif;
+font-size:1.3em;
+text-align: left;
+vertical-align: top;
+width: 100px;
+padding: 4px 2px 4px 2px;
+}
+
+.No-line-doc th.h2 {
+border-style:none;
+font-family: Arial, Helvetica, sans-serif;
+font-size:1.3em;
+text-align: left;
+vertical-align: top;
+width: 100px;
+}
+
+.Document th.h3 {
+background-color: gray;
+color:white;
+}
+
+.One-line-doc th.h3 {
+border-top: 1px solid lightgrey;
+font-family: Arial, Helvetica, sans-serif;
+font-size:1.2em;
+text-align: left;
+vertical-align: top;
+width: 100px;
+padding: 4px 2px 4px 2px;
+}
+
+.No-line-doc th.h3 {
+border-style:none;
+font-family: Arial, Helvetica, sans-serif;
+font-size:1.2em;
+text-align: left;
+vertical-align: top;
+width: 100px;
+}
+
+td.Emphasized {
+background-color:#CAE8EA;
+width: 100px;
+}
+.strong {
+	font-weight: 600;
+}
+.viktig {
+color: red;
+}
+.horRuler hr {
+	border: 1px dotted #d6d6d6;
+}
+.Box {
+border:1px solid black;
+padding:1px;
+overflow: hidden;
+line-height: 24px;
+}
+.Document .Box {
+background-color: #fff;
+}
+	
+.MainCaption {
+padding:1px;
+margin: 1px;
+display: inline;
+font-weight: bold;
+font-size: 12px;
+}
+.Document .MainCaption {
+	background-color: #CAE8EA;
+	display: inline-block;
+	padding-left: 2px;
+	padding-right: 5px;
+	margin-right: 0;
+}
+.MainContent {
+padding:1px;
+padding-right:5px;
+background-color:  white;
+margin: 1px;
+display: inline;
+font-size: 12px;
+}
+.Document .MainContent {
+	margin-left: 0;
+}
+
+.Block {
+float: left;
+width: 32%;
+}
+.Document .Block {
+	border: 2px solid #eeeeee;
+}
+.Box .Block:last-child {
+	float: none;
+	overflow: hidden;
+	width: auto;
+}
+
+#FellesMeny ul { 
+margin: 0;
+padding: 0; 
+list-style-type: none; 
+list-style-image: none;
+font-size: 1.03em;
+}
+
+#FellesMeny li { 
+display:inline;
+}
+
+#FellesMeny a {
+text-decoration:none;
+color: blue;
+white-space:nowrap;
+padding-right:1em;
+width:15em;
+}
+
+#FellesMeny a:hover {
+color: purple;
+}
+
+@media print {
+	.Document th.h3 {
+		color: #000;
+		font-weight: 600;
+	}
+}
+
+p.TestMessageWarning {
+	background-color: #fff3cd;
+	color: #856404;
+	padding: 1rem;
+	font-size: x-large;
+	border: 3px solid #ffeeba;
+	border-radius: .5rem
+}
+
+<!--/*--></style>
+		<style type="text/css"><!--*/-->  
+
+
+.dummy { /* first css class is sometimes ignored, therefore need a dummy at first */
+}
+
+body.Document {
+	background-color: #fff;
+	border: none;
+}
+body.Document.Smooth {
+	border: none;
+	box-shadow: none;
+}
+.Smooth .No-line-header {
+	padding: 10px;
+	background-color: #fff;
+	width: initial;
+}
+.Document.Smooth {
+	border-color: #e8e8e8;
+	background-color: #fff;
+    box-shadow: 0px 0px 2px #6d6a60;
+}
+.Document.Smooth h1 {
+	color: #08111b;;
+	background-color: #ecece7;
+	border-color: #d8d8d8;
+}
+.Document.Smooth h2 {
+	color: #08111b;
+	background-color: #ecece7;
+	border-color: #d8d8d8;
+}
+.Document.Smooth h3 {
+	color: black;
+}
+.Document.Smooth table {
+	border-color: #d8d8d8;
+}
+.Document.Smooth th {
+	background-color: #efefef;
+}
+.Document.Smooth td {
+	background-color: white;
+}
+.Document.Smooth .summary td {
+	background-color: inherit;
+}
+.Document.Smooth th.h2 {
+	color: #08111b;;
+	background-color: #ececec;
+}
+.Document.Smooth th.h3 {
+	color: #08111b;;
+	background-color: #ececec;
+}
+.Document.Smooth .Caption {
+	background-color: #ececec;
+}
+.Document.Smooth .MainCaption {
+	background-color: #ececec;
+	font-weight: normal;
+	font-size: 13px;
+}
+.Document.Smooth .MainContent {
+	font-size: 14px;
+}
+.Document.Smooth [class^=eh-col-].eh-label, 
+.Document.Smooth [class^=eh-col-] .eh-label {
+	background-color: #f7f6ef;
+	color: #826b35;
+}
+.Document.Smooth .summary .eh-label {
+	background-color: inherit;
+}
+.Document.Smooth [class^=eh-col-].eh-label.h3 {
+	color: #08111b;
+	background-color: #ecece7;
+}
+.Document.Smooth [class^=eh-section] {
+	border-color: #d8d8d8;
+	background-color: #fff;
+}
+.Document.Smooth .summary [class^=eh-section]  {
+	background-color: #ecece7;
+}
+.Document.Smooth .VisSkjul {
+	color: blue;
+}
+@media screen and (max-width: 767px) {
+	.Document.Smooth [class$=eh-section] .eh-row-8 [class^=eh-col-] .eh-label.hd {
+		background-color: #efefef;
+	}
+}
+@media print {
+	body.Document.Smooth {
+		background-color: #fff;
+		border: none;
+	}
+	.Smooth .No-line-header {
+		padding: 1px;
+	}
+	.Document.Smooth h1 {
+		color: #000;
+		background-color: #fff;
+		border: none;
+		margin: 0;
+		padding-right: 0;
+		padding-left: 0;
+	}
+	.Document.Smooth h2 {
+		color: #000;
+		background-color: #fff;
+		border: none;
+		margin: 0;
+		padding-right: 0;
+		padding-left: 0;
+	}
+	.Document.Smooth h3 {
+		background-color: #fff;
+		border: none;
+		margin: 0;
+		padding-right: 0;
+		padding-left: 0;
+	}
+	.Document.Smooth .summary {
+		border: 1px solid #6d6a60;
+		background-color: #ffffff;
+	}
+	.Document.Smooth .summary h2 {
+		background-color: #fff;
+	}
+	.Document.Smooth .summary [class^=eh-section],
+	.Document.Smooth .summary [class^=eh-section] [class^=eh-col-] {
+		background-color: #fff;
+		border: none;
+		margin: 0;
+	}
+	.Document.Smooth [class^=eh-col-].eh-label.h3 {
+		background-color: #fff;
+		border: none;
+		color: #000;
+	}
+	.Document.Smooth [class^=eh-section] {
+		font-size: 10px;
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
+	.Document.Smooth [class^=eh-col-].eh-label, 
+	.Document.Smooth [class^=eh-col-] .eh-label {
+		background-color: #f7f6ef;
+		color: #826b35;
+		font-size: 10px;
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
+	.Document.Smooth [class^=eh-col-].eh-field, 
+	.Document.Smooth [class^=eh-col-] .eh-field {
+		font-size: 10px;
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+	
+<!--/*--></style>
+	</head>
+	<body>
+		<div class="No-line-top">
+			<div class="No-line-header">
+				<div class="No-line-headerContent">
+					<div class="No-line-caption">Avsender&nbsp;</div>
+					<div class="No-line-content">
+						<div>Reseptformidleren&nbsp;
+				</div>
+					</div>
+				</div>
+				<div class="No-line-headerContent">
+					<div class="NoScreen">&nbsp;</div>
+				</div>
+				<div class="No-line-headerContent">
+					<div class="No-line-caption">Mottaker&nbsp;</div>
+					<div class="No-line-content">
+						<div>Apotek 1 Ski Storsenter&nbsp;
+				</div>
+					</div>
+				</div>
+				<div class="No-line-headerContent">
+					<div class="NoScreen">&nbsp;</div>
+				</div>
+			</div>
+		</div>
+		<div class="No-line-doc">
+			<h1>Søknadssvar&nbsp;fra&nbsp;SLV</h1>
+			<table>
+				<tbody>
+					<tr>
+						<th width="25%">Innvilget</th>
+						<th width="25%">Saksbehandler</th>
+					</tr>
+					<tr>
+						<td width="25%">Ja</td>
+						<td width="25%">UD-CZC524271K\testlab</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="No-line-doc">
+			<h2>Dokumentinformasjon</h2>
+			<table>
+				<tbody>
+					<tr>
+						<th>Melding&nbsp;opprettet</th>
+						<td>17.07.19&nbsp;kl.11:04</td>
+						<th>Meldingsid</th>
+						<td>bc049f3f-6545-409d-9ed9-ac7d6cc5c8cd</td>
+					</tr>
+					<tr>
+						<th>Visningsversjon</th>
+						<td colspan="3">eresept-m15-2.5 - v3.1.1</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>

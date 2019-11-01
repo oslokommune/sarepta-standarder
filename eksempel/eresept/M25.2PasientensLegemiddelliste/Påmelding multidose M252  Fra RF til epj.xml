@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 ../felles/MsgHead-v1_2.xsd">
+  <MsgInfo>
+    <Type DN="Varer i bruk" V="ERM252"/>
+    <MIGversion>v1.2 2006-05-24</MIGversion>
+    <GenDate>2019-07-18T14:18:53.453+02:00</GenDate>
+    <MsgId>1de3859b-b79b-4725-8169-02ca9bd92f06</MsgId>
+    <ConversationRef>
+      <RefToParent>f4776c40-e853-4ca7-9a1b-7db9fc63f63f</RefToParent>
+      <RefToConversation>438308f4-dc36-467d-b00b-16811710205d</RefToConversation>
+    </ConversationRef>
+    <Sender>
+      <Organisation>
+        <OrganisationName>Reseptformidleren</OrganisationName>
+        <Ident>
+          <Id>915933149</Id>
+          <TypeId V="ENH" DN="Organisasjonsnummeret i Enhetsregister" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Ident>
+          <Id>80624</Id>
+          <TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+      </Organisation>
+    </Sender>
+    <Receiver>
+      <Organisation>
+        <OrganisationName>Virginia Legekontor</OrganisationName>
+        <Ident>
+          <Id>100169444</Id>
+          <TypeId V="ENH" DN="Organisasjonsnummeret i Enhetsregister" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Ident>
+          <Id>8095068</Id>
+          <TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <HealthcareProfessional>
+          <FamilyName>Sjursen</FamilyName>
+          <MiddleName>Fos</MiddleName>
+          <GivenName>Tommy</GivenName>
+          <Ident>
+            <Id>431001905</Id>
+            <TypeId V="HPR" DN="HPR-nummer" S="2.16.578.1.12.4.1.1.8116"/>
+          </Ident>
+        </HealthcareProfessional>
+      </Organisation>
+    </Receiver>
+    <Patient>
+      <FamilyName>KNUTSEN</FamilyName>
+      <GivenName>OTTAR</GivenName>
+      <Sex V="1" DN="Mann"/>
+      <Ident>
+        <Id>21014605158</Id>
+        <TypeId V="FNR" S="2.16.578.1.12.4.1.1.8116" DN="Fødselsnummer"/>
+      </Ident>
+      <Address>
+        <Type V="H" DN="Bostedsadresse"/>
+        <PostalCode>3050</PostalCode>
+        <City>MJØNDALEN</City>
+        <County DN="Nedre Eiker" V="0625"/>
+      </Address>
+    </Patient>
+  </MsgInfo>
+  <Document>
+    <RefDoc>
+      <MsgType DN="XML-instans" V="XML"/>
+      <Content>
+        <LegemidlerIBruk xmlns="http://www.kith.no/xmlstds/eresept/m252/2013-10-08">
+          <Rolle>
+            <Rolle DN="LIB-ansvarlig lege" V="L"/>
+            <Helseperson>
+              <HprId>
+                <Id xmlns="http://www.kith.no/xmlstds/felleskomponent1">431002737</Id>
+                <TypeId xmlns="http://www.kith.no/xmlstds/felleskomponent1" DN="HPR" S="2.16.578.1.12.4.1.1.8116" V="HPR"/>
+              </HprId>
+              <Fornavn>Anja Fos</Fornavn>
+              <Etternavn>Eidsvik</Etternavn>
+            </Helseperson>
+          </Rolle>
+          <Rolle>
+            <Rolle DN="Fastlege" V="F"/>
+            <Helseperson>
+              <HprId>
+                <Id xmlns="http://www.kith.no/xmlstds/felleskomponent1">431002737</Id>
+                <TypeId xmlns="http://www.kith.no/xmlstds/felleskomponent1" DN="HPR" S="2.16.578.1.12.4.1.1.8116" V="HPR"/>
+              </HprId>
+              <Fornavn>Anja Fos</Fornavn>
+              <Etternavn>Eidsvik</Etternavn>
+            </Helseperson>
+          </Rolle>
+          <EnkeltoppforingLIB>
+            <Id>c4044d55-2279-422b-9975-164661c52a8c</Id>
+            <Type DN="Eresept" V="E"/>
+            <ReseptId>665e2a11-787a-4dac-aec1-16466a9838d1</ReseptId>
+            <UtlopsdatoResept>2020-06-17+02:00</UtlopsdatoResept>
+            <SistEndret>2019-06-18T12:12:30.063</SistEndret>
+            <DatoOppstart>2019-06-18</DatoOppstart>
+            <Rolle>
+              <Rolle DN="Rekvirent" V="R"/>
+              <Helseperson>
+                <HprId>
+                  <Id xmlns="http://www.kith.no/xmlstds/felleskomponent1">431002737</Id>
+                  <TypeId xmlns="http://www.kith.no/xmlstds/felleskomponent1" DN="HPR" S="2.16.578.1.12.4.1.1.8116" V="HPR"/>
+                </HprId>
+                <Fornavn>Anja Fos</Fornavn>
+                <Etternavn>Eidsvik</Etternavn>
+              </Helseperson>
+            </Rolle>
+            <ReseptDokLegemiddelB64>PFJlc2VwdERva0xlZ2VtaWRkZWwgeG1sbnM9Imh0dHA6Ly93d3cua2l0aC5uby94bWxzdGRzL2VyZXNlcHQvbTEvMjAxMy0xMC0wOCI+DQogIDxWYXJlZ3J1cHBla29kZSBETj0iTGVnZW1pZGRlbCIgVj0iTCI+PC9WYXJlZ3J1cHBla29kZT4NCiAgPEFudGFsbD4xPC9BbnRhbGw+DQogIDxSZWZIamVtbWVsIEROPSLCpzUtMTQgwqcyIiBWPSIyMDAiIFM9IjIuMTYuNTc4LjEuMTIuNC4xLjEuNzQyNyIgT1Q9IlZpc2VyIHRpbCBsZWdlbWlkbGVyIG1lZCBmb3Jow6VuZHNnb2RramVudCByZWZ1c2pvbiwgb3BwZsO4cnQgaSByZWZ1c2pvbnNsaXN0ZW4iPjwvUmVmSGplbW1lbD4NCiAgPFJlZktvZGUgRE49IkFsbGVyZ2lzayByaW5pdHQiIFY9IlI5NyIgUz0iMi4xNi41NzguMS4xMi40LjEuMS43MTcwIj48L1JlZktvZGU+DQogIDxSZWl0ZXJhc2pvbj4zPC9SZWl0ZXJhc2pvbj4NCiAgPEZvcnNrcml2bmluZyB4bWxucz0iaHR0cDovL3d3dy5raXRoLm5vL3htbHN0ZHMvZXJlc2VwdC9mb3Jza3Jpdm5pbmcvMjAxMy0xMC0wOCI+DQogICAgPEJydWtzb21yYWRlPkFMTEVSR0lNRURJU0lOPC9CcnVrc29tcmFkZT4NCiAgICA8RG9zVmVpbGVkRW5rZWw+MSB0YWJsZXR0IGRhZ2xpZzwvRG9zVmVpbGVkRW5rZWw+DQogICAgPEluZ2VuS29tYmluYXNqb24+ZmFsc2U8L0luZ2VuS29tYmluYXNqb24+DQogICAgPEJydWsgRE49IkZhc3QiIFY9IjEiPjwvQnJ1az4NCiAgICA8S29ydGRvc2UgRE49IjEgZGFnbGlnIiBWPSI5MyIgUz0iMi4xNi41NzguMS4xMi40LjEuMS43NDc4IiBPVD0iMSB0YWJsZXR0IGRhZ2xpZyI+PC9Lb3J0ZG9zZT4NCiAgICA8RG9zZXJpbmc+DQogICAgICA8U3RhcnR0aWRzcHVua3QgVj0iMjAxOS0wNi0xOCI+PC9TdGFydHRpZHNwdW5rdD4NCiAgICAgIDxEb3NlRmFzdFRpZHNwdW5rdD4NCiAgICAgICAgPE1lbmdkZSBWPSIxIiBVPSJ0YWJsZXR0Ij48L01lbmdkZT4NCiAgICAgICAgPEludGVydmFsbCBWPSIxIiBVPSJEw7hnbiI+PC9JbnRlcnZhbGw+DQogICAgICAgIDxUaWRzb21yYWRlIEROPSJNb3JnZW4iIFY9IjEiPjwvVGlkc29tcmFkZT4NCiAgICAgICAgPEdpc0Vrc2FrdD5mYWxzZTwvR2lzRWtzYWt0Pg0KICAgICAgPC9Eb3NlRmFzdFRpZHNwdW5rdD4NCiAgICA8L0Rvc2VyaW5nPg0KICAgIDxMZWdlbWlkZGVscGFrbmluZz4NCiAgICAgIDxBdGMgVj0iUjA2QUUwNyIgUz0iMi4xNi41NzguMS4xMi40LjEuMS43MTgwIiBETj0iQ2V0aXJpemluIj48L0F0Yz4NCiAgICAgIDxOYXZuRm9ybVN0eXJrZT5DZXRpbWF4IFRhYiAxMCBtZzwvTmF2bkZvcm1TdHlya2U+DQogICAgICA8UmVzZXB0Z3J1cHBlIFY9IkMiIEROPSJSZXNlcHRncnVwcGUgQyI+PC9SZXNlcHRncnVwcGU+DQogICAgICA8TGVnZW1pZGRlbGZvcm1Lb3J0IFY9IjUzIiBTPSIyLjE2LjU3OC4xLjEyLjQuMS4xLjc0NDgiIEROPSJUYWJsZXR0Ij48L0xlZ2VtaWRkZWxmb3JtS29ydD4NCiAgICAgIDxWYXJlbnI+MDU3OTMyPC9WYXJlbnI+DQogICAgICA8UGFrbmluZ3NpbmZvUmVzZXB0Pg0KICAgICAgICA8VmFyZW5hdm4+Q2V0aW1heDwvVmFyZW5hdm4+DQogICAgICAgIDxQYWtuaW5nc3N0cj4xMDA8L1Bha25pbmdzc3RyPg0KICAgICAgICA8RW5oZXRQYWtuaW5nIFY9InN0ayIgUz0iMi4xNi41NzguMS4xMi40LjEuMS43NDUyIiBETj0ic3R5a2siPjwvRW5oZXRQYWtuaW5nPg0KICAgICAgPC9QYWtuaW5nc2luZm9SZXNlcHQ+DQogICAgPC9MZWdlbWlkZGVscGFrbmluZz4NCiAgPC9Gb3Jza3Jpdm5pbmc+DQo8L1Jlc2VwdERva0xlZ2VtaWRkZWw+</ReseptDokLegemiddelB64>
+            <Sporsmal>
+              <Kode DN="Skal resepten fornyes" S="2.16.578.1.12.4.1.1.7495" V="3"/>
+              <Tidspunkt>2019-07-18T14:19:58</Tidspunkt>
+              <Stiller>8091831</Stiller>
+            </Sporsmal>
+          </EnkeltoppforingLIB>
+          <EnkeltoppforingLIB>
+            <Id>b08e4a01-fe66-41eb-8f07-16810c2e3eb3</Id>
+            <Type DN="Eresept" V="E"/>
+            <ReseptId>252bc3f1-af62-4a37-9810-16810c33e84f</ReseptId>
+            <UtlopsdatoResept>2020-07-16+02:00</UtlopsdatoResept>
+            <SistEndret>2019-07-17T08:25:23.61</SistEndret>
+            <DatoOppstart>2019-07-17</DatoOppstart>
+            <Rolle>
+              <Rolle DN="Rekvirent" V="R"/>
+              <Helseperson>
+                <HprId>
+                  <Id xmlns="http://www.kith.no/xmlstds/felleskomponent1">431002737</Id>
+                  <TypeId xmlns="http://www.kith.no/xmlstds/felleskomponent1" DN="HPR" S="2.16.578.1.12.4.1.1.8116" V="HPR"/>
+                </HprId>
+                <Fornavn>Anja Fos</Fornavn>
+                <Etternavn>Eidsvik</Etternavn>
+              </Helseperson>
+            </Rolle>
+            <ReseptDokLegemiddelB64>PFJlc2VwdERva0xlZ2VtaWRkZWwgeG1sbnM9Imh0dHA6Ly93d3cua2l0aC5uby94bWxzdGRzL2VyZXNlcHQvbTEvMjAxMy0xMC0wOCI+DQogIDxWYXJlZ3J1cHBla29kZSBETj0iTGVnZW1pZGRlbCIgVj0iTCI+PC9WYXJlZ3J1cHBla29kZT4NCiAgPEFudGFsbD4xPC9BbnRhbGw+DQogIDxSZWZIamVtbWVsIEROPSLCpzUtMTQgwqcyIiBWPSIyMDAiIFM9IjIuMTYuNTc4LjEuMTIuNC4xLjEuNzQyNyIgT1Q9IlZpc2VyIHRpbCBsZWdlbWlkbGVyIG1lZCBmb3Jow6VuZHNnb2RramVudCByZWZ1c2pvbiwgb3BwZsO4cnQgaSByZWZ1c2pvbnNsaXN0ZW4iPjwvUmVmSGplbW1lbD4NCiAgPFJlZktvZGUgRE49IkJldHlkZWxpZyBmb3Jow7h5ZXQgcmlzaWtvIGZvciDDpSB1dHZpa2xlIGF0ZXJvc2tsZXJvdGlzayBzeWtkb20gKHByaW3DpnJwcmV2ZW5zam9uKSIgVj0iLTI3IiBTPSIyLjE2LjU3OC4xLjEyLjQuMS4xLjc0MzQiPjwvUmVmS29kZT4NCiAgPFJlaXRlcmFzam9uPjM8L1JlaXRlcmFzam9uPg0KICA8Rm9yc2tyaXZuaW5nIHhtbG5zPSJodHRwOi8vd3d3LmtpdGgubm8veG1sc3Rkcy9lcmVzZXB0L2ZvcnNrcml2bmluZy8yMDEzLTEwLTA4Ij4NCiAgICA8QnJ1a3NvbXJhZGU+S09MRVNURVJPTFNFTktFTkRFPC9CcnVrc29tcmFkZT4NCiAgICA8RG9zVmVpbGVkRW5rZWw+MSB0YWJsZXR0IGt2ZWxkPC9Eb3NWZWlsZWRFbmtlbD4NCiAgICA8SW5nZW5Lb21iaW5hc2pvbj5mYWxzZTwvSW5nZW5Lb21iaW5hc2pvbj4NCiAgICA8QnJ1ayBETj0iRmFzdCIgVj0iMSI+PC9CcnVrPg0KICAgIDxLb3J0ZG9zZSBETj0iMCswKzEiIFY9IjIxIiBTPSIyLjE2LjU3OC4xLjEyLjQuMS4xLjc0NzgiIE9UPSIxIHRhYmxldHQga3ZlbGQiPjwvS29ydGRvc2U+DQogICAgPERvc2VyaW5nPg0KICAgICAgPFN0YXJ0dGlkc3B1bmt0IFY9IjIwMTktMDctMTciPjwvU3RhcnR0aWRzcHVua3Q+DQogICAgICA8RG9zZUZhc3RUaWRzcHVua3Q+DQogICAgICAgIDxNZW5nZGUgVj0iMSIgVT0idGFibGV0dCI+PC9NZW5nZGU+DQogICAgICAgIDxJbnRlcnZhbGwgVj0iMSIgVT0iRMO4Z24iPjwvSW50ZXJ2YWxsPg0KICAgICAgICA8VGlkc29tcmFkZSBETj0iS3ZlbGQiIFY9IjUiPjwvVGlkc29tcmFkZT4NCiAgICAgICAgPEdpc0Vrc2FrdD5mYWxzZTwvR2lzRWtzYWt0Pg0KICAgICAgPC9Eb3NlRmFzdFRpZHNwdW5rdD4NCiAgICA8L0Rvc2VyaW5nPg0KICAgIDxMZWdlbWlkZGVscGFrbmluZz4NCiAgICAgIDxBdGMgVj0iQzEwQUEwMSIgUz0iMi4xNi41NzguMS4xMi40LjEuMS43MTgwIiBETj0iU2ltdmFzdGF0aW4iPjwvQXRjPg0KICAgICAgPE5hdm5Gb3JtU3R5cmtlPlpvY29yIFRhYiAxMCBtZzwvTmF2bkZvcm1TdHlya2U+DQogICAgICA8UmVzZXB0Z3J1cHBlIFY9IkMiIEROPSJSZXNlcHRncnVwcGUgQyI+PC9SZXNlcHRncnVwcGU+DQogICAgICA8TGVnZW1pZGRlbGZvcm1Lb3J0IFY9IjUzIiBTPSIyLjE2LjU3OC4xLjEyLjQuMS4xLjc0NDgiIEROPSJUYWJsZXR0Ij48L0xlZ2VtaWRkZWxmb3JtS29ydD4NCiAgICAgIDxWYXJlbnI+NDU0MTY1PC9WYXJlbnI+DQogICAgICA8UGFrbmluZ3NpbmZvUmVzZXB0Pg0KICAgICAgICA8VmFyZW5hdm4+Wm9jb3I8L1ZhcmVuYXZuPg0KICAgICAgICA8UGFrbmluZ3NzdHI+OTg8L1Bha25pbmdzc3RyPg0KICAgICAgICA8RW5oZXRQYWtuaW5nIFY9InN0ayIgUz0iMi4xNi41NzguMS4xMi40LjEuMS43NDUyIiBETj0ic3R5a2siPjwvRW5oZXRQYWtuaW5nPg0KICAgICAgPC9QYWtuaW5nc2luZm9SZXNlcHQ+DQogICAgPC9MZWdlbWlkZGVscGFrbmluZz4NCiAgPC9Gb3Jza3Jpdm5pbmc+DQo8L1Jlc2VwdERva0xlZ2VtaWRkZWw+</ReseptDokLegemiddelB64>
+          </EnkeltoppforingLIB>
+        </LegemidlerIBruk>
+      </Content>
+    </RefDoc>
+  </Document>
+</MsgHead>

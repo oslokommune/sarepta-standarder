@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MsgHead xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd">
+  <MsgInfo>
+    <Type V="ERM3" DN="Grunnlag for søknad Legemiddelverket"/>
+    <MIGversion>v1.2 2006-05-24</MIGversion>
+    <GenDate>2019-07-17T10:39:39.0779072+02:00</GenDate>
+    <MsgId>1b281a94-522c-42ed-b2fc-8423808f1664</MsgId>
+    <Sender>
+      <Organisation>
+        <OrganisationName>Apotek 1 Ski Storsenter</OrganisationName>
+        <Ident>
+          <Id>983044778</Id>
+          <TypeId V="ENH" S="2.16.578.1.12.4.1.1.9051" DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)"/>
+        </Ident>
+        <Ident>
+          <Id>983716466</Id>
+          <TypeId V="LOK" S="2.16.578.1.12.4.1.1.9051" DN="Lokal identifikator uten nærmere angivelse"/>
+        </Ident>
+        <Ident>
+          <Id>1463</Id>
+          <TypeId V="AKO" S="2.16.578.1.12.4.1.1.9051" DN="Apotekets konsesjonsnummer"/>
+        </Ident>
+        <Ident>
+          <Id>8090688</Id>
+          <TypeId V="HER" S="2.16.578.1.12.4.1.1.9051" DN="HER-id"/>
+        </Ident>
+        <TeleCom>
+          <TypeTelecom V="HP" DN="Hovedtelefon"/>
+          <TeleAddress V="tel:23 20 41 00"/>
+        </TeleCom>
+      </Organisation>
+    </Sender>
+    <Receiver>
+      <Organisation>
+        <OrganisationName>Reseptformidleren</OrganisationName>
+        <Ident>
+          <Id>982528011</Id>
+          <TypeId V="ENH" S="2.16.578.1.12.4.1.1.9051" DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)"/>
+        </Ident>
+        <Ident>
+          <Id>2397.1</Id>
+          <TypeId V="HER" S="2.16.578.1.12.4.1.1.9051" DN="HER-id"/>
+        </Ident>
+      </Organisation>
+    </Receiver>
+  </MsgInfo>
+  <Document>
+    <DocumentConnection V="H" DN="Hoveddokument"/>
+    <RefDoc>
+      <MsgType V="XML" DN="XML-instans"/>
+      <Content>
+        <AnmodningSLV xmlns="http://www.kith.no/xmlstds/eresept/m3/2010-05-01" xsi:schemaLocation="http://www.kith.no/xmlstds/eresept/m3/2010-05-01 ER-M3-2010-05-01.xsd">
+          <ReseptId>717c1879-9271-4828-9c59-1681392408b9</ReseptId>
+        </AnmodningSLV>
+      </Content>
+    </RefDoc>
+  </Document>
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <SignedInfo>
+      <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+      <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+      <Reference URI="">
+        <Transforms>
+          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+          <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+        </Transforms>
+        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <DigestValue>mZiaiwWgCShgTVJRGBnx3jFLf40=</DigestValue>
+      </Reference>
+    </SignedInfo>
+    <SignatureValue>rBcbkiwmywlW3TWXqCmr++PRz3+AqYFz7ur3D79CJ86iTSC+pMJK259O/961UhZo3wxcwZ3jpuVlTOFIefb5qV+dMdQ7feNJoRodEv9w1YDLU8JluWPJslTGdLPv93gafanjs0B+Dk9PQy0xjyD6FDK2hStApD1HHX3GZ8751sP05iSaAVlw5PkcucqYV6xsqen1TKbMDvjhDV//GCuOAsOlLd4GguAUzgg2ZF+0n6V9LbNs1mmk/hGeGhX2jFQ9sw4C6efkKRdeY8PBw/27ccs2ugUDXXxXb7HWZ8lf+POmLpk/9GJq/BcnJblG4eWvtie/nuf6NGtmRibmShxaXg==</SignatureValue>
+    <KeyInfo>
+      <X509Data>
+        <X509Certificate>MIIFJDCCBAygAwIBAgILARwxbozKRjOqaeQwDQYJKoZIhvcNAQELBQAwUTELMAkGA1UEBhMCTk8xHTAbBgNVBAoMFEJ1eXBhc3MgQVMtOTgzMTYzMzI3MSMwIQYDVQQDDBpCdXlwYXNzIENsYXNzIDMgVGVzdDQgQ0EgMzAeFw0xNjExMjUxMTIwNTJaFw0xOTEyMTgyMjU5MDBaMIGJMQswCQYDVQQGEwJOTzEcMBoGA1UECgwTQVBPVEVLIDEgR1JVUFBFTiBBUzEqMCgGA1UECwwhQVBPVEVLIDEgU0tJIFNUT1JTRU5URVItOTgzNzE2NDY2MRwwGgYDVQQDDBNBUE9URUsgMSBHUlVQUEVOIEFTMRIwEAYDVQQFEwk5ODMwNDQ3NzgwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDFPNEc4TN+EmLznnn3o6Qd71vGqlEOw4V7fXu8Gc+9FIDaIfQpgnKd5cj8SvNBm/MbFo31dFeq+akUfC8+VxFd9BVpiOpPrkN29PtQlBkYqtT6zSIhfQIX1jsmGrL/+xjtU6UjyA5F/vq7paW0j3bB3Ch6A91dO73CPr1qqz8RM7ByVefPVVed5QF6EHnliUlLvbK7XKaAPu06A7H8dqW81A7Ms6BseCfDZhMYKi4AciNm/9vW48u0KsWZ8wQ8qZaZqrlnvDFFZHva7Fv9PRQk2VwFsEN32MTsAY1affzolPQB9XHdj7cD94FMldeGbw6tNSjXFeDhEphRWi6YfYrdAgMBAAGjggHCMIIBvjAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFD+u9XgLkqNwIDVfWvr3JKBSAfBBMB0GA1UdDgQWBBSUifuvaY238eFtKLlFhlvkrazy8DAOBgNVHQ8BAf8EBAMCBkAwFgYDVR0gBA8wDTALBglghEIBGgEAAwIwgbsGA1UdHwSBszCBsDA3oDWgM4YxaHR0cDovL2NybC50ZXN0NC5idXlwYXNzLm5vL2NybC9CUENsYXNzM1Q0Q0EzLmNybDB1oHOgcYZvbGRhcDovL2xkYXAudGVzdDQuYnV5cGFzcy5uby9kYz1CdXlwYXNzLGRjPU5PLENOPUJ1eXBhc3MlMjBDbGFzcyUyMDMlMjBUZXN0NCUyMENBJTIwMz9jZXJ0aWZpY2F0ZVJldm9jYXRpb25MaXN0MIGKBggrBgEFBQcBAQR+MHwwOwYIKwYBBQUHMAGGL2h0dHA6Ly9vY3NwLnRlc3Q0LmJ1eXBhc3Mubm8vb2NzcC9CUENsYXNzM1Q0Q0EzMD0GCCsGAQUFBzAChjFodHRwOi8vY3J0LnRlc3Q0LmJ1eXBhc3Mubm8vY3J0L0JQQ2xhc3MzVDRDQTMuY2VyMA0GCSqGSIb3DQEBCwUAA4IBAQBWHwOKwO4pBVj49HSSFxH69ajOWhy2tmE5btz+DPlNhe853u/zGBBcvcJi2tg685Oqvwi9gFrqAbow+x0luksRMVjdKNj9Px+sI8lRyKnAAk6dc5LkhrPUBVRIz2C2CfTPWOHzgFQIW41KRATNRWrMwabGZZzmLwaWhfvWSU8mYZG5ljF4ulir1R1Iwlj3KJb8Ga1plKxUmLRqkwszGuMcNwny3hugc4xi8OJceQUQHEWOaxPr0sPuFuPNHlaxNk6hGuDBZ+9LCpTCjOjnRULHRoBAtxsft5VYYrzJ9ILVKtepgIP0fiTwhooIQhgbrP2XejKLT1mDmwA7Y6NvTgNk</X509Certificate>
+      </X509Data>
+    </KeyInfo>
+  </Signature>
+</MsgHead>
