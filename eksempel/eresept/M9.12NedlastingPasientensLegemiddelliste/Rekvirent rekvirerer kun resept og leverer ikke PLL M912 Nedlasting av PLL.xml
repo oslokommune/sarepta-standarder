@@ -1,0 +1,93 @@
+<MsgHead xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 ../felles/MsgHead-v1_2.xsd" xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MsgInfo>
+    <Type DN="Nedlasting av varer i bruk" V="ERM912" />
+    <MIGversion>v1.2 2006-05-24</MIGversion>
+    <GenDate>2019-06-18T12:45:58.684+02:00</GenDate>
+    <MsgId>05736257-9ad8-42ed-89f2-625fcfe63897</MsgId>
+    <ConversationRef>
+      <RefToParent>133a6095-4c5b-40df-b065-16466e40f0f2</RefToParent>
+      <RefToConversation>133a6095-4c5b-40df-b065-16466e40f0f2</RefToConversation>
+    </ConversationRef>
+    <Sender>
+      <Organisation>
+        <OrganisationName>Reseptformidleren</OrganisationName>
+        <Ident>
+          <Id>915933149</Id>
+          <TypeId V="ENH" DN="Organisasjonsnummeret i Enhetsregister" S="2.16.578.1.12.4.1.1.9051" />
+        </Ident>
+        <Ident>
+          <Id>80624</Id>
+          <TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051" />
+        </Ident>
+      </Organisation>
+    </Sender>
+    <Receiver>
+      <Organisation>
+        <OrganisationName>Virginia Legekontor</OrganisationName>
+        <Ident>
+          <Id>100169444</Id>
+          <TypeId DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" V="ENH" S="2.16.578.1.12.4.1.1.9051" />
+        </Ident>
+        <Ident>
+          <Id>8095068</Id>
+          <TypeId DN="HER-id" V="HER" S="2.16.578.1.12.4.1.1.9051" />
+        </Ident>
+        <Ident>
+          <Id>0</Id>
+          <TypeId DN="Nasjonalt register over enheter i spesialisthelsetjenesten (RESH-ID)" V="RSH" S="2.16.578.1.12.4.1.1.9051" />
+        </Ident>
+        <Address>
+          <Type DN="Besøksadresse" V="RES" />
+          <StreetAdr>Verkstedveien 1</StreetAdr>
+          <PostalCode>0102</PostalCode>
+          <City>Oslo</City>
+        </Address>
+        <TeleCom>
+          <TypeTelecom DN="Hovedtelefon" V="HP" />
+          <TeleAddress V="tel:22222222" />
+        </TeleCom>
+        <HealthcareProfessional>
+          <TypeHealthcareProfessional DN="Lege" V="LE" />
+          <FamilyName>Eidsvik</FamilyName>
+          <GivenName>Anja Fos</GivenName>
+          <Sex DN="Ikke spesifisert" V="9" />
+          <Ident>
+            <Id>431002737</Id>
+            <TypeId V="HPR" S="2.16.578.1.12.4.1.1.8116" DN="HPR-nummer" />
+          </Ident>
+          <Address>
+            <Type V="WP" DN="Arbeidsadresse" />
+            <StreetAdr>Virginia Legekontor</StreetAdr>
+            <PostalCode>0102</PostalCode>
+            <City>OSLO</City>
+          </Address>
+        </HealthcareProfessional>
+      </Organisation>
+    </Receiver>
+  </MsgInfo>
+  <Document>
+    <RefDoc>
+      <MsgType DN="XML-instans" V="XML" />
+      <ns:Content xsi:schemaLocation="http://www.kith.no/xmlstds/eresept/m912/2014-01-21 ER-M912-2014-01-21.xsd" xmlns="http://www.kith.no/xmlstds/eresept/m912/2014-01-21" xmlns:kith="http://www.kith.no/xmlstds" xmlns:ns="http://www.kith.no/xmlstds/msghead/2006-05-24">
+        <M912>
+          <Multidosepasient>
+            <Fnr>21014605158</Fnr>
+            <ns1:Multidoselege xmlns:ns1="http://www.kith.no/xmlstds/eresept/m274/2012-06-11">
+              <ns1:HprNr>431002737</ns1:HprNr>
+              <ns1:Navn>Anja Fos  Eidsvik</ns1:Navn>
+              <ns1:Org>Virginia Legekontor</ns1:Org>
+              <ns1:HerId>
+                <fel:Id xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1">8095068</fel:Id>
+                <fel:TypeId V="HER" DN="HER-id" xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1" />
+              </ns1:HerId>
+              <ns1:Telefon>
+                <fel:TypeTelecom DN="Hovedtelefon" V="HP" xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1" />
+                <fel:TeleAddress V="tel:22222222" xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1" />
+              </ns1:Telefon>
+            </ns1:Multidoselege>
+          </Multidosepasient>
+        </M912>
+      </ns:Content>
+    </RefDoc>
+  </Document>
+</MsgHead>

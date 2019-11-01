@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MsgHead xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 MsgHead-v1_2.xsd">
+  <MsgInfo>
+    <Type V="ERM91" DN="Forespørsel om tilgjengelige resepter på pasient (utleverer)"/>
+    <MIGversion>v1.2 2006-05-24</MIGversion>
+    <GenDate>2019-07-17T10:39:08.2834532+02:00</GenDate>
+    <MsgId>96655d6e-0182-46bf-b678-fe9f8d119b86</MsgId>
+    <Sender>
+      <Organisation>
+        <OrganisationName>Apotek 1 Ski Storsenter</OrganisationName>
+        <Ident>
+          <Id>983044778</Id>
+          <TypeId V="ENH" S="2.16.578.1.12.4.1.1.9051" DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)"/>
+        </Ident>
+        <Ident>
+          <Id>983716466</Id>
+          <TypeId V="LOK" S="2.16.578.1.12.4.1.1.9051" DN="Lokal identifikator uten nærmere angivelse"/>
+        </Ident>
+        <Ident>
+          <Id>1463</Id>
+          <TypeId V="AKO" S="2.16.578.1.12.4.1.1.9051" DN="Apotekets konsesjonsnummer"/>
+        </Ident>
+        <Ident>
+          <Id>8090688</Id>
+          <TypeId V="HER" S="2.16.578.1.12.4.1.1.9051" DN="HER-id"/>
+        </Ident>
+        <TeleCom>
+          <TypeTelecom V="HP" DN="Hovedtelefon"/>
+          <TeleAddress V="tel:23 20 41 00"/>
+        </TeleCom>
+      </Organisation>
+    </Sender>
+    <Receiver>
+      <Organisation>
+        <OrganisationName>Reseptformidleren</OrganisationName>
+        <Ident>
+          <Id>982528011</Id>
+          <TypeId V="ENH" S="2.16.578.1.12.4.1.1.9051" DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)"/>
+        </Ident>
+        <Ident>
+          <Id>2397.1</Id>
+          <TypeId V="HER" S="2.16.578.1.12.4.1.1.9051" DN="HER-id"/>
+        </Ident>
+      </Organisation>
+    </Receiver>
+  </MsgInfo>
+  <Document>
+    <DocumentConnection V="H" DN="Hoveddokument"/>
+    <RefDoc>
+      <MsgType V="XML" DN="XML-instans"/>
+      <Content>
+        <ForesporselReseptUtleverer xmlns="http://www.kith.no/xmlstds/eresept/m91/2013-10-08" xsi:schemaLocation="http://www.kith.no/xmlstds/eresept/m91/2013-10-08 ER-M91-2013-10-08.xsd">
+          <Fnr>02032827732</Fnr>
+          <AlleResepter V="2" DN="Nei"/>
+          <AnsattId>ibj</AnsattId>
+          <InkluderVergeinnsynsreservasjon V="2" DN="Nei"/>
+        </ForesporselReseptUtleverer>
+      </Content>
+    </RefDoc>
+  </Document>
+</MsgHead>

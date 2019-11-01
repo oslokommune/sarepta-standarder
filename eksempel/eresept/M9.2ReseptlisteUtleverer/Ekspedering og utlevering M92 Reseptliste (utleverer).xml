@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kith.no/xmlstds/msghead/2006-05-24 ../felles/MsgHead-v1_2.xsd">
+  <MsgInfo>
+    <Type DN="Reseptliste (utleverer)" V="ERM92"/>
+    <MIGversion>v1.2 2006-05-24</MIGversion>
+    <GenDate>2019-07-16T14:31:24.603+02:00</GenDate>
+    <MsgId>644b42a6-86c0-4947-a9a0-8702b7670abb</MsgId>
+    <ConversationRef>
+      <RefToParent>9ac162fe-17b4-497a-b4e2-5bb0a6e185df</RefToParent>
+      <RefToConversation>9ac162fe-17b4-497a-b4e2-5bb0a6e185df</RefToConversation>
+    </ConversationRef>
+    <Sender>
+      <Organisation>
+        <OrganisationName>Reseptformidleren</OrganisationName>
+        <Ident>
+          <Id>915933149</Id>
+          <TypeId V="ENH" DN="Organisasjonsnummeret i Enhetsregister" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+        <Ident>
+          <Id>80624</Id>
+          <TypeId V="HER" DN="HER-id" S="2.16.578.1.12.4.1.1.9051"/>
+        </Ident>
+      </Organisation>
+    </Sender>
+    <Receiver>
+      <Organisation>
+        <OrganisationName>Apotek 1 Ski Storsenter</OrganisationName>
+        <Ident>
+          <Id>983044778</Id>
+          <TypeId V="ENH" S="2.16.578.1.12.4.1.1.9051" DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)"/>
+        </Ident>
+        <Ident>
+          <Id>983716466</Id>
+          <TypeId V="LOK" S="2.16.578.1.12.4.1.1.9051" DN="Lokal identifikator uten nærmere angivelse"/>
+        </Ident>
+        <Ident>
+          <Id>1463</Id>
+          <TypeId V="AKO" S="2.16.578.1.12.4.1.1.9051" DN="Apotekets konsesjonsnummer"/>
+        </Ident>
+        <Ident>
+          <Id>8090688</Id>
+          <TypeId V="HER" S="2.16.578.1.12.4.1.1.9051" DN="HER-id"/>
+        </Ident>
+        <TeleCom>
+          <TypeTelecom V="HP" DN="Hovedtelefon"/>
+          <TeleAddress V="tel:23 20 41 00"/>
+        </TeleCom>
+      </Organisation>
+    </Receiver>
+  </MsgInfo>
+  <Document>
+    <RefDoc>
+      <MsgType DN="XML-instans" V="XML"/>
+      <Content xmlns:kith="http://www.kith.no/xmlstds" xmlns:ns="http://www.kith.no/xmlstds/msghead/2006-05-24" xsi:schemaLocation="http://www.kith.no/xmlstds/eresept/m92/2013-10-08 ER-M92-2013-10-08.xsd">
+        <Reseptliste xmlns="http://www.kith.no/xmlstds/eresept/m92/2013-10-08">
+          <Reseptinfo>
+            <Forskrivningsdato>2019-07-16+02:00</Forskrivningsdato>
+            <Fornavn>OTTAR</Fornavn>
+            <Etternavn>KNUTSEN</Etternavn>
+            <Address>
+              <fel:Type xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1" DN="Bostedsadresse" V="H"/>
+              <fel:PostalCode xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1">3050</fel:PostalCode>
+              <fel:City xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1">MJØNDALEN</fel:City>
+              <fel:County xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1" DN="Nedre Eiker" V="0625"/>
+            </Address>
+            <RekvirentId>431002737</RekvirentId>
+            <NavnRekvirent>Anja Fos Eidsvik</NavnRekvirent>
+            <Nr>429076</Nr>
+            <NavnFormStyrke>Cosylan Mikst 1,7 mg/ml</NavnFormStyrke>
+            <EndretFarmasoyt DN="Nei" V="2"/>
+            <ReseptId>c2883dc2-8eef-4b8e-a80f-167f858425f7</ReseptId>
+            <Status DN="Ekspederbar" V="E"/>
+            <Ident>
+              <fel:Id xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1">21014605158</fel:Id>
+              <fel:TypeId xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1" S="2.16.578.1.12.4.1.1.8116" V="FNR" DN="Fødselsnummer"/>
+            </Ident>
+            <Vergeinnsynsreservasjon>false</Vergeinnsynsreservasjon>
+            <Bruksomrade>HOSTEDEMPENDE</Bruksomrade>
+            <Antall>1</Antall>
+            <Pakningsstr>300</Pakningsstr>
+            <EnhetPakning V="ml" DN="milliliter" S="2.16.578.1.12.4.1.1.7452"/>
+          </Reseptinfo>
+          <Reseptinfo>
+            <Forskrivningsdato>2019-06-18+02:00</Forskrivningsdato>
+            <Fornavn>OTTAR</Fornavn>
+            <Etternavn>KNUTSEN</Etternavn>
+            <Address>
+              <fel:Type xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1" DN="Bostedsadresse" V="H"/>
+              <fel:PostalCode xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1">3050</fel:PostalCode>
+              <fel:City xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1">MJØNDALEN</fel:City>
+              <fel:County xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1" DN="Nedre Eiker" V="0625"/>
+            </Address>
+            <RekvirentId>431002737</RekvirentId>
+            <NavnRekvirent>Anja Fos Eidsvik</NavnRekvirent>
+            <Nr>057932</Nr>
+            <NavnFormStyrke>Cetimax Tab 10 mg</NavnFormStyrke>
+            <EndretFarmasoyt DN="Nei" V="2"/>
+            <RefHjemmel V="200" DN="§5-14 §2" S="2.16.578.1.12.4.1.1.7427"/>
+            <ReseptId>665e2a11-787a-4dac-aec1-16466a9838d1</ReseptId>
+            <Status DN="Ekspederbar" V="E"/>
+            <Ident>
+              <fel:Id xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1">21014605158</fel:Id>
+              <fel:TypeId xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1" S="2.16.578.1.12.4.1.1.8116" V="FNR" DN="Fødselsnummer"/>
+            </Ident>
+            <Vergeinnsynsreservasjon>false</Vergeinnsynsreservasjon>
+            <Bruksomrade>ALLERGIMEDISIN</Bruksomrade>
+            <Antall>1</Antall>
+            <Pakningsstr>100</Pakningsstr>
+            <EnhetPakning V="stk" DN="stykk" S="2.16.578.1.12.4.1.1.7452"/>
+            <Reiterasjon>3</Reiterasjon>
+          </Reseptinfo>
+          <Multidosebruker>
+            <Fnr>21014605158</Fnr>
+            <ns1:Multidoselege xmlns:ns1="http://www.kith.no/xmlstds/eresept/m274/2012-06-11">
+              <ns1:HprNr>431002737</ns1:HprNr>
+              <ns1:Navn>Anja Fos Eidsvik</ns1:Navn>
+              <ns1:Org>Virginia Legekontor</ns1:Org>
+              <ns1:HerId>
+                <fel:Id xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1">8095068</fel:Id>
+                <fel:TypeId xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1" DN="HER-id" V="HER" S="2.16.578.1.12.4.1.1.9051"/>
+              </ns1:HerId>
+              <ns1:Telefon>
+                <fel:TeleAddress xmlns:fel="http://www.kith.no/xmlstds/felleskomponent1" V="tel:22222222"/>
+              </ns1:Telefon>
+            </ns1:Multidoselege>
+          </Multidosebruker>
+        </Reseptliste>
+      </Content>
+    </RefDoc>
+  </Document>
+</MsgHead>
