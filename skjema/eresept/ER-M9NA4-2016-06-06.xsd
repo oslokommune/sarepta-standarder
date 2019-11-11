@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M9NA4 Utvidet informasjon om resept nettkunde
+2016-06-06 Bugfix 1
+-->
+<!-- 
+Endringer siden v2.5 2016-06-06:
+InstitusjonsId kith:CV -> fk1:Ident 
+-->
+<!--
+Endringer siden v2.5 2016-04-01:
+Kun nytt namespace. 
+-->
+<schema xmlns:m9na4="http://www.kith.no/xmlstds/eresept/m9na4/2016-06-06" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:kith="http://www.kith.no/xmlstds" targetNamespace="http://www.kith.no/xmlstds/eresept/m9na4/2016-06-06" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felleskomponenter/kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="../felleskomponenter/felleskomponent1.xsd"/>
+	<element name="M9NA4">
+		<annotation>
+			<documentation>Utvidet informasjon om en enkelt resept. </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="ReseptId" type="string"/>
+				<element name="Status" type="kith:CS"/>
+				<element name="RefKode" type="kith:CV" minOccurs="0"/>
+				<element name="InstitusjonsID" type="fk1:Ident" minOccurs="0"/>
+				<element name="BytteresRekvirent" type="kith:CS" minOccurs="0"/>
+				<element name="Kortdose" type="kith:CV" minOccurs="0"/>
+				<element ref="m9na4:Egenandel" minOccurs="0" maxOccurs="4"/>
+				<element ref="m9na4:Utlevering" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Utlevering">
+		<complexType>
+			<sequence>
+				<element name="Nr" type="string" minOccurs="0"/>
+				<element name="NavnFormStyrke" type="string"/>
+				<element name="Pakningsstr" type="kith:PQ" minOccurs="0"/>
+				<element name="AntallPakningerUtlevertTotalt" type="decimal"/>
+				<element name="AntallPakningerUtlevertSiste" type="decimal"/>
+				<element name="TidspunktSisteUtlevering" type="dateTime"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Egenandel">
+		<annotation>
+			<documentation>Informasjon om betalt egenandel, fordelt på en til fire perioder. </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="StartEgenandelsperiode" type="date"/>
+				<element name="BetaltEgenandel" type="kith:MO"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

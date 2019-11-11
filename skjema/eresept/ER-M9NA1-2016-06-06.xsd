@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M9NA1 Forespørsel om reseptliste fra nettkunde
+2016-06-06
+-->
+<!--
+Endringer siden v2.5 2016-04-01:
+IdPasient fjernet. Bruk pasient-klassen i hodemelding.
+-->
+<schema xmlns:m9na1="http://www.kith.no/xmlstds/eresept/m9na1/2016-06-06" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" targetNamespace="http://www.kith.no/xmlstds/eresept/m9na1/2016-06-06" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!--	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>-->
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="../felleskomponenter/felleskomponent1.xsd"/>
+	<element name="M9NA1">
+		<complexType>
+			<sequence>
+				<element name="IdKunde" type="fk1:Ident"/>
+				<element name="RefNr" type="string" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>
