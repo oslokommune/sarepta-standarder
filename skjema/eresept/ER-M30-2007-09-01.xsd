@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 rel. 3 sp1 (http://www.altova.com) by Espen Stranger Seland (KITH) -->
+<!-- eResept M30 versjon 1.6 2007-09-01 rev 1-->
+<!-- Endringer siden eResept M30 versjon 1.0 2007-06-01: -->
+<!-- Nytt element HentetDato 1..1 (dateTime) -->
+<!-- Bestanddel 1..* -> 0..* -->
+<!-- Naringsmiddel/Styrke + Form + Stoff 1..X -> 0..X -->
+<!-- ProdInfo/RefKrieterier 1 -> 0..1 -->
+<!-- Preparatomtale flyttet fra Legemiddel til Pakning, 1..1 -> 0..1 -->
+<!-- RefKode CS 1..1 -> CV 0..1 -->
+<!-- GyldigTilDato -> ForskrivesTilDato -->
+<!-- Nytt element: Refusjon/UtleveresTilDato date 0..1 -->
+<!-- Rev 1: Nytt element: UtleveresTilDato date 0..1 i Brystprotese/Næringsmiddel/Med forbruksmatr. -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:kith="http://www.kith.no/xmlstds" xmlns:m30="http://www.kith.no/xmlstds/eresept/m30/2007-09-01" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://www.kith.no/xmlstds/eresept/m30/2007-09-01" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felleskomponenter/kith.xsd"/>
+	<import namespace="http://www.w3.org/1999/xhtml" schemaLocation="http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd"/>
+	<!-- LEVEL 1 -->
+	<!-- Class: M30 FEST -->
+	<element name="Fest">
+		<complexType>
+			<sequence>
+				<element name="HentetDato" type="dateTime">
+					<annotation>
+						<documentation>Dette er en dato satt av Fest-tjenesten ved henting. </documentation>
+					</annotation>
+				</element>
+				<element ref="m30:Legemiddel" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="m30:Naringsmiddel" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="m30:MedForbMatr" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="m30:Brystproteser" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 2 -->
+	<!-- Class: Medisinsk forbruksmateriell -->
+	<element name="MedForbMatr">
+		<complexType>
+			<sequence>
+				<element name="Gruppe" type="kith:CS"/>
+				<element name="ProduktNr" type="string"/>
+				<element name="Varenr" type="string"/>
+				<element name="Navn" type="string"/>
+				<element name="Volum" type="string"/>
+				<element name="EnhetPakning" type="string"/>
+				<element name="AntPerPakning" type="int"/>
+				<element name="Makspris" type="boolean"/>
+				<element name="EndretDato" type="date"/>
+				<element name="UtlevVilkarArtikkel" type="string" minOccurs="0"/>
+				<element name="UtleveresTilDato" type="date" minOccurs="0"/>
+				<element ref="m30:Bestanddel" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="m30:PrisVare" maxOccurs="unbounded"/>
+				<element ref="m30:ProdInfo" maxOccurs="unbounded"/>
+				<element ref="m30:Leverandor"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Næringsmiddel -->
+	<element name="Naringsmiddel">
+		<complexType>
+			<sequence>
+				<element name="Stoff" type="kith:CS" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="Gruppe" type="kith:CS"/>
+				<element name="Styrke" type="string" minOccurs="0"/>
+				<element name="Form" type="string" minOccurs="0"/>
+				<element name="ProduktNr" type="string"/>
+				<element name="Varenr" type="string"/>
+				<element name="Navn" type="string"/>
+				<element name="Volum" type="string"/>
+				<element name="EnhetPakning" type="string"/>
+				<element name="AntPerPakning" type="int"/>
+				<element name="Makspris" type="boolean"/>
+				<element name="EndretDato" type="date"/>
+				<element name="UtlevVilkarArtikkel" type="string" minOccurs="0"/>
+				<element name="UtleveresTilDato" type="date" minOccurs="0"/>
+				<element ref="m30:PrisVare" maxOccurs="unbounded"/>
+				<element ref="m30:ProdInfo" maxOccurs="unbounded"/>
+				<element ref="m30:Leverandor"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Legemiddel -->
+	<element name="Legemiddel">
+		<complexType>
+			<sequence>
+				<element name="Gruppe" type="kith:CS"/>
+				<element name="Legemiddelform" type="kith:CV"/>
+				<element name="TypeSoknad" type="kith:CS" minOccurs="0"/>
+				<element name="TypePreparat" type="kith:CS" minOccurs="0"/>
+				<element name="Eksportland" type="kith:CS" minOccurs="0"/>
+				<element name="Navn" type="string"/>
+				<element name="Betegnelse" type="string" minOccurs="0"/>
+				<element name="StyrkeId" type="string"/>
+				<element name="LegemiddelformBeskrivelse" type="string"/>
+				<element name="Utleveringsbestemmelse" type="string" minOccurs="0"/>
+				<element name="Rekvireringsregel" type="string" minOccurs="0"/>
+				<element name="Varseltrekant" type="boolean" minOccurs="0"/>
+				<element name="Originalprodukt" type="string" minOccurs="0"/>
+				<element name="VaksineStandard" type="string" minOccurs="0"/>
+				<element name="Reseptgyldighet" type="duration"/>
+				<element name="Hjelpestoff" type="string" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="m30:Virkestoff" maxOccurs="unbounded"/>
+				<element ref="m30:Pakning" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Brystproteser -->
+	<element name="Brystproteser">
+		<complexType>
+			<sequence>
+				<element name="Gruppe" type="kith:CS"/>
+				<element name="ProduktNr" type="string"/>
+				<element name="Varenr" type="string"/>
+				<element name="Navn" type="string"/>
+				<element name="Volum" type="string"/>
+				<element name="EnhetPakning" type="string"/>
+				<element name="AntPerPakning" type="int"/>
+				<element name="Makspris" type="boolean"/>
+				<element name="EndretDato" type="date"/>
+				<element name="UtlevVilkarArtikkel" type="string" minOccurs="0"/>
+				<element name="UtleveresTilDato" type="date" minOccurs="0"/>
+				<element ref="m30:PrisVare" maxOccurs="unbounded"/>
+				<element ref="m30:ProdInfo" maxOccurs="unbounded"/>
+				<element ref="m30:Leverandor"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 3 -->
+	<!-- Class: Bestanddel -->
+	<element name="Bestanddel">
+		<complexType>
+			<sequence>
+				<element name="Navn" type="string"/>
+				<element name="Materiale" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Pris -->
+	<element name="PrisVare">
+		<complexType>
+			<sequence>
+				<element name="Type" type="kith:CS"/>
+				<element name="Pris" type="kith:MO"/>
+				<element name="GyldigFraDato" type="date" minOccurs="0"/>
+				<element name="GyldigTilDato" type="date" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Produktinfo -->
+	<element name="ProdInfo">
+		<complexType>
+			<sequence>
+				<element name="ProdGruppe" type="kith:CV"/>
+				<element name="RefHjemmel" type="kith:CV"/>
+				<element name="RefKriterier" type="kith:CV" minOccurs="0"/>
+				<element name="ArtGruppeNivaForskrivning" type="boolean" minOccurs="0"/>
+				<element name="ArtNivaForskrivning" type="boolean" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Preparatomtale -->
+	<element name="Preparatomtale">
+		<annotation>
+			<documentation>Støtter XHTML 
+      </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<any namespace="http://www.w3.org/1999/xhtml" processContents="lax" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Pakning -->
+	<element name="Pakning">
+		<complexType>
+			<sequence>
+				<element name="Utleveringssted" type="kith:CS" minOccurs="0"/>
+				<element name="Reseptgruppe" type="kith:CS"/>
+				<element name="MTland" type="kith:CS" minOccurs="0"/>
+				<element name="Atc" type="kith:CS"/>
+				<element name="Nr" type="string"/>
+				<element name="Pakningsstr" type="string"/>
+				<element name="EnhetPakning" type="string"/>
+				<element name="Pakningstype" type="string"/>
+				<element name="VarenrUtgaende" type="string" minOccurs="0"/>
+				<element name="Markedsforingsdato" type="date" minOccurs="0"/>
+				<element name="AvregDato" type="date" minOccurs="0"/>
+				<element name="ReseptfriIndikasjon" type="string" minOccurs="0"/>
+				<element name="RefVedtaksstatus" type="boolean" minOccurs="0"/>
+				<element name="Notifisering" type="boolean" minOccurs="0"/>
+				<element name="Godkjenningsfritak" type="boolean" minOccurs="0"/>
+				<element name="Produsent" type="string" minOccurs="0"/>
+				<element ref="m30:Refusjon" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="m30:PrisLegemiddel" maxOccurs="unbounded"/>
+				<element ref="m30:Byttegruppe" minOccurs="0"/>
+				<element ref="m30:Preparatomtale" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Virkestoff -->
+	<element name="Virkestoff">
+		<complexType>
+			<sequence>
+				<element name="Styrke" type="kith:PQ"/>
+				<element name="Navn" type="string"/>
+				<element name="PlantedelStamme" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Leverandør -->
+	<element name="Leverandor">
+		<complexType>
+			<sequence>
+				<element name="Navn" type="string"/>
+				<element name="Adresse" type="string"/>
+				<element name="Telefon" type="string"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 4 -->
+	<!-- Class: Refusjon -->
+	<element name="Refusjon">
+		<complexType>
+			<sequence>
+				<element name="RefHjemmel" type="kith:CV"/>
+				<element name="RefKode" type="kith:CV" minOccurs="0"/>
+				<element name="RefBerettighetBruk" type="string" minOccurs="0"/>
+				<element name="GyldigFraDato" type="date" minOccurs="0"/>
+				<element name="ForskrivesTilDato" type="date" minOccurs="0"/>
+				<element name="RefGruppe" type="string"/>
+				<element name="Underterm" type="string" minOccurs="0"/>
+				<element ref="m30:Vilkar" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="UtleveresTilDato" type="date" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Pris legemiddel -->
+	<element name="PrisLegemiddel">
+		<complexType>
+			<sequence>
+				<element name="Na" type="kith:MO"/>
+				<element name="Fremtidig" type="kith:MO" minOccurs="0"/>
+				<element name="Type" type="string"/>
+				<element name="FraDato" type="date" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- Class: Byttegruppe -->
+	<element name="Byttegruppe">
+		<complexType>
+			<sequence>
+				<element name="Kode" type="kith:CS"/>
+				<element name="BegrensetBytte" type="boolean" minOccurs="0"/>
+				<element name="BegrensetBytteBeskrivelse" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<!-- LEVEL 5 -->
+	<!-- Class: Vilkår -->
+	<element name="Vilkar">
+		<complexType>
+			<sequence>
+				<element name="Id" type="string"/>
+				<element name="Tekst" type="string"/>
+				<element name="Gruppe" type="string"/>
+				<element name="GyldigFraDato" type="date" minOccurs="0"/>
+				<element name="GyldigTilDato" type="date" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

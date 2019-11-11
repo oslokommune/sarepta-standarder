@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M27.1 Reigistrering av multidoseansvar
+2013-04-16
+ -->
+<!--
+Endringer siden v2.5 2012-06-11
+Endret namespace slik at det matcher M27.2.
+-->
+<schema xmlns:m271="http://www.kith.no/xmlstds/eresept/m271/2013-04-16" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kith.no/xmlstds/eresept/m271/2013-04-16" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felleskomponenter/kith.xsd"/>
+	<element name="M271">
+		<annotation>
+			<documentation>Brukes av apotek og lege for å registrere/avregistrere seg som multidoseansvarlig for pasient.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Status" type="kith:CS">
+					<annotation>
+						<documentation>Angir om dette er en registrering eller en avregistrering.</documentation>
+					</annotation>
+				</element>
+				<element name="GjelderFra" type="date">
+					<annotation>
+						<documentation>Dato når endringen gjelder fra. </documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>
