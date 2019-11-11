@@ -114,7 +114,7 @@
 			<Namespace>http://www.kith.no/xmlstds/eresept/m5/2013-04-16</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M5-M7-M95-8-M241-5/ER-M52-2013-12-01.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-M52-2013-12-01.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m52/2013-12-01</Namespace>
 		</Skjema>
 		<Skjema>
