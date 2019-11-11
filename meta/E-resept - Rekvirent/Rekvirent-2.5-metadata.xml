@@ -221,6 +221,9 @@
 		<Felleskomponent>
 			<Referanse>skjema/felleskomponenter/felleskomponent1.xsd</Referanse>
 		</Felleskomponent>
+		<Felleskomponent>
+			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
+		</Felleskomponent>
 	</Felleskomponenter>
 	<Visningsfiler>
 		<Visningsfil>

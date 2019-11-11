@@ -53,87 +53,83 @@
 	
 	<Skjemaer>
 		<Skjema>
-			<Referanse>skjema/eresept/M3-M14-M15/ER-M3-2010-05-01.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-M3-2010-05-01.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m3/2010-05-01</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-KritiskInformasjon-2013-04-25.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-KritiskInformasjon-2013-04-25.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/ki/2013-04-25</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M25-2013-10-08.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-M25-2013-10-08.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m25/2013-10-08</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M28-2012-06-11.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-M28-2012-06-11.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m28/2012-06-11</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M251-2013-10-08.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-M251-2013-10-08.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m251/2013-10-08</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M252-2013-10-08.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-M252-2013-10-08.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m252/2013-10-08</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M253-2013-10-08.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-M253-2013-10-08.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m253/2013-10-08</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M271-2013-04-16.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-M271-2013-04-16.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m271/2013-04-16</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M272-2013-04-16.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-M272-2013-04-16.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m272/2013-04-16</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M911-2014-01-21.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-M911-2014-01-21.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m911/2014-01-21</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M911-2018-07-01.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-M911-2018-07-01.xsd</Referanse>
 			<Namespace>http://www.ehelse.no/xmlstds/eresept/m911/2018-07-01</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M912-2014-01-21.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-M912-2014-01-21.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m912/2014-01-21</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M912-2018-07-01.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-M912-2018-07-01.xsd</Referanse>
 			<Namespace>http://www.ehelse.no/xmlstds/eresept/m912/2018-07-01</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M921-2013-10-15.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-M921-2013-10-15.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m921/2013-10-15</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M25-PLL-Multidose/ER-M922-2013-10-15.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-M922-2013-10-15.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m922/2013-10-15</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M91-4/ER-M91-2013-10-08.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-M91-2013-10-08.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m91/2013-10-08</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M91-4/ER-M92-2013-10-08.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-M92-2013-10-08.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m92/2013-10-08</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M91-4/ER-M93-2010-06-04.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-M93-2010-06-04.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m93/2010-06-04</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M91-4/ER-M94-2010-07-01.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-M94-2010-07-01.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m94/2010-07-01</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/MV/ER-MV-2013-08-16.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/eresept/mv/2013-08-16</Namespace>
-		</Skjema>
-		<Skjema>
-			<Referanse>skjema/eresept/MV/ER-MV-2017-01-01.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-MV-2017-01-01.xsd</Referanse>
 			<Namespace>http://ehelse.no/xmlstds/eresept/mv/2017-01-01</Namespace>
 		</Skjema>
 	</Skjemaer>
@@ -144,79 +140,85 @@
 		<Felleskomponent>
 			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
 		</Felleskomponent>
+		<Felleskomponent>
+			<Referanse>skjema/felleskomponenter/felleskomponent1.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
+		</Felleskomponent>
 	</Felleskomponenter>
 	<Visningsfiler>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m1/m1-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m1-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m1/m1-2html-v2.4.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m1-2html-v2.4.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m2-m12/m2-m12-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m2-m12-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m2-m12/m2-m12-2html-v2.4.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m2-m12-2html-v2.4.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m5/m5-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m5-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m5/m5-2html-v2.4.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m5-2html-v2.4.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m6/m6-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m6-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m6/m6-2html-v2.4.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m6-2html-v2.4.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m7/m7-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m7-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m7/m7-2html-v2.4.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m7-2html-v2.4.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m8/m8-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m8-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m8/m8-2html-v2.4.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m8-2html-v2.4.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m15/m15-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m15-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m24/m24-2html.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m24-2html.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m25/m25-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m25-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m27/m271-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m271-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m27/m272-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m272-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m27/m273-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m273-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m27/m274-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m274-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m28/m28-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m28-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m42/m42-2html.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m42-2html.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m96/m96-2html.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m96-2html.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/utlevering/utlevering-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/utlevering-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/utlevering/utlevering-2html-v2.4.xsl</Referanse>
+			<Referanse>visningsfil/eresept/utlevering-2html-v2.4.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
 			<Referanse>visningsfil/eresept/Forskrivninger2html.xslt</Referanse>
