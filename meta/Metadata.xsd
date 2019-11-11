@@ -264,6 +264,11 @@
 					<xs:documentation>Implementasjonsguider og annen teknisk dokumentasjon for bruk av meldinger på helsenorge.no</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
+			<xs:enumeration value="E-reseptmeldinger - ny versjon">
+				<xs:annotation>
+					<xs:documentation>Standarder som skal benyttes for e-reseptmeldinger</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="E-reseptmeldinger">
 				<xs:annotation>
 					<xs:documentation>Standarder som skal benyttes for e-reseptmeldinger</xs:documentation>
@@ -274,12 +279,6 @@
 					<xs:documentation>Standarder som skal brukes i samhandling med NAV eller HELFO</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			
-			
-			
-			
-			
-			
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
