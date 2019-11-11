@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.4
+M9.4 Nedlasting av resept
+2010-07-01
+-->
+<!--
+Endringer siden v2.4 2010-05-01:
+DatoStartEgenandPeriode (V2.4 EO_051 Sak 677) (Ble ikke fjernet)
+-->
+<!-- 
+Endringer siden v2.3 2009-12-12
+Fjernet: DatoStartEgenandPeriode (V2.4 EO_051 Sak 677)
+Fjernet: EgenandelPerHitSum (V2.4 EO_051 Sak 677)
+-->
+<schema xmlns:m94="http://www.kith.no/xmlstds/eresept/m94/2010-07-01" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" targetNamespace="http://www.kith.no/xmlstds/eresept/m94/2010-07-01" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felleskomponenter/kith.xsd"/>
+	<element name="ReseptNedlasting">
+		<annotation>
+			<documentation>Melding fra reseptbank til utleverer som inneholder én resept og null til mange tilknyttede utleveringsrapporter. </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="DatoSoknadSendtSLV" type="date" minOccurs="0"/>
+				<element name="SvarSLVDato" type="date" minOccurs="0"/>
+				<element name="InnvligetGodkjFritak" type="boolean" minOccurs="0">
+					<annotation>
+						<documentation>Indikerer at positivt svar fra SLV er mottat på søknad. </documentation>
+					</annotation>
+				</element>
+				<element name="Status" type="kith:CS"/>
+				<element name="StatusSoknadSlv" type="kith:CS" minOccurs="0"/>
+				<sequence minOccurs="0">
+					<element ref="m94:Egenandel" minOccurs="4" maxOccurs="4"/>
+				</sequence>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Egenandel">
+		<complexType>
+			<sequence>
+				<element name="StartEgenandelsperiode" type="date"/>
+				<element name="BetaltEgenandel" type="kith:MO"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

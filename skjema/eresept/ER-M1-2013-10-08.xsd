@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M1 Resept
+2013-10-08
+ -->
+<!--
+Endringer siden v2.5 2013-04-16
+Nytt namespace forskrivning grunnet endret magistrell forskrivning (V2.5 EA 3569)
+-->
+<schema xmlns:m1="http://www.kith.no/xmlstds/eresept/m1/2013-10-08" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fs="http://www.kith.no/xmlstds/eresept/forskrivning/2013-10-08" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" targetNamespace="http://www.kith.no/xmlstds/eresept/m1/2013-10-08" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felleskomponenter/kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="../felleskomponenter/felleskomponent1.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/eresept/forskrivning/2013-10-08" schemaLocation="Forskrivning-2013-10-08.xsd"/>
+	<element name="Resept">
+		<complexType>
+			<sequence>
+				<element name="Forskrivningsdato" type="date"/>
+				<element name="Utloper" type="date"/>
+				<element name="Vernepliktig" type="boolean" minOccurs="0"/>
+				<element name="SoktIndividRefusjon" type="boolean" minOccurs="0"/>
+				<element name="Frikort" type="boolean" minOccurs="0"/>
+				<element name="Vergeinnsynsreservasjon" type="boolean" minOccurs="0"/>
+				<element name="TilEgenPraksis" type="boolean" minOccurs="0"/>
+				<element name="RekvLegensNavn" type="boolean" minOccurs="0"/>
+				<element name="RefNr" type="string" minOccurs="0"/>
+				<element name="Spesialitet" type="kith:CV" minOccurs="0"/>
+				<choice>
+					<element ref="m1:ReseptDokLegemiddel"/>
+					<element ref="m1:ReseptDokHandelsvare"/>
+				</choice>
+				<element ref="m1:Instituert" minOccurs="0"/>
+				<element ref="m1:EkspAnm" minOccurs="0"/>
+				<element ref="m1:Utlending" minOccurs="0"/>
+				<element name="OppdatertFest" type="dateTime"/>
+				<element name="TidligsteUtlevering" type="date" minOccurs="0"/>
+				<element name="UtskrevetSykehus" type="boolean" minOccurs="0"/>
+				<element name="LastResept" type="boolean" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Instituert">
+		<complexType>
+			<sequence>
+				<element ref="m1:Organisasjon" minOccurs="0"/>
+				<element ref="m1:Helseperson" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Utlending">
+		<complexType>
+			<sequence>
+				<element name="ArbeidstakerNorge" type="boolean" minOccurs="0"/>
+				<element name="Konvensjonsland" type="kith:CS" minOccurs="0"/>
+				<element ref="m1:EEA" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="EkspAnm">
+		<complexType>
+			<sequence>
+				<element name="Vilkar" type="boolean"/>
+				<element name="MetodeEkspedering" type="kith:CS"/>
+				<element name="Utleverer" type="string"/>
+				<element name="Kontaktperson" type="string"/>
+				<element name="Adresse" type="fk1:Address" minOccurs="0"/>
+				<element name="Merknad" type="string" minOccurs="0"/>
+				<element name="OrgNrUtleverer" type="string"/>
+				<element name="UtlevererNavn" type="string"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ReseptDokLegemiddel">
+		<complexType>
+			<complexContent>
+				<extension base="m1:typeReseptDok">
+					<sequence>
+						<element name="KomLegemdlAdm" type="string" minOccurs="0"/>
+						<element name="RefKode" type="kith:CV" minOccurs="0"/>
+						<element name="Reiterasjon" type="int" default="0"/>
+						<element name="BytteresRekvirent" type="kith:CS" minOccurs="0"/>
+						<element name="Mengde" type="kith:PQ" minOccurs="0"/>
+						<element ref="m1:LegemiddelUtenMt" minOccurs="0"/>
+						<element ref="fs:Forskrivning"/>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="LegemiddelUtenMt">
+		<complexType>
+			<sequence>
+				<element name="Begrunnelse" type="string"/>
+				<element name="Produsent" type="string"/>
+				<element name="DirektesoknadSlv" type="boolean"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ReseptDokHandelsvare">
+		<complexType>
+			<complexContent>
+				<extension base="m1:typeReseptDok">
+					<sequence>
+						<element name="Bruksveiledning" type="string" minOccurs="0"/>
+						<element name="ProdGruppe" type="kith:CV" minOccurs="0"/>
+						<choice minOccurs="0">
+							<element ref="fs:Brystprotese"/>
+							<element ref="fs:Naringsmiddel"/>
+							<element ref="fs:MedForbMatr"/>
+						</choice>
+					</sequence>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<complexType name="typeReseptDok">
+		<sequence>
+			<element name="Varegruppekode" type="kith:CS"/>
+			<element name="Antall" type="decimal" minOccurs="0"/>
+			<element name="Merknad" type="string" minOccurs="0"/>
+			<element name="RefHjemmel" type="kith:CV" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<!--Klasser som skal bli felleskomponenter-->
+	<element name="Organisasjon">
+		<complexType>
+			<sequence>
+				<element name="HerId" type="fk1:Ident"/>
+				<element name="Inst" type="string" minOccurs="0"/>
+				<element name="Dept" type="string" minOccurs="0"/>
+				<element name="InstitusjonsID" type="kith:CV" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Helseperson">
+		<complexType>
+			<sequence>
+				<element name="HprId" type="fk1:Ident"/>
+				<element name="Fornavn" type="string" minOccurs="0"/>
+				<element name="Etternavn" type="string" minOccurs="0"/>
+				<element name="Spesialitet" type="kith:CV" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="EEA">
+		<complexType>
+			<sequence>
+				<element name="EEADok" type="kith:CS"/>
+				<element name="EEACardId" type="string" minOccurs="0"/>
+				<element name="EEAId" type="string" minOccurs="0"/>
+				<element name="EEATrygdekontorNavn" type="string" minOccurs="0"/>
+				<element name="EEATrygdekontorNr" type="string" minOccurs="0"/>
+				<element name="EEAGyldighetFra" type="date" minOccurs="0"/>
+				<element name="EEAGyldighet" type="date" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

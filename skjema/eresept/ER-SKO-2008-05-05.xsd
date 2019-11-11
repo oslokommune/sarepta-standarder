@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.2
+SKO - Signaturkontroll-objekt
+2008-05-05
+ -->
+<schema xmlns:sko="http://www.kith.no/xmlstds/eresept/sko/2008-05-05" xmlns:kith="http://www.kith.no/xmlstds" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kith.no/xmlstds/eresept/sko/2008-05-05" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felleskomponenter/kith.xsd"/>
+	<element name="SKO">
+		<complexType>
+			<sequence>
+				<element name="ReseptId" type="string"/>
+				<element name="SertifikatId" type="string"/>
+				<element name="Signatursatus" type="kith:CS"/>
+				<element name="Mottatt" type="dateTime"/>
+				<element name="Hashverdi" type="string"/>
+				<element name="HprNr" type="string"/>
+				<element name="HPRMerknad" type="kith:CV"/>
+				<element name="Autorisasjonskode" type="string"/>
+				<element name="Rekvireringskode" type="string"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

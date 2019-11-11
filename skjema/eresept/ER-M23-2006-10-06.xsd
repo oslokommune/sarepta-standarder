@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M23 Utbetaling
+2006-10-06
+ -->
+<schema xmlns:m23="http://www.kith.no/xmlstds/eresept/m23/2006-10-06" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" targetNamespace="http://www.kith.no/xmlstds/eresept/m23/2006-10-06" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felleskomponenter/kith.xsd"/>
+	<element name="Utbetaling">
+		<complexType>
+			<sequence>
+				<element name="Utbetalingsnr" type="string">
+					<annotation>
+						<documentation>Unik identifikasjon av den enkelte utbetaling</documentation>
+					</annotation>
+				</element>
+				<element name="Utbetalt" type="kith:MO">
+					<annotation>
+						<documentation>Beløp til utbetaling</documentation>
+					</annotation>
+				</element>
+				<element name="UtbetaltDato" type="date">
+					<annotation>
+						<documentation>Dato og tid når utbetalingsoppdraget er sendt til NAV sin utbetalingsreskontro</documentation>
+					</annotation>
+				</element>
+				<element name="Oppgjor" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Informasjon om de oppgjørskrav som er omfattet av denne utbetalingen.</documentation>
+					</annotation>
+					<complexType>
+						<sequence>
+							<element name="OppgjorsNr" type="string">
+								<annotation>
+									<documentation>Referanse til oppgjørskrav M18</documentation>
+								</annotation>
+							</element>
+							<element name="Godkjent" type="kith:MO">
+								<annotation>
+									<documentation>Utbetalt beløp for oppgitt M18</documentation>
+								</annotation>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

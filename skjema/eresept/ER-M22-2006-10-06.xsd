@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M22 Oppgjørsresultat
+2006-10-06
+ -->
+<schema xmlns:m22="http://www.kith.no/xmlstds/eresept/m22/2006-10-06" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" targetNamespace="http://www.kith.no/xmlstds/eresept/m22/2006-10-06" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felleskomponenter/kith.xsd"/>
+	<element name="Oppgjorsresultat">
+		<complexType>
+			<sequence>
+				<element name="OppgjorsNr" type="string">
+					<annotation>
+						<documentation>Referanse til oppgjørskravet som er behandlet</documentation>
+					</annotation>
+				</element>
+				<element name="BehandlingDato" type="date">
+					<annotation>
+						<documentation>Dato for behandling hos NAV.</documentation>
+					</annotation>
+				</element>
+				<element name="Regning" maxOccurs="unbounded">
+					<annotation>
+						<documentation>Informasjon om de regningene som er med i dette oppgjørsresultatet.</documentation>
+					</annotation>
+					<complexType>
+						<sequence>
+							<element name="RegningsNr" type="string">
+								<annotation>
+									<documentation>Referanse til enkeltregningen som er behandlet</documentation>
+								</annotation>
+							</element>
+							<element name="Krav" type="kith:MO">
+								<annotation>
+									<documentation>Opprinnelig krav for denne enkeltregningen</documentation>
+								</annotation>
+							</element>
+							<element name="Godkjent" type="kith:MO">
+								<annotation>
+									<documentation>Sum godkjent for utbetaling på denne enkeltregningen</documentation>
+								</annotation>
+							</element>
+							<element name="Status" type="kith:CS">
+								<annotation>
+									<documentation>Angir resultatet av behandlingen av enkeltregningen.</documentation>
+								</annotation>
+							</element>
+							<element name="Merknad" type="string" minOccurs="0" maxOccurs="unbounded">
+								<annotation>
+									<documentation>Årsak til eventuell avvisning eller avkorting</documentation>
+								</annotation>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

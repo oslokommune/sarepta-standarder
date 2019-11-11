@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M24.2 Svar på samtykke
+2008-10-03
+-->
+<schema xmlns:m242="http://www.kith.no/xmlstds/eresept/m242/2008-10-03" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" targetNamespace="http://www.kith.no/xmlstds/eresept/m242/2008-10-03" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felleskomponenter/kith.xsd"/>
+	<element name="SvarSamtykke">
+		<annotation>
+			<documentation>Gir svar på samtykke fra Reseptformidleren</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Svar" type="kith:CS">
+					<annotation>
+						<documentation>Svar på samtykke</documentation>
+					</annotation>
+				</element>
+				<element name="Begrunnelse" type="kith:CS" minOccurs="0">
+					<annotation>
+						<documentation>Begrunnelse for avvisning</documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>
