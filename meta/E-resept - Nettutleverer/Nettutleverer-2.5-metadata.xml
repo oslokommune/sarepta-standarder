@@ -4,7 +4,7 @@
 	<Temaer>
 		<Tema>E-reseptmeldinger</Tema> 
 	</Temaer>
-	<Navn>Mellom nettutleverer (med innlogget kunde) og Reseptformidleren</Navn>
+	<Navn>Nettutleverer</Navn>
 	<Versjon>2.5</Versjon>
 	<Utgitt>07/2018</Utgitt>
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
@@ -41,19 +41,19 @@
 	
 	<Skjemaer>
 		<Skjema>
-			<Referanse>skjema/eresept/M9NA/ER-M9NA1-2016-06-06.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-M9NA1-2016-06-06.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m9na1/2016-06-06</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M9NA/ER-M9NA2-2016-10-26.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-M9NA2-2016-10-26.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m9na2/2016-10-26</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M9NA/ER-M9NA3-2016-06-06.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-M9NA3-2016-06-06.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m9na3/2016-06-06</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/M9NA/ER-M9NA4-2016-06-06.xsd</Referanse>
+			<Referanse>skjema/eresept/ER-M9NA4-2016-06-06.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m9na4/2016-06-06</Namespace>
 		</Skjema>
 	</Skjemaer>
@@ -63,6 +63,12 @@
 		</Felleskomponent>
 		<Felleskomponent>
 			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Referanse>skjema/felleskomponenter/felleskomponent1.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
 		</Felleskomponent>
 	</Felleskomponenter>
 
