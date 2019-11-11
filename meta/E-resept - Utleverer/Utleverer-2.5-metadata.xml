@@ -4,7 +4,7 @@
 	<Temaer>
 		<Tema>E-reseptmeldinger</Tema>
 	</Temaer>
-	<Navn>Mellom utleverer og Reseptformidleren</Navn>
+	<Navn>Utleverer</Navn>
 	<Versjon>2.5</Versjon>	
 	<Utgitt>07/2018</Utgitt>
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
@@ -18,6 +18,26 @@
 
 	<Kravdokumenter>
 		<Kravdokument>
+			<Beskrivelse>eResept - M3 Anmodning om søknad til SLV - M14 Søknadtil SLV - M15 Søknadssvar fra SLV (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/R1108-eResept-M3-M14-M15-2013-04-16.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>eResept - M09.1 Forespørsel om tilgjengelige resepter på pasient (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/R1408-eResept-M9.1-4-2014-04-07.pdf</Referanse>
+		</Kravdokument>	
+		<Kravdokument>
+			<Beskrivelse>eResept - M09.2 Reseptliste (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/R1408-eResept-M9.1-4-2014-04-07.pdf</Referanse>
+		</Kravdokument>	
+		<Kravdokument>
+			<Beskrivelse>eResept - M09.3 Forespørsel om nedlasting av resept (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/R1408-eResept-M9.1-4-2014-04-07.pdf</Referanse>
+		</Kravdokument>	
+		<Kravdokument>
+			<Beskrivelse>eResept -  M09.4 Nedlasting av resept (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/R1408-eResept-M9.1-4-2014-04-07.pdf</Referanse>
+		</Kravdokument>	
+		<Kravdokument>
 			<Beskrivelse>M9.11 Forespørsel om legemidler i bruk (PDF)</Beskrivelse>
 			<Referanse>kravdokument/eresept/HIS 3009_2018 M911 Forespørsel om legemidler i bruk.pdf</Referanse>
 		</Kravdokument>
@@ -26,13 +46,14 @@
 			<Referanse>kravdokument/eresept/HIS 3010_2018 M912 Nedlasting av legemidler i bruk.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>eResept – Verify-melding (PDF)</Beskrivelse>
-			<Referanse>kravdokument/eresept/eResept-MV-2013-08-16.pdf</Referanse>
-		</Kravdokument>
-		<Kravdokument>
 			<Beskrivelse>M25.1-4, M9.21-22, M27.1-2 og M28 (PDF)</Beskrivelse>
 			<Referanse>kravdokument/eresept/M25.1-4, M9.21-22, M27.1-2 og M28.pdf</Referanse>
 		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>eResept – Verify-melding (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/eResept-MV-2013-08-16.pdf</Referanse>
+		</Kravdokument>
+		
 		<Kravdokument>
 			<Beskrivelse>eResept – M1 Resept og M21 Ekspederingsanmodning (PDF)</Beskrivelse>
 			<Referanse>kravdokument/eresept/R0908-eResept-M1-M21-2011-06-03.pdf</Referanse>
@@ -41,13 +62,30 @@
 			<Beskrivelse>eResept – M1 Resept og M21 Ekspederingsanmodning (PDF)</Beskrivelse>
 			<Referanse>kravdokument/eresept/R0908-eResept-M1-M21-2013-10-08.pdf</Referanse>
 		</Kravdokument>
-		<Kravdokument>
-			<Beskrivelse>eResept - M3 Anmodning om søknad til SLV - M14 Søknadtil SLV - M15 Søknadssvar fra SLV (PDF)</Beskrivelse>
-			<Referanse>kravdokument/eresept/R1108-eResept-M3-M14-M15-2013-04-16.pdf</Referanse>
-		</Kravdokument>
+		
 		<Kravdokument>
 			<Beskrivelse>M25.1-4, M9.11-12, M9.21-22, M27.1-4 og M28 (PDF)</Beskrivelse>
 			<Referanse>kravdokument/eresept/R1608-eResept-M25-mm-2015-09-22.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>M9NA1 Forespørsel om reseptliste fra nettkunde (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3016_2018 M9NA1 Forespørsel om reseptliste fra nettkunde.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>M9NA2 Reseptliste nettkunde (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3017_2018 M9NA2 Reseptliste nettkunde.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>M9NA3 Forespørsel om utvidet informasjon på resept fra nettkunde (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3018_2018 M9NA3 Forespørsel om utvidet informasjon på resept fra nettkunde.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>M9NA4 Utvidet informasjon om resept nettkunde (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3019_2018 M9NA4 Utvidet informasjon på resept fra nettkunde.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>eResept – Verify-melding (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/eResept-MV-2013-08-16.pdf</Referanse>
 		</Kravdokument>
 	</Kravdokumenter>
 	
@@ -57,20 +95,64 @@
 			<Namespace>http://www.kith.no/xmlstds/eresept/m3/2010-05-01</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/ER-KritiskInformasjon-2013-04-25.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/eresept/ki/2013-04-25</Namespace>
+			<Referanse>skjema/eresept/ER-M91-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m91/2013-10-08</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/ER-M25-2013-10-08.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/eresept/m25/2013-10-08</Namespace>
+			<Referanse>skjema/eresept/ER-M92-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m92/2013-10-08</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/ER-M28-2012-06-11.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/eresept/m28/2012-06-11</Namespace>
+			<Referanse>skjema/eresept/ER-M93-2010-06-04.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m93/2010-06-04</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/ER-M251-2013-10-08.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/eresept/m251/2013-10-08</Namespace>
+			<Referanse>skjema/eresept/ER-M94-2010-07-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m94/2010-07-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/eresept/ER-M911-2018-07-01.xsd</Referanse>
+			<Namespace>http://www.ehelse.no/xmlstds/eresept/m911/2018-07-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/eresept/ER-M912-2018-07-01.xsd</Referanse>
+			<Namespace>http://www.ehelse.no/xmlstds/eresept/m912/2018-07-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/eresept/ER-M921-2013-10-15.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m921/2013-10-15</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/eresept/ER-M922-2013-10-15.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m922/2013-10-15</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/eresept/ER-M10-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m10/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/eresept/ER-M15-2006-10-06.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m15/2006-10-06</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/eresept/ER-M18-2013-04-16.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m18/2013-04-16"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/eresept/ER-M20-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m20/2013-10-08"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/eresept/ER-M21-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m21/2013-10-08"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/eresept/ER-M22-2006-10-06.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m22/2006-10-06"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/eresept/ER-M23-2006-10-06.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m23/2006-10-06"</Namespace>
 		</Skjema>
 		<Skjema>
 			<Referanse>skjema/eresept/ER-M252-2013-10-08.xsd</Referanse>
@@ -89,44 +171,28 @@
 			<Namespace>http://www.kith.no/xmlstds/eresept/m272/2013-04-16</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/ER-M911-2014-01-21.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/eresept/m911/2014-01-21</Namespace>
+			<Referanse>skjema/eresept/ER-M9NA1-2016-06-06.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m9na1/2016-06-06</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/ER-M911-2018-07-01.xsd</Referanse>
-			<Namespace>http://www.ehelse.no/xmlstds/eresept/m911/2018-07-01</Namespace>
+			<Referanse>skjema/eresept/ER-M9NA2-2016-10-26.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m9na2/2016-10-26</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/ER-M912-2014-01-21.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/eresept/m912/2014-01-21</Namespace>
+			<Referanse>skjema/eresept/ER-M9NA3-2016-06-06.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m9na3/2016-06-06</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/ER-M912-2018-07-01.xsd</Referanse>
-			<Namespace>http://www.ehelse.no/xmlstds/eresept/m912/2018-07-01</Namespace>
+			<Referanse>skjema/eresept/ER-M9NA4-2016-06-06.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m9na4/2016-06-06</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/ER-M921-2013-10-15.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/eresept/m921/2013-10-15</Namespace>
+			<Referanse>skjema/eresept/ER-KritiskInformasjon-2013-04-25.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/ki/2013-04-25</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/ER-M922-2013-10-15.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/eresept/m922/2013-10-15</Namespace>
-		</Skjema>
-		<Skjema>
-			<Referanse>skjema/eresept/ER-M91-2013-10-08.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/eresept/m91/2013-10-08</Namespace>
-		</Skjema>
-		<Skjema>
-			<Referanse>skjema/eresept/ER-M92-2013-10-08.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/eresept/m92/2013-10-08</Namespace>
-		</Skjema>
-		<Skjema>
-			<Referanse>skjema/eresept/ER-M93-2010-06-04.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/eresept/m93/2010-06-04</Namespace>
-		</Skjema>
-		<Skjema>
-			<Referanse>skjema/eresept/ER-M94-2010-07-01.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/eresept/m94/2010-07-01</Namespace>
+			<Referanse>skjema/eresept/ER-Utlevering-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/utlevering/2013-10-08</Namespace>
 		</Skjema>
 		<Skjema>
 			<Referanse>skjema/eresept/ER-MV-2017-01-01.xsd</Referanse>
@@ -149,46 +215,7 @@
 	</Felleskomponenter>
 	<Visningsfiler>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m1-2html-v2.5.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/eresept/m1-2html-v2.4.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/eresept/m2-m12-2html-v2.5.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/eresept/m2-m12-2html-v2.4.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/eresept/m5-2html-v2.5.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/eresept/m5-2html-v2.4.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/eresept/m6-2html-v2.5.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/eresept/m6-2html-v2.4.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/eresept/m7-2html-v2.5.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/eresept/m7-2html-v2.4.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/eresept/m8-2html-v2.5.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/eresept/m8-2html-v2.4.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
 			<Referanse>visningsfil/eresept/m15-2html-v2.5.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/eresept/m24-2html.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
 			<Referanse>visningsfil/eresept/m25-2html-v2.5.xsl</Referanse>
@@ -200,25 +227,7 @@
 			<Referanse>visningsfil/eresept/m272-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m273-2html-v2.5.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/eresept/m274-2html-v2.5.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/eresept/m28-2html-v2.5.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/eresept/m42-2html.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/eresept/m96-2html.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
 			<Referanse>visningsfil/eresept/utlevering-2html-v2.5.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/eresept/utlevering-2html-v2.4.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
 			<Referanse>visningsfil/eresept/Forskrivninger2html.xslt</Referanse>
@@ -226,64 +235,73 @@
 	</Visningsfiler>
 	<Eksempler>
 		<Eksempel>
-			<Referanse>eksempel/eresept/ER-M3-2010-05-01-eksempel1.xml</Referanse>
+			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket M3 Søknad Legemiddelverket.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/ER-M3-2010-05-011-eksempel1-msghead.xml</Referanse>
+			<Referanse>Ekspedering og utlevering M91 Forespørsel om tilgjengelige resepter på pasient (utleverer).xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/ER-M5-2013-04-16-eksempel1.xml</Referanse>
+			<Referanse>eksempel/eresept/Ekspedering og utlevering M92 Reseptliste (utleverer).xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/ER-M7-2008-05-01-eksempel1.xml</Referanse>
+			<Referanse>eksempel/eresept/Ekspedering og utlevering M93 Forespørsel om nedlasting av resept.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/ER-M14-2008-12-12-eksempel1.xml</Referanse>
+			<Referanse>eksempel/eresept/Ekspedering og utlevering M94 Nedlasting av resept.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/ER-M14-2008-12-12-eksempel1-msghead.xml</Referanse>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling M911 Forespørsel om PLL.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/ER-M15-2006-10-06-eksempel1-msghead.xml</Referanse>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL M911 Forespørsel om PLL.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/ER-M21-2013-10-08-eksempel1-msghead.xml</Referanse>
+			<Referanse>eksempel/eresept/Påmelding multidose M911 Forespørsel om PLL apotek.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/ER-M41-2006-10-06-example.xml</Referanse>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling M912 Nedlasting av PLL.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/ER-M41-2006-10-06-example-msghead.xml</Referanse>
+			<Referanse>eksempel/eresept/Påmelding multidose M912 Nedlasting av PLL apotek.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/ER-M42-2006-10-06-example.xml</Referanse>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL M912 Nedlasting av PLL.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/ER-M42-2006-10-06-example-msghead.xml</Referanse>
+			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket M10 Utleveringsrapport.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/ER-M91-2013-10-08-eksempel1.xml</Referanse>
+			<Referanse>eksempel/eresept/Ekspedering og utlevering M10 Utleveringsrapport.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/ER-M91-2013-10-08-eksempel2.xml</Referanse>
+			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket M15 Søknadssvar fra Legemiddelverket fra RF til apotek.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/ER-M92-2013-10-08-eksempel1.xml</Referanse>
+			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket M15 Søknadssvar fra Legemiddelverket fra RF til epj.xml</Referanse>
+		</Eksempel>	
+		<Eksempel>
+			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket M15 Søknadssvar fra Legemiddelverket til RF.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/ER-M93-2008-04-29-eksempel1.xml</Referanse>
+			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket M20 Notifiseringsmelding til SLV.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/ER-M94-2010-07-01-eksempel1.xml</Referanse>
+			<Referanse>eksempel/eresept/Påmelding multidose M252 Spørsmål fra apotek til RF.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/ER-M241-2009-02-20-eksempel1.xml</Referanse>
+			<Referanse>eksempel/eresept/Påmelding multidose M252  Fra RF til epj.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/ER-M242-2008-10-03-eksempel1.xml</Referanse>
+			<Referanse>eksempel/eresept/Påmelding multidose M271 Registrering av multidoseansvarlig apotek.xml</Referanse>
+		</Eksempel>	
+		<Eksempel>
+			<Referanse>eksempel/eresept/Påmelding multidose M271 Registrering av multidoseansvarlig.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/M96-b64.xml</Referanse>
+			<Referanse>eksempel/eresept/Påmelding multidose M272 Svar på registrering av multidoseansvarlig apotek.xml</Referanse>
+		</Eksempel>	
+		<Eksempel>
+			<Referanse>eksempel/eresept/Påmelding multidose M272 Svar på registrering av multidoseansvarlig lege.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
 	
