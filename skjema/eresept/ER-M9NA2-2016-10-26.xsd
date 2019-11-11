@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+eResept versjon 2.5
+M9NA2 Reseptliste nettkunde
+2016-10-26
+-->
+<!-- 
+Endringer siden v2.5 2016-06-06:
+2016-10-26: Nytt namespace
+Lagt til RefNr etter ReseptId
+Endret fra ID til string for IdLegemiddelMerkevare og IdLegemiddelVirkestoff
+-->
+<!--
+Endringer siden v2.5 2016-04-01
+2016-06-29, Bugfix uten endret namespace
+Reseptinfo/NavnRekvirent rettet til datatype String
+
+-->
+<schema xmlns:m9na2="http://www.kith.no/xmlstds/eresept/m9na2/2016-10-26" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:kith="http://www.kith.no/xmlstds" targetNamespace="http://www.kith.no/xmlstds/eresept/m9na2/2016-10-26" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="../felleskomponenter/kith.xsd"/>
+	<element name="M9NA2">
+		<complexType>
+			<sequence>
+				<element name="Antall" type="int"/>
+				<element ref="m9na2:Reseptinfo" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Reseptinfo">
+		<complexType>
+			<sequence>
+				<element name="Forskrivningsdato" type="date"/>
+				<element name="ReseptId" type="string"/>
+				<element name="RefNr" type="string" minOccurs="0"/>
+				<element name="IdLegemiddelMerkevare" type="string" minOccurs="0"/>
+				<element name="IdLegemiddelVirkestoff" type="string" minOccurs="0"/>
+				<element name="Nr" type="string" minOccurs="0"/>
+				<element name="NavnFormStyrke" type="string" minOccurs="0"/>
+				<element name="LegemiddelblandingNavn" type="string" minOccurs="0"/>
+				<element name="ProdGruppe" type="kith:CV" minOccurs="0"/>
+				<element name="Bruksomrade" type="string" minOccurs="0"/>
+				<element name="Antall" type="decimal" minOccurs="0"/>
+				<element name="Mengde" type="kith:PQ" minOccurs="0"/>
+				<element name="Reiterasjon" type="int" minOccurs="0"/>
+				<element name="TidligsteUtlevering" type="date" minOccurs="0"/>
+				<element name="RekvirentId" type="string"/>
+				<element name="NavnRekvirent" type="string"/>
+				<element name="Status" type="kith:CS"/>
+				<element name="StatusSoknadSlv" type="kith:CS" minOccurs="0"/>
+				<element name="SisteUtlevering" type="date" minOccurs="0"/>
+				<element name="MetodeEkspedering" type="kith:CS" minOccurs="0"/>
+				<element name="RefHjemmel" type="kith:CV" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>
