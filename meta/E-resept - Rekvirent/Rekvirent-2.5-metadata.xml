@@ -2,7 +2,7 @@
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
 	<Temaer>
-		<Tema>E-reseptmeldinger - ny versjon</Tema>
+		<Tema>E-reseptmeldinger</Tema>
 	</Temaer>
 	<Navn>Rekvirent</Navn>
 	<Versjon>2.5</Versjon>	
@@ -273,124 +273,124 @@
 	</Visningsfiler>
 	<Eksempler>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling M1 Resept.xml</Referanse>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M1 Resept.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL M1.xml</Referanse>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M1 Resept.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket M1 Resept_apotek sender søknad.xml</Referanse>
+			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket/M1 Resept_apotek sender søknad.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL M5 Tilbakekalling av resept.xml</Referanse>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M5 Tilbakekalling av resept.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL M5.2 Kvittering på tilbakekalling av resept.xml</Referanse>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M5.2 Kvittering på tilbakekalling av resept.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling M5 Tilbakekalling.xml</Referanse>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M5 Tilbakekalling.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling M5.2 Kvittering for tilbakekalling.xml</Referanse>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M5.2 Kvittering for tilbakekalling.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket M6 Utleveringsrapport rekvirent.xml</Referanse>
+			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket/M6 Utleveringsrapport rekvirent.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL M7 Slettet resept i RF.xml</Referanse>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M7 Slettet resept i RF.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling M7 Slettet resept i RF.xml</Referanse>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M7 Slettet resept i RF.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling M95 Forespørsel om resepter på pasient.xml</Referanse>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M95 Forespørsel om resepter på pasient.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL M95 Forespørsel om resepter på pasient.xml</Referanse>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M95 Forespørsel om resepter på pasient.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling M96 Reseptliste rekvirent.xml</Referanse>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M96 Reseptliste rekvirent.xml</Referanse>
 		</Eksempel>		
 		<Eksempel>
-			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL M96 Reseptliste rekvirent.xml</Referanse>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M96 Reseptliste rekvirent.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling M97 A Forespørsel om utleveringer på resept.xml</Referanse>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M97 A Forespørsel om utleveringer på resept.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling M97 B Forespørsel om utleveringer på resept.xml</Referanse>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M97 B Forespørsel om utleveringer på resept.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling M98 A Utleveringer på resept.xml</Referanse>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M98 A Utleveringer på resept.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling M98 B Utleveringer på resept.xml</Referanse>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M98 B Utleveringer på resept.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling M911 Forespørsel om PLL.xml</Referanse>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M911 Forespørsel om PLL.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL M911 Forespørsel om PLL.xml</Referanse>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M911 Forespørsel om PLL.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose M911 Forespørsel om PLL apotek.xml</Referanse>
+			<Referanse>eksempel/eresept/Påmelding multidose/M911 Forespørsel om PLL apotek.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling M912 Nedlasting av PLL.xml</Referanse>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M912 Nedlasting av PLL.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose M912 Nedlasting av PLL apotek.xml</Referanse>
+			<Referanse>eksempel/eresept/Påmelding multidose/M912 Nedlasting av PLL apotek.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL M912 Nedlasting av PLL.xml</Referanse>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M912 Nedlasting av PLL.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket M15 Søknadssvar fra Legemiddelverket fra RF til apotek.xml</Referanse>
+			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket/M15 Søknadssvar fra Legemiddelverket fra RF til apotek.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket M15 Søknadssvar fra Legemiddelverket fra RF til epj.xml</Referanse>
+			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket/M15 Søknadssvar fra Legemiddelverket fra RF til epj.xml</Referanse>
 		</Eksempel>	
 		<Eksempel>
-			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket M15 Søknadssvar fra Legemiddelverket til RF.xml</Referanse>
+			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket/M15 Søknadssvar fra Legemiddelverket til RF.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Registrer informasjon om abonnement M241 Samtykkeregistrering.xml</Referanse>
+			<Referanse>eksempel/eresept/Registrer informasjon om abonnement/M241 Samtykkeregistrering.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Registrer informasjon om abonnement M241 Samtykkeregistrering Avmelding.xml</Referanse>
+			<Referanse>eksempel/eresept/Registrer informasjon om abonnement/M241 Samtykkeregistrering Avmelding.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Registrer informasjon om abonnement M242 Svar Samtykkeregistrering.xml</Referanse>
+			<Referanse>eksempel/eresept/Registrer informasjon om abonnement/M242 Svar Samtykkeregistrering.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Registrer informasjon om abonnement M24.2 Svar samtykke Avregistrering.xml</Referanse>
+			<Referanse>eksempel/eresept/Registrer informasjon om abonnement/M24.2 Svar samtykke Avregistrering.xml</Referanse>
 		</Eksempel>	
 		<Eksempel>
-			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling M251 PLL.xml</Referanse>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M251 PLL.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling_M251 PLL - Avsluttet behandling.xml</Referanse>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M251 PLL - Avsluttet behandling.xml</Referanse>
 		</Eksempel>	
 		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose M252 Spørsmål fra apotek til RF.xml</Referanse>
+			<Referanse>eksempel/eresept/Påmelding multidose/M252 Spørsmål fra apotek til RF.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose M252  Fra RF til epj.xml</Referanse>
+			<Referanse>eksempel/eresept/Påmelding multidose/M252  Fra RF til epj.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose M271 Registrering av multidoseansvarlig apotek.xml</Referanse>
+			<Referanse>eksempel/eresept/Påmelding multidose/M271 Registrering av multidoseansvarlig apotek.xml</Referanse>
 		</Eksempel>	
 		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose M271 Registrering av multidoseansvarlig.xml</Referanse>
+			<Referanse>eksempel/eresept/Påmelding multidose/M271 Registrering av multidoseansvarlig.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose M272 Svar på registrering av multidoseansvarlig apotek.xml</Referanse>
+			<Referanse>eksempel/eresept/Påmelding multidose/M272 Svar på registrering av multidoseansvarlig apotek.xml</Referanse>
 		</Eksempel>	
 		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose M272 Svar på registrering av multidoseansvarlig lege.xml</Referanse>
+			<Referanse>eksempel/eresept/Påmelding multidose/M272 Svar på registrering av multidoseansvarlig lege.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose M28 Endring av multidoseansvarlig lege.xml</Referanse>
+			<Referanse>eksempel/eresept/Påmelding multidose/M28 Endring av multidoseansvarlig lege.xml</Referanse>
 		</Eksempel>
 		
 		
