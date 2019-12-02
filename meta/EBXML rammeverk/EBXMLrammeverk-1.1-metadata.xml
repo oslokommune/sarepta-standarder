@@ -28,11 +28,11 @@
 	<Tilleggsdokumenter>
 		<Tilleggsdokument>
 			<Beskrivelse>Veiledning til riktig implementasjon og bruk av ebXML (PDF)</Beskrivelse>
-			<Referanse>tilleggsdokument/EBXMLrammeverk/HISD 1171_2017 Veiledning til riktig implementasjon og bruk av ebXML v1.0.pdf</Referanse>
+			<Referanse>kravdokument/VeiledningTilRiktigBrukAvebXML/HITS 1171_2017 Veiledning til riktig implementasjon og bruk av ebXML -oppdatert.pdf</Referanse>
 		</Tilleggsdokument>
 		<Tilleggsdokument>
 			<Beskrivelse>Validering av ebXML-meldinger (PDF)</Beskrivelse>
-			<Referanse>tilleggsdokument/EBXMLrammeverk/HISD 1172_2017 Validering av ebXML-meldinger.pdf</Referanse>
+			<Referanse>kravdokument/ValideringAvebXMLMeldinger/HITS 1172_2017 Validering av ebXML-meldinger -oppdatert.pdf</Referanse>
 		</Tilleggsdokument>
 		<Tilleggsdokument>
 			<Beskrivelse>Implementasjonsguide API for bruk av kommunikasjonsparametere (PDF)</Beskrivelse>
