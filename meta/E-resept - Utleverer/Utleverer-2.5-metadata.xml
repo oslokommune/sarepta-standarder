@@ -2,7 +2,7 @@
 <!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
 <StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
 	<Temaer>
-		<Tema>E-reseptmeldinger - ny versjon</Tema>
+		<Tema>E-reseptmeldinger</Tema>
 	</Temaer>
 	<Navn>Utleverer</Navn>
 	<Versjon>2.5</Versjon>	
@@ -234,6 +234,21 @@
 		</Visningsfil>
 	</Visningsfiler>
 	<Eksempler>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Ekspedering og utlevering/M10 Utleveringsrapport.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Ekspedering og utlevering/M91 Forespørsel om tilgjengelige resepter på pasient (utleverer).xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Ekspedering og utlevering/M92 Reseptliste (utleverer).xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Ekspedering og utlevering/M93 Forespørsel om nedlasting av resept.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Ekspedering og utlevering/M94 Nedlasting av resept.xml</Referanse>
+		</Eksempel>
 		<Eksempel>
 			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket M3 Søknad Legemiddelverket.xml</Referanse>
 		</Eksempel>

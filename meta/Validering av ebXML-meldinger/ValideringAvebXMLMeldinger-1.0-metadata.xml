@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<!-- #434357 -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>Validering av ebXML-meldinger</Navn>
+	<Identifikator>HITS 1172:2017</Identifikator>
+	<Utgitt>08/2017</Utgitt>
+	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Bruk og målgrupper </Beskrivelse>
+			<Referanse>https://ehelse.no/standarder/ikke-standarder/validering-av-ebxml-meldinger</Referanse>
+		</Informasjon>
+	</MerInformasjon>
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>Validering av ebXML-meldinger (PDF)</Beskrivelse>
+			<Referanse>kravdokument/ValideringAvebXMLMeldinger/HITS 1172_2017 Validering av ebXML-meldinger -oppdatert.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+</StandardMetadata>
