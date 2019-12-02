@@ -250,73 +250,73 @@
 			<Referanse>eksempel/eresept/Ekspedering og utlevering/M94 Nedlasting av resept.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket M3 Søknad Legemiddelverket.xml</Referanse>
+			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket/M3 Søknad Legemiddelverket.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Ekspedering og utlevering M91 Forespørsel om tilgjengelige resepter på pasient (utleverer).xml</Referanse>
+			<Referanse>eksempel/eresept/Ekspedering og utlevering/M91 Forespørsel om tilgjengelige resepter på pasient (utleverer).xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Ekspedering og utlevering M92 Reseptliste (utleverer).xml</Referanse>
+			<Referanse>eksempel/eresept/Ekspedering og utlevering/M92 Reseptliste (utleverer).xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Ekspedering og utlevering M93 Forespørsel om nedlasting av resept.xml</Referanse>
+			<Referanse>eksempel/eresept/Ekspedering og utlevering/M93 Forespørsel om nedlasting av resept.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Ekspedering og utlevering M94 Nedlasting av resept.xml</Referanse>
+			<Referanse>eksempel/eresept/Ekspedering og utlevering/M94 Nedlasting av resept.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling M911 Forespørsel om PLL.xml</Referanse>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M911 Forespørsel om PLL.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL M911 Forespørsel om PLL.xml</Referanse>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M911 Forespørsel om PLL.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose M911 Forespørsel om PLL apotek.xml</Referanse>
+			<Referanse>eksempel/eresept/Påmelding multidose/M911 Forespørsel om PLL apotek.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling M912 Nedlasting av PLL.xml</Referanse>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M912 Nedlasting av PLL.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose M912 Nedlasting av PLL apotek.xml</Referanse>
+			<Referanse>eksempel/eresept/Påmelding multidose/M912 Nedlasting av PLL apotek.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL M912 Nedlasting av PLL.xml</Referanse>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M912 Nedlasting av PLL.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket M10 Utleveringsrapport.xml</Referanse>
+			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket/M10 Utleveringsrapport.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Ekspedering og utlevering M10 Utleveringsrapport.xml</Referanse>
+			<Referanse>eksempel/eresept/Ekspedering og utlevering/M10 Utleveringsrapport.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket M15 Søknadssvar fra Legemiddelverket fra RF til apotek.xml</Referanse>
+			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket/M15 Søknadssvar fra Legemiddelverket fra RF til apotek.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket M15 Søknadssvar fra Legemiddelverket fra RF til epj.xml</Referanse>
+			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket/M15 Søknadssvar fra Legemiddelverket fra RF til epj.xml</Referanse>
 		</Eksempel>	
 		<Eksempel>
-			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket M15 Søknadssvar fra Legemiddelverket til RF.xml</Referanse>
+			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket/M15 Søknadssvar fra Legemiddelverket til RF.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket M20 Notifiseringsmelding til SLV.xml</Referanse>
+			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket/M20 Notifiseringsmelding til SLV.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose M252 Spørsmål fra apotek til RF.xml</Referanse>
+			<Referanse>eksempel/eresept/Påmelding multidose/M252 Spørsmål fra apotek til RF.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose M252  Fra RF til epj.xml</Referanse>
+			<Referanse>eksempel/eresept/Påmelding multidose/M252  Fra RF til epj.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose M271 Registrering av multidoseansvarlig apotek.xml</Referanse>
+			<Referanse>eksempel/eresept/Påmelding multidose/M271 Registrering av multidoseansvarlig apotek.xml</Referanse>
 		</Eksempel>	
 		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose M271 Registrering av multidoseansvarlig.xml</Referanse>
+			<Referanse>eksempel/eresept/Påmelding multidose/M271 Registrering av multidoseansvarlig.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose M272 Svar på registrering av multidoseansvarlig apotek.xml</Referanse>
+			<Referanse>eksempel/eresept/Påmelding multidose/M272 Svar på registrering av multidoseansvarlig apotek.xml</Referanse>
 		</Eksempel>	
 		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose M272 Svar på registrering av multidoseansvarlig lege.xml</Referanse>
+			<Referanse>eksempel/eresept/Påmelding multidose/M272 Svar på registrering av multidoseansvarlig lege.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
 	
