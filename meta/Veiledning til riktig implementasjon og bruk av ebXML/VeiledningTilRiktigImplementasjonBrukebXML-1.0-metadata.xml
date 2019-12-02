@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<!-- #434357 -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Navn>Veiledning til riktig implementasjon og bruk av ebXML</Navn>
+	<Identifikator>HITS 1171:2017</Identifikator>
+	<Utgitt>02/2017</Utgitt>
+	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>Bruk og målgrupper </Beskrivelse>
+			<Referanse>https://ehelse.no/standarder/veiledning-til-riktig-implementasjon-og-bruk-av-ebxml-som-rammeverk-for-meldingsutveksling</Referanse>
+		</Informasjon>
+	</MerInformasjon>
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>Validering av ebXML-meldinger (PDF)</Beskrivelse>
+			<Referanse>kravdokument/VeiledningTilRiktigBrukAvebXML/HITS 1171_2017 Veiledning til riktig implementasjon og bruk av ebXML -oppdatert.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+</StandardMetadata>
