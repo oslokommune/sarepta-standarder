@@ -245,7 +245,7 @@
 			<Referanse>visningsfil/eresept/m2-m12-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m42-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m42-2html.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
 			<Referanse>visningsfil/eresept/m5-2html-v2.5.xsl</Referanse>
