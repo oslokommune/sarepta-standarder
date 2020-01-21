@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp2 (http://www.altova.com) by eResept (Helsedirektoratet) -->
+<StandardMetadata definisjonVersjon="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Metadata.xsd">
+	<Temaer>
+		<Tema>E-reseptmeldinger</Tema>
+	</Temaer>
+	<Navn>Helfo</Navn>
+	<Versjon>2.5</Versjon>	
+	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	<Status>Fastsatt som standard</Status>
+	<MerInformasjon>
+		<Informasjon>
+			<Beskrivelse>E-resept dokumentasjon</Beskrivelse>
+			<Referanse>https://e-resept.atlassian.net/</Referanse>
+		</Informasjon>
+	</MerInformasjon>
+	<Kravdokumenter>
+		<Kravdokument>
+			<Beskrivelse>M1 Resept og M21 Ekspederingsanmodning (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/R0908-eResept-M1-M21-2013-10-08.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>M18,M22,M23 Oppgjørskrav og utbetaling (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/R1508-eResept-M18-M22-M23-2013-04-16.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>M2 Søknad om individuell stønad til Helfo (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3001_2018 M2 Søknad om individuell stønad til Helfo.pdf</Referanse>
+		</Kravdokument>
+		<Kravdokument>
+			<Beskrivelse>M12 Svar på søknad om individuell stønad til Helfo (PDF)</Beskrivelse>
+			<Referanse>kravdokument/eresept/HIS 3002_2018 M12 Søknadssvar Individuell søknad om stønad til Helfo.pdf</Referanse>
+		</Kravdokument>
+	</Kravdokumenter>
+	
+	<Skjemaer>
+			<Skjema>
+			<Referanse>skjema/eresept/ER-M1-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m1/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/eresept/ER-M2-2017-12-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m2/2017-12-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/eresept/ER-M12-2017-12-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m12/2017-12-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/eresept/ER-M18-2013-04-16.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m18/2013-04-16"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/eresept/ER-M22-2006-10-06.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m22/2006-10-06"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/eresept/ER-M23-2006-10-06.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m23/2006-10-06"</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/eresept/ER-Utlevering-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/utlevering/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/eresept/Forskrivning-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/forskrivning/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/eresept/Forskrivning-2014-12-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/forskrivning/2014-12-01</Namespace>
+		</Skjema>
+	</Skjemaer>
+	<Felleskomponenter>
+		<Felleskomponent>
+			<Referanse>skjema/felleskomponenter/MsgHead-v1_2.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Referanse>skjema/felleskomponenter/kith-base64.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Referanse>skjema/felleskomponenter/felleskomponent1.xsd</Referanse>
+		</Felleskomponent>
+		<Felleskomponent>
+			<Referanse>skjema/felleskomponenter/kith.xsd</Referanse>
+		</Felleskomponent>
+	</Felleskomponenter>
+	<Visningsfiler>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m1-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m15-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/utlevering-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+	</Visningsfiler>
+	<RelaterteFiler>
+		<RelatertFil>
+			<Beskrivelse>Applikasjonskvittering v 1.0</Beskrivelse>
+			<Referanse>kravdokument/applikasjonskvittering/HIS_80415_2004 AppRec v1.0 -korrigert.pdf</Referanse>
+		</RelatertFil>
+		<RelatertFil>
+			<Beskrivelse>Notat til bruk av kith-base.xsd</Beskrivelse>
+			<Referanse>relaterteFiler/eresept/NOTAT-kith-base64.pdf</Referanse>
+		</RelatertFil>
+		<RelatertFil>
+			<Beskrivelse>Hodemelding v 1.2</Beskrivelse>
+			<Referanse>kravdokument/hodemelding/HIS_80601_2006-Hodemelding-v12 -korrigert.pdf</Referanse>
+		</RelatertFil>
+		<RelatertFil>
+			<Beskrivelse>Datatyper v 1.1</Beskrivelse>
+			<Referanse>kravdokument/DatatyperTilBrukVedMeldingsutveksling/HIS_80117_2002_Datatyper_v1.1 -korrigert.pdf</Referanse>
+		</RelatertFil>
+	</RelaterteFiler>	
+</StandardMetadata>
