@@ -10,15 +10,13 @@
 	<Status>Fastsatt som standard</Status>
 	<MerInformasjon>
 		<Informasjon>
-			<Beskrivelse>Om bruk og målgrupper</Beskrivelse>
-			<Referanse>https://ehelse.no/referansekatalog/referansekatalogen-for-e-helse#E-reseptmeldinger</Referanse>
+			<Beskrivelse>E-resept dokumentasjon</Beskrivelse>
+			<Referanse>https://e-resept.atlassian.net/</Referanse>
 		</Informasjon>
 	</MerInformasjon>
-	
-
-	<Kravdokumenter>
+		<Kravdokumenter>
 		<Kravdokument>
-			<Beskrivelse>eResept – M1 Resept og M21 Ekspederingsanmodning (PDF)</Beskrivelse>
+			<Beskrivelse>M1 Resept og M21 Ekspederingsanmodning (PDF)</Beskrivelse>
 			<Referanse>kravdokument/eresept/R0908-eResept-M1-M21-2013-10-08.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
@@ -26,15 +24,15 @@
 			<Referanse>kravdokument/eresept/HIS 3001_2018 M2 Søknad om individuell stønad til Helfo.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>eResept - M04.1-2 Referansenummer (PDF)</Beskrivelse>
+			<Beskrivelse>M4.1,M4.2 Referansenummer (PDF)</Beskrivelse>
 			<Referanse>kravdokument/eresept/R1908-eResept-M4-2013-04-16.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>eResept – M5, M7, M9.5-8, M24.1-5 (PDF)</Beskrivelse>
+			<Beskrivelse>M5,M5.2,M7 Tilbakekalling (M95-8,M41-5 og M24 se HIS dokument)(PDF)</Beskrivelse>
 			<Referanse>kravdokument/eresept/R1208-eResept-M5-M7-M95-8-M41-5-2015-10-15.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>eResept - Utleveringsrapporter M6, M8, M8.1, M10 og M20 (PDF)</Beskrivelse>
+			<Beskrivelse>M6,M8,M10,M20 Utleveringsrapporter(PDF)</Beskrivelse>
 			<Referanse>kravdokument/eresept/R1308-eResept-M6-M8-M81-M10-M20-2015-09-22.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
@@ -54,11 +52,11 @@
 			<Referanse>kravdokument/eresept/HIS 3006_2018 M98 Utleveringer på resept.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>M9.11 Forespørsel om legemidler i bruk (PDF)</Beskrivelse>
+			<Beskrivelse>M9.11 Forespørsel om Pasientens legemiddelliste (PDF)</Beskrivelse>
 			<Referanse>kravdokument/eresept/HIS 3009_2018 M911 Forespørsel om legemidler i bruk.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>M9.12 Nedlastning av legemidler i bruk (PDF)</Beskrivelse>
+			<Beskrivelse>M9.12 Nedlastning av Pasientens legemiddelliste (PDF)</Beskrivelse>
 			<Referanse>kravdokument/eresept/HIS 3010_2018 M912 Nedlasting av legemidler i bruk.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
@@ -66,19 +64,19 @@
 			<Referanse>kravdokument/eresept/HIS 3002_2018 M12 Søknadssvar Individuell søknad om stønad til Helfo.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>M15 Søknadssvar fra SLV (PDF)</Beskrivelse>
+			<Beskrivelse>M15 Søknadssvar fra Legemiddelverket (PDF)</Beskrivelse>
 			<Referanse>kravdokument/eresept/R1108-eResept-M3-M14-M15-2013-04-16.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>M24.1 Samtykkeregistrering (PDF)</Beskrivelse>
+			<Beskrivelse>M24.1 Abonnementsregistrering (PDF)</Beskrivelse>
 			<Referanse>kravdokument/eresept/HIS 3007_2018 M241 Samtykkeregistrering.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>M24.2 Svar på samtykke (PDF)</Beskrivelse>
+			<Beskrivelse>M24.2 Svar abonnementsregistrering (PDF)</Beskrivelse>
 			<Referanse>kravdokument/eresept/HIS 3008_2018 M242 Svar på samtykkeregistreing.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>M25.1-4, M9.21-22, M27.1-2 og M28 (PDF)</Beskrivelse>
+			<Beskrivelse>M25.1-4,M9.21-22,M27.1-2,M28 Psientens legemiddelliste og multidose(PDF)</Beskrivelse>
 			<Referanse>kravdokument/eresept/M25.1-4, M9.21-22, M27.1-2 og M28.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
@@ -92,7 +90,6 @@
 	</Kravdokumenter>
 	
 	<Skjemaer>
-		
 		<Skjema>
 			<Referanse>skjema/eresept/ER-M1-2013-10-08.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m1/2013-10-08</Namespace>
@@ -126,6 +123,10 @@
 			<Namespace>http://www.kith.no/xmlstds/eresept/m7/2008-05-01</Namespace>
 		</Skjema>
 		<Skjema>
+			<Referanse>skjema/eresept/ER-M8-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m8/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>
 			<Referanse>skjema/eresept/ER-M95-2018-07-01.xsd</Referanse>
 			<Namespace>http://www.ehelse.no/xmlstds/eresept/m95/2018-07-01</Namespace>
 		</Skjema>
@@ -154,6 +155,10 @@
 			<Namespace>http://www.kith.no/xmlstds/eresept/m921/2013-10-15</Namespace>
 		</Skjema>
 		<Skjema>
+			<Referanse>skjema/eresept/ER-M922-2013-10-15.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m922/2013-10-15</Namespace>
+		</Skjema>
+		<Skjema>
 			<Referanse>skjema/eresept/ER-M12-2017-12-01.xsd</Referanse>
 			<Namespace>http://www.ehelse.no/xmlstds/eresept/m12/2017-12-01</Namespace>
 		</Skjema>
@@ -168,10 +173,6 @@
 		<Skjema>
 			<Referanse>skjema/eresept/ER-M242-2008-10-03.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m242/2008-10-03</Namespace>
-		</Skjema>
-		<Skjema>
-			<Referanse>skjema/eresept/ER-M25-2013-10-08.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/eresept/m25/2013-10-08</Namespace>
 		</Skjema>
 		<Skjema>
 			<Referanse>skjema/eresept/ER-M251-2013-10-08.xsd</Referanse>
@@ -206,10 +207,21 @@
 			<Namespace>http://ehelse.no/xmlstds/eresept/mv/2017-01-01</Namespace>
 		</Skjema>
 		<Skjema>
+			<Referanse>skjema/eresept/ER-Utlevering-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/utlevering/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>
 			<Referanse>skjema/eresept/Forskrivning-2013-10-08.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/forskrivning/2013-10-08</Namespace>
 		</Skjema>
-	
+		<Skjema>
+			<Referanse>skjema/eresept/Forskrivning-2014-12-01.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/forskrivning/2014-12-01</Namespace>
+		</Skjema>
+		<Skjema>
+			<Referanse>skjema/eresept/ER-KritiskInformasjon-2013-04-25.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/ki/2013-04-25</Namespace>
+		</Skjema>
 	</Skjemaer>
 	<Felleskomponenter>
 		<Felleskomponent>
@@ -244,10 +256,10 @@
 		<Visningsfil>
 			<Referanse>visningsfil/eresept/m7-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
-			<Visningsfil>
-			<Referanse>visningsfil/eresept/m96-2html.xsl</Referanse>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m8-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
-				<Visningsfil>
+		<Visningsfil>
 			<Referanse>visningsfil/eresept/m15-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
@@ -265,55 +277,48 @@
 		<Visningsfil>
 			<Referanse>visningsfil/eresept/m28-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
-		
-		
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/Forskrivninger2html.xslt</Referanse>
+			<Referanse>visningsfil/eresept/utlevering-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
 	<Eksempler>
+	<!-- Lege endrer på legemiddelbehandling -->
 		<Eksempel>
 			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M1 Resept.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M1 Resept.xml</Referanse>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M1 Resept.html</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket/M1 Resept_apotek sender søknad.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M5 Tilbakekalling av resept.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M5.2 Kvittering på tilbakekalling av resept.xml</Referanse>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M1 Resept.pdf</Referanse>
 		</Eksempel>
 		<Eksempel>
 			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M5 Tilbakekalling.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M5 Tilbakekalling.html</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M5 Tilbakekalling.pdf</Referanse>
+		</Eksempel>
+		<Eksempel>
 			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M5.2 Kvittering for tilbakekalling.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket/M6 Utleveringsrapport rekvirent.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M7 Slettet resept i RF.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M7 Slettet resept i RF.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M95 Forespørsel om resepter på pasient.xml</Referanse>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M7 Slettet resept i RF.html</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M95 Forespørsel om resepter på pasient.xml</Referanse>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M7 Slettet resept i RF.pdf</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M95 Forespørsel om resepter på pasient.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M96 Reseptliste rekvirent.xml</Referanse>
 		</Eksempel>		
-		<Eksempel>
-			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M96 Reseptliste rekvirent.xml</Referanse>
-		</Eksempel>
 		<Eksempel>
 			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M97 A Forespørsel om utleveringer på resept.xml</Referanse>
 		</Eksempel>
@@ -330,19 +335,149 @@
 			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M911 Forespørsel om PLL.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M911 Forespørsel om PLL.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose/M911 Forespørsel om PLL apotek.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
 			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M912 Nedlasting av PLL.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose/M912 Nedlasting av PLL apotek.xml</Referanse>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M251 PLL.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M251 PLL.html</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M251 PLL.pdf</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M251 PLL - Avsluttet behandling.xml</Referanse>
+		</Eksempel>	
+			<Eksempel>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M251 PLL - Avsluttet behandling.html</Referanse>
+		</Eksempel>	
+		<Eksempel>
+			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M251 PLL - Avsluttet behandling.pdf</Referanse>
+		</Eksempel>	
+<!-- Rekvirent rekvirerer kun resept og leverer ikke PLL -->
+		<Eksempel>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M1 Resept.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M1 Resept.html</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M1 Resept.pdf</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M5 Tilbakekalling av resept.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M5 Tilbakekalling av resept.html</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M5 Tilbakekalling av resept.pdf</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M5.2 Kvittering på tilbakekalling av resept.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M7 Slettet resept i RF.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M7 Slettet resept i RF.html</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M7 Slettet resept i RF.pdf</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M95 Forespørsel om resepter på pasient.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M96 Reseptliste rekvirent.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M911 Forespørsel om PLL.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 			<Referanse>eksempel/eresept/Rekvirent rekvirerer kun resept og leverer ikke PLL/M912 Nedlasting av PLL.xml</Referanse>
+		</Eksempel>
+<!-- Registrer informasjon om abonnement -->
+		<Eksempel>
+			<Referanse>eksempel/eresept/Registrer informasjon om abonnement/M241 Abonnementsregistrering.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Registrer informasjon om abonnement/M241 Abonnementsregistrering.html</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Registrer informasjon om abonnement/M241 Abonnementsregistrering.pdf</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Registrer informasjon om abonnement/M242 Svar Abonnementsregistrering.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Registrer informasjon om abonnement/M242 Svar Abonnementsregistrering.html</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Registrer informasjon om abonnement/M242 Svar Abonnementsregistrering.pdf</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Registrer informasjon om abonnement/M241 Abonnementsregistrering avmelding.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Registrer informasjon om abonnement/M241 Abonnementsregistrering avmelding.html</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Registrer informasjon om abonnement/M241 Abonnementsregistrering avmelding.pdf</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Registrer informasjon om abonnement/M242 Svar Abonnementsregistrering avmelding.xml</Referanse>
+		</Eksempel>	
+		<Eksempel>
+			<Referanse>eksempel/eresept/Registrer informasjon om abonnement/M242 Svar Abonnementsregistrering avmelding.html</Referanse>
+		</Eksempel>	
+		<Eksempel>
+			<Referanse>eksempel/eresept/Registrer informasjon om abonnement/M242 Svar Abonnementsregistrering avmelding.pdf</Referanse>
+		</Eksempel>	
+<!-- Påmelding multidose -->
+		<Eksempel>
+			<Referanse>eksempel/eresept/Påmelding multidose/M252  Fra RF til epj.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Påmelding multidose/M252  Fra RF til epj.html</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Påmelding multidose/M252  Fra RF til epj.pdf</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Påmelding multidose/M271 Registrering av multidoseansvarlig lege.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Påmelding multidose/M271 Registrering av multidoseansvarlig lege.html</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Påmelding multidose/M271 Registrering av multidoseansvarlig lege.pdf</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Påmelding multidose/M272 Svar på registrering av multidoseansvarlig lege.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Påmelding multidose/M272 Svar på registrering av multidoseansvarlig lege.html</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Påmelding multidose/M272 Svar på registrering av multidoseansvarlig lege.pdf</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Påmelding multidose/M28 Endring av multidoseansvarlig lege.xml</Referanse>
+		</Eksempel>	
+		<Eksempel>
+			<Referanse>eksempel/eresept/Påmelding multidose/M28 Endring av multidoseansvarlig lege.html</Referanse>
+		</Eksempel>	
+		<Eksempel>
+			<Referanse>eksempel/eresept/Påmelding multidose/M28 Endring av multidoseansvarlig lege.pdf</Referanse>
+		</Eksempel>	
+<!--Søknad om godkjenningsfritak til Legemiddelverket -->		
+		<Eksempel>
+			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket/M1 Resept_apotek sender søknad.xml</Referanse>
+		</Eksempel>
+		<Eksempel>
+			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket/M6 Utleveringsrapport rekvirent.xml</Referanse>
 		</Eksempel>
 		<Eksempel>
 			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket/M15 Søknadssvar fra Legemiddelverket fra RF til apotek.xml</Referanse>
@@ -350,50 +485,6 @@
 		<Eksempel>
 			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket/M15 Søknadssvar fra Legemiddelverket fra RF til epj.xml</Referanse>
 		</Eksempel>	
-		<Eksempel>
-			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket/M15 Søknadssvar fra Legemiddelverket til RF.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/eresept/Registrer informasjon om abonnement/M241 Samtykkeregistrering.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/eresept/Registrer informasjon om abonnement/M241 Samtykkeregistrering Avmelding.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/eresept/Registrer informasjon om abonnement/M242 Svar Samtykkeregistrering.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/eresept/Registrer informasjon om abonnement/M24.2 Svar samtykke Avregistrering.xml</Referanse>
-		</Eksempel>	
-		<Eksempel>
-			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M251 PLL.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/eresept/Lege endrer på legemiddelbehandling/M251 PLL - Avsluttet behandling.xml</Referanse>
-		</Eksempel>	
-		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose/M252 Spørsmål fra apotek til RF.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose/M252  Fra RF til epj.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose/M271 Registrering av multidoseansvarlig apotek.xml</Referanse>
-		</Eksempel>	
-		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose/M271 Registrering av multidoseansvarlig.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose/M272 Svar på registrering av multidoseansvarlig apotek.xml</Referanse>
-		</Eksempel>	
-		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose/M272 Svar på registrering av multidoseansvarlig lege.xml</Referanse>
-		</Eksempel>
-		<Eksempel>
-			<Referanse>eksempel/eresept/Påmelding multidose/M28 Endring av multidoseansvarlig lege.xml</Referanse>
-		</Eksempel>
-		
-		
 	</Eksempler>
 	
 	<RelaterteFiler>
