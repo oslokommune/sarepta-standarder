@@ -10,9 +10,6 @@
 	<Status>Fastsatt som standard</Status>
 	<MerInformasjon>
 		<Informasjon>
-			<Beskrivelse>Leverandører av utleverersystemer kan laste ned kravdokumenter,skjema,eksempler og andre ressurser relatert til e-resept meldinger</Beskrivelse>
-		</Informasjon>
-		<Informasjon>
 			<Beskrivelse>E-resept dokumentasjon (Confluence)</Beskrivelse>
 			<Referanse>https://e-resept.atlassian.net</Referanse>
 		</Informasjon>
