@@ -10,8 +10,15 @@
 	<Status>Fastsatt som standard</Status>
 	<MerInformasjon>
 		<Informasjon>
-			<Beskrivelse>E-resept dokumentasjon</Beskrivelse>
-			<Referanse>https://e-resept.atlassian.net/</Referanse>
+			<Beskrivelse>Leverandører av utleverersystemer kan laste ned kravdokumenter,skjema,eksempler og andre ressurser relatert til e-resept meldinger</Beskrivelse>
+		</Informasjon>
+		<Informasjon>
+			<Beskrivelse>E-resept dokumentasjon (Confluence)</Beskrivelse>
+			<Referanse>https://e-resept.atlassian.net</Referanse>
+		</Informasjon>
+		<Informasjon>
+			<Beskrivelse>Bruk av standardene (Referansekatalogen for e-helse)</Beskrivelse>
+			<Referanse>https://ehelse.no/standarder/om-standardisering-i-e-helse/referansekatalogen-for-e-helse#E-reseptmeldinger</Referanse>
 		</Informasjon>
 	</MerInformasjon>
 	<Kravdokumenter>
