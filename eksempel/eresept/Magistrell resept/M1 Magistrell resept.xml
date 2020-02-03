@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?><MsgHead xmlns="http://www.kith.no/xmlstds/msghead/2006-05-24">   <MsgInfo>  
+    <Type DN="Resept" V="ERM1"></Type>  
+    <MIGversion>v1.2 2006-05-24</MIGversion>  
+    <GenDate>2014-05-03T21:50:11.7022132+02:00</GenDate>  
+    <MsgId>88505628-8475-47d9-a8ce-10fc343330c0</MsgId>  
+    <Sender>  
+      <Organisation>  
+        <OrganisationName>St. Olav hosptal</OrganisationName>  
+        <Ident>  
+          <Id>983544622</Id>  
+          <TypeId DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" V="ENH" S="2.16.578.1.12.4.1.1.9051"></TypeId>  
+        </Ident>  
+        <Ident>  
+          <Id>91189</Id>  
+          <TypeId DN="HER-id" V="HER" S="2.16.578.1.12.4.1.1.9051"></TypeId>  
+        </Ident>  
+        <Ident>  
+          <Id>100320</Id>  
+          <TypeId DN="Nasjonalt register over enheter i spesialisthelsetjenesten (RESH-ID)" V="RSH" S="2.16.578.1.12.4.1.1.9051"></TypeId>         </Ident>  
+        <Address>  
+          <Type DN="Besoksadresse" V="RES"></Type>  
+          <StreetAdr>Universitetsgata 2</StreetAdr>  
+          <PostalCode>0545</PostalCode>  
+          <City>Oslo</City>  
+        </Address>  
+        <TeleCom>  
+          <TypeTelecom DN="Hovedtelefon" V="HP"></TypeTelecom>  
+          <TeleAddress V="tel:93058507"></TeleAddress>  
+        </TeleCom>  
+        <HealthcareProfessional>  
+          <FamilyName>Win</FamilyName>  
+          <GivenName>Emma</GivenName>  
+          <Ident>  
+            <Id>2323234</Id>  
+            <TypeId DN="Identifikator fra Helsetjenesteenhetsregisteret" V="HER" S="2.16.578.1.12.4.1.1.8116"></TypeId>  
+          </Ident>  
+          <Ident>  
+            <Id>001010043</Id>  
+            <TypeId V="HPR" DN="HPR-id" S="2.16.578.1.12.4.1.1.8116"></TypeId>  
+          </Ident>  
+          <Address>  
+            <Type DN="Arbeidsadresse" V="WP"></Type>  
+            <StreetAdr>Dryfushammarn 23</StreetAdr>  
+            <PostalCode>8012</PostalCode>  
+            <City>BODÃ˜</City>  
+            <County DN="BodÃ¸" V="1804"></County>  
+          </Address>  
+        </HealthcareProfessional>  
+      </Organisation>  
+    </Sender>  
+    <Receiver>  
+      <Organisation>  
+        <OrganisationName>Reseptformidleren</OrganisationName>  
+        <Ident>  
+          <Id>983544622</Id>  
+          <TypeId DN="Organisasjonsnummeret i Enhetsregister (Brønnøysund)" V="ENH" S="2.16.578.1.12.4.1.1.9051"></TypeId>  
+        </Ident>  
+        <Ident>  
+          <Id>80624</Id>  
+          <TypeId DN="HER-id" V="HER" S="2.16.578.1.12.4.1.1.9051"></TypeId>  
+        </Ident>  
+      </Organisation>  
+    </Receiver>  
+    <Patient>  
+      <FamilyName>Dose</FamilyName>  
+      <GivenName>Didrik</GivenName>  
+      <Sex V="1" DN="Mann"></Sex>  
+      <Ident>  
+        <Id>21113317199</Id>  
+        <TypeId V="FNR" S="2.16.578.1.12.4.1.1.8116" DN="Fødselsnummer"></TypeId>  
+ </Ident>  
+      <Address>  
+        <Type V="H" DN="Bostedsadresse"></Type>  
+        <StreetAdr>Dosettveien 82</StreetAdr>  
+        <PostalCode>5986</PostalCode>  
+        <City>Hosteland</City>  
+        <County V="1265"></County>  
+      </Address>  
+    </Patient>  
+  </MsgInfo>  
+  <Document>  
+    <RefDoc>  
+      <MsgType V="XML" DN="XML-instans"></MsgType>  
+      <Content>  
+        <Resept xmlns="http://www.kith.no/xmlstds/eresept/m1/2013-10-08">  
+          <Forskrivningsdato>2014-05-03+02:00</Forskrivningsdato>  
+          <Utloper>2015-05-03+02:00</Utloper>  
+          <ReseptDokLegemiddel>  
+            <Varegruppekode DN="Legemiddel" V="L"></Varegruppekode>  
+            <Antall>14</Antall>  
+            <RefHjemmel DN="§5-14 §2" V="200" S="2.16.578.1.12.4.1.1.7427" OT="Viser til legemidler med forhåndsgodkjent refusjon, oppført i refusjonslisten"></RefHjemmel>  
+            <RefKode DN="Palliativ behandling i livets sluttfase" V="-90" S="2.16.578.1.12.4.1.1.7434"></RefKode>             <Reiterasjon>0</Reiterasjon>  
+            <BytteresRekvirent DN="Nei" V="2"></BytteresRekvirent>  
+            <Forskrivning xmlns="http://www.kith.no/xmlstds/eresept/forskrivning/2013-10-08">  
+              <DosVeiledEnkel>100 ml per døgn i 15 døgn</DosVeiledEnkel>  
+              <IngenKombinasjon>false</IngenKombinasjon>  
+              <Bruk DN="Fast" V="1"></Bruk>  
+              <AdministreringForskrivning>  
+ <AdmVed DN="Annet helsepersonell" V="9"></AdmVed>  
+ <AdmMate DN="Intravenøs" V="iv"></AdmMate>  
+              </AdministreringForskrivning>  
+              <Dosering>  
+                <Starttidspunkt V="2014-05-03"></Starttidspunkt>  
+                <Sluttidspunkt V="2014-05-18"></Sluttidspunkt>  
+                <Doseringsregel>  
+                  <DoseresEtter DN="Vekt" V="1"></DoseresEtter>  
+                  <Merknad>44 kg oppdatert 01.05.14</Merknad>  
+                </Doseringsregel>  
+                <DoseFastTidspunkt>  
+                  <Mengde V="100" U="ml"></Mengde>  
+                  <Intervall V="1" U="Døgn"></Intervall>  
+                  <Infusjonshastighet>  
+  <Volum V="100" U="ml"></Volum>  
+                 <Tidsenhet DN="Døgn" V="Døgn"></Tidsenhet>  
+                  </Infusjonshastighet>  
+                  <GisEksakt>false</GisEksakt>  
+                </DoseFastTidspunkt>  
+              </Dosering>  
+              <Legemiddelblanding>  
+                <Navn>Smerteblanding:  Infusjonsvæske med Haloperidol 0,5 mg/ml og Morfin 10 mg/ml, 100 ml</Navn>                 <TilbOppl>Smertepumpe: CADD6300  
+  Tilleggsutstyr: Forlengelsesslange  
+ </TilbOppl>  
+                <Mengde V="100" U="ml"></Mengde>  
+                <Legemiddelform DN="Infusjonsvæske" V="95" S="2.16.578.1.12.4.1.1.7448" OT="Inf væske"></Legemiddelform>                 <BestanddelAnnet>  
+                  <NavnFormStyrke>Blandevann</NavnFormStyrke>  
+                  <Utblanding>  
+                    <Adqs DN="Til total mengde" V="ad"></Adqs>  
+                  </Utblanding>  
+                </BestanddelAnnet>  
+                <BestanddelVirkestoff>  
+                  <Virkestoff>  
+                    <Id>ID_667FA975-A8EC-4CF8-A89E-96F97808E3AD</Id>  
+                    <Navn>Haloperidol</Navn>  
+                  </Virkestoff>  
+                  <Styrke>  
+                    <Teller V="0.5" U="mg"></Teller>  
+                    <Nevner V="1" U="ml"></Nevner>  
+                  </Styrke>  
+                </BestanddelVirkestoff>  
+                <BestanddelVirkestoff>  
+                  <Virkestoff>  
+                    <Id>ID_3EAD2C2E-9707-44CF-99A0-1FB6BE599975</Id>  
+                    <Navn>Morfin</Navn>                   </Virkestoff>  
+  <Styrke>  
+                    <Teller V="10" U="mg"></Teller>  
+                    <Nevner V="1" U="ml"></Nevner>  
+                  </Styrke>  
+                </BestanddelVirkestoff>  
+              </Legemiddelblanding>  
+            </Forskrivning>  
+          </ReseptDokLegemiddel>  
+          <OppdatertFest>2014-03-24T13:28:42</OppdatertFest>  
+          <LastResept>false</LastResept>  
+        </Resept>  
+      </Content>  
+    </RefDoc>  
+  </Document>  
+</MsgHead>  
