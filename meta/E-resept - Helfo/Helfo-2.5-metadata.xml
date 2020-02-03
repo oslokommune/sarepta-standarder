@@ -100,6 +100,17 @@
 			<Referanse>visningsfil/eresept/utlevering-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
+	<Eksempler>
+	<!-- Utleverer sender oppgjørskrav til Helfo -->
+		<Eksempel>
+			<Referanse>eksempel/eresept/Utleverer sender oppgjørskrav til Helfo/M1 Resept1.xml</Referanse>
+			<Referanse>eksempel/eresept/Utleverer sender oppgjørskrav til Helfo/M1 Resept2.xml</Referanse>
+			<Referanse>eksempel/eresept/Utleverer sender oppgjørskrav til Helfo/M1 Resept3.xml</Referanse>
+			<Referanse>eksempel/eresept/Utleverer sender oppgjørskrav til Helfo/M18 Oppgjørskrav.xml</Referanse>
+			<Referanse>eksempel/eresept/Utleverer sender oppgjørskrav til Helfo/M18 Oppgjørskrav.xml</Referanse>
+			<Referanse>eksempel/eresept/Utleverer sender oppgjørskrav til Helfo/M23 Utbetaling</Referanse>
+		</Eksempel>
+	</Eksempler>
 	<RelaterteFiler>
 		<RelatertFil>
 			<Beskrivelse>Applikasjonskvittering v 1.0</Beskrivelse>

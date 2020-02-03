@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><ns:MsgHead xmlns:ns="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns="http://www.trygdeetaten.no/xml/eiff/1/">
+    <ns:MsgInfo>
+      <ns:Type DN="Oppgjorsresultat" V="ERM22"/>
+      <ns:MIGversion>v1.2 2006-05-24</ns:MIGversion>
+      <ns:GenDate>2020-01-28T15:46:12.279+01:00</ns:GenDate>
+      <ns:MsgId>ed90edb1-41dc-11ea-bb90-11c317ce2f68</ns:MsgId>
+      <ns:Sender>
+        <ns:Organisation>
+          <ns:OrganisationName>NAV</ns:OrganisationName>
+          <ns:Ident>
+            <ns:Id>889640782</ns:Id>
+            <ns:TypeId DN="Organisasjonsnummeret i Enhetsregister" S="2.16.578.1.12.4.1.1.9051" V="ENH"/>
+          </ns:Ident>
+        </ns:Organisation>
+      </ns:Sender>
+      <ns:Receiver>
+        <ns:Organisation>
+          <ns:OrganisationName>Hdir_Testapotek e-resept</ns:OrganisationName>
+          <ns:Ident>
+            <ns:Id>971033541</ns:Id>
+            <ns:TypeId DN="Organisasjonsnummeret i Enhetsregister" S="2.16.578.1.12.4.1.1.9051" V="ENH"/>
+          </ns:Ident>
+        </ns:Organisation>
+      </ns:Receiver>
+    </ns:MsgInfo>
+    <ns:Document>
+      <ns:DocumentConnection DN="Hoveddokument" V="H"/>
+      <ns:RefDoc>
+        <ns:MsgType DN="XML-instans" V="XML"/>
+        <ns:Content>
+          <m22:Oppgjorsresultat xmlns:m22="http://www.kith.no/xmlstds/eresept/m22/2006-10-06">
+            <m22:OppgjorsNr>88957_2354358</m22:OppgjorsNr>
+            <m22:BehandlingDato>2020-01-28+01:00</m22:BehandlingDato>
+            <m22:Regning>
+              <m22:RegningsNr>0000056662</m22:RegningsNr>
+              <m22:Krav U="NOK" V="30.62"/>
+              <m22:Godkjent U="NOK" V="30.62"/>
+              <m22:Status DN="Godkjent" V="2"/>
+            </m22:Regning>
+            <m22:Regning>
+              <m22:RegningsNr>0000056663</m22:RegningsNr>
+              <m22:Krav U="NOK" V="140.36"/>
+              <m22:Godkjent U="NOK" V="140.36"/>
+              <m22:Status DN="Godkjent" V="2"/>
+            </m22:Regning>
+            <m22:Regning>
+              <m22:RegningsNr>0000056664</m22:RegningsNr>
+              <m22:Krav U="NOK" V="129.5"/>
+              <m22:Godkjent U="NOK" V="129.5"/>
+              <m22:Status DN="Godkjent" V="2"/>
+            </m22:Regning>
+          </m22:Oppgjorsresultat>
+        </ns:Content>
+      </ns:RefDoc>
+    </ns:Document>
+  <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+<ds:SignedInfo>
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+<ds:Reference URI="">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+<ds:Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+<ds:DigestValue>DYEGATMVFoj8EJ4nsoZElUYmrlk=</ds:DigestValue>
+</ds:Reference>
+</ds:SignedInfo>
+<ds:SignatureValue>
+KLzz5MveSFNRT04N0ciL9QkE0n3sR6G3obTPNW9a/O6tSXDBg1AEn4q2oDC47a3U3EudeNdsaB6T
+I5r8kNSXCPa2VL42tr+TjJXkh4VTz1a1+bUERX53XsQfKY3YMqu2mghTNsw5l7CwfXdljYSspzJC
+qaHFoOASqLlFnzgc437aijX/oelkaDLWAsyfaUIRtxVnzpOR/HGo1Swak08FMnehIM+jm1rD3Iik
++J3zqfXpN1NkTTX/Got/iNkmRITKb27O3rLzRj4dgyjxIm0V4cx2KKSWX6j8AUM8DyTDwRGNAX8S
+wEkpF5fwstVFQwuzMC1PLhkznMtxdecBpWzEcA==
+</ds:SignatureValue>
+<ds:KeyInfo>
+<ds:X509Data>
+<ds:X509Certificate>
+MIIE9jCCA96gAwIBAgILDywSFrEvkWZ+wBYwDQYJKoZIhvcNAQELBQAwSzELMAkGA1UEBhMCTk8x
+HTAbBgNVBAoMFEJ1eXBhc3MgQVMtOTgzMTYzMzI3MR0wGwYDVQQDDBRCdXlwYXNzIENsYXNzIDMg
+Q0EgMzAeFw0xOTEwMTUxMTI4MDZaFw0yMjEyMzAyMjU5MDBaMGsxCzAJBgNVBAYTAk5PMSMwIQYD
+VQQKDBpBUkJFSURTLSBPRyBWRUxGRVJEU0VUQVRFTjEjMCEGA1UEAwwaQVJCRUlEUy0gT0cgVkVM
+RkVSRFNFVEFURU4xEjAQBgNVBAUTCTg4OTY0MDc4MjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCC
+AQoCggEBAK88U4nWk6EzLSg0wLN+RGRQyopRgexh+i2PxoV2x7dHZPOBpaSRaO43OTDfWyAyfOaf
+axvVXndmgiX8Njt+2UvT4OcmtVcJlW0ruM51GFBHwp9zrPYlTJGXsljWl7qdc8MtIv5fl6W5/+cc
+uq7ZShWnQ9qjT+P+FR6ZFfSyiJdoqER+BYESVuwGl/d0yC7ZuQ27GUBy+ARv+K1Rxbwzaj1t/kZy
+Yv+GNRC62j6aB21SXHWWiz9ymWwUwIDqrAj4QGDUV1m/ZlCby+6Xbkd/cM90WbTFbxXNHY72cBPi
+F3jz3lJivdEy6E646fwf3dc1cZf2vc29eZOUXQeDoyorzk0CAwEAAaOCAbkwggG1MAkGA1UdEwQC
+MAAwHwYDVR0jBBgwFoAUzMP4B7ecbXpO9acrHQX5s0cckdEwHQYDVR0OBBYEFNylgi//F5DWSzvD
+U0rKR/0UigGSMA4GA1UdDwEB/wQEAwIGQDAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQw
+FQYDVR0gBA4wDDAKBghghEIBGgEDAjCBpQYDVR0fBIGdMIGaMC+gLaArhilodHRwOi8vY3JsLmJ1
+eXBhc3Mubm8vY3JsL0JQQ2xhc3MzQ0EzLmNybDBnoGWgY4ZhbGRhcDovL2xkYXAuYnV5cGFzcy5u
+by9kYz1CdXlwYXNzLGRjPU5PLENOPUJ1eXBhc3MlMjBDbGFzcyUyMDMlMjBDQSUyMDM/Y2VydGlm
+aWNhdGVSZXZvY2F0aW9uTGlzdDB6BggrBgEFBQcBAQRuMGwwMwYIKwYBBQUHMAGGJ2h0dHA6Ly9v
+Y3NwLmJ1eXBhc3Mubm8vb2NzcC9CUENsYXNzM0NBMzA1BggrBgEFBQcwAoYpaHR0cDovL2NydC5i
+dXlwYXNzLm5vL2NydC9CUENsYXNzM0NBMy5jZXIwDQYJKoZIhvcNAQELBQADggEBAIqAtoExL7au
+DUo4DHPy7WtYajn8iNf9yZvVzdkDaRkuQM/T2DP3lZ8hdL3/wNTpIJ4RGiyVUhPyZH956dOLhoAA
+SQVweNP6VDohUuAxTCIBt9YR4je6cLYl3QYY9T6BmBQkwXVecp8j09hjhNHqvWW42JiT5DL53v8V
+dAsXyAoF1Gc+UeZf1MAOGQKbNrIqTP3kSgfuQ1wZMqTQSqzSpJcnkMHu86muilRzjWzVahPuAAFG
+kq1OOY6yD5lmrbRVyBN7MO6wsZFFcRj2i1XuxTUV3CjdjB54HGYsG2HE9IV5AHY23LnCi18gWwQr
+SYY+GSedrq3f/ZgB4yMycfFGW+c=
+</ds:X509Certificate>
+</ds:X509Data>
+<ds:KeyValue>
+<ds:RSAKeyValue>
+<ds:Modulus>
+rzxTidaToTMtKDTAs35EZFDKilGB7GH6LY/GhXbHt0dk84GlpJFo7jc5MN9bIDJ85p9rG9Ved2aC
+Jfw2O37ZS9Pg5ya1VwmVbSu4znUYUEfCn3Os9iVMkZeyWNaXup1zwy0i/l+Xpbn/5xy6rtlKFadD
+2qNP4/4VHpkV9LKIl2ioRH4FgRJW7AaX93TILtm5DbsZQHL4BG/4rVHFvDNqPW3+RnJi/4Y1ELra
+PpoHbVJcdZaLP3KZbBTAgOqsCPhAYNRXWb9mUJvL7pduR39wz3RZtMVvFc0djvZwE+IXePPeUmK9
+0TLoTrjp/B/d1zVxl/a9zb15k5RdB4OjKivOTQ==
+</ds:Modulus>
+<ds:Exponent>AQAB</ds:Exponent>
+</ds:RSAKeyValue>
+</ds:KeyValue>
+</ds:KeyInfo>
+</ds:Signature></ns:MsgHead>
