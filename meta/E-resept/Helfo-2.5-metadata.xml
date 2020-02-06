@@ -5,7 +5,6 @@
 		<Tema>E-reseptmeldinger</Tema>
 	</Temaer>
 	<Navn>Meldinger for Helfo</Navn>
-	<Versjon>2.5</Versjon>	
 	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
 	<MerInformasjon>
@@ -107,7 +106,7 @@
 			<Referanse>eksempel/eresept/Utleverer sender oppgjørskrav til Helfo/M1 Resept2.xml</Referanse>
 			<Referanse>eksempel/eresept/Utleverer sender oppgjørskrav til Helfo/M1 Resept3.xml</Referanse>
 			<Referanse>eksempel/eresept/Utleverer sender oppgjørskrav til Helfo/M18 Oppgjørskrav.xml</Referanse>
-			<Referanse>eksempel/eresept/Utleverer sender oppgjørskrav til Helfo/M18 Oppgjørskrav.xml</Referanse>
+			<Referanse>eksempel/eresept/Utleverer sender oppgjørskrav til Helfo/M22 Oppgjørsresultat</Referanse>
 			<Referanse>eksempel/eresept/Utleverer sender oppgjørskrav til Helfo/M23 Utbetaling</Referanse>
 		</Eksempel>
 	</Eksempler>
