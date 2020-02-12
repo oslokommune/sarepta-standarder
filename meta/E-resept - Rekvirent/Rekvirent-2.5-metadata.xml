@@ -5,19 +5,20 @@
 		<Tema>E-reseptmeldinger</Tema>
 	</Temaer>
 	<Navn>Meldinger for rekvirent</Navn>
-	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	<Versjon>2.5</Versjon>
+	<Ansvarlig>Norsk Helsenett SF</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
 	<MerInformasjon>
 		<Informasjon>
 			<Beskrivelse>E-resept dokumentasjon (Confluence)</Beskrivelse>
-			<Referanse>https://e-resept.atlassian.net</Referanse>
+			<Referanse>https://e-resept.atlassian.net/wiki/spaces/ERDOK/overview</Referanse>
 		</Informasjon>
 		<Informasjon>
 			<Beskrivelse>Bruk av standardene (Referansekatalogen for e-helse)</Beskrivelse>
 			<Referanse>https://ehelse.no/standarder/om-standardisering-i-e-helse/referansekatalogen-for-e-helse#E-reseptmeldinger</Referanse>
 		</Informasjon>
 	</MerInformasjon>
-		<Kravdokumenter>
+	<Kravdokumenter>
 		<Kravdokument>
 			<Beskrivelse>M1 Resept og M21 Ekspederingsanmodning (PDF)</Beskrivelse>
 			<Referanse>kravdokument/eresept/R0908-eResept-M1-M21-2013-10-08.pdf</Referanse>
@@ -489,15 +490,14 @@
 			<Referanse>eksempel/eresept/Søknad om godkjenningsfritak til Legemiddelverket/M15 Søknadssvar fra Legemiddelverket fra RF til epj.xml</Referanse>
 		</Eksempel>	
 	</Eksempler>
-	
 	<RelaterteFiler>
 		<RelatertFil>
 			<Beskrivelse>Applikasjonskvittering v 1.0</Beskrivelse>
 			<Referanse>kravdokument/applikasjonskvittering/HIS_80415_2004 AppRec v1.0 -korrigert.pdf</Referanse>
 		</RelatertFil>
 		<RelatertFil>
-			<Beskrivelse>Notat til bruk av kith-base.xsd</Beskrivelse>
-			<Referanse>relaterteFiler/eresept/NOTAT-kith-base64.pdf</Referanse>
+			<Beskrivelse>Vedlegg til meldinger</Beskrivelse>
+			<Referanse>kravdokument/VedleggTilMeldinger/HIS_1036_2011-Vedlegg_til_meldinger -oppdatert.pdf</Referanse>
 		</RelatertFil>
 		<RelatertFil>
 			<Beskrivelse>Hodemelding v 1.2</Beskrivelse>
