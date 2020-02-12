@@ -5,12 +5,13 @@
 		<Tema>E-reseptmeldinger</Tema>
 	</Temaer>
 	<Navn>Meldinger for Helfo</Navn>
-	<Ansvarlig>Direktoratet for e-helse</Ansvarlig>
+	<Versjon>2.5</Versjon>
+	<Ansvarlig>Norsk Helsenett SF</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
 	<MerInformasjon>
 		<Informasjon>
 			<Beskrivelse>E-resept dokumentasjon (Confluence)</Beskrivelse>
-			<Referanse>https://e-resept.atlassian.net</Referanse>
+			<Referanse>https://e-resept.atlassian.net/wiki/spaces/ERDOK/overview</Referanse>
 		</Informasjon>
 		<Informasjon>
 			<Beskrivelse>Bruk av standardene (Referansekatalogen for e-helse)</Beskrivelse>
@@ -103,11 +104,21 @@
 	<!-- Utleverer sender oppgjørskrav til Helfo -->
 		<Eksempel>
 			<Referanse>eksempel/eresept/Utleverer sender oppgjørskrav til Helfo/M1 Resept1.xml</Referanse>
+		</Eksempel>			
+		<Eksempel>
 			<Referanse>eksempel/eresept/Utleverer sender oppgjørskrav til Helfo/M1 Resept2.xml</Referanse>
+		</Eksempel>			
+		<Eksempel>
 			<Referanse>eksempel/eresept/Utleverer sender oppgjørskrav til Helfo/M1 Resept3.xml</Referanse>
+		</Eksempel>			
+		<Eksempel>
 			<Referanse>eksempel/eresept/Utleverer sender oppgjørskrav til Helfo/M18 Oppgjørskrav.xml</Referanse>
-			<Referanse>eksempel/eresept/Utleverer sender oppgjørskrav til Helfo/M22 Oppgjørsresultat</Referanse>
-			<Referanse>eksempel/eresept/Utleverer sender oppgjørskrav til Helfo/M23 Utbetaling</Referanse>
+		</Eksempel>			
+		<Eksempel>
+			<Referanse>eksempel/eresept/Utleverer sender oppgjørskrav til Helfo/M22 Oppgjørsresultat.xml</Referanse>
+		</Eksempel>			
+		<Eksempel>
+			<Referanse>eksempel/eresept/Utleverer sender oppgjørskrav til Helfo/M23 Utbetaling.xml</Referanse>
 		</Eksempel>
 	</Eksempler>
 	<RelaterteFiler>
@@ -116,8 +127,8 @@
 			<Referanse>kravdokument/applikasjonskvittering/HIS_80415_2004 AppRec v1.0 -korrigert.pdf</Referanse>
 		</RelatertFil>
 		<RelatertFil>
-			<Beskrivelse>Notat til bruk av kith-base.xsd</Beskrivelse>
-			<Referanse>relaterteFiler/eresept/NOTAT-kith-base64.pdf</Referanse>
+			<Beskrivelse>Vedlegg til meldinger</Beskrivelse>
+			<Referanse>kravdokument/VedleggTilMeldinger/HIS_1036_2011-Vedlegg_til_meldinger -korrigert.pdf</Referanse>
 		</RelatertFil>
 		<RelatertFil>
 			<Beskrivelse>Hodemelding v 1.2</Beskrivelse>
