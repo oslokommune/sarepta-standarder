@@ -1,9 +1,15 @@
-<xsl:stylesheet version="1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:ki="http://www.kith.no/xmlstds/eresept/ki/2013-04-25" xmlns:dt="http://xsltsl.org/date-time" xmlns:b64="http://ehelse.no/xmlstds/xslt_base64" exclude-result-prefixes="mh ki dt">
+<xsl:stylesheet version="1.0" 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+	xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" 
+	xmlns:ki="http://www.kith.no/xmlstds/eresept/ki/2013-04-25" 
+	xmlns:dt="http://xsltsl.org/date-time" 
+	xmlns:b64="http://ehelse.no/xmlstds/xslt_base64"
+	exclude-result-prefixes="mh ki dt">
+
 	<!-- Visningsfil M25 Legemidler i bruk
 	- Visningsfilen kan benyttes til alle kategorier av M25 (M25.1-4) -->
 	<!-- Endringslogg:
-	-	2019-12-19:	v3.1.6:	Endret layout for forbedret lesbarhet.Kun dag (og ikke millisekund) testes på seponeringsdato og lagt inn test på seponeringsdato mindre eller lik meldingsdato (genDate).
-	-	2019-08-28:	v3.1.5:	Rettet visning av Utlevering Pakningsstr og Utleverer navn. Rettet tabellformatering ved tom ATC kode
 	-   2018-01-17: v3.1.4: Korrigert tilbake på "flytting av legemidler som er pakket", rettet på feil i decoding av B64-informasjon
 									Byttet decoder til base64.xsl. Denne klarer å vise æ,ø og å.
     -   2017-10-27: v3.1.3: Korrigert og flyttet på "Legemidler som er pakket" til eget avsnitt
@@ -19,36 +25,32 @@
 	-	2014-02-12: Antall tas nå med i legemiddelblanding
 	-	2014-02-11: Kategoriserte legemiddel seponert frem i tid under legemidler i bruk
 	-	2013-11-07 Første versjon -->
+
 	<xsl:import href="../felleskomponenter/meldingshode2html.xsl"/>
 	<xsl:import href="../felleskomponenter/funksjoner.xsl"/>
 	<xsl:import href="../felleskomponenter/kodeverk.xsl"/>
 	<xsl:import href="../felleskomponenter/kritiskInfo2html-v2.5.xsl"/>
-	<!--	<xsl:import href="../../felleskomponenter/base64decoder.xsl"/>-->
+<!--	<xsl:import href="../../felleskomponenter/base64decoder.xsl"/>-->
 	<xsl:import href="../felleskomponenter/base64.xsl"/>
 	<xsl:import href="../felleskomponenter/eh-komponent2.xsl"/>
+
+
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'eresept-m25-2.5 - v3.1.6 '"/>
+	<xsl:variable name="versjon" select="'eresept-m25-2.5 - v3.1.4 '"/>
+
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
 			<head>
-				<title>Legemidler i bruk</title>
+				<title>LegemidlerIBruk</title>
 				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 				<style type="text/css">
-					<xsl:value-of select="document('../felleskomponenter/KITH-visning.css')" disable-output-escaping="yes"/>
+					<xsl:value-of select="document('../../felleskomponenter/KITH-visning.css')" disable-output-escaping="yes" />
 				</style>
 				<style type="text/css">
-					<xsl:value-of select="document('../felleskomponenter/ehelse-visning.css')" disable-output-escaping="yes"/>
+					<xsl:value-of select="document('../../felleskomponenter/ehelse-visning.css')" disable-output-escaping="yes" />
 				</style>
 				<style type="text/css">
-					<xsl:value-of select="document('../felleskomponenter/smooth-visning.css')" disable-output-escaping="yes"/>
-				</style>
-				<style>
-					.Legemiddeltabell {
-					  border-collapse: collapse;
-					}
-					.Legemiddeltabell th{
-					  border-bottom: 1px solid;
-					}
+					<xsl:value-of select="document('../../felleskomponenter/smooth-visning.css')" disable-output-escaping="yes"/>
 				</style>
 			</head>
 			<body>
@@ -148,7 +150,7 @@
 							</xsl:call-template>
 						</xsl:variable>
 						<xsl:choose>
-							<xsl:when test="$datoSeponertFormatert&lt;=$datoSendtFormatert">true</xsl:when>
+							<xsl:when test="$datoSeponertFormatert&lt;$datoSendtFormatert">true</xsl:when>
 							<xsl:otherwise>false</xsl:otherwise>
 						</xsl:choose>
 					</xsl:for-each>
@@ -206,15 +208,15 @@
 					</table>
 				</xsl:if>
 				<!-- Tabell for Enkeloppføringer (i bruk eller seponert frem i tid) -->
-				<xsl:if test="child::*[local-name()=&quot;EnkeltoppforingLIB&quot; and not(child::*[local-name()=&quot;Seponering&quot;])] or contains($boolSeponertString, 'false')">
+				<xsl:if test="child::*[local-name()=&quot;EnkeltoppforingLIB&quot; and not(child::*[local-name()=&quot;Seponering&quot;])] or contains($boolSeponertString, 'false')"> 
 					<xsl:variable name="id20">
 						<xsl:value-of select="concat('Legemidler',$position)"/>
 					</xsl:variable>
 					<h2 id="{$id20}" align="center">Legemidler (i bruk eller seponert frem i tid)</h2>
-					<table class ="Legemiddeltabell">
+					<table>
 						<tbody>
 							<tr>
-								<th width="10%">&#160;</th> <!--Overskrift settes i cellen-->
+								<th width="10%">Seponert</th>
 								<th width="5%">Bruk</th>
 								<th width="5%">ATC</th>
 								<th width="20%">NavnFormStyrke/Virkestoff</th>
@@ -250,7 +252,7 @@
 							</xsl:for-each>
 						</tbody>
 					</table>
-					<br/>
+					<br></br>
 				</xsl:if>
 				<!-- Tabell for Enkeloppføringer (seponert) -->
 				<xsl:if test="contains($boolSeponertString, 'true')">
@@ -258,10 +260,10 @@
 						<xsl:value-of select="concat('SeponerteLegemidler',$position)"/>
 					</xsl:variable>
 					<h2 id="{$id30}" align="center">Seponerte&#160;legemidler</h2>
-					<table class="Legemiddeltabell">
+					<table>
 						<tbody>
 							<tr>
-								<th width="10%">&#160;</th>
+								<th width="10%">Seponert</th>
 								<th width="5%">Bruk</th>
 								<th width="5%">ATC</th>
 								<th width="20%">NavnFormStyrke/Virkestoff</th>
@@ -284,7 +286,7 @@
 										<xsl:with-param name="gittDato" select="/.//mh:GenDate"/>
 									</xsl:call-template>
 								</xsl:variable>
-								<xsl:if test="$datoSeponertFormatert&lt;=$datoSendtFormatert">
+								<xsl:if test="$datoSeponertFormatert&lt;$datoSendtFormatert">
 									<xsl:call-template name="EnkeltoppforingLIB"/>
 								</xsl:if>
 							</xsl:for-each>
@@ -293,6 +295,8 @@
 				</xsl:if>
 				<!-- Tabell for Legemidler som er utlevert -->
 				<xsl:call-template name="LegemiddelPakket"/>
+				
+				
 				<!-- Tabell for Roller -->
 				<xsl:if test="child::*[local-name()=&quot;Rolle&quot;]">
 					<xsl:variable name="id40">
@@ -307,44 +311,37 @@
 						</tbody>
 					</table>
 				</xsl:if>
-				<br/>
+				<br></br>
 			</xsl:for-each>
 		</div>
 	</xsl:template>
 	<xsl:template name="EnkeltoppforingLIB">
 		<tr>
-			<!-- Dato seponert, Årsak  hack-->
+			<!-- Dato seponert, Årsak -->
 			<td valign="top">
 				<xsl:choose>
 					<xsl:when test="child::*[local-name()=&quot;Seponering&quot;]">
-						<div class="eh-row-1">
-							<span class="eh-label eh-strong">Seponert</span>
-							<div>
-								<span class="eh-field">
-									<xsl:for-each select="child::*[local-name()=&quot;Seponering&quot;]">
-										<xsl:if test="child::*[local-name()=&quot;Tidspunkt&quot;]">
-											<div>
-												<xsl:call-template name="skrivUtDateTime">
-													<xsl:with-param name="oppgittTid" select="child::*[local-name()=&quot;Tidspunkt&quot;]"/>
-												</xsl:call-template>&#160;&#160;
-											</div>
-										</xsl:if>
-										<xsl:if test="child::*[local-name()=&quot;Arsak&quot;]">
-											<div>
-												<xsl:for-each select="child::*[local-name()=&quot;Arsak&quot;]">
-													<xsl:call-template name="k-7494"/>
-												</xsl:for-each>
-											</div>
-										</xsl:if>
-										<xsl:if test="child::*[local-name()=&quot;Merknad&quot;] and string-length(child::*[local-name()=&quot;Merknad&quot;]) &gt; 0">
-											<div>
-												<span class="strong">Merknad</span>:&#160;<xsl:value-of select="child::*[local-name()=&quot;Merknad&quot;]"/>
-											</div>
-										</xsl:if>
+						<xsl:for-each select="child::*[local-name()=&quot;Seponering&quot;]">
+							<xsl:if test="child::*[local-name()=&quot;Tidspunkt&quot;]">
+								<div>
+									<xsl:call-template name="skrivUtDateTime">
+										<xsl:with-param name="oppgittTid" select="child::*[local-name()=&quot;Tidspunkt&quot;]"/>
+									</xsl:call-template>&#160;&#160;
+								</div>
+							</xsl:if>
+							<xsl:if test="child::*[local-name()=&quot;Arsak&quot;]">
+								<div>
+									<xsl:for-each select="child::*[local-name()=&quot;Arsak&quot;]">
+										<xsl:call-template name="k-7494"/>
 									</xsl:for-each>
-								</span>
-							</div>
-						</div>
+								</div>
+							</xsl:if>
+							<xsl:if test="child::*[local-name()=&quot;Merknad&quot;]">
+								<div>
+									<span class="strong">Merknad</span>:&#160;<xsl:value-of select="child::*[local-name()=&quot;Merknad&quot;]"/>
+								</div>
+							</xsl:if>
+						</xsl:for-each>
 					</xsl:when>
 					<xsl:otherwise>&#160;</xsl:otherwise>
 				</xsl:choose>
@@ -362,11 +359,9 @@
 			<xsl:choose>
 				<xsl:when test="child::*[local-name()=&quot;ReseptDokLegemiddelB64&quot;]/child::*">
 					<xsl:for-each select="child::*[local-name()=&quot;ReseptDokLegemiddelB64&quot;]">
-					<!-- Når ReseptDokLegemiddelB64 har barn. Det vil si at ReseptDokLegemiddel ikke er base64 dekodet.  Er dette i bruk?-->
 						<!-- Bruk -->
 						<td valign="top">
-							<xsl:if test="descendant::*[local-name()=&quot;Bruk&quot;]">
-								<!--  Er dette riktig?? Jeg fnner ikke noe element som heter "Bruk" som er descendant til "ReseptDokLegemiddleB64" -->
+							<xsl:if test="descendant::*[local-name()=&quot;Bruk&quot;]"><!--  Er dette riktig?? Jeg fnner ikke noe element som heter "Bruk" som er descendant til "ReseptDokLegemiddleB64" -->
 								<xsl:for-each select="descendant::*[local-name()=&quot;Bruk&quot;]">
 									<xsl:call-template name="k-9101"/>
 								</xsl:for-each>
@@ -455,11 +450,15 @@
 					</xsl:for-each>
 				</xsl:when>
 				<xsl:otherwise>
-				<!-- Når ReseptDokLegemiddelB64 er base 64 dekodet-->
 					<xsl:variable name="konvertertBase64">
-						<xsl:call-template name="b64:decode">
+						<xsl:call-template name="b64:decode"> 
+							<xsl:with-param name="base64String" select="child::*[local-name()=&quot;ReseptDokLegemiddelB64&quot;]"></xsl:with-param> 
+						</xsl:call-template> 
+					<!--
+						<xsl:call-template name="convertBase64ToAscii">
 							<xsl:with-param name="base64String" select="child::*[local-name()=&quot;ReseptDokLegemiddelB64&quot;]"/>
 						</xsl:call-template>
+					-->
 					</xsl:variable>
 					<!-- B64/Bruk -->
 					<td valign="top">
@@ -468,7 +467,7 @@
 							<!--<xsl:call-template name="k-9101">
 								<xsl:with-param name="V" select="substring-before(substring-after(substring-before(substring-after($konvertertBase64,'Bruk '),'/'),'V=&quot;'),'&quot;')"/>
 							</xsl:call-template>-->
-						</xsl:if><!--&#160;-->
+						</xsl:if>&#160;
 					</td>
 					<!-- B64/Atc/@V -->
 					<td valign="top">
@@ -517,8 +516,7 @@
 										<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'NavnFormStyrke'),'&gt;'),' ')"/>
 									</span>&#160;<xsl:value-of select="substring-before(substring-after(substring-after(substring-after($konvertertBase64, 'NavnFormStyrke'),'&gt;'),' '),'&lt;/')"/>
 								</xsl:if>&#160;<xsl:if test="contains($konvertertBase64, 'Atc') and contains(substring-before(substring-after($konvertertBase64,'Atc '),'/'), 'DN')">
-									<div><!--&#160;&#160;&#160;-->
-										<em>
+									<div>&#160;&#160;&#160;<em>
 											<xsl:value-of select="substring-before(substring-after(substring-before(substring-after($konvertertBase64,'Atc '),'/'),'DN=&quot;'),'&quot;')"/>
 										</em>
 									</div>
@@ -530,13 +528,13 @@
 					<td valign="top">
 						<xsl:if test="contains($konvertertBase64, 'Bruksomrade')">
 							<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'Bruksomrade'),'&gt;'),'&lt;/')"/>
-							<!--<br/>-->
+							<br/>
 						</xsl:if>
 						<xsl:if test="contains($konvertertBase64, 'DosVeiledEnkel')">
 							<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'DosVeiledEnkel'),'&gt;'),'&lt;/')"/>
 							<br/>
 						</xsl:if>
-						<xsl:if test="contains($konvertertBase64, 'Dosering')">Strukturert&#160;dosering</xsl:if><!--&#160;-->&#160;
+						<xsl:if test="contains($konvertertBase64, 'Dosering')">Strukturert&#160;dosering</xsl:if>&#160;
 					</td>
 					<!-- B64/Mengde eller B64/Antall x B64/Legemiddelpakning/PakningsinfoResept/Pakning-->
 					<td valign="top">
@@ -545,7 +543,7 @@
 								<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'Antall'),'&gt;'),'&lt;/')"/>&#160;x&#160;<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'Pakningsstr'),'&gt;'),'&lt;/')"/>&#160;<xsl:value-of select="substring-before(substring-after(substring-before(substring-after($konvertertBase64,'EnhetPakning '),'/'),'V=&quot;'),'&quot;')"/>&#160;
 							</xsl:when>
 							<xsl:otherwise>
-								<xsl:value-of select="substring-before(substring-after(substring-before(substring-after($konvertertBase64,'Mengde '),'/'),'V=&quot;'),'&quot;')"/>&#160;<xsl:value-of select="substring-before(substring-after(substring-before(substring-after($konvertertBase64,'Mengde '),'/'),'U=&quot;'),'&quot;')"/><!--&#160;-->&#160;
+								<xsl:value-of select="substring-before(substring-after(substring-before(substring-after($konvertertBase64,'Mengde '),'/'),'V=&quot;'),'&quot;')"/>&#160;<xsl:value-of select="substring-before(substring-after(substring-before(substring-after($konvertertBase64,'Mengde '),'/'),'U=&quot;'),'&quot;')"/>&#160;
 							</xsl:otherwise>
 						</xsl:choose>
 					</td>
@@ -553,45 +551,44 @@
 					<td valign="top">
 						<xsl:if test="contains($konvertertBase64, 'Reiterasjon')">
 							<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'Reiterasjon'),'&gt;'),'&lt;/')"/>
-						</xsl:if><!--&#160;-->&#160;
+						</xsl:if>&#160;
 					</td>
 					<!-- B64/Refusjon -->
 					<td valign="top">
 						<xsl:if test="contains($konvertertBase64, 'RefHjemmel ')">
 							<xsl:value-of select="substring-before(substring-after(substring-before(substring-after($konvertertBase64,'RefHjemmel '),'/'),'DN=&quot;'),'&quot;')"/>
-						</xsl:if><!--&#160;-->&#160;
+						</xsl:if>&#160;
 					</td>
 				</xsl:otherwise>
 			</xsl:choose>
 			<!-- Instituert av -->
 			<td valign="top">
-				<xsl:for-each select="child::*[local-name()=&quot;Rolle&quot; and child::*[local-name()=&quot;Rolle&quot; and @V='I']]">
-					<!-- ER DENNE RIKTIG?? Dobbel sjekk på rolle.. -->
+				<xsl:for-each select="child::*[local-name()=&quot;Rolle&quot; and child::*[local-name()=&quot;Rolle&quot; and @V='I']]"><!-- ER DENNE RIKTIG?? Dobbel sjekk på rolle.. -->
 					<xsl:for-each select="child::*[local-name()=&quot;Helseperson&quot;]">
 						<xsl:value-of select="child::*[local-name()=&quot;Fornavn&quot;]"/>&#160;<xsl:value-of select="child::*[local-name()=&quot;Etternavn&quot;]"/>
 					</xsl:for-each>
 					<xsl:for-each select="child::*[local-name()=&quot;Organisasjon&quot;]">
 						<xsl:value-of select="child::*[local-name()=&quot;Inst&quot;]"/>&#160;<xsl:value-of select="child::*[local-name()=&quot;Dept&quot;]"/>
 					</xsl:for-each>
-				</xsl:for-each><!--&#160;-->&#160;
+				</xsl:for-each>&#160;
 			</td>
 			<!-- Forskrevet av -->
 			<td valign="top">
-				<xsl:for-each select="child::*[local-name()=&quot;Rolle&quot; and child::*[local-name()=&quot;Rolle&quot; and @V='R']]">
-					<!-- ER DENNE RIKTIG?? Dobbel sjekk på rolle.. -->
+				<xsl:for-each select="child::*[local-name()=&quot;Rolle&quot; and child::*[local-name()=&quot;Rolle&quot; and @V='R']]"> <!-- ER DENNE RIKTIG?? Dobbel sjekk på rolle.. -->
 					<xsl:for-each select="child::*[local-name()=&quot;Helseperson&quot;]">
 						<xsl:value-of select="child::*[local-name()=&quot;Fornavn&quot;]"/>&#160;<xsl:value-of select="child::*[local-name()=&quot;Etternavn&quot;]"/>
 					</xsl:for-each>
-				</xsl:for-each><!--&#160;-->&#160;
+				</xsl:for-each>&#160;
 			</td>
 			<!-- Gyldig -->
 			<td valign="top">
 				<xsl:call-template name="skrivUtDate">
 					<xsl:with-param name="oppgittTid" select="child::*[local-name()=&quot;UtlopsdatoResept&quot;]"/>
-				</xsl:call-template> <!--&#160;-->
+				</xsl:call-template>&#160;
 			</td>
 		</tr>
 		<!-- Siste utlevering Fjernet og lagt til eget avsnitt.-->
+		
 		<!-- Spørsmål -->
 		<xsl:if test="child::*[local-name()=&quot;Sporsmal&quot;]">
 			<tr class="No-line-doc">
@@ -600,9 +597,9 @@
 						<xsl:for-each select="child::*[local-name()=&quot;Sporsmal&quot;]">
 							<xsl:if test="child::*[local-name()=&quot;Kode&quot;]">
 								<xsl:for-each select="child::*[local-name()=&quot;Kode&quot;]">
-									<span class="strong">
-										<xsl:call-template name="k-7495"/>
-									</span>
+								<span class="strong">
+									<xsl:call-template name="k-7495"/>
+								</span>
 								</xsl:for-each>
 								<xsl:if test="child::*[local-name()=&quot;Merknad&quot;] and string-length(child::*[local-name()=&quot;Merknad&quot;]) &gt; 0">
 :&#160;<xsl:value-of select="child::*[local-name()=&quot;Merknad&quot;]"/>
@@ -611,10 +608,10 @@
 							</xsl:if>
 							<xsl:for-each select="child::*[local-name()=&quot;Svar&quot;]">
 								<xsl:if test="child::*[local-name()=&quot;Kode&quot;]">
-									<xsl:for-each select="child::*[local-name()=&quot;Kode&quot;]">
-										<span class="strong">
-											<xsl:call-template name="k-7493"/>
-										</span>
+								<xsl:for-each select="child::*[local-name()=&quot;Kode&quot;]">	
+									<span class="strong">
+										<xsl:call-template name="k-7493"/>
+									</span>
 									</xsl:for-each>
 									<xsl:if test="child::*[local-name()=&quot;Merknad&quot;] and string-length(child::*[local-name()=&quot;Merknad&quot;]) &gt; 0">
 :&#160;<xsl:value-of select="child::*[local-name()=&quot;Merknad&quot;]"/>
@@ -628,199 +625,424 @@
 			</tr>
 		</xsl:if>
 		<xsl:call-template name="LegemiddelPakket"/>
-		<!--Vertikal linje mellom enkeltoppføringer -->
-		<tr>
-			<td colspan="11">
-				<div style="border-bottom: 1px solid #ddd"></div>
-			</td>
-		</tr>
 	</xsl:template>
 	<xsl:template name="LegemiddelPakket">
 		<xsl:for-each select="child::*[local-name()=&quot;SisteUtlevering&quot;]">
-			<xsl:if test="child::*[local-name()='UtleveringB64']">
-				<xsl:variable name="konvertertBase64">
-					<xsl:call-template name="b64:decode">
-						<xsl:with-param name="base64String" select="child::*[local-name()=&quot;UtleveringB64&quot;]"/>
-					</xsl:call-template>
-				</xsl:variable>
+				<xsl:if test="child::*[local-name()='UtleveringB64']">
+					<xsl:variable name="konvertertBase64">
+						<xsl:call-template name="b64:decode"> 
+							<xsl:with-param name="base64String" select="child::*[local-name()=&quot;UtleveringB64&quot;]"></xsl:with-param> 
+						</xsl:call-template> 
+						<!--
+						<xsl:call-template name="convertBase64ToAscii">
+							<xsl:with-param name="base64String" select="child::*[local-name()=&quot;UtleveringB64&quot;]"/>
+						</xsl:call-template>
+						-->
+					</xsl:variable>
 				<tr>
 					<!-- Utleveringsdato -->
 					<xsl:if test="contains($konvertertBase64, 'Utleveringsdato')">
 						<td>
 							<div class="eh-row-1">
-								<span class="eh-label eh-strong">Utlevert</span>
+								<span class="eh-label eh-strong">Utleveringsdato</span>
 								<div>
 									<span class="eh-field">
 										<xsl:call-template name="skrivUtDate">
 											<xsl:with-param name="oppgittTid" select="substring-before(substring-after(substring-after($konvertertBase64, 'Utleveringsdato'),'&gt;'),'&lt;/')"/>
 										</xsl:call-template>	
 										&#160;	
-										</span>
-								</div>
+										</span>	
+									</div>								
 							</div>
 						</td>
 					</xsl:if>
 					<!-- Bruk -->
 					<xsl:if test="contains($konvertertBase64, 'Bruk')">
-						<td>
-							<div class="eh-row-1">
+						 <td>
+							 <div class="eh-row-1">
+								<span class="eh-label eh-strong">Bruk</span>
 								<div>
 									<span class="eh-field">
 										<xsl:value-of select="substring-before(substring-after(substring-before(substring-after($konvertertBase64,'Bruk '),'/'),'DN=&quot;'),'&quot;')"/>
 										&#160;	
-									</span>
-								</div>
+									</span>	
+								</div>								
 							</div>
 						</td>
 					</xsl:if>
 					<!-- ATC -->
-					<td>
-					<xsl:if test="contains($konvertertBase64, 'Atc ')"> 
-							<div class="eh-row-1">
+					<xsl:if test="contains($konvertertBase64, 'Atc ')">
+						 <td>
+							 <div class="eh-row-1">
+								<span class="eh-label eh-strong">ATC</span>
 								<div>
 									<span class="eh-field">
 										<xsl:call-template name="skrivUtAtc">
-											<xsl:with-param name="tekst" select="substring-after($konvertertBase64,'Atc ')"/>
+												<xsl:with-param name="tekst" select="substring-after($konvertertBase64,'Atc ')"/>
 										</xsl:call-template>
 										&#160;	
-									</span>
-								</div>
+									</span>	
+								</div>								
 							</div>
+						</td>
 					</xsl:if>
-					</td>
 					<!--NavnFormStyrke-->
 					<xsl:if test="contains($konvertertBase64, 'NavnFormStyrke')">
-						<td>
-							<div class="eh-row-1">
+						 <td>
+							 <div class="eh-row-1">
+								<span class="eh-label eh-strong">NavnFormStyrke/Virkestoff</span>
 								<div>
 									<span class="eh-field">
 										<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'NavnFormStyrke'),'&gt;'),' ')"/>
 												&#160;<xsl:value-of select="substring-before(substring-after(substring-after(substring-after($konvertertBase64, 'NavnFormStyrke'),'&gt;'),' '),'&lt;/')"/>
 										&#160;	
-									</span>
-								</div>
+									</span>	
+								</div>								
 							</div>
 						</td>
 					</xsl:if>
 					<!--Bruksområde/Dosering-->
 					<xsl:if test="contains($konvertertBase64, 'DosVeiledEnkel')">
-						<td>
-							<div class="eh-row-1">
+						 <td>
+							 <div class="eh-row-1">
+								<span class="eh-label eh-strong">Bruksområde/Dosering</span>
 								<div>
 									<span class="eh-field">
-										<xsl:value-of select="substring-before(
-											substring-after(
-												substring-after(
-													substring-after($konvertertBase64, 'DosVeiledEnkel'),'&gt;'),' '),'&lt;/')"/>
+										<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'DosVeiledEnkel'),'&gt;'),' ')"/>
+												&#160;<xsl:value-of select="substring-before(substring-after(substring-after(substring-after($konvertertBase64, 'DosVeiledEnkel'),'&gt;'),' '),'&lt;/')"/>
 										&#160;	
-									</span>
-								</div>
+									</span>	
+								</div>								
 							</div>
 						</td>
 					</xsl:if>
 					<!--Pakningsinformasjon-->
 					<xsl:if test="contains($konvertertBase64, 'Pakningsstr')">
-						<td>
-							<div class="eh-row-1">
+						 <td>
+							 <div class="eh-row-1">
+								<span class="eh-label eh-strong">Pakningsinformasjon</span>
 								<div>
 									<span class="eh-field">
-										<xsl:value-of select="substring-before(
-											substring-after(
-												substring-after($konvertertBase64, 'Antall'),'&gt;'),'&lt;/')"/>
-										&#160;x&#160;
-										<xsl:value-of select="
-											substring-before(
-												substring-after(
-													substring-after($konvertertBase64, 'Pakningsstr'),
-												'&gt;'),
-											'&lt;')"/>
-										&#160;
-										<xsl:value-of select="
-											substring-before(
-												substring-after(
-													substring-after($konvertertBase64, 'EnhetPakning'),
-													'V=&quot;'),
-											'&quot;')"/>
+										<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'Pakningsstr'),'&gt;'),' ')"/>
+												&#160;<xsl:value-of select="substring-before(substring-after(substring-after(substring-after($konvertertBase64, 'Pakningsstr'),'&gt;'),' '),'&lt;/')"/>
 										&#160;	
-									</span>
-								</div>
+									</span>	
+								</div>								
 							</div>
 						</td>
 					</xsl:if>
 					<!--Utlevert av-->
 					<xsl:if test="contains($konvertertBase64, 'Utleverer')">
-						<td>
-							<div class="eh-row-1">
+						 <td>
+							 <div class="eh-row-1">
 								<span class="eh-label eh-strong">Utlevert&#160;av</span>
 								<div>
 									<span class="eh-field">
-										<xsl:value-of select="
-											substring-after(
-												substring-before(
-													substring-after(
-														substring-after(
-															substring-after($konvertertBase64, 'Utleverer'),
-														'&gt;'),
-													'Navn'),
-												'&lt;/'),
-											'&gt;')"/>
-										&#160;
-									</span>
-								</div>
+										<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'Utleverer'),'&gt;'),' ')"/>
+												&#160;<xsl:value-of select="substring-after(substring-before(substring-after(substring-after(substring-after($konvertertBase64, 'Utleverer'),'&gt;'),'Navn'),'&lt;/'),'&gt;')"/>
+										&#160;	
+									</span>	
+								</div>								
 							</div>
 						</td>
 					</xsl:if>
 					<!-- Dato første dose -->
 					<xsl:if test="child::*[local-name()='DatoForsteDose']">
-						<td>
-							<div class="eh-row-1">
+						 <td>
+							 <div class="eh-row-1">
 								<span class="eh-label eh-strong">Dato&#160;første&#160;dose</span>
 								<div>
 									<span class="eh-field">
 										<xsl:call-template name="skrivUtDate">
-											<xsl:with-param name="oppgittTid" select="child::*[local-name()='DatoForsteDose']"/>
-										</xsl:call-template>&#160;
-									</span>
-								</div>
+												<xsl:with-param name="oppgittTid" select="child::*[local-name()='DatoForsteDose']"/>
+											</xsl:call-template>&#160;
+									</span>	
+								</div>								
 							</div>
 						</td>
 					</xsl:if>
 					<!-- Dato siste dose -->
 					<xsl:if test="child::*[local-name()='DatoSisteDose']">
-						<td>
-							<div class="eh-row-1">
+						 <td>
+							 <div class="eh-row-1">
 								<span class="eh-label eh-strong">Dato&#160;siste&#160;dose</span>
 								<div>
 									<span class="eh-field">
 										<xsl:call-template name="skrivUtDate">
-											<xsl:with-param name="oppgittTid" select="child::*[local-name()='DatoSisteDose']"/>
-										</xsl:call-template>&#160;
-									</span>
-								</div>
+												<xsl:with-param name="oppgittTid" select="child::*[local-name()='DatoSisteDose']"/>
+											</xsl:call-template>&#160;
+									</span>	
+								</div>								
 							</div>
 						</td>
 					</xsl:if>
 					<!-- HER-id -->
 					<xsl:if test="contains($konvertertBase64, 'HerId ')">
-						<td>
-							<div class="eh-row-1">
+						 <td>
+							 <div class="eh-row-1">
 								<span class="eh-label eh-strong">HER-id</span>
 								<div>
 									<span class="eh-field">
 										<xsl:value-of select="substring-after(substring-before(substring-after(substring-after(substring-after($konvertertBase64, 'HerId'),'&gt;'),' '),'&lt;/'),'&gt;')"/>
 										&#160;	
-									</span>
-								</div>
+									</span>	
+								</div>								
 							</div>
 						</td>
 					</xsl:if>
-				</tr>
-			</xsl:if>
-		</xsl:for-each>
+				</tr>	
+					
+					
+					</xsl:if>
+				</xsl:for-each>		
+	</xsl:template>
+	
+	<xsl:template name="LegemiddelPakket1">
+		<xsl:for-each select="child::*[local-name()=&quot;SisteUtlevering&quot;]">
+				<xsl:if test="child::*[local-name()='UtleveringB64']">
+					<xsl:variable name="konvertertBase64">
+						<xsl:call-template name="b64:decode"> 
+							<xsl:with-param name="base64String" select="child::*[local-name()=&quot;UtleveringB64&quot;]"></xsl:with-param> 
+						</xsl:call-template> 
+						<!--
+						<xsl:call-template name="convertBase64ToAscii">
+							<xsl:with-param name="base64String" select="child::*[local-name()=&quot;UtleveringB64&quot;]"/>
+						</xsl:call-template>
+						-->
+					</xsl:variable>
+					<div class="eh-row-4">
+					    	<div class="eh-col-1 eh-last-child">
+						    	<span class="eh-field">
+							    	
+							    </span>
+						    </div>
+					    </div>
+					<table>
+							<tbody>
+								<tr>
+									<th width="10%">Utleveringsdato</th>
+									<th width="5%">Bruk</th>
+									<th width="5%">ATC</th>
+									<th width="15%">NavnFormStyrke/Virkestoff</th>
+									<th width="10%">Bruksområde/Dosering</th>
+									<th width="15%">Pakningsinformasjon</th>
+									<th width="10%">Utlevert&#160;av</th>
+									<th width="10%">Dato&#160;første&#160;dose</th>
+									<th width="10%">Dato&#160;siste&#160;dose</th>
+									<th width="10%">HER-Id</th>
+								</tr>
+								<tr>
+									<td valign="top"><!--Utleveringsdato--></td>
+										<xsl:if test="contains($konvertertBase64, 'Utleveringsdato')">
+											<xsl:call-template name="skrivUtDate">
+												<xsl:with-param name="oppgittTid" select="substring-before(substring-after(substring-after($konvertertBase64, 'Utleveringsdato'),'&gt;'),'&lt;/')"/>
+											</xsl:call-template>	
+											<!--<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'Utleveringsdato'),'&gt;'),'&lt;/')"/>-->
+										</xsl:if>&#160;
+									<td valign="top"><!--Bruk-->
+										<xsl:if test="contains($konvertertBase64, 'Bruk ')">
+											<xsl:value-of select="substring-before(substring-after(substring-before(substring-after($konvertertBase64,'Bruk '),'/'),'DN=&quot;'),'&quot;')"/>
+										</xsl:if>&#160;
+									</td>
+									<td valign="top"><!--ATC-->
+										<xsl:if test="contains($konvertertBase64, 'Atc ')">
+											<xsl:call-template name="skrivUtAtc">
+												<xsl:with-param name="tekst" select="substring-after($konvertertBase64,'Atc ')"/>
+											</xsl:call-template>
+										</xsl:if>
+									</td>
+									<td valign="top"><!--NavnFormStyrke-->
+										<xsl:if test="contains($konvertertBase64, 'NavnFormStyrke')">
+												<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'NavnFormStyrke'),'&gt;'),' ')"/>
+												&#160;<xsl:value-of select="substring-before(substring-after(substring-after(substring-after($konvertertBase64, 'NavnFormStyrke'),'&gt;'),' '),'&lt;/')"/>
+										</xsl:if>
+										<xsl:if test="contains($konvertertBase64, 'Atc') and contains(substring-before(substring-after($konvertertBase64,'&lt;Atc '),'/'), 'DN')">
+											<div>&#160;&#160;&#160;
+												<em>
+													<xsl:value-of select="substring-before(substring-after(substring-before(substring-after($konvertertBase64,'&lt;Atc '),'/'),'DN=&quot;'),'&quot;')"/>
+												</em>
+											</div>
+										</xsl:if>	
+									</td>
+									<td valign="top"><!--Bruksområde/Dosering-->
+											<xsl:if test="contains($konvertertBase64, 'DosVeiledEnkel')">
+												<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'DosVeiledEnkel'),'&gt;'),' ')"/>
+												&#160;<xsl:value-of select="substring-before(substring-after(substring-after(substring-after($konvertertBase64, 'DosVeiledEnkel'),'&gt;'),' '),'&lt;/')"/>
+											</xsl:if>
+									</td>
+									<td valign="top"><!--Pakningsinformasjon-->
+										<xsl:if test="contains($konvertertBase64, 'Pakningsstr')">
+												<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'Pakningsstr'),'&gt;'),' ')"/>
+												&#160;<xsl:value-of select="substring-before(substring-after(substring-after(substring-after($konvertertBase64, 'Pakningsstr'),'&gt;'),' '),'&lt;/')"/>
+										</xsl:if>
+										<xsl:if test="contains($konvertertBase64, 'Atc') and contains(substring-before(substring-after($konvertertBase64,'&lt;EnhetPakning '),'/'), 'DN')">
+											&#160;
+											<xsl:value-of select="substring-before(substring-after(substring-before(substring-after($konvertertBase64,'&lt;EnhetPakning '),'/'),'DN=&quot;'),'&quot;')"/>
+										</xsl:if>	
+									</td>
+									<td valign="top"><!--Utlevert av-->
+										<xsl:if test="contains($konvertertBase64, 'Utleverer')">
+											<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'Utleverer'),'&gt;'),' ')"/>
+												&#160;<xsl:value-of select="substring-after(substring-before(substring-after(substring-after(substring-after($konvertertBase64, 'Utleverer'),'&gt;'),'Navn'),'&lt;/'),'&gt;')"/>
+										</xsl:if>
+									</td>
+									<td valign="top"><!--Dato første dose-->
+										<xsl:if test="child::*[local-name()='DatoForsteDose']">
+											<xsl:call-template name="skrivUtDate">
+												<xsl:with-param name="oppgittTid" select="child::*[local-name()='DatoForsteDose']"/>
+											</xsl:call-template>&#160;
+											
+										</xsl:if>
+									</td>
+									<td valign="top"><!--Dato siste dose-->
+										<xsl:if test="child::*[local-name()='DatoSisteDose']">
+											<xsl:call-template name="skrivUtDate">
+												<xsl:with-param name="oppgittTid" select="child::*[local-name()='DatoSisteDose']"/>
+											</xsl:call-template>&#160;
+											
+										</xsl:if>
+									</td>
+									<td valign="top"><!--HER-ID-->
+										<xsl:if test="contains($konvertertBase64, 'HerId')">
+											<!--<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'HerId'),'&gt;'),' ')"/>-->
+											&#160;<xsl:value-of select="substring-after(substring-before(substring-after(substring-after(substring-after($konvertertBase64, 'HerId'),'&gt;'),' '),'&lt;/'),'&gt;')"/>
+										</xsl:if>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					
+					</xsl:if>
+				</xsl:for-each>		
+	</xsl:template>
+	
+	<xsl:template name="LegemiddelPakket2">
+		<xsl:if test="count(child::*[local-name()=&quot;EnkeltoppforingLIB&quot;]/child::*[local-name()=&quot;SisteUtlevering&quot;])>0">
+				<h2 align="center">Legemiddel som er pakket</h2>
+		</xsl:if>
+	
+		<xsl:for-each select="child::*[local-name()=&quot;EnkeltoppforingLIB&quot;]">
+			<xsl:for-each select="child::*[local-name()=&quot;SisteUtlevering&quot;]">
+				<xsl:if test="child::*[local-name()='UtleveringB64']">
+					<xsl:variable name="konvertertBase64">
+						<xsl:call-template name="b64:decode"> 
+							<xsl:with-param name="base64String" select="child::*[local-name()=&quot;UtleveringB64&quot;]"></xsl:with-param> 
+						</xsl:call-template> 
+						<!--
+						<xsl:call-template name="convertBase64ToAscii">
+							<xsl:with-param name="base64String" select="child::*[local-name()=&quot;UtleveringB64&quot;]"/>
+						</xsl:call-template>
+						-->
+					</xsl:variable>
+					<div class="eh-row-4">
+					    	<div class="eh-col-1 eh-last-child">
+						    	<span class="eh-field">
+							    	
+							    </span>
+						    </div>
+					    </div>
+					<table>
+							<tbody>
+								<tr>
+									<th width="10%">Utleveringsdato</th>
+									<th width="5%">Bruk</th>
+									<th width="5%">ATC</th>
+									<th width="15%">NavnFormStyrke/Virkestoff</th>
+									<th width="10%">Bruksområde/Dosering</th>
+									<th width="15%">Pakningsinformasjon</th>
+									<th width="10%">Utlevert&#160;av</th>
+									<th width="10%">Dato&#160;første&#160;dose</th>
+									<th width="10%">Dato&#160;siste&#160;dose</th>
+									<th width="10%">HER-Id</th>
+								</tr>
+								<tr>
+									<td valign="top"><!--Utleveringsdato--></td>
+										<xsl:if test="contains($konvertertBase64, 'Utleveringsdato')">
+											<xsl:call-template name="skrivUtDate">
+												<xsl:with-param name="oppgittTid" select="substring-before(substring-after(substring-after($konvertertBase64, 'Utleveringsdato'),'&gt;'),'&lt;/')"/>
+											</xsl:call-template>	
+											<!--<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'Utleveringsdato'),'&gt;'),'&lt;/')"/>-->
+										</xsl:if>&#160;
+									<td valign="top"><!--Bruk-->
+										<xsl:if test="contains($konvertertBase64, 'Bruk ')">
+											<xsl:value-of select="substring-before(substring-after(substring-before(substring-after($konvertertBase64,'Bruk '),'/'),'DN=&quot;'),'&quot;')"/>
+										</xsl:if>&#160;
+									</td>
+									<td valign="top"><!--ATC-->
+										<xsl:if test="contains($konvertertBase64, 'Atc ')">
+											<xsl:call-template name="skrivUtAtc">
+												<xsl:with-param name="tekst" select="substring-after($konvertertBase64,'Atc ')"/>
+											</xsl:call-template>
+										</xsl:if>
+									</td>
+									<td valign="top"><!--NavnFormStyrke-->
+										<xsl:if test="contains($konvertertBase64, 'NavnFormStyrke')">
+												<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'NavnFormStyrke'),'&gt;'),' ')"/>
+												&#160;<xsl:value-of select="substring-before(substring-after(substring-after(substring-after($konvertertBase64, 'NavnFormStyrke'),'&gt;'),' '),'&lt;/')"/>
+										</xsl:if>
+										<xsl:if test="contains($konvertertBase64, 'Atc') and contains(substring-before(substring-after($konvertertBase64,'&lt;Atc '),'/'), 'DN')">
+											<div>&#160;&#160;&#160;
+												<em>
+													<xsl:value-of select="substring-before(substring-after(substring-before(substring-after($konvertertBase64,'&lt;Atc '),'/'),'DN=&quot;'),'&quot;')"/>
+												</em>
+											</div>
+										</xsl:if>	
+									</td>
+									<td valign="top"><!--Bruksområde/Dosering-->
+											<xsl:if test="contains($konvertertBase64, 'DosVeiledEnkel')">
+												<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'DosVeiledEnkel'),'&gt;'),' ')"/>
+												&#160;<xsl:value-of select="substring-before(substring-after(substring-after(substring-after($konvertertBase64, 'DosVeiledEnkel'),'&gt;'),' '),'&lt;/')"/>
+											</xsl:if>
+									</td>
+									<td valign="top"><!--Pakningsinformasjon-->
+										<xsl:if test="contains($konvertertBase64, 'Pakningsstr')">
+												<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'Pakningsstr'),'&gt;'),' ')"/>
+												&#160;<xsl:value-of select="substring-before(substring-after(substring-after(substring-after($konvertertBase64, 'Pakningsstr'),'&gt;'),' '),'&lt;/')"/>
+										</xsl:if>
+										<xsl:if test="contains($konvertertBase64, 'Atc') and contains(substring-before(substring-after($konvertertBase64,'&lt;EnhetPakning '),'/'), 'DN')">
+											&#160;
+											<xsl:value-of select="substring-before(substring-after(substring-before(substring-after($konvertertBase64,'&lt;EnhetPakning '),'/'),'DN=&quot;'),'&quot;')"/>
+										</xsl:if>	
+									</td>
+									<td valign="top"><!--Utlevert av-->
+										<xsl:if test="contains($konvertertBase64, 'Utleverer')">
+											<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'Utleverer'),'&gt;'),' ')"/>
+												&#160;<xsl:value-of select="substring-after(substring-before(substring-after(substring-after(substring-after($konvertertBase64, 'Utleverer'),'&gt;'),'Navn'),'&lt;/'),'&gt;')"/>
+										</xsl:if>
+									</td>
+									<td valign="top"><!--Dato første dose-->
+										<xsl:if test="child::*[local-name()='DatoForsteDose']">
+											<xsl:call-template name="skrivUtDate">
+												<xsl:with-param name="oppgittTid" select="child::*[local-name()='DatoForsteDose']"/>
+											</xsl:call-template>&#160;
+											
+										</xsl:if>
+									</td>
+									<td valign="top"><!--Dato siste dose-->
+										<xsl:if test="child::*[local-name()='DatoSisteDose']">
+											<xsl:call-template name="skrivUtDate">
+												<xsl:with-param name="oppgittTid" select="child::*[local-name()='DatoSisteDose']"/>
+											</xsl:call-template>&#160;
+											
+										</xsl:if>
+									</td>
+									<td valign="top"><!--HER-ID-->
+										<xsl:if test="contains($konvertertBase64, 'HerId')">
+											<!--<xsl:value-of select="substring-before(substring-after(substring-after($konvertertBase64, 'HerId'),'&gt;'),' ')"/>-->
+											&#160;<xsl:value-of select="substring-after(substring-before(substring-after(substring-after(substring-after($konvertertBase64, 'HerId'),'&gt;'),' '),'&lt;/'),'&gt;')"/>
+										</xsl:if>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					
+					</xsl:if>
+				</xsl:for-each>			
+			</xsl:for-each>
 	</xsl:template>
 	<xsl:template name="Rolle">
 		<tr>
-			<th width="10%">
+			<th>
 				<xsl:choose>
 					<xsl:when test="child::*[local-name()=&quot;Rolle&quot;] and string-length(child::*[local-name()=&quot;Rolle&quot;]/@V)!=0">
 						<xsl:for-each select="child::*[local-name()=&quot;Rolle&quot;]">
@@ -830,7 +1052,7 @@
 					<xsl:otherwise>Rolle ikke oppgitt</xsl:otherwise>
 				</xsl:choose>
 			</th>
-			<td width="90%">
+			<td>
 				<xsl:choose>
 					<xsl:when test="child::*[local-name()=&quot;Helseperson&quot;]">
 						<xsl:for-each select="child::*[local-name()=&quot;Helseperson&quot;]">
@@ -928,7 +1150,6 @@
 		<xsl:call-template name="dt:get-xsd-datetime-day">
 			<xsl:with-param name="xsd-date-time" select="$gittDato"/>
 		</xsl:call-template>
-		<!--
 		<xsl:call-template name="dt:get-xsd-datetime-hour">
 			<xsl:with-param name="xsd-date-time" select="$gittDato"/>
 		</xsl:call-template>
@@ -938,6 +1159,5 @@
 		<xsl:call-template name="dt:get-xsd-datetime-second">
 			<xsl:with-param name="xsd-date-time" select="$gittDato"/>
 		</xsl:call-template>
--->
 	</xsl:template>
 </xsl:stylesheet>
