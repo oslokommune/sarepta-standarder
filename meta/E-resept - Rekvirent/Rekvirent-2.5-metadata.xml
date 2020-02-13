@@ -335,13 +335,13 @@
 			<Referanse>visningsfil/felleskomponenter/ehelse-visning.css</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/felleskomponenter/SourgeForge/date-time.xsl</Referanse>
+			<Referanse>visningsfil/felleskomponenter/SourceForge/date-time.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/felleskomponenter/SourgeForge/stdlib.xsl</Referanse>
+			<Referanse>visningsfil/felleskomponenter/SourceForge/stdlib.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/felleskomponenter/SourgeForge/string.xsl</Referanse>
+			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
 	<Eksempler>
