@@ -199,6 +199,10 @@
 			<Namespace>http://www.kith.no/xmlstds/eresept/m272/2013-04-16</Namespace>
 		</Skjema>
 		<Skjema>
+			<Referanse>skjema/eresept/ER-M274-2012-06-11.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m274/2012-06-11</Namespace>
+		</Skjema>
+		<Skjema>
 			<Referanse>skjema/eresept/ER-M28-2012-06-11.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m28/2012-06-11</Namespace>
 		</Skjema>
@@ -246,6 +250,9 @@
 			<Referanse>visningsfil/eresept/m1-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<Referanse>visningsfil/eresept/m1-2html-v2.4.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
 			<Referanse>visningsfil/eresept/m2-m12-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
@@ -279,10 +286,62 @@
 			<Referanse>visningsfil/eresept/m272-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<Referanse>visningsfil/eresept/m274-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
 			<Referanse>visningsfil/eresept/m28-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
 			<Referanse>visningsfil/eresept/utlevering-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+<!-- Felles visningsfiler  -->		
+		<Visningsfil>
+			<Referanse>visningsfil/hodemelding/v1.2/Hodemelding2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/base64.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/base64_binarydatamap.xml</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/base64decoder.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/datamap.xml</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/eh-komponent2.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/funksjoner.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/kodeverk.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/kritiskInfo2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/meldingshode2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/KITH-visning.css</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/smooth-visning.css</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/ehelse-visning.css</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/SourgeForge/date-time.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/SourgeForge/stdlib.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/SourgeForge/string.xsl</Referanse>
 		</Visningsfil>
 	</Visningsfiler>
 	<Eksempler>
