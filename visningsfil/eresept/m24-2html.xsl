@@ -35,10 +35,10 @@ MERK:
 				<title>Svar på samtykke</title>
 				<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 				<style type="text/css">
-					<xsl:value-of select="document('../felleskomponenter/KITH-visning.css')" disable-output-escaping="yes" />
+					<xsl:value-of select="document('../../felleskomponenter/KITH-visning.css')" disable-output-escaping="yes" />
 				</style>
 				<style type="text/css">
-					<xsl:value-of select="document('../felleskomponenter/smooth-visning.css')" disable-output-escaping="yes"/>
+					<xsl:value-of select="document('../../felleskomponenter/smooth-visning.css')" disable-output-escaping="yes"/>
 				</style>
 			</head>
 			<body>

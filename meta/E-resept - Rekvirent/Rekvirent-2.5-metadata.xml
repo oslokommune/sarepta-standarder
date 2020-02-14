@@ -199,10 +199,6 @@
 			<Namespace>http://www.kith.no/xmlstds/eresept/m272/2013-04-16</Namespace>
 		</Skjema>
 		<Skjema>
-			<Referanse>skjema/eresept/ER-M274-2012-06-11.xsd</Referanse>
-			<Namespace>http://www.kith.no/xmlstds/eresept/m274/2012-06-11</Namespace>
-		</Skjema>
-		<Skjema>
 			<Referanse>skjema/eresept/ER-M28-2012-06-11.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m28/2012-06-11</Namespace>
 		</Skjema>
@@ -250,9 +246,6 @@
 			<Referanse>visningsfil/eresept/m1-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m1-2html-v2.4.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
 			<Referanse>visningsfil/eresept/m2-m12-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
@@ -284,9 +277,6 @@
 		</Visningsfil>
 		<Visningsfil>
 			<Referanse>visningsfil/eresept/m272-2html-v2.5.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/eresept/m274-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
 			<Referanse>visningsfil/eresept/m28-2html-v2.5.xsl</Referanse>
