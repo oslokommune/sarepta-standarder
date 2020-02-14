@@ -236,6 +236,55 @@
 		<Visningsfil>
 			<Referanse>visningsfil/eresept/utlevering-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
+<!-- Felles visningsfiler  -->		
+		<Visningsfil>
+			<Referanse>visningsfil/hodemelding/v1.2/Hodemelding2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/base64.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/base64_binarydatamap.xml</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/base64decoder.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/datamap.xml</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/eh-komponent2.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/funksjoner.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/kodeverk.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/kritiskInfo2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/meldingshode2html.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/KITH-visning.css</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/smooth-visning.css</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/ehelse-visning.css</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/SourceForge/date-time.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/SourceForge/stdlib.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/felleskomponenter/SourceForge/string.xsl</Referanse>
+		</Visningsfil>		
 	</Visningsfiler>
 	<Eksempler>
 		<Eksempel>
