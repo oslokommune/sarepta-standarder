@@ -19,13 +19,13 @@
 	-	2014-02-12: Antall tas nå med i legemiddelblanding
 	-	2014-02-11: Kategoriserte legemiddel seponert frem i tid under legemidler i bruk
 	-	2013-11-07 Første versjon -->
-	<xsl:import href="../../felleskomponenter/meldingshode2html.xsl"/>
-	<xsl:import href="../../felleskomponenter/funksjoner.xsl"/>
-	<xsl:import href="../../felleskomponenter/kodeverk.xsl"/>
-	<xsl:import href="../../felleskomponenter/kritiskInfo2html-v2.5.xsl"/>
+	<xsl:import href="../felleskomponenter/meldingshode2html.xsl"/>
+	<xsl:import href="../felleskomponenter/funksjoner.xsl"/>
+	<xsl:import href="../felleskomponenter/kodeverk.xsl"/>
+	<xsl:import href="../felleskomponenter/kritiskInfo2html-v2.5.xsl"/>
 	<!--	<xsl:import href="../../felleskomponenter/base64decoder.xsl"/>-->
-	<xsl:import href="../../felleskomponenter/base64.xsl"/>
-	<xsl:import href="../../felleskomponenter/eh-komponent2.xsl"/>
+	<xsl:import href="../felleskomponenter/base64.xsl"/>
+	<xsl:import href="../felleskomponenter/eh-komponent2.xsl"/>
 	<!-- Variabel for hvilken versjon av visningsfilen -->
 	<xsl:variable name="versjon" select="'eresept-m25-2.5 - v3.1.6 '"/>
 	<xsl:template match="/">
@@ -34,13 +34,13 @@
 				<title>Legemidler i bruk</title>
 				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 				<style type="text/css">
-					<xsl:value-of select="document('../../felleskomponenter/KITH-visning.css')" disable-output-escaping="yes"/>
+					<xsl:value-of select="document('../felleskomponenter/KITH-visning.css')" disable-output-escaping="yes"/>
 				</style>
 				<style type="text/css">
-					<xsl:value-of select="document('../../felleskomponenter/ehelse-visning.css')" disable-output-escaping="yes"/>
+					<xsl:value-of select="document('../felleskomponenter/ehelse-visning.css')" disable-output-escaping="yes"/>
 				</style>
 				<style type="text/css">
-					<xsl:value-of select="document('../../felleskomponenter/smooth-visning.css')" disable-output-escaping="yes"/>
+					<xsl:value-of select="document('../felleskomponenter/smooth-visning.css')" disable-output-escaping="yes"/>
 				</style>
 				<style>
 					.Legemiddeltabell {
