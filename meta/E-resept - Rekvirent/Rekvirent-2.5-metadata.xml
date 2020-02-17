@@ -6,7 +6,7 @@
 	</Temaer>
 	<Navn>Meldinger for rekvirent</Navn>
 	<Versjon>2.5</Versjon>
-	<Ansvarlig>Norsk Helsenett SF</Ansvarlig>
+	<Ansvarlig>Norsk Helsenett</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
 	<MerInformasjon>
 		<Informasjon>
@@ -80,7 +80,7 @@
 			<Referanse>kravdokument/eresept/HIS 3008_2018 M242 Svar på samtykkeregistreing.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>M25.1-4,M9.21-22,M27.1-2,M28 Psientens legemiddelliste og multidose(PDF)</Beskrivelse>
+			<Beskrivelse>M25.1-4,M9.21-22,M27.1-2,M28 Pasientens legemiddelliste og multidose(PDF)</Beskrivelse>
 			<Referanse>kravdokument/eresept/M25.1-4, M9.21-22, M27.1-2 og M28.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
