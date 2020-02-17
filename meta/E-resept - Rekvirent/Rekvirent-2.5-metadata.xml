@@ -6,7 +6,7 @@
 	</Temaer>
 	<Navn>Meldinger for rekvirent</Navn>
 	<Versjon>2.5</Versjon>
-	<Ansvarlig>Norsk Helsenett SF</Ansvarlig>
+	<Ansvarlig>Norsk Helsenett</Ansvarlig>
 	<Status>Fastsatt som standard</Status>
 	<MerInformasjon>
 		<Informasjon>
@@ -80,7 +80,7 @@
 			<Referanse>kravdokument/eresept/HIS 3008_2018 M242 Svar på samtykkeregistreing.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
-			<Beskrivelse>M25.1-4,M9.21-22,M27.1-2,M28 Psientens legemiddelliste og multidose(PDF)</Beskrivelse>
+			<Beskrivelse>M25.1-4,M9.21-22,M27.1-2,M28 Pasientens legemiddelliste og multidose(PDF)</Beskrivelse>
 			<Referanse>kravdokument/eresept/M25.1-4, M9.21-22, M27.1-2 og M28.pdf</Referanse>
 		</Kravdokument>
 		<Kravdokument>
@@ -199,6 +199,10 @@
 			<Namespace>http://www.kith.no/xmlstds/eresept/m272/2013-04-16</Namespace>
 		</Skjema>
 		<Skjema>
+			<Referanse>skjema/eresept/ER-M274-2012-06-11.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m274/2012-06-11</Namespace>
+		</Skjema>
+		<Skjema>
 			<Referanse>skjema/eresept/ER-M28-2012-06-11.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m28/2012-06-11</Namespace>
 		</Skjema>
@@ -246,6 +250,9 @@
 			<Referanse>visningsfil/eresept/m1-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
+			<Referanse>visningsfil/eresept/m1-2html-v2.4.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
 			<Referanse>visningsfil/eresept/m2-m12-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
@@ -277,6 +284,9 @@
 		</Visningsfil>
 		<Visningsfil>
 			<Referanse>visningsfil/eresept/m272-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m274-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
 			<Referanse>visningsfil/eresept/m28-2html-v2.5.xsl</Referanse>
