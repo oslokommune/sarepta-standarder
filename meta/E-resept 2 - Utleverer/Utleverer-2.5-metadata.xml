@@ -163,6 +163,10 @@
 			<Namespace>http://www.kith.no/xmlstds/eresept/m272/2013-04-16</Namespace>
 		</Skjema>
 		<Skjema>
+			<Referanse>skjema/eresept/ER-M274-2012-06-11.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m274/2012-06-11</Namespace>
+		</Skjema>
+		<Skjema>
 			<Referanse>skjema/eresept/ER-M30-2014-12-01.xsd</Referanse>
 			<Namespace>http://www.kith.no/xmlstds/eresept/m30/2014-12-01</Namespace>
 		</Skjema>
@@ -232,6 +236,9 @@
 		</Visningsfil>
 		<Visningsfil>
 			<Referanse>visningsfil/eresept/m272-2html-v2.5.xsl</Referanse>
+		</Visningsfil>
+		<Visningsfil>
+			<Referanse>visningsfil/eresept/m274-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
 			<Referanse>visningsfil/eresept/utlevering-2html-v2.5.xsl</Referanse>
