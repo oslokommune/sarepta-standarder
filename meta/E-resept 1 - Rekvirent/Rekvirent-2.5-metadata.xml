@@ -131,6 +131,10 @@
 			<Namespace>http://www.kith.no/xmlstds/eresept/m8/2013-10-08</Namespace>
 		</Skjema>
 		<Skjema>
+			<Referanse>skjema/eresept/ER-M92-2013-10-08.xsd</Referanse>
+			<Namespace>http://www.kith.no/xmlstds/eresept/m92/2013-10-08</Namespace>
+		</Skjema>
+		<Skjema>
 			<Referanse>skjema/eresept/ER-M95-2018-07-01.xsd</Referanse>
 			<Namespace>http://www.ehelse.no/xmlstds/eresept/m95/2018-07-01</Namespace>
 		</Skjema>

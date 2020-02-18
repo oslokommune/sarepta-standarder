@@ -94,10 +94,7 @@
 			<Referanse>visningsfil/eresept/m1-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<Visningsfil>
-			<Referanse>visningsfil/eresept/m15-2html-v2.5.xsl</Referanse>
-		</Visningsfil>
-		<Visningsfil>
-			<Referanse>visningsfil/eresept/utlevering-2html-v2.5.xsl</Referanse>
+			<Referanse>visningsfil/eresept/m2-m12-2html-v2.5.xsl</Referanse>
 		</Visningsfil>
 		<!-- Felles visningsfiler  -->		
 		<Visningsfil>
