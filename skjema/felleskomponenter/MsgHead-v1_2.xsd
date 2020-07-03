@@ -13,9 +13,11 @@
 <!-- Patient/Ident minOccurs=1 endret til minOccurs=0 -->
 <!-- Lagt til støtte for XML Digital Signature -->
 <!-- www.kith.no -->
-<schema xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" targetNamespace="http://www.kith.no/xmlstds/msghead/2006-05-24" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<schema xmlns:mh="http://www.kith.no/xmlstds/msghead/2006-05-24" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" targetNamespace="http://www.kith.no/xmlstds/msghead/2006-05-24" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:fk1="http://www.kith.no/xmlstds/felleskomponent1" xmlns:kith="http://www.kith.no/xmlstds">
 	<import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="http://www.w3.org/TR/xmldsig-core/xmldsig-core-schema.xsd"/>
 	<import namespace="http://www.kith.no/xmlstds/base64container" schemaLocation="kith-base64.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds" schemaLocation="kith.xsd"/>
+	<import namespace="http://www.kith.no/xmlstds/felleskomponent1" schemaLocation="felleskomponent1.xsd"/>
 	<!-- LEVEL 1 -->
 	<!-- Class: Hodemelding (MsgHead) -->
 	<element name="MsgHead">
@@ -45,13 +47,13 @@ Benyttes ved innrapportering av data til helseregistre.</documentation>
 		</annotation>
 		<complexType>
 			<sequence>
-				<element name="Type" type="mh:CS"/>
+				<element name="Type" type="kith:CS"/>
 				<element name="MIGversion" type="string" fixed="v1.2 2006-05-24"/>
 				<element name="GenDate" type="dateTime"/>
 				<element name="MsgId" type="string"/>
-				<element name="ProcessingStatus" type="mh:CS" minOccurs="0"/>
-				<element name="RequestedPriority" type="mh:CS" minOccurs="0"/>
-				<element name="Ack" type="mh:CS" minOccurs="0"/>
+				<element name="ProcessingStatus" type="kith:CS" minOccurs="0"/>
+				<element name="RequestedPriority" type="kith:CS" minOccurs="0"/>
+				<element name="Ack" type="kith:CS" minOccurs="0"/>
 				<element ref="mh:ConversationRef" minOccurs="0"/>
 				<element ref="mh:Sender"/>
 				<element ref="mh:Receiver"/>
@@ -69,7 +71,7 @@ Benyttes ved innrapportering av data til helseregistre.</documentation>
 		</annotation>
 		<complexType>
 			<sequence>
-				<element name="DocumentConnection" type="mh:CS" minOccurs="0"/>
+				<element name="DocumentConnection" type="kith:CS" minOccurs="0"/>
 				<element name="CaseNo" type="string"/>
 				<element ref="mh:Document" maxOccurs="unbounded"/>
 				<element ref="mh:Patient" minOccurs="0"/>
@@ -81,7 +83,7 @@ Benyttes ved innrapportering av data til helseregistre.</documentation>
 	<element name="Sender">
 		<complexType>
 			<sequence>
-				<element name="ComMethod" type="mh:CS" minOccurs="0"/>
+				<element name="ComMethod" type="kith:CS" minOccurs="0"/>
 				<element ref="mh:Organisation"/>
 			</sequence>
 		</complexType>
@@ -90,14 +92,14 @@ Benyttes ved innrapportering av data til helseregistre.</documentation>
 	<element name="OtherReceiver">
 		<complexType>
 			<sequence>
-				<element name="ComMethod" type="mh:CS" minOccurs="0"/>
-				<element name="RoleReceiver" type="mh:CS"/>
+				<element name="ComMethod" type="kith:CS" minOccurs="0"/>
+				<element name="RoleReceiver" type="kith:CS"/>
 				<choice>
 					<element ref="mh:Organisation" minOccurs="0"/>
 					<choice>
 						<!-- XOR Annen mottaker (OtherReceiver) -->
 						<element ref="mh:Patient" minOccurs="0"/>
-						<element ref="mh:Person" minOccurs="0"/>
+						<element name="Person" type="fk1:Person" minOccurs="0"/>
 						<element ref="mh:HealthcareProfessional" minOccurs="0"/>
 					</choice>
 				</choice>
@@ -113,14 +115,14 @@ Benyttes ved innrapportering av data til helseregistre.</documentation>
 		</annotation>
 		<complexType>
 			<sequence>
-				<element name="DocumentConnection" type="mh:CS" minOccurs="0"/>
-				<element name="ContentType" type="mh:CV" minOccurs="0"/>
+				<element name="DocumentConnection" type="kith:CS" minOccurs="0"/>
+				<element name="ContentType" type="kith:CV" minOccurs="0"/>
 				<element name="ContentDescription" type="string" minOccurs="0"/>
-				<element name="ContentCategory" type="mh:CV" minOccurs="0"/>
-				<element name="Consent" type="mh:CV" minOccurs="0"/>
+				<element name="ContentCategory" type="kith:CV" minOccurs="0"/>
+				<element name="Consent" type="kith:CV" minOccurs="0"/>
 				<element name="Annotation" type="string" minOccurs="0"/>
-				<element name="FromDate" type="mh:TS" minOccurs="0"/>
-				<element name="ToDate" type="mh:TS" minOccurs="0"/>
+				<element name="FromDate" type="kith:TS" minOccurs="0"/>
+				<element name="ToDate" type="kith:TS" minOccurs="0"/>
 				<element name="OidRef" type="mh:oid" minOccurs="0"/>
 				<element name="EnquiryRefId" type="string" minOccurs="0"/>
 				<element ref="mh:RefDoc">
@@ -142,12 +144,12 @@ Referanse/peker til det evt. vedlagte dokumentet. Dokumentet kan ligge direkte i
 		</annotation>
 		<complexType>
 			<sequence>
-				<element name="IssueDate" type="mh:TS" minOccurs="0"/>
-				<element name="MsgType" type="mh:CS"/>
+				<element name="IssueDate" type="kith:TS" minOccurs="0"/>
+				<element name="MsgType" type="kith:CS"/>
 				<element name="Id" type="string" minOccurs="0"/>
 				<element name="MimeType" type="string" minOccurs="0"/>
 				<element name="Description" type="string" minOccurs="0"/>
-				<element name="Compression" type="mh:CS" minOccurs="0"/>
+				<element name="Compression" type="kith:CS" minOccurs="0"/>
 				<choice>
 					<element name="FileReference" type="anyURI" minOccurs="0"/>
 					<element name="Content" minOccurs="0">
@@ -183,7 +185,7 @@ Referanse/peker til det evt. vedlagte dokumentet. Dokumentet kan ligge direkte i
 	<element name="Receiver">
 		<complexType>
 			<sequence>
-				<element name="ComMethod" type="mh:CS" minOccurs="0"/>
+				<element name="ComMethod" type="kith:CS" minOccurs="0"/>
 				<element ref="mh:Organisation"/>
 			</sequence>
 		</complexType>
@@ -202,8 +204,8 @@ Referanse/peker til det evt. vedlagte dokumentet. Dokumentet kan ligge direkte i
 				<element name="MiddleName" type="string" minOccurs="0"/>
 				<element name="GivenName" type="string" minOccurs="0"/>
 				<element name="DateOfBirth" type="date" minOccurs="0"/>
-				<element name="Sex" type="mh:CS" minOccurs="0"/>
-				<element name="Nationality" type="mh:CS" minOccurs="0"/>
+				<element name="Sex" type="kith:CS" minOccurs="0"/>
+				<element name="Nationality" type="kith:CS" minOccurs="0"/>
 				<element name="Ident" type="mh:Ident" minOccurs="0" maxOccurs="unbounded"/>
 				<element name="Address" type="mh:Address" minOccurs="0"/>
 				<element name="TeleCom" type="mh:TeleCom" minOccurs="0" maxOccurs="unbounded"/>
@@ -218,8 +220,8 @@ Referanse/peker til det evt. vedlagte dokumentet. Dokumentet kan ligge direkte i
 				<element name="MiddleName" type="string" minOccurs="0"/>
 				<element name="GivenName" type="string" minOccurs="0"/>
 				<element name="DateOfBirth" type="date" minOccurs="0"/>
-				<element name="Sex" type="mh:CS" minOccurs="0"/>
-				<element name="Nationality" type="mh:CS" minOccurs="0"/>
+				<element name="Sex" type="kith:CS" minOccurs="0"/>
+				<element name="Nationality" type="kith:CS" minOccurs="0"/>
 				<element name="Ident" type="mh:Ident" minOccurs="0" maxOccurs="unbounded"/>
 				<element name="Address" type="mh:Address" minOccurs="0"/>
 				<element name="TeleCom" type="mh:TeleCom" minOccurs="0" maxOccurs="unbounded"/>
@@ -237,7 +239,7 @@ Referanse/peker til det evt. vedlagte dokumentet. Dokumentet kan ligge direkte i
 		<complexType>
 			<sequence minOccurs="0">
 				<element name="OrganisationName" type="string"/>
-				<element name="TypeOrganisation" type="mh:CV" minOccurs="0"/>
+				<element name="TypeOrganisation" type="kith:CV" minOccurs="0"/>
 				<element name="Ident" type="mh:Ident" maxOccurs="unbounded"/>
 				<element name="Address" type="mh:Address" minOccurs="0"/>
 				<element name="TeleCom" type="mh:TeleCom" minOccurs="0" maxOccurs="unbounded"/>
@@ -255,14 +257,14 @@ Referanse/peker til det evt. vedlagte dokumentet. Dokumentet kan ligge direkte i
 		</annotation>
 		<complexType>
 			<sequence>
-				<element name="TypeHealthcareProfessional" type="mh:CS" minOccurs="0"/>
-				<element name="RoleToPatient" type="mh:CV" minOccurs="0"/>
+				<element name="TypeHealthcareProfessional" type="kith:CS" minOccurs="0"/>
+				<element name="RoleToPatient" type="kith:CV" minOccurs="0"/>
 				<element name="FamilyName" type="string" minOccurs="0"/>
 				<element name="MiddleName" type="string" minOccurs="0"/>
 				<element name="GivenName" type="string" minOccurs="0"/>
 				<element name="DateOfBirth" type="date" minOccurs="0"/>
-				<element name="Sex" type="mh:CS" minOccurs="0"/>
-				<element name="Nationality" type="mh:CS" minOccurs="0"/>
+				<element name="Sex" type="kith:CS" minOccurs="0"/>
+				<element name="Nationality" type="kith:CS" minOccurs="0"/>
 				<element name="Ident" type="mh:Ident" maxOccurs="unbounded"/>
 				<element name="Address" type="mh:Address" minOccurs="0"/>
 				<element name="TeleCom" type="mh:TeleCom" minOccurs="0" maxOccurs="unbounded"/>
@@ -277,13 +279,13 @@ Referanse/peker til det evt. vedlagte dokumentet. Dokumentet kan ligge direkte i
       </documentation>
 		</annotation>
 		<sequence>
-			<element name="Type" type="mh:CS" minOccurs="0"/>
+			<element name="Type" type="kith:CS" minOccurs="0"/>
 			<element name="StreetAdr" type="string" minOccurs="0"/>
 			<element name="PostalCode" type="string" minOccurs="0"/>
 			<element name="City" type="string" minOccurs="0"/>
 			<element name="Postbox" type="string" minOccurs="0"/>
-			<element name="County" type="mh:CS" minOccurs="0"/>
-			<element name="Country" type="mh:CS" minOccurs="0"/>
+			<element name="County" type="kith:CS" minOccurs="0"/>
+			<element name="Country" type="kith:CS" minOccurs="0"/>
 		</sequence>
 	</complexType>
 	<complexType name="TeleCom">
@@ -293,41 +295,21 @@ Referanse/peker til det evt. vedlagte dokumentet. Dokumentet kan ligge direkte i
       </documentation>
 		</annotation>
 		<sequence>
-			<element name="TypeTelecom" type="mh:CS" minOccurs="0"/>
-			<element name="TeleAddress" type="mh:URL"/>
+			<element name="TypeTelecom" type="kith:CS" minOccurs="0"/>
+			<element name="TeleAddress" type="kith:URL"/>
 		</sequence>
 	</complexType>
 	<!-- Class: Identifikator -->
 	<complexType name="Ident">
 		<sequence>
 			<element name="Id" type="string"/>
-			<element name="TypeId" type="mh:CV"/>
+			<element name="TypeId" type="kith:CV"/>
 		</sequence>
 	</complexType>
 	<!--Komplekse datatyper-->
-	<complexType name="CV">
-		<attribute name="V" type="token" use="optional"/>
-		<attribute name="S" type="mh:oid" use="optional"/>
-		<attribute name="DN" type="string" use="optional"/>
-		<attribute name="OT" type="string" use="optional"/>
-	</complexType>
 	<simpleType name="oid">
 		<restriction base="token">
 			<pattern value="(\d+\.?)*\d+"/>
 		</restriction>
 	</simpleType>
-	<complexType name="CS">
-		<attribute name="V" type="token" use="optional"/>
-		<attribute name="DN" type="string" use="optional"/>
-	</complexType>
-	<complexType name="TS">
-		<attribute name="V" use="optional">
-			<simpleType>
-				<union memberTypes="dateTime date gYear gYearMonth time"/>
-			</simpleType>
-		</attribute>
-	</complexType>
-	<complexType name="URL">
-		<attribute name="V" type="anyURI" use="optional"/>
-	</complexType>
 </schema>
